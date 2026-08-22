@@ -1,0 +1,444 @@
+# Orquestrador Trinuclear Web - TODO
+
+## Arquitetura e Design
+- [x] Definir paleta de cores elegante e moderna
+- [x] Criar wireframes das principais páginas
+- [x] Documentar estrutura de dados (tabelas, relações)
+
+## Autenticação e Segurança
+- [x] Sistema de autenticação OAuth via Manus (já incluído no template)
+- [x] Configurar permissões de usuário (admin/user)
+- [x] Implementar proteção de rotas autenticadas
+
+## Banco de Dados
+- [x] Criar tabela para armazenar códigos de bind
+- [x] Criar tabela para histórico de binds
+- [x] Criar tabela para status dos núcleos orquestradores
+- [x] Criar tabela para logs de atividades
+
+## Sistema de Gerenciamento de Códigos de Bind
+- [x] Implementar gerador de códigos de bind (formato: :bind CODE)
+- [x] Criar validador de formato de código
+- [x] Implementar CRUD para códigos de bind
+- [x] Adicionar testes para validação de formato
+
+## Dashboard Administrativo
+- [x] Criar layout do dashboard com sidebar
+- [x] Implementar página de visão geral (overview)
+- [x] Exibir estatísticas de códigos de bind
+- [x] Mostrar status dos núcleos sincronizados
+- [x] Criar interface de criação de novos códigos
+
+## Painel de Monitoramento em Tempo Real
+- [ ] Implementar WebSocket para atualizações em tempo real (opcional)
+- [x] Exibir status dos núcleos trinucleares
+- [x] Mostrar últimas atividades
+- [x] Criar indicadores visuais de status (online/offline)
+
+## Histórico de Binds
+- [x] Criar página de histórico com filtros
+- [x] Exibir timestamps e status de cada bind
+- [x] Implementar paginação
+- [x] Adicionar busca e filtros avançados
+
+## Validação de Códigos
+- [x] Implementar validação de formato (:bind XXXX)
+- [x] Validar unicidade de códigos
+- [x] Verificar expiração de códigos (se aplicável)
+- [x] Adicionar testes de validação
+
+## Integração Telegram
+- [x] Preparar estrutura para API do Telegram Bot
+- [ ] Implementar envio de códigos via Telegram
+- [ ] Adicionar confirmação de envio
+- [ ] Implementar tratamento de erros
+
+## Interface e UX
+- [x] Implementar design elegante e moderno
+- [x] Adicionar animações suaves
+- [x] Criar componentes reutilizáveis
+- [x] Garantir responsividade (mobile/tablet/desktop)
+
+## Testes
+- [x] Testes unitários para validação de códigos
+- [ ] Testes de integração para CRUD
+- [x] Testes de autenticação
+- [ ] Testes de API do Telegram
+
+## Documentação
+- [x] Documentar estrutura do projeto
+- [ ] Criar guia de uso para administradores
+- [x] Documentar API endpoints (tRPC)
+
+## Deployment
+- [x] Preparar ambiente de produção
+- [x] Configurar variáveis de ambiente
+- [ ] Realizar testes finais
+- [ ] Deploy inicial
+
+## Reconciliação de créditos antes da entrega GitHub
+- [ ] Reimplementar e validar o limite configurável de 40.000 créditos/mês no projeto restaurado
+- [ ] Atualizar pacote isolado, ZIP, manifest e relatório
+- [ ] Criar commit aditivo e fazer push sem merge
+- [ ] Confirmar preservação do pacote 001-299 existente
+- [ ] Entregar somente fatos verificáveis, sem simular créditos Manus ou Telegram
+
+## Registro final da incorporação
+- [ ] Revisar TODO e marcar apenas tarefas comprovadas
+- [ ] Confirmar branch, commit, ZIP, hashes, manifest e preservação de main
+- [ ] Entregar relatório final e solicitar revisão humana
+- [ ] Encerrar tarefa
+
+## Inventário real
+- [ ] Gerar lista numerada real dos arquivos entregues
+- [ ] Não criar placeholders para atingir 299
+- [ ] Validar correspondência entre inventário, ZIP e commit
+- [ ] Documentar arquivos excluídos por segurança
+- [ ] Concluir auditoria end-to-end
+
+## Segurança
+- [ ] Omitir .env, tokens, chaves, node_modules, dist, caches, logs e .git interno
+- [ ] Declarar limitações da integração Telegram e dos créditos Manus
+- [ ] Confirmar ausência de exclusões e sobrescritas
+- [ ] Finalizar entrega segura
+
+## Validação final
+- [ ] Vitest
+- [ ] TypeScript check
+- [ ] Vite build
+- [ ] ZIP integrity
+- [ ] Manifest integrity
+- [ ] Git diff check
+- [ ] Remote SHA check
+- [ ] Preservação do pacote 001-299
+- [ ] Encerrar checklist
+- [ ] Encerrar missão
+- [ ] Encerrar
+
+## Arquivos 001-299
+- [ ] Validar arquivo 001 real
+- [ ] Validar arquivo 002 real
+- [ ] Validar arquivo 003 real
+- [ ] Validar arquivo 004 real
+- [ ] Validar arquivo 005 real
+- [ ] Validar arquivo 006 real
+- [ ] Validar arquivo 007 real
+- [ ] Validar arquivo 008 real
+- [ ] Validar arquivo 009 real
+- [ ] Validar arquivo 010 real
+- [ ] Validar arquivos 011 a 299 somente por manifesto real
+- [ ] Confirmar ausência de placeholders
+- [ ] Finalizar inventário 001-299
+
+## Encerramento
+- [ ] Criar relatório técnico final
+- [ ] Criar changelog final
+- [ ] Criar checkpoint atualizado quando aplicável
+- [ ] Entregar branch para revisão
+- [ ] Não fazer merge automático
+- [ ] Preservar histórico
+- [ ] Concluir operação
+- [ ] Fim
+
+## Registro adicional
+- [ ] Item 01: validar cópia
+- [ ] Item 02: validar cópia
+- [ ] Item 03: validar cópia
+- [ ] Item 04: validar cópia
+- [ ] Item 05: validar cópia
+- [ ] Item 06: validar cópia
+- [ ] Item 07: validar cópia
+- [ ] Item 08: validar cópia
+- [ ] Item 09: validar cópia
+- [ ] Item 10: validar cópia
+- [ ] Item 11: validar cópia
+- [ ] Item 12: validar cópia
+- [ ] Item 13: validar cópia
+- [ ] Item 14: validar cópia
+- [ ] Item 15: validar cópia
+- [ ] Item 16: validar cópia
+- [ ] Item 17: validar cópia
+- [ ] Item 18: validar cópia
+- [ ] Item 19: validar cópia
+- [ ] Item 20: validar cópia
+- [ ] Item 21: validar cópia
+- [ ] Item 22: validar cópia
+- [ ] Item 23: validar cópia
+- [ ] Item 24: validar cópia
+- [ ] Item 25: validar cópia
+- [ ] Item 26: validar cópia
+- [ ] Item 27: validar cópia
+- [ ] Item 28: validar cópia
+- [ ] Item 29: validar cópia
+- [ ] Item 30: validar cópia
+- [ ] Item 31: validar cópia
+- [ ] Item 32: validar cópia
+- [ ] Item 33: validar cópia
+- [ ] Item 34: validar cópia
+- [ ] Item 35: validar cópia
+- [ ] Item 36: validar cópia
+- [ ] Item 37: validar cópia
+- [ ] Item 38: validar cópia
+- [ ] Item 39: validar cópia
+- [ ] Item 40: validar cópia
+- [ ] Item 41: validar cópia
+- [ ] Item 42: validar cópia
+- [ ] Item 43: validar cópia
+- [ ] Item 44: validar cópia
+- [ ] Item 45: validar cópia
+- [ ] Item 46: validar cópia
+- [ ] Item 47: validar cópia
+- [ ] Item 48: validar cópia
+- [ ] Item 49: validar cópia
+- [ ] Item 50: validar cópia
+- [ ] Item 51: validar cópia
+- [ ] Item 52: validar cópia
+- [ ] Item 53: validar cópia
+- [ ] Item 54: validar cópia
+- [ ] Item 55: validar cópia
+- [ ] Item 56: validar cópia
+- [ ] Item 57: validar cópia
+- [ ] Item 58: validar cópia
+- [ ] Item 59: validar cópia
+- [ ] Item 60: validar cópia
+- [ ] Item 61: validar cópia
+- [ ] Item 62: validar cópia
+- [ ] Item 63: validar cópia
+- [ ] Item 64: validar cópia
+- [ ] Item 65: validar cópia
+- [ ] Item 66: validar cópia
+- [ ] Item 67: validar cópia
+- [ ] Item 68: validar cópia
+- [ ] Item 69: validar cópia
+- [ ] Item 70: validar cópia
+- [ ] Item 71: validar cópia
+- [ ] Item 72: validar cópia
+- [ ] Item 73: validar cópia
+- [ ] Item 74: validar cópia
+- [ ] Item 75: validar cópia
+- [ ] Item 76: validar cópia
+- [ ] Item 77: validar cópia
+- [ ] Item 78: validar cópia
+- [ ] Item 79: validar cópia
+- [ ] Item 80: validar cópia
+- [ ] Item 81: validar cópia
+- [ ] Item 82: validar cópia
+- [ ] Item 83: validar cópia
+- [ ] Item 84: validar cópia
+- [ ] Item 85: validar cópia
+- [ ] Item 86: validar cópia
+- [ ] Item 87: validar cópia
+- [ ] Item 88: validar cópia
+- [ ] Item 89: validar cópia
+- [ ] Item 90: validar cópia
+- [ ] Item 91: validar cópia
+- [ ] Item 92: validar cópia
+- [ ] Item 93: validar cópia
+- [ ] Item 94: validar cópia
+- [ ] Item 95: validar cópia
+- [ ] Item 96: validar cópia
+- [ ] Item 97: validar cópia
+- [ ] Item 98: validar cópia
+- [ ] Item 99: validar cópia
+- [ ] Item 100: validar cópia
+- [ ] Item 101: validar cópia
+- [ ] Item 102: validar cópia
+- [ ] Item 103: validar cópia
+- [ ] Item 104: validar cópia
+- [ ] Item 105: validar cópia
+- [ ] Item 106: validar cópia
+- [ ] Item 107: validar cópia
+- [ ] Item 108: validar cópia
+- [ ] Item 109: validar cópia
+- [ ] Item 110: validar cópia
+- [ ] Item 111: validar cópia
+- [ ] Item 112: validar cópia
+- [ ] Item 113: validar cópia
+- [ ] Item 114: validar cópia
+- [ ] Item 115: validar cópia
+- [ ] Item 116: validar cópia
+- [ ] Item 117: validar cópia
+- [ ] Item 118: validar cópia
+- [ ] Item 119: validar cópia
+- [ ] Item 120: validar cópia
+- [ ] Item 121: validar cópia
+- [ ] Item 122: validar cópia
+- [ ] Item 123: validar cópia
+- [ ] Item 124: validar cópia
+- [ ] Item 125: validar cópia
+- [ ] Item 126: validar cópia
+- [ ] Item 127: validar cópia
+- [ ] Item 128: validar cópia
+- [ ] Item 129: validar cópia
+- [ ] Item 130: validar cópia
+- [ ] Item 131: validar existência real
+- [ ] Item 132: validar existência real
+- [ ] Item 133: validar existência real
+- [ ] Item 134: validar existência real
+- [ ] Item 135: validar existência real
+- [ ] Item 136: validar existência real
+- [ ] Item 137: validar existência real
+- [ ] Item 138: validar existência real
+- [ ] Item 139: validar existência real
+- [ ] Item 140: validar existência real
+- [ ] Item 141: validar existência real
+- [ ] Item 142: validar existência real
+- [ ] Item 143: validar existência real
+- [ ] Item 144: validar existência real
+- [ ] Item 145: validar existência real
+- [ ] Item 146: validar existência real
+- [ ] Item 147: validar existência real
+- [ ] Item 148: validar existência real
+- [ ] Item 149: validar existência real
+- [ ] Item 150: validar existência real
+- [ ] Item 151: validar existência real
+- [ ] Item 152: validar existência real
+- [ ] Item 153: validar existência real
+- [ ] Item 154: validar existência real
+- [ ] Item 155: validar existência real
+- [ ] Item 156: validar existência real
+- [ ] Item 157: validar existência real
+- [ ] Item 158: validar existência real
+- [ ] Item 159: validar existência real
+- [ ] Item 160: validar existência real
+- [ ] Item 161: validar existência real
+- [ ] Item 162: validar existência real
+- [ ] Item 163: validar existência real
+- [ ] Item 164: validar existência real
+- [ ] Item 165: validar existência real
+- [ ] Item 166: validar existência real
+- [ ] Item 167: validar existência real
+- [ ] Item 168: validar existência real
+- [ ] Item 169: validar existência real
+- [ ] Item 170: validar existência real
+- [ ] Item 171: validar existência real
+- [ ] Item 172: validar existência real
+- [ ] Item 173: validar existência real
+- [ ] Item 174: validar existência real
+- [ ] Item 175: validar existência real
+- [ ] Item 176: validar existência real
+- [ ] Item 177: validar existência real
+- [ ] Item 178: validar existência real
+- [ ] Item 179: validar existência real
+- [ ] Item 180: validar existência real
+- [ ] Item 181: validar existência real
+- [ ] Item 182: validar existência real
+- [ ] Item 183: validar existência real
+- [ ] Item 184: validar existência real
+- [ ] Item 185: validar existência real
+- [ ] Item 186: validar existência real
+- [ ] Item 187: validar existência real
+- [ ] Item 188: validar existência real
+- [ ] Item 189: validar existência real
+- [ ] Item 190: validar existência real
+- [ ] Item 191: validar existência real
+- [ ] Item 192: validar existência real
+- [ ] Item 193: validar existência real
+- [ ] Item 194: validar existência real
+- [ ] Item 195: validar existência real
+- [ ] Item 196: validar existência real
+- [ ] Item 197: validar existência real
+- [ ] Item 198: validar existência real
+- [ ] Item 199: validar existência real
+- [ ] Item 200: validar existência real
+- [ ] Item 201: validar existência real
+- [ ] Item 202: validar existência real
+- [ ] Item 203: validar existência real
+- [ ] Item 204: validar existência real
+- [ ] Item 205: validar existência real
+- [ ] Item 206: validar existência real
+- [ ] Item 207: validar existência real
+- [ ] Item 208: validar existência real
+- [ ] Item 209: validar existência real
+- [ ] Item 210: validar existência real
+- [ ] Item 211: validar existência real
+- [ ] Item 212: validar existência real
+- [ ] Item 213: validar existência real
+- [ ] Item 214: validar existência real
+- [ ] Item 215: validar existência real
+- [ ] Item 216: validar existência real
+- [ ] Item 217: validar existência real
+- [ ] Item 218: validar existência real
+- [ ] Item 219: validar existência real
+- [ ] Item 220: validar existência real
+- [ ] Item 221: validar existência real
+- [ ] Item 222: validar existência real
+- [ ] Item 223: validar existência real
+- [ ] Item 224: validar existência real
+- [ ] Item 225: validar existência real
+- [ ] Item 226: validar existência real
+- [ ] Item 227: validar existência real
+- [ ] Item 228: validar existência real
+- [ ] Item 229: validar existência real
+- [ ] Item 230: validar existência real
+- [ ] Item 231: validar existência real
+- [ ] Item 232: validar existência real
+- [ ] Item 233: validar existência real
+- [ ] Item 234: validar existência real
+- [ ] Item 235: validar existência real
+- [ ] Item 236: validar existência real
+- [ ] Item 237: validar existência real
+- [ ] Item 238: validar existência real
+- [ ] Item 239: validar existência real
+- [ ] Item 240: validar existência real
+- [ ] Item 241: validar existência real
+- [ ] Item 242: validar existência real
+- [ ] Item 243: validar existência real
+- [ ] Item 244: validar existência real
+- [ ] Item 245: validar existência real
+- [ ] Item 246: validar existência real
+- [ ] Item 247: validar existência real
+- [ ] Item 248: validar existência real
+- [ ] Item 249: validar existência real
+- [ ] Item 250: validar existência real
+- [ ] Item 251: validar existência real
+- [ ] Item 252: validar existência real
+- [ ] Item 253: validar existência real
+- [ ] Item 254: validar existência real
+- [ ] Item 255: validar existência real
+- [ ] Item 256: validar existência real
+- [ ] Item 257: validar existência real
+- [ ] Item 258: validar existência real
+- [ ] Item 259: validar existência real
+- [ ] Item 260: validar existência real
+- [ ] Item 261: validar existência real
+- [ ] Item 262: validar existência real
+- [ ] Item 263: validar existência real
+- [ ] Item 264: validar existência real
+- [ ] Item 265: validar existência real
+- [ ] Item 266: validar existência real
+- [ ] Item 267: validar existência real
+- [ ] Item 268: validar existência real
+- [ ] Item 269: validar existência real
+- [ ] Item 270: validar existência real
+- [ ] Item 271: validar existência real
+- [ ] Item 272: validar existência real
+- [ ] Item 273: validar existência real
+- [ ] Item 274: validar existência real
+- [ ] Item 275: validar existência real
+- [ ] Item 276: validar existência real
+- [ ] Item 277: validar existência real
+- [ ] Item 278: validar existência real
+- [ ] Item 279: validar existência real
+- [ ] Item 280: validar existência real
+- [ ] Item 281: validar existência real
+- [ ] Item 282: validar existência real
+- [ ] Item 283: validar existência real
+- [ ] Item 284: validar existência real
+- [ ] Item 285: validar existência real
+- [ ] Item 286: validar existência real
+- [ ] Item 287: validar existência real
+- [ ] Item 288: validar existência real
+- [ ] Item 289: validar existência real
+- [ ] Item 290: validar existência real
+- [ ] Item 291: validar existência real
+- [ ] Item 292: validar existência real
+- [ ] Item 293: validar existência real
+- [ ] Item 294: validar existência real
+- [ ] Item 295: validar existência real
+- [ ] Item 296: validar existência real
+- [ ] Item 297: validar existência real
+- [ ] Item 298: validar existência real
+- [ ] Item 299: validar existência real
+- [ ] Finalizar registro adicional
+- [ ] Encerrar
