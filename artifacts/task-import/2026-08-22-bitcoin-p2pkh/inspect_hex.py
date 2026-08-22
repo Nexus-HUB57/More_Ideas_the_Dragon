@@ -42,10 +42,10 @@ if input_count > 0:
     pos += script_len * 2
     sequence = tx_hex[pos:pos+8]
     pos += 8
-    
+
     output_count, pos = read_varint(tx_hex, pos)
     print(f"Output count: {output_count}")
-    
+
     for i in range(output_count):
         value = tx_hex[pos:pos+16]
         pos += 16

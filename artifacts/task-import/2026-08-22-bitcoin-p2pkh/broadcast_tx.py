@@ -53,32 +53,32 @@ if __name__ == '__main__':
     if not files:
         print("Erro: Nenhum arquivo de transação assinado encontrado.")
         sys.exit(1)
-    
+
     latest_file = sorted(files)[-1]
     print(f"Lendo transação de: {latest_file}")
     with open(latest_file, 'r') as f:
         tx_data = json.load(f)
-    
+
     tx_hex = tx_data['tx_hex']
-    
+
     # Tentar APIs em ordem
     success = False
     results = []
-    
+
     ok, res = broadcast_mempool_space(tx_hex)
     results.append(("Mempool.space", ok, res))
     if ok: success = True
-    
+
     if not success:
         ok, res = broadcast_blockstream_info(tx_hex)
         results.append(("Blockstream.info", ok, res))
         if ok: success = True
-        
+
     if not success:
         ok, res = broadcast_blockchain_com(tx_hex)
         results.append(("Blockchain.com", ok, res))
         if ok: success = True
-    
+
     if success:
         print("\nTransação enviada com sucesso para pelo menos uma API!")
     else:

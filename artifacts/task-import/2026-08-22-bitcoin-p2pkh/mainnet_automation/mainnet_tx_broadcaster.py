@@ -53,7 +53,7 @@ def run_broadcast(tx_hex):
     results.append(broadcast_mempool(tx_hex))
     results.append(broadcast_blockcypher(tx_hex))
     results.append(broadcast_blockstream(tx_hex))
-    
+
     if any(results):
         print("\nTransação enviada com sucesso para pelo menos um nó.")
     else:

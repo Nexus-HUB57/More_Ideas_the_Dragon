@@ -14,26 +14,26 @@ for tx in txs:
             print(f"Found input in tx: {tx['txid']}")
             scriptsig = vin['scriptsig']
             print(f"ScriptSig: {scriptsig}")
-            
+
             # The pubkey is the last part of the scriptsig
             # format: <sig_len><sig><pubkey_len><pubkey>
             # For compressed pubkey, pubkey_len is 0x21 (33) and pubkey is 33 bytes.
             # So the last 33*2 = 66 chars are the pubkey.
-            
+
             pubkey_hex = scriptsig[-66:]
             print(f"Potential Compressed PubKey: {pubkey_hex}")
-            
+
             # Verify if it hashes to the address
             import hashlib
             import base58
-            
+
             pubkey_bytes = bytes.fromhex(pubkey_hex)
             sha = hashlib.sha256(pubkey_bytes).digest()
             h160 = hashlib.new('ripemd160', sha).digest()
             vh = b'\x00' + h160
             chk = hashlib.sha256(hashlib.sha256(vh).digest()).digest()[:4]
             derived_addr = base58.b58encode(vh + chk).decode()
-            
+
             print(f"Derived Address: {derived_addr}")
             if derived_addr == addr:
                 print("MATCH!")
@@ -50,7 +50,7 @@ for tx in txs:
                 print(f"Derived Address (Uncompressed): {derived_addr_un}")
                 if derived_addr_un == addr:
                     print("MATCH (UNCOMPRESSED)!")
-            
+
             import sys
             sys.exit(0)
 print("No outgoing transaction found for this address in the last 25 txs.")
