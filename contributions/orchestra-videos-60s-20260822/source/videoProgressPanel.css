@@ -1,0 +1,342 @@
+/**
+ * Estilos para o Componente VideoProgressPanel
+ * Painel de progresso em tempo real para geração de vídeos
+ */
+
+/* Variáveis de cores */
+:root {
+  --color-midnight: #0a0a2a;
+  --color-midnight-light: #1a1a3f;
+  --color-hot-pink: #ff00ff;
+  --color-cyan: #00ffff;
+  --color-magenta: #ff00ff;
+  --color-electric-blue: #0080ff;
+  --color-neon-purple: #9d00ff;
+  --color-text-primary: #ffffff;
+  --color-text-secondary: #b0b0ff;
+  --color-border: #2a2a4a;
+  --color-success: #00ff00;
+  --color-warning: #ffaa00;
+  --color-error: #ff0000;
+}
+
+/* Overlay */
+.video-progress-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(10, 10, 42, 0.85);
+  backdrop-filter: blur(5px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+/* Painel Principal */
+.video-progress-panel {
+  background: linear-gradient(135deg, var(--color-midnight) 0%, #0d0d35 50%, #1a0d2e 100%);
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  padding: 2rem;
+  max-width: 500px;
+  width: 90%;
+  box-shadow:
+    0 0 30px rgba(0, 255, 255, 0.1),
+    0 0 60px rgba(255, 0, 255, 0.05),
+    inset 0 0 30px rgba(0, 255, 255, 0.02);
+}
+
+/* Cabeçalho do Painel */
+.progress-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.progress-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--color-text-primary);
+  text-shadow:
+    0 0 10px var(--color-hot-pink),
+    0 0 20px var(--color-electric-blue);
+  margin: 0;
+}
+
+.close-button {
+  background: transparent;
+  border: none;
+  color: var(--color-text-secondary);
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  padding: 0;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.close-button:hover {
+  color: var(--color-hot-pink);
+  text-shadow: 0 0 10px var(--color-hot-pink);
+}
+
+/* Seção de Progresso Geral */
+.overall-progress-section {
+  margin-bottom: 2rem;
+}
+
+.progress-percentage {
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--color-hot-pink);
+  text-align: center;
+  margin-bottom: 0.5rem;
+  text-shadow:
+    0 0 10px var(--color-hot-pink),
+    0 0 20px var(--color-electric-blue);
+}
+
+.progress-bar-container {
+  width: 100%;
+  height: 12px;
+  background: rgba(26, 26, 63, 0.6);
+  border: 1px solid var(--color-border);
+  border-radius: 6px;
+  overflow: hidden;
+  margin-bottom: 0.75rem;
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.progress-bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--color-hot-pink), var(--color-cyan));
+  border-radius: 6px;
+  box-shadow:
+    0 0 10px var(--color-hot-pink),
+    0 0 20px rgba(0, 255, 255, 0.5);
+}
+
+.progress-message {
+  font-size: 0.9rem;
+  color: var(--color-text-secondary);
+  text-align: center;
+  margin: 0;
+  font-weight: 500;
+}
+
+/* Etapas do Pipeline */
+.pipeline-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.pipeline-step {
+  background: rgba(26, 26, 63, 0.4);
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  padding: 1rem;
+  transition: all 0.3s ease;
+}
+
+.pipeline-step.completed {
+  border-color: var(--color-success);
+  background: rgba(0, 255, 0, 0.05);
+}
+
+.pipeline-step.in-progress {
+  border-color: var(--color-hot-pink);
+  background: rgba(255, 0, 255, 0.05);
+  box-shadow:
+    0 0 15px rgba(255, 0, 255, 0.2),
+    inset 0 0 10px rgba(255, 0, 255, 0.05);
+}
+
+.pipeline-step.failed {
+  border-color: var(--color-error);
+  background: rgba(255, 0, 0, 0.05);
+}
+
+.pipeline-step.pending {
+  opacity: 0.6;
+}
+
+.step-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.step-icon-wrapper {
+  flex-shrink: 0;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.status-icon {
+  width: 24px;
+  height: 24px;
+}
+
+.status-icon.completed {
+  color: var(--color-success);
+  filter: drop-shadow(0 0 5px var(--color-success));
+}
+
+.status-icon.in-progress {
+  color: var(--color-hot-pink);
+  filter: drop-shadow(0 0 5px var(--color-hot-pink));
+  animation: spin 2s linear infinite;
+}
+
+.status-icon.failed {
+  color: var(--color-error);
+  filter: drop-shadow(0 0 5px var(--color-error));
+}
+
+.status-icon.pending {
+  color: var(--color-text-secondary);
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.step-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.step-label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--color-text-primary);
+  margin: 0 0 0.5rem 0;
+}
+
+.step-progress-bar {
+  width: 100%;
+  height: 6px;
+  background: rgba(10, 10, 42, 0.6);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.step-progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--color-cyan), var(--color-hot-pink));
+  border-radius: 3px;
+  box-shadow: 0 0 8px rgba(0, 255, 255, 0.5);
+}
+
+.step-percentage {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--color-cyan);
+  flex-shrink: 0;
+  min-width: 35px;
+  text-align: right;
+}
+
+/* Botões de Ação */
+.progress-actions {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.action-button {
+  flex: 1;
+  padding: 0.75rem 1rem;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.download-button {
+  background: linear-gradient(135deg, var(--color-hot-pink) 0%, var(--color-magenta) 100%);
+  color: var(--color-midnight);
+  box-shadow:
+    0 0 15px var(--color-hot-pink),
+    0 0 30px rgba(255, 0, 255, 0.3);
+}
+
+.download-button:hover {
+  transform: translateY(-2px);
+  box-shadow:
+    0 0 25px var(--color-hot-pink),
+    0 0 50px rgba(255, 0, 255, 0.5),
+    0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.close-action-button {
+  background: rgba(26, 26, 63, 0.6);
+  color: var(--color-text-secondary);
+  border: 1px solid var(--color-border);
+}
+
+.close-action-button:hover {
+  border-color: var(--color-cyan);
+  color: var(--color-cyan);
+  box-shadow: 0 0 10px rgba(0, 255, 255, 0.2);
+}
+
+/* Banner de Erro */
+.error-banner {
+  background: rgba(255, 0, 0, 0.1);
+  border: 1px solid rgba(255, 0, 0, 0.3);
+  border-radius: 6px;
+  padding: 0.75rem 1rem;
+  color: #ff6b6b;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+/* Responsividade */
+@media (max-width: 480px) {
+  .video-progress-panel {
+    padding: 1.5rem;
+    max-width: 95%;
+  }
+
+  .progress-title {
+    font-size: 1.25rem;
+  }
+
+  .progress-percentage {
+    font-size: 1.75rem;
+  }
+
+  .action-button {
+    padding: 0.6rem 0.8rem;
+    font-size: 0.8rem;
+  }
+}
