@@ -1,0 +1,5 @@
+/home/ubuntu/coding-assistant-app/backend/requirements.txt
+/home/ubuntu/coding-assistant-app/backend/src/main.py
+/home/ubuntu/coding-assistant-app/backend/src/routes/coding_assistant.py
+/home/ubuntu/coding-assistant-app/frontend/index.html
+/home/ubuntu/coding-assistant-app/frontend/src/App.jsx
