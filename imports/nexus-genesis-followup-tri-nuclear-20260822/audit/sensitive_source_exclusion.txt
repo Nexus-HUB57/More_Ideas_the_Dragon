@@ -1,0 +1,3 @@
+Original upload archive: 1e25745da914de8698e1e485928d755a8f04bd1c667c105b026923dc760fc492  /home/ubuntu/upload/NexusGenesis.zip
+Policy: the original upload archive was not copied into tracked content because it contains PvKeys.txt and other potentially sensitive wallet material. Safe non-sensitive derivatives and all source artifacts are included above.
+The repository already contains the full 001–299 technical-spec corpus; this import adds the current task artifacts without replacing that corpus.

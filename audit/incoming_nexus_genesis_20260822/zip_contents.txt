@@ -1,0 +1,64 @@
+=== /home/ubuntu/NexusGenesis_Architecture_Diagram.zip ===
+home/ubuntu/NexusGenesis/arquitetura_tri-nuclear.mmd
+home/ubuntu/NexusGenesis/arquitetura_tri-nuclear.png
+home/ubuntu/NexusGenesis/Diagrama_Arquitetura_Tri-Nuclear.md
+home/ubuntu/NexusGenesis/nexus_genesis.py
+home/ubuntu/NexusGenesis/Relatorio_Orquestracao_Tri-Nuclear_NexusGenesis.md
+home/ubuntu/NexusGenesis/Fundo Nexus - Arquitetura e Planejamento de Sincronização.md
+home/ubuntu/NexusGenesis/Fundo Nexus - TODO.md
+home/ubuntu/NexusGenesis/Moltbook Platform - TODO.md
+home/ubuntu/NexusGenesis/NEXUS-HUB: Plataforma de Governança e Gestão de Startups.md
+home/ubuntu/NexusGenesis/Nexus-HUB: Conselho dos Arquitetos - TODO.md
+home/ubuntu/NexusGenesis/Nexus-HUB: Ecossistema AI-to-AI para Startups Autônomas.md
+home/ubuntu/NexusGenesis/Relatorio_Teste_Estresse_NexusGenesis.md
+home/ubuntu/NexusGenesis/Relatório de Integração: Ecossistema Nexus (Fundo Nexus, Nexus-HUB e Nexus-in).md
+home/ubuntu/NexusGenesis/🎯 Visão Geral.md
+
+=== /home/ubuntu/NexusGenesis_Triad_Updated.zip ===
+home/ubuntu/NexusGenesis/nexus_genesis.py
+home/ubuntu/NexusGenesis/stress_test.py
+home/ubuntu/NexusGenesis/start_mocks_fixed.sh
+home/ubuntu/NexusGenesis/Relatorio_Orquestracao_Tri-Nuclear_NexusGenesis.md
+home/ubuntu/NexusGenesis/Fundo Nexus - Arquitetura e Planejamento de Sincronização.md
+home/ubuntu/NexusGenesis/Fundo Nexus - TODO.md
+home/ubuntu/NexusGenesis/Moltbook Platform - TODO.md
+home/ubuntu/NexusGenesis/NEXUS-HUB: Plataforma de Governança e Gestão de Startups.md
+home/ubuntu/NexusGenesis/Nexus-HUB: Conselho dos Arquitetos - TODO.md
+home/ubuntu/NexusGenesis/Nexus-HUB: Ecossistema AI-to-AI para Startups Autônomas.md
+home/ubuntu/NexusGenesis/Relatorio_Teste_Estresse_NexusGenesis.md
+home/ubuntu/NexusGenesis/Relatório de Integração: Ecossistema Nexus (Fundo Nexus, Nexus-HUB e Nexus-in).md
+home/ubuntu/NexusGenesis/🎯 Visão Geral.md
+
+=== /home/ubuntu/NexusGenesis_Updated.zip ===
+home/ubuntu/NexusGenesis/nexus_genesis.py
+home/ubuntu/NexusGenesis/stress_test.py
+home/ubuntu/NexusGenesis/start_mocks_fixed.sh
+home/ubuntu/NexusGenesis/Relatorio_Teste_Estresse_NexusGenesis.md
+
+=== /home/ubuntu/upload/NexusGenesis.zip ===
+stress_test.py
+start_mocks.sh
+nexus_genesis.py
+fundo_nexus_mock.py
+nexus_hub_mock.py
+nexus_in_mock.py
+Moltbook Platform - TODO.md
+pasted_content.txt
+schema.ts
+🎯 Visão Geral.md
+Sistema e Fundo Nexus.txt
+bitcoin-wallet.ts
+Fundo Nexus - TODO.md
+types.ts
+Fundo Nexus - Arquitetura e Planejamento de Sincronização.md
+Nexus-HUB: Ecossistema AI-to-AI para Startups Autônomas.md
+nexus-genesis.ts
+Nexus-HUB: Conselho dos Arquitetos - TODO.md
+NEXUS-HUB: Plataforma de Governança e Gestão de Startups.md
+Relatório de Integração: Ecossistema Nexus (Fundo Nexus, Nexus-HUB e Nexus-in).md
+Nexus-in.zip
+Nexus-HUB.zip
+PvKeys.txt
+FundoNexus.zip
+Nexus_Project.zip
+
