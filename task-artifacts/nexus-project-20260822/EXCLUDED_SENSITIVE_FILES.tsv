@@ -1,0 +1,24 @@
+.env	excluded-sensitive-or-private-material
+PrivateKey_WIF/dllme.txt	excluded-sensitive-or-private-material
+PrivateKey_WIF/key.dll	excluded-sensitive-or-private-material
+PrivateKey_WIF/Private Key WIF/10.backup	excluded-sensitive-or-private-material
+PrivateKey_WIF/Private Key WIF/11.dat	excluded-sensitive-or-private-material
+PrivateKey_WIF/Private Key WIF/137.dat	excluded-sensitive-or-private-material
+PrivateKey_WIF/Private Key WIF/144-BTC.dat	excluded-sensitive-or-private-material
+PrivateKey_WIF/Private Key WIF/207.dat	excluded-sensitive-or-private-material
+PrivateKey_WIF/Private Key WIF/305.dat	excluded-sensitive-or-private-material
+PrivateKey_WIF/Private Key WIF/310.dat	excluded-sensitive-or-private-material
+PrivateKey_WIF/Private Key WIF/500.backup	excluded-sensitive-or-private-material
+PrivateKey_WIF/Private Key WIF/518.dat	excluded-sensitive-or-private-material
+PrivateKey_WIF/Private Key WIF/524.dat	excluded-sensitive-or-private-material
+PrivateKey_WIF/Private Key WIF/70.dat	excluded-sensitive-or-private-material
+PrivateKey_WIF/Private Key WIF/86	excluded-sensitive-or-private-material
+PrivateKey_WIF/Private Key WIF/86.dat	excluded-sensitive-or-private-material
+PrivateKey_WIF/Private Key WIF/87.dat	excluded-sensitive-or-private-material
+PrivateKey_WIF/Private Key WIF/dllme.txt	excluded-sensitive-or-private-material
+PrivateKey_WIF/Private Key WIF/key.dll	excluded-sensitive-or-private-material
+Fundo_Nexus README/PvKeys.txt	excluded-sensitive-or-private-material
+Fundo_Nexus README/Sistema e Fundo Nexus.txt	excluded-content-secret-scan
+gnox.test.ts	excluded-content-secret-scan
+moltbook-connector.ts	excluded-content-secret-scan
+pasted_content.txt	excluded-content-secret-scan
