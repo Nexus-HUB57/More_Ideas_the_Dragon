@@ -1,0 +1,26 @@
+audit_date=2026-08-22T22:07:48+00:00
+target_repo=Nexus-HUB57/More_Ideas_the_Dragon
+target_branch=main
+target_head=477de1fff64a5a7f0664fb4f58f95a43f7be0808
+target_status=1 changed_entries_before_import
+target_tracked=42055
+source_repo=Nexus-HUB57/MMN_AI-to-AI
+source_branch=main
+source_head=e047db732248d76e70f9cb180bb19f34ec00140c
+source_tracked=7055
+npp_snapshot_files=24
+task_input_files=1
+end_to_end_artifacts=1
+existing_001_299_zip_entries=305
+
+branch_policy=dedicated branch only; main is not modified directly
+destructive_operations=none
+overwrite_operations=none
+delete_operations=none
+import_directory_files=31
+import_directory_bytes=684781
+end_to_end_zip=/home/ubuntu/repo-audit/More_Ideas_the_Dragon/imports/nexus-partners-pack-mapping-safe-20260822-2250/end-to-end/nexus-partners-pack-mapping-safe-20260822-2250.zip
+end_to_end_zip_sha256=035e49802588dfa6332c1597b4cd587012fbf5a1dbf1a2e8572ea9b912300959
+validation_note=checksum manifest regenerated after final audit metadata update
+final_remote_main=1b21df297db7c4dc1bed4424512b8698cd91adc7
+dedicated_branch_base=1b21df297db7c4dc1bed4424512b8698cd91adc7
