@@ -1,0 +1,12 @@
+imports/mmn-fase-2-hybrid-auth-safe-20260822/source/MMN_AI-to-AI/Legado_PHP/inc123/area123_banco_de_dados.php
+imports/mmn-fase-2-hybrid-auth-safe-20260822/source/MMN_AI-to-AI/Legado_PHP/inc123/config123.php
+imports/mmn-fase-2-hybrid-auth-safe-20260822/source/MMN_AI-to-AI/Legado_PHP/inc123/pgto_functions.php
+imports/mmn-fase-2-hybrid-auth-safe-20260822/source/MMN_AI-to-AI/backend/src/config/context.ts
+imports/mmn-fase-2-hybrid-auth-safe-20260822/source/MMN_AI-to-AI/backend/src/config/trpc.ts
+imports/mmn-fase-2-hybrid-auth-safe-20260822/source/MMN_AI-to-AI/backend/src/routers/authRouter.ts
+imports/mmn-fase-2-hybrid-auth-safe-20260822/source/MMN_AI-to-AI/backend/src/services/commissions.ts
+imports/mmn-fase-2-hybrid-auth-safe-20260822/source/MMN_AI-to-AI/database/schemas/db.ts
+imports/mmn-fase-2-hybrid-auth-safe-20260822/source/MMN_AI-to-AI/database/schemas/schema-final.ts
+imports/mmn-fase-2-hybrid-auth-safe-20260822/source/MMN_AI-to-AI/docs/roadmap_fusao_mmn.md
+imports/mmn-fase-2-hybrid-auth-safe-20260822/source/MMN_AI-to-AI/frontend/src/pages/Login.tsx
+imports/mmn-fase-2-hybrid-auth-safe-20260822/source/MMN_AI-to-AI/scripts/migrate_legacy_data.ts
