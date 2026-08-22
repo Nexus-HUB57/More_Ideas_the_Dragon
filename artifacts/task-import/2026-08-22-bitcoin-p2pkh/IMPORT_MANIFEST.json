@@ -1,0 +1,129 @@
+{
+  "created_at_utc": "2026-08-22T21:04:09.790853+00:00",
+  "purpose": "Safe, additive import of artifacts from the Bitcoin P2PKH task.",
+  "source_count": 12,
+  "copied_file_count": 17,
+  "existing_repo_001_299_numbered_file_count": 299,
+  "secret_policy": "Private keys, WIFs, passwords, passphrases, API keys and tokens are redacted and never committed.",
+  "records": [
+    {
+      "source": "/home/ubuntu/mainnet_automation/README.md",
+      "destination": "artifacts/task-import/2026-08-22-bitcoin-p2pkh/mainnet_automation/README.md",
+      "bytes": 1246,
+      "sha256": "85606e756ce19560b4e3122b9c411d5cf845a7a83dc31f79239fd7ee9d2cc656",
+      "redacted": false
+    },
+    {
+      "source": "/home/ubuntu/mainnet_automation/config.py",
+      "destination": "artifacts/task-import/2026-08-22-bitcoin-p2pkh/mainnet_automation/config.py",
+      "bytes": 714,
+      "sha256": "a534f78c3b3177a4992d370ac17c9b7198fe88af0d5f151b10b0529d2bcb1908",
+      "redacted": true
+    },
+    {
+      "source": "/home/ubuntu/mainnet_automation/mainnet_tx_broadcaster.py",
+      "destination": "artifacts/task-import/2026-08-22-bitcoin-p2pkh/mainnet_automation/mainnet_tx_broadcaster.py",
+      "bytes": 2448,
+      "sha256": "1d80f51eb829bb41259f6f28fd1c6dd0a2989d9b4df2dc0d9410e6e6199f4874",
+      "redacted": false
+    },
+    {
+      "source": "/home/ubuntu/mainnet_automation/mainnet_tx_builder.py",
+      "destination": "artifacts/task-import/2026-08-22-bitcoin-p2pkh/mainnet_automation/mainnet_tx_builder.py",
+      "bytes": 4201,
+      "sha256": "d2d87b591cf8740b75d1ade494dcbff31dca27933e14ed3495d99d9277385499",
+      "redacted": false
+    },
+    {
+      "source": "/home/ubuntu/mainnet_automation/mainnet_tx_builder_manual.py",
+      "destination": "artifacts/task-import/2026-08-22-bitcoin-p2pkh/mainnet_automation/mainnet_tx_builder_manual.py",
+      "bytes": 5879,
+      "sha256": "a7a940a34da732e635aedff5dcdac12d071d0efeb4ffb3a50f608672e11d9ed4",
+      "redacted": false
+    },
+    {
+      "source": "/home/ubuntu/mainnet_automation/mainnet_tx_validator.py",
+      "destination": "artifacts/task-import/2026-08-22-bitcoin-p2pkh/mainnet_automation/mainnet_tx_validator.py",
+      "bytes": 2737,
+      "sha256": "214305adbb41a96eb525c8b3d8b173c44385ca1ce0bc555006b4402cab73b9aa",
+      "redacted": false
+    },
+    {
+      "source": "/home/ubuntu/manual_p2pkh_tx_byte_by_byte.py",
+      "destination": "artifacts/task-import/2026-08-22-bitcoin-p2pkh/manual_p2pkh_tx_byte_by_byte.py",
+      "bytes": 11985,
+      "sha256": "2ec00108dd68267bef9bc179f924ab1360fb010ff8769e210f6d265dd1f3ae80",
+      "redacted": true
+    },
+    {
+      "source": "/home/ubuntu/manual_p2pkh_tx_pycoin.py",
+      "destination": "artifacts/task-import/2026-08-22-bitcoin-p2pkh/manual_p2pkh_tx_pycoin.py",
+      "bytes": 5996,
+      "sha256": "166d65530c8fcb1caa926b483e01c546e6d290e65eb77bd8a6befac4c3675597",
+      "redacted": true
+    },
+    {
+      "source": "/home/ubuntu/validate_p2pkh_tx.py",
+      "destination": "artifacts/task-import/2026-08-22-bitcoin-p2pkh/validate_p2pkh_tx.py",
+      "bytes": 5637,
+      "sha256": "16630fec1350c158647d48db55cd2c99969ff42a03e60ef4daaaf0730dd51214",
+      "redacted": true
+    },
+    {
+      "source": "/home/ubuntu/broadcast_tx.py",
+      "destination": "artifacts/task-import/2026-08-22-bitcoin-p2pkh/broadcast_tx.py",
+      "bytes": 2946,
+      "sha256": "3b43d6d802d89078ecf954d426d84860b84f0943768511e57e3f48593eace2ab",
+      "redacted": false
+    },
+    {
+      "source": "/home/ubuntu/extract_pubkey.py",
+      "destination": "artifacts/task-import/2026-08-22-bitcoin-p2pkh/extract_pubkey.py",
+      "bytes": 2314,
+      "sha256": "e52cdafe06c3b0657a60faf69204c2711748212bd17d98cc5c51cd421c94436f",
+      "redacted": false
+    },
+    {
+      "source": "/home/ubuntu/find_pubkey_deep.py",
+      "destination": "artifacts/task-import/2026-08-22-bitcoin-p2pkh/find_pubkey_deep.py",
+      "bytes": 3036,
+      "sha256": "bbb0e2df684957d3f906eed1e2c0b818884d7791e1f4b870de0e7364b0377937",
+      "redacted": false
+    },
+    {
+      "source": "/home/ubuntu/inspect_hex.py",
+      "destination": "artifacts/task-import/2026-08-22-bitcoin-p2pkh/inspect_hex.py",
+      "bytes": 1462,
+      "sha256": "91b5e08956f0ad539bfef4f0d1362e1dac314851d1abe7a7146f217604dc464b",
+      "redacted": false
+    },
+    {
+      "source": "/home/ubuntu/search_hex_by_pubkey.py",
+      "destination": "artifacts/task-import/2026-08-22-bitcoin-p2pkh/search_hex_by_pubkey.py",
+      "bytes": 1535,
+      "sha256": "79723e6d7890f01410833935fd76e0f6ea6f1b78278a28965ca8fb8e90975016",
+      "redacted": false
+    },
+    {
+      "source": "/home/ubuntu/search_wif_by_pubkey.py",
+      "destination": "artifacts/task-import/2026-08-22-bitcoin-p2pkh/search_wif_by_pubkey.py",
+      "bytes": 1509,
+      "sha256": "ace72d7e5a0c2d4d0cdccf2c88c3f3b71f8a2e6f506a067919cc4b6acbcdd25d",
+      "redacted": false
+    },
+    {
+      "source": "/home/ubuntu/test_bitcoinlib_input.py",
+      "destination": "artifacts/task-import/2026-08-22-bitcoin-p2pkh/test_bitcoinlib_input.py",
+      "bytes": 121,
+      "sha256": "1446b5a47342e4fe5f26201e307e2692489d2f74455bbcec97f73225def742ae",
+      "redacted": false
+    },
+    {
+      "source": "/home/ubuntu/todo.md",
+      "destination": "artifacts/task-import/2026-08-22-bitcoin-p2pkh/todo.md",
+      "bytes": 555,
+      "sha256": "bd39e33928704a87794fe736a029f96d4d8dc67e9900dfddbd71447f9c4eaec2",
+      "redacted": false
+    }
+  ]
+}
