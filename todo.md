@@ -13,10 +13,10 @@
 - [x] Validar integridade dos arquivos compactados (`.zip`) de importação.
 - [x] Confirmar zero deleções de arquivos de outros desenvolvedores.
 
-- [ ] Corrigir o validador Safe Recovery para suportar clones limpos single-branch sem referência local `origin/main`.
+- [x] Corrigir o validador Safe Recovery para suportar clones limpos single-branch sem referência local `origin/main`.
 - [ ] Registrar os fluxos JOB, Manus'crito, Nerd-PHD e Cronos no roteador tRPC ativo do dashboard.
 - [ ] Adicionar testes de integração específicos para as procedures dos agentes IA.
 - [ ] Investigar o encerramento 143 do build de produção sob a limitação de memória do sandbox.
-- [ ] Corrigir o harness de integração para compilar os fluxos `.ts` pelo reconhecimento nativo da extensão.
+- [x] Corrigir o harness de integração para compilar os fluxos `.ts` pelo reconhecimento nativo da extensão.
 - [ ] Avaliar e remediar a presença de credenciais sensíveis no `.project-config.json` e nos ZIPs já publicados, sem expor valores.
 - [x] Registrar decisão da opção A: manter os ZIPs inalterados e documentar o risco sem publicar o arquivo sensível.
