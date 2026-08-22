@@ -1,0 +1,14 @@
+README.md
+SECURITY.md
+backend/requirements.txt
+backend/src/electrum_client.py
+backend/src/main.py
+backend/src/routes/wallet.py
+backend/src/static/app.js
+backend/src/static/index.html
+backend/src/wallet_parser.py
+docs/README.md
+docs/architecture_design.md
+docs/fenix_wallet_documentation.md
+docs/todo.md
+validation/IMPORT_MANIFEST.md

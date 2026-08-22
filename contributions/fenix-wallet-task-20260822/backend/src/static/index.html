@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dashboard Saldos Wallet - FênixWallet</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+    :root {
+        --primary: #121212;
+        --secondary: #1e1e1e;
+        --accent: #00ffcc;
+        --accent-dark: #00cc99;
+        --text: #ffffff;
+        --text-secondary: #b0b0b0;
+        --success: #4caf50;
+        --warning: #ff9800;
+        --danger: #f44336;
+        --border: #333333;
+        --tab-active: #2a2a2a;
+    }
+    
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    
+    body {
+        background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+        color: var(--text);
+        min-height: 100vh;
+        padding: 20px;
+    }
+    
+    .container {
+        max-width: 1400px;
+        margin: 0 auto;
+    }
+    
+    header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px 0;
+        border-bottom: 1px solid var(--border);
+        margin-bottom: 20px;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+    
+    .logo {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+    }
+    
+    .logo-icon {
+        background: var(--accent);
+        width: 50px;
+        height: 50px;
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 24px;
+        color: #000;
+        animation: pulse 2s infinite;
+    }
+    
+    @keyframes pulse {
+        0% { box-shadow: 0 0 0 0 rgba(0, 255, 204, 0.7); }
+        70% { box-shadow: 0 0 0 10px rgba(0, 255, 204, 0); }
+        100% { box-shadow: 0 0 0 0 rgba(0, 255, 204, 0); }
+    }
+    
+    .logo-text {
+        font-size: 28px;
+        font-weight: 700;
+        text-shadow: 0 0 10px rgba(0, 255, 204, 0.3);
+    }
+    
+    .logo-text span {
+        color: var(--accent);
+    }
+    
+    .controls {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        background: rgba(30, 30, 30, 0.8);
+        padding: 15px;
+        border-radius: 10px;
+        flex-wrap: wrap;
+        backdrop-filter: blur(5px);
+        border: 1px solid rgba(0, 255, 204, 0.2);
+    }
+    
+    .wallet-tabs {
+        display: flex;
+        background: var(--secondary);
+        border-radius: 10px;
+        overflow: hidden;
+        margin-bottom: 20px;
+        border: 1px solid var(--border);
+    }
+    
+    .tab {
+        flex: 1;
+        padding: 15px 20px;
+        text-align: center;
+        cursor: pointer;
+        transition: all 0.3s;
+        font-weight: 500;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+    }
+    
+    .tab:hover {
+        background: #2a2a2a;
+    }
+    
+    .tab.active {
+        background: var(--tab-active);
+        color: var(--accent);
+        font-weight: 600;
+        border-bottom: 2px solid var(--accent);
+    }
+    
+    .token-input {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        flex: 1;
+    }
+    
+    .token-input input {
+        padding: 12px 15px;
+        border-radius: 6px;
+        border: 1px solid var(--border);
+        background: #2a2a2a;
+        color: var(--text);
+        width: 100%;
+        transition: all 0.3s;
+    }
+    
+    .token-input input:focus {
+        outline: none;
+        border-color: var(--accent);
+        box-shadow: 0 0 0 2px rgba(0, 255, 204, 0.3);
+    }
+    
+    .action-btn {
+        padding: 12px 25px;
+        background: var(--accent);
+        border: none;
+        border-radius: 6px;
+        font-weight: 600;
+        cursor: pointer;
+        color: #000;
+        transition: all 0.3s;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    
+    .action-btn:hover {
+        background: var(--accent-dark);
+        transform: translateY(-2px);
+        box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+    }
+    
+    .action-btn.secondary {
+        background: #2a2a2a;
+        color: var(--text);
+    }
+    
+    .action-btn.secondary:hover {
+        background: #333;
+    }
+    
+    .action-btn:disabled {
+        opacity: 0.6;
+        cursor: not-allowed;
+        transform: none;
+    }
+    
+    .summary-cards {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 20px;
+        margin-bottom: 30px;
+    }
+    
+    .card {
+        background: rgba(30, 30, 30, 0.7);
+        border-radius: 10px;
+        padding: 25px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        backdrop-filter: blur(5px);
+        border: 1px solid rgba(0, 255, 204, 0.1);
+        transition: transform 0.3s;
+    }
+    
+    .card:hover {
+        transform: translateY(-5px);
+        border-color: rgba(0, 255, 204, 0.3);
+    }
+    
+    .card-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 20px;
+    }
+    
+    .card-title {
+        font-size: 18px;
+        color: var(--text-secondary);
+    }
+    
+    .card-icon {
+        width: 50px;
+        height: 50px;
+        border-radius: 10px;
+        background: rgba(0, 255, 204, 0.15);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--accent);
+        font-size: 20px;
+    }
+    
+    .card-value {
+        font-size: 32px;
+        font-weight: 700;
+        margin-bottom: 5px;
+        text-shadow: 0 0 10px rgba(0, 255, 204, 0.2);
+    }
+    
+    .card-subtext {
+        color: var(--text-secondary);
+        font-size: 14px;
+    }
+    
+    .table-container {
+        background: rgba(30, 30, 30, 0.7);
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        margin-bottom: 30px;
+        overflow-x: auto;
+        backdrop-filter: blur(5px);
+        border: 1px solid rgba(0, 255, 204, 0.1);
+    }
+    
+    table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+    
+    th {
+        background: rgba(42, 42, 42, 0.8);
+        color: var(--accent);
+        text-align: left;
+        padding: 16px 20px;
+        font-weight: 600;
+        position: sticky;
+        top: 0;
+    }
+    
+    td {
+        padding: 14px 20px;
+        border-bottom: 1px solid rgba(51, 51, 51, 0.5);
+        color: var(--text);
+    }
+    
+    tr:nth-child(even) {
+        background: rgba(255, 255, 255, 0.03);
+    }
+    
+    tr:hover {
+        background: rgba(0, 255, 204, 0.05);
+    }
+    
+    .address-cell {
+        max-width: 300px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+    
+    .copy-btn {
+        background: none;
+        border: none;
+        color: var(--accent);
+        cursor: pointer;
+        margin-left: 5px;
+        font-size: 14px;
+        transition: all 0.2s;
+    }
+    
+    .copy-btn:hover {
+        transform: scale(1.1);
+        color: var(--accent-dark);
+    }
+    
+    .footer-actions {
+        display: flex;
+        justify-content: flex-end;
+        gap: 15px;
+        margin-top: 20px;
+    }
+    
+    .loading {
+        text-align: center;
+        padding: 40px;
+        color: var(--text-secondary);
+    }
+    
+    .spinner {
+        border: 4px solid rgba(0, 0, 0, 0.1);
+        border-top: 4px solid var(--accent);
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        animation: spin 1s linear infinite;
+        margin: 0 auto 20px;
+    }
+    
+    @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+    }
+    
+    .error {
+        color: var(--danger);
+        background: rgba(244, 67, 54, 0.1);
+        padding: 15px;
+        border-radius: 6px;
+        margin: 10px 0;
+        display: none;
+        border-left: 4px solid var(--danger);
+    }
+    
+    .wallet-info {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 20px;
+        padding: 15px;
+        background: rgba(0, 255, 204, 0.1);
+        border-radius: 8px;
+        border-left: 4px solid var(--accent);
+    }
+    
+    .status-indicator {
+        display: inline-block;
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        margin-right: 8px;
+    }
+    
+    .status-confirmed {
+        background-color: var(--success);
+    }
+    
+    .status-pending {
+        background-color: var(--warning);
+    }
+    
+    .status-error {
+        background-color: var(--danger);
+    }
+    
+    .status-empty {
+        background-color: var(--text-secondary);
+    }
+    
+    .progress-container {
+        height: 5px;
+        background: #2a2a2a;
+        border-radius: 3px;
+        margin: 20px 0;
+        overflow: hidden;
+    }
+    
+    .progress-bar {
+        height: 100%;
+        background: var(--accent);
+        border-radius: 3px;
+        width: 0%;
+        transition: width 0.4s ease;
+    }
+    
+    .toast {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background: rgba(30, 30, 30, 0.9);
+        color: white;
+        padding: 15px 25px;
+        border-radius: 8px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+        transform: translateY(100px);
+        opacity: 0;
+        transition: all 0.3s ease;
+        backdrop-filter: blur(5px);
+        border-left: 4px solid var(--accent);
+        z-index: 1000;
+    }
+    
+    .toast.show {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    
+    .toast.error {
+        border-left-color: var(--danger);
+    }
+    
+    .toast.success {
+        border-left-color: var(--success);
+    }
+    
+    .modal {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.8);
+        z-index: 1001;
+        align-items: center;
+        justify-content: center;
+        backdrop-filter: blur(5px);
+    }
+    
+    .modal-content {
+        background: var(--secondary);
+        border-radius: 10px;
+        padding: 30px;
+        width: 90%;
+        max-width: 500px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        border: 1px solid var(--accent);
+    }
+    
+    .modal-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 20px;
+    }
+    
+    .modal-title {
+        font-size: 24px;
+        color: var(--accent);
+    }
+    
+    .close-btn {
+        background: none;
+        border: none;
+        color: var(--text);
+        font-size: 24px;
+        cursor: pointer;
+    }
+    
+    .upload-area {
+        border: 2px dashed var(--border);
+        border-radius: 10px;
+        padding: 40px 20px;
+        text-align: center;
+        margin-bottom: 20px;
+        cursor: pointer;
+        transition: all 0.3s;
+    }
+    
+    .upload-area:hover {
+        border-color: var(--accent);
+        background: rgba(0, 255, 204, 0.05);
+    }
+    
+    .upload-icon {
+        font-size: 48px;
+        color: var(--accent);
+        margin-bottom: 15px;
+    }
+    
+    .file-input {
+        display: none;
+    }
+    
+    .file-info {
+        margin-top: 15px;
+        font-size: 14px;
+        color: var(--text-secondary);
+    }
+    
+    .password-input {
+        width: 100%;
+        padding: 12px 15px;
+        border-radius: 6px;
+        border: 1px solid var(--border);
+        background: #2a2a2a;
+        color: var(--text);
+        margin-bottom: 20px;
+    }
+    
+    .password-input:focus {
+        outline: none;
+        border-color: var(--accent);
+        box-shadow: 0 0 0 2px rgba(0, 255, 204, 0.3);
+    }
+    
+    @media (max-width: 768px) {
+        .controls {
+            flex-direction: column;
+            align-items: stretch;
+        }
+        
+        .wallet-tabs {
+            flex-direction: column;
+        }
+        
+        .token-input input {
+            width: 100%;
+        }
+        
+        .footer-actions {
+            flex-direction: column;
+        }
+        
+        .action-btn {
+            width: 100%;
+            justify-content: center;
+        }
+    }
+</style>
+</head>
+<body>
+<div class="container">
+    <header>
+        <div class="logo">
+            <div class="logo-icon">
+                <i class="fas fa-wallet"></i>
+            </div>
+            <div class="logo-text">Fênix<span>Wallet</span></div>
+        </div>
+        
+        <div class="controls">
+            <div class="token-input">
+                <i class="fas fa-key"></i>
+                <input id="token" type="text" placeholder="Token BlockCypher" value="b5dc451970ad4fada007af38ae15332f">
+            </div>
+            
+            <button class="action-btn" id="importBtn">
+                <i class="fas fa-file-upload"></i> Importar Wallet
+            </button>
+            
+            <button class="action-btn" id="loadBtn">
+                <i class="fas fa-sync-alt"></i> Carregar Saldos
+            </button>
+        </div>
+    </header>
+    
+    <div class="wallet-tabs">
+        <div class="tab active" data-wallet="fenix">
+            <i class="fas fa-fire"></i> Fênix
+        </div>
+        <div class="tab" data-wallet="genesis">
+            <i class="fas fa-seedling"></i> Gênesis
+        </div>
+        <div class="tab" data-wallet="imported">
+            <i class="fas fa-file-import"></i> Importadas
+        </div>
+    </div>
+    
+    <div class="wallet-info">
+        <i class="fas fa-info-circle"></i>
+        <div>Selecione uma carteira e clique em "Carregar Saldos" para verificar os saldos das chaves</div>
+    </div>
+    
+    <div class="progress-container">
+        <div class="progress-bar" id="progressBar"></div>
+    </div>
+    
+    <div class="error" id="errorMsg"></div>
+    
+    <div class="summary-cards">
+        <div class="card">
+            <div class="card-header">
+                <div class="card-title">Saldo Total Confirmado</div>
+                <div class="card-icon">
+                    <i class="fas fa-check-circle"></i>
+                </div>
+            </div>
+            <div class="card-value" id="totalConfirmed">0 BTC</div>
+            <div class="card-subtext">Saldo disponível para gasto</div>
+        </div>
+        
+        <div class="card">
+            <div class="card-header">
+                <div class="card-title">Saldo Não Confirmado</div>
+                <div class="card-icon">
+                    <i class="fas fa-clock"></i>
+                </div>
+            </div>
+            <div class="card-value" id="totalUnconfirmed">0 BTC</div>
+            <div class="card-subtext">Transações pendentes de confirmação</div>
+        </div>
+        
+        <div class="card">
+            <div class="card-header">
+                <div class="card-title">Total de Transações</div>
+                <div class="card-icon">
+                    <i class="fas fa-exchange-alt"></i>
+                </div>
+            </div>
+            <div class="card-value" id="totalTransactions">0</div>
+            <div class="card-subtext">Transações registradas na rede</div>
+        </div>
+    </div>
+    
+    <div class="table-container">
+        <table id="saldoTable">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>WIF</th>
+                    <th>Endereço Público</th>
+                    <th>Saldo Confirmado (BTC)</th>
+                    <th>Saldo Não Confirmado (BTC)</th>
+                    <th>Transações</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="loading">
+                    <td colspan="7">
+                        <div class="spinner"></div>
+                        <div>Selecione uma carteira e clique em "Carregar Saldos"</div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    
+    <div class="footer-actions">
+        <button class="action-btn secondary" onclick="exportCSV()">
+            <i class="fas fa-file-export"></i> Exportar CSV
+        </button>
+        <button class="action-btn" id="refreshBtn">
+            <i class="fas fa-redo"></i> Atualizar Dados
+        </button>
+    </div>
+</div>
+
+<!-- Modal de Importação -->
+<div class="modal" id="importModal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h2 class="modal-title">Importar Carteira</h2>
+            <button class="close-btn" onclick="closeImportModal()">&times;</button>
+        </div>
+        
+        <div class="upload-area" onclick="document.getElementById('fileInput').click()">
+            <div class="upload-icon">
+                <i class="fas fa-cloud-upload-alt"></i>
+            </div>
+            <div>
+                <strong>Clique para selecionar arquivo</strong><br>
+                ou arraste e solte aqui
+            </div>
+            <div class="file-info">
+                Formatos suportados: .dat, .wallet, .backup
+            </div>
+        </div>
+        
+        <input type="file" id="fileInput" class="file-input" accept=".dat,.wallet,.backup" onchange="handleFileSelect(event)">
+        
+        <input type="password" id="walletPassword" class="password-input" placeholder="Senha da carteira (se necessário)">
+        
+        <div style="display: flex; gap: 10px; justify-content: flex-end;">
+            <button class="action-btn secondary" onclick="closeImportModal()">Cancelar</button>
+            <button class="action-btn" id="uploadBtn" onclick="uploadWallet()" disabled>
+                <i class="fas fa-upload"></i> Importar
+            </button>
+        </div>
+    </div>
+</div>
+
+<!-- Toast para notificações -->
+<div class="toast" id="toast"></div>
+
+<script src="app.js"></script>
+</body>
+</html>
