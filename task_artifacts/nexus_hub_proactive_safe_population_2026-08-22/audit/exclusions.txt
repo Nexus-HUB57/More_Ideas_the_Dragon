@@ -1,0 +1,1 @@
+Excluded by design: node_modules/, dist/, .git/, .manus-logs/, .env, .env.* except .env.example, .project-config.json, and files whose basename suggests secret/credential/token/password/private-key. The local .project-config.json was inspected and removed because it contained injected database, storage, and application credentials.

@@ -1,0 +1,4 @@
+Total de arquivos no pacote: 316
+Entradas cobertas por audit/MANIFEST.sha256: 313
+Arquivos de controle excluídos do próprio manifest por auto-referência: audit/MANIFEST.sha256, audit/FILE_COUNT.txt, audit/manifest-policy.txt
+Arquivos de fonte e roadmap antes dos manifests: 305
