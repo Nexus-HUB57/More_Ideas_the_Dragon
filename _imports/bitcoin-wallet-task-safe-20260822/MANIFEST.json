@@ -1,0 +1,17 @@
+{
+  "package": "bitcoin-wallet-task-safe-20260822",
+  "source_policy": "isolated import; no overwrite or deletion",
+  "text_files": 27,
+  "safe_archives": [
+    "bitcoin-wallet-backend-safe.zip",
+    "bitcoin-wallet-frontend-safe.zip"
+  ],
+  "excluded_sensitive_inputs": [
+    "upload/ImportarEndereçoseChavesnaCarteiraBTC.zip",
+    "upload/FDR_Master_Wallet_Complete_20251006_143555.csv",
+    "upload/FDR_Encrypted_Backup_20251006_143557.json",
+    "upload/extracted_keys_and_addresses.txt",
+    "bitcoin-wallet-backend.tar.gz"
+  ],
+  "redaction": "CAISK passphrase replaced with ${CAISK_PASSPHRASE}"
+}
