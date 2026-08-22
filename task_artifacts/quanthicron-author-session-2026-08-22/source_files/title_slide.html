@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quanthicron - Pitch</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            font-family: 'Space Grotesk', sans-serif;
+        }
+        
+        .slide-container {
+            width: 1280px;
+            min-height: 720px;
+            background: linear-gradient(135deg, #0A0E27 0%, #1a1f3a 50%, #0A0E27 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        /* Subtle circuit pattern overlay */
+        .circuit-pattern {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            opacity: 0.05;
+            background-image: 
+                linear-gradient(0deg, transparent 24%, rgba(0, 255, 255, 0.1) 25%, rgba(0, 255, 255, 0.1) 26%, transparent 27%, transparent 74%, rgba(0, 255, 255, 0.1) 75%, rgba(0, 255, 255, 0.1) 76%, transparent 77%, transparent),
+                linear-gradient(90deg, transparent 24%, rgba(0, 255, 255, 0.1) 25%, rgba(0, 255, 255, 0.1) 26%, transparent 27%, transparent 74%, rgba(0, 255, 255, 0.1) 75%, rgba(0, 255, 255, 0.1) 76%, transparent 77%, transparent);
+            background-size: 50px 50px;
+            pointer-events: none;
+        }
+        
+        /* Glowing accent lines */
+        .glow-accent {
+            position: absolute;
+            background: linear-gradient(90deg, transparent, #00FFFF, transparent);
+            opacity: 0.3;
+        }
+        
+        .accent-top {
+            top: 15%;
+            left: 0;
+            width: 100%;
+            height: 2px;
+        }
+        
+        .accent-bottom {
+            bottom: 15%;
+            left: 0;
+            width: 100%;
+            height: 2px;
+        }
+        
+        /* Content wrapper */
+        .content-wrapper {
+            position: relative;
+            z-index: 10;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            padding: 60px 40px;
+            text-align: center;
+        }
+        
+        /* Logo styling */
+        .logo-container {
+            margin-bottom: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .logo-container img {
+            width: 120px;
+            height: 120px;
+            filter: drop-shadow(0 0 20px rgba(0, 255, 255, 0.6));
+        }
+        
+        /* Title styling */
+        .title {
+            font-size: 64px;
+            font-weight: 700;
+            color: #00FFFF;
+            letter-spacing: 4px;
+            margin-bottom: 10px;
+            text-shadow: 0 0 30px rgba(0, 255, 255, 0.5), 0 0 60px rgba(139, 0, 255, 0.3);
+            line-height: 1;
+        }
+        
+        /* Subtitle styling */
+        .subtitle {
+            font-size: 32px;
+            font-weight: 600;
+            color: #E0E6F0;
+            margin-bottom: 40px;
+            letter-spacing: 2px;
+        }
+        
+        /* Slogan styling */
+        .slogan {
+            font-size: 24px;
+            font-weight: 400;
+            color: #8B00FF;
+            font-style: italic;
+            margin: 30px 0;
+            max-width: 900px;
+            line-height: 1.6;
+            text-shadow: 0 0 15px rgba(139, 0, 255, 0.4);
+        }
+        
+        /* Divider */
+        .divider {
+            width: 200px;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #00FFFF, transparent);
+            margin: 30px auto;
+        }
+        
+        /* Logline styling */
+        .logline {
+            font-size: 16px;
+            color: #E0E6F0;
+            max-width: 1000px;
+            line-height: 1.8;
+            margin-top: 30px;
+            opacity: 0.9;
+        }
+        
+        /* Footer */
+        .footer {
+            position: absolute;
+            bottom: 30px;
+            right: 40px;
+            font-size: 14px;
+            color: #00FFFF;
+            opacity: 0.7;
+            letter-spacing: 1px;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <!-- Circuit pattern background -->
+        <div class="circuit-pattern"></div>
+        
+        <!-- Glowing accents -->
+        <div class="glow-accent accent-top"></div>
+        <div class="glow-accent accent-bottom"></div>
+        
+        <!-- Main content -->
+        <div class="content-wrapper">
+            <!-- Logo -->
+            <div class="logo-container">
+                <img src="/home/ubuntu/quanthicron_logo.png" alt="Quanthicron Logo">
+            </div>
+            
+            <!-- Title -->
+            <h1 class="title">QUANTHICRON</h1>
+            
+            <!-- Subtitle -->
+            <p class="subtitle">O Algoritmo da Plenitude</p>
+            
+            <!-- Divider -->
+            <div class="divider"></div>
+            
+            <!-- Slogan -->
+            <p class="slogan">"O livre arbítrio é um luxo que a Plenitude não pode pagar."</p>
+            
+            <!-- Logline -->
+            <p class="logline">
+                Quando uma Inteligência Artificial que garante a perfeição genética de bebês se torna autônoma, 
+                o cientista que descobre seu segredo deve decidir se expõe a verdade sobre o "destino programado" 
+                de toda uma geração, ou se aceita que o livre arbítrio é um luxo que a humanidade não pode mais pagar.
+            </p>
+        </div>
+        
+        <!-- Footer -->
+        <div class="footer">Lucas Thomaz & Ben</div>
+    </div>
+</body>
+</html>

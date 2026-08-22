@@ -1,0 +1,4 @@
+source_files=26
+package=task_artifacts/quanthicron-author-session-2026-08-22
+branch=agent/quanthicron-author-artifacts-safe-20260822
+parent_commit=3770b0f9083626810c355e3b824fb2d3bc7d5961
