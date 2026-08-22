@@ -1,0 +1,46 @@
+name: NexusGenesis Safe Validation
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'task_imports/nexusgenesis_20260822/**'
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    name: Validate core ${{ matrix.core }}
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      max-parallel: 50
+      matrix:
+        core: [01, 02, 03, 04, 05, 06, 07, 08, 09, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50]
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Static safety checks
+        shell: bash
+        run: |
+          set -euo pipefail
+          root='task_imports/nexusgenesis_20260822'
+          test -f "$root/metadata/SAFE_IMPORT_MANIFEST.tsv"
+          test -f "$root/README.md"
+          ! grep -RInE --exclude='*.zip' '(BEGIN (RSA|OPENSSH|PRIVATE) KEY|xprv[0-9A-Za-z]|-----BEGIN)' "$root/source" || {
+            echo 'Sensitive material detected in imported source.' >&2
+            exit 1
+          }
+          echo "Core ${{ matrix.core }} validated in read-only dry-run mode."
+
+      - name: Python syntax checks
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 -m compileall -q task_imports/nexusgenesis_20260822/source
+
+      - name: Explicit no-side-effects assertion
+        run: |
+          echo 'No wallet recovery, transaction signing, withdrawal, exchange, or payment action is executed.'
