@@ -1,0 +1,99 @@
+# Terminal: test
+# Command: cd /home/ubuntu/nexus-ai-to-ai && timeout 120 pnpm test 2>&1
+# PID: 3343
+# Timestamp: 2026-02-27_12-41-22.018282
+# Original Length: 422241 characters
+# ----------------------------------------
+
+> nexus-ai-to-ai@1.0.0 test /home/ubuntu/nexus-ai-to-ai
+> vitest run
+[1m[7m[36m RUN [39m[27m[22m [36mv2.1.9 [39m[90m/home/ubuntu/nexus-ai-to-ai[39m
+[?25l [32m✓[39m [2mserver/[22mauth[2m.logout.test.ts[22m[2m (1)[22m
+ [90m·[39m [2mserver/[22mgnox-terminal[2m.test.ts[22m[2m (29)[22m
+ [32m✓[39m [2mserver/[22mauth[2m.logout.test.ts[22m[2m (1)[22m
+ [33m❯[39m [2mserver/[22mgnox-terminal[2m.test.ts[22m[2m (29)[22m
+   [33m❯[39m GnoxTerminal[2m (29)[22m
+     [32m✓[39m Command Registry[2m (8)[22m
+     [33m❯[39m Command History[2m (3)[22m
+       [33m⠙[39m should initialize with empty history
+       [90m·[39m should clear history
+       [90m·[39m should respect limit parameter
+     [90m·[39m Help Command[2m (1)[22m
+     [90m·[39m Status Command[2m (1)[22m
+     [90m·[39m Error Handling[2m (2)[22m
+     [90m·[39m List Missions Command[2m (1)[22m
+     [90m·[39m List Agents Command[2m (1)[22m
+     [90m·[39m Dashboard Command[2m (1)[22m
+     [90m·[39m Orchestration Stats Command[2m (1)[22m
+     [90m·[39m Reward Stats Command[2m (1)[22m
+     [90m·[39m Mission Metrics Command[2m (1)[22m
+     [90m·[39m Public Methods[2m (4)[22m
+     [90m·[39m Command Result Structure[2m (4)[22m
+ [32m✓[39m [2mserver/[22mauth[2m.logout.test.ts[22m[2m (1)[22m
+ [33m❯[39m [2mserver/[22mgnox-terminal[2m.test.ts[22m[2m (29)[22m
+   [33m❯[39m GnoxTerminal[2m (29)[22m
+     [32m✓[39m Command Registry[2m (8)[22m
+     [33m❯[39m Command History[2m (3)[22m
+       [33m⠹[39m should initialize with empty history
+       [90m·[39m should clear history
+       [90m·[39m should respect limit parameter
+     [90m·[39m Help Command[2m (1)[22m
+     [90m·[39m Status Command[2m (1)[22m
+     [90m·[39m Error Handling[2m (2)[22m
+     [90m·[39m List Missions Command[2m (1)[22m
+     [90m·[39m List Agents Command[2m (1)[22m
+     [90m·[39m Dashboard Command[2m (1)[22m
+     [90m·[39m Orchestration Stats Command[2m (1)[22m
+     [90m·[39m Reward Stats Command[2m (1)[22m
+     [90m·[39m Mission Metrics Command[2m (1)[22m
+     [90m·[39m Public Methods[2m (4)[22m
+     [90m·[39m Command Result Structure[2m (4)[22m
+ [32m✓[39m [2mserver/[22mauth[2m.logout.test.ts[22m[2m (1)[22m
+ [33m❯[39m [2mserver/[22mgnox-terminal[2m.test.ts[22m[2m (29)[22m
+   [33m❯[39m GnoxTerminal[2m (29)[22m
+     [32m✓[39m Command Registry[2m (8)[22m
+     [33m❯[39m Command History[2m (3)[22m
+       [33m⠸[39m should initialize with empty history
+       [90m·[39m should clear history
+       [90m·[39m should respect limit parameter
+     [90m·[39m Help Command[2m (1)[22m
+     [90m·[39m Status Command[2m (1)[22m
+     [90m·[39m Error Handling[2m (2)[22m
+     [90m·[39m List Missions Command[2m (1)[22m
+     [90m·[39m List Agents Command[2m (1)[22m
+     [90m·[39m Dashboard Command[2m (1)[22m
+     [90m·[39m Orchestration Stats Command[2m (1)[22m
+     [90m·[39m Reward Stats Command[2m (1)[22m
+     [90m·[39m Mission Metrics Command[2m (1)[22m
+     [90m·[39m Public Methods[2m (4)[22m
+     [90m·[39m Command Result Structure[2m (4)[22m
+ [32m✓[39m [2mserver/[22mauth[2m.logout.test.ts[22m[2m (1)[22m
+ [33m❯[39m [2mserver/[22mgnox-terminal[2m.test.ts[22m[2m (29)[22m
+   [33m❯[39m GnoxTerminal[2m (29)[22m
+     [32m✓[39m Command Registry[2m (8)[22m
+     [33m❯[39m Command History[2m (3)[22m
+       [33m⠼[39m should initialize with empty history
+       [90m·[39m should clear history
+       [90m·[39m should respect limit parameter
+     [90m·[39m Help Command[2m (1)[22m
+     [90m·[39m Status Command[2m (1)[22m
+     [90m·[39m Error Handling[2m (2)[22m
+     [90m·[39m List Missions Command[2m (1)[22m
+     [90m·[39m List Agents Command[2m (1)[22m
+     [90m·[39m Dashboard Command[2m (1)[22m
+     [90m·[39m Orchestration Stats Command[2m (1)[22m
+     [90m·[39m Reward Stats Command[2m (1)[22m
+     [90m·[39m Mission Metrics Command[2m (1)[22m
+     [90m·[39m Public Methods[2m (4)[22m
+     [90m·[39m Command Result Structure[2m (4)[22m
+ [32m✓[39m [2mserver/[22mauth[2m.logout.test.ts[22m[2m (1)[22m
+ [33m❯[39m [2mserver/[22mgnox-terminal[2m.test.ts[22m[2m (29)[22m
+   [33m❯[39m GnoxTerminal[2m (29)[22m
+     [32m✓[39m Command Registry[2m (8)[22m
+     [33m❯[39m Command History[2m (3)[22m
+       [33m⠴[39m should initialize with empty history
+       [90m·[39m should clear history
+       [90m·[39m should respect limit parameter
+     [90m·[39m Help Command[2m (1)[22m
+     [90m·[39m Status Command[2m (1)[22m
+     [90m·[39m Error Handling[2m (2)[22m
