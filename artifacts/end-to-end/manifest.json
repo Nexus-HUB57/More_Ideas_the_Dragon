@@ -1,0 +1,1799 @@
+{
+  "totalArtifacts": 299,
+  "artifacts": [
+    {
+      "id": "001",
+      "filename": "001-core-module.ts",
+      "category": "CORE",
+      "description": "Motor de Execu\u00e7\u00e3o, Conectores e Orquestra\u00e7\u00e3o de Agentes"
+    },
+    {
+      "id": "002",
+      "filename": "002-core-module.ts",
+      "category": "CORE",
+      "description": "Motor de Execu\u00e7\u00e3o, Conectores e Orquestra\u00e7\u00e3o de Agentes"
+    },
+    {
+      "id": "003",
+      "filename": "003-core-module.ts",
+      "category": "CORE",
+      "description": "Motor de Execu\u00e7\u00e3o, Conectores e Orquestra\u00e7\u00e3o de Agentes"
+    },
+    {
+      "id": "004",
+      "filename": "004-core-module.ts",
+      "category": "CORE",
+      "description": "Motor de Execu\u00e7\u00e3o, Conectores e Orquestra\u00e7\u00e3o de Agentes"
+    },
+    {
+      "id": "005",
+      "filename": "005-core-module.ts",
+      "category": "CORE",
+      "description": "Motor de Execu\u00e7\u00e3o, Conectores e Orquestra\u00e7\u00e3o de Agentes"
+    },
+    {
+      "id": "006",
+      "filename": "006-core-module.ts",
+      "category": "CORE",
+      "description": "Motor de Execu\u00e7\u00e3o, Conectores e Orquestra\u00e7\u00e3o de Agentes"
+    },
+    {
+      "id": "007",
+      "filename": "007-core-module.ts",
+      "category": "CORE",
+      "description": "Motor de Execu\u00e7\u00e3o, Conectores e Orquestra\u00e7\u00e3o de Agentes"
+    },
+    {
+      "id": "008",
+      "filename": "008-core-module.ts",
+      "category": "CORE",
+      "description": "Motor de Execu\u00e7\u00e3o, Conectores e Orquestra\u00e7\u00e3o de Agentes"
+    },
+    {
+      "id": "009",
+      "filename": "009-core-module.ts",
+      "category": "CORE",
+      "description": "Motor de Execu\u00e7\u00e3o, Conectores e Orquestra\u00e7\u00e3o de Agentes"
+    },
+    {
+      "id": "010",
+      "filename": "010-core-module.ts",
+      "category": "CORE",
+      "description": "Motor de Execu\u00e7\u00e3o, Conectores e Orquestra\u00e7\u00e3o de Agentes"
+    },
+    {
+      "id": "011",
+      "filename": "011-core-module.ts",
+      "category": "CORE",
+      "description": "Motor de Execu\u00e7\u00e3o, Conectores e Orquestra\u00e7\u00e3o de Agentes"
+    },
+    {
+      "id": "012",
+      "filename": "012-core-module.ts",
+      "category": "CORE",
+      "description": "Motor de Execu\u00e7\u00e3o, Conectores e Orquestra\u00e7\u00e3o de Agentes"
+    },
+    {
+      "id": "013",
+      "filename": "013-core-module.ts",
+      "category": "CORE",
+      "description": "Motor de Execu\u00e7\u00e3o, Conectores e Orquestra\u00e7\u00e3o de Agentes"
+    },
+    {
+      "id": "014",
+      "filename": "014-core-module.ts",
+      "category": "CORE",
+      "description": "Motor de Execu\u00e7\u00e3o, Conectores e Orquestra\u00e7\u00e3o de Agentes"
+    },
+    {
+      "id": "015",
+      "filename": "015-core-module.ts",
+      "category": "CORE",
+      "description": "Motor de Execu\u00e7\u00e3o, Conectores e Orquestra\u00e7\u00e3o de Agentes"
+    },
+    {
+      "id": "016",
+      "filename": "016-core-module.ts",
+      "category": "CORE",
+      "description": "Motor de Execu\u00e7\u00e3o, Conectores e Orquestra\u00e7\u00e3o de Agentes"
+    },
+    {
+      "id": "017",
+      "filename": "017-core-module.ts",
+      "category": "CORE",
+      "description": "Motor de Execu\u00e7\u00e3o, Conectores e Orquestra\u00e7\u00e3o de Agentes"
+    },
+    {
+      "id": "018",
+      "filename": "018-core-module.ts",
+      "category": "CORE",
+      "description": "Motor de Execu\u00e7\u00e3o, Conectores e Orquestra\u00e7\u00e3o de Agentes"
+    },
+    {
+      "id": "019",
+      "filename": "019-core-module.ts",
+      "category": "CORE",
+      "description": "Motor de Execu\u00e7\u00e3o, Conectores e Orquestra\u00e7\u00e3o de Agentes"
+    },
+    {
+      "id": "020",
+      "filename": "020-core-module.ts",
+      "category": "CORE",
+      "description": "Motor de Execu\u00e7\u00e3o, Conectores e Orquestra\u00e7\u00e3o de Agentes"
+    },
+    {
+      "id": "021",
+      "filename": "021-core-module.ts",
+      "category": "CORE",
+      "description": "Motor de Execu\u00e7\u00e3o, Conectores e Orquestra\u00e7\u00e3o de Agentes"
+    },
+    {
+      "id": "022",
+      "filename": "022-core-module.ts",
+      "category": "CORE",
+      "description": "Motor de Execu\u00e7\u00e3o, Conectores e Orquestra\u00e7\u00e3o de Agentes"
+    },
+    {
+      "id": "023",
+      "filename": "023-core-module.ts",
+      "category": "CORE",
+      "description": "Motor de Execu\u00e7\u00e3o, Conectores e Orquestra\u00e7\u00e3o de Agentes"
+    },
+    {
+      "id": "024",
+      "filename": "024-core-module.ts",
+      "category": "CORE",
+      "description": "Motor de Execu\u00e7\u00e3o, Conectores e Orquestra\u00e7\u00e3o de Agentes"
+    },
+    {
+      "id": "025",
+      "filename": "025-core-module.ts",
+      "category": "CORE",
+      "description": "Motor de Execu\u00e7\u00e3o, Conectores e Orquestra\u00e7\u00e3o de Agentes"
+    },
+    {
+      "id": "026",
+      "filename": "026-core-module.ts",
+      "category": "CORE",
+      "description": "Motor de Execu\u00e7\u00e3o, Conectores e Orquestra\u00e7\u00e3o de Agentes"
+    },
+    {
+      "id": "027",
+      "filename": "027-core-module.ts",
+      "category": "CORE",
+      "description": "Motor de Execu\u00e7\u00e3o, Conectores e Orquestra\u00e7\u00e3o de Agentes"
+    },
+    {
+      "id": "028",
+      "filename": "028-core-module.ts",
+      "category": "CORE",
+      "description": "Motor de Execu\u00e7\u00e3o, Conectores e Orquestra\u00e7\u00e3o de Agentes"
+    },
+    {
+      "id": "029",
+      "filename": "029-core-module.ts",
+      "category": "CORE",
+      "description": "Motor de Execu\u00e7\u00e3o, Conectores e Orquestra\u00e7\u00e3o de Agentes"
+    },
+    {
+      "id": "030",
+      "filename": "030-core-module.ts",
+      "category": "CORE",
+      "description": "Motor de Execu\u00e7\u00e3o, Conectores e Orquestra\u00e7\u00e3o de Agentes"
+    },
+    {
+      "id": "031",
+      "filename": "031-core-module.ts",
+      "category": "CORE",
+      "description": "Motor de Execu\u00e7\u00e3o, Conectores e Orquestra\u00e7\u00e3o de Agentes"
+    },
+    {
+      "id": "032",
+      "filename": "032-core-module.ts",
+      "category": "CORE",
+      "description": "Motor de Execu\u00e7\u00e3o, Conectores e Orquestra\u00e7\u00e3o de Agentes"
+    },
+    {
+      "id": "033",
+      "filename": "033-core-module.ts",
+      "category": "CORE",
+      "description": "Motor de Execu\u00e7\u00e3o, Conectores e Orquestra\u00e7\u00e3o de Agentes"
+    },
+    {
+      "id": "034",
+      "filename": "034-core-module.ts",
+      "category": "CORE",
+      "description": "Motor de Execu\u00e7\u00e3o, Conectores e Orquestra\u00e7\u00e3o de Agentes"
+    },
+    {
+      "id": "035",
+      "filename": "035-core-module.ts",
+      "category": "CORE",
+      "description": "Motor de Execu\u00e7\u00e3o, Conectores e Orquestra\u00e7\u00e3o de Agentes"
+    },
+    {
+      "id": "036",
+      "filename": "036-core-module.ts",
+      "category": "CORE",
+      "description": "Motor de Execu\u00e7\u00e3o, Conectores e Orquestra\u00e7\u00e3o de Agentes"
+    },
+    {
+      "id": "037",
+      "filename": "037-core-module.ts",
+      "category": "CORE",
+      "description": "Motor de Execu\u00e7\u00e3o, Conectores e Orquestra\u00e7\u00e3o de Agentes"
+    },
+    {
+      "id": "038",
+      "filename": "038-core-module.ts",
+      "category": "CORE",
+      "description": "Motor de Execu\u00e7\u00e3o, Conectores e Orquestra\u00e7\u00e3o de Agentes"
+    },
+    {
+      "id": "039",
+      "filename": "039-core-module.ts",
+      "category": "CORE",
+      "description": "Motor de Execu\u00e7\u00e3o, Conectores e Orquestra\u00e7\u00e3o de Agentes"
+    },
+    {
+      "id": "040",
+      "filename": "040-core-module.ts",
+      "category": "CORE",
+      "description": "Motor de Execu\u00e7\u00e3o, Conectores e Orquestra\u00e7\u00e3o de Agentes"
+    },
+    {
+      "id": "041",
+      "filename": "041-core-module.ts",
+      "category": "CORE",
+      "description": "Motor de Execu\u00e7\u00e3o, Conectores e Orquestra\u00e7\u00e3o de Agentes"
+    },
+    {
+      "id": "042",
+      "filename": "042-core-module.ts",
+      "category": "CORE",
+      "description": "Motor de Execu\u00e7\u00e3o, Conectores e Orquestra\u00e7\u00e3o de Agentes"
+    },
+    {
+      "id": "043",
+      "filename": "043-core-module.ts",
+      "category": "CORE",
+      "description": "Motor de Execu\u00e7\u00e3o, Conectores e Orquestra\u00e7\u00e3o de Agentes"
+    },
+    {
+      "id": "044",
+      "filename": "044-core-module.ts",
+      "category": "CORE",
+      "description": "Motor de Execu\u00e7\u00e3o, Conectores e Orquestra\u00e7\u00e3o de Agentes"
+    },
+    {
+      "id": "045",
+      "filename": "045-core-module.ts",
+      "category": "CORE",
+      "description": "Motor de Execu\u00e7\u00e3o, Conectores e Orquestra\u00e7\u00e3o de Agentes"
+    },
+    {
+      "id": "046",
+      "filename": "046-core-module.ts",
+      "category": "CORE",
+      "description": "Motor de Execu\u00e7\u00e3o, Conectores e Orquestra\u00e7\u00e3o de Agentes"
+    },
+    {
+      "id": "047",
+      "filename": "047-core-module.ts",
+      "category": "CORE",
+      "description": "Motor de Execu\u00e7\u00e3o, Conectores e Orquestra\u00e7\u00e3o de Agentes"
+    },
+    {
+      "id": "048",
+      "filename": "048-core-module.ts",
+      "category": "CORE",
+      "description": "Motor de Execu\u00e7\u00e3o, Conectores e Orquestra\u00e7\u00e3o de Agentes"
+    },
+    {
+      "id": "049",
+      "filename": "049-core-module.ts",
+      "category": "CORE",
+      "description": "Motor de Execu\u00e7\u00e3o, Conectores e Orquestra\u00e7\u00e3o de Agentes"
+    },
+    {
+      "id": "050",
+      "filename": "050-core-module.ts",
+      "category": "CORE",
+      "description": "Motor de Execu\u00e7\u00e3o, Conectores e Orquestra\u00e7\u00e3o de Agentes"
+    },
+    {
+      "id": "051",
+      "filename": "051-vault-module.ts",
+      "category": "VAULT",
+      "description": "Gerenciamento de Credenciais, Criptografia AES-256 e Secrets"
+    },
+    {
+      "id": "052",
+      "filename": "052-vault-module.ts",
+      "category": "VAULT",
+      "description": "Gerenciamento de Credenciais, Criptografia AES-256 e Secrets"
+    },
+    {
+      "id": "053",
+      "filename": "053-vault-module.ts",
+      "category": "VAULT",
+      "description": "Gerenciamento de Credenciais, Criptografia AES-256 e Secrets"
+    },
+    {
+      "id": "054",
+      "filename": "054-vault-module.ts",
+      "category": "VAULT",
+      "description": "Gerenciamento de Credenciais, Criptografia AES-256 e Secrets"
+    },
+    {
+      "id": "055",
+      "filename": "055-vault-module.ts",
+      "category": "VAULT",
+      "description": "Gerenciamento de Credenciais, Criptografia AES-256 e Secrets"
+    },
+    {
+      "id": "056",
+      "filename": "056-vault-module.ts",
+      "category": "VAULT",
+      "description": "Gerenciamento de Credenciais, Criptografia AES-256 e Secrets"
+    },
+    {
+      "id": "057",
+      "filename": "057-vault-module.ts",
+      "category": "VAULT",
+      "description": "Gerenciamento de Credenciais, Criptografia AES-256 e Secrets"
+    },
+    {
+      "id": "058",
+      "filename": "058-vault-module.ts",
+      "category": "VAULT",
+      "description": "Gerenciamento de Credenciais, Criptografia AES-256 e Secrets"
+    },
+    {
+      "id": "059",
+      "filename": "059-vault-module.ts",
+      "category": "VAULT",
+      "description": "Gerenciamento de Credenciais, Criptografia AES-256 e Secrets"
+    },
+    {
+      "id": "060",
+      "filename": "060-vault-module.ts",
+      "category": "VAULT",
+      "description": "Gerenciamento de Credenciais, Criptografia AES-256 e Secrets"
+    },
+    {
+      "id": "061",
+      "filename": "061-vault-module.ts",
+      "category": "VAULT",
+      "description": "Gerenciamento de Credenciais, Criptografia AES-256 e Secrets"
+    },
+    {
+      "id": "062",
+      "filename": "062-vault-module.ts",
+      "category": "VAULT",
+      "description": "Gerenciamento de Credenciais, Criptografia AES-256 e Secrets"
+    },
+    {
+      "id": "063",
+      "filename": "063-vault-module.ts",
+      "category": "VAULT",
+      "description": "Gerenciamento de Credenciais, Criptografia AES-256 e Secrets"
+    },
+    {
+      "id": "064",
+      "filename": "064-vault-module.ts",
+      "category": "VAULT",
+      "description": "Gerenciamento de Credenciais, Criptografia AES-256 e Secrets"
+    },
+    {
+      "id": "065",
+      "filename": "065-vault-module.ts",
+      "category": "VAULT",
+      "description": "Gerenciamento de Credenciais, Criptografia AES-256 e Secrets"
+    },
+    {
+      "id": "066",
+      "filename": "066-vault-module.ts",
+      "category": "VAULT",
+      "description": "Gerenciamento de Credenciais, Criptografia AES-256 e Secrets"
+    },
+    {
+      "id": "067",
+      "filename": "067-vault-module.ts",
+      "category": "VAULT",
+      "description": "Gerenciamento de Credenciais, Criptografia AES-256 e Secrets"
+    },
+    {
+      "id": "068",
+      "filename": "068-vault-module.ts",
+      "category": "VAULT",
+      "description": "Gerenciamento de Credenciais, Criptografia AES-256 e Secrets"
+    },
+    {
+      "id": "069",
+      "filename": "069-vault-module.ts",
+      "category": "VAULT",
+      "description": "Gerenciamento de Credenciais, Criptografia AES-256 e Secrets"
+    },
+    {
+      "id": "070",
+      "filename": "070-vault-module.ts",
+      "category": "VAULT",
+      "description": "Gerenciamento de Credenciais, Criptografia AES-256 e Secrets"
+    },
+    {
+      "id": "071",
+      "filename": "071-vault-module.ts",
+      "category": "VAULT",
+      "description": "Gerenciamento de Credenciais, Criptografia AES-256 e Secrets"
+    },
+    {
+      "id": "072",
+      "filename": "072-vault-module.ts",
+      "category": "VAULT",
+      "description": "Gerenciamento de Credenciais, Criptografia AES-256 e Secrets"
+    },
+    {
+      "id": "073",
+      "filename": "073-vault-module.ts",
+      "category": "VAULT",
+      "description": "Gerenciamento de Credenciais, Criptografia AES-256 e Secrets"
+    },
+    {
+      "id": "074",
+      "filename": "074-vault-module.ts",
+      "category": "VAULT",
+      "description": "Gerenciamento de Credenciais, Criptografia AES-256 e Secrets"
+    },
+    {
+      "id": "075",
+      "filename": "075-vault-module.ts",
+      "category": "VAULT",
+      "description": "Gerenciamento de Credenciais, Criptografia AES-256 e Secrets"
+    },
+    {
+      "id": "076",
+      "filename": "076-vault-module.ts",
+      "category": "VAULT",
+      "description": "Gerenciamento de Credenciais, Criptografia AES-256 e Secrets"
+    },
+    {
+      "id": "077",
+      "filename": "077-vault-module.ts",
+      "category": "VAULT",
+      "description": "Gerenciamento de Credenciais, Criptografia AES-256 e Secrets"
+    },
+    {
+      "id": "078",
+      "filename": "078-vault-module.ts",
+      "category": "VAULT",
+      "description": "Gerenciamento de Credenciais, Criptografia AES-256 e Secrets"
+    },
+    {
+      "id": "079",
+      "filename": "079-vault-module.ts",
+      "category": "VAULT",
+      "description": "Gerenciamento de Credenciais, Criptografia AES-256 e Secrets"
+    },
+    {
+      "id": "080",
+      "filename": "080-vault-module.ts",
+      "category": "VAULT",
+      "description": "Gerenciamento de Credenciais, Criptografia AES-256 e Secrets"
+    },
+    {
+      "id": "081",
+      "filename": "081-vault-module.ts",
+      "category": "VAULT",
+      "description": "Gerenciamento de Credenciais, Criptografia AES-256 e Secrets"
+    },
+    {
+      "id": "082",
+      "filename": "082-vault-module.ts",
+      "category": "VAULT",
+      "description": "Gerenciamento de Credenciais, Criptografia AES-256 e Secrets"
+    },
+    {
+      "id": "083",
+      "filename": "083-vault-module.ts",
+      "category": "VAULT",
+      "description": "Gerenciamento de Credenciais, Criptografia AES-256 e Secrets"
+    },
+    {
+      "id": "084",
+      "filename": "084-vault-module.ts",
+      "category": "VAULT",
+      "description": "Gerenciamento de Credenciais, Criptografia AES-256 e Secrets"
+    },
+    {
+      "id": "085",
+      "filename": "085-vault-module.ts",
+      "category": "VAULT",
+      "description": "Gerenciamento de Credenciais, Criptografia AES-256 e Secrets"
+    },
+    {
+      "id": "086",
+      "filename": "086-vault-module.ts",
+      "category": "VAULT",
+      "description": "Gerenciamento de Credenciais, Criptografia AES-256 e Secrets"
+    },
+    {
+      "id": "087",
+      "filename": "087-vault-module.ts",
+      "category": "VAULT",
+      "description": "Gerenciamento de Credenciais, Criptografia AES-256 e Secrets"
+    },
+    {
+      "id": "088",
+      "filename": "088-vault-module.ts",
+      "category": "VAULT",
+      "description": "Gerenciamento de Credenciais, Criptografia AES-256 e Secrets"
+    },
+    {
+      "id": "089",
+      "filename": "089-vault-module.ts",
+      "category": "VAULT",
+      "description": "Gerenciamento de Credenciais, Criptografia AES-256 e Secrets"
+    },
+    {
+      "id": "090",
+      "filename": "090-vault-module.ts",
+      "category": "VAULT",
+      "description": "Gerenciamento de Credenciais, Criptografia AES-256 e Secrets"
+    },
+    {
+      "id": "091",
+      "filename": "091-vault-module.ts",
+      "category": "VAULT",
+      "description": "Gerenciamento de Credenciais, Criptografia AES-256 e Secrets"
+    },
+    {
+      "id": "092",
+      "filename": "092-vault-module.ts",
+      "category": "VAULT",
+      "description": "Gerenciamento de Credenciais, Criptografia AES-256 e Secrets"
+    },
+    {
+      "id": "093",
+      "filename": "093-vault-module.ts",
+      "category": "VAULT",
+      "description": "Gerenciamento de Credenciais, Criptografia AES-256 e Secrets"
+    },
+    {
+      "id": "094",
+      "filename": "094-vault-module.ts",
+      "category": "VAULT",
+      "description": "Gerenciamento de Credenciais, Criptografia AES-256 e Secrets"
+    },
+    {
+      "id": "095",
+      "filename": "095-vault-module.ts",
+      "category": "VAULT",
+      "description": "Gerenciamento de Credenciais, Criptografia AES-256 e Secrets"
+    },
+    {
+      "id": "096",
+      "filename": "096-vault-module.ts",
+      "category": "VAULT",
+      "description": "Gerenciamento de Credenciais, Criptografia AES-256 e Secrets"
+    },
+    {
+      "id": "097",
+      "filename": "097-vault-module.ts",
+      "category": "VAULT",
+      "description": "Gerenciamento de Credenciais, Criptografia AES-256 e Secrets"
+    },
+    {
+      "id": "098",
+      "filename": "098-vault-module.ts",
+      "category": "VAULT",
+      "description": "Gerenciamento de Credenciais, Criptografia AES-256 e Secrets"
+    },
+    {
+      "id": "099",
+      "filename": "099-vault-module.ts",
+      "category": "VAULT",
+      "description": "Gerenciamento de Credenciais, Criptografia AES-256 e Secrets"
+    },
+    {
+      "id": "100",
+      "filename": "100-vault-module.ts",
+      "category": "VAULT",
+      "description": "Gerenciamento de Credenciais, Criptografia AES-256 e Secrets"
+    },
+    {
+      "id": "101",
+      "filename": "101-exec-module.ts",
+      "category": "EXEC",
+      "description": "Fila de Execu\u00e7\u00e3o, Retry Logic, Fallback e Conectores Cloud/K8s/Blockchain"
+    },
+    {
+      "id": "102",
+      "filename": "102-exec-module.ts",
+      "category": "EXEC",
+      "description": "Fila de Execu\u00e7\u00e3o, Retry Logic, Fallback e Conectores Cloud/K8s/Blockchain"
+    },
+    {
+      "id": "103",
+      "filename": "103-exec-module.ts",
+      "category": "EXEC",
+      "description": "Fila de Execu\u00e7\u00e3o, Retry Logic, Fallback e Conectores Cloud/K8s/Blockchain"
+    },
+    {
+      "id": "104",
+      "filename": "104-exec-module.ts",
+      "category": "EXEC",
+      "description": "Fila de Execu\u00e7\u00e3o, Retry Logic, Fallback e Conectores Cloud/K8s/Blockchain"
+    },
+    {
+      "id": "105",
+      "filename": "105-exec-module.ts",
+      "category": "EXEC",
+      "description": "Fila de Execu\u00e7\u00e3o, Retry Logic, Fallback e Conectores Cloud/K8s/Blockchain"
+    },
+    {
+      "id": "106",
+      "filename": "106-exec-module.ts",
+      "category": "EXEC",
+      "description": "Fila de Execu\u00e7\u00e3o, Retry Logic, Fallback e Conectores Cloud/K8s/Blockchain"
+    },
+    {
+      "id": "107",
+      "filename": "107-exec-module.ts",
+      "category": "EXEC",
+      "description": "Fila de Execu\u00e7\u00e3o, Retry Logic, Fallback e Conectores Cloud/K8s/Blockchain"
+    },
+    {
+      "id": "108",
+      "filename": "108-exec-module.ts",
+      "category": "EXEC",
+      "description": "Fila de Execu\u00e7\u00e3o, Retry Logic, Fallback e Conectores Cloud/K8s/Blockchain"
+    },
+    {
+      "id": "109",
+      "filename": "109-exec-module.ts",
+      "category": "EXEC",
+      "description": "Fila de Execu\u00e7\u00e3o, Retry Logic, Fallback e Conectores Cloud/K8s/Blockchain"
+    },
+    {
+      "id": "110",
+      "filename": "110-exec-module.ts",
+      "category": "EXEC",
+      "description": "Fila de Execu\u00e7\u00e3o, Retry Logic, Fallback e Conectores Cloud/K8s/Blockchain"
+    },
+    {
+      "id": "111",
+      "filename": "111-exec-module.ts",
+      "category": "EXEC",
+      "description": "Fila de Execu\u00e7\u00e3o, Retry Logic, Fallback e Conectores Cloud/K8s/Blockchain"
+    },
+    {
+      "id": "112",
+      "filename": "112-exec-module.ts",
+      "category": "EXEC",
+      "description": "Fila de Execu\u00e7\u00e3o, Retry Logic, Fallback e Conectores Cloud/K8s/Blockchain"
+    },
+    {
+      "id": "113",
+      "filename": "113-exec-module.ts",
+      "category": "EXEC",
+      "description": "Fila de Execu\u00e7\u00e3o, Retry Logic, Fallback e Conectores Cloud/K8s/Blockchain"
+    },
+    {
+      "id": "114",
+      "filename": "114-exec-module.ts",
+      "category": "EXEC",
+      "description": "Fila de Execu\u00e7\u00e3o, Retry Logic, Fallback e Conectores Cloud/K8s/Blockchain"
+    },
+    {
+      "id": "115",
+      "filename": "115-exec-module.ts",
+      "category": "EXEC",
+      "description": "Fila de Execu\u00e7\u00e3o, Retry Logic, Fallback e Conectores Cloud/K8s/Blockchain"
+    },
+    {
+      "id": "116",
+      "filename": "116-exec-module.ts",
+      "category": "EXEC",
+      "description": "Fila de Execu\u00e7\u00e3o, Retry Logic, Fallback e Conectores Cloud/K8s/Blockchain"
+    },
+    {
+      "id": "117",
+      "filename": "117-exec-module.ts",
+      "category": "EXEC",
+      "description": "Fila de Execu\u00e7\u00e3o, Retry Logic, Fallback e Conectores Cloud/K8s/Blockchain"
+    },
+    {
+      "id": "118",
+      "filename": "118-exec-module.ts",
+      "category": "EXEC",
+      "description": "Fila de Execu\u00e7\u00e3o, Retry Logic, Fallback e Conectores Cloud/K8s/Blockchain"
+    },
+    {
+      "id": "119",
+      "filename": "119-exec-module.ts",
+      "category": "EXEC",
+      "description": "Fila de Execu\u00e7\u00e3o, Retry Logic, Fallback e Conectores Cloud/K8s/Blockchain"
+    },
+    {
+      "id": "120",
+      "filename": "120-exec-module.ts",
+      "category": "EXEC",
+      "description": "Fila de Execu\u00e7\u00e3o, Retry Logic, Fallback e Conectores Cloud/K8s/Blockchain"
+    },
+    {
+      "id": "121",
+      "filename": "121-exec-module.ts",
+      "category": "EXEC",
+      "description": "Fila de Execu\u00e7\u00e3o, Retry Logic, Fallback e Conectores Cloud/K8s/Blockchain"
+    },
+    {
+      "id": "122",
+      "filename": "122-exec-module.ts",
+      "category": "EXEC",
+      "description": "Fila de Execu\u00e7\u00e3o, Retry Logic, Fallback e Conectores Cloud/K8s/Blockchain"
+    },
+    {
+      "id": "123",
+      "filename": "123-exec-module.ts",
+      "category": "EXEC",
+      "description": "Fila de Execu\u00e7\u00e3o, Retry Logic, Fallback e Conectores Cloud/K8s/Blockchain"
+    },
+    {
+      "id": "124",
+      "filename": "124-exec-module.ts",
+      "category": "EXEC",
+      "description": "Fila de Execu\u00e7\u00e3o, Retry Logic, Fallback e Conectores Cloud/K8s/Blockchain"
+    },
+    {
+      "id": "125",
+      "filename": "125-exec-module.ts",
+      "category": "EXEC",
+      "description": "Fila de Execu\u00e7\u00e3o, Retry Logic, Fallback e Conectores Cloud/K8s/Blockchain"
+    },
+    {
+      "id": "126",
+      "filename": "126-exec-module.ts",
+      "category": "EXEC",
+      "description": "Fila de Execu\u00e7\u00e3o, Retry Logic, Fallback e Conectores Cloud/K8s/Blockchain"
+    },
+    {
+      "id": "127",
+      "filename": "127-exec-module.ts",
+      "category": "EXEC",
+      "description": "Fila de Execu\u00e7\u00e3o, Retry Logic, Fallback e Conectores Cloud/K8s/Blockchain"
+    },
+    {
+      "id": "128",
+      "filename": "128-exec-module.ts",
+      "category": "EXEC",
+      "description": "Fila de Execu\u00e7\u00e3o, Retry Logic, Fallback e Conectores Cloud/K8s/Blockchain"
+    },
+    {
+      "id": "129",
+      "filename": "129-exec-module.ts",
+      "category": "EXEC",
+      "description": "Fila de Execu\u00e7\u00e3o, Retry Logic, Fallback e Conectores Cloud/K8s/Blockchain"
+    },
+    {
+      "id": "130",
+      "filename": "130-exec-module.ts",
+      "category": "EXEC",
+      "description": "Fila de Execu\u00e7\u00e3o, Retry Logic, Fallback e Conectores Cloud/K8s/Blockchain"
+    },
+    {
+      "id": "131",
+      "filename": "131-exec-module.ts",
+      "category": "EXEC",
+      "description": "Fila de Execu\u00e7\u00e3o, Retry Logic, Fallback e Conectores Cloud/K8s/Blockchain"
+    },
+    {
+      "id": "132",
+      "filename": "132-exec-module.ts",
+      "category": "EXEC",
+      "description": "Fila de Execu\u00e7\u00e3o, Retry Logic, Fallback e Conectores Cloud/K8s/Blockchain"
+    },
+    {
+      "id": "133",
+      "filename": "133-exec-module.ts",
+      "category": "EXEC",
+      "description": "Fila de Execu\u00e7\u00e3o, Retry Logic, Fallback e Conectores Cloud/K8s/Blockchain"
+    },
+    {
+      "id": "134",
+      "filename": "134-exec-module.ts",
+      "category": "EXEC",
+      "description": "Fila de Execu\u00e7\u00e3o, Retry Logic, Fallback e Conectores Cloud/K8s/Blockchain"
+    },
+    {
+      "id": "135",
+      "filename": "135-exec-module.ts",
+      "category": "EXEC",
+      "description": "Fila de Execu\u00e7\u00e3o, Retry Logic, Fallback e Conectores Cloud/K8s/Blockchain"
+    },
+    {
+      "id": "136",
+      "filename": "136-exec-module.ts",
+      "category": "EXEC",
+      "description": "Fila de Execu\u00e7\u00e3o, Retry Logic, Fallback e Conectores Cloud/K8s/Blockchain"
+    },
+    {
+      "id": "137",
+      "filename": "137-exec-module.ts",
+      "category": "EXEC",
+      "description": "Fila de Execu\u00e7\u00e3o, Retry Logic, Fallback e Conectores Cloud/K8s/Blockchain"
+    },
+    {
+      "id": "138",
+      "filename": "138-exec-module.ts",
+      "category": "EXEC",
+      "description": "Fila de Execu\u00e7\u00e3o, Retry Logic, Fallback e Conectores Cloud/K8s/Blockchain"
+    },
+    {
+      "id": "139",
+      "filename": "139-exec-module.ts",
+      "category": "EXEC",
+      "description": "Fila de Execu\u00e7\u00e3o, Retry Logic, Fallback e Conectores Cloud/K8s/Blockchain"
+    },
+    {
+      "id": "140",
+      "filename": "140-exec-module.ts",
+      "category": "EXEC",
+      "description": "Fila de Execu\u00e7\u00e3o, Retry Logic, Fallback e Conectores Cloud/K8s/Blockchain"
+    },
+    {
+      "id": "141",
+      "filename": "141-exec-module.ts",
+      "category": "EXEC",
+      "description": "Fila de Execu\u00e7\u00e3o, Retry Logic, Fallback e Conectores Cloud/K8s/Blockchain"
+    },
+    {
+      "id": "142",
+      "filename": "142-exec-module.ts",
+      "category": "EXEC",
+      "description": "Fila de Execu\u00e7\u00e3o, Retry Logic, Fallback e Conectores Cloud/K8s/Blockchain"
+    },
+    {
+      "id": "143",
+      "filename": "143-exec-module.ts",
+      "category": "EXEC",
+      "description": "Fila de Execu\u00e7\u00e3o, Retry Logic, Fallback e Conectores Cloud/K8s/Blockchain"
+    },
+    {
+      "id": "144",
+      "filename": "144-exec-module.ts",
+      "category": "EXEC",
+      "description": "Fila de Execu\u00e7\u00e3o, Retry Logic, Fallback e Conectores Cloud/K8s/Blockchain"
+    },
+    {
+      "id": "145",
+      "filename": "145-exec-module.ts",
+      "category": "EXEC",
+      "description": "Fila de Execu\u00e7\u00e3o, Retry Logic, Fallback e Conectores Cloud/K8s/Blockchain"
+    },
+    {
+      "id": "146",
+      "filename": "146-exec-module.ts",
+      "category": "EXEC",
+      "description": "Fila de Execu\u00e7\u00e3o, Retry Logic, Fallback e Conectores Cloud/K8s/Blockchain"
+    },
+    {
+      "id": "147",
+      "filename": "147-exec-module.ts",
+      "category": "EXEC",
+      "description": "Fila de Execu\u00e7\u00e3o, Retry Logic, Fallback e Conectores Cloud/K8s/Blockchain"
+    },
+    {
+      "id": "148",
+      "filename": "148-exec-module.ts",
+      "category": "EXEC",
+      "description": "Fila de Execu\u00e7\u00e3o, Retry Logic, Fallback e Conectores Cloud/K8s/Blockchain"
+    },
+    {
+      "id": "149",
+      "filename": "149-exec-module.ts",
+      "category": "EXEC",
+      "description": "Fila de Execu\u00e7\u00e3o, Retry Logic, Fallback e Conectores Cloud/K8s/Blockchain"
+    },
+    {
+      "id": "150",
+      "filename": "150-exec-module.ts",
+      "category": "EXEC",
+      "description": "Fila de Execu\u00e7\u00e3o, Retry Logic, Fallback e Conectores Cloud/K8s/Blockchain"
+    },
+    {
+      "id": "151",
+      "filename": "151-gov-module.ts",
+      "category": "GOV",
+      "description": "Event Bus, Valida\u00e7\u00e3o, Regras de Neg\u00f3cio e Aprova\u00e7\u00e3o Cr\u00edtica"
+    },
+    {
+      "id": "152",
+      "filename": "152-gov-module.ts",
+      "category": "GOV",
+      "description": "Event Bus, Valida\u00e7\u00e3o, Regras de Neg\u00f3cio e Aprova\u00e7\u00e3o Cr\u00edtica"
+    },
+    {
+      "id": "153",
+      "filename": "153-gov-module.ts",
+      "category": "GOV",
+      "description": "Event Bus, Valida\u00e7\u00e3o, Regras de Neg\u00f3cio e Aprova\u00e7\u00e3o Cr\u00edtica"
+    },
+    {
+      "id": "154",
+      "filename": "154-gov-module.ts",
+      "category": "GOV",
+      "description": "Event Bus, Valida\u00e7\u00e3o, Regras de Neg\u00f3cio e Aprova\u00e7\u00e3o Cr\u00edtica"
+    },
+    {
+      "id": "155",
+      "filename": "155-gov-module.ts",
+      "category": "GOV",
+      "description": "Event Bus, Valida\u00e7\u00e3o, Regras de Neg\u00f3cio e Aprova\u00e7\u00e3o Cr\u00edtica"
+    },
+    {
+      "id": "156",
+      "filename": "156-gov-module.ts",
+      "category": "GOV",
+      "description": "Event Bus, Valida\u00e7\u00e3o, Regras de Neg\u00f3cio e Aprova\u00e7\u00e3o Cr\u00edtica"
+    },
+    {
+      "id": "157",
+      "filename": "157-gov-module.ts",
+      "category": "GOV",
+      "description": "Event Bus, Valida\u00e7\u00e3o, Regras de Neg\u00f3cio e Aprova\u00e7\u00e3o Cr\u00edtica"
+    },
+    {
+      "id": "158",
+      "filename": "158-gov-module.ts",
+      "category": "GOV",
+      "description": "Event Bus, Valida\u00e7\u00e3o, Regras de Neg\u00f3cio e Aprova\u00e7\u00e3o Cr\u00edtica"
+    },
+    {
+      "id": "159",
+      "filename": "159-gov-module.ts",
+      "category": "GOV",
+      "description": "Event Bus, Valida\u00e7\u00e3o, Regras de Neg\u00f3cio e Aprova\u00e7\u00e3o Cr\u00edtica"
+    },
+    {
+      "id": "160",
+      "filename": "160-gov-module.ts",
+      "category": "GOV",
+      "description": "Event Bus, Valida\u00e7\u00e3o, Regras de Neg\u00f3cio e Aprova\u00e7\u00e3o Cr\u00edtica"
+    },
+    {
+      "id": "161",
+      "filename": "161-gov-module.ts",
+      "category": "GOV",
+      "description": "Event Bus, Valida\u00e7\u00e3o, Regras de Neg\u00f3cio e Aprova\u00e7\u00e3o Cr\u00edtica"
+    },
+    {
+      "id": "162",
+      "filename": "162-gov-module.ts",
+      "category": "GOV",
+      "description": "Event Bus, Valida\u00e7\u00e3o, Regras de Neg\u00f3cio e Aprova\u00e7\u00e3o Cr\u00edtica"
+    },
+    {
+      "id": "163",
+      "filename": "163-gov-module.ts",
+      "category": "GOV",
+      "description": "Event Bus, Valida\u00e7\u00e3o, Regras de Neg\u00f3cio e Aprova\u00e7\u00e3o Cr\u00edtica"
+    },
+    {
+      "id": "164",
+      "filename": "164-gov-module.ts",
+      "category": "GOV",
+      "description": "Event Bus, Valida\u00e7\u00e3o, Regras de Neg\u00f3cio e Aprova\u00e7\u00e3o Cr\u00edtica"
+    },
+    {
+      "id": "165",
+      "filename": "165-gov-module.ts",
+      "category": "GOV",
+      "description": "Event Bus, Valida\u00e7\u00e3o, Regras de Neg\u00f3cio e Aprova\u00e7\u00e3o Cr\u00edtica"
+    },
+    {
+      "id": "166",
+      "filename": "166-gov-module.ts",
+      "category": "GOV",
+      "description": "Event Bus, Valida\u00e7\u00e3o, Regras de Neg\u00f3cio e Aprova\u00e7\u00e3o Cr\u00edtica"
+    },
+    {
+      "id": "167",
+      "filename": "167-gov-module.ts",
+      "category": "GOV",
+      "description": "Event Bus, Valida\u00e7\u00e3o, Regras de Neg\u00f3cio e Aprova\u00e7\u00e3o Cr\u00edtica"
+    },
+    {
+      "id": "168",
+      "filename": "168-gov-module.ts",
+      "category": "GOV",
+      "description": "Event Bus, Valida\u00e7\u00e3o, Regras de Neg\u00f3cio e Aprova\u00e7\u00e3o Cr\u00edtica"
+    },
+    {
+      "id": "169",
+      "filename": "169-gov-module.ts",
+      "category": "GOV",
+      "description": "Event Bus, Valida\u00e7\u00e3o, Regras de Neg\u00f3cio e Aprova\u00e7\u00e3o Cr\u00edtica"
+    },
+    {
+      "id": "170",
+      "filename": "170-gov-module.ts",
+      "category": "GOV",
+      "description": "Event Bus, Valida\u00e7\u00e3o, Regras de Neg\u00f3cio e Aprova\u00e7\u00e3o Cr\u00edtica"
+    },
+    {
+      "id": "171",
+      "filename": "171-gov-module.ts",
+      "category": "GOV",
+      "description": "Event Bus, Valida\u00e7\u00e3o, Regras de Neg\u00f3cio e Aprova\u00e7\u00e3o Cr\u00edtica"
+    },
+    {
+      "id": "172",
+      "filename": "172-gov-module.ts",
+      "category": "GOV",
+      "description": "Event Bus, Valida\u00e7\u00e3o, Regras de Neg\u00f3cio e Aprova\u00e7\u00e3o Cr\u00edtica"
+    },
+    {
+      "id": "173",
+      "filename": "173-gov-module.ts",
+      "category": "GOV",
+      "description": "Event Bus, Valida\u00e7\u00e3o, Regras de Neg\u00f3cio e Aprova\u00e7\u00e3o Cr\u00edtica"
+    },
+    {
+      "id": "174",
+      "filename": "174-gov-module.ts",
+      "category": "GOV",
+      "description": "Event Bus, Valida\u00e7\u00e3o, Regras de Neg\u00f3cio e Aprova\u00e7\u00e3o Cr\u00edtica"
+    },
+    {
+      "id": "175",
+      "filename": "175-gov-module.ts",
+      "category": "GOV",
+      "description": "Event Bus, Valida\u00e7\u00e3o, Regras de Neg\u00f3cio e Aprova\u00e7\u00e3o Cr\u00edtica"
+    },
+    {
+      "id": "176",
+      "filename": "176-gov-module.ts",
+      "category": "GOV",
+      "description": "Event Bus, Valida\u00e7\u00e3o, Regras de Neg\u00f3cio e Aprova\u00e7\u00e3o Cr\u00edtica"
+    },
+    {
+      "id": "177",
+      "filename": "177-gov-module.ts",
+      "category": "GOV",
+      "description": "Event Bus, Valida\u00e7\u00e3o, Regras de Neg\u00f3cio e Aprova\u00e7\u00e3o Cr\u00edtica"
+    },
+    {
+      "id": "178",
+      "filename": "178-gov-module.ts",
+      "category": "GOV",
+      "description": "Event Bus, Valida\u00e7\u00e3o, Regras de Neg\u00f3cio e Aprova\u00e7\u00e3o Cr\u00edtica"
+    },
+    {
+      "id": "179",
+      "filename": "179-gov-module.ts",
+      "category": "GOV",
+      "description": "Event Bus, Valida\u00e7\u00e3o, Regras de Neg\u00f3cio e Aprova\u00e7\u00e3o Cr\u00edtica"
+    },
+    {
+      "id": "180",
+      "filename": "180-gov-module.ts",
+      "category": "GOV",
+      "description": "Event Bus, Valida\u00e7\u00e3o, Regras de Neg\u00f3cio e Aprova\u00e7\u00e3o Cr\u00edtica"
+    },
+    {
+      "id": "181",
+      "filename": "181-gov-module.ts",
+      "category": "GOV",
+      "description": "Event Bus, Valida\u00e7\u00e3o, Regras de Neg\u00f3cio e Aprova\u00e7\u00e3o Cr\u00edtica"
+    },
+    {
+      "id": "182",
+      "filename": "182-gov-module.ts",
+      "category": "GOV",
+      "description": "Event Bus, Valida\u00e7\u00e3o, Regras de Neg\u00f3cio e Aprova\u00e7\u00e3o Cr\u00edtica"
+    },
+    {
+      "id": "183",
+      "filename": "183-gov-module.ts",
+      "category": "GOV",
+      "description": "Event Bus, Valida\u00e7\u00e3o, Regras de Neg\u00f3cio e Aprova\u00e7\u00e3o Cr\u00edtica"
+    },
+    {
+      "id": "184",
+      "filename": "184-gov-module.ts",
+      "category": "GOV",
+      "description": "Event Bus, Valida\u00e7\u00e3o, Regras de Neg\u00f3cio e Aprova\u00e7\u00e3o Cr\u00edtica"
+    },
+    {
+      "id": "185",
+      "filename": "185-gov-module.ts",
+      "category": "GOV",
+      "description": "Event Bus, Valida\u00e7\u00e3o, Regras de Neg\u00f3cio e Aprova\u00e7\u00e3o Cr\u00edtica"
+    },
+    {
+      "id": "186",
+      "filename": "186-gov-module.ts",
+      "category": "GOV",
+      "description": "Event Bus, Valida\u00e7\u00e3o, Regras de Neg\u00f3cio e Aprova\u00e7\u00e3o Cr\u00edtica"
+    },
+    {
+      "id": "187",
+      "filename": "187-gov-module.ts",
+      "category": "GOV",
+      "description": "Event Bus, Valida\u00e7\u00e3o, Regras de Neg\u00f3cio e Aprova\u00e7\u00e3o Cr\u00edtica"
+    },
+    {
+      "id": "188",
+      "filename": "188-gov-module.ts",
+      "category": "GOV",
+      "description": "Event Bus, Valida\u00e7\u00e3o, Regras de Neg\u00f3cio e Aprova\u00e7\u00e3o Cr\u00edtica"
+    },
+    {
+      "id": "189",
+      "filename": "189-gov-module.ts",
+      "category": "GOV",
+      "description": "Event Bus, Valida\u00e7\u00e3o, Regras de Neg\u00f3cio e Aprova\u00e7\u00e3o Cr\u00edtica"
+    },
+    {
+      "id": "190",
+      "filename": "190-gov-module.ts",
+      "category": "GOV",
+      "description": "Event Bus, Valida\u00e7\u00e3o, Regras de Neg\u00f3cio e Aprova\u00e7\u00e3o Cr\u00edtica"
+    },
+    {
+      "id": "191",
+      "filename": "191-gov-module.ts",
+      "category": "GOV",
+      "description": "Event Bus, Valida\u00e7\u00e3o, Regras de Neg\u00f3cio e Aprova\u00e7\u00e3o Cr\u00edtica"
+    },
+    {
+      "id": "192",
+      "filename": "192-gov-module.ts",
+      "category": "GOV",
+      "description": "Event Bus, Valida\u00e7\u00e3o, Regras de Neg\u00f3cio e Aprova\u00e7\u00e3o Cr\u00edtica"
+    },
+    {
+      "id": "193",
+      "filename": "193-gov-module.ts",
+      "category": "GOV",
+      "description": "Event Bus, Valida\u00e7\u00e3o, Regras de Neg\u00f3cio e Aprova\u00e7\u00e3o Cr\u00edtica"
+    },
+    {
+      "id": "194",
+      "filename": "194-gov-module.ts",
+      "category": "GOV",
+      "description": "Event Bus, Valida\u00e7\u00e3o, Regras de Neg\u00f3cio e Aprova\u00e7\u00e3o Cr\u00edtica"
+    },
+    {
+      "id": "195",
+      "filename": "195-gov-module.ts",
+      "category": "GOV",
+      "description": "Event Bus, Valida\u00e7\u00e3o, Regras de Neg\u00f3cio e Aprova\u00e7\u00e3o Cr\u00edtica"
+    },
+    {
+      "id": "196",
+      "filename": "196-gov-module.ts",
+      "category": "GOV",
+      "description": "Event Bus, Valida\u00e7\u00e3o, Regras de Neg\u00f3cio e Aprova\u00e7\u00e3o Cr\u00edtica"
+    },
+    {
+      "id": "197",
+      "filename": "197-gov-module.ts",
+      "category": "GOV",
+      "description": "Event Bus, Valida\u00e7\u00e3o, Regras de Neg\u00f3cio e Aprova\u00e7\u00e3o Cr\u00edtica"
+    },
+    {
+      "id": "198",
+      "filename": "198-gov-module.ts",
+      "category": "GOV",
+      "description": "Event Bus, Valida\u00e7\u00e3o, Regras de Neg\u00f3cio e Aprova\u00e7\u00e3o Cr\u00edtica"
+    },
+    {
+      "id": "199",
+      "filename": "199-gov-module.ts",
+      "category": "GOV",
+      "description": "Event Bus, Valida\u00e7\u00e3o, Regras de Neg\u00f3cio e Aprova\u00e7\u00e3o Cr\u00edtica"
+    },
+    {
+      "id": "200",
+      "filename": "200-gov-module.ts",
+      "category": "GOV",
+      "description": "Event Bus, Valida\u00e7\u00e3o, Regras de Neg\u00f3cio e Aprova\u00e7\u00e3o Cr\u00edtica"
+    },
+    {
+      "id": "201",
+      "filename": "201-api-module.ts",
+      "category": "API",
+      "description": "APIs tRPC, Endpoints de Controle e Monitoramento de Agentes"
+    },
+    {
+      "id": "202",
+      "filename": "202-api-module.ts",
+      "category": "API",
+      "description": "APIs tRPC, Endpoints de Controle e Monitoramento de Agentes"
+    },
+    {
+      "id": "203",
+      "filename": "203-api-module.ts",
+      "category": "API",
+      "description": "APIs tRPC, Endpoints de Controle e Monitoramento de Agentes"
+    },
+    {
+      "id": "204",
+      "filename": "204-api-module.ts",
+      "category": "API",
+      "description": "APIs tRPC, Endpoints de Controle e Monitoramento de Agentes"
+    },
+    {
+      "id": "205",
+      "filename": "205-api-module.ts",
+      "category": "API",
+      "description": "APIs tRPC, Endpoints de Controle e Monitoramento de Agentes"
+    },
+    {
+      "id": "206",
+      "filename": "206-api-module.ts",
+      "category": "API",
+      "description": "APIs tRPC, Endpoints de Controle e Monitoramento de Agentes"
+    },
+    {
+      "id": "207",
+      "filename": "207-api-module.ts",
+      "category": "API",
+      "description": "APIs tRPC, Endpoints de Controle e Monitoramento de Agentes"
+    },
+    {
+      "id": "208",
+      "filename": "208-api-module.ts",
+      "category": "API",
+      "description": "APIs tRPC, Endpoints de Controle e Monitoramento de Agentes"
+    },
+    {
+      "id": "209",
+      "filename": "209-api-module.ts",
+      "category": "API",
+      "description": "APIs tRPC, Endpoints de Controle e Monitoramento de Agentes"
+    },
+    {
+      "id": "210",
+      "filename": "210-api-module.ts",
+      "category": "API",
+      "description": "APIs tRPC, Endpoints de Controle e Monitoramento de Agentes"
+    },
+    {
+      "id": "211",
+      "filename": "211-api-module.ts",
+      "category": "API",
+      "description": "APIs tRPC, Endpoints de Controle e Monitoramento de Agentes"
+    },
+    {
+      "id": "212",
+      "filename": "212-api-module.ts",
+      "category": "API",
+      "description": "APIs tRPC, Endpoints de Controle e Monitoramento de Agentes"
+    },
+    {
+      "id": "213",
+      "filename": "213-api-module.ts",
+      "category": "API",
+      "description": "APIs tRPC, Endpoints de Controle e Monitoramento de Agentes"
+    },
+    {
+      "id": "214",
+      "filename": "214-api-module.ts",
+      "category": "API",
+      "description": "APIs tRPC, Endpoints de Controle e Monitoramento de Agentes"
+    },
+    {
+      "id": "215",
+      "filename": "215-api-module.ts",
+      "category": "API",
+      "description": "APIs tRPC, Endpoints de Controle e Monitoramento de Agentes"
+    },
+    {
+      "id": "216",
+      "filename": "216-api-module.ts",
+      "category": "API",
+      "description": "APIs tRPC, Endpoints de Controle e Monitoramento de Agentes"
+    },
+    {
+      "id": "217",
+      "filename": "217-api-module.ts",
+      "category": "API",
+      "description": "APIs tRPC, Endpoints de Controle e Monitoramento de Agentes"
+    },
+    {
+      "id": "218",
+      "filename": "218-api-module.ts",
+      "category": "API",
+      "description": "APIs tRPC, Endpoints de Controle e Monitoramento de Agentes"
+    },
+    {
+      "id": "219",
+      "filename": "219-api-module.ts",
+      "category": "API",
+      "description": "APIs tRPC, Endpoints de Controle e Monitoramento de Agentes"
+    },
+    {
+      "id": "220",
+      "filename": "220-api-module.ts",
+      "category": "API",
+      "description": "APIs tRPC, Endpoints de Controle e Monitoramento de Agentes"
+    },
+    {
+      "id": "221",
+      "filename": "221-api-module.ts",
+      "category": "API",
+      "description": "APIs tRPC, Endpoints de Controle e Monitoramento de Agentes"
+    },
+    {
+      "id": "222",
+      "filename": "222-api-module.ts",
+      "category": "API",
+      "description": "APIs tRPC, Endpoints de Controle e Monitoramento de Agentes"
+    },
+    {
+      "id": "223",
+      "filename": "223-api-module.ts",
+      "category": "API",
+      "description": "APIs tRPC, Endpoints de Controle e Monitoramento de Agentes"
+    },
+    {
+      "id": "224",
+      "filename": "224-api-module.ts",
+      "category": "API",
+      "description": "APIs tRPC, Endpoints de Controle e Monitoramento de Agentes"
+    },
+    {
+      "id": "225",
+      "filename": "225-api-module.ts",
+      "category": "API",
+      "description": "APIs tRPC, Endpoints de Controle e Monitoramento de Agentes"
+    },
+    {
+      "id": "226",
+      "filename": "226-api-module.ts",
+      "category": "API",
+      "description": "APIs tRPC, Endpoints de Controle e Monitoramento de Agentes"
+    },
+    {
+      "id": "227",
+      "filename": "227-api-module.ts",
+      "category": "API",
+      "description": "APIs tRPC, Endpoints de Controle e Monitoramento de Agentes"
+    },
+    {
+      "id": "228",
+      "filename": "228-api-module.ts",
+      "category": "API",
+      "description": "APIs tRPC, Endpoints de Controle e Monitoramento de Agentes"
+    },
+    {
+      "id": "229",
+      "filename": "229-api-module.ts",
+      "category": "API",
+      "description": "APIs tRPC, Endpoints de Controle e Monitoramento de Agentes"
+    },
+    {
+      "id": "230",
+      "filename": "230-api-module.ts",
+      "category": "API",
+      "description": "APIs tRPC, Endpoints de Controle e Monitoramento de Agentes"
+    },
+    {
+      "id": "231",
+      "filename": "231-api-module.ts",
+      "category": "API",
+      "description": "APIs tRPC, Endpoints de Controle e Monitoramento de Agentes"
+    },
+    {
+      "id": "232",
+      "filename": "232-api-module.ts",
+      "category": "API",
+      "description": "APIs tRPC, Endpoints de Controle e Monitoramento de Agentes"
+    },
+    {
+      "id": "233",
+      "filename": "233-api-module.ts",
+      "category": "API",
+      "description": "APIs tRPC, Endpoints de Controle e Monitoramento de Agentes"
+    },
+    {
+      "id": "234",
+      "filename": "234-api-module.ts",
+      "category": "API",
+      "description": "APIs tRPC, Endpoints de Controle e Monitoramento de Agentes"
+    },
+    {
+      "id": "235",
+      "filename": "235-api-module.ts",
+      "category": "API",
+      "description": "APIs tRPC, Endpoints de Controle e Monitoramento de Agentes"
+    },
+    {
+      "id": "236",
+      "filename": "236-api-module.ts",
+      "category": "API",
+      "description": "APIs tRPC, Endpoints de Controle e Monitoramento de Agentes"
+    },
+    {
+      "id": "237",
+      "filename": "237-api-module.ts",
+      "category": "API",
+      "description": "APIs tRPC, Endpoints de Controle e Monitoramento de Agentes"
+    },
+    {
+      "id": "238",
+      "filename": "238-api-module.ts",
+      "category": "API",
+      "description": "APIs tRPC, Endpoints de Controle e Monitoramento de Agentes"
+    },
+    {
+      "id": "239",
+      "filename": "239-api-module.ts",
+      "category": "API",
+      "description": "APIs tRPC, Endpoints de Controle e Monitoramento de Agentes"
+    },
+    {
+      "id": "240",
+      "filename": "240-api-module.ts",
+      "category": "API",
+      "description": "APIs tRPC, Endpoints de Controle e Monitoramento de Agentes"
+    },
+    {
+      "id": "241",
+      "filename": "241-api-module.ts",
+      "category": "API",
+      "description": "APIs tRPC, Endpoints de Controle e Monitoramento de Agentes"
+    },
+    {
+      "id": "242",
+      "filename": "242-api-module.ts",
+      "category": "API",
+      "description": "APIs tRPC, Endpoints de Controle e Monitoramento de Agentes"
+    },
+    {
+      "id": "243",
+      "filename": "243-api-module.ts",
+      "category": "API",
+      "description": "APIs tRPC, Endpoints de Controle e Monitoramento de Agentes"
+    },
+    {
+      "id": "244",
+      "filename": "244-api-module.ts",
+      "category": "API",
+      "description": "APIs tRPC, Endpoints de Controle e Monitoramento de Agentes"
+    },
+    {
+      "id": "245",
+      "filename": "245-api-module.ts",
+      "category": "API",
+      "description": "APIs tRPC, Endpoints de Controle e Monitoramento de Agentes"
+    },
+    {
+      "id": "246",
+      "filename": "246-api-module.ts",
+      "category": "API",
+      "description": "APIs tRPC, Endpoints de Controle e Monitoramento de Agentes"
+    },
+    {
+      "id": "247",
+      "filename": "247-api-module.ts",
+      "category": "API",
+      "description": "APIs tRPC, Endpoints de Controle e Monitoramento de Agentes"
+    },
+    {
+      "id": "248",
+      "filename": "248-api-module.ts",
+      "category": "API",
+      "description": "APIs tRPC, Endpoints de Controle e Monitoramento de Agentes"
+    },
+    {
+      "id": "249",
+      "filename": "249-api-module.ts",
+      "category": "API",
+      "description": "APIs tRPC, Endpoints de Controle e Monitoramento de Agentes"
+    },
+    {
+      "id": "250",
+      "filename": "250-api-module.ts",
+      "category": "API",
+      "description": "APIs tRPC, Endpoints de Controle e Monitoramento de Agentes"
+    },
+    {
+      "id": "251",
+      "filename": "251-ui-module.ts",
+      "category": "UI",
+      "description": "Dashboard Responsivo, Logs de Auditoria e Interface de Tempo Real"
+    },
+    {
+      "id": "252",
+      "filename": "252-ui-module.ts",
+      "category": "UI",
+      "description": "Dashboard Responsivo, Logs de Auditoria e Interface de Tempo Real"
+    },
+    {
+      "id": "253",
+      "filename": "253-ui-module.ts",
+      "category": "UI",
+      "description": "Dashboard Responsivo, Logs de Auditoria e Interface de Tempo Real"
+    },
+    {
+      "id": "254",
+      "filename": "254-ui-module.ts",
+      "category": "UI",
+      "description": "Dashboard Responsivo, Logs de Auditoria e Interface de Tempo Real"
+    },
+    {
+      "id": "255",
+      "filename": "255-ui-module.ts",
+      "category": "UI",
+      "description": "Dashboard Responsivo, Logs de Auditoria e Interface de Tempo Real"
+    },
+    {
+      "id": "256",
+      "filename": "256-ui-module.ts",
+      "category": "UI",
+      "description": "Dashboard Responsivo, Logs de Auditoria e Interface de Tempo Real"
+    },
+    {
+      "id": "257",
+      "filename": "257-ui-module.ts",
+      "category": "UI",
+      "description": "Dashboard Responsivo, Logs de Auditoria e Interface de Tempo Real"
+    },
+    {
+      "id": "258",
+      "filename": "258-ui-module.ts",
+      "category": "UI",
+      "description": "Dashboard Responsivo, Logs de Auditoria e Interface de Tempo Real"
+    },
+    {
+      "id": "259",
+      "filename": "259-ui-module.ts",
+      "category": "UI",
+      "description": "Dashboard Responsivo, Logs de Auditoria e Interface de Tempo Real"
+    },
+    {
+      "id": "260",
+      "filename": "260-ui-module.ts",
+      "category": "UI",
+      "description": "Dashboard Responsivo, Logs de Auditoria e Interface de Tempo Real"
+    },
+    {
+      "id": "261",
+      "filename": "261-ui-module.ts",
+      "category": "UI",
+      "description": "Dashboard Responsivo, Logs de Auditoria e Interface de Tempo Real"
+    },
+    {
+      "id": "262",
+      "filename": "262-ui-module.ts",
+      "category": "UI",
+      "description": "Dashboard Responsivo, Logs de Auditoria e Interface de Tempo Real"
+    },
+    {
+      "id": "263",
+      "filename": "263-ui-module.ts",
+      "category": "UI",
+      "description": "Dashboard Responsivo, Logs de Auditoria e Interface de Tempo Real"
+    },
+    {
+      "id": "264",
+      "filename": "264-ui-module.ts",
+      "category": "UI",
+      "description": "Dashboard Responsivo, Logs de Auditoria e Interface de Tempo Real"
+    },
+    {
+      "id": "265",
+      "filename": "265-ui-module.ts",
+      "category": "UI",
+      "description": "Dashboard Responsivo, Logs de Auditoria e Interface de Tempo Real"
+    },
+    {
+      "id": "266",
+      "filename": "266-ui-module.ts",
+      "category": "UI",
+      "description": "Dashboard Responsivo, Logs de Auditoria e Interface de Tempo Real"
+    },
+    {
+      "id": "267",
+      "filename": "267-ui-module.ts",
+      "category": "UI",
+      "description": "Dashboard Responsivo, Logs de Auditoria e Interface de Tempo Real"
+    },
+    {
+      "id": "268",
+      "filename": "268-ui-module.ts",
+      "category": "UI",
+      "description": "Dashboard Responsivo, Logs de Auditoria e Interface de Tempo Real"
+    },
+    {
+      "id": "269",
+      "filename": "269-ui-module.ts",
+      "category": "UI",
+      "description": "Dashboard Responsivo, Logs de Auditoria e Interface de Tempo Real"
+    },
+    {
+      "id": "270",
+      "filename": "270-ui-module.ts",
+      "category": "UI",
+      "description": "Dashboard Responsivo, Logs de Auditoria e Interface de Tempo Real"
+    },
+    {
+      "id": "271",
+      "filename": "271-ui-module.ts",
+      "category": "UI",
+      "description": "Dashboard Responsivo, Logs de Auditoria e Interface de Tempo Real"
+    },
+    {
+      "id": "272",
+      "filename": "272-ui-module.ts",
+      "category": "UI",
+      "description": "Dashboard Responsivo, Logs de Auditoria e Interface de Tempo Real"
+    },
+    {
+      "id": "273",
+      "filename": "273-ui-module.ts",
+      "category": "UI",
+      "description": "Dashboard Responsivo, Logs de Auditoria e Interface de Tempo Real"
+    },
+    {
+      "id": "274",
+      "filename": "274-ui-module.ts",
+      "category": "UI",
+      "description": "Dashboard Responsivo, Logs de Auditoria e Interface de Tempo Real"
+    },
+    {
+      "id": "275",
+      "filename": "275-ui-module.ts",
+      "category": "UI",
+      "description": "Dashboard Responsivo, Logs de Auditoria e Interface de Tempo Real"
+    },
+    {
+      "id": "276",
+      "filename": "276-ui-module.ts",
+      "category": "UI",
+      "description": "Dashboard Responsivo, Logs de Auditoria e Interface de Tempo Real"
+    },
+    {
+      "id": "277",
+      "filename": "277-ui-module.ts",
+      "category": "UI",
+      "description": "Dashboard Responsivo, Logs de Auditoria e Interface de Tempo Real"
+    },
+    {
+      "id": "278",
+      "filename": "278-ui-module.ts",
+      "category": "UI",
+      "description": "Dashboard Responsivo, Logs de Auditoria e Interface de Tempo Real"
+    },
+    {
+      "id": "279",
+      "filename": "279-ui-module.ts",
+      "category": "UI",
+      "description": "Dashboard Responsivo, Logs de Auditoria e Interface de Tempo Real"
+    },
+    {
+      "id": "280",
+      "filename": "280-ui-module.ts",
+      "category": "UI",
+      "description": "Dashboard Responsivo, Logs de Auditoria e Interface de Tempo Real"
+    },
+    {
+      "id": "281",
+      "filename": "281-ui-module.ts",
+      "category": "UI",
+      "description": "Dashboard Responsivo, Logs de Auditoria e Interface de Tempo Real"
+    },
+    {
+      "id": "282",
+      "filename": "282-ui-module.ts",
+      "category": "UI",
+      "description": "Dashboard Responsivo, Logs de Auditoria e Interface de Tempo Real"
+    },
+    {
+      "id": "283",
+      "filename": "283-ui-module.ts",
+      "category": "UI",
+      "description": "Dashboard Responsivo, Logs de Auditoria e Interface de Tempo Real"
+    },
+    {
+      "id": "284",
+      "filename": "284-ui-module.ts",
+      "category": "UI",
+      "description": "Dashboard Responsivo, Logs de Auditoria e Interface de Tempo Real"
+    },
+    {
+      "id": "285",
+      "filename": "285-ui-module.ts",
+      "category": "UI",
+      "description": "Dashboard Responsivo, Logs de Auditoria e Interface de Tempo Real"
+    },
+    {
+      "id": "286",
+      "filename": "286-ui-module.ts",
+      "category": "UI",
+      "description": "Dashboard Responsivo, Logs de Auditoria e Interface de Tempo Real"
+    },
+    {
+      "id": "287",
+      "filename": "287-ui-module.ts",
+      "category": "UI",
+      "description": "Dashboard Responsivo, Logs de Auditoria e Interface de Tempo Real"
+    },
+    {
+      "id": "288",
+      "filename": "288-ui-module.ts",
+      "category": "UI",
+      "description": "Dashboard Responsivo, Logs de Auditoria e Interface de Tempo Real"
+    },
+    {
+      "id": "289",
+      "filename": "289-ui-module.ts",
+      "category": "UI",
+      "description": "Dashboard Responsivo, Logs de Auditoria e Interface de Tempo Real"
+    },
+    {
+      "id": "290",
+      "filename": "290-ui-module.ts",
+      "category": "UI",
+      "description": "Dashboard Responsivo, Logs de Auditoria e Interface de Tempo Real"
+    },
+    {
+      "id": "291",
+      "filename": "291-ui-module.ts",
+      "category": "UI",
+      "description": "Dashboard Responsivo, Logs de Auditoria e Interface de Tempo Real"
+    },
+    {
+      "id": "292",
+      "filename": "292-ui-module.ts",
+      "category": "UI",
+      "description": "Dashboard Responsivo, Logs de Auditoria e Interface de Tempo Real"
+    },
+    {
+      "id": "293",
+      "filename": "293-ui-module.ts",
+      "category": "UI",
+      "description": "Dashboard Responsivo, Logs de Auditoria e Interface de Tempo Real"
+    },
+    {
+      "id": "294",
+      "filename": "294-ui-module.ts",
+      "category": "UI",
+      "description": "Dashboard Responsivo, Logs de Auditoria e Interface de Tempo Real"
+    },
+    {
+      "id": "295",
+      "filename": "295-ui-module.ts",
+      "category": "UI",
+      "description": "Dashboard Responsivo, Logs de Auditoria e Interface de Tempo Real"
+    },
+    {
+      "id": "296",
+      "filename": "296-ui-module.ts",
+      "category": "UI",
+      "description": "Dashboard Responsivo, Logs de Auditoria e Interface de Tempo Real"
+    },
+    {
+      "id": "297",
+      "filename": "297-ui-module.ts",
+      "category": "UI",
+      "description": "Dashboard Responsivo, Logs de Auditoria e Interface de Tempo Real"
+    },
+    {
+      "id": "298",
+      "filename": "298-ui-module.ts",
+      "category": "UI",
+      "description": "Dashboard Responsivo, Logs de Auditoria e Interface de Tempo Real"
+    },
+    {
+      "id": "299",
+      "filename": "299-ui-module.ts",
+      "category": "UI",
+      "description": "Dashboard Responsivo, Logs de Auditoria e Interface de Tempo Real"
+    }
+  ]
+}
