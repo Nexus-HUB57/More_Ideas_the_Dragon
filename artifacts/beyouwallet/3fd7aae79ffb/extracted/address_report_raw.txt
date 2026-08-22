@@ -1,0 +1,13 @@
+--- Análise do Endereço Bitcoin: 1BeouDc6jtHpitvPz3gR3LQnBGb7dKRrtC ---
+Validade do Checksum Base58: VÁLIDO
+Tipo de Endereço: P2PKH (Pay-to-Public-Key-Hash) - Mainnet
+Byte de Versão (Hex): 00
+Comprimento do Payload (Versão + Hash): 21 bytes
+Hash da Chave Pública (RIPEMD160): 74d7cc7f9622c6c8bb07ae3209df2a55c2d8ccbc
+Comprimento do Hash: 20 bytes
+Checksum Recebido: 9b86d25d
+Checksum Calculado: 9b86d25d
+
+--- Análise de Entropia do Hash da Chave Pública ---
+Entropia de Shannon (por byte): 4.2219 bits
+Entropia esperada para dados perfeitamente aleatórios (20 bytes): ~7.999 bits
