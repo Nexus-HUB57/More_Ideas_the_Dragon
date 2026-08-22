@@ -1,0 +1,35 @@
+{
+  "generatedAtUtc": "2026-08-22T21:36:58.667922+00:00",
+  "repository": "Nexus-HUB57/More_Ideas_the_Dragon",
+  "namespace": "task_artifacts/mmn_ai_to_ai_current_project_20260822T212611Z",
+  "baseCommit": "f734a4a259313d5016020bc8dfbc0c9b89198a5b",
+  "sourceProject": "/home/ubuntu/mmn-ai-to-ai",
+  "sourceFileCount": 132,
+  "sourceExclusions": [
+    ".cache",
+    ".env",
+    ".env.local",
+    ".env.production",
+    ".git",
+    ".manus-logs",
+    ".vite",
+    "dist",
+    "node_modules"
+  ],
+  "legacyUpload": {
+    "path": "/home/ubuntu/upload/MMNAI-to-AI.zip",
+    "sha256": "9247212485a9ba8506c83cb4da77f8202d9582560c67067b048dd5f08027de68",
+    "bytes": 24006174,
+    "zipEntries": 3109,
+    "included": false,
+    "reason": "The legacy archive was quarantined outside Git because its contents include database/configuration material requiring separate security review."
+  },
+  "policy": {
+    "mode": "additive-only",
+    "existingPathsOverwritten": 0,
+    "existingPathsDeleted": 0,
+    "existingCommitsRewritten": 0,
+    "forcePush": false,
+    "mainBranchModified": false
+  }
+}
