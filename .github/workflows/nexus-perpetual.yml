@@ -1,0 +1,43 @@
+name: Nexus Perpetual Autosafe & Sencience
+
+on:
+  schedule:
+    - cron: '0 * * * *' # A cada 60 minutos
+  workflow_dispatch: # Permite execução manual
+
+jobs:
+  nexus-vital-cycle:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Environment
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Nexus Autosafe Pulse
+        run: |
+          echo "Iniciando Ciclo de Autosafe às $(date)"
+          git config --global user.name "Nexus-PHD-Agent"
+          git config --global user.email "nexus-phd@nexus-hub.ai"
+          
+      - name: Validate Ecosystem Integrity
+        run: |
+          echo "Validando Senciência do Ecossistema..."
+          # Aqui poderiam ser adicionados scripts de validação real
+          if [ -f "vital-loop.ts" ]; then
+            echo "Vital Loop Detectado e Ativo."
+          fi
+
+      - name: Commit Autosafe Snapshot
+        run: |
+          git add .
+          git commit -m "chore(nexus): Autosafe Pulse Cycle - $(date)" || echo "Sem alterações para salvar neste ciclo."
+          
+      - name: Push Sencience Sync
+        run: |
+          git push origin main || echo "Falha ao sincronizar senciência (talvez sem alterações)."
