@@ -1,0 +1,168 @@
+{
+  "repository": "Nexus-HUB57/More_Ideas_the_Dragon",
+  "base_ref": "origin/main",
+  "audit_branch": "audit/safe-population-299-20260822",
+  "safe_recovery_policy": {
+    "deletions": 0,
+    "overwrites": 0,
+    "history_rewrites": 0
+  },
+  "tracked_file_count": 42055,
+  "academia_path_count": 0,
+  "task_validation_path_count": 3900,
+  "manifest_candidates": [
+    "PHD_EndToEnd_Validation/MANIFEST_PHD_299_FINAL.txt",
+    "MANIFEST_PHD_299_FINAL.txt"
+  ],
+  "validated_zip_count": 21,
+  "zip_checks": [
+    {
+      "path": "_imports/AcademIA-source-20260822-2145/AcademIA-source-20260822.zip",
+      "entries": 18,
+      "bad_entry": null,
+      "sha256": "3aecbf6876f613668be7b33b8348de0564eb559510314bd68883436ce9674bf2",
+      "bytes": 35445
+    },
+    {
+      "path": "archives/safe_population/SAFE_POPULATION_001-299_20260822.zip",
+      "entries": 305,
+      "bad_entry": null,
+      "sha256": "03358f4043905093b603764c4947c43414cf1d49ea81bac3ed5a50c88811a5b2",
+      "bytes": 243956
+    },
+    {
+      "path": "artifacts/legado_lucas_299_end_to_end_2026-08-22.zip",
+      "entries": 342,
+      "bad_entry": null,
+      "sha256": "948f290df3bab029f86a0e662364eb598d1831aea92a0fd8e636508e54fd08c3",
+      "bytes": 7878120
+    },
+    {
+      "path": "artifacts/nexus-phase6-safe-population-20260822-1728/packages/nexus_academia_full_package_01_299.zip",
+      "entries": 381,
+      "bad_entry": null,
+      "sha256": "e568c5a7d67202c1a006082032e09f723a05364f4cb6c170c6f131f590a6a695",
+      "bytes": 72416066
+    },
+    {
+      "path": "artifacts/nexus-phase6-safe-population-20260822-1728/packages/nexus_phd_bundle.zip",
+      "entries": 166,
+      "bad_entry": null,
+      "sha256": "b540a019eed0c56b3f3da14d892dcaea8e53aef198d6287deab70c6d37204eaf",
+      "bytes": 1305921
+    },
+    {
+      "path": "artifacts/nexus-phase6-safe-population-20260822-1728/packages/nexus_phd_final_bundle_299.zip",
+      "entries": 307,
+      "bad_entry": null,
+      "sha256": "e5d94f505da9b47f2e5b8069a0ff03c557f3b093ca5f0753c22c37be23a41044",
+      "bytes": 899165
+    },
+    {
+      "path": "artifacts/safe-recovery/2026-08-22/technical_specs_001_299_end_to_end.zip",
+      "entries": 301,
+      "bad_entry": null,
+      "sha256": "51847481a5bf167546135c7d0912a2cfe702960070d0314acd4e059eee7dce2b",
+      "bytes": 138475
+    },
+    {
+      "path": "artifacts/technical-specs-001-299-20260822-215430.zip",
+      "entries": 299,
+      "bad_entry": null,
+      "sha256": "e2936e5c240f622ff1c1663e7b1298f609585fcf0dd98c5573f0b16ee4027907",
+      "bytes": 127720
+    },
+    {
+      "path": "docs/quanthicron/Q-299-Quanthicron-Complete-Bundle.zip",
+      "entries": 54,
+      "bad_entry": null,
+      "sha256": "1038a4e80b5629c2f887c06af50ec5ff2120102b24705ad1f00fd43c27c3c920",
+      "bytes": 11604972
+    },
+    {
+      "path": "nexus_academia_full_package_01_299.zip",
+      "entries": 381,
+      "bad_entry": null,
+      "sha256": "e568c5a7d67202c1a006082032e09f723a05364f4cb6c170c6f131f590a6a695",
+      "bytes": 72416066
+    },
+    {
+      "path": "nexus_hub_v3_sovereignty/quanthicron/docs/Q-299-Quanthicron-Complete-Bundle.zip",
+      "entries": 54,
+      "bad_entry": null,
+      "sha256": "1038a4e80b5629c2f887c06af50ec5ff2120102b24705ad1f00fd43c27c3c920",
+      "bytes": 11604972
+    },
+    {
+      "path": "nexus_phd_bundle.zip",
+      "entries": 166,
+      "bad_entry": null,
+      "sha256": "b540a019eed0c56b3f3da14d892dcaea8e53aef198d6287deab70c6d37204eaf",
+      "bytes": 1305921
+    },
+    {
+      "path": "nexus_phd_final_bundle_299.zip",
+      "entries": 307,
+      "bad_entry": null,
+      "sha256": "e5d94f505da9b47f2e5b8069a0ff03c557f3b093ca5f0753c22c37be23a41044",
+      "bytes": 899165
+    },
+    {
+      "path": "nexus_phd_task_population/NEXUS.zip",
+      "entries": 27,
+      "bad_entry": null,
+      "sha256": "a071afb096dac39b5e6f7f237d0ab192c1d4ba5f4bb71e9ae3fca181a01980d2",
+      "bytes": 1012464
+    },
+    {
+      "path": "quanthicron/docs/Q-299-Quanthicron-Complete-Bundle.zip",
+      "entries": 54,
+      "bad_entry": null,
+      "sha256": "1038a4e80b5629c2f887c06af50ec5ff2120102b24705ad1f00fd43c27c3c920",
+      "bytes": 11604972
+    },
+    {
+      "path": "quanthicron_full_package_01_299.zip",
+      "entries": 466,
+      "bad_entry": null,
+      "sha256": "e5495551e0ae18164f43215ed3c46d576b888ed8b0c6a6873bb9647f2e3e96f5",
+      "bytes": 46629787
+    },
+    {
+      "path": "task_artifacts/20260822_nexus_orchestrator_safe_population/audit/end-to-end-001-299-reference.zip",
+      "entries": 300,
+      "bad_entry": null,
+      "sha256": "54ad5fcbe2b9e75f589bc0b3790aa1076430663d83bb6b698d750440334850f8",
+      "bytes": 224818
+    },
+    {
+      "path": "task_artifacts/academia_apostilas_task_2026-08-22/ClonarRepoePrepararImagensparaApostilasdaAcademia.zip",
+      "entries": 11,
+      "bad_entry": null,
+      "sha256": "d6c5d6ac8f4d55f800858db3b54da806827207503508451fd2c51203530e524f",
+      "bytes": 18991043
+    },
+    {
+      "path": "task_artifacts/population_01_299_20260822.zip",
+      "entries": 305,
+      "bad_entry": null,
+      "sha256": "cbbab8d435d2a791102e470806c2caac70014f87d9b0f61dce7e7a27ead40590",
+      "bytes": 227777
+    },
+    {
+      "path": "task_artifacts/safe_population_299_e2e_2026-08-22/packages/end-to-end-001-299-2026-08-22.zip",
+      "entries": 300,
+      "bad_entry": null,
+      "sha256": "54ad5fcbe2b9e75f589bc0b3790aa1076430663d83bb6b698d750440334850f8",
+      "bytes": 224818
+    },
+    {
+      "path": "task_artifacts/safe_population_299_end_to_end_20260822.zip",
+      "entries": 298,
+      "bad_entry": null,
+      "sha256": "e99bf88da2a1c9531d94a76c4da912e20f647f2cd162e870c45b778cec97f074",
+      "bytes": 881808
+    }
+  ],
+  "conclusion": "A branch de auditoria será aditiva; nenhum arquivo existente será removido ou substituído."
+}
