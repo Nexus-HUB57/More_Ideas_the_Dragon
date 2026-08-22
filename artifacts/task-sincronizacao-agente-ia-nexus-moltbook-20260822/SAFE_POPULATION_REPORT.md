@@ -6,18 +6,18 @@ O pacote recebido em `SincronizaçãodoAgenteIANexuscomMoltbook.zip` foi preserv
 
 ## Conteúdo preservado
 
-O namespace contém o ZIP original recebido, os 11 arquivos extraídos do primeiro nível, os dois ZIPs internos e a expansão recursiva dos arquivos ZIP aninhados. O manifesto `SHA256SUMS` permite verificar a integridade de todos os arquivos materializados, exceto o próprio manifesto.
+O namespace contém o ZIP original recebido, os 11 arquivos extraídos do primeiro nível, os dois ZIPs internos e a expansão recursiva dos arquivos ZIP aninhados. Os dois arquivos `.env` materializados nos pacotes internos foram auditados e contêm somente placeholders demonstrativos; eles também foram incluídos por exigência de preservação integral do pacote. O manifesto `SHA256SUMS` permite verificar a integridade de todos os arquivos materializados, exceto o próprio manifesto.
 
 ## Resultado da auditoria
 
 | Verificação | Resultado |
 |---|---:|
 | Colisões de caminhos com `HEAD` antes do stage | 0 |
-| Arquivos no namespace após expansão recursiva | 630 |
+| Arquivos no namespace após expansão recursiva | 631 |
 | Arquivos de origem no primeiro nível | 11 |
 | Arquivos expandidos em arquivos internos | 588 |
 | Arquivos ZIP preservados | 5 |
-| Integridade SHA-256 | A validar novamente após inclusão deste relatório |
+| Integridade SHA-256 | 630 arquivos verificados com sucesso |
 | Branch principal local versus `origin/main` antes do commit | Iguais |
 
 ## Histórico de validação Moltbook
