@@ -20,14 +20,14 @@ A operação foi preparada em um branch isolado baseado em `origin/main`, sem al
 
 | Categoria | Arquivos preparados |
 | --- | ---: |
-| Documentação do bundle | 5 |
+| Documentação do bundle | 6 |
 | Fonte do projeto web, sem dependências/cache/segredos | 128 |
 | Fonte extraída do ZIP, sem arquivos de ambiente | 85 |
 | Arquivos ZIP seguros | 2 |
 | Índices e listas de auditoria | 3 |
-| Total final no namespace | 223 |
+| Total final no namespace | 224 |
 
-O ZIP de origem contém 87 arquivos. A cópia extraída segura contém 85 arquivos porque arquivos de ambiente e dotfiles potencialmente sensíveis não são materializados. O projeto web local contém 135 arquivos fora de dependências e do diretório Git; 128 foram incluídos após a exclusão de caches, artefatos gerados, configurações privadas e arquivos de ambiente.
+O ZIP de origem contém 87 arquivos. A cópia extraída segura contém 85 arquivos porque arquivos de ambiente e dotfiles potencialmente sensíveis não são materializados. O projeto web local contém 135 arquivos fora de dependências e do diretório Git; 128 foram incluídos após a exclusão de caches, artefatos gerados, configurações privadas e arquivos de ambiente. Com a documentação de auditoria, os dois pacotes seguros e os três índices, o namespace final contém 224 arquivos.
 
 ## Validações executadas
 
