@@ -1,0 +1,9 @@
+bundle_root=/home/ubuntu/More_Ideas_the_Dragon/task_artifacts/nexus_app_manus_safe_population_20260822_210418
+source_files=238
+tracked_archive_files=1
+all_archive_files=1
+manifest_input_files=243
+manifest_rows=243
+source_bytes=2331389
+archive_bytes=782029
+generated_utc=2026-08-22T21:14:08Z
