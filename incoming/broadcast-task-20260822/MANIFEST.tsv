@@ -1,0 +1,4 @@
+path	size_bytes	sha256	classification
+incoming/broadcast-task-20260822/AUDIT_REPORT.md	2435	02c31a8bc3d4d4e6c66b8b3e6293108db2982d84d471dacd3f624dfd39ce4d76	new-task-artifact
+incoming/broadcast-task-20260822/README.md	2624	35a66fcae9c8af3ad63ec431dd232b8fbbb42269e896dee2a6ce256d90598e8f	new-task-artifact
+incoming/broadcast-task-20260822/source/signed_651e2137.txn	43404	2c7f1c9b087fee88cad5ad609c49c8de32c2bcca7ff3c8848c4587bfe2a499f0	new-task-artifact
