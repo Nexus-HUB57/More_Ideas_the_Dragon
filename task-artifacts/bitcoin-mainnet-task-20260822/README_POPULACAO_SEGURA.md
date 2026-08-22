@@ -11,8 +11,10 @@ Este pacote foi preparado em namespace isolado para não sobrescrever nem exclui
 
 ## Política de segurança
 
-Arquivos contendo chaves privadas, WIF, seeds, credenciais, senhas, bases de chaves ou placeholders de segredo não são publicados em repositório público. Os caminhos e hashes dos ZIPs de origem permanecem registrados para auditoria, sem expor o conteúdo sensível.
+Arquivos contendo chaves privadas, WIF, seeds, credenciais, senhas, bases de chaves, ZIPs aninhados com nomes sensíveis ou placeholders de segredo não são publicados em repositório público. Os caminhos e hashes dos ZIPs de origem permanecem registrados para auditoria, sem expor o conteúdo sensível.
 
 ## Inventários
 
 Os arquivos `archives.sha256`, `safe_artifacts.sha256` e `*.paths.txt` registram, respectivamente, os hashes dos ZIPs originais, os hashes dos artefatos preparados e as listas de entradas de cada ZIP.
+
+Arquivos ZIP aninhados com nomes sensíveis também foram removidos após inspeção de seus índices.

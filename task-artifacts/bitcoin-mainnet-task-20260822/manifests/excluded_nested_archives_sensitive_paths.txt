@@ -1,0 +1,6 @@
+task-artifacts/bitcoin-mainnet-task-20260822/extracted/ProjetoeImplementaçõesDisponíveis(2)/CorrigirerrosepublicarnoHostGator(1).zip
+task-artifacts/bitcoin-mainnet-task-20260822/extracted/SendingTransactionsviaMainnetandAvailableImplementations/SendingTransactionsviaMainnetandAvailableImplementations.zip
+task-artifacts/bitcoin-mainnet-task-20260822/extracted/SendingTransactionsviaMainnetandAvailableImplementations/ProjetoeImplementaçõesDisponíveis(1).zip
+task-artifacts/bitcoin-mainnet-task-20260822/extracted/FileConsolidationandImplementationOverview/ProjetoeImplementaçõesDisponíveis(8).zip
+task-artifacts/bitcoin-mainnet-task-20260822/extracted/FileConsolidationandImplementationOverview/ProjetoeImplementaçõesDisponíveis(7).zip
+task-artifacts/bitcoin-mainnet-task-20260822/extracted/FileConsolidationandImplementationOverview/ProjetoeImplementaçõesDisponíveis(4).zip
