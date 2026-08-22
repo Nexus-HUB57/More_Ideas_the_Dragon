@@ -1,0 +1,17 @@
+App.tsx
+Arquitetura de Orquestração Autônoma para Tarefas Operacionais de MMN.md
+Dashboard.tsx
+GoalCreation.tsx
+commissionProcessingWorker.ts
+contentGenerationWorker.ts
+jobLogger.ts
+marketplaceSyncWorker.ts
+orchestrationRouter.ts
+orchestrator.ts
+orderProcessingWorker.ts
+package.json
+queue.ts
+routers.ts
+scheduler.ts
+schema.ts
+todo.md
