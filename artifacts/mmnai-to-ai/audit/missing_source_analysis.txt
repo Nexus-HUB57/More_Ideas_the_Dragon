@@ -1,0 +1,39 @@
+# Análise de arquivos omitidos no primeiro commit
+
+## Resultado
+
+A extração contém `3139` arquivos regulares. O primeiro commit de integração incluiu `3129` arquivos sob `source/extracted/`. A diferença foi causada por um `.gitignore` presente dentro do próprio conteúdo legado em `inc123/cielo/`, que ignorou `composer.lock` e o diretório `vendor/` durante o `git add`.
+
+O arquivo `Fase 5_ Backend - Gestão de Pagamentos - Resumo de Implementação.md` também ficou fora da primeira contagem porque havia sido criado no namespace depois da primeira indexação do commit review. Ele será incluído na correção aditiva junto com os dez arquivos ignorados pelo `.gitignore` interno.
+
+## Arquivos a incluir no commit de correção
+
+| Caminho relativo em `source/extracted/` | Motivo |
+|---|---|
+| `Fase 5_ Backend - Gestão de Pagamentos - Resumo de Implementação.md` | relatório de origem não incluído na primeira indexação |
+| `inc123/cielo/composer.lock` | ignorado pelo `.gitignore` interno |
+| `inc123/cielo/vendor/autoload.php` | ignorado pelo `.gitignore` interno |
+| `inc123/cielo/vendor/composer/ClassLoader.php` | ignorado pelo `.gitignore` interno |
+| `inc123/cielo/vendor/composer/LICENSE` | ignorado pelo `.gitignore` interno |
+| `inc123/cielo/vendor/composer/autoload_classmap.php` | ignorado pelo `.gitignore` interno |
+| `inc123/cielo/vendor/composer/autoload_namespaces.php` | ignorado pelo `.gitignore` interno |
+| `inc123/cielo/vendor/composer/autoload_psr4.php` | ignorado pelo `.gitignore` interno |
+| `inc123/cielo/vendor/composer/autoload_real.php` | ignorado pelo `.gitignore` interno |
+| `inc123/cielo/vendor/composer/autoload_static.php` | ignorado pelo `.gitignore` interno |
+| `inc123/cielo/vendor/composer/installed.json` | ignorado pelo `.gitignore` interno |
+
+## Decisão de segurança
+
+Os arquivos serão adicionados com `git add -f` somente pelos caminhos explicitamente listados acima. O `.gitignore` de origem não será alterado, o primeiro commit não será reescrito e nenhum arquivo existente será removido ou sobrescrito.
+
+## Validação
+
+Após o commit de correção, comparar novamente o manifesto de caminhos e o manifesto de SHA-256 da extração com a árvore do commit. A meta é `3139` arquivos em `source/extracted/`, com todos os hashes iguais ao staging. O commit de correção deve conter apenas adições no namespace `artifacts/mmnai-to-ai/`.
+
+## Histórico
+
+O primeiro commit permanece preservado. Esta correção será um segundo commit local, encadeado ao primeiro, para manter a rastreabilidade e permitir revisão independente.
+
+## Status
+
+`correção aditiva pendente de staging e validação`
