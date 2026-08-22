@@ -1,0 +1,11 @@
+# Balanço Patrimonial Projetado (Fechamento)
+| Componente | Ano 4 (R$) | Ano 5 (R$) |
+| :--- | :--- | :--- |
+| Fundo Principal (FP) | 964676840.32 | 1056322640.15 |
+| Fundo Secundário (FS) | 257097030.37 | 281523748.26 |
+| Fundo Imobiliário Quântico | 118495964.58 | 129758581.22 |
+| Endowment | 100000000.00 | 100000000.00 |
+| Beyour Bank | 10246960.00 | 12296352.00 |
+| Fundo de Participações (FPS) | 14158664.00 | 16282463.60 |
+| Fundo Semente Quântica (FSQ) | 0.00 | 6120000.00 |
+| PATRIMÔNIO TOTAL | 1464675459.27 | 1606303785.23 |
