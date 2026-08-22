@@ -1,0 +1,12 @@
+[REDACTED FOR SAFE REPOSITORY IMPORT]
+
+O arquivo original continha material de autenticação financeira e chaves privadas. Ele não é publicado no repositório nem incluído no pacote distribuível. A cópia original foi preservada somente em quarentena local com permissões restritas para análise do proprietário. Nenhuma chave, seed, xprv, token ou credencial é reproduzida neste arquivo.
+
+Para integração real, utilize um cofre de segredos e faça rotação das credenciais expostas na fonte antes de qualquer uso operacional.
+
+Status: excluído do artefato público por segurança.
+
+Origem: NexusGenesis_Final.zip
+Destino público: arquivo redigido para rastreabilidade, sem material secreto.
+
+[END REDACTION]
