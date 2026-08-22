@@ -2,14 +2,15 @@ b39c81c9c631d9996bfa1c02e26a627d81699230ae3168f399d6830796dcef1e  incoming/2026-
 30f36f87c03803e5ae5780fec6dada07d452fdb264dcf19e2428aefb28365027  incoming/2026-08-22-arbitrage-bot-fdr/docs/documentacao_plataforma_otimizada.md
 26f0ea628c6c385698b50c3e31dea82a4477ea2d160f249ca1259dd86aad7d74  incoming/2026-08-22-arbitrage-bot-fdr/source/arbitrage_bot_fdr/requirements.txt
 e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855  incoming/2026-08-22-arbitrage-bot-fdr/source/arbitrage_bot_fdr/src/__init__.py
-0b1655327eb7023d17aacdfcbddef933168f0bab2815b89ec16f1f3022ce3891  incoming/2026-08-22-arbitrage-bot-fdr/source/arbitrage_bot_fdr/src/api.py
-4c0f16847eb645a9e780bcaecb75d68b7bbc6fe85b396894b433671bb79f773d  incoming/2026-08-22-arbitrage-bot-fdr/source/arbitrage_bot_fdr/src/arbitrage.py
-134193c32bccf35e70d46a2db88c6282ba56bf6e5c1291718570b82370d3a4c7  incoming/2026-08-22-arbitrage-bot-fdr/source/arbitrage_bot_fdr/src/database.py
-93e139e65d61cf4185659089ccd60d592fcf7dbd9380ed80092c0ec7c72b1b89  incoming/2026-08-22-arbitrage-bot-fdr/source/arbitrage_bot_fdr/src/execution.py
-5bb3e7e965ea3b95eb9c0f6262f2308119f07c878fb5c76146aa77b32ecb2410  incoming/2026-08-22-arbitrage-bot-fdr/source/arbitrage_bot_fdr/src/fdr.py
 6c1aeb57b753486405e3c69fda5fbec9ff77d0a14aaa7d1282617cb06c85e02f  incoming/2026-08-22-arbitrage-bot-fdr/source/arbitrage_bot_fdr/src/main.py
+4c0f16847eb645a9e780bcaecb75d68b7bbc6fe85b396894b433671bb79f773d  incoming/2026-08-22-arbitrage-bot-fdr/source/arbitrage_bot_fdr/src/models/arbitrage.py
+134193c32bccf35e70d46a2db88c6282ba56bf6e5c1291718570b82370d3a4c7  incoming/2026-08-22-arbitrage-bot-fdr/source/arbitrage_bot_fdr/src/models/database.py
+93e139e65d61cf4185659089ccd60d592fcf7dbd9380ed80092c0ec7c72b1b89  incoming/2026-08-22-arbitrage-bot-fdr/source/arbitrage_bot_fdr/src/models/execution.py
+5bb3e7e965ea3b95eb9c0f6262f2308119f07c878fb5c76146aa77b32ecb2410  incoming/2026-08-22-arbitrage-bot-fdr/source/arbitrage_bot_fdr/src/models/fdr.py
+c02062c90f44ecadabb11e59030f279c020b35000b69cbf012b463341c893171  incoming/2026-08-22-arbitrage-bot-fdr/source/arbitrage_bot_fdr/src/models/user.py
+0b1655327eb7023d17aacdfcbddef933168f0bab2815b89ec16f1f3022ce3891  incoming/2026-08-22-arbitrage-bot-fdr/source/arbitrage_bot_fdr/src/routes/api.py
+c02062c90f44ecadabb11e59030f279c020b35000b69cbf012b463341c893171  incoming/2026-08-22-arbitrage-bot-fdr/source/arbitrage_bot_fdr/src/routes/user.py
 bc2a1d1a24871f25dbd4de41e05ea77a11ddf47fbcc50366f25964de59ff0e3c  incoming/2026-08-22-arbitrage-bot-fdr/source/arbitrage_bot_fdr/src/static/index.html
-c02062c90f44ecadabb11e59030f279c020b35000b69cbf012b463341c893171  incoming/2026-08-22-arbitrage-bot-fdr/source/arbitrage_bot_fdr/src/user.py
 ced03f9d3af8c41095df4e42552cc14d06c36765affbeff5854b8c159d288826  incoming/2026-08-22-arbitrage-bot-fdr/source/arbitrage_bot_project/Relatório de Saldos de Carteiras Bitcoin.md
 4182c3c5527e4421644be963919e01d4b0316806eb0457d22e96915c000036dd  incoming/2026-08-22-arbitrage-bot-fdr/source/arbitrage_bot_project/create_psbt.py
 b80e0e888574588ed3cbcfc083a87ae2a1055042a7c71ccd1a468ef0f5226891  incoming/2026-08-22-arbitrage-bot-fdr/source/arbitrage_bot_project/create_psbt_simple.py
