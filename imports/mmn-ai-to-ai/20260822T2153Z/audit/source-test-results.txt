@@ -1,0 +1,7 @@
+MMN AI-to-AI source validation
+UTC: 2026-08-22T21:58:19Z
+Command: pnpm test
+Result: PASS
+Test files: 2 passed
+Tests: 11 passed, 0 failed
+Note: pnpm emitted a warning that the pnpm field in package.json is no longer read by the installed pnpm version; this warning did not affect the test result.
