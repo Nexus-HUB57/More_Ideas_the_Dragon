@@ -31,7 +31,7 @@ def validate_transaction_construction(manual_tx_hex, utxo_data):
     print("2. Reconstruindo a transação com bitcoinlib para comparação...")
     try:
         # Criar objeto Key para o endereço de origem
-        key = Key(PRIVATE_KEY_WIF, network=NETWORK, password=[REDACTED_SECRET]
+        key = Key(PRIVATE_KEY_WIF, network=NETWORK, password=None)  # secret redacted
 
         # Criar uma nova transação com bitcoinlib
         lib_tx = Transaction()
