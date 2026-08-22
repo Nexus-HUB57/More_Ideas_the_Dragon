@@ -237,3 +237,28 @@ Define API routes in `server/routers.ts`:
 import { z } from "zod";
 import { router, protectedProcedure, publicProcedure } from "./_core/trpc";
 import * as db from "./db";
+
+
+## Bundle Jhon Riff's — importação segura
+
+O acervo da tarefa **Jhon Riff's** foi preservado de forma aditiva no namespace [`imports/jhon-riffs-task-safe-20260822/`](./imports/jhon-riffs-task-safe-20260822/). A organização separa fontes originais, extrações aninhadas, bibliotecas legadas, projeto moderno, documentos, arquivos compactados e evidências de auditoria. Esse namespace foi escolhido para evitar colisões com arquivos homônimos já existentes no ecossistema.
+
+A validação atual registra **3.465 arquivos no bundle**, incluindo **299 módulos numerados de `001` a `299`**, sem lacunas detectadas. O inventário completo está em [`audit/FILES_MANIFEST_SHA256.tsv`](./imports/jhon-riffs-task-safe-20260822/audit/FILES_MANIFEST_SHA256.tsv), e o protocolo de recuperação segura está documentado em [`audit/SAFE_RECOVERY_PROTOCOL.md`](./imports/jhon-riffs-task-safe-20260822/audit/SAFE_RECOVERY_PROTOCOL.md).
+
+| Componente | Localização | Regra operacional |
+|---|---|---|
+| Fontes e extrações | [`source/`](./imports/jhon-riffs-task-safe-20260822/source/) | Preservar como material de proveniência; não executar diretamente da raiz |
+| Projeto moderno | [`modern-project/`](./imports/jhon-riffs-task-safe-20260822/modern-project/) | Selecionar explicitamente antes de instalar dependências ou iniciar build |
+| Arquivos compactados | [`archives/`](./imports/jhon-riffs-task-safe-20260822/archives/) | Validar hashes e suporte a Git LFS antes de extrair |
+| Auditorias | [`audit/`](./imports/jhon-riffs-task-safe-20260822/audit/) | Usar como evidência de integridade, escopo e recuperação |
+| Módulos 001–299 | [`artifacts/end-to-end/001-299/`](./artifacts/end-to-end/001-299/) | Tratar como artefatos versionados; revisar individualmente antes de execução |
+
+Nenhum segredo, credencial, token ou chave privada deve ser adicionado ao README ou ao controle de versão. Arquivos de configuração sensíveis devem permanecer fora do repositório, usando variáveis de ambiente e modelos `.example` quando necessário. A presença de um arquivo no bundle comprova preservação, não autorização para execução, deploy ou uso em produção.
+
+Para detalhes de proveniência, contagens, hashes e limites de segurança, consulte o [README do bundle](./imports/jhon-riffs-task-safe-20260822/README.md), o [relatório de inventário](./imports/jhon-riffs-task-safe-20260822/audit/source/inventory_report.txt) e as [evidências de pré-verificação](./imports/jhon-riffs-task-safe-20260822/audit/preflight/).
+
+> **Estado de colaboração:** esta atualização é exclusivamente documental e aditiva. Ela não remove, renomeia ou substitui arquivos, pastas, branches ou commits de outros desenvolvedores.
+
+---
+
+*Atualização documental realizada em 22 de agosto de 2026, com revisão estática e sem execução de scripts, builds, migrations ou deploys.*
