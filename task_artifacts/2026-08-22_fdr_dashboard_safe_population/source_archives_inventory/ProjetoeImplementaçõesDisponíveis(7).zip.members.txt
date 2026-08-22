@@ -1,0 +1,20 @@
+private_keys_transaction_integration.py
+App_updated.jsx
+App.jsx
+PrivateKeysManager.jsx
+main.py
+private_keys.py
+private_key_validator.py
+private_key_manager.py
+private_keys_database.json
+real_transaction_0001btc.json
+create_real_bitcoin_transaction.py
+bitcoin_real_transaction_tester.py
+bitcoin_utxo_manager.py
+bitcoin_key_manager.py
+bitcoin_transaction_builder.py
+bitcoin_real.py
+blockchain_validation_report.json
+high_value_transfer_receipt_10btc.json
+mainnet_transfer_receipt.json
+Varredura de Saldos Blockchain e Integração ao FDR.pptx

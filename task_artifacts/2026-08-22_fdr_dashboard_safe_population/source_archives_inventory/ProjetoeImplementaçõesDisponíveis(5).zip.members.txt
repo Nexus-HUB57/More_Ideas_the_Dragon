@@ -1,0 +1,19 @@
+fdr_wallet_importer.py
+satoshinakamoto3.txt
+suply2.txt
+suply1.txt
+suply2t.txt
+suply8.txt
+suply4.txt
+suply9.txt
+satoshinakamoto3t1.txt
+satoshinakamoto3t2.txt
+satoshinakamoto3t23.txt
+test_exclusive_wallet_transfer.py
+exclusive_wallet_api.py
+exclusive_wallet_transfer.py
+exclusive_wallet_manager.py
+fdr_manager.py
+test_exclusive_wallet.py
+run_full_import.py
+Sistema de Upload de Carteiras para o FDR.pptx
