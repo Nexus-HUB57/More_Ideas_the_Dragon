@@ -1,0 +1,5 @@
+=== STAGED REVIEW ===
+All staged paths are additions under task_artifacts/20260822_current_task_safe_population/.
+Existing repository paths outside this isolated root are unchanged.
+The two paths containing non-ASCII characters are valid additions; Git's default name-only output escapes their bytes for display.
+The source files retain their original whitespace exactly; Git diff-check warnings are preserved in audit/git_diff_check_warnings.txt and are non-structural.

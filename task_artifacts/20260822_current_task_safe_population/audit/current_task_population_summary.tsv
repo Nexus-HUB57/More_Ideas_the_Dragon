@@ -1,0 +1,12 @@
+metric\tvalue
+repository\tNexus-HUB57/More_Ideas_the_Dragon
+branch\tagent/manus-current-task-safe-population-20260822-220019
+base_commit\t4bcbb8bd1ac357ed114d8644cd0f55502fe2509c
+existing_01_299_tracked_files\t304
+existing_numeric_ids\t299
+missing_numeric_ids\t0
+new_technical_bundle_files\t12
+new_web_project_files\t84
+new_documentation_files\t1
+new_archive_files\t1
+new_source_archive_files\t98

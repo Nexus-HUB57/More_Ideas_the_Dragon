@@ -1,0 +1,20 @@
+=== CURRENT BRANCH AND BASE ===
+## [32magent/manus-current-task-safe-population-20260822-220019[m...[31morigin/main[m
+[31m??[m task_artifacts/20260822_current_task_safe_population/
+4bcbb8bd1ac357ed114d8644cd0f55502fe2509c
+4bcbb8bd1ac357ed114d8644cd0f55502fe2509c
+
+=== NUMBERED FILE COVERAGE ===
+numbered_ids=299
+first_ids=001 002 003 004 005 
+last_ids=295 296 297 298 299 
+
+=== EXPECTED ID GAPS ===
+missing_ids=0
+
+=== SOURCE PACKAGE HASHES ===
+7d4da8e5e4a82ca9082bef15631c640144e023bd67f9c42a811339d2c42b04be  /home/ubuntu/upload/ClonareAtualizarRepositórioGitHubcomAjustesNecessários.zip
+82678f033359053af0962ec324b96a1a425661b99e5828dad16eea0989c0984d  task_artifacts/20260822_current_task_safe_population/source/documentation/Guia_Integracao_Modelos_IA_Proprietarios.md
+
+=== UNTRACKED PREVIEW ===
+[31m??[m task_artifacts/20260822_current_task_safe_population/
