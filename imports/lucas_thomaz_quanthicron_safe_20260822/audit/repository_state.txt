@@ -1,0 +1,4 @@
+base_branch=main
+base_commit=de62c4536d0549fd6bf43b2728bb1321676867ff
+working_branch=agent/lucas-thomaz-quanthicron-safe-import-20260822
+source_file_count=48
