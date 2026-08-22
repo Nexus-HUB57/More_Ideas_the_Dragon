@@ -64,7 +64,7 @@ def base58_decode(s):
     num = 0
     for char in s.encode('ascii'):
         num = num * 58 + BASE58_ALPHABET.find(char)
-    
+
     # Determine the number of leading zeros
     leading_zeros = 0
     for char in s:
@@ -98,9 +98,9 @@ def create_legacy_p2pkh_transaction_manual(available_utxos, source_address, dest
     # Estimate transaction size for 1 P2PKH input and 2 P2PKH outputs
     # A typical P2PKH input is about 148 bytes, P2PKH output is about 34 bytes.
     # Base transaction size is about 10 bytes.
-    estimated_vsize = 10 + (148 * 1) + (34 * 2) 
+    estimated_vsize = 10 + (148 * 1) + (34 * 2)
     estimated_fee = estimated_vsize * fee_rate_sats_per_byte
-    
+
     target_value = amount_satoshis + estimated_fee
 
     sorted_utxos = sorted(available_utxos, key=lambda x: x["value"], reverse=True)
@@ -110,7 +110,7 @@ def create_legacy_p2pkh_transaction_manual(available_utxos, source_address, dest
             total_input_value += utxo["value"]
         else:
             break
-    
+
     if total_input_value < target_value:
         raise ValueError(f"Saldo insuficiente ou UTXOs muito pequenos para cobrir {AMOUNT_BTC} BTC + taxa. Necessário: {target_value} satoshis, Disponível nos selecionados: {total_input_value} satoshis")
 
@@ -265,7 +265,7 @@ def main():
 
     try:
         tx_hex, used_utxos = create_legacy_p2pkh_transaction_manual(current_utxos, source_address, DESTINATION_ADDRESS, AMOUNT_SATOSHIS, fee_rate, PRIVATE_KEY_WIF)
-        
+
         output_data = {
             "transaction_number": 1,
             "source_address": source_address,
@@ -278,7 +278,7 @@ def main():
             "status": "signed_manual_byte_by_byte",
             "used_utxos": used_utxos
         }
-        
+
         output_filename = f'signed_transaction_manual_byte_by_byte_{datetime.now().strftime("%Y%m%d_%H%M%S")}.json'
         with open(output_filename, "w") as f:
             json.dump(output_data, f, indent=2)

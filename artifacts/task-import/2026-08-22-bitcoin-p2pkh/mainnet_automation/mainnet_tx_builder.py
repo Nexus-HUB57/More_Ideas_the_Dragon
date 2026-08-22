@@ -49,26 +49,26 @@ def build_transaction():
     print(f"Taxa selecionada: {fee_rate} sat/vB")
 
     amount_sats = int(config.AMOUNT_BTC * 100_000_000)
-    
+
     # Seleção simples de UTXO (maior primeiro)
     sorted_utxos = sorted(utxos, key=lambda x: x['value'], reverse=True)
-    
+
     tx = Transaction(network='bitcoin')
-    
+
     # Estimativa de tamanho para 1 input P2PKH e 2 outputs P2PKH
     # Input: 148 bytes, Outputs: 34 bytes cada, Base: 10 bytes
     estimated_vsize = 148 + (34 * 2) + 10
     estimated_fee = estimated_vsize * fee_rate
-    
+
     total_input_value = 0
     selected_utxos = []
-    
+
     for utxo in sorted_utxos:
         selected_utxos.append(utxo)
         total_input_value += utxo['value']
         if total_input_value >= (amount_sats + estimated_fee):
             break
-            
+
     if total_input_value < (amount_sats + estimated_fee):
         print(f"Saldo insuficiente para enviar {config.AMOUNT_BTC} BTC + taxas.")
         return None
@@ -95,7 +95,7 @@ def build_transaction():
             print(f"AVISO CRÍTICO: A chave privada fornecida deriva o endereço {key.address()},")
             print(f"mas o endereço de origem é {config.SOURCE_ADDRESS}.")
             print("A transação será assinada, mas falhará no broadcast (OP_EQUALVERIFY).")
-        
+
         tx.sign(key)
         print("Transação assinada com sucesso.")
     except Exception as e:
@@ -103,7 +103,7 @@ def build_transaction():
         return None
 
     tx_hex = tx.as_hex()
-    
+
     result = {
         "timestamp": datetime.now().isoformat(),
         "tx_hex": tx_hex,
@@ -115,11 +115,11 @@ def build_transaction():
         "destination": config.DESTINATION_ADDRESS,
         "status": "signed"
     }
-    
+
     filename = f"signed_tx_{datetime.now().strftime('%Y%m%d_%H%M%S')}.json"
     with open(filename, 'w') as f:
         json.dump(result, f, indent=4)
-    
+
     print(f"Dados da transação salvos em {filename}")
     return tx_hex
 

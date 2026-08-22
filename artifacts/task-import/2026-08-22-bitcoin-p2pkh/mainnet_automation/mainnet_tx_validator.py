@@ -18,14 +18,14 @@ def validate_hex(tx_hex):
     txid = tx.txid if isinstance(tx.txid, str) else tx.txid()
     print(f"TXID: {txid}")
     print(f"Tamanho: {len(tx_hex)//2} bytes")
-    
+
     # Versão pode ser int ou bytes
     version = tx.version
     if isinstance(version, bytes):
         version = int.from_bytes(version, 'little')
     print(f"Versão: {version}")
     print(f"Locktime: {tx.locktime}")
-    
+
     print(f"\nInputs ({len(tx.inputs)}):")
     for i, vin in enumerate(tx.inputs):
         prev_txid = vin.prev_txid.hex() if isinstance(vin.prev_txid, bytes) else vin.prev_txid
@@ -34,7 +34,7 @@ def validate_hex(tx_hex):
             print(f"      ScriptSig: {vin.unlocking_script.hex()[:32]}...")
         elif hasattr(vin, 'script_sig') and vin.script_sig:
             print(f"      ScriptSig: {vin.script_sig.hex()[:32]}...")
-        
+
     print(f"\nOutputs ({len(tx.outputs)}):")
     for i, vout in enumerate(tx.outputs):
         addr = vout.address if hasattr(vout, 'address') else "Desconhecido"
@@ -48,7 +48,7 @@ def validate_hex(tx_hex):
         target_addr = tx.outputs[0].address if hasattr(tx.outputs[0], 'address') else ""
         if target_addr != config.DESTINATION_ADDRESS:
             print(f"AVISO: O endereço de destino {target_addr} não coincide com o configurado ({config.DESTINATION_ADDRESS}).")
-        
+
     return True
 
 if __name__ == "__main__":
