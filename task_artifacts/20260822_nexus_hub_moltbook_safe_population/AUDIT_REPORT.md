@@ -43,9 +43,9 @@ O arquivo de ambiente original e o arquivo de configuração privada do projeto 
 
 ## Commits e validação remota
 
-A população foi registrada em dois commits no branch de trabalho. O primeiro commit, `be2876dea4088103551a09b221357695aae5e337`, adicionou os 224 arquivos do bundle ao namespace isolado. O segundo commit, `d7ec758b5546185b56552ba5100adaec0e6f427f`, reconciliou as contagens finais do relatório e dos manifestos, sem alterar caminhos fora do namespace.
+A população foi registrada em três commits no branch de trabalho. O primeiro commit, `be2876dea4088103551a09b221357695aae5e337`, adicionou os 224 arquivos do bundle ao namespace isolado. O segundo commit, `d7ec758b5546185b56552ba5100adaec0e6f427f`, reconciliou as contagens finais do relatório e dos manifestos. O terceiro commit, `20144f840dea42f4f0019ebf3b09ae8cf16f37a3`, registrou os SHAs, a validação add-only e a situação de concorrência, sem alterar caminhos fora do namespace.
 
-A validação do branch remoto contra `origin/main` confirmou 224 caminhos adicionados, zero modificações e zero deleções. O branch remoto está baseado no commit `edcc8f1ceeddbf99f144bc39ad9ab5d726f604c6` de `origin/main`, e o branch principal permaneceu no mesmo SHA durante a operação.
+A validação do branch remoto contra a base auditada confirmou 224 caminhos adicionados, zero modificações e zero deleções. O branch de trabalho foi criado a partir do commit `edcc8f1ceeddbf99f144bc39ad9ab5d726f604c6` de `origin/main`. Durante a conferência final, `origin/main` avançou concorrencialmente para `9899791b9b7211be9de4e71258f1323f60cb9798` por atividade de outro desenvolvedor. Nenhum merge, rebase, reset ou force-push foi aplicado; a atualização concorrente foi preservada e deve ser avaliada pelos mantenedores antes de eventual integração.
 
 ## Conflitos e exceções
 
