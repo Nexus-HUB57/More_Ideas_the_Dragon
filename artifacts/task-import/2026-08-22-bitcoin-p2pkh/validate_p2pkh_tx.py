@@ -115,5 +115,3 @@ if __name__ == '__main__':
         print("Erro: Arquivo signed_transaction_manual_byte_by_byte_20250918_221059.json não encontrado.")
     except Exception as e:
         print(f"Erro ao carregar dados da transação: {e}")
-
-
