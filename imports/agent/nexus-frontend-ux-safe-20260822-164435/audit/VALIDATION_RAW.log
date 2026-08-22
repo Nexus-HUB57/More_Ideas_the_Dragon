@@ -1,0 +1,104 @@
+
+=== pnpm check ===
+[WARN] The "pnpm" field in package.json is no longer read by pnpm. The following keys were ignored: "pnpm.patchedDependencies", "pnpm.overrides". See https://pnpm.io/settings for the new home of each setting.
+
+> nexus-frontend@1.0.0 check /home/ubuntu/nexus-frontend
+> tsc --noEmit
+
+exit_code=0
+
+=== pnpm test ===
+[WARN] The "pnpm" field in package.json is no longer read by pnpm. The following keys were ignored: "pnpm.patchedDependencies", "pnpm.overrides". See https://pnpm.io/settings for the new home of each setting.
+
+> nexus-frontend@1.0.0 test /home/ubuntu/nexus-frontend
+> vitest run
+
+
+ RUN  v2.1.9 /home/ubuntu/nexus-frontend
+
+ ✓ server/auth.logout.test.ts (1 test) 7ms
+
+ Test Files  1 passed (1)
+      Tests  1 passed (1)
+   Start at  16:46:17
+   Duration  442ms (transform 85ms, setup 0ms, collect 191ms, tests 7ms, environment 0ms, prepare 83ms)
+
+exit_code=0
+
+=== pnpm build ===
+[WARN] The "pnpm" field in package.json is no longer read by pnpm. The following keys were ignored: "pnpm.patchedDependencies", "pnpm.overrides". See https://pnpm.io/settings for the new home of each setting.
+
+> nexus-frontend@1.0.0 build /home/ubuntu/nexus-frontend
+> vite build && esbuild server/_core/index.ts --platform=node --packages=external --bundle --format=esm --outdir=dist
+
+vite v7.1.9 building for production...
+transforming...
+✓ 1801 modules transformed.
+rendering chunks...
+computing gzip size...
+../dist/public/index.html                 367.90 kB │ gzip: 105.65 kB
+../dist/public/assets/index-LNq6_ekD.css  134.09 kB │ gzip:  20.39 kB
+../dist/public/assets/index-CnVOfmQB.js   799.55 kB │ gzip: 220.47 kB
+
+(!) Some chunks are larger than 500 kB after minification. Consider:
+- Using dynamic import() to code-split the application
+- Use build.rollupOptions.output.manualChunks to improve chunking: https://rollupjs.org/configuration-options/#output-manualchunks
+- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
+✓ built in 3.75s
+
+  dist/index.js  24.9kb
+
+⚡ Done in 6ms
+exit_code=0
+
+=== roadmap zip integrity ===
+Archive:  /home/ubuntu/upload/RoadmapparaImplementaçãodaAgênciaProativanoNexus(2).zip
+    testing: data-adapter.ts          OK
+    testing: test_mocks.ts            OK
+    testing: nexus-orchestrator.ts    OK
+    testing: governance.ts            OK
+    testing: responsive-interactivity.ts   OK
+    testing: test_new_implementations.ts   OK
+    testing: Dashboard_Mockups_WebSockets.md   OK
+    testing: Roadmap Estratégico Final: Implementação Plena da Agência Proativa no Ecossistema Nexus.md   OK
+    testing: Relatório Estratégico: Roadmap para Implementação Plena da Agência Proativa no Ecossistema Nexus.md   OK
+    testing: Projeto_Dashboard_Nexus.md   OK
+    testing: Plano_Expansao_Governanca_Descentralizada.md   OK
+    testing: Análise de Componentes e Lacunas - Ecossistema Nexus.md   OK
+    testing: Roadmap_Integracao_APIs_Mercado.md   OK
+    testing: NEXUS_SYSTEM.md          OK
+    testing: Nexus_Project.zip        OK
+    testing: App.tsx                  OK
+    testing: Dashboard.tsx            OK
+    testing: db-helpers.ts            OK
+    testing: GnoxTerminal.tsx         OK
+    testing: Home.tsx                 OK
+    testing: index.css                OK
+    testing: index.ts                 OK
+    testing: MarketFeed.tsx           OK
+    testing: nexus-backend.test.ts    OK
+    testing: OrchestratorView.tsx     OK
+    testing: Relatório Estratégico_ Roadmap para Implementação Plena da Agência Proativa no Ecossistema Nexus.md   OK
+    testing: Roadmap Estratégico Final_ Implementação Plena da Agência Proativa no Ecossistema Nexus.md   OK
+    testing: routers.ts               OK
+    testing: todo.md                  OK
+    testing: vital-loop-manager.ts    OK
+    testing: VitalLoopMonitor.tsx     OK
+    testing: websocket.test.ts        OK
+    testing: websocket.ts             OK
+    testing: WebSocketContext.tsx     OK
+    testing: websocket-init.ts        OK
+    testing: gnox-kernel.ts           OK
+    testing: schema.ts                OK
+No errors detected in compressed data of /home/ubuntu/upload/RoadmapparaImplementaçãodaAgênciaProativanoNexus(2).zip.
+exit_code=0
+
+=== package diff check ===
+exit_code=0
+
+=== SAFETY CHECKS ===
+0
+0
+169
+c4191de856b15b25a19a3e915b029e419f79eb1a5311fb5533d92e018578178c
+0
