@@ -1,0 +1,11 @@
+{
+    "workflow_status": "ACTIVE",
+    "total_utxos_processed": 723,
+    "total_btc_transferred": 3.69299162,
+    "average_fee_rate_applied": "3 sat/vB",
+    "total_network_fees_btc": 0.00147615,
+    "efficiency_ratio": "99.96%",
+    "average_propagation_time": "4.2s",
+    "last_sweep_timestamp": 1786558969.2935567,
+    "next_scheduled_sweep": 1786559269.293557
+}

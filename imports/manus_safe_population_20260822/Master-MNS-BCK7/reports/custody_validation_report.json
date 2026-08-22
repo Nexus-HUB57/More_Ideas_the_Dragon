@@ -1,0 +1,9 @@
+{
+    "timestamp": 1691864400,
+    "custody_address": "bc1qtydmzqcyltsm4tfmxl3a8f9tqvdxls62j05a8s",
+    "status": "VALIDATED_EMPTY",
+    "confirmed_balance_btc": 0.0,
+    "pending_balance_btc": 0.0,
+    "utxo_count": 0,
+    "network_confirmation": "Address is active and recognized on Mainnet. Ready for incoming consolidation."
+}

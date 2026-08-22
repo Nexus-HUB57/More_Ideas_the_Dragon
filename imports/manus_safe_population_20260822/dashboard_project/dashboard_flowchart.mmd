@@ -1,0 +1,34 @@
+graph TD
+    A[Usuário] --> B(Frontend React)
+    B --> C(Backend Flask)
+    C --> D[API Blockstream]
+    C --> E[API BlockCypher]
+    C --> F[API CoinGecko]
+    D --> C
+    E --> C
+    F --> C
+    C --> B
+    B --> A
+
+    subgraph "Master Wallet & Mainnet"
+        B --> G(Gera Transação Raw)
+        G --> H[Assinatura via Electrum]
+        H --> I(Transmissão Mainnet)
+        I --> J[Blockchain Real]
+        J --> B
+    end
+
+    subgraph "Integração Binance"
+        B --> K(API Binance)
+        K --> L[Saldos e Custódia]
+        L --> B
+    end
+
+    subgraph "Agentes IA"
+        M[Agente Sentinela]
+        N[Agente Estrategista]
+        O[Agente Gas]
+        M --> B
+        N --> B
+        O --> B
+    end

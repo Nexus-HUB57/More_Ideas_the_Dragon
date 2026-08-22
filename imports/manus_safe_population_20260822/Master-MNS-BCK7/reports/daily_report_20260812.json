@@ -1,0 +1,29 @@
+{
+    "date": "2026-08-12T18:58:01.238309",
+    "source_wallet": {
+        "address": "bc1qxy2kgdygjrsqtzq2n0yrf2493p83kkfjhx0wlh",
+        "stats": {
+            "balance": 3.69299162,
+            "pending": 0.0,
+            "tx_count": 1115
+        }
+    },
+    "custody_wallet": {
+        "address": "bc1qtydmzqcyltsm4tfmxl3a8f9tqvdxls62j05a8s",
+        "stats": {
+            "balance": 0.0,
+            "pending": 0.0,
+            "tx_count": 0
+        }
+    },
+    "network_status": {
+        "fees": {
+            "fastestFee": 2,
+            "halfHourFee": 1,
+            "hourFee": 1,
+            "economyFee": 1,
+            "minimumFee": 1
+        },
+        "block_height": "962179"
+    }
+}
