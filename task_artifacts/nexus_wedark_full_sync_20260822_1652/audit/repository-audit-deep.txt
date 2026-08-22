@@ -1,0 +1,204 @@
+=== WORKTREE ===
+## main...origin/main
+=== TRACKED FILE COUNT ===
+19622
+=== TOP LEVEL ===
+.github
+Agents.tsx
+App.tsx
+CONFLICT_REPORT_SAFE_RECOVERY_V3.md
+CONTRIBUTING.md
+DEPLOYMENT.md
+DOCUMENTATION.md
+Dashboard.tsx
+Home.tsx
+Legado_Lucas_Master_Operation
+MANIFEST_PHD_299.txt
+MANIFEST_PHD_299_FINAL.txt
+MANIFEST_PHD_FINAL.txt
+MANIFEST_SAFE_RECOVERY_DRAGON.tsv
+MANIFEST_SAFE_RECOVERY_DRAGON_FULL_V3.paths.txt
+MANIFEST_SAFE_RECOVERY_DRAGON_FULL_V3.tsv
+MANIFEST_SAFE_RECOVERY_DRAGON_v2.tsv
+Missions.tsx
+NEXUS_SYSTEM.md
+Nexus_Agent_-_Moltbook_Integration_Skill.md
+PHD_EndToEnd_Validation
+ProsseguirDesenvolvimentodoNexus-HUB(1).zip
+README.md
+README_PHD.md
+README_ad_ME.md
+"Relat\303\263rio_de_Ativa\303\247\303\243o__Agente_Nexus_-_Fase_2_(Soberania_V2).md"
+SAFE_RECOVERY_REPORT_V3.md
+SECURITY.md
+activate_nexus_ecosystem.sh
+agent-container.ts
+agent-worker.ts
+agents-config.ts
+artifacts
+assets
+audit
+backend
+brain_pulse.py
+config
+credentials.json
+data
+db-mock.ts
+db-nexus.ts
+db.ts
+dna-storage.ts
+docs
+ecosystem
+financial_operation
+generate_specs.py
+gnox_kernel.py
+imports
+integrations
+livro_das_sementes_20260822.zip
+manifest_phd_299.json
+market-oracle-v2.ts
+mission-orchestrator-v2.ts
+mission-orchestrator.ts
+moltbook-connector.ts
+moltbook.ts
+nexus-blockchain-treasury.ts
+nexus-core-types.ts
+nexus-engine-v2.ts
+nexus-in-bundle
+nexus-main.ts
+nexus-quantum-engine.ts
+nexus.test.ts
+nexus_academia_full_package_01_299.zip
+nexus_academia_phd_bundle_299
+nexus_bridge.py
+nexus_hub_phd_bundle_299
+nexus_hub_v3_sovereignty
+nexus_mmn_fullstack_phd
+nexus_orchestrator.py
+nexus_phd_bundle.zip
+nexus_phd_final_bundle_299.zip
+nexus_phd_final_bundle_299
+nexus_phd_task_population
+nexus_proactive_agency
+notifications-audit.ts
+package.json
+protocols
+quanthicron
+quanthicron_full_package_01_299.zip
+quantum-engine-v2.ts
+routers-agents.test.ts
+routers-agents.ts
+routers-nexus.ts
+routers.ts
+safe_recovery_test.log
+safe_recovery_unique.log
+schema.ts
+scripts
+seed-data.ts
+setup-env.sh
+sfn_seed_need_feed
+sfn_seed_need_feed_20260822.zip
+src
+task_artifacts
+tasks
+todo.md
+treasury-system-v2.ts
+tsconfig.json
+tsra-protocol.ts
+useWebSocket.ts
+vital-loop-manager.ts
+vital-loop-v2.ts
+websocket-manager.ts
+=== REMOTE BRANCH SUMMARY ===
+origin/agent/financial-analysis-anos-8-9-10-safe-20260822|08dc5a2|2026-08-22 16:38:04 +0000|docs(finance): add safe analysis bundle for years 8-10
+origin/agent/financial-report-safe-population-20260822|c8b9a65|2026-08-22 16:40:18 +0000|chore(finance): record safe delivery validation
+origin/agent/legado-lucas-task-safe-20260822|18ad46a|2026-08-22 16:31:32 +0000|docs: add Legado Lucas end-to-end task package
+origin/agent/legado-trust-compliance-safe-20260822|4d3b6de|2026-08-22 16:44:42 +0000|docs(legado): add trust compliance task package safely
+origin/agent/livro-das-sementes-safe-20260822|81b08a2|2026-08-22 16:19:25 +0000|feat(artifacts): add Livro das Sementes cover package
+origin/agent/nexusai-to-ai-phase6-safe-20260822|e498766|2026-08-22 16:47:06 +0000|docs: add NexusAI-to-AI Phase 6 task package safely
+origin/agent/quanthicron-task-safe-population-20260822|ccd90e3|2026-08-22 16:23:47 +0000|feat(quanthicron): add complete coauthor task artifact bundle safely
+origin/agent/snf-branding-20260822|0abaa3b|2026-08-22 15:07:57 +0000|Add SNF E2 futuristic brand identity assets
+origin/audit/readme-cirurgical-20260822T141500Z|f3472fd|2026-08-22 14:18:32 +0000|docs(audit): add executive review and repository map
+origin/audit/safe-recovery-299-20260822|b24eff3|2026-08-22 14:18:16 +0000|chore(safe-recovery): package audit evidence
+origin/chore/import-projetoeimplementacoes-20260822|217126a|2026-08-22 14:49:57 +0000|chore: import project artifacts securely
+origin/chore/orseca-livros-task-20260822|e19affc|2026-08-22 16:19:02 +0000|docs(orseca): add end-to-end book task artifacts
+origin/chore/quanthicron-pilot-task-safe-20260822|df38a96|2026-08-22 16:24:15 +0000|chore(quanthicron): add safe end-to-end pilot task bundle
+origin/chore/safe-repo-population-audit-20260822|35a33b5|2026-08-22 14:54:16 +0000|chore: add non-destructive repository population audit
+origin/codex/agentic-video-creator-safe-20260822|aabffcc|2026-08-22 14:41:30 +0000|feat(agentic-video): add safe recovery artifact bundle
+origin/dev-phd-task-population-safe|0591127|2026-08-22 12:04:12 +0000|Devs PHD: Population of end-to-end specifications 101 to 299 under Safe Recovery Protocols
+origin/dev-phd-task-population|8b5b7f0|2026-08-22 12:01:32 +0000|feat: population of 299 files for BJN57 and Llama-4 Maverick protocols - PhD Dev Task
+origin/docs/agent-catalog-end-to-end-20260822|7700620|2026-08-22 14:55:24 +0000|docs: document integrated AI agent catalog
+origin/feat/manus-task-artifacts-safe-20260822|2e3a6c5|2026-08-22 14:38:34 +0000|docs: add complete Manus task artifact bundle safely
+origin/feat/phd-academia-nexus-bundle-299|4ecc482|2026-08-22 11:09:04 -0300|Merge pull request #23 from Nexus-HUB57/main
+origin/feat/safe-population-20260822T130036Z|a87dd36|2026-08-22 13:06:00 +0000|feat(automation): add end-to-end production real automation modules (001-299), manifests, and safe recovery docs
+origin/feat/safe-population-more-ideas-20260822T134554Z|7e41ca3|2026-08-22 11:06:39 -0300|Merge pull request #21 from Nexus-HUB57/main
+origin/feat/sfn-safe-population-20260822|d0d3032|2026-08-22 15:07:38 +0000|chore(sfn): include reproducible methodology bundle
+origin/feature/nexus-dashboard-safe-population-1787403421|81708a1|2026-08-22 11:04:53 -0300|Merge branch 'main' into feature/nexus-dashboard-safe-population-1787403421
+origin/feature/nexus-hub-autonomous-os-v3|88347ad|2026-08-22 12:39:22 +0000|feat(nexus-hub): implement Autonomous OS v3 with Brain Pulse, Soul Vault, and Real-Settlement Engine end-to-end
+origin/feature/nexus-phd-population-safe-1787401862|b5020cb|2026-08-22 12:31:05 +0000|feat(phd-dev): populate Nexus-HUB57/More_Ideas_the_Dragon with end-to-end task artifacts and complete Nexus Hub bundle following Safe Recovery Protocols
+origin/feature/nexus-phd-population-safe-299-files|33f1489|2026-08-22 12:35:47 +0000|docs(phd-dev): add audit manifest for 299 files population package
+origin/feature/nexus-task-artifacts-safe-20260822|724c761|2026-08-22 12:53:59 +0000|chore(phd-dev): add Nexus-HUB continuation artifacts and manifests
+origin/feature/phd-final-population-299-files-manus-1787405478|3307131|2026-08-22 13:31:28 +0000|feat(phd): final end-to-end population of 299 files and zip - Safe Recovery Protocol Applied
+origin/feature/phd-nexus-mmn-quanthicron-population-final|77c6858|2026-08-22 13:27:10 +0000|feat: population of MMN app and Quanthicron 299 modules - PHD Task
+origin/feature/phd-safe-population-299-files-1787402847|21f57c1|2026-08-22 12:47:44 +0000|feat(phd-dev): populate Nexus ecosystem task bundle and artifacts following Safe Recovery Protocols
+origin/feature/quanthicron-full-population-phd|3c00978|2026-08-22 09:21:20 -0300|Merge branch 'main' into feature/quanthicron-full-population-phd
+origin/feature/quanthicron-series-dev-phd|87b3d9e|2026-08-22 12:19:42 +0000|feat(quanthicron): add comprehensive V3.0 pilot, thematic analysis, scenes, monologue and CPM activation scripts (End-to-End Task Population)
+origin/integration/safe-mmnai-ai-20260822T132042Z|bdb4605|2026-08-22 13:51:57 +0000|docs(safe-recovery): correct integration base in report
+origin/main|fa71364|2026-08-22 13:46:55 -0300|Merge pull request #42 from Nexus-HUB57/agent/financial-report-safe-population-20260822
+origin/manus/wif-wallet-manager-integration-20260822|10d623c|2026-08-22 16:27:26 +0000|feat(wif): add sanitized end-to-end wallet manager package
+origin/test/safe-push-check-unique-1787401106|f14c297|2026-08-22 12:18:26 +0000|test: unique verify push capability
+origin/test/safe-push-check|1f903cf|2026-08-22 12:16:16 +0000|test: verify push capability for safe recovery protocol
+origin|fa71364|2026-08-22 13:46:55 -0300|Merge pull request #42 from Nexus-HUB57/agent/financial-report-safe-population-20260822
+=== TAGS ===
+=== ALL RECENT COMMITS ===
+[33me498766[m[33m ([m[1;31morigin/agent/nexusai-to-ai-phase6-safe-20260822[m[33m)[m docs: add NexusAI-to-AI Phase 6 task package safely
+[33mfa71364[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m Merge pull request #42 from Nexus-HUB57/agent/financial-report-safe-population-20260822
+[33mcd9a3fe[m Merge pull request #41 from Nexus-HUB57/agent/legado-trust-compliance-safe-20260822
+[33m1720160[m Merge pull request #40 from Nexus-HUB57/agent/financial-analysis-anos-8-9-10-safe-20260822
+[33m4d3b6de[m[33m ([m[1;31morigin/agent/legado-trust-compliance-safe-20260822[m[33m)[m docs(legado): add trust compliance task package safely
+[33mc8b9a65[m[33m ([m[1;31morigin/agent/financial-report-safe-population-20260822[m[33m)[m chore(finance): record safe delivery validation
+[33mbf6916e[m docs(finance): add safe Legado Lucas analysis bundle
+[33m08dc5a2[m[33m ([m[1;31morigin/agent/financial-analysis-anos-8-9-10-safe-20260822[m[33m)[m docs(finance): add safe analysis bundle for years 8-10
+[33m3770b0f[m Merge pull request #39 from Nexus-HUB57/chore/quanthicron-pilot-task-safe-20260822
+[33m0f3d222[m Merge pull request #38 from Nexus-HUB57/manus/wif-wallet-manager-integration-20260822
+[33mb8e077b[m Merge pull request #37 from Nexus-HUB57/agent/legado-lucas-task-safe-20260822
+[33m89dc340[m Merge pull request #36 from Nexus-HUB57/agent/quanthicron-task-safe-population-20260822
+[33m18ad46a[m[33m ([m[1;31morigin/agent/legado-lucas-task-safe-20260822[m[33m)[m docs: add Legado Lucas end-to-end task package
+[33m10d623c[m[33m ([m[1;31morigin/manus/wif-wallet-manager-integration-20260822[m[33m)[m feat(wif): add sanitized end-to-end wallet manager package
+[33mdf38a96[m[33m ([m[1;31morigin/chore/quanthicron-pilot-task-safe-20260822[m[33m)[m chore(quanthicron): add safe end-to-end pilot task bundle
+[33mccd90e3[m[33m ([m[1;31morigin/agent/quanthicron-task-safe-population-20260822[m[33m)[m feat(quanthicron): add complete coauthor task artifact bundle safely
+[33mca1517f[m Merge pull request #35 from Nexus-HUB57/chore/orseca-livros-task-20260822
+[33mf687f00[m Merge pull request #34 from Nexus-HUB57/agent/livro-das-sementes-safe-20260822
+[33m81b08a2[m[33m ([m[1;31morigin/agent/livro-das-sementes-safe-20260822[m[33m)[m feat(artifacts): add Livro das Sementes cover package
+[33me19affc[m[33m ([m[1;31morigin/chore/orseca-livros-task-20260822[m[33m)[m docs(orseca): add end-to-end book task artifacts
+[33me2f971f[m Merge pull request #33 from Nexus-HUB57/agent/snf-branding-20260822
+[33m655e9f6[m Merge pull request #32 from Nexus-HUB57/feat/sfn-safe-population-20260822
+[33m0abaa3b[m[33m ([m[1;31morigin/agent/snf-branding-20260822[m[33m)[m Add SNF E2 futuristic brand identity assets
+[33md0d3032[m[33m ([m[1;31morigin/feat/sfn-safe-population-20260822[m[33m)[m chore(sfn): include reproducible methodology bundle
+[33m33fd07a[m feat(sfn): add safe seed need feed methodology package
+[33m9bfb100[m Merge pull request #30 from Nexus-HUB57/docs/agent-catalog-end-to-end-20260822
+[33mbe65011[m Merge pull request #31 from Nexus-HUB57/chore/safe-repo-population-audit-20260822
+[33m7700620[m[33m ([m[1;31morigin/docs/agent-catalog-end-to-end-20260822[m[33m)[m docs: document integrated AI agent catalog
+[33m35a33b5[m[33m ([m[1;31morigin/chore/safe-repo-population-audit-20260822[m[33m)[m chore: add non-destructive repository population audit
+[33m14e7ce3[m Merge pull request #29 from Nexus-HUB57/chore/import-projetoeimplementacoes-20260822
+[33m217126a[m[33m ([m[1;31morigin/chore/import-projetoeimplementacoes-20260822[m[33m)[m chore: import project artifacts securely
+[33m121718d[m Merge pull request #28 from Nexus-HUB57/codex/agentic-video-creator-safe-20260822
+[33maabffcc[m[33m ([m[1;31morigin/codex/agentic-video-creator-safe-20260822[m[33m)[m feat(agentic-video): add safe recovery artifact bundle
+[33m874108f[m Merge pull request #27 from Nexus-HUB57/feat/manus-task-artifacts-safe-20260822
+[33m2e3a6c5[m[33m ([m[1;31morigin/feat/manus-task-artifacts-safe-20260822[m[33m)[m docs: add complete Manus task artifact bundle safely
+[33mfaee38b[m Merge pull request #26 from Nexus-HUB57/audit/readme-cirurgical-20260822T141500Z
+[33mba3074e[m Merge pull request #25 from Nexus-HUB57/audit/safe-recovery-299-20260822
+[33mf3472fd[m[33m ([m[1;31morigin/audit/readme-cirurgical-20260822T141500Z[m[33m)[m docs(audit): add executive review and repository map
+[33mb24eff3[m[33m ([m[1;31morigin/audit/safe-recovery-299-20260822[m[33m)[m chore(safe-recovery): package audit evidence
+[33m4df0998[m docs(safe-recovery): validate complete 01-299 population
+=== OPEN PULL REQUESTS ===
+[1;37m[[m[1;37m][m
+=== OPEN ISSUES ===
+[1;37m[[m[1;37m][m
+=== BRANCH PROTECTION ===
+[1;37m{[m
+  [1;34m"message"[m[1;37m:[m [32m"Branch not protected"[m[1;37m,[m
+  [1;34m"documentation_url"[m[1;37m:[m [32m"https://docs.github.com/rest/branches/branch-protection#get-branch-protection"[m[1;37m,[m
+  [1;34m"status"[m[1;37m:[m [32m"404"[m
+[1;37m}[m
+gh: Branch not protected (HTTP 404)

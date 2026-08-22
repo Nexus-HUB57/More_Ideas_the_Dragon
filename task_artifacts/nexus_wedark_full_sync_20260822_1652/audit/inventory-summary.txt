@@ -1,0 +1,9 @@
+source_file_count=133
+repo_tracked_file_count=19622
+repo_snapshot_file_count=19621
+original_zip_entry_count=91
+source_bytes=444393588
+original_zip_bytes=830936
+source_root=/home/ubuntu/nexus-hub-v3
+repo_root=/home/ubuntu/github-sync/More_Ideas_the_Dragon
+generated_at=2026-08-22T16:51:18Z
