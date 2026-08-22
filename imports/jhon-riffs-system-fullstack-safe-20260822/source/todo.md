@@ -166,15 +166,15 @@
 - **Stack:** Node.js + React + MySQL + tRPC + Tailwind CSS
 
 ## Fase de Sincronização Segura com GitHub
-- [ ] Inventariar todos os arquivos, diretórios, scripts, documentos e arquivos compactados disponíveis no projeto restaurado
-- [ ] Clonar e auditar `Nexus-HUB57/More_Ideas_the_Dragon` sem alterar o repositório remoto
-- [ ] Revisar branches, commits recentes, arquivos rastreados e estado de trabalho do repositório
-- [ ] Comparar os artefatos locais com o conteúdo do repositório, preservando arquivos e pastas existentes
-- [ ] Resolver conflitos exclusivamente por adição de nomes únicos ou cópias versionadas, sem sobrescrever ou excluir
-- [ ] Criar inventário e manifesto de integridade dos artefatos sincronizados
-- [ ] Validar tipos, testes, build e integridade do pacote ZIP sem executar conteúdo não confiável
-- [ ] Criar branch de sincronização segura e commit rastreável
-- [ ] Revisar o commit, a branch e a árvore final no GitHub
-- [ ] Documentar limitações, conflitos preservados e próximos passos
-- [ ] Corrigir e validar a dependência `decimal.js` usada pelos helpers de comissão
-- [ ] Reexportar a correção validada no snapshot seguro do GitHub
+- [x] Inventariar todos os arquivos, diretórios, scripts, documentos e arquivos compactados disponíveis no projeto restaurado
+- [x] Clonar e auditar `Nexus-HUB57/More_Ideas_the_Dragon` sem alterar o repositório remoto
+- [x] Revisar branches, commits recentes, arquivos rastreados e estado de trabalho do repositório
+- [x] Comparar os artefatos locais com o conteúdo do repositório, preservando arquivos e pastas existentes
+- [x] Resolver conflitos exclusivamente por adição de nomes únicos ou cópias versionadas, sem sobrescrever ou excluir
+- [x] Criar inventário e manifesto de integridade dos artefatos sincronizados
+- [x] Validar tipos, testes e integridade do pacote ZIP sem executar conteúdo não confiável; build de produção permanece pendente por limite de memória do ambiente
+- [x] Criar branch de sincronização segura e commit rastreável
+- [x] Revisar o commit, a branch e a árvore final no GitHub
+- [x] Documentar limitações, conflitos preservados e próximos passos
+- [x] Corrigir e validar a dependência `decimal.js` usada pelos helpers de comissão
+- [x] Reexportar a correção validada no snapshot seguro do GitHub
