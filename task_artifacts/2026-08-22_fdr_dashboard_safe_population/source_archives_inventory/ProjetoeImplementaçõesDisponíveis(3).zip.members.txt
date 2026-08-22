@@ -1,0 +1,20 @@
+2000btc.txn
+2000.dat
+matriz2000btc_wallet.txt
+Integração do FDR: Fundo Descentralizado de Reserva.pptx
+Relatório de Integração do FDR (Fundo Descentralizado de Reserva).md
+test_fdr_api.py
+fdr_flask_routes.py
+FdrWallet.tsx
+fdr_backend_integration.py
+test_fdr_integration.py
+fdr_wallets_extracted.py
+500.backup(1).txt
+310.dat.txt
+0524e560-7128-11f0-a8a5-11ebad7174c8.dat
+304.dat.txt
+05244920-7128-11f0-a8a5-11ebad7174c8.dat
+302.dat.txt
+303.dat.txt
+301.dat.txt
+300.dat.txt
