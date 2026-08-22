@@ -38,5 +38,5 @@
 - [x] Sanitizar e registrar em manifesto arquivos de credenciais, chaves privadas, `.env` e outros segredos, sem versionar seus conteúdos.
 - [x] Gerar ZIPs sanitizados e checksums para rastreabilidade end-to-end.
 - [x] Validar diff, contagens, integridade Git e conteúdo do pacote antes do commit.
-- [ ] Criar commit dedicado e publicar em branch de integração segura para revisão dos demais desenvolvedores.
-- [ ] Confirmar o estado final do branch remoto e documentar arquivos, exclusões de segurança e hashes.
+- [x] Criar commit dedicado e publicar em branch de integração segura para revisão dos demais desenvolvedores.
+- [x] Confirmar o estado final do branch remoto e documentar arquivos, exclusões de segurança e hashes.
