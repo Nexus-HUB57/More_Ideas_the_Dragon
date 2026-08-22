@@ -1,0 +1,2 @@
+pasted_content.txt
+roadmap_fusao_mmn.md
