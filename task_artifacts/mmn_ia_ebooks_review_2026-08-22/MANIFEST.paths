@@ -1,0 +1,12 @@
+MANIFEST.paths
+artifacts/automate_chapter_revision.py
+artifacts/automate_ebook_revision.py
+artifacts/convert_ebooks.py
+artifacts/diretrizes_publicitarias_ebooks.md
+artifacts/prompts_capas_ebooks.md
+artifacts/relatorio_revisao_ebooks.md
+source_snapshot/MMN_AI-to-AI/ebooks_md/01_Minimax_A_IA_Revolucionaria.md
+source_snapshot/MMN_AI-to-AI/ebooks_md/02_Minimax_Como_Construir_Skills_Vencedoras.md
+source_snapshot/MMN_AI-to-AI/ebooks_md/03_Genspark_A_IA_Faz_Tudo.md
+source_snapshot/MMN_AI-to-AI/ebooks_md/05_Como_Fazer_Dinheiro_com_IA.md
+source_snapshot/MMN_AI-to-AI/ebooks_revisados/01_Minimax_A_IA_Revolucionaria.md
