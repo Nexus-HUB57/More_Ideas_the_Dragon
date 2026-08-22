@@ -3,3 +3,4 @@
 # generated end-to-end snapshots through Git LFS.
 imports/jhon-riffs-task-safe-20260822/archives/JhonRiffs-safe-import-end-to-end-20260822.zip filter=lfs diff=lfs merge=lfs -text
 imports/jhon-riffs-task-safe-20260822/archives/JhonRiffs-safe-import-end-to-end-20260822-v2.zip filter=lfs diff=lfs merge=lfs -text
+task_artifacts/20260822_desktop_script_editor/archives/nexus_desktop_final.zip filter=lfs diff=lfs merge=lfs -text
