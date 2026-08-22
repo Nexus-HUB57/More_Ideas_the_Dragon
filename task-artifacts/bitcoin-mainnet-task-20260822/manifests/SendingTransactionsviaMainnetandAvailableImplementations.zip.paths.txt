@@ -1,0 +1,9 @@
+ProjetoeImplementaçõesDisponíveis(1).zip
+Relatório de Análise de Projetos de Transações Bitcoin Mainnet.md
+Relatório de Migração para Transações Bitcoin Mainnet Reais.md
+SendingTransactionsviaMainnetandAvailableImplementations.zip
+bitcoin_mainnet_real_system.py
+bitcoin_transaction_final.py
+mainnet_real_89btc_transfer.py
+private_key_manager.py
+private_keys_database.json

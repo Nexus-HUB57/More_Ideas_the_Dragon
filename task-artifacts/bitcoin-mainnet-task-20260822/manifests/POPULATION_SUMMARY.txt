@@ -1,0 +1,8 @@
+task_population_stage=20260822
+source_zip_count=9
+source_zip_entries_total=212
+safe_extracted_files=155
+standalone_files=5
+excluded_sensitive_files=8
+excluded_sensitive_content_files=49
+excluded_too_large_files=0
