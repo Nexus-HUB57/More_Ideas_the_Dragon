@@ -1,0 +1,13 @@
+./README.md
+./backend/src/config/context.ts
+./backend/src/config/env.ts
+./backend/src/config/trpc.ts
+./backend/src/routers/dropshippingRouter.ts
+./backend/src/services/commissions.ts
+./backend/src/services/dropshippingService.ts
+./database/migrations/0001_large_rumiko_fujikawa.sql
+./database/schemas/db.ts
+./database/schemas/schema-final.ts
+./docs/planning/PENDENCIAS_E_PLANO.md
+./tests/unit/agents.test.ts
+./tests/unit/dropshipping.test.ts
