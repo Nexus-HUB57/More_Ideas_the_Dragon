@@ -1,0 +1,5 @@
+local_project_files=128
+safe_archive_files=194
+safe_archive_bytes=1031536
+branch=manus/nexus-organism-safe-import-20260822
+base_commit=b191b57bf1e2f1259ca997a6999d2b6961ecbe6f

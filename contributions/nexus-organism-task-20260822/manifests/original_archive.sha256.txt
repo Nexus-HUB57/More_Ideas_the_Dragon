@@ -1,0 +1,4 @@
+original_zip_sha256=1f77293d697e4c1547bf0c739698fb5e61d9b1cba0703f2d1d8213fb913e42d0
+original_zip_entries=195
+safe_extracted_files=194
+safe_zip_sha256=04677364706eefa0abe6852e875e68e77af6c67a962521452a4b32136dad1fcd
