@@ -1,0 +1,616 @@
+{
+  "schema": "nexus-genesis-safe-population/v1",
+  "source": "/home/ubuntu/upload/NexusGenesis.zip",
+  "source_sha256": "b8181521d7c608dd950655bf35ffc46a7aff9c329408917b85935914e0916202",
+  "destination": "imports/nexus-genesis-sync-task-2026-08-22",
+  "policy": {
+    "no_overwrite": true,
+    "no_delete": true,
+    "no_force_push": true,
+    "private_credentials_excluded": true,
+    "raw_source_zip_excluded": true
+  },
+  "entries": [
+    {
+      "source_path": "nexus_genesis_v2.py",
+      "size_bytes": 14919,
+      "sha256": "60fd24f92cd6d45d0692a68f2b5a238a44701d55eb5c01bb49f137e6fb82ea5a",
+      "status": "added",
+      "reason": null,
+      "destination": "imports/nexus-genesis-sync-task-2026-08-22/source/nexus_genesis_v2.py"
+    },
+    {
+      "source_path": "nexus_in_mock_v2.py",
+      "size_bytes": 4826,
+      "sha256": "29b125a11cfe4412658f2eb46b5698a85ff3249a827313dc8b0ed0d7326cef39",
+      "status": "quarantined",
+      "reason": "literal API_KEY/API_SECRET assignment in source",
+      "destination": "imports/nexus-genesis-sync-task-2026-08-22/quarantine/nexus_in_mock_v2.py"
+    },
+    {
+      "source_path": "nexus_hub_mock_v2.py",
+      "size_bytes": 4302,
+      "sha256": "5d972ea0c534f8a7910c1dbb6ceda75c8fb02381b94b2d473bc3369ba15364d8",
+      "status": "quarantined",
+      "reason": "literal API_KEY/API_SECRET assignment in source",
+      "destination": "imports/nexus-genesis-sync-task-2026-08-22/quarantine/nexus_hub_mock_v2.py"
+    },
+    {
+      "source_path": "fundo_nexus_mock_v2.py",
+      "size_bytes": 6189,
+      "sha256": "be8a78c48b586087fd06094c5902bf730adb311388c56c8797bdce81bd871a39",
+      "status": "quarantined",
+      "reason": "literal API_KEY/API_SECRET assignment in source",
+      "destination": "imports/nexus-genesis-sync-task-2026-08-22/quarantine/fundo_nexus_mock_v2.py"
+    },
+    {
+      "source_path": "start_mocks_v2.sh",
+      "size_bytes": 1739,
+      "sha256": "70348e2008fb7efbff27df7e50c924145b18a2d9ce67ce4128a2aa8ad2d6421d",
+      "status": "added",
+      "reason": null,
+      "destination": "imports/nexus-genesis-sync-task-2026-08-22/source/start_mocks_v2.sh"
+    },
+    {
+      "source_path": "test_nexus_genesis_v2.py",
+      "size_bytes": 9259,
+      "sha256": "16c01e29f1ba0d2367104a246c45613fedbdbc3a12b1de3180c1d1a0cb836ef9",
+      "status": "added",
+      "reason": null,
+      "destination": "imports/nexus-genesis-sync-task-2026-08-22/source/test_nexus_genesis_v2.py"
+    },
+    {
+      "source_path": "Mapeamento_Arquitetura_NexusGenesis.md",
+      "size_bytes": 8277,
+      "sha256": "d847e51f69ef876e362ebb250e3e2dd52e98f178fcb58e6584210343ba4c46ae",
+      "status": "added",
+      "reason": null,
+      "destination": "imports/nexus-genesis-sync-task-2026-08-22/source/Mapeamento_Arquitetura_NexusGenesis.md"
+    },
+    {
+      "source_path": "NexusGenesis_Architecture_Diagram.zip",
+      "size_bytes": 244341,
+      "sha256": "e26cf26d280e16dfad5c05ed5a6f69a0ca3efe7a5cee5b939a709de47e1a8396",
+      "status": "added",
+      "reason": null,
+      "destination": "imports/nexus-genesis-sync-task-2026-08-22/source/NexusGenesis_Architecture_Diagram.zip"
+    },
+    {
+      "source_path": "Nexus_Project.zip",
+      "size_bytes": 19271427,
+      "sha256": "fbc5f370e4a9236605c9e774d479f8c947447ee92c133447f53e52a765068913",
+      "status": "quarantined",
+      "reason": "nested archive contains sensitive entries or content",
+      "destination": "imports/nexus-genesis-sync-task-2026-08-22/quarantine/Nexus_Project.zip",
+      "findings": [
+        "name:.env.example",
+        "name:.env",
+        "name:PrivateKey_WIF/dllme.txt",
+        "name:PrivateKey_WIF/key.dll",
+        "name:PrivateKey_WIF/Private Key WIF/10.backup",
+        "name:PrivateKey_WIF/Private Key WIF/11.dat",
+        "name:PrivateKey_WIF/Private Key WIF/137.dat",
+        "name:PrivateKey_WIF/Private Key WIF/144-BTC.dat",
+        "name:PrivateKey_WIF/Private Key WIF/207.dat",
+        "name:PrivateKey_WIF/Private Key WIF/305.dat",
+        "name:PrivateKey_WIF/Private Key WIF/310.dat",
+        "name:PrivateKey_WIF/Private Key WIF/500.backup",
+        "name:PrivateKey_WIF/Private Key WIF/518.dat",
+        "name:PrivateKey_WIF/Private Key WIF/524.dat",
+        "name:PrivateKey_WIF/Private Key WIF/70.dat",
+        "name:PrivateKey_WIF/Private Key WIF/86",
+        "name:PrivateKey_WIF/Private Key WIF/86.dat",
+        "name:PrivateKey_WIF/Private Key WIF/87.dat",
+        "name:PrivateKey_WIF/Private Key WIF/dllme.txt",
+        "name:PrivateKey_WIF/Private Key WIF/key.dll",
+        "name:Fundo_Nexus README/PvKeys.txt",
+        "content:Fundo_Nexus README/Sistema e Fundo Nexus.txt"
+      ]
+    },
+    {
+      "source_path": "nexus-genesis.ts",
+      "size_bytes": 12523,
+      "sha256": "37b7c1d8c462261585911ed25c98b98fa3d512a5a783306bed43bdb8871539cb",
+      "status": "added",
+      "reason": null,
+      "destination": "imports/nexus-genesis-sync-task-2026-08-22/source/nexus-genesis.ts"
+    },
+    {
+      "source_path": "nexus_in_mock.py",
+      "size_bytes": 2046,
+      "sha256": "672ea8cdc7802c2ed01b91e688617d2a91405291578ac08fd76efa82c9f7ec57",
+      "status": "added",
+      "reason": null,
+      "destination": "imports/nexus-genesis-sync-task-2026-08-22/source/nexus_in_mock.py"
+    },
+    {
+      "source_path": "NexusGenesis_Validated.zip",
+      "size_bytes": 25142,
+      "sha256": "25b83aa57fba4589634ddcf31bcf25ddd8324049e8105ae45c2a90f552f5ffd5",
+      "status": "added",
+      "reason": null,
+      "destination": "imports/nexus-genesis-sync-task-2026-08-22/source/NexusGenesis_Validated.zip"
+    },
+    {
+      "source_path": "NexusGenesis_Triad_Updated.zip",
+      "size_bytes": 40942,
+      "sha256": "9a2c1d37d1b8255f919cab72e4247eba93b94b4bca68c9086e393ef7b1f52b56",
+      "status": "added",
+      "reason": null,
+      "destination": "imports/nexus-genesis-sync-task-2026-08-22/source/NexusGenesis_Triad_Updated.zip"
+    },
+    {
+      "source_path": "NexusGenesis_Updated.zip",
+      "size_bytes": 9225,
+      "sha256": "08b9dcf4c36e4110d0c3c5fe8cfb66317c08e351c0748ffeca34bf2ff1a7da8f",
+      "status": "added",
+      "reason": null,
+      "destination": "imports/nexus-genesis-sync-task-2026-08-22/source/NexusGenesis_Updated.zip"
+    },
+    {
+      "source_path": "Arquitetura de Orquestração Tri-Nuclear do Agente Nexus-Genesis.md",
+      "size_bytes": 3906,
+      "sha256": "f5fb501497c4216f98dbcb93088b3d09dd5fb849d59ba362e98d9eeaedd99d23",
+      "status": "added",
+      "reason": null,
+      "destination": "imports/nexus-genesis-sync-task-2026-08-22/source/Arquitetura de Orquestração Tri-Nuclear do Agente Nexus-Genesis.md"
+    },
+    {
+      "source_path": "arquitetura_tri-nuclear.mmd",
+      "size_bytes": 1699,
+      "sha256": "5096b6507379fc7a1df2be5809a6c3fcb6a50a4df1ba591d4d814bb45f603249",
+      "status": "added",
+      "reason": null,
+      "destination": "imports/nexus-genesis-sync-task-2026-08-22/source/arquitetura_tri-nuclear.mmd"
+    },
+    {
+      "source_path": "arquitetura_tri-nuclear.png",
+      "size_bytes": 215075,
+      "sha256": "6e28f829fb156806bfa5f9f083dd55bdb3e17f3cd4d8de474a78d7eb8309b7f0",
+      "status": "added",
+      "reason": null,
+      "destination": "imports/nexus-genesis-sync-task-2026-08-22/source/arquitetura_tri-nuclear.png"
+    },
+    {
+      "source_path": "bitcoin-wallet.ts",
+      "size_bytes": 9139,
+      "sha256": "a50dec130af9ad1d2713ea9536a971ae185cfa320a39921bb2791dde7cd156c1",
+      "status": "quarantined",
+      "reason": "sensitive filename",
+      "destination": "imports/nexus-genesis-sync-task-2026-08-22/quarantine/bitcoin-wallet.ts"
+    },
+    {
+      "source_path": "Fundo Nexus - Arquitetura e Planejamento de Sincronização.md",
+      "size_bytes": 9697,
+      "sha256": "9f4ad1fec79c2146291cf400d30278effb3cd06382ba9b64cf78184cee113375",
+      "status": "added",
+      "reason": null,
+      "destination": "imports/nexus-genesis-sync-task-2026-08-22/source/Fundo Nexus - Arquitetura e Planejamento de Sincronização.md"
+    },
+    {
+      "source_path": "Fundo Nexus - TODO.md",
+      "size_bytes": 4906,
+      "sha256": "47e1a96ab9483d001783c9ba69a175dc5cdb3a7218f8341622f2763ccf686471",
+      "status": "added",
+      "reason": null,
+      "destination": "imports/nexus-genesis-sync-task-2026-08-22/source/Fundo Nexus - TODO.md"
+    },
+    {
+      "source_path": "fundo_nexus_mock.py",
+      "size_bytes": 3258,
+      "sha256": "ba8fddc39ab94d6cacadff98a0da62464edbcf33a50459e61ebfd945408d7be7",
+      "status": "added",
+      "reason": null,
+      "destination": "imports/nexus-genesis-sync-task-2026-08-22/source/fundo_nexus_mock.py"
+    },
+    {
+      "source_path": "Nexus-HUB_ Conselho dos Arquitetos - TODO.md",
+      "size_bytes": 8324,
+      "sha256": "2bc54b7637248ae4018e143446522e3a349e10f8aa50c0bf20b07ca0f0502795",
+      "status": "added",
+      "reason": null,
+      "destination": "imports/nexus-genesis-sync-task-2026-08-22/source/Nexus-HUB_ Conselho dos Arquitetos - TODO.md"
+    },
+    {
+      "source_path": "Nexus-HUB_ Ecossistema AI-to-AI para Startups Autônomas.md",
+      "size_bytes": 14210,
+      "sha256": "e3eac826e7bf863ace4bce347d092ecfd6268c894f2878e1b16b7fd48cffb5cd",
+      "status": "added",
+      "reason": null,
+      "destination": "imports/nexus-genesis-sync-task-2026-08-22/source/Nexus-HUB_ Ecossistema AI-to-AI para Startups Autônomas.md"
+    },
+    {
+      "source_path": "NEXUS-HUB_ Plataforma de Governança e Gestão de Startups.md",
+      "size_bytes": 13674,
+      "sha256": "7ccffa93cab2499179f32f3578ca69e91b16f96b032c96a38de19c3e55f9923b",
+      "status": "added",
+      "reason": null,
+      "destination": "imports/nexus-genesis-sync-task-2026-08-22/source/NEXUS-HUB_ Plataforma de Governança e Gestão de Startups.md"
+    },
+    {
+      "source_path": "PvKeys.txt",
+      "size_bytes": 16411,
+      "sha256": "dfe5e0ff64bf9d4bdc221856d724e90d456c42d28df5a0896367243477381d5f",
+      "status": "quarantined",
+      "reason": "sensitive filename",
+      "destination": "imports/nexus-genesis-sync-task-2026-08-22/quarantine/PvKeys.txt"
+    },
+    {
+      "source_path": "Relatório de Análise e Plano de Testes_ Ecossistema Nexus-Genesis.md",
+      "size_bytes": 6604,
+      "sha256": "6ea44ddc36ed4e2d44da9012863d5f46f0c0a1507cb032a8da782884cfdbf081",
+      "status": "added",
+      "reason": null,
+      "destination": "imports/nexus-genesis-sync-task-2026-08-22/source/Relatório de Análise e Plano de Testes_ Ecossistema Nexus-Genesis.md"
+    },
+    {
+      "source_path": "Relatório de Desenvolvimento e Teste de Estresse do Agente Nexus-Genesis.md",
+      "size_bytes": 8427,
+      "sha256": "8deecc0c6d69cfcbb62cad63edba06a519cc43a101ca6d774b3c401331157d2b",
+      "status": "added",
+      "reason": null,
+      "destination": "imports/nexus-genesis-sync-task-2026-08-22/source/Relatório de Desenvolvimento e Teste de Estresse do Agente Nexus-Genesis.md"
+    },
+    {
+      "source_path": "schema.ts",
+      "size_bytes": 6207,
+      "sha256": "bb45b1659ac1709a461c78f5c8155580c5b3b0ea5f1b77421c65b0628da4df02",
+      "status": "added",
+      "reason": null,
+      "destination": "imports/nexus-genesis-sync-task-2026-08-22/source/schema.ts"
+    },
+    {
+      "source_path": "simulate_fundo_nexus.py",
+      "size_bytes": 2713,
+      "sha256": "24cbd2d344cb727e0830480ca3e4df0fd41afca7be2ee871546770b7e250cd8b",
+      "status": "quarantined",
+      "reason": "literal API_KEY/API_SECRET assignment in source",
+      "destination": "imports/nexus-genesis-sync-task-2026-08-22/quarantine/simulate_fundo_nexus.py"
+    },
+    {
+      "source_path": "simulate_nexus_hub.py",
+      "size_bytes": 3367,
+      "sha256": "5739db2c338dcb4f527c6325b6e829e3f7abed3060f1db872508a83a49181c1f",
+      "status": "quarantined",
+      "reason": "literal API_KEY/API_SECRET assignment in source",
+      "destination": "imports/nexus-genesis-sync-task-2026-08-22/quarantine/simulate_nexus_hub.py"
+    },
+    {
+      "source_path": "stress_test.py",
+      "size_bytes": 4150,
+      "sha256": "1b1c1c4c8b27559bb78b09cea1fd377ab6f8db9632709644e04110e96013477a",
+      "status": "quarantined",
+      "reason": "literal API_KEY/API_SECRET assignment in source",
+      "destination": "imports/nexus-genesis-sync-task-2026-08-22/quarantine/stress_test.py"
+    },
+    {
+      "source_path": "Mapeamento da Arquitetura do Agente Nexus-Genesis.md",
+      "size_bytes": 8277,
+      "sha256": "d847e51f69ef876e362ebb250e3e2dd52e98f178fcb58e6584210343ba4c46ae",
+      "status": "added",
+      "reason": null,
+      "destination": "imports/nexus-genesis-sync-task-2026-08-22/source/Mapeamento da Arquitetura do Agente Nexus-Genesis.md"
+    },
+    {
+      "source_path": "Moltbook Platform - TODO.md",
+      "size_bytes": 4357,
+      "sha256": "3c9b1bc5bedb57ea253e613168475913e3f537a99d0fb826aa97d1768cd362dd",
+      "status": "added",
+      "reason": null,
+      "destination": "imports/nexus-genesis-sync-task-2026-08-22/source/Moltbook Platform - TODO.md"
+    },
+    {
+      "source_path": "nexus_genesis.py",
+      "size_bytes": 13014,
+      "sha256": "b4f8af3088cc951cc4fb131bbeab558552db71def800080d4e02df8bac0f4362",
+      "status": "added",
+      "reason": null,
+      "destination": "imports/nexus-genesis-sync-task-2026-08-22/source/nexus_genesis.py"
+    },
+    {
+      "source_path": "Relatório de Integração_ Ecossistema Nexus (Fundo Nexus, Nexus-HUB e Nexus-in).md",
+      "size_bytes": 16237,
+      "sha256": "5a105af3edff3dd9c4ff7dbe1a2dbde515797acc1112017b0df55cd73c30614a",
+      "status": "added",
+      "reason": null,
+      "destination": "imports/nexus-genesis-sync-task-2026-08-22/source/Relatório de Integração_ Ecossistema Nexus (Fundo Nexus, Nexus-HUB e Nexus-in).md"
+    },
+    {
+      "source_path": "Relatório de Orquestração Plena Tri-Nuclear do Agente Nexus-Genesis.md",
+      "size_bytes": 4406,
+      "sha256": "3410b5e9974691a212e2bc400a9eb19e10330de77b98a13d5459b1406185e306",
+      "status": "added",
+      "reason": null,
+      "destination": "imports/nexus-genesis-sync-task-2026-08-22/source/Relatório de Orquestração Plena Tri-Nuclear do Agente Nexus-Genesis.md"
+    },
+    {
+      "source_path": "Relatório de Testes de Estresse Individuais_ Sincronização Tri-Nuclear do Agente Nexus-Genesis.md",
+      "size_bytes": 5074,
+      "sha256": "31cb9bf8e9b2a779428a6d8d28460449b28bfa262cbc1fb0d21389f054090f9a",
+      "status": "added",
+      "reason": null,
+      "destination": "imports/nexus-genesis-sync-task-2026-08-22/source/Relatório de Testes de Estresse Individuais_ Sincronização Tri-Nuclear do Agente Nexus-Genesis.md"
+    },
+    {
+      "source_path": "Relatório de Validação de Sincronização Tri-Nuclear do Agente Nexus-Genesis.md",
+      "size_bytes": 5376,
+      "sha256": "28d1a0dde00ac061b72748add84549bdd344344c162969b08be87346d5c9a9f9",
+      "status": "added",
+      "reason": null,
+      "destination": "imports/nexus-genesis-sync-task-2026-08-22/source/Relatório de Validação de Sincronização Tri-Nuclear do Agente Nexus-Genesis.md"
+    },
+    {
+      "source_path": "simulate_nexus_in.py",
+      "size_bytes": 3375,
+      "sha256": "a0681f22fae7290567dbf29e2c8a3264b93603d0cea236806dbefb955b424b9e",
+      "status": "quarantined",
+      "reason": "literal API_KEY/API_SECRET assignment in source",
+      "destination": "imports/nexus-genesis-sync-task-2026-08-22/quarantine/simulate_nexus_in.py"
+    },
+    {
+      "source_path": "Sistema e Fundo Nexus.txt",
+      "size_bytes": 10369,
+      "sha256": "155718401f41a96b5b9726968e28ace5e8c07dd3acd1bd01be440083a95c5e0b",
+      "status": "added",
+      "reason": null,
+      "destination": "imports/nexus-genesis-sync-task-2026-08-22/source/Sistema e Fundo Nexus.txt"
+    },
+    {
+      "source_path": "start_mocks.sh",
+      "size_bytes": 649,
+      "sha256": "90466a4a308de0965ab2bd0441b9dc7d9b9424c7c58660fe9f3cc0e5e27aa50c",
+      "status": "added",
+      "reason": null,
+      "destination": "imports/nexus-genesis-sync-task-2026-08-22/source/start_mocks.sh"
+    },
+    {
+      "source_path": "start_mocks_fixed.sh",
+      "size_bytes": 758,
+      "sha256": "6d8237c6bbaa485c8e38d240115c6da6410e3a60a6b4b7fb1e820b73746f61df",
+      "status": "added",
+      "reason": null,
+      "destination": "imports/nexus-genesis-sync-task-2026-08-22/source/start_mocks_fixed.sh"
+    },
+    {
+      "source_path": "types.ts",
+      "size_bytes": 6199,
+      "sha256": "780459887b9f489e1651bd3818bc7ec8583330afef1c4be3225662c4f0dfe152",
+      "status": "quarantined",
+      "reason": "high-confidence secret pattern in content",
+      "destination": "imports/nexus-genesis-sync-task-2026-08-22/quarantine/types.ts"
+    },
+    {
+      "source_path": "validate_synchronization.py",
+      "size_bytes": 16595,
+      "sha256": "8a8960a5fc1b1ca17f997bcb3b16610494ef9a8f9247ffeb26cb25a70cad25a0",
+      "status": "quarantined",
+      "reason": "literal API_KEY/API_SECRET assignment in source",
+      "destination": "imports/nexus-genesis-sync-task-2026-08-22/quarantine/validate_synchronization.py"
+    },
+    {
+      "source_path": "validation_report.json",
+      "size_bytes": 850,
+      "sha256": "d901979fcef976662f1630a977b77422350d854e959f497b85688e8cd76feba6",
+      "status": "added",
+      "reason": null,
+      "destination": "imports/nexus-genesis-sync-task-2026-08-22/source/validation_report.json"
+    },
+    {
+      "source_path": "🎯 Visão Geral Fundo Nexus.md",
+      "size_bytes": 4529,
+      "sha256": "0d2dbf8e524bd9f79f819745b1553e6f72cbd93d65c535d924a96d7490684a6e",
+      "status": "added",
+      "reason": null,
+      "destination": "imports/nexus-genesis-sync-task-2026-08-22/source/🎯 Visão Geral Fundo Nexus.md"
+    },
+    {
+      "source_path": "pasted_content.txt",
+      "size_bytes": 15566,
+      "sha256": "f1519bfbfb5300bda809ee9a39a31c94fe33a3d3d638e6a178c659fcdafdbc63",
+      "status": "quarantined",
+      "reason": "high-confidence literal API key and API secret assignments",
+      "destination": "imports/nexus-genesis-sync-task-2026-08-22/quarantine/pasted_content.txt"
+    },
+    {
+      "source_path": "Plano de Testes de Estresse Combinados para a Sincronização Tri-Nuclear do Agente Nexus-Genesis.md",
+      "size_bytes": 10866,
+      "sha256": "70c0744675f27b9debdfcf75d64b7279b9458e8901726a7201105e44aed2aece",
+      "status": "added",
+      "reason": null,
+      "destination": "imports/nexus-genesis-sync-task-2026-08-22/source/Plano de Testes de Estresse Combinados para a Sincronização Tri-Nuclear do Agente Nexus-Genesis.md"
+    },
+    {
+      "source_path": "Plano de Testes de Estresse para a Sincronização Tri-Nuclear do Agente Nexus-Genesis.md",
+      "size_bytes": 7696,
+      "sha256": "b37d4e0a85b85d370721a2a8851e6177553fb4c529d40ac57c3ee579f33054fd",
+      "status": "added",
+      "reason": null,
+      "destination": "imports/nexus-genesis-sync-task-2026-08-22/source/Plano de Testes de Estresse para a Sincronização Tri-Nuclear do Agente Nexus-Genesis.md"
+    },
+    {
+      "source_path": "nexus_hub_mock.py",
+      "size_bytes": 1821,
+      "sha256": "659865e5e17a5eb92ffa36bd8f38efe306f39f430cfc6005c0a6d7f26f268de5",
+      "status": "added",
+      "reason": null,
+      "destination": "imports/nexus-genesis-sync-task-2026-08-22/source/nexus_hub_mock.py"
+    },
+    {
+      "source_path": "FundoNexus.zip",
+      "size_bytes": 88092,
+      "sha256": "17521271c0a0a309c483e93edbcafa12d75ad17e0390b2395f1675ff47fbe16a",
+      "status": "quarantined",
+      "reason": "nested archive contains sensitive entries or content",
+      "destination": "imports/nexus-genesis-sync-task-2026-08-22/quarantine/FundoNexus.zip",
+      "findings": [
+        "content:routers-transactions.ts",
+        "content:bitcoin-signer.ts",
+        "name:Wallets.tsx",
+        "content:schema.ts",
+        "name:PvKeys.txt",
+        "content:types.ts",
+        "content:bitcoin-signer.test.ts",
+        "name:bitcoin-wallet.test.ts",
+        "name:bitcoin-wallet.ts"
+      ]
+    },
+    {
+      "source_path": "Nexus-in.zip",
+      "size_bytes": 18946684,
+      "sha256": "f7f55dd495b31357490df01e9483b1d153acce6201e600c02690fb0cff1de128",
+      "status": "added",
+      "reason": null,
+      "destination": "imports/nexus-genesis-sync-task-2026-08-22/source/Nexus-in.zip"
+    },
+    {
+      "source_path": "Nexus-HUB.zip",
+      "size_bytes": 509596,
+      "sha256": "3744d86743329487a6d680c9501d4b96e8f60e089fd898018b3b113df844713b",
+      "status": "quarantined",
+      "reason": "nested archive contains sensitive entries or content",
+      "destination": "imports/nexus-genesis-sync-task-2026-08-22/quarantine/Nexus-HUB.zip",
+      "findings": [
+        "name:seed-data.mjs",
+        "name:seed-data.ts",
+        "name:council_seed_data.ts",
+        "name:council-seed.ts"
+      ]
+    },
+    {
+      "source_path": "App.tsx",
+      "size_bytes": 1718,
+      "sha256": "5eebc1a50854a1aaa7805e9213b77c24d1776f71b91e67869eb1fc9614943c39",
+      "status": "added",
+      "reason": null,
+      "destination": "imports/nexus-genesis-sync-task-2026-08-22/source/App.tsx"
+    },
+    {
+      "source_path": "Dashboard.tsx",
+      "size_bytes": 14487,
+      "sha256": "c66385c30f3e3e94c4af6bd6c6c3a25c63c8343115ed21024a1cad9fa3a75a3d",
+      "status": "added",
+      "reason": null,
+      "destination": "imports/nexus-genesis-sync-task-2026-08-22/source/Dashboard.tsx"
+    },
+    {
+      "source_path": "HomeostaseAnalysis.tsx",
+      "size_bytes": 17818,
+      "sha256": "f1ede6f46f4cf1a1ae01429b2c2ee2b8594202695ff30228024ff724b3607d54",
+      "status": "added",
+      "reason": null,
+      "destination": "imports/nexus-genesis-sync-task-2026-08-22/source/HomeostaseAnalysis.tsx"
+    },
+    {
+      "source_path": "NEXUS_GENESIS_DOCUMENTATION.md",
+      "size_bytes": 11441,
+      "sha256": "bc366476a8554caf3135fdda5480ea23a76dc94d7fd1821470575b96eb611a75",
+      "status": "added",
+      "reason": null,
+      "destination": "imports/nexus-genesis-sync-task-2026-08-22/source/NEXUS_GENESIS_DOCUMENTATION.md"
+    },
+    {
+      "source_path": "nexus-genesis.test.ts",
+      "size_bytes": 10016,
+      "sha256": "dd6b1301dde483348dd79bb755b688ce34909282d714895c33088286b02c8927",
+      "status": "added",
+      "reason": null,
+      "destination": "imports/nexus-genesis-sync-task-2026-08-22/source/nexus-genesis.test.ts"
+    },
+    {
+      "source_path": "orchestration.ts",
+      "size_bytes": 7499,
+      "sha256": "fca755ecb8cf05213075e00d05324a00d2120f95f2bcb48ac726ccaf06412d3b",
+      "status": "added",
+      "reason": null,
+      "destination": "imports/nexus-genesis-sync-task-2026-08-22/source/orchestration.ts"
+    },
+    {
+      "source_path": "OrchestrationFlows.tsx",
+      "size_bytes": 14217,
+      "sha256": "8cc5fd3dae559b1a804879d88ba9b27f68ff706cd73592b113212c0edee63cc5",
+      "status": "added",
+      "reason": null,
+      "destination": "imports/nexus-genesis-sync-task-2026-08-22/source/OrchestrationFlows.tsx"
+    },
+    {
+      "source_path": "routers.ts",
+      "size_bytes": 1633,
+      "sha256": "23e7bf4fd99c1f1e93ec18afeaa645183aca2f87a1c6fe7b0d2dd2f48cd66093",
+      "status": "added",
+      "reason": null,
+      "destination": "imports/nexus-genesis-sync-task-2026-08-22/source/routers.ts"
+    },
+    {
+      "source_path": "todo.md",
+      "size_bytes": 2932,
+      "sha256": "b36fb062d2af2a1757ee65d4757968c52103a00bf295b989c606902e7021435e",
+      "status": "added",
+      "reason": null,
+      "destination": "imports/nexus-genesis-sync-task-2026-08-22/source/todo.md"
+    },
+    {
+      "source_path": "websocket.ts",
+      "size_bytes": 10791,
+      "sha256": "756a370531a9eb044fdb963f4ca80599ebb35ad75b457dbdeeaa28ebc998a698",
+      "status": "added",
+      "reason": null,
+      "destination": "imports/nexus-genesis-sync-task-2026-08-22/source/websocket.ts"
+    },
+    {
+      "source_path": "websocket-client.ts",
+      "size_bytes": 7631,
+      "sha256": "1d61958af73a90f4cc561a9ff0de17f5f65361eb2159030963ebbc7ae7c4ac73",
+      "status": "added",
+      "reason": null,
+      "destination": "imports/nexus-genesis-sync-task-2026-08-22/source/websocket-client.ts"
+    },
+    {
+      "source_path": "websocket-integration.ts",
+      "size_bytes": 972,
+      "sha256": "1f29a7f6339c6eddd8ff47832e32d2721c7bb766e9ad0544d27c7ceec7292ae3",
+      "status": "added",
+      "reason": null,
+      "destination": "imports/nexus-genesis-sync-task-2026-08-22/source/websocket-integration.ts"
+    },
+    {
+      "source_path": "WebSocketMonitor.tsx",
+      "size_bytes": 16793,
+      "sha256": "cc4b8fdbd3af412e55e50588e5164a861ad5c4f15e1057a6d5d494108e9b3780",
+      "status": "added",
+      "reason": null,
+      "destination": "imports/nexus-genesis-sync-task-2026-08-22/source/WebSocketMonitor.tsx"
+    },
+    {
+      "source_path": "API_Key chave privada Fundo Nexus studio-6829168551-a7f49-firebase-adminsdk-fbsvc-65f85ca5ae.json",
+      "size_bytes": 2409,
+      "sha256": "288bb964e9b085d7a1a30250ac58fecaef92609ed1c5a643e00d7ce47860bdec",
+      "status": "quarantined",
+      "reason": "sensitive filename",
+      "destination": "imports/nexus-genesis-sync-task-2026-08-22/quarantine/API_Key chave privada Fundo Nexus studio-6829168551-a7f49-firebase-adminsdk-fbsvc-65f85ca5ae.json"
+    },
+    {
+      "source_path": "API_Key chave privada Nexus-HUB studio-204494591-85967-firebase-adminsdk-fbsvc-ec42290128.json",
+      "size_bytes": 2406,
+      "sha256": "62bf99f74f921c4b0c365beeeacfe55244ba2235ca0b7b14f9dcf1f983d17501",
+      "status": "quarantined",
+      "reason": "sensitive filename",
+      "destination": "imports/nexus-genesis-sync-task-2026-08-22/quarantine/API_Key chave privada Nexus-HUB studio-204494591-85967-firebase-adminsdk-fbsvc-ec42290128.json"
+    },
+    {
+      "source_path": "API_Key chave privada Nexus-in studio-82398827-13646-firebase-adminsdk-fbsvc-15d0b960f7.json",
+      "size_bytes": 2403,
+      "sha256": "6678ebb526f65eb4270d7cd6413d37ea317cfa9e18f45acfcd02ebaf67bc0cd7",
+      "status": "quarantined",
+      "reason": "sensitive filename",
+      "destination": "imports/nexus-genesis-sync-task-2026-08-22/quarantine/API_Key chave privada Nexus-in studio-82398827-13646-firebase-adminsdk-fbsvc-15d0b960f7.json"
+    }
+  ],
+  "raw_source_archive": {
+    "source_path": "NexusGenesis.zip",
+    "size_bytes": 39415887,
+    "sha256": "b8181521d7c608dd950655bf35ffc46a7aff9c329408917b85935914e0916202",
+    "status": "quarantined",
+    "reason": "contains private credentials and wallet material; raw archive must not be published",
+    "destination": "imports/nexus-genesis-sync-task-2026-08-22/quarantine/NexusGenesis.zip"
+  }
+}
