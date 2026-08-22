@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard SFN com Protocolos - [Nome do Projeto]</title>
+    <style>
+        :root {
+            --color-bg: #f0f2f5;
+            --color-card-bg: #ffffff;
+            --color-text: #333;
+            --color-header: #1e2a38;
+            --color-primary: #007bff;
+            --color-seed: #28a745;
+            --color-need: #ffc107;
+            --color-feed: #dc3545;
+            --color-go: #28a745;
+            --shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: var(--color-bg);
+            color: var(--color-text);
+            margin: 0;
+            padding: 20px;
+        }
+
+        .dashboard-header {
+            background-color: var(--color-card-bg);
+            padding: 20px 30px;
+            border-radius: 10px;
+            margin-bottom: 25px;
+            box-shadow: var(--shadow);
+            border-left: 5px solid var(--color-primary);
+        }
+
+        .dashboard-header h1 { margin: 0; color: var(--color-header); font-size: 28px; }
+        .dashboard-header p { margin: 5px 0 0; color: #666; font-size: 16px; }
+
+        .recommendation-box {
+            text-align: center;
+            padding: 25px;
+            border-radius: 10px;
+            margin-bottom: 25px;
+            box-shadow: var(--shadow);
+            background-color: #e9f7ec;
+            border: 1px solid var(--color-go);
+        }
+
+        .recommendation-box h2 { margin: 0 0 10px; font-size: 36px; font-weight: 700; color: var(--color-go); }
+        .recommendation-box p { margin: 0; font-size: 16px; color: #333; max-width: 800px; margin-left: auto; margin-right: auto; }
+
+        .dashboard-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 25px;
+        }
+
+        .card {
+            background-color: var(--color-card-bg);
+            border-radius: 10px;
+            padding: 25px;
+            box-shadow: var(--shadow);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .card-header .icon {
+            font-size: 24px;
+            width: 45px;
+            height: 45px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            margin-right: 15px;
+            color: #fff;
+        }
+
+        .card-header h3 { margin: 0; font-size: 22px; color: var(--color-header); }
+
+        .card.seed .icon { background-color: var(--color-seed); }
+        .card.need .icon { background-color: var(--color-need); }
+        .card.feed .icon { background-color: var(--color-feed); }
+
+        .card-content h4 { font-size: 16px; color: var(--color-primary); margin-top: 0; margin-bottom: 8px; }
+        .card-content p, .card-content ul { font-size: 14px; line-height: 1.6; margin: 0 0 15px; }
+        .card-content ul { padding-left: 20px; }
+        .card-content li { margin-bottom: 5px; }
+
+        .toggle-button {
+            background-color: #f8f9fa;
+            border: 1px solid #dee2e6;
+            border-radius: 5px;
+            padding: 8px 12px;
+            cursor: pointer;
+            width: 100%;
+            text-align: left;
+            font-weight: bold;
+            margin-top: 15px;
+            margin-bottom: 10px;
+            color: #495057;
+        }
+        .toggle-button:hover { background-color: #e9ecef; }
+
+        .questionnaire {
+            display: none;
+            background-color: #f8f9fa;
+            border-left: 3px solid var(--color-primary);
+            padding: 15px;
+            margin-top: 10px;
+            border-radius: 5px;
+        }
+        .questionnaire .question { font-weight: bold; color: #333; margin-top: 10px; }
+        .questionnaire .answer { font-style: italic; color: #555; margin-bottom: 10px; padding-left: 15px; }
+
+    </style>
+</head>
+<body>
+
+    <div class="dashboard-header">
+        <h1>Dashboard SFN com Protocolos</h1>
+        <p>Projeto: <strong>"ConectaDev" - Plataforma de Mentoria para Programadores</strong></p>
+    </div>
+
+    <div class="recommendation-box go">
+        <h2>RECOMENDAÇÃO: GO</h2>
+        <p><strong>Justificativa da IA:</strong> O projeto ataca uma dor de mercado clara com uma proposta de valor única. O mercado de EdTech é aquecido e a concorrência, embora existente, não foca no nicho de "micro-mentorias". O plano técnico é sólido e os custos iniciais são compatíveis com um investimento semente.</p>
+    </div>
+
+    <div class="dashboard-grid">
+        <!-- SEED CARD -->
+        <div class="card seed">
+            <div class="card-header">
+                <div class="icon">🌱</div>
+                <h3>Fase 1: SEED (A Ideia)</h3>
+            </div>
+            <div class="card-content">
+                <h4>Proposta de Valor Única</h4>
+                <p>Conectamos programadores iniciantes a mentores experientes para sessões de mentoria rápidas e acessíveis, focadas em resolver problemas específicos de código e carreira.</p>
+                <h4>Público-Alvo</h4>
+                <p>Estudantes de programação e desenvolvedores júnior (até 2 anos de experiência).</p>
+
+                <button class="toggle-button" onclick="toggleVisibility('seed-q')">Mostrar/Ocultar Protocolo SEED</button>
+                <div id="seed-q" class="questionnaire">
+                    <p class="question">1. Qual o "Elevator Pitch" do projeto?</p>
+                    <p class="answer">"Uma plataforma que conecta devs iniciantes a mentores experientes para sessões rápidas e focadas em resolver problemas."</p>
+                    <p class="question">2. Qual a 'dor' que seu cliente enfrenta?</p>
+                    <p class="answer">"Ficar travado por horas em um problema que um dev sênior resolveria em 5 minutos."</p>
+                    <p class="question">3. Quais as 3 funcionalidades mais importantes?</p>
+                    <p class="answer">"Busca de mentores, agendamento fácil e sistema de avaliação."</p>
+                    <p class="question">4. Qual é o capital inicial já disponível?</p>
+                    <p class="answer">"R$ 50.000 (próprio)."</p>
+                    <p class="question">5. Qual a expectativa de entrega do MVP?</p>
+                    <p class="answer">"3 meses."</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- NEED CARD -->
+        <div class="card need">
+            <div class="card-header">
+                <div class="icon">🛠️</div>
+                <h3>Fase 2: NEED (O Plano)</h3>
+            </div>
+            <div class="card-content">
+                <h4>Arquitetura e Tecnologia</h4>
+                <p>Microsserviços com React, Node.js, PostgreSQL e AWS para garantir escalabilidade.</p>
+                <h4>Equipe Recomendada (6 meses)</h4>
+                <ul>
+                    <li>1x Product Manager, 2x Dev. Backend, 2x Dev. Frontend, 1x UX/UI Designer</li>
+                </ul>
+
+                <button class="toggle-button" onclick="toggleVisibility('need-q')">Mostrar/Ocultar Protocolo NEED</button>
+                <div id="need-q" class="questionnaire">
+                    <p class="question">1. Qual a Cadeia de Valor do serviço?</p>
+                    <p class="answer">"Captação de Mentores -> Agendamento -> Execução da Mentoria -> Pagamento."</p>
+                    <p class="question">2. Qual a Oferta Mínima Viável (MVO)?</p>
+                    <p class="answer">"Apenas a funcionalidade de agendamento e pagamento para 50 mentores pré-selecionados."</p>
+                    <p class="question">3. Qual o custo mensal estimado com pessoal?</p>
+                    <p class="answer">"R$ 45.000."</p>
+                    <p class="question">4. Qual o prazo realista para o MVO?</p>
+                    <p class="answer">"4 meses."</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- FEED CARD -->
+        <div class="card feed">
+            <div class="card-header">
+                <div class="icon">📈</div>
+                <h3>Fase 3: FEED (A Viabilidade)</h3>
+            </div>
+            <div class="card-content">
+                <h4>Análise de Mercado</h4>
+                <p>O mercado de EdTech cresce 15% ao ano. Concorrentes focam em cursos longos, abrindo um nicho para "micro-mentorias".</p>
+                <h4>Modelo de Negócio</h4>
+                <p>Comissão de 20% sobre o valor de cada sessão de mentoria.</p>
+
+                <button class="toggle-button" onclick="toggleVisibility('feed-q')">Mostrar/Ocultar Protocolo FEED</button>
+                <div id="feed-q" class="questionnaire">
+                    <p class="question">1. Qual a principal fonte de receita?</p>
+                    <p class="answer">"Comissão sobre transações."</p>
+                    <p class="question">2. Qual o tamanho do mercado (TAM)?</p>
+                    <p class="answer">"Estima-se 5 milhões de devs júnior no Brasil."</p>
+                    <p class="question">3. Qual o motor de crescimento?</p>
+                    <p class="answer">"Viral (indicação de mentor para mentorado) e Conteúdo (SEO)."</p>
+                    <p class="question">4. Qual o maior risco?</p>
+                    <p class="answer">"Falta de qualidade dos mentores e baixa retenção."</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function toggleVisibility(id) {
+            const element = document.getElementById(id);
+            if (element.style.display === 'block') {
+                element.style.display = 'none';
+            } else {
+                element.style.display = 'block';
+            }
+        }
+    </script>
+
+</body>
+</html>
