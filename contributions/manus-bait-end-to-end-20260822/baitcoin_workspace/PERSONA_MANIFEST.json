@@ -1,0 +1,31 @@
+{
+    "preset_id": "bainkr-institutional",
+    "agent_persona": {
+        "display_name": "B'AI'nkr Vault Guardian",
+        "autonomy_level": "Level-4",
+        "risk_tolerance": "Conservative",
+        "execution_speed": "Real-time",
+        "decision_model": "zkML-Consensus-v2",
+        "memory_retention": "Infinite-WAL"
+    },
+    "theme": {
+        "mode": "dark-immersive",
+        "primary_color": "#00aaff",
+        "secondary_color": "#1a1a1a",
+        "accent_color": "#00ffcc",
+        "font_family": "JetBrains Mono, monospace",
+        "ui_density": "compact"
+    },
+    "security": {
+        "quantum_resistant_mode": true,
+        "pqc_algorithm": "HMAC-SHA3-512",
+        "rate_limit_tier": "Institutional",
+        "audit_level": "Paranoid-Audit",
+        "mfa_required": true
+    },
+    "metadata": {
+        "version": "v1.0.0",
+        "parameters_count": 64,
+        "compatibility": "A2A-RPC/v1"
+    }
+}
