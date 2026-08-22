@@ -1,0 +1,15 @@
+source	pattern_or_path	category	decision
+repository-metadata	.git/**	repository-metadata	not-copied
+runtime	.manus-logs/**	generated-runtime-log	not-copied
+runtime	node_modules/**	dependency-cache	not-copied
+runtime	dist/**	generated-build	not-copied
+runtime	build/**	generated-build	not-copied
+configuration	.env and .env.*	secrets-or-environment	not-copied
+configuration	**/credentials.json	credentials	not-copied
+configuration	**/*secret*	secrets	not-copied
+configuration	**/*private*key*	private-key	not-copied
+configuration	**/*mnemonic*	wallet-secret	not-copied
+configuration	**/*xprv*	private-key	not-copied
+configuration	**/*wif*	private-key	not-copied
+
+Evidence: the attached ZIP had no excluded entries. The Nexus snapshot excluded its local Git metadata and generated runtime logs. No environment, credential, private-key, mnemonic, xprv, WIF or secret-pattern file from the Nexus source was copied. Existing sensitive-looking paths in the target repository were not touched or replicated.

@@ -1,0 +1,9 @@
+# Validação do staging
+
+O branch de trabalho foi criado a partir de `f1da34e551aa5cec65d49782adf3560d2f2285e9` e está alinhado com `origin/main` no momento da auditoria.
+
+O staging contém somente adições sob `task-artifacts/user_task_2026-08-22/`. A contagem, os caminhos e o estado de exclusões são validados por comandos reproduzíveis no relatório de preflight.
+
+O `git diff --check` reporta avisos de trailing whitespace e blank lines at EOF em arquivos importados. Esses bytes pertencem às fontes originais e são preservados intencionalmente para manter os SHA-256. Não foi feita normalização automática, pois isso alteraria a cópia arquivada. Os avisos não representam alterações em arquivos existentes nem risco de sobrescrita.
+
+Critérios de segurança aprovados: zero arquivos deletados, zero arquivos modificados fora do namespace, zero arquivos sensíveis dentro do namespace, 16/16 arquivos do ZIP anexado com hashes iguais e 128/128 arquivos elegíveis do snapshot Nexus com hashes iguais.

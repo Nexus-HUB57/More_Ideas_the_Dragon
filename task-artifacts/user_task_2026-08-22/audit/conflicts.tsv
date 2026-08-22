@@ -1,0 +1,9 @@
+source_path	root_target_path	decision	reason
+App.tsx	App.tsx	kept-in-namespace	root target already tracked
+README.md	README.md	kept-in-namespace	root target already tracked
+db.ts	db.ts	kept-in-namespace	root target already tracked
+package.json	package.json	kept-in-namespace	root target already tracked
+schema.ts	schema.ts	kept-in-namespace	root target already tracked
+todo.md	todo.md	kept-in-namespace	root target already tracked
+
+Summary: six root-name collisions detected. No source file was copied to a colliding root path. All source files remain available below the task namespace.

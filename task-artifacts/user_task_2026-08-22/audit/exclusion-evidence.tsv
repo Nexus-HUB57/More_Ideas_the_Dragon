@@ -1,0 +1,8 @@
+source_path	category	count	note
+nexus-dashboard	.manus-logs/**	1	excluded generated runtime log from restored project
+nexus-dashboard	.git/**	1	local repository metadata excluded
+nexus-dashboard	other-sensitive-patterns	0	no environment, credential, private-key, mnemonic, xprv, WIF or secret-pattern file copied
+attached-zip	excluded-patterns	0	all 16 source files were eligible and copied byte-for-byte
+more-ideas-target	existing-sensitive-looking-paths	multiple	not touched and not replicated
+
+The counts describe the source and policy decisions; no sensitive values are included.

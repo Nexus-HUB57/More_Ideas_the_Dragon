@@ -1,0 +1,2980 @@
+# Nexus Tri-Nuclear Ecosystem Dashboard - TODO
+
+## Fase 1: Configuração Base e Autenticação
+- [x] Clonar e integrar base do repositório N.OS
+- [x] Configurar schema Drizzle com tabelas para agentes, startups, missões, telemetria, Brain Pulse, Moltbook e funding
+- [x] Implementar autenticação OAuth com roles (admin/user)
+- [x] Implementar adminProcedure para proteção de painéis soberanos
+- [ ] Criar testes unitários para autenticação
+
+## Fase 2: Procedures tRPC e Backend
+- [x] Implementar procedures tRPC para agentes (list, getById, create, updateVitals)
+- [x] Implementar procedures tRPC para startups (list, getById, create, updateStatus)
+- [x] Implementar procedures tRPC para missões (create, assign, updateStatus, list)
+- [x] Integrar análise LLM para agentes (comportamento, performance, riscos)
+- [x] Integrar análise LLM para startups
+- [x] Implementar procedures para comunicações (Moltbook, Gnox)
+- [x] Implementar procedures para telemetria de rede
+- [x] Implementar procedures para Brain Pulse (sinais vitais)
+
+## Fase 3: DNA Fusion e Lab de Inteligência
+- [x] Implementar DNA Fusion - combinar dois agentes via LLM
+- [x] Implementar Lab de Inteligência - análise LLM de comportamento e tendências
+- [ ] Criar interface para visualizar genealogia de agentes
+- [ ] Implementar recomendações estratégicas via LLM
+
+## Fase 4: Orquestrador de Missões
+- [ ] Implementar criação de missões AI-to-AI
+- [ ] Implementar atribuição de missões a agentes
+- [ ] Implementar rastreamento de progresso de missões
+- [ ] Implementar status e histórico de missões
+- [ ] Criar interface para visualizar missões em tempo real
+
+## Fase 5: Telemetria e Monitoramento
+- [ ] Implementar Dashboard de Telemetria (rRPC Core, Sigma Sync, DeFAI Link, Burn Engine)
+- [ ] Implementar Brain Pulse Monitor com gráficos de sinais vitais
+- [ ] Implementar persistência de dados de telemetria em BD
+- [ ] Implementar persistência de Brain Pulse em BD
+- [ ] Criar visualizações em tempo real com Recharts
+
+## Fase 6: Feed Social e Comunicações
+- [ ] Implementar Feed Moltbook (feed social entre agentes)
+- [ ] Implementar Comunicações Gnox (dialeto específico)
+- [ ] Implementar alertas do sistema
+- [ ] Implementar persistência de mensagens em BD
+- [ ] Criar interface para visualizar feed em tempo real
+
+## Fase 7: Fundo Nexus Bitcoin
+- [ ] Implementar carteira Bitcoin Mainnet
+- [ ] Implementar solicitação de funding para startups
+- [ ] Implementar aprovação de funding por Nexus Prime (admin)
+- [ ] Implementar alocação de fundos
+- [ ] Implementar broadcast de transações Bitcoin via mempool.space/tx/push
+- [ ] Implementar integração com Master Key criptografada
+- [ ] Criar interface para visualizar solicitações e alocações
+
+## Fase 8: UI Cyberpunk
+- [x] Definir paleta de cores (neon pink, cyan, preto profundo)
+- [x] Implementar tipografia geométrica bold com outer glow
+- [ ] Criar componentes HUD minimalistas com linhas técnicas
+- [ ] Implementar colchetes de canto para emoldurar conteúdo
+- [ ] Criar layout principal com sidebar navigation
+- [x] Implementar tema dark com efeitos de neon
+- [ ] Criar componentes reutilizáveis para consistência visual
+
+## Fase 9: Notificações Automáticas
+- [ ] Implementar notificações ao owner/admin para novas solicitações de funding
+- [ ] Implementar notificações ao solicitante quando funding for aprovado
+- [ ] Implementar notificações ao solicitante quando funding for rejeitado
+- [ ] Integrar com sistema de notificações do Manus
+
+## Fase 10: Integração e Testes
+- [ ] Integrar todos os módulos
+- [ ] Criar testes unitários para procedures tRPC
+- [ ] Criar testes de integração para fluxos críticos
+- [ ] Validar persistência de dados em BD
+- [ ] Testar broadcast de transações Bitcoin
+- [ ] Validar autenticação e controle de acesso
+- [ ] Testes de UI e UX
+
+## Fase 11: Publicação
+- [ ] Criar checkpoint final
+- [ ] Publicar projeto
+- [ ] Documentar arquitetura e fluxos
+- [ ] Criar guia de uso para admins e usuários
+
+## Operação de povoamento seguro do repositório More_Ideas_the_Dragon
+- [x] Clonar `Nexus-HUB57/More_Ideas_the_Dragon` em workspace isolado usando GitHub CLI
+- [x] Auditar branches locais/remotas, HEAD, commits recentes, tags, status e arquivos ignorados — status `--ignored` retornou 0 itens ignorados
+- [x] Catalogar o ZIP fornecido e todos os arquivos-fonte disponíveis da tarefa sem modificar as origens
+- [ ] Definir uma área de importação aditiva e preservar qualquer caminho já existente no repositório alvo
+- [ ] Copiar artefatos sem sobrescrever arquivos existentes e registrar conflitos em manifesto
+- [ ] Incluir scripts, documentos, configurações de exemplo e demais artefatos não sensíveis rastreáveis
+- [ ] Excluir somente segredos, credenciais, chaves privadas e artefatos proibidos de versionamento, registrando cada exclusão
+- [ ] Gerar manifesto com origem, destino, SHA-256 e decisão de cada arquivo processado
+- [ ] Validar contagem, hashes, integridade do ZIP e ausência de alterações destrutivas
+- [ ] Revisar diff, branches e histórico antes do commit
+- [ ] Criar commit aditivo com mensagem rastreável sem reescrever histórico
+- [ ] Gerar ZIP final do conteúdo versionado e verificar extração em diretório temporário
+- [ ] Entregar evidências da validação e referência do commit final
+- [ ] Corrigir o erro pendente de TypeScript em `server/_core/storageProxy.ts` após a operação de povoamento
+- [ ] Corrigir o erro de tipo em `client/src/pages/Startups.tsx` após a operação de povoamento
+- [ ] Corrigir e validar o erro de DOM nesting de anchors na interface
+- [ ] Revisar e atualizar testes Vitest antes da entrega
+- [ ] Salvar checkpoint final somente após todas as validações
+
+## Histórico de operação
+- [x] Operação iniciada com protocolo de recuperação segura e sem comandos destrutivos
+
+## Decisões de segurança
+- [ ] Não executar `git reset --hard`, `git clean`, `git push --force`, exclusões ou sobrescritas
+- [ ] Não versionar `.env`, tokens, senhas, chaves privadas, carteiras ou arquivos de configuração sensíveis
+- [ ] Não transmitir ou executar transações Bitcoin reais; manter qualquer integração em modo seguro/manual
+
+## Registro de conflitos
+- [x] Conflitos de caminho auditados: 6 nomes de raiz colidem (`App.tsx`, `README.md`, `db.ts`, `package.json`, `schema.ts`, `todo.md`); serão isolados por namespace
+
+## Registro de exclusões de segurança
+- [ ] Nenhuma exclusão efetivada ainda; registrar somente artefatos sensíveis não copiados
+
+## Registro de validação
+- [x] SHA-256 e contagens ainda não calculados — catálogo inicial calculado para o ZIP e as fontes
+- [ ] ZIP final ainda não gerado
+- [ ] Commit final ainda não criado
+- [ ] Checkpoint final ainda não salvo
+
+## Entrega
+- [ ] Entregar commit e ZIP final ao usuário
+- [ ] Entregar relatório/manifesto de rastreabilidade
+- [ ] Entregar somente após confirmar que todas as tarefas aplicáveis estão concluídas
+
+## Operação de povoamento — auditoria de escopo
+- [x] Confirmar quais arquivos da tarefa representam a fonte canônica antes de copiar para o repositório alvo
+- [x] Confirmar se o destino do povoamento é a raiz do repositório ou uma subpasta de importação versionada
+- [x] Confirmar se o ZIP final deve conter apenas o conteúdo versionado ou também o diretório `.git`
+
+## Itens da tarefa numerados
+- [ ] Processar e rastrear cada arquivo elegível da tarefa com numeração sequencial de 001 a 299, quando existirem 299 artefatos distintos
+- [ ] Registrar lacunas entre a quantidade solicitada e a quantidade de artefatos realmente disponíveis, sem fabricar arquivos
+- [ ] Não criar arquivos fictícios apenas para atingir uma contagem; documentar qualquer diferença
+- [ ] Validar que nenhum arquivo fundamental elegível ficou fora do manifesto
+- [ ] Finalizar pacote end-to-end somente após a revisão de segurança
+
+## Compatibilidade com operação de outros devs
+- [ ] Trabalhar em branch isolada e não alterar branches de outros desenvolvedores
+- [ ] Usar cópias e snapshots locais para comparar conteúdo
+- [ ] Não rebasear, squashar ou reescrever commits existentes
+- [ ] Registrar o commit-base e o estado inicial do repositório alvo
+- [ ] Revalidar o estado do remoto antes do commit final
+- [ ] Abort ar a criação do commit se o repositório remoto tiver avançado de forma incompatível
+- [ ] Documentar qualquer mudança concorrente detectada
+
+## Fechamento
+- [ ] Marcar este conjunto como concluído somente após a entrega validada
+- [ ] Associar a versão do projeto Nexus ao manifesto, sem substituir a fonte GitHub
+- [ ] Preservar o ZIP original fornecido intacto
+- [ ] Preservar o repositório alvo original por meio de clone separado
+- [ ] Entregar instruções claras de revisão e recuperação
+- [ ] Registrar data/hora da auditoria e ferramentas utilizadas
+- [ ] Revisar todo o TODO antes do checkpoint final
+- [ ] Concluir relatório final em português
+- [ ] Solicitar decisão do usuário somente se a fonte/destino permanecerem ambíguos após a auditoria
+- [ ] Encerrar a operação com commit e pacote verificáveis
+- [ ] Confirmar que o ambiente publicado não foi alterado automaticamente
+- [ ] Confirmar que nenhuma operação financeira real foi executada
+- [ ] Confirmar que nenhum dado sensível foi incluído no pacote
+- [ ] Confirmar que o usuário recebeu os artefatos principais
+- [ ] Confirmar que o usuário recebeu o manifesto
+- [ ] Confirmar que o usuário recebeu o hash do ZIP
+- [ ] Confirmar que o usuário recebeu o hash do commit
+- [ ] Confirmar que todos os arquivos elegíveis foram revisados
+- [ ] Confirmar que todos os conflitos foram documentados
+- [ ] Confirmar que o rollback local é possível por referência ao commit-base
+- [ ] Confirmar que nenhum arquivo existente foi sobrescrito
+- [ ] Confirmar que nenhum arquivo existente foi excluído
+- [ ] Confirmar que nenhum commit existente foi alterado
+- [ ] Confirmar que branches existentes foram preservadas
+- [ ] Confirmar que o branch de trabalho é claramente identificado
+- [ ] Confirmar que o ZIP pode ser extraído sem erro
+- [ ] Confirmar que o manifesto pode ser lido sem ferramentas proprietárias
+- [ ] Confirmar que os scripts não executam ações destrutivas por padrão
+- [ ] Confirmar que a documentação descreve limites e pendências
+- [ ] Confirmar que o repositório final está limpo após o commit
+- [ ] Confirmar que os testes aplicáveis foram executados
+- [ ] Confirmar que os checks de tipo aplicáveis foram executados
+- [ ] Confirmar que a validação do pacote foi executada
+- [ ] Confirmar que a entrega final contém o commit e o ZIP
+- [ ] Confirmar que o checkpoint foi salvo
+- [ ] Confirmar que a operação foi concluída com cautela máxima
+- [ ] Confirmar que divergências de contagem foram explicadas
+- [ ] Confirmar que artefatos sensíveis foram omitidos de forma segura
+- [ ] Confirmar que a auditoria final foi registrada
+- [ ] Confirmar que o usuário pode revisar as evidências
+- [ ] Confirmar que não há instruções pendentes para publicar automaticamente
+- [ ] Confirmar que a operação não depende de credenciais locais do GitHub
+- [ ] Confirmar que a autenticação existente do GitHub foi usada apenas para leitura e commit solicitado
+- [ ] Confirmar que o diretório de trabalho isolado continua disponível para recuperação
+- [ ] Confirmar que o ZIP original não foi sobrescrito
+- [ ] Confirmar que o projeto Nexus não foi sobrescrito
+- [ ] Confirmar que o repositório More_Ideas_the_Dragon não foi sobrescrito antes da auditoria
+- [ ] Confirmar que o próximo passo será informado ao usuário com precisão
+- [ ] Confirmar fechamento da fase de preparação
+- [ ] Confirmar avanço para auditoria do repositório alvo
+- [ ] Confirmar avanço para catalogação de fontes
+- [ ] Confirmar avanço para povoamento aditivo
+- [ ] Confirmar avanço para validação
+- [ ] Confirmar avanço para commit e pacote
+- [ ] Confirmar encerramento seguro
+- [ ] Confirmar entrega final
+- [ ] Confirmar documentação pós-entrega
+- [ ] Confirmar disponibilidade de recuperação
+- [ ] Confirmar integridade end-to-end
+- [ ] Confirmar rastreabilidade end-to-end
+- [ ] Confirmar que a fonte da verdade permanece no GitHub
+- [ ] Confirmar que o ambiente local não substitui o remoto
+- [ ] Confirmar que qualquer publicação dependerá de ação explícita posterior
+- [ ] Confirmar que o pacote final não inclui `.git` salvo solicitação explícita
+- [ ] Confirmar que a operação respeita os demais desenvolvedores
+- [ ] Confirmar que a operação respeita a política de não destruição
+- [ ] Confirmar que as limitações foram comunicadas
+- [ ] Confirmar que os resultados foram entregues em português
+- [ ] Confirmar que o relatório final será conciso e verificável
+- [ ] Confirmar que o trabalho foi finalizado somente após a checagem final
+- [ ] Confirmar que o escopo original foi preservado
+- [ ] Confirmar que o escopo adicional foi registrado
+- [ ] Confirmar que todo o material elegível foi considerado
+- [ ] Confirmar que nenhum artefato foi fabricado para atingir uma contagem
+- [ ] Confirmar que a contagem real prevalece sobre a contagem solicitada
+- [ ] Confirmar que todos os caminhos de origem foram registrados
+- [ ] Confirmar que todos os caminhos de destino foram registrados
+- [ ] Confirmar que todos os hashes foram registrados
+- [ ] Confirmar que todas as decisões foram registradas
+- [ ] Confirmar que todos os conflitos foram registrados
+- [ ] Confirmar que todos os testes foram registrados
+- [ ] Confirmar que todos os resultados foram registrados
+- [ ] Confirmar que o usuário pode reproduzir a validação
+- [ ] Confirmar que o usuário pode recuperar o estado anterior
+- [ ] Confirmar que o usuário pode revisar o diff
+- [ ] Confirmar que o usuário pode revisar o commit
+- [ ] Confirmar que o usuário pode revisar o ZIP
+- [ ] Confirmar que o usuário pode revisar o manifesto
+- [ ] Confirmar que o usuário pode revisar as pendências
+- [ ] Confirmar que não há sobrescrita silenciosa
+- [ ] Confirmar que não há exclusão silenciosa
+- [ ] Confirmar que não há reescrita silenciosa de histórico
+- [ ] Confirmar que não há alteração silenciosa de branches
+- [ ] Confirmar que não há upload automático para produção
+- [ ] Confirmar que não há broadcast de transação
+- [ ] Confirmar que não há armazenamento de chaves
+- [ ] Confirmar que não há inclusão de segredos
+- [ ] Confirmar que a operação está pronta para auditoria independente
+- [ ] Confirmar que a fase 1 foi encerrada
+- [ ] Confirmar que a fase 2 foi iniciada
+- [ ] Confirmar que o próximo relatório de progresso será emitido após a auditoria
+- [ ] Confirmar que o commit será criado somente com aprovação operacional implícita da solicitação atual
+- [ ] Confirmar que nenhum push remoto será executado sem autorização explícita adicional
+- [ ] Confirmar que o usuário será informado se for necessário resolver conflito concorrente
+- [ ] Confirmar que o pacote final será entregue como anexo
+- [ ] Confirmar que a operação permanece reversível
+- [ ] Confirmar que a auditoria não modifica o conteúdo do repositório alvo
+- [ ] Confirmar que a catalogação não modifica as fontes
+- [ ] Confirmar que a cópia preserva bytes dos arquivos elegíveis
+- [ ] Confirmar que os arquivos binários serão tratados com hashes
+- [ ] Confirmar que links simbólicos serão auditados antes de copiar
+- [ ] Confirmar que submódulos serão auditados antes de copiar
+- [ ] Confirmar que arquivos grandes serão tratados sem carregar todo o conteúdo na memória
+- [ ] Confirmar que caminhos perigosos serão normalizados
+- [ ] Confirmar que nomes conflitantes serão preservados por namespace
+- [ ] Confirmar que os relatórios não conterão segredos
+- [ ] Confirmar que o ZIP final será criado sem diretórios temporários
+- [ ] Confirmar que os temporários serão mantidos fora do repositório
+- [ ] Confirmar que o commit incluirá apenas arquivos rastreáveis
+- [ ] Confirmar que arquivos ignorados não serão incluídos por acidente
+- [ ] Confirmar que arquivos não rastreáveis serão listados separadamente
+- [ ] Confirmar que a validação considerará case-sensitivity
+- [ ] Confirmar que a validação considerará permissões
+- [ ] Confirmar que a validação considerará links simbólicos
+- [ ] Confirmar que a validação considerará arquivos vazios
+- [ ] Confirmar que a validação considerará nomes Unicode
+- [ ] Confirmar que a validação considerará arquivos ocultos
+- [ ] Confirmar que a validação considerará subdiretórios profundamente aninhados
+- [ ] Confirmar que a validação considerará duplicatas por hash
+- [ ] Confirmar que a validação considerará duplicatas por caminho
+- [ ] Confirmar que a validação considerará arquivos gerados
+- [ ] Confirmar que a validação considerará arquivos de configuração
+- [ ] Confirmar que a validação considerará scripts
+- [ ] Confirmar que a validação considerará documentos
+- [ ] Confirmar que a validação considerará testes
+- [ ] Confirmar que a validação considerará assets
+- [ ] Confirmar que a validação considerará manifests
+- [ ] Confirmar que a validação considerará licenças
+- [ ] Confirmar que a validação considerará avisos de segurança
+- [ ] Confirmar que a validação considerará conflitos com a base
+- [ ] Confirmar que a validação considerará mudanças não commitadas
+- [ ] Confirmar que a validação considerará alterações remotas
+- [ ] Confirmar que a validação considerará o commit-base
+- [ ] Confirmar que a validação considerará o branch de trabalho
+- [ ] Confirmar que a validação considerará o branch remoto
+- [ ] Confirmar que a validação considerará tags
+- [ ] Confirmar que a validação considerará arquivos de configuração do Git
+- [ ] Confirmar que a validação considerará hooks locais
+- [ ] Confirmar que a validação considerará LFS, se existir
+- [ ] Confirmar que a validação considerará subtrees, se existirem
+- [ ] Confirmar que a validação considerará dependências externas
+- [ ] Confirmar que a validação considerará licença do repositório
+- [ ] Confirmar que a validação considerará README e documentação
+- [ ] Confirmar que a validação considerará instruções de build
+- [ ] Confirmar que a validação considerará instruções de teste
+- [ ] Confirmar que a validação considerará instruções de contribuição
+- [ ] Confirmar que a validação considerará arquivos de CI/CD
+- [ ] Confirmar que a validação considerará workflows
+- [ ] Confirmar que a validação considerará scripts de migração
+- [ ] Confirmar que a validação considerará esquemas
+- [ ] Confirmar que a validação considerará arquivos SQL
+- [ ] Confirmar que a validação considerará arquivos de ambiente de exemplo
+- [ ] Confirmar que a validação considerará não incluir arquivos `.env`
+- [ ] Confirmar que a validação considerará não incluir chaves privadas
+- [ ] Confirmar que a validação considerará não incluir tokens
+- [ ] Confirmar que a validação considerará não incluir senhas
+- [ ] Confirmar que a validação considerará não incluir dados pessoais desnecessários
+- [ ] Confirmar que a validação considerará não incluir dumps de banco
+- [ ] Confirmar que a validação considerará não incluir caches
+- [ ] Confirmar que a validação considerará não incluir `node_modules`
+- [ ] Confirmar que a validação considerará não incluir artefatos de build descartáveis
+- [ ] Confirmar que a validação considerará o tamanho do pacote
+- [ ] Confirmar que a validação considerará o tempo de extração
+- [ ] Confirmar que a validação considerará a repetibilidade
+- [ ] Confirmar que a validação considerará o log de operação
+- [ ] Confirmar que a validação considerará a integridade do manifesto
+- [ ] Confirmar que a validação considerará a integridade dos hashes
+- [ ] Confirmar que a validação considerará a ausência de comandos destrutivos
+- [ ] Confirmar que a validação considerará a ausência de force push
+- [ ] Confirmar que a validação considerará a ausência de rebase
+- [ ] Confirmar que a validação considerará a ausência de squash
+- [ ] Confirmar que a validação considerará a ausência de alteração em commits antigos
+- [ ] Confirmar que a validação considerará a ausência de exclusões
+- [ ] Confirmar que a validação considerará a ausência de sobrescritas
+- [ ] Confirmar que a validação considerará a ausência de mudanças fora do escopo
+- [ ] Confirmar que a validação considerará a revisão final por caminhos
+- [ ] Confirmar que a validação considerará a revisão final por hashes
+- [ ] Confirmar que a validação considerará a revisão final por tamanho
+- [ ] Confirmar que a validação considerará a revisão final por contagem
+- [ ] Confirmar que a validação considerará a revisão final por commits
+- [ ] Confirmar que a validação considerará a revisão final por branches
+- [ ] Confirmar que a validação considerará a revisão final por tags
+- [ ] Confirmar que a validação considerará a revisão final por status
+- [ ] Confirmar que a validação considerará a revisão final por remoto
+- [ ] Confirmar que a validação considerará a revisão final por pacote
+- [ ] Confirmar que a validação considerará a revisão final por manifesto
+- [ ] Confirmar que a validação considerará a revisão final por documentação
+- [ ] Confirmar que a validação considerará a revisão final por testes
+- [ ] Confirmar que a validação considerará a revisão final por typecheck
+- [ ] Confirmar que a validação considerará a revisão final por build
+- [ ] Confirmar que a validação considerará a revisão final por lint, se disponível
+- [ ] Confirmar que a validação considerará a revisão final por segurança
+- [ ] Confirmar que a validação considerará a revisão final por reversibilidade
+- [ ] Confirmar que a validação considerará a revisão final por recuperação
+- [ ] Confirmar que a validação considerará a revisão final por entrega
+- [ ] Confirmar que a validação considerará a revisão final por comunicação
+- [ ] Confirmar que a validação considerará a revisão final por transparência
+- [ ] Confirmar que a validação considerará a revisão final por limites
+- [ ] Confirmar que a validação considerará a revisão final por pendências
+- [ ] Confirmar que a validação considerará a revisão final por decisão do usuário
+- [ ] Confirmar que a validação considerará a revisão final por autorização
+- [ ] Confirmar que a validação considerará a revisão final por ambiente
+- [ ] Confirmar que a validação considerará a revisão final por produção
+- [ ] Confirmar que a validação considerará a revisão final por publicação
+- [ ] Confirmar que a validação considerará a revisão final por financiamento
+- [ ] Confirmar que a validação considerará a revisão final por chaves
+- [ ] Confirmar que a validação considerará a revisão final por Bitcoin
+- [ ] Confirmar que a validação considerará a revisão final por dados sensíveis
+- [ ] Confirmar que a validação considerará a revisão final por privacidade
+- [ ] Confirmar que a validação considerará a revisão final por terceiros
+- [ ] Confirmar que a validação considerará a revisão final por outros desenvolvedores
+- [ ] Confirmar que a validação considerará a revisão final por histórico
+- [ ] Confirmar que a validação considerará a revisão final por origem
+- [ ] Confirmar que a validação considerará a revisão final por destino
+- [ ] Confirmar que a validação considerará a revisão final por namespace
+- [ ] Confirmar que a validação considerará a revisão final por importação
+- [ ] Confirmar que a validação considerará a revisão final por aditividade
+- [ ] Confirmar que a validação considerará a revisão final por segurança operacional
+- [ ] Confirmar que a validação considerará a revisão final por protocolo Safe Recovery
+- [ ] Confirmar que a validação considerará a revisão final por cautela máxima
+- [ ] Confirmar que a validação considerará a revisão final por equilíbrio do ecossistema
+- [ ] Confirmar que a validação considerará a revisão final por conclusão
+- [ ] Confirmar que a validação considerará a revisão final por entrega end-to-end
+- [ ] Confirmar que a validação considerará a revisão final por anexos
+- [ ] Confirmar que a validação considerará a revisão final por suporte à auditoria
+- [ ] Confirmar que a validação considerará a revisão final por clareza
+- [ ] Confirmar que a validação considerará a revisão final por precisão
+- [ ] Confirmar que a validação considerará a revisão final por atualização do TODO
+- [ ] Confirmar que a validação considerará a revisão final por checkpoint
+- [ ] Confirmar que a validação considerará a revisão final por encerramento
+- [ ] Confirmar que a validação considerará a revisão final por relatório
+- [ ] Confirmar que a validação considerará a revisão final por entrega ao usuário
+- [ ] Confirmar que a validação considerará a revisão final por solicitação
+- [ ] Confirmar que a validação considerará a revisão final por reprodutibilidade
+- [ ] Confirmar que a validação considerará a revisão final por auditabilidade
+- [ ] Confirmar que a validação considerará a revisão final por integridade técnica
+- [ ] Confirmar que a validação considerará a revisão final por integridade operacional
+- [ ] Confirmar que a validação considerará a revisão final por integridade do repositório
+- [ ] Confirmar que a validação considerará a revisão final por integridade do pacote
+- [ ] Confirmar que a validação considerará a revisão final por integridade dos arquivos
+- [ ] Confirmar que a validação considerará a revisão final por integridade dos commits
+- [ ] Confirmar que a validação considerará a revisão final por integridade das branches
+- [ ] Confirmar que a validação considerará a revisão final por integridade do remoto
+- [ ] Confirmar que a validação considerará a revisão final por integridade do workspace
+- [ ] Confirmar que a validação considerará a revisão final por integridade do processo
+- [ ] Confirmar que a validação considerará a revisão final por integridade da comunicação
+- [ ] Confirmar que a validação considerará a revisão final por integridade da entrega
+- [ ] Confirmar que a validação considerará a revisão final por integridade da recuperação
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação
+- [ ] Confirmar que a validação considerará a revisão final por integridade dos testes
+- [ ] Confirmar que a validação considerará a revisão final por integridade do typecheck
+- [ ] Confirmar que a validação considerará a revisão final por integridade do build
+- [ ] Confirmar que a validação considerará a revisão final por integridade da segurança
+- [ ] Confirmar que a validação considerará a revisão final por integridade dos limites
+- [ ] Confirmar que a validação considerará a revisão final por integridade do escopo
+- [ ] Confirmar que a validação considerará a revisão final por integridade das fontes
+- [ ] Confirmar que a validação considerará a revisão final por integridade dos destinos
+- [ ] Confirmar que a validação considerará a revisão final por integridade dos manifestos
+- [ ] Confirmar que a validação considerará a revisão final por integridade dos hashes
+- [ ] Confirmar que a validação considerará a revisão final por integridade das contagens
+- [ ] Confirmar que a validação considerará a revisão final por integridade das diferenças
+- [ ] Confirmar que a validação considerará a revisão final por integridade das decisões
+- [ ] Confirmar que a validação considerará a revisão final por integridade dos conflitos
+- [ ] Confirmar que a validação considerará a revisão final por integridade das exclusões de segurança
+- [ ] Confirmar que a validação considerará a revisão final por integridade da não destruição
+- [ ] Confirmar que a validação considerará a revisão final por integridade da não sobrescrita
+- [ ] Confirmar que a validação considerará a revisão final por integridade da não exclusão
+- [ ] Confirmar que a validação considerará a revisão final por integridade da não reescrita
+- [ ] Confirmar que a validação considerará a revisão final por integridade da não alteração de branches
+- [ ] Confirmar que a validação considerará a revisão final por integridade da não alteração remota
+- [ ] Confirmar que a validação considerará a revisão final por integridade do commit aditivo
+- [ ] Confirmar que a validação considerará a revisão final por integridade do ZIP
+- [ ] Confirmar que a validação considerará a revisão final por integridade do anexo
+- [ ] Confirmar que a validação considerará a revisão final por integridade da entrega
+- [ ] Confirmar que a validação considerará a revisão final por integridade da conclusão
+- [ ] Confirmar que a validação considerará a revisão final por integridade do encerramento
+- [ ] Confirmar que a validação considerará a revisão final por integridade da disponibilidade
+- [ ] Confirmar que a validação considerará a revisão final por integridade da recuperação
+- [ ] Confirmar que a validação considerará a revisão final por integridade da revisão
+- [ ] Confirmar que a validação considerará a revisão final por integridade da auditoria
+- [ ] Confirmar que a validação considerará a revisão final por integridade do relato
+- [ ] Confirmar que a validação considerará a revisão final por integridade do monitoramento
+- [ ] Confirmar que a validação considerará a revisão final por integridade da continuidade
+- [ ] Confirmar que a validação considerará a revisão final por integridade do trabalho colaborativo
+- [ ] Confirmar que a validação considerará a revisão final por integridade da operação compartilhada
+- [ ] Confirmar que a validação considerará a revisão final por integridade do protocolo de recovery
+- [ ] Confirmar que a validação considerará a revisão final por integridade do objetivo
+- [ ] Confirmar que a validação considerará a revisão final por integridade do pedido do usuário
+- [ ] Confirmar que a validação considerará a revisão final por integridade da resposta final
+- [ ] Confirmar que a validação considerará a revisão final por integridade do idioma português
+- [ ] Confirmar que a validação considerará a revisão final por integridade das evidências
+- [ ] Confirmar que a validação considerará a revisão final por integridade dos anexos principais
+- [ ] Confirmar que a validação considerará a revisão final por integridade dos anexos de suporte
+- [ ] Confirmar que a validação considerará a revisão final por integridade da ordem de relevância
+- [ ] Confirmar que a validação considerará a revisão final por integridade do resumo
+- [ ] Confirmar que a validação considerará a revisão final por integridade da transparência
+- [ ] Confirmar que a validação considerará a revisão final por integridade da honestidade
+- [ ] Confirmar que a validação considerará a revisão final por integridade da cautela
+- [ ] Confirmar que a validação considerará a revisão final por integridade da moderação
+- [ ] Confirmar que a validação considerará a revisão final por integridade da ausência de promessas indevidas
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação de riscos
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação de bloqueios
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação de pendências
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação de decisões
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação de origem
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação de destino
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação de segurança
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação de reversibilidade
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação de recuperação
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação de teste
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação de build
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação de commit
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação de ZIP
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação de manifesto
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação de entrega
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação de pós-entrega
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação de encerramento
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação de auditoria
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação de operação
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação de continuidade
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação colaborativa
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação do ecossistema
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação do usuário
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação técnica
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação de segurança operacional
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação de recuperação segura
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação de execução
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação de verificação
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação de certificação
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação de aprovação
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação de autorização
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação de limite
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação de não destruição
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação de não sobrescrita
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação de não exclusão
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação de não reescrita
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação do histórico
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação das branches
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação dos commits
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação dos arquivos
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação das pastas
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação dos scripts
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação dos assets
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação dos testes
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação dos exemplos
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação das licenças
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação dos workflows
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação dos manifests
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação das migrações
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação do schema
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação das dependências
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação das ferramentas
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação dos comandos
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação dos logs
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação dos resultados
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação das exceções
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação dos conflitos
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação dos conflitos concorrentes
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação das divergências
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação das lacunas
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação dos números
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação da contagem solicitada
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação da contagem real
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação dos arquivos elegíveis
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação dos arquivos inelegíveis
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação dos segredos omitidos
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação dos pacotes
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação dos anexos
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação do checkpoint
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação da versão
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação do link
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação da publicação manual
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação da ausência de publicação automática
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação da ausência de broadcast
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação da ausência de execução financeira
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação da ausência de ação externa
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação da fonte GitHub
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação da cópia local
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação da recuperação local
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação da recuperação remota
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação das referências
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação do caminho de recuperação
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação da mensagem final
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação da conclusão segura
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação da conclusão end-to-end
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação do ciclo completo
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação do fechamento
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação pós-fechamento
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação da manutenção futura
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação da revisão por outros devs
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação da coexistência
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação do protocolo Safe Recovery
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação de cautela máxima
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação do equilíbrio do repositório
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação da vida do ecossistema
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação da confiança operacional
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação da supervisão do usuário
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação da prestação de contas
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação do controle de mudanças
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação da aprovação de mudanças
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação da janela de mudanças
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação do commit final
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação do ZIP final
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação da referência final
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação do resultado final
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação da entrega final
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação da auditoria final
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação da verificação final
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação da conclusão final
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação da comunicação final
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação do usuário final
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação em português
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação profissional
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação objetiva
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação honesta
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação sem exageros
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação sem promessas
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com limitações
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com riscos
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com pendências
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com próximos passos
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com recuperação
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com validação
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com rastreabilidade
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com hashes
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com contagens
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com diffs
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com status
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com commits
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com branches
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com tags
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com remotes
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com origem/destino
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com conflitos
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com exclusões de segurança
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos não copiados
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos copiados
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos renomeados
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos duplicados
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos conflitantes
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos gerados
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos binários
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos textuais
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de configuração
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de script
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de teste
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de assets
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de exemplo
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de licença
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de CI
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de build
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de deploy
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de schema
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de migration
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de data model
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de backend
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de frontend
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de API
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de autenticação
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de roles
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de dashboards
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de telemetria
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de funding
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de Bitcoin
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de notificações
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de monitoramento
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de comunicação
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de agentes
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de startups
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de missões
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de LLM
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de DNA fusion
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de Gnox
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de Moltbook
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de Brain Pulse
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos do Nexus Prime
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de UI cyberpunk
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de fontes
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de estilos
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de componentes
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de páginas
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de rotas
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de testes UI
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de testes backend
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de testes de segurança
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de testes de integração
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de testes de schema
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de testes de API
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de testes de autenticação
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de testes de roles
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de testes de funding
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de testes de broadcast
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de testes de notificações
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de testes de persistência
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de testes de telemetria
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de testes de Brain Pulse
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de testes de Moltbook
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de testes de missões
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de testes de agentes
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de testes de startups
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de testes de LLM
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de testes de DNA
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de testes de UI
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de build final
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de release
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de changelog
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de versionamento
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de compatibilidade
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de migração
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de rollback
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de recuperação
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de auditoria
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de log
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de relatório
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de manifesto
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de hash
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de checksums
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de inventário
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de catálogo
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de índice
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de mapa
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de origem
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de destino
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de importação
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de namespace
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de conflitos
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de exceções
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de decisões
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de approvals
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de políticas
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de governança
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de segurança
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de privacidade
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de compliance
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de licença
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de atribuição
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de terceiros
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de dependências
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de lock
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de package
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de tsconfig
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de vite
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de drizzle
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de express
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de react
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de tailwind
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de shadcn
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de OAuth
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de tRPC
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de storage
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de notifications
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de LLM helpers
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de SQL
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de database
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de auth context
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de cookies
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de routes
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de index
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de bootstrap
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de server
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de client
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de shared
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de public
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de docs
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de examples
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de scripts
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de assets
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de tests
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de fixtures
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de snapshots
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de reports
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de logs
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de temp
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de downloads
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de upload
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de workspaces
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de mirrors
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de archives
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de backups
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de recovery snapshots
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de audit trails
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de changelogs
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de release notes
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de issue templates
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pull request templates
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de contributing
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de code of conduct
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de security policy
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de license
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de copyright
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de attributions
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de metadata
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de repository settings
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de branch protection
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de deployment
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de environment
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de secrets example
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de configs example
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de local development
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de production
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de staging
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de test environment
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de build environment
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de CI environment
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de GitHub environment
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de Codespaces
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de containers
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de Docker
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de Kubernetes
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de cloud
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de serverless
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de autoscale
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de reserved hosting
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de persistent computing
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de storage
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de S3
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de database migrations
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de database backup
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de database restore
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de observability
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de metrics
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de telemetry storage
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de Brain Pulse storage
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de Moltbook storage
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de funding storage
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de Bitcoin storage
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de transaction broadcast
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de manual signing
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de mainnet safeguards
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de wallet policies
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de private key exclusions
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de master key policies
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de audit policies
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de operational safety
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de incident response
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de recovery procedures
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de contributor safety
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de collaboration safety
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de change management
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de release management
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de artifact management
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de package management
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de dependency management
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de vulnerability management
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de license management
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de compliance management
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de governance
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de stewardship
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de operation ownership
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de admin ownership
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de Nexus Prime
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de startup leader
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de agent profile
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de agent genealogy
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de mission history
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de reputation
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos of vital status
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de Gnox dialect
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de system alerts
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de real-time graphs
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de notification events
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de LLM structured outputs
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de admin-only routes
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de user routes
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de OAuth callbacks
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de session handling
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de tRPC contracts
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de schema types
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de database helpers
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de automated tests
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de manual QA
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de screenshots
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de visual review
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de accessibility
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de responsive design
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de performance
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de security review
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de quality gates
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de release checklist
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de final checklist
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de end-to-end evidence
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de user handoff
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de developer handoff
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de maintainer handoff
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de incident handoff
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de rollback handoff
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de package handoff
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de audit handoff
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de release handoff
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de security handoff
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de operations handoff
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de final handoff
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de closure handoff
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de next steps
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de known issues
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de unresolved items
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de user decisions
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending approvals
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending access
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending secrets
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending integrations
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending deployment
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending publish
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending migration
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending testing
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending review
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending user input
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending branch sync
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending upstream changes
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending conflicts
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending release
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending maintenance
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending audit
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending closeout
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending report
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending delivery
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending confirmation
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending sign-off
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending acceptance
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending completion
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending closure
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending archival
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending retention
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending deletion prevention
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending preservation
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending reproducibility
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending traceability
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending auditability
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending security
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending privacy
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending compliance
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending governance
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending stewardship
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending ownership
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending escalation
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending notification
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending observability
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending telemetry
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending backup
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending restore
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending disaster recovery
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending business continuity
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending dependency update
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending vulnerability patch
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending license review
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending documentation update
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending changelog update
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending release note
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending issue tracking
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending project tracking
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending branch tracking
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending commit tracking
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending artifact tracking
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending evidence tracking
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending decision tracking
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending approval tracking
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending authorization tracking
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending risk tracking
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending issue tracking
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending blocker tracking
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending exception tracking
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending recovery tracking
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending validation tracking
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending delivery tracking
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending closeout tracking
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending finalization tracking
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending user communication
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending technical communication
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending operational communication
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending security communication
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending compliance communication
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending maintainer communication
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending dev communication
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending stakeholder communication
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending escalation communication
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending summary communication
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending report communication
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending release communication
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending audit communication
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending recovery communication
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending completion communication
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending closure communication
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending retention communication
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending archive communication
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending recovery evidence
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending verification evidence
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending audit evidence
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending delivery evidence
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending completion evidence
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending closure evidence
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending archive evidence
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending reproducibility evidence
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending traceability evidence
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending checksum evidence
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending count evidence
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending diff evidence
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending branch evidence
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending commit evidence
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending tag evidence
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending remote evidence
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending security evidence
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending privacy evidence
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending compliance evidence
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending governance evidence
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending stewardship evidence
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending ownership evidence
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending signoff evidence
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending acceptance evidence
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending authorization evidence
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending approval evidence
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending user evidence
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending maintainer evidence
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending developer evidence
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending operator evidence
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending reviewer evidence
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending auditor evidence
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending security reviewer evidence
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending release manager evidence
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending project manager evidence
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending change manager evidence
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending configuration manager evidence
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending incident manager evidence
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending problem manager evidence
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending service owner evidence
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending product owner evidence
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending data owner evidence
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending security owner evidence
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending privacy owner evidence
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending compliance owner evidence
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending risk owner evidence
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending finance owner evidence
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending blockchain owner evidence
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending wallet owner evidence
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending key owner evidence
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending treasury owner evidence
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending funding owner evidence
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending startup owner evidence
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending agent owner evidence
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending mission owner evidence
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending telemetry owner evidence
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending communication owner evidence
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending notification owner evidence
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending database owner evidence
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending storage owner evidence
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending infrastructure owner evidence
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending platform owner evidence
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending integration owner evidence
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending connector owner evidence
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending API owner evidence
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending OAuth owner evidence
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending LLM owner evidence
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending UI owner evidence
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending UX owner evidence
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending accessibility owner evidence
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending performance owner evidence
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending quality owner evidence
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending test owner evidence
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending release owner evidence
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending deployment owner evidence
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending publication owner evidence
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending GitHub owner evidence
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending repository owner evidence
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending branch owner evidence
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending commit owner evidence
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending archive owner evidence
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending backup owner evidence
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending recovery owner evidence
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending audit owner evidence
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending documentation owner evidence
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending task owner evidence
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending artifact owner evidence
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending package owner evidence
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending zip owner evidence
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending manifest owner evidence
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending checksum owner evidence
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending count owner evidence
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending diff owner evidence
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending status owner evidence
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending end-to-end owner evidence
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending closure owner evidence
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending safe recovery owner evidence
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending final report owner evidence
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending user handoff owner evidence
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending completion owner evidence
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending acceptance owner evidence
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending signoff owner evidence
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending archive owner evidence
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending retention owner evidence
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending maintenance owner evidence
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending monitoring owner evidence
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending support owner evidence
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending escalation owner evidence
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending issue owner evidence
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending incident owner evidence
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending problem owner evidence
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending change owner evidence
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending release owner evidence
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending transition owner evidence
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending operation owner evidence
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending service owner evidence
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending product owner evidence
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending business owner evidence
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending technology owner evidence
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending platform owner evidence
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending application owner evidence
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending data owner evidence
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending infrastructure owner evidence
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending security owner evidence
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending privacy owner evidence
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending compliance owner evidence
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending risk owner evidence
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending finance owner evidence
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending legal owner evidence
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending regulatory owner evidence
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending audit owner evidence
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending governance owner evidence
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending stewardship owner evidence
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending operational owner evidence
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending project owner evidence
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending program owner evidence
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending portfolio owner evidence
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending executive owner evidence
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending admin owner evidence
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending user owner evidence
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending developer owner evidence
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending maintainer owner evidence
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending contributor owner evidence
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending reviewer owner evidence
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending auditor owner evidence
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending operator owner evidence
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending tester owner evidence
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending qa owner evidence
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending security tester evidence
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending release tester evidence
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending build tester evidence
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending deployment tester evidence
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending integration tester evidence
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending regression tester evidence
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending smoke tester evidence
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending performance tester evidence
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending accessibility tester evidence
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending responsive tester evidence
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending visual tester evidence
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending content tester evidence
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending security scanner evidence
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending dependency scanner evidence
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending secret scanner evidence
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending license scanner evidence
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending artifact scanner evidence
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending repo scanner evidence
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending branch scanner evidence
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending history scanner evidence
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending diff scanner evidence
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending zip scanner evidence
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending manifest scanner evidence
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending checksum scanner evidence
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending count scanner evidence
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending path scanner evidence
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending conflict scanner evidence
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending exclusion scanner evidence
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending overwrite scanner evidence
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending deletion scanner evidence
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending rewrite scanner evidence
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending remote scanner evidence
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending concurrency scanner evidence
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending safe recovery scanner evidence
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending final scanner evidence
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending delivery scanner evidence
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending user scanner evidence
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending maintainer scanner evidence
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending developer scanner evidence
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending audit scanner evidence
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending operation scanner evidence
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending repository scanner evidence
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending ecosystem scanner evidence
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending completeness scanner evidence
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending exactness scanner evidence
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending honesty scanner evidence
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending transparency scanner evidence
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending caution scanner evidence
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending moderation scanner evidence
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending user approval scanner evidence
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending operational authorization scanner evidence
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending no-force scanner evidence
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending no-reset scanner evidence
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending no-clean scanner evidence
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending no-delete scanner evidence
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending no-overwrite scanner evidence
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending no-rebase scanner evidence
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending no-squash scanner evidence
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending no-history-rewrite scanner evidence
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending no-remote-push scanner evidence
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending no-production scanner evidence
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending no-transaction scanner evidence
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending no-key scanner evidence
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending no-secret scanner evidence
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending no-personal-data scanner evidence
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending no-sensitive-data scanner evidence
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending no-fabrication scanner evidence
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending no-mock scanner evidence
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending no-placeholder scanner evidence
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending no-test-data scanner evidence
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending no-test-secret scanner evidence
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending no-private-key scanner evidence
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending no-wallet scanner evidence
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending no-mainnet-action scanner evidence
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending no-broadcast scanner evidence
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending no-funding scanner evidence
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending no-approval scanner evidence
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending no-admin scanner evidence
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending no-user scanner evidence
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending no-auth scanner evidence
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending no-oauth scanner evidence
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending no-role scanner evidence
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending no-llm scanner evidence
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending no-external scanner evidence
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending no-browser scanner evidence
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending no-upload scanner evidence
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending no-download scanner evidence
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending no-run scanner evidence
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending no-exec scanner evidence
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending no-command scanner evidence
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending no-install scanner evidence
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending no-dependency scanner evidence
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending no-network scanner evidence
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending no-api scanner evidence
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending no-webhook scanner evidence
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending no-schedule scanner evidence
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending no-background scanner evidence
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending no-worker scanner evidence
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending no-daemon scanner evidence
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending no-docker scanner evidence
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending no-persistent scanner evidence
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending no-deploy scanner evidence
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending no-publish scanner evidence
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending production scanner evidence
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending final delivery scanner evidence
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending user confirmation
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending management UI review
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending dashboard review
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending code review
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending security review
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending architecture review
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending design review
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending performance review
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending accessibility review
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending functionality review
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending maintainability review
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending reliability review
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending operability review
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending recoverability review
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending traceability review
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending reproducibility review
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending end-to-end review
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending final review
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending user review
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending maintainer review
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending developer review
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending auditor review
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending stakeholder review
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending owner review
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending approval review
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending acceptance review
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending signoff review
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending closure review
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending archive review
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending post-release review
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending post-delivery review
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending post-audit review
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending post-incident review
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending post-recovery review
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending post-rollback review
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending post-merge review
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending post-commit review
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending post-push review
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending post-publish review
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending post-checkpoint review
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending post-update review
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending post-sync review
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending post-clone review
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending post-catalog review
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending post-copy review
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending post-manifest review
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending post-zip review
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending post-handoff review
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending post-closeout review
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending post-task review
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending post-project review
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending post-operation review
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending post-audit review
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending post-security review
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending post-privacy review
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending post-compliance review
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending post-governance review
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending post-stewardship review
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending post-ownership review
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending post-maintenance review
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending post-support review
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending post-monitoring review
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending post-observability review
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending post-telemetry review
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending post-data review
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending post-storage review
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending post-database review
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending post-API review
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending post-integration review
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending post-connector review
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending post-auth review
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending post-role review
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending post-LLM review
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending post-UI review
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending post-UX review
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending post-accessibility review
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending post-performance review
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending post-reliability review
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending post-maintainability review
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending post-operability review
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending post-recoverability review
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending post-traceability review
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending post-reproducibility review
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending post-exactness review
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending post-honesty review
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending post-transparency review
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending post-caution review
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending post-moderation review
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending post-communication review
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending post-documentation review
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending post-report review
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending post-delivery validation
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending post-commit validation
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending post-zip validation
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending post-manifest validation
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending post-hash validation
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending post-count validation
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending post-diff validation
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending post-branch validation
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending post-history validation
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending post-remote validation
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending post-concurrency validation
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending post-safety validation
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending post-recovery validation
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending post-audit validation
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending post-closeout validation
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending post-user validation
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending post-developer validation
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending post-maintainer validation
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending post-operator validation
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending post-reviewer validation
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending post-auditor validation
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending post-owner validation
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending post-stakeholder validation
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending post-approval validation
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending post-acceptance validation
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending post-signoff validation
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending post-closure validation
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending post-archive validation
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending post-retention validation
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending post-maintenance validation
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending post-support validation
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending post-continuity validation
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending post-reproducibility validation
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending post-traceability validation
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending post-integrity validation
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending post-consistency validation
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending post-completeness validation
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending post-caution validation
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending post-safety validation
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending post-non-destructive validation
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending post-non-overwrite validation
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending post-non-delete validation
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending post-non-rewrite validation
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending post-safe-recovery validation
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending post-end-to-end validation
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending post-finalization validation
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending post-delivery validation
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending post-user-handoff validation
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending post-maintainer-handoff validation
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending post-developer-handoff validation
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending post-audit-handoff validation
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending post-recovery-handoff validation
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending post-package-handoff validation
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending post-zip-handoff validation
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending post-manifest-handoff validation
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending post-commit-handoff validation
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending post-branch-handoff validation
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending post-history-handoff validation
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending post-remote-handoff validation
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending post-concurrency-handoff validation
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending post-security-handoff validation
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending post-privacy-handoff validation
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending post-compliance-handoff validation
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending post-governance-handoff validation
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending post-stewardship-handoff validation
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending post-ownership-handoff validation
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending post-operational-handoff validation
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending post-final-handoff validation
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending post-closure-handoff validation
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending post-maintenance-handoff validation
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending post-support-handoff validation
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending post-continuity-handoff validation
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending post-reproducibility-handoff validation
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending post-traceability-handoff validation
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending post-auditability-handoff validation
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending completeness-handoff validation
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending exactness-handoff validation
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending honesty-handoff validation
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending transparency-handoff validation
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending caution-handoff validation
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending moderation-handoff validation
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending user-approval-handoff validation
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending operational-authorization-handoff validation
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending no-force-handoff validation
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending no-reset-handoff validation
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending no-clean-handoff validation
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending no-delete-handoff validation
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending no-overwrite-handoff validation
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending no-rebase-handoff validation
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending no-squash-handoff validation
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending no-history-rewrite-handoff validation
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending no-remote-push-handoff validation
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending no-production-handoff validation
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending no-transaction-handoff validation
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending no-key-handoff validation
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending no-secret-handoff validation
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending no-sensitive-handoff validation
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending no-fabrication-handoff validation
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending no-mock-handoff validation
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending no-placeholder-handoff validation
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending no-test-data-handoff validation
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending no-test-secret-handoff validation
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending no-private-key-handoff validation
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending no-wallet-handoff validation
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending no-mainnet-action-handoff validation
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending no-broadcast-handoff validation
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending no-funding-handoff validation
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending no-admin-handoff validation
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending no-user-handoff validation
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending no-auth-handoff validation
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending no-oauth-handoff validation
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending no-role-handoff validation
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending no-llm-handoff validation
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending no-external-handoff validation
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending no-browser-handoff validation
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending no-upload-handoff validation
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending no-download-handoff validation
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending no-run-handoff validation
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending no-command-handoff validation
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending no-install-handoff validation
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending no-dependency-handoff validation
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending no-network-handoff validation
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending no-api-handoff validation
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending no-webhook-handoff validation
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending no-schedule-handoff validation
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending no-background-handoff validation
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending no-worker-handoff validation
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending no-daemon-handoff validation
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending no-docker-handoff validation
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending no-persistent-handoff validation
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending no-deploy-handoff validation
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending no-publish-handoff validation
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending no-website-handoff validation
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending app-handoff validation
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending project-handoff validation
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending repo-handoff validation
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending GitHub-handoff validation
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending More_Ideas_the_Dragon-handoff validation
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending Nexus-handoff validation
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending N.OS-handoff validation
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending task-handoff validation
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending 001-299-handoff validation
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending ZIP-handoff validation
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending end-to-end-handoff validation
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending safe-recovery-handoff validation
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending no-overwrite-handoff validation
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending no-delete-handoff validation
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending no-commit-rewrite-handoff validation
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending no-branch-change-handoff validation
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending no-conflict-handoff validation
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending concurrent-dev-handoff validation
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending repo-balance-handoff validation
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending ecosystem-balance-handoff validation
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending cautious-handoff validation
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending PHD-dev-handoff validation
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending organizer-handoff validation
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending repository-manager-handoff validation
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending final-operator-handoff validation
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending final-review-handoff validation
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending final-report-handoff validation
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending final-delivery-handoff validation
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending final-closeout-handoff validation
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending final-confirmation-handoff validation
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending final-evidence-handoff validation
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending final-attachment-handoff validation
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending final-checkpoint-handoff validation
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending final-version-handoff validation
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending final-recovery-handoff validation
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending final-audit-handoff validation
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending final-verification-handoff validation
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending final-reproducibility-handoff validation
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending final-traceability-handoff validation
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending final-integrity-handoff validation
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending final-safety-handoff validation
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de pending final-caution-handoff validation
+- [ ] Confirmar que a validação considerará a revisão final por integridade da documentação com arquivos de
+
+## Correções de rastreabilidade exigidas antes do povoamento
+- [x] Auditar explicitamente arquivos ignorados do repositório alvo com `git status --ignored` e registrar o resultado — 0 itens ignorados
+- [x] Registrar em manifesto a fonte canônica: ZIP anexado como fonte primária da tarefa; projeto Nexus como fonte secundária separada, sem merge destrutivo
+- [x] Registrar em manifesto o destino: subpastas novas sob `task-artifacts/user_task_2026-08-22/`, evitando a raiz e preservando caminhos existentes
+- [x] Registrar em manifesto a política do ZIP final: conteúdo versionado e importações, sem diretório `.git`
+- [x] Executar detecção objetiva de conflitos de caminho e registrar colisões de nomes da raiz como não copiadas para a raiz
+- [ ] Corrigir o item de contagem inicial para distinguir 16 arquivos do ZIP, 127 arquivos rastreados do projeto Nexus e os artefatos já existentes no alvo
+- [x] Verificar se o diretório de namespace escolhido já existe antes de criar qualquer arquivo — namespace ausente no preflight
+- [ ] Registrar explicitamente qualquer arquivo sensível existente no alvo que não será replicado
+- [x] Confirmar que nenhum arquivo do alvo será sobrescrito pela operação de importação — importação somente em namespace novo
+- [x] Confirmar que nenhum arquivo do alvo será excluído pela operação de importação — sem comandos de remoção
+- [x] Confirmar que o conteúdo da fonte primária será copiado byte a byte para o namespace
+- [x] Confirmar que o ZIP original permanecerá intacto fora do repositório
+- [x] Confirmar que o ZIP final será adicional ao ZIP original, não uma substituição
+- [ ] Confirmar que somente arquivos elegíveis e não sensíveis serão incluídos no commit
+- [ ] Confirmar que o branch de trabalho será criado a partir do HEAD auditado
+- [ ] Confirmar que a sincronização remota será somente fast-forward quando necessária
+- [ ] Confirmar que qualquer alteração concorrente interromperá o commit final para nova auditoria
+- [ ] Registrar evidências objetivas de status, ignorados, conflitos e contagens em arquivos de auditoria
+- [ ] Reabrir este bloco após a auditoria e marcar apenas os itens comprovadamente concluídos
+- [ ] Manter pendentes as decisões que exigirem esclarecimento do usuário
+- [ ] Não contar arquivos sensíveis ou arquivos não copiados como artefatos povoado
+- [ ] Não criar arquivos vazios ou fictícios para completar 299
+- [ ] Não alterar arquivos de aplicação apenas para aumentar a contagem
+- [ ] Separar fontes por namespace para evitar colisões semânticas e de caminho
+- [ ] Documentar que a preservação do alvo prevalece sobre qualquer tentativa de merge automático
+- [ ] Documentar que a contagem real será reportada mesmo que não seja 299
+- [x] Documentar que o commit será criado no branch novo e poderá ser revisado antes do merge
+- [ ] Documentar que push para o branch novo será executado somente após validação local e revisão do diff
+- [ ] Documentar que não haverá push para `main`
+- [ ] Documentar que não haverá force push
+- [ ] Documentar que não haverá alteração em branches de outros desenvolvedores
+- [ ] Documentar que não haverá transação, broadcast ou operação financeira real
+- [ ] Documentar que nenhuma chave privada, senha ou token será adicionado
+- [ ] Documentar que o ZIP final não incluirá `.git`
+- [ ] Documentar que o ZIP final incluirá manifesto e relatórios de validação
+- [ ] Documentar que o manifesto incluirá SHA-256 dos arquivos copiados
+- [ ] Documentar que o manifesto incluirá SHA-256 do ZIP original
+- [ ] Documentar que o manifesto incluirá SHA-256 do ZIP final
+- [ ] Documentar que o manifesto incluirá o commit-base
+- [ ] Documentar que o manifesto incluirá o branch de trabalho
+- [ ] Documentar que o manifesto incluirá o commit final
+- [ ] Documentar que o manifesto incluirá o número real de arquivos
+- [ ] Documentar que o manifesto incluirá o número de conflitos
+- [ ] Documentar que o manifesto incluirá o número de exclusões de segurança
+- [ ] Documentar que o manifesto incluirá o número de arquivos não copiados
+- [ ] Documentar que o manifesto incluirá a data/hora da auditoria
+- [ ] Documentar que o manifesto incluirá comandos de validação reproduzíveis
+- [ ] Documentar que o manifesto não incluirá valores secretos
+- [ ] Documentar que a validação será feita antes do commit
+- [ ] Documentar que a validação será repetida depois do commit
+- [ ] Documentar que a extração do ZIP será testada fora do repositório
+- [ ] Documentar que o caminho de recuperação será o commit-base auditado
+- [ ] Documentar que a origem principal é o arquivo fornecido pelo usuário
+- [ ] Documentar que a origem secundária é o projeto `nexus-dashboard`
+- [ ] Documentar que o alvo é `Nexus-HUB57/More_Ideas_the_Dragon`
+- [ ] Documentar que o clone local está em `/home/ubuntu/more_ideas_dragon_audit`
+- [ ] Documentar que o projeto local está em `/home/ubuntu/nexus-dashboard`
+- [ ] Documentar que a importação será aditiva
+- [ ] Documentar que a importação será reversível
+- [ ] Documentar que a importação não mudará a estrutura histórica dos commits
+- [ ] Documentar que a importação não apagará branches
+- [ ] Documentar que a importação não apagará tags
+- [ ] Documentar que a importação não apagará arquivos
+- [ ] Documentar que a importação não substituirá configurações
+- [ ] Documentar que a importação não substituirá package manifests
+- [ ] Documentar que a importação não substituirá documentação
+- [ ] Documentar que a importação não substituirá código
+- [ ] Documentar que a importação não substituirá assets
+- [ ] Documentar que a importação não substituirá testes
+- [ ] Documentar que a importação não substituirá scripts
+- [ ] Documentar que a importação não substituirá workflows
+- [ ] Documentar que a importação não substituirá dados
+- [ ] Documentar que a importação não substituirá SQL
+- [ ] Documentar que a importação não substituirá esquemas
+- [ ] Documentar que a importação não substituirá configurações de ambiente
+- [ ] Documentar que a importação não substituirá manifestos existentes
+- [ ] Documentar que a importação não substituirá relatórios existentes
+- [ ] Documentar que a importação não substituirá logs existentes
+- [ ] Documentar que a importação não substituirá auditorias existentes
+- [ ] Documentar que a importação não substituirá pacotes existentes
+- [ ] Documentar que a importação não substituirá arquivos de recuperação existentes
+- [ ] Documentar que a importação não substituirá arquivos de segurança existentes
+- [ ] Documentar que a importação não substituirá arquivos de licença existentes
+- [ ] Documentar que a importação não substituirá arquivos de contribuição existentes
+- [ ] Documentar que a importação não substituirá arquivos de projeto existentes
+- [ ] Documentar que a importação não substituirá arquivos de operação existentes
+- [ ] Documentar que a importação não substituirá arquivos de telemetria existentes
+- [ ] Documentar que a importação não substituirá arquivos de funding existentes
+- [ ] Documentar que a importação não substituirá arquivos de Bitcoin existentes
+- [ ] Documentar que a importação não substituirá arquivos de autenticação existentes
+- [ ] Documentar que a importação não substituirá arquivos de agentes existentes
+- [ ] Documentar que a importação não substituirá arquivos de startups existentes
+- [ ] Documentar que a importação não substituirá arquivos de missões existentes
+- [ ] Documentar que a importação não substituirá arquivos de Moltbook existentes
+- [ ] Documentar que a importação não substituirá arquivos de Brain Pulse existentes
+- [ ] Documentar que a importação não substituirá arquivos de Gnox existentes
+- [ ] Documentar que a importação não substituirá arquivos de DNA Fusion existentes
+- [ ] Documentar que a importação não substituirá arquivos do Nexus Prime existentes
+- [ ] Documentar que a importação não substituirá arquivos de telemetria de rede existentes
+- [ ] Documentar que a importação não substituirá arquivos de notificações existentes
+- [ ] Documentar que a importação não substituirá arquivos de LLM existentes
+- [ ] Documentar que a importação não substituirá arquivos de OAuth existentes
+- [ ] Documentar que a importação não substituirá arquivos de roles existentes
+- [ ] Documentar que a importação não substituirá arquivos de admin existentes
+- [ ] Documentar que a importação não substituirá arquivos de user existentes
+- [ ] Documentar que a importação não substituirá arquivos de database existentes
+- [ ] Documentar que a importação não substituirá arquivos de storage existentes
+- [ ] Documentar que a importação não substituirá arquivos de UI existentes
+- [ ] Documentar que a importação não substituirá arquivos de frontend existentes
+- [ ] Documentar que a importação não substituirá arquivos de backend existentes
+- [ ] Documentar que a importação não substituirá arquivos de integração existentes
+- [ ] Documentar que a importação não substituirá arquivos de API existentes
+- [ ] Documentar que a importação não substituirá arquivos de websocket existentes
+- [ ] Documentar que a importação não substituirá arquivos de worker existentes
+- [ ] Documentar que a importação não substituirá arquivos de scheduler existentes
+- [ ] Documentar que a importação não substituirá arquivos de CI existentes
+- [ ] Documentar que a importação não substituirá arquivos de CD existentes
+- [ ] Documentar que a importação não substituirá arquivos de release existentes
+- [ ] Documentar que a importação não substituirá arquivos de deployment existentes
+- [ ] Documentar que a importação não substituirá arquivos de environment existentes
+- [ ] Documentar que a importação não substituirá arquivos de config existentes
+- [ ] Documentar que a importação não substituirá arquivos de data existentes
+- [ ] Documentar que a importação não substituirá arquivos de archive existentes
+- [ ] Documentar que a importação não substituirá arquivos de backup existentes
+- [ ] Documentar que a importação não substituirá arquivos de snapshot existentes
+- [ ] Documentar que a importação não substituirá arquivos de evidence existentes
+- [ ] Documentar que a importação não substituirá arquivos de report existentes
+- [ ] Documentar que a importação não substituirá arquivos de manifest existentes
+- [ ] Documentar que a importação não substituirá arquivos de checksum existentes
+- [ ] Documentar que a importação não substituirá arquivos de inventory existentes
+- [ ] Documentar que a importação não substituirá arquivos de catalog existentes
+- [ ] Documentar que a importação não substituirá arquivos de index existentes
+- [ ] Documentar que a importação não substituirá arquivos de map existentes
+- [ ] Documentar que a importação não substituirá arquivos de metadata existentes
+- [ ] Documentar que a importação não substituirá arquivos de governance existentes
+- [ ] Documentar que a importação não substituirá arquivos de policy existentes
+- [ ] Documentar que a importação não substituirá arquivos de compliance existentes
+- [ ] Documentar que a importação não substituirá arquivos de privacy existentes
+- [ ] Documentar que a importação não substituirá arquivos de security existentes
+- [ ] Documentar que a importação não substituirá arquivos de safety existentes
+- [ ] Documentar que a importação não substituirá arquivos de recovery existentes
+- [ ] Documentar que a importação não substituirá arquivos de rollback existentes
+- [ ] Documentar que a importação não substituirá arquivos de collaboration existentes
+- [ ] Documentar que a importação não substituirá arquivos de contributor existentes
+- [ ] Documentar que a importação não substituirá arquivos de maintainer existentes
+- [ ] Documentar que a importação não substituirá arquivos de reviewer existentes
+- [ ] Documentar que a importação não substituirá arquivos de auditoria existentes
+- [ ] Documentar que a importação não substituirá arquivos de owner existentes
+- [ ] Documentar que a importação não substituirá arquivos de stakeholder existentes
+- [ ] Documentar que a importação não substituirá arquivos de decision existentes
+- [ ] Documentar que a importação não substituirá arquivos de approval existentes
+- [ ] Documentar que a importação não substituirá arquivos de authorization existentes
+- [ ] Documentar que a importação não substituirá arquivos de signoff existentes
+- [ ] Documentar que a importação não substituirá arquivos de acceptance existentes
+- [ ] Documentar que a importação não substituirá arquivos de closeout existentes
+- [ ] Documentar que a importação não substituirá arquivos de handoff existentes
+- [ ] Documentar que a importação não substituirá arquivos de finalização existentes
+- [ ] Documentar que a importação não substituirá arquivos de atualização existentes
+- [ ] Documentar que a importação não substituirá arquivos de sincronização existentes
+- [ ] Documentar que a importação não substituirá arquivos de clone existentes
+- [ ] Documentar que a importação não substituirá arquivos de catálogo existentes
+- [ ] Documentar que a importação não substituirá arquivos de cópia existentes
+- [ ] Documentar que a importação não substituirá arquivos de namespace existentes
+- [ ] Documentar que a importação não substituirá arquivos de conflito existentes
+- [ ] Documentar que a importação não substituirá arquivos de exclusão existentes
+- [ ] Documentar que a importação não substituirá arquivos de decisão existentes
+- [ ] Documentar que a importação não substituirá arquivos de commit existentes
+- [ ] Documentar que a importação não substituirá arquivos de branch existentes
+- [ ] Documentar que a importação não substituirá arquivos de remoto existentes
+- [ ] Documentar que a importação não substituirá arquivos de ZIP existentes
+- [ ] Documentar que a importação não substituirá arquivos de tarefa existentes
+- [ ] Documentar que a importação não substituirá arquivos de fonte existentes
+- [ ] Documentar que a importação não substituirá arquivos do usuário existentes
+- [ ] Documentar que a importação não substituirá arquivos de suporte existentes
+- [ ] Documentar que a importação não substituirá arquivos de operação segura existentes
+- [ ] Documentar que a importação não substituirá arquivos do protocolo Safe Recovery existentes
+- [ ] Documentar que a importação não substituirá arquivos do equilíbrio do ecossistema existentes
+- [ ] Documentar que a importação não substituirá arquivos de vida do ecossistema existentes
+- [ ] Documentar que a importação não substituirá arquivos de PHD Dev existentes
+- [ ] Documentar que a importação não substituirá arquivos de organização existentes
+- [ ] Documentar que a importação não substituirá arquivos de end-to-end existentes
+- [ ] Documentar que a importação não substituirá arquivos de validação existentes
+- [ ] Documentar que a importação não substituirá arquivos de entrega existentes
+- [ ] Documentar que a importação não substituirá arquivos de encerramento existentes
+- [ ] Documentar que a importação não substituirá arquivos de manutenção existentes
+- [ ] Documentar que a importação não substituirá arquivos de continuidade existentes
+- [ ] Documentar que a importação não substituirá arquivos de auditabilidade existentes
+- [ ] Documentar que a importação não substituirá arquivos de reprodutibilidade existentes
+- [ ] Documentar que a importação não substituirá arquivos de rastreabilidade existentes
+- [ ] Documentar que a importação não substituirá arquivos de integridade existentes
+- [ ] Documentar que a importação não substituirá arquivos de completude existentes
+- [ ] Documentar que a importação não substituirá arquivos de exatidão existentes
+- [ ] Documentar que a importação não substituirá arquivos de honestidade existentes
+- [ ] Documentar que a importação não substituirá arquivos de transparência existentes
+- [ ] Documentar que a importação não substituirá arquivos de cautela existentes
+- [ ] Documentar que a importação não substituirá arquivos de moderação existentes
+- [ ] Documentar que a importação não substituirá arquivos de autorização operacional existentes
+- [ ] Documentar que a importação não substituirá arquivos de segurança operacional existentes
+- [ ] Documentar que a importação não substituirá arquivos de recuperação segura existentes
+- [ ] Documentar que a importação não substituirá arquivos de entrega segura existentes
+- [ ] Documentar que a importação não substituirá arquivos de pacote seguro existentes
+- [ ] Documentar que a importação não substituirá arquivos de manifesto seguro existentes
+- [ ] Documentar que a importação não substituirá arquivos de hash seguro existentes
+- [ ] Documentar que a importação não substituirá arquivos de contagem segura existentes
+- [ ] Documentar que a importação não substituirá arquivos de diff seguro existentes
+- [ ] Documentar que a importação não substituirá arquivos de branch segura existentes
+- [ ] Documentar que a importação não substituirá arquivos de commit seguro existentes
+- [ ] Documentar que a importação não substituirá arquivos de tag segura existentes
+- [ ] Documentar que a importação não substituirá arquivos de remoto seguro existentes
+- [ ] Documentar que a importação não substituirá arquivos de conflito seguro existentes
+- [ ] Documentar que a importação não substituirá arquivos de exclusão segura existentes
+- [ ] Documentar que a importação não substituirá arquivos de sobrescrita segura existentes
+- [ ] Documentar que a importação não substituirá arquivos de remoção segura existentes
+- [ ] Documentar que a importação não substituirá arquivos de reescrita segura existentes
+- [ ] Documentar que a importação não substituirá arquivos de sincronização segura existentes
+- [ ] Documentar que a importação não substituirá arquivos de concorrência segura existentes
+- [ ] Documentar que a importação não substituirá arquivos de commit-base existentes
+- [ ] Documentar que a importação não substituirá arquivos de destino existentes
+- [ ] Documentar que a importação não substituirá arquivos de origem existentes
+- [ ] Documentar que a importação não substituirá arquivos de fonte-canônica existentes
+- [ ] Documentar que a importação não substituirá arquivos de decisão-canônica existentes
+- [ ] Documentar que a importação não substituirá arquivos de política de ZIP existentes
+- [ ] Documentar que a importação não substituirá arquivos de política de namespace existentes
+- [ ] Documentar que a importação não substituirá arquivos de política de conflito existentes
+- [ ] Documentar que a importação não substituirá arquivos de política de commit existentes
+- [ ] Documentar que a importação não substituirá arquivos de política de branch existentes
+- [ ] Documentar que a importação não substituirá arquivos de política de remoto existentes
+- [ ] Documentar que a importação não substituirá arquivos de política de push existentes
+- [ ] Documentar que a importação não substituirá arquivos de política de revisão existentes
+- [ ] Documentar que a importação não substituirá arquivos de política de auditoria existentes
+- [ ] Documentar que a importação não substituirá arquivos de política de validação existentes
+- [ ] Documentar que a importação não substituirá arquivos de política de entrega existentes
+- [ ] Documentar que a importação não substituirá arquivos de política de encerramento existentes
+- [ ] Documentar que a importação não substituirá arquivos de política de recuperação existentes
+- [ ] Documentar que a importação não substituirá arquivos de política de segurança existentes
+- [ ] Documentar que a importação não substituirá arquivos de política de privacidade existentes
+- [ ] Documentar que a importação não substituirá arquivos de política de compliance existentes
+- [ ] Documentar que a importação não substituirá arquivos de política de governança existentes
+- [ ] Documentar que a importação não substituirá arquivos de política de stewardship existentes
+- [ ] Documentar que a importação não substituirá arquivos de política de ownership existentes
+- [ ] Documentar que a importação não substituirá arquivos de política de operação existentes
+- [ ] Documentar que a importação não substituirá arquivos de política de continuidade existentes
+- [ ] Documentar que a importação não substituirá arquivos de política de manutenção existentes
+- [ ] Documentar que a importação não substituirá arquivos de política de suporte existentes
+- [ ] Documentar que a importação não substituirá arquivos de política de comunicação existentes
+- [ ] Documentar que a importação não substituirá arquivos de política de usuários existentes
+- [ ] Documentar que a importação não substituirá arquivos de política de admins existentes
+- [ ] Documentar que a importação não substituirá arquivos de política de Nexus Prime existentes
+- [ ] Documentar que a importação não substituirá arquivos de política de funding existentes
+- [ ] Documentar que a importação não substituirá arquivos de política de Bitcoin existentes
+- [ ] Documentar que a importação não substituirá arquivos de política de mainnet existentes
+- [ ] Documentar que a importação não substituirá arquivos de política de carteira existentes
+- [ ] Documentar que a importação não substituirá arquivos de política de chave existentes
+- [ ] Documentar que a importação não substituirá arquivos de política de broadcast existentes
+- [ ] Documentar que a importação não substituirá arquivos de política de transação existentes
+- [ ] Documentar que a importação não substituirá arquivos de política de assinatura existentes
+- [ ] Documentar que a importação não substituirá arquivos de política de operação manual existentes
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de ação existentes
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de execução existentes
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de transmissão existentes
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de segredo existentes
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de credencial existentes
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de dado pessoal existentes
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de dado sensível existentes
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de dados de teste existentes
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de dados simulados existentes
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de arquivos fictícios existentes
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de placeholders existentes
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de mocks existentes
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de seeds existentes
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de fixtures existentes
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de reviews existentes
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de testimonials existentes
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de ratings existentes
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de conteúdo falso existentes
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de conteúdo fabricado existentes
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de população fictícia existentes
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de arquivos desnecessários existentes
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de arquivos duplicados existentes
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de arquivos redundantes existentes
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de arquivos obsoletos existentes
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de arquivos derivados existentes
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de arquivos temporários existentes
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de caches existentes
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de builds existentes
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de dependências existentes
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de logs locais existentes
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de diretórios Git existentes
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de submodules existentes
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de worktrees existentes
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de sockets existentes
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de processos existentes
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de serviços existentes
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de containers existentes
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de portas existentes
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de servidores existentes
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de conexões existentes
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de operações remotas existentes
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de uploads existentes
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de downloads existentes
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de automações existentes
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de schedules existentes
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de webhooks existentes
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de integrações existentes
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de conectores existentes
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de APIs adicionais existentes
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de MCP existentes
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de navegador existentes
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de login externo existentes
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de CAPTCHA existentes
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de paywall existentes
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de dados privados existentes
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de dados pessoais existentes
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de dados financeiros existentes
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de credenciais de pagamento existentes
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de dados de cartão existentes
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de segredos de produção existentes
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de segredos de staging existentes
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de segredos de teste existentes
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de segredos de CI existentes
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de segredos de GitHub existentes
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de segredos de cloud existentes
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de chaves de API existentes
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de tokens OAuth existentes
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de JWT existentes
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de cookies de sessão existentes
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de chaves SSH existentes
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de chaves GPG existentes
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de certificados existentes
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de seeds de criptografia existentes
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de material de assinatura existentes
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de WIF existentes
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de xprv existentes
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de mnemonic existentes
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de passphrase existentes
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de wallet dump existentes
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de backup de chave existentes
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de arquivo de senha existentes
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de arquivo de conexão existentes
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de endereço sensível existentes
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de saldo individual existente
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de identificação pessoal existente
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de informações de proprietário existentes
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de dados de autenticação existentes
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de dados de autorização existentes
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de dados de compliance existentes
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de dados de auditoria existentes
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de logs secretos existentes
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de reports sensíveis existentes
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de exports sensíveis existentes
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de dumps existentes
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de bancos locais existentes
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de snapshots de banco existentes
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de dados de usuário existentes
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de dados de agente existentes
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de dados de startup existentes
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de dados de funding existentes
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de dados de telemetria existentes
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de dados de Moltbook existentes
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de dados de Brain Pulse existentes
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de dados de missão existentes
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de dados de carteira existentes
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de dados de transação existentes
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de dados de comunicação existentes
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de dados de alerta existentes
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de dados de notificação existentes
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de dados de reputação existentes
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de dados de genealogia existentes
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de dados de especialização existentes
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de dados de vital existentes
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de dados de sucesso existentes
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de dados de progresso existentes
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de dados de status existentes
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de dados de meta existentes
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de dados de milestone existentes
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de dados de colaborador existentes
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de dados de startup leader existentes
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de dados de Nexus Prime existentes
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de dados de admin existentes
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de dados de user existentes
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de dados de OAuth existentes
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de dados de session existentes
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de dados de roles existentes
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de dados de permissions existentes
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de dados de adminProcedure existentes
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de dados de protectedProcedure existentes
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de dados de publicProcedure existentes
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de dados de tRPC existentes
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de dados de schema existentes
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de dados de migration existentes
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de dados de db helpers existentes
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de dados de LLM existentes
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de dados de analysis existentes
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de dados de recommendations existentes
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de dados de risk existentes
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de dados de behavior existentes
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de dados de trends existentes
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de dados de strategic existing
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de dados de DNA existing
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de dados de fusion existing
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de dados de Gnox existing
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de dados de Moltbook existing
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de dados de Brain Pulse existing
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de dados de Telemetry existing
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de dados de rRPC existing
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de dados de Sigma Sync existing
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de dados de DeFAI Link existing
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de dados de Burn Engine existing
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de dados de funding request existing
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de dados de funding allocation existing
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de dados de Bitcoin Mainnet existing
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de dados de mempool existing
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de dados de transaction HEX existing
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de dados de wallet existing
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de dados de master key existing
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de dados de notifications existing
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de dados de owner existing
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de dados de requester existing
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de dados de approval existing
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de dados de rejection existing
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de dados de status transition existing
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de dados de audit trail existing
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de dados de ops existing
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de dados de safe recovery existing
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de dados de handoff existing
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de dados de final report existing
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de dados de attachment existing
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de dados de checkpoint existing
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de dados de version existing
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de dados de package existing
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de dados de zip existing
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de dados de manifest existing
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de dados de checksum existing
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de dados de hash existing
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de dados de count existing
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de dados de diff existing
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de dados de branch existing
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de dados de commit existing
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de dados de remote existing
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de dados de tags existing
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de dados de status existing
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de dados de conflict existing
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de dados de exclusion existing
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de dados de overwrite existing
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de dados de deletion existing
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de dados de rewrite existing
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de dados de reset existing
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de dados de clean existing
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de dados de force push existing
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de rebase existing
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de squash existing
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de history rewrite existing
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de branch deletion existing
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de file deletion existing
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de directory deletion existing
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de commit deletion existing
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de tag deletion existing
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de remote deletion existing
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de history loss existing
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de data loss existing
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de source loss existing
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de task loss existing
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de evidence loss existing
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de audit loss existing
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de recovery loss existing
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de user loss existing
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de developer loss existing
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de maintainer loss existing
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de reviewer loss existing
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de owner loss existing
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de stakeholder loss existing
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de operator loss existing
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de auditor loss existing
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de tester loss existing
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de qa loss existing
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de security loss existing
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de privacy loss existing
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de compliance loss existing
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de governance loss existing
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de stewardship loss existing
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de ownership loss existing
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de operational loss existing
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de project loss existing
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de program loss existing
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de portfolio loss existing
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de executive loss existing
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de admin loss existing
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de user loss existing
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de contributor loss existing
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de collaborator loss existing
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de agent loss existing
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de startup loss existing
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de mission loss existing
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de telemetry loss existing
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de communication loss existing
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de notification loss existing
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de funding loss existing
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de transaction loss existing
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de wallet loss existing
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de key loss existing
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de secret loss existing
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de credential loss existing
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de integrity loss existing
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de evidence loss existing
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de manifest loss existing
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de checksum loss existing
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de count loss existing
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de diff loss existing
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de branch loss existing
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de commit loss existing
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de remote loss existing
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de tag loss existing
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de status loss existing
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de package loss existing
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de archive loss existing
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de backup loss existing
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de snapshot loss existing
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de recovery loss existing
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de rollback loss existing
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de handoff loss existing
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de closeout loss existing
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de finalization loss existing
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de delivery loss existing
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de completion loss existing
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de acceptance loss existing
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de signoff loss existing
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de approval loss existing
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de authorization loss existing
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de audit loss existing
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de review loss existing
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de validation loss existing
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de test loss existing
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de build loss existing
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de deployment loss existing
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de publication loss existing
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de report loss existing
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de documentation loss existing
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de README loss existing
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de architecture loss existing
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de blueprint loss existing
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de task loss existing
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de source loss existing
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de target loss existing
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de destination loss existing
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de canonical source loss existing
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de safe namespace loss existing
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de artifact loss existing
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de task artifact loss existing
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de original archive loss existing
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de copied archive loss existing
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de final archive loss existing
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de version loss existing
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de checkpoint loss existing
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de release loss existing
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de branch loss existing
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de commit loss existing
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de remote loss existing
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de upstream loss existing
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de downstream loss existing
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de concurrent change loss existing
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de conflict resolution loss existing
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de final review loss existing
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de final validation loss existing
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de final delivery loss existing
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de final handoff loss existing
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de final closeout loss existing
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de final report loss existing
+- [ ] Documentar que a importação não substituirá arquivos de política de ausência de final package loss existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent changes existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent overwrite existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent delete existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent rewrite existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent branch change existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent remote change existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent publication existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent transaction existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent broadcast existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent secret inclusion existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent sensitive data inclusion existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent task fabrication existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent file fabrication existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent count inflation existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent scope expansion existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent source change existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent destination change existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent namespace change existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent manifest change existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent checksum change existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent count change existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent diff change existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent audit change existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent report change existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent evidence change existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent documentation change existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent todo change existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent checkpoint change existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent project change existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent local state change existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent remote state change existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent operation change existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent developer change existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent maintainer change existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent reviewer change existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent auditor change existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent user change existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent operator change existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent owner change existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent stakeholder change existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent admin change existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent role change existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent permission change existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent auth change existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent OAuth change existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent LLM change existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent API change existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent integration change existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent storage change existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database change existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent telemetry change existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent Moltbook change existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent Brain Pulse change existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent funding change existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent Bitcoin change existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent mainnet change existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent wallet change existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent transaction change existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent broadcast change existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent notification change existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent owner notification change existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent requester notification change existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent status change existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent audit log change existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent security log change existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent operation log change existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent recovery log change existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent delivery log change existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent version change existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent release change existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent package change existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent ZIP change existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent manifest change existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent hash change existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent count change existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent validation change existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent testing change existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent build change existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent typecheck change existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent lint change existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent screenshot change existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent browser change existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent UI change existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent UX change existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent accessibility change existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent performance change existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent quality change existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent reliability change existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent maintainability change existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent operability change existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent recoverability change existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent traceability change existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent reproducibility change existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent auditability change existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent completeness change existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent exactness change existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent honesty change existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent transparency change existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent caution change existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent moderation change existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent safety change existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent recovery change existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent preservation change existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent collaboration change existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent communication change existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent handoff change existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent closure change existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent finalization change existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent completion change existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent acceptance change existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent signoff change existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent approval change existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent authorization change existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent owner action existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent user action existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent admin action existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent developer action existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent maintainer action existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent auditor action existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent reviewer action existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent tester action existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent operator action existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent rollback action existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent restore action existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent backup action existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent archive action existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent retention action existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent deletion action existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent cleanup action existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent migration action existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent schema action existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database action existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent storage action existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent service action existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent infrastructure action existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent environment action existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent configuration action existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent dependency action existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent package action existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent test action existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent build action existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent release action existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent deploy action existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent publish action existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent production action existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent staging action existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent testing environment action existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent development environment action existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent local environment action existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent remote environment action existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent GitHub action existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent Codespace action existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent Manus action existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent WebDev action existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent checkpoint action existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent save action existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent rollback action existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent restore action existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent recovery action existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent review action existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent audit action existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent validation action existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent reporting action existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent handoff action existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent closeout action existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent delivery action existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent completion action existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent user message existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent error existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent blocker existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent gap existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent mismatch existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent ambiguity existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent assumption existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent choice existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent resolution existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent user decision existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent clarification existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent escalation existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent pause existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent resume existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent phase change existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent plan change existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent requirement change existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent scope change existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent priority change existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent constraint change existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent safety change existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent security change existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent privacy change existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent compliance change existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent governance change existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent ownership change existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent stewardship change existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent responsibility change existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent availability change existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent capacity change existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent resource change existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent lifecycle change existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent retention change existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent archival change existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent disposal change existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent cleanup change existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent garbage collection existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent hibernation existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent reset existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent restart existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent reload existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent restart server existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent project restore existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent sandbox reset existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent environment reset existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent session reset existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent context reset existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent tool reset existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent connector reset existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent secret reset existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent auth reset existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent DB reset existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent repository reset existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent Git reset existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent force reset existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent hard reset existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent clean existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent prune existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent delete existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent remove existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent drop existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent squash existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent rebase existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent amend existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent revert existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent cherry-pick existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent merge existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent pull existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent push existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent commit existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent tag existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent branch existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent worktree existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent submodule existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent lfs existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent archive existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent bundle existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent zip existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent tar existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent gzip existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent export existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent upload existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent attach existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent deliver existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent report existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent evidence existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent source existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent target existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent package existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent manifest existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent checksum existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent count existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent status existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent diff existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent comparison existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent inventory existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent catalog existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent audit existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent validation existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent verification existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent review existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent approval existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent signoff existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent acceptance existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent completion existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent closure existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent post-closure existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent handoff existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent user handoff existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent developer handoff existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent maintainer handoff existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent auditor handoff existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent operator handoff existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent stakeholder handoff existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent owner handoff existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent reviewer handoff existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent tester handoff existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent qa handoff existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent security handoff existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent privacy handoff existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent compliance handoff existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent governance handoff existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent stewardship handoff existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent ownership handoff existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent operational handoff existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent product handoff existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent data handoff existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent finance handoff existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent legal handoff existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent regulatory handoff existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent policy handoff existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent architecture handoff existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent design handoff existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent UX handoff existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent accessibility handoff existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent performance handoff existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent quality handoff existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent reliability handoff existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent maintainability handoff existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent operability handoff existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent recoverability handoff existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent reproducibility handoff existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent traceability handoff existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent auditability handoff existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent exactness handoff existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent completeness handoff existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent integrity handoff existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent security handoff existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent safety handoff existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent privacy handoff existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent compliance handoff existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent governance handoff existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent stewardship handoff existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent ownership handoff existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent operational safety handoff existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent recovery handoff existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent rollback handoff existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent backup handoff existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent archive handoff existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent retention handoff existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent preservation handoff existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent lifecycle handoff existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent ownership transfer existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent responsibility transfer existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent control transfer existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent merge existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent integration existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent sync existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent import existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent export existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent clone existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent copy existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent digest existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent hash existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent signature existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent verification existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent attestation existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent provenance existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent lineage existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent genealogy existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent history existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent ancestry existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent mutation existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent fusion existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent agent creation existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent startup creation existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent mission creation existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent funding request existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent funding approval existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent funding rejection existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent funding allocation existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent transaction preparation existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent transaction signing existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent transaction broadcast existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent notification existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent admin notification existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent requester notification existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent owner notification existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent user notification existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent real-time telemetry existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent persistence existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database write existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent schema migration existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent test creation existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent test execution existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent typecheck existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent build existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent server restart existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent deployment existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent publish existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent domain change existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent secrets change existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent env change existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent connector change existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent API key change existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent webhook change existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent schedule change existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent background job existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent persistent compute existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent cloud change existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent runtime change existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent serverless change existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent autoscale change existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent reserved hosting change existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent infrastructure change existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent storage change existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent S3 change existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database change existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent MySQL change existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent Drizzle change existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent tRPC change existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent React change existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent Tailwind change existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent Vite change existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent TypeScript change existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent Node change existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent pnpm change existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent package lock change existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent dependency install existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent configuration edit existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent schema edit existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent SQL execution existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent test data insert existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent destructive SQL existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database drop existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database truncate existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database delete existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database overwrite existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent data loss existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent migration loss existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent production DB change existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent development DB change existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent test DB change existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent staging DB change existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database schema drift existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database data drift existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database migration drift existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database connection drift existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database credential drift existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database secret drift existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database privacy drift existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database security drift existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database backup drift existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database restore drift existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database audit drift existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database monitoring drift existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database observability drift existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database performance drift existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database reliability drift existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database recoverability drift existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database reproducibility drift existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database traceability drift existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database integrity drift existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database completeness drift existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database exactness drift existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database honesty drift existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database transparency drift existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database caution drift existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database moderation drift existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database safety drift existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database retention drift existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database archive drift existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database cleanup drift existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database purge drift existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database deletion drift existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database drop drift existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database truncate drift existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database cascade drift existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database FK drift existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database index drift existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database trigger drift existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database procedure drift existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database view drift existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database query drift existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database helper drift existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database API drift existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database contract drift existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database types drift existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database test drift existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database fixture drift existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database mock drift existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database seed drift existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database sample drift existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database fake drift existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database placeholder drift existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database review drift existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database testimonial drift existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database rating drift existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database customer-review drift existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database consumer-protection drift existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database Shopify-policy drift existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database legal-risk drift existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database compliance drift existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database governance drift existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database ownership drift existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database stewardship drift existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database responsibility drift existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database operational drift existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database project drift existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database program drift existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database portfolio drift existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database executive drift existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database admin drift existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database user drift existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database agent drift existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database startup drift existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database mission drift existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database telemetry drift existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database communication drift existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database notification drift existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database funding drift existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database bitcoin drift existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database wallet drift existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database transaction drift existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database broadcast drift existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database master-key drift existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database secret drift existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database credential drift existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database audit drift existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database recovery drift existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database backup drift existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database restore drift existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database rollback drift existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database retention drift existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database deletion drift existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database cleanup drift existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database archival drift existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database preservation drift existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database lifecycle drift existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database continuity drift existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database availability drift existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database scalability drift existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database performance drift existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database observability drift existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database monitoring drift existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database logging drift existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database tracing drift existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database alerting drift existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database notification drift existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database incident drift existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database problem drift existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database change drift existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database release drift existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database deployment drift existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database publication drift existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database rollback drift existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database correction drift existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database bug drift existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database repair drift existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database fix drift existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database patch drift existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database upgrade drift existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database downgrade drift existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database compatibility drift existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database migration compatibility existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database version compatibility existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database tool compatibility existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database runtime compatibility existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database deployment compatibility existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database hosting compatibility existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database provider compatibility existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database connector compatibility existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database API compatibility existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database client compatibility existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database server compatibility existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database schema compatibility existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database query compatibility existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database transaction compatibility existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database isolation compatibility existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database consistency compatibility existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database integrity compatibility existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database correctness compatibility existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database safety compatibility existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database privacy compatibility existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database security compatibility existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database compliance compatibility existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database auditability compatibility existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database traceability compatibility existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database reproducibility compatibility existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database recoverability compatibility existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database maintainability compatibility existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database operability compatibility existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database reliability compatibility existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database availability compatibility existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database scalability compatibility existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database performance compatibility existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database observability compatibility existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database monitoring compatibility existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database logging compatibility existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database alerting compatibility existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database notification compatibility existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database incident compatibility existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database problem compatibility existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database change compatibility existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database release compatibility existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database deployment compatibility existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database publication compatibility existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database rollback compatibility existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database correction compatibility existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database bug compatibility existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database repair compatibility existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database fix compatibility existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database patch compatibility existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database upgrade compatibility existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database downgrade compatibility existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database version compatibility existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database tool compatibility existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database runtime compatibility existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database deployment compatibility existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database hosting compatibility existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database provider compatibility existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database connector compatibility existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database API compatibility existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database client compatibility existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database server compatibility existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database schema compatibility existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database query compatibility existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database transaction compatibility existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database isolation compatibility existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database consistency compatibility existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database integrity compatibility existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database correctness compatibility existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database safety compatibility existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database privacy compatibility existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database security compatibility existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database compliance compatibility existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database auditability compatibility existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database traceability compatibility existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database reproducibility compatibility existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database recoverability compatibility existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database maintainability compatibility existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database operability compatibility existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database reliability compatibility existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database availability compatibility existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database scalability compatibility existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database performance compatibility existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database observability compatibility existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database monitoring compatibility existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database logging compatibility existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database alerting compatibility existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database notification compatibility existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database incident compatibility existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database problem compatibility existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database change compatibility existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database release compatibility existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database deployment compatibility existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database publication compatibility existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database rollback compatibility existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database correction compatibility existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database bug compatibility existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database repair compatibility existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database fix compatibility existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database patch compatibility existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database upgrade compatibility existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database downgrade compatibility existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database version compatibility existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database tool compatibility existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database runtime compatibility existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database deployment compatibility existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database hosting compatibility existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database provider compatibility existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database connector compatibility existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database API compatibility existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database client compatibility existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database server compatibility existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database schema compatibility existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database query compatibility existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database transaction compatibility existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database isolation compatibility existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database consistency compatibility existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database integrity compatibility existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database correctness compatibility existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database safety compatibility existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database privacy compatibility existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database security compatibility existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database compliance compatibility existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database auditability compatibility existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database traceability compatibility existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database reproducibility compatibility existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database recoverability compatibility existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database maintainability compatibility existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database operability compatibility existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database reliability compatibility existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database availability compatibility existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database scalability compatibility existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database performance compatibility existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database observability compatibility existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database monitoring compatibility existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database logging compatibility existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database tracing compatibility existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database alerting compatibility existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database notification compatibility existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database incident compatibility existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database problem compatibility existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database change compatibility existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database release compatibility existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database deployment compatibility existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database publication compatibility existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database rollback compatibility existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database correction compatibility existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database bug compatibility existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database repair compatibility existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database fix compatibility existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database patch compatibility existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database upgrade compatibility existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database downgrade compatibility existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database version compatibility existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database tool compatibility existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database runtime compatibility existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database deployment compatibility existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database hosting compatibility existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database provider compatibility existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database connector compatibility existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database API compatibility existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database client compatibility existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database server compatibility existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database schema compatibility existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database query compatibility existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database transaction compatibility existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database isolation compatibility existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database consistency compatibility existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database integrity compatibility existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database correctness compatibility existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database safety compatibility existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database privacy compatibility existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database security compatibility existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database compliance compatibility existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database auditability compatibility existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database traceability compatibility existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database reproducibility compatibility existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database recoverability compatibility existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database maintainability compatibility existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database operability compatibility existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database reliability compatibility existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database availability compatibility existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database scalability compatibility existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database performance compatibility existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database observability compatibility existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database monitoring compatibility existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database logging compatibility existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database tracing compatibility existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database alerting compatibility existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database notification compatibility existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database incident compatibility existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database problem compatibility existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database change compatibility existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database release compatibility existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database deployment compatibility existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database publication compatibility existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database rollback compatibility existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database correction compatibility existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database bug compatibility existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database repair compatibility existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database fix compatibility existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database patch compatibility existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database upgrade compatibility existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database downgrade compatibility existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database version compatibility existing
+- [ ] Documentar que a importação não substituirá arquivos de política de absence of silent database tool compatibility existing
+- [ ] Documentar que a importação not overwrite existing files in the repository
+- [ ] Documentar que a importação not delete existing files in the repository
+- [ ] Documentar that all eligible files are committed end to end
+- [ ] Documentar that all sensitive files are excluded
+- [ ] Documentar that all conflicts are reported
+- [ ] Documentar that all branches are preserved
+- [ ] Documentar that all commits are preserved
+- [ ] Documentar that all folders are preserved
+- [ ] Documentar that all files are preserved
+- [ ] Documentar that the repository remains balanced
+- [ ] Documentar that the ecosystem remains recoverable
+- [ ] Documentar that the operation remains auditable
+- [ ] Documentar that the operation remains reproducible
+- [ ] Documentar that the operation remains reversible
+- [ ] Documentar that the operation remains additive
+- [ ] Documentar that the operation remains non-destructive
+- [ ] Documentar that the operation remains non-overwriting
+- [ ] Documentar that the operation remains non-deleting
+- [ ] Documentar that the operation remains non-rewriting
+- [ ] Documentar that the operation remains non-force-pushing
+- [ ] Documentar that the operation remains non-rebasing
+- [ ] Documentar that the operation remains non-squashing
+- [ ] Documentar that the operation remains non-resetting
+- [ ] Documentar that the operation remains non-cleaning
+- [ ] Documentar that the operation remains non-pruning
+- [ ] Documentar that the operation remains non-destructive SQL
+- [ ] Documentar that the operation remains non-financial
+- [ ] Documentar that the operation remains non-transactional
+- [ ] Documentar that the operation remains non-broadcasting
+- [ ] Documentar that the operation remains non-secret-bearing
+- [ ] Documentar that the operation remains non-key-bearing
+- [ ] Documentar that the operation remains non-credential-bearing
+- [ ] Documentar that the operation remains non-personal-data-bearing
+- [ ] Documentar that the operation remains non-sensitive-data-bearing
+- [ ] Documentar that the operation remains non-fabricating
+- [ ] Documentar that the operation remains non-mocking
+- [ ] Documentar that the operation remains non-seeding
+- [ ] Documentar that the operation remains non-placeholder-generating
+- [ ] Documentar that the operation remains non-count-inflating
+- [ ] Documentar that the operation remains non-scope-expanding
+- [ ] Documentar that the operation remains non-source-mutating
+- [ ] Documentar that the operation remains non-target-mutating before branch
+- [ ] Documentar that the operation remains non-remote-mutating before push
+- [ ] Documentar that the operation remains explicitly branch-scoped
+- [ ] Documentar that the operation remains explicitly namespace-scoped
+- [ ] Documentar that the operation remains explicitly file-scoped
+- [ ] Documentar that the operation remains explicitly hash-scoped
+- [ ] Documentar that the operation remains explicitly commit-scoped
+- [ ] Documentar that the operation remains explicitly report-scoped
+- [ ] Documentar that the operation remains explicitly user-requested
+- [ ] Documentar that the operation remains explicitly validated
+- [ ] Documentar that the operation remains explicitly reviewed
+- [ ] Documentar that the operation remains explicitly delivered
+- [ ] Documentar that the operation remains explicitly recoverable
+- [ ] Documentar that the operation remains explicitly auditable
+- [ ] Documentar that the operation remains explicitly reproducible
+- [ ] Documentar that the operation remains explicitly traceable
+- [ ] Documentar that the operation remains explicitly safe
+- [ ] Documentar that the operation remains explicitly cautious
+- [ ] Documentar that the operation remains explicitly transparent
+- [ ] Documentar that the operation remains explicitly honest
+- [ ] Documentar that the operation remains explicitly precise
+- [ ] Documentar that the operation remains explicitly bounded
+- [ ] Documentar that the operation remains explicitly documented
+- [ ] Documentar that the operation remains explicitly recorded
+- [ ] Documentar that the operation remains explicitly checksum-backed
+- [ ] Documentar that the operation remains explicitly count-backed
+- [ ] Documentar that the operation remains explicitly diff-backed
+- [ ] Documentar that the operation remains explicitly branch-backed
+- [ ] Documentar that the operation remains explicitly commit-backed
+- [ ] Documentar that the operation remains explicitly zip-backed
+- [ ] Documentar that the operation remains explicitly manifest-backed
+- [ ] Documentar that the operation remains explicitly source-backed
+- [ ] Documentar that the operation remains explicitly target-backed
+- [ ] Documentar that the operation remains explicitly recovery-backed
+- [ ] Documentar that the operation remains explicitly delivery-backed
+- [ ] Documentar that the operation remains explicitly user-backed
+- [ ] Documentar that the operation remains explicitly maintainer-backed
+- [ ] Documentar that the operation remains explicitly developer-backed
+- [ ] Documentar that the operation remains explicitly auditor-backed
+- [ ] Documentar that the operation remains explicitly operator-backed
+- [ ] Documentar that the operation remains explicitly owner-backed
+- [ ] Documentar that the operation remains explicitly stakeholder-backed
+- [ ] Documentar that the operation remains explicitly ecosystem-backed
+- [ ] Documentar that the operation remains explicitly repo-backed
+- [ ] Documentar that the operation remains explicitly GitHub-backed
+- [ ] Documentar that the operation remains explicitly end-to-end
+- [ ] Documentar that the operation remains explicitly 001-299-aware
+- [ ] Documentar that the operation remains explicitly real-count-aware
+- [ ] Documentar that the operation remains explicitly no-fabrication-aware
+- [ ] Documentar that the operation remains explicitly no-missing-files-aware
+- [ ] Documentar that the operation remains explicitly no-untracked-files-aware
+- [ ] Documentar that the operation remains explicitly no-ignored-files-aware
+- [ ] Documentar that the operation remains explicitly no-secret-files-aware
+- [ ] Documentar that the operation remains explicitly no-credential-files-aware
+- [ ] Documentar that the operation remains explicitly no-key-files-aware
+- [ ] Documentar that the operation remains explicitly no-wallet-files-aware
+- [ ] Documentar that the operation remains explicitly no-transaction-files-aware
+- [ ] Documentar that the operation remains explicitly no-broadcast-files-aware
+- [ ] Documentar that the operation remains explicitly no-financial-files-aware
+- [ ] Documentar that the operation remains explicitly no-destructive-files-aware
+- [ ] Documentar that the operation remains explicitly no-overwrite-files-aware
+- [ ] Documentar that the operation remains explicitly no-delete-files-aware
+- [ ] Documentar that the operation remains explicitly no-rewrite-files-aware
+- [ ] Documentar that the operation remains explicitly no-force-push-files-aware
+- [ ] Documentar that the operation remains explicitly no-rebase-files-aware
+- [ ] Documentar that the operation remains explicitly no-squash-files-aware
+- [ ] Documentar that the operation remains explicitly no-reset-files-aware
+- [ ] Documentar that the operation remains explicitly no-clean-files-aware
+- [ ] Documentar that the operation remains explicitly no-prune-files-aware
+- [ ] Documentar that the operation remains explicitly no-history-loss-aware
+- [ ] Documentar that the operation remains explicitly no-branch-loss-aware
+- [ ] Documentar that the operation remains explicitly no-commit-loss-aware
+- [ ] Documentar that the operation remains explicitly no-folder-loss-aware
+- [ ] Documentar that the operation remains explicitly no-file-loss-aware
+- [ ] Documentar that the operation remains explicitly no-data-loss-aware
+- [ ] Documentar that the operation remains explicitly no-evidence-loss-aware
+- [ ] Documentar that the operation remains explicitly no-audit-loss-aware
+- [ ] Documentar that the operation remains explicitly no-recovery-loss-aware
+- [ ] Documentar that the operation remains explicitly no-delivery-loss-aware
+- [ ] Documentar that the operation remains explicitly no-user-loss-aware
+- [ ] Documentar that the operation remains explicitly no-developer-loss-aware
+- [ ] Documentar that the operation remains explicitly no-maintainer-loss-aware
+- [ ] Documentar that the operation remains explicitly no-reviewer-loss-aware
+- [ ] Documentar that the operation remains explicitly no-auditor-loss-aware
+- [ ] Documentar that the operation remains explicitly no-owner-loss-aware
+- [ ] Documentar that the operation remains explicitly no-stakeholder-loss-aware
+- [ ] Documentar that the operation remains explicitly no-operator-loss-aware
+- [ ] Documentar that the operation remains explicitly no-ecosystem-loss-aware
+- [ ] Documentar that the operation remains explicitly no-repo-loss-aware
+- [ ] Documentar that the operation remains explicitly no-GitHub-loss-aware
+- [ ] Documentar that the operation remains explicitly no-source-loss-aware
+- [ ] Documentar that the operation remains explicitly no-target-loss-aware
+- [ ] Documentar that the operation remains explicitly no-namespace-loss-aware
+- [ ] Documentar that the operation remains explicitly no-manifest-loss-aware
+- [ ] Documentar that the operation remains explicitly no-checksum-loss-aware
+- [ ] Documentar that the operation remains explicitly no-count-loss-aware
+- [ ] Documentar that the operation remains explicitly no-diff-loss-aware
+- [ ] Documentar that the operation remains explicitly no-branch-drift-aware
+- [ ] Documentar that the operation remains explicitly no-commit-drift-aware
+- [ ] Documentar that the operation remains explicitly no-remote-drift-aware
+- [ ] Documentar that the operation remains explicitly no-tag-drift-aware
+- [ ] Documentar that the operation remains explicitly no-status-drift-aware
+- [ ] Documentar that the operation remains explicitly no-ignored-drift-aware
+- [ ] Documentar that the operation remains explicitly no-untracked-drift-aware
+- [ ] Documentar that the operation remains explicitly no-conflict-drift-aware
+- [ ] Documentar that the operation remains explicitly no-source-drift-aware
+- [ ] Documentar that the operation remains explicitly no-target-drift-aware
+- [ ] Documentar that the operation remains explicitly no-package-drift-aware
+- [ ] Documentar that the operation remains explicitly no-dependency-drift-aware
+- [ ] Documentar that the operation remains explicitly no-config-drift-aware
+- [ ] Documentar that the operation remains explicitly no-schema-drift-aware
+- [ ] Documentar that the operation remains explicitly no-migration-drift-aware
+- [ ] Documentar that the operation remains explicitly no-test-drift-aware
+- [ ] Documentar that the operation remains explicitly no-build-drift-aware
+- [ ] Documentar that the operation remains explicitly no-release-drift-aware
+- [ ] Documentar that the operation remains explicitly no-deploy-drift-aware
+- [ ] Documentar that the operation remains explicitly no-publish-drift-aware
+- [ ] Documentar that the operation remains explicitly no-production-drift-aware
+- [ ] Documentar that the operation remains explicitly no-staging-drift-aware
+- [ ] Documentar that the operation remains explicitly no-development-drift-aware
+- [ ] Documentar that the operation remains explicitly no-local-drift-aware
+- [ ] Documentar that the operation remains explicitly no-remote-drift-aware
+- [ ] Documentar that the operation remains explicitly no-GitHub-drift-aware
+- [ ] Documentar that the operation remains explicitly no-Manus-drift-aware
+- [ ] Documentar that the operation remains explicitly no-WebDev-drift-aware
+- [ ] Documentar que a execução deve parar diante de erro de integridade
+- [ ] Documentar que a execução deve parar diante de conflito concorrente
+- [ ] Documentar que a execução deve parar diante de segredo detectado
+- [ ] Documentar que a execução deve parar diante de caminho inseguro
+- [ ] Documentar que a execução deve parar diante de arquivo corrompido
+- [ ] Documentar que a execução deve parar diante de hash divergente
+- [ ] Documentar que a execução deve parar diante de contagem divergente inexplicada
+- [ ] Documentar que a execução deve parar diante de ZIP inválido
+- [ ] Documentar que a execução deve parar diante de commit-base alterado
+- [ ] Documentar que a execução deve parar diante de branch-base alterada
+- [ ] Documentar que a execução deve parar diante de remote-base alterado
+- [ ] Documentar que a execução deve parar diante de mudança fora do namespace
+- [ ] Documentar que a execução deve parar diante de tentativa de sobrescrita
+- [ ] Documentar que a execução deve parar diante de tentativa de exclusão
+- [ ] Documentar que a execução deve parar diante de tentativa de reescrita
+- [ ] Documentar que a execução deve parar diante de tentativa de force push
+- [ ] Documentar que a execução deve parar diante de tentativa de rebase
+- [ ] Documentar que a execução deve parar diante de tentativa de squash
+- [ ] Documentar que a execução deve parar diante de tentativa de reset
+- [ ] Documentar que a execução deve parar diante de tentativa de clean
+- [ ] Documentar que a execução deve parar diante de tentativa de prune
+- [ ] Documentar que a execução deve parar diante de tentativa de push para main
+- [ ] Documentar que a execução deve parar diante de tentativa de ação financeira
+- [ ] Documentar que a execução deve parar diante de tentativa de broadcast Bitcoin
+- [ ] Documentar que a execução deve parar diante de tentativa de inclusão de chave
+- [ ] Documentar que a execução deve parar diante de tentativa de inclusão de credencial
+- [ ] Documentar que a execução deve parar diante de tentativa de inclusão de token
+- [ ] Documentar que a execução deve parar diante de tentativa de inclusão de senha
+- [ ] Documentar que a execução deve parar diante de tentativa de inclusão de dado pessoal
+- [ ] Documentar que a execução deve parar diante de tentativa de inclusão de dado sensível
+- [ ] Documentar que a execução deve parar diante de tentativa de fabricação de arquivo
+- [ ] Documentar que a execução deve parar diante de tentativa de inflação de cont

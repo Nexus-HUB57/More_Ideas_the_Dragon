@@ -1,0 +1,88 @@
+=== BASE ===
+head_before_fetch=f1da34e551aa5cec65d49782adf3560d2f2285e9
+origin_main_remote_before=f1da34e551aa5cec65d49782adf3560d2f2285e9
+origin_main_remote_after=f1da34e551aa5cec65d49782adf3560d2f2285e9
+local_origin_main=f1da34e551aa5cec65d49782adf3560d2f2285e9
+=== STATUS INCLUDING IGNORED ===
+## [32mmain[m...[31morigin/main[m
+=== IGNORED FILE COUNT ===
+0
+=== IGNORED PATH SAMPLE ===
+=== INTENDED NAMESPACE ===
+namespace_exists=no
+=== ROOT COLLISIONS FOR ZIP ===
+free	0001_lowly_ben_grimm.sql
+free	ARCHITECTURE.md
+collision	App.tsx	tracked=yes
+collision	README.md	tracked=yes
+free	agent-fusion-flow.ts
+free	agents.ts
+free	ai-architect.ts
+free	ai-bus.ts
+free	blueprint.md
+collision	db.ts	tracked=yes
+free	genkit.ts
+free	nexus-kernel.ts
+collision	package.json	tracked=yes
+collision	schema.ts	tracked=yes
+free	storageProxy.ts
+collision	todo.md	tracked=yes
+=== ROOT COLLISION SUMMARY ===
+6
+=== SENSITIVE FILES IN TARGET (NAMES ONLY) ===
+./artifacts/mmnai-to-ai/source/extracted/inc123/PagSeguroLibrary/domain/PagSeguroAccountCredentials.class.php
+./artifacts/mmnai-to-ai/source/extracted/inc123/PagSeguroLibrary/domain/PagSeguroApplicationCredentials.class.php
+./artifacts/mmnai-to-ai/source/extracted/inc123/PagSeguroLibrary/domain/PagSeguroCredentials.class.php
+./artifacts/mmnai-to-ai/source/extracted/inc123/swift/classes/Swift.php
+./artifacts/mmnai-to-ai/source/extracted/inc123/swift/classes/Swift/SwiftException.php
+./artifacts/mmnai-to-ai/source/extracted/inc123/swift/swift_init.php
+./artifacts/mmnai-to-ai/source/extracted/inc123/swift/swift_required.php
+./artifacts/mmnai-to-ai/source/extracted/inc123/swift/swift_required_pear.php
+./artifacts/wif_wallet_manager_e2e_20260822_v3.zip
+./backend/dropshipping_fase8/MMNAI-to-AI_extracted/inc123/PagSeguroLibrary/domain/PagSeguroAccountCredentials.class.php
+./backend/dropshipping_fase8/MMNAI-to-AI_extracted/inc123/PagSeguroLibrary/domain/PagSeguroApplicationCredentials.class.php
+./backend/dropshipping_fase8/MMNAI-to-AI_extracted/inc123/PagSeguroLibrary/domain/PagSeguroCredentials.class.php
+./backend/dropshipping_fase8/MMNAI-to-AI_extracted/inc123/swift/classes/Swift.php
+./backend/dropshipping_fase8/MMNAI-to-AI_extracted/inc123/swift/classes/Swift/SwiftException.php
+./backend/dropshipping_fase8/MMNAI-to-AI_extracted/inc123/swift/swift_init.php
+./backend/dropshipping_fase8/MMNAI-to-AI_extracted/inc123/swift/swift_required.php
+./backend/dropshipping_fase8/MMNAI-to-AI_extracted/inc123/swift/swift_required_pear.php
+./credentials.json
+./imports/MMNAI-to-AI/task-source/inc123/PagSeguroLibrary/domain/PagSeguroAccountCredentials.class.php
+./imports/MMNAI-to-AI/task-source/inc123/PagSeguroLibrary/domain/PagSeguroApplicationCredentials.class.php
+./imports/MMNAI-to-AI/task-source/inc123/PagSeguroLibrary/domain/PagSeguroCredentials.class.php
+./imports/MMNAI-to-AI/task-source/inc123/swift/classes/Swift.php
+./imports/MMNAI-to-AI/task-source/inc123/swift/classes/Swift/SwiftException.php
+./imports/MMNAI-to-AI/task-source/inc123/swift/swift_init.php
+./imports/MMNAI-to-AI/task-source/inc123/swift/swift_required.php
+./imports/MMNAI-to-AI/task-source/inc123/swift/swift_required_pear.php
+./integrations/wif_wallet_manager_e2e_20260822_v3/source/server/wifConverter.test.ts
+./integrations/wif_wallet_manager_e2e_20260822_v3/source/server/wifConverter.ts
+./nexus_mmn_fullstack_phd/auxiliary/orquestrador-dashboard/.env.example
+./nexus_mmn_fullstack_phd/deploy/SETUP_SECRETS_GITHUB.md
+./nexus_mmn_fullstack_phd/docs/security/SECRETS_AUDIT_PROCEDURE.md
+./nexus_mmn_fullstack_phd/frontend/.env.production
+./nexus_mmn_fullstack_phd/legacy/inc123/PagSeguroLibrary/domain/PagSeguroAccountCredentials.class.php
+./nexus_mmn_fullstack_phd/legacy/inc123/PagSeguroLibrary/domain/PagSeguroApplicationCredentials.class.php
+./nexus_mmn_fullstack_phd/legacy/inc123/PagSeguroLibrary/domain/PagSeguroCredentials.class.php
+./nexus_mmn_fullstack_phd/legacy/inc123/swift/classes/Swift.php
+./nexus_mmn_fullstack_phd/legacy/inc123/swift/classes/Swift/SwiftException.php
+./nexus_mmn_fullstack_phd/legacy/inc123/swift/swift_init.php
+./nexus_mmn_fullstack_phd/legacy/inc123/swift/swift_required.php
+./nexus_mmn_fullstack_phd/legacy/inc123/swift/swift_required_pear.php
+./nexus_mmn_fullstack_phd/scripts/youtube/inventory_youtube_credentials.py
+./nexus_mmn_fullstack_phd/scripts/youtube/validate_youtube_credentials.py
+./nexus_phd_final_bundle_299/nexus_hub_extracted/.env.example
+./nexus_phd_final_bundle_299/nexus_hub_level6/credentials.json
+./nexus_phd_final_bundle_299/nexus_hub_level7_hibrido/credentials.json
+./nexus_phd_final_bundle_299/nexus_hub_level7_test/.env.example
+./task-artifacts/nexus-project-20260822/.env.example
+./task_artifacts/nexus_hub_architecture_integration_2026-08-22/source/.env.example
+./task_artifacts/nexus_hub_continuation_2026-08-22/files/archive-006/credentials.json
+./task_artifacts/nexus_hub_continuation_2026-08-22/files/archive-007/credentials.json
+./task_artifacts/nexus_hub_continuation_2026-08-22/files/archive-014/credentials.json
+./task_artifacts/nexus_hub_fullstack_task_20260822/source/.env.example
+=== MAINLINE OBJECT SAFETY ===
+common_ancestor=f1da34e551aa5cec65d49782adf3560d2f2285e9
+ahead_of_origin_main=0
+behind_origin_main=0
