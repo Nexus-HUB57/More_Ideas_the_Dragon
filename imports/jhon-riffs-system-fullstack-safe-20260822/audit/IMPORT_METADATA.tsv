@@ -1,0 +1,8 @@
+field\tvalue
+source_project\t/home/ubuntu/jhon_riffs_system
+source_checkpoint\t0c35fe25
+source_file_count\t129
+excluded_paths\t.git,node_modules,.manus-logs
+base_branch\tmain
+safe_branch\tmanus/jhon-riffs-system-fullstack-safe-20260822
+namespace\timports/jhon-riffs-system-fullstack-safe-20260822
