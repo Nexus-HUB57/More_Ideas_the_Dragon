@@ -14,4 +14,4 @@
 - Working-tree status: clean before this report commit
 - Import policy: additive-only, unique destination path
 
-The branch contains the safe, non-sensitive portion of the supplied package. Private keys, credential files, , wallet-key material, and ambiguous hot-wallet/pasted-content files were deliberately excluded because the repository is public. See .
+The branch contains the safe, non-sensitive portion of the supplied package. Private keys, credential files, `.env`, wallet-key material, and ambiguous hot-wallet/pasted-content files were deliberately excluded because the repository is public. See `BLOCKED_SENSITIVE_ITEMS.md`.
