@@ -1,17 +1,19 @@
 # Manifesto de integração MMN AI-to-AI
 
-Arquivos: 141
+Arquivos: 143
 
 | Caminho | Bytes | SHA-256 |
 |---|---:|---|
 | `COVERAGE_COMPARISON.md` | 2849 | `c27355ad4db537e913a3bbf4ea163a41f01894c831774d3fc9e481ec44dd2107` |
 | `INTEGRATION_METADATA.json` | 1089 | `54bd6cf089b42f1764570c33f912638d6dcae9aff91260d8c4df8ce3b16fda27` |
 | `INTEGRATION_NOTES.md` | 874 | `5e9621669ede11e9303962aa3ee7a938b9f98a6f7c114219b40b80520b5e2932` |
-| `MANIFEST.json` | 25790 | `bef884256d5d3394b3d7a491e9cc50cc9c4c2eb8513dd10f8c4e0642702f8cea` |
-| `MANIFEST.md` | 18464 | `fe39e0fb524b611b6552a59dfb59ba5b264da10e316a5bf5d7f6477464d24dac` |
-| `SECURITY_EXCLUSIONS.md` | 743 | `c332395b8cab0aa0c289d7f300ec2c762b4302ea8d2241679f2cbf22e711c9b7` |
+| `MANIFEST.json` | 26115 | `39364a0120492fddd1d370b5e42c3ba2cb8fee8a1ef93f6ac69ea11b87f0030e` |
+| `MANIFEST.md` | 18685 | `103d10220687dbf154a2d12e4d5c56bd983f764e4c92b868aed8e762af7a792d` |
+| `PROJECT_CONFIG_REDACTED.json` | 1265 | `bd0ba3e71852cafeb6e2140d8af9bc944a5e1770268f7c8a506cd16a6bb0ba06` |
+| `SECURITY_EXCLUSIONS.md` | 999 | `3dbe236ba850bdafd6ea31fd37694534b0c17a81e675987a86e9843adc8149ee` |
+| `SECURITY_INCIDENT_NOTICE.md` | 1639 | `9152cb3c3fddd09c3217b2c55df410cd57e6944d38d0784051b0949453b7efb2` |
 | `VALIDATION_REPORT.md` | 4350 | `31746f9d78a6744e5b30fcd563f64e632ec344ae4af3f667ad7ea2a37256d0d9` |
-| `VALIDATION_SUMMARY.json` | 234 | `661547c244419dff86c244a2eab3ed54f5a191d58794ed26c97e20dc75f23511` |
+| `VALIDATION_SUMMARY.json` | 234 | `a05c29819f4f9e5f3b2f232170c2c83a821e952bfe5f772cf7643241671712de` |
 | `source/legacy_reference/manual_marketing_de_rede.txt` | 9988 | `2a69df3cc1fba077de9b9e5b28e0afc5ce529a62ace4c8772a93c3c289039723` |
 | `source/mmn-ai-to-ai/.gitignore` | 1390 | `b4572613f7e7b7827f8dd1c7543b03f903082ba146ebe8115dd9bd81aebd4bee` |
 | `source/mmn-ai-to-ai/.gitkeep` | 0 | `e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855` |
@@ -141,7 +143,7 @@ Arquivos: 141
 | `source/mmn-ai-to-ai/shared/_core/errors.ts` | 601 | `52bee7d152045eaa009083e26a4cbc21d413c80b0403a23c4b5572141dec942a` |
 | `source/mmn-ai-to-ai/shared/const.ts` | 275 | `11da03d221aa253356704b97fcd8ffb90975a34446dda1f3c50b528ec191583d` |
 | `source/mmn-ai-to-ai/shared/types.ts` | 158 | `959aeb30b032e203677e278922e97988b7cbcb56485694458298859af5589974` |
-| `source/mmn-ai-to-ai/todo.md` | 204546 | `920bbd8dd904ef9f3270f502a01fa428823a1ce748819392d003ee86d62c0875` |
+| `source/mmn-ai-to-ai/todo.md` | 206263 | `69ce71c9824ac7d90070e5662a3bd077cc3550e5e940ec3ab093f2955698869b` |
 | `source/mmn-ai-to-ai/tsconfig.json` | 657 | `4bea0e0003e3c943f455346abc4854d1666d604adbaa6aa8eda11f94fb8f1396` |
 | `source/mmn-ai-to-ai/vite.config.ts` | 5765 | `1b4f11ec05e426ffb9b020cf18ed5bb979b7f042ad43bfd5d9043b569843afab` |
 | `source/mmn-ai-to-ai/vitest.config.ts` | 499 | `a0de83b3967226a98302bbb34aa2e1321890dba9ac1d1c8ce8a6b7989af87e44` |

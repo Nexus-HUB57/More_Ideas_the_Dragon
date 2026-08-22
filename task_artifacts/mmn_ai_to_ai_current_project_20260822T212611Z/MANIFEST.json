@@ -1,6 +1,6 @@
 {
-  "generatedAtUtc": "2026-08-22T21:45:30.231726+00:00",
-  "fileCount": 141,
+  "generatedAtUtc": "2026-08-22T21:47:56.551198+00:00",
+  "fileCount": 143,
   "files": [
     {
       "path": "COVERAGE_COMPARISON.md",
@@ -19,18 +19,28 @@
     },
     {
       "path": "MANIFEST.json",
-      "bytes": 25790,
-      "sha256": "bef884256d5d3394b3d7a491e9cc50cc9c4c2eb8513dd10f8c4e0642702f8cea"
+      "bytes": 26115,
+      "sha256": "39364a0120492fddd1d370b5e42c3ba2cb8fee8a1ef93f6ac69ea11b87f0030e"
     },
     {
       "path": "MANIFEST.md",
-      "bytes": 18464,
-      "sha256": "fe39e0fb524b611b6552a59dfb59ba5b264da10e316a5bf5d7f6477464d24dac"
+      "bytes": 18685,
+      "sha256": "103d10220687dbf154a2d12e4d5c56bd983f764e4c92b868aed8e762af7a792d"
+    },
+    {
+      "path": "PROJECT_CONFIG_REDACTED.json",
+      "bytes": 1265,
+      "sha256": "bd0ba3e71852cafeb6e2140d8af9bc944a5e1770268f7c8a506cd16a6bb0ba06"
     },
     {
       "path": "SECURITY_EXCLUSIONS.md",
-      "bytes": 743,
-      "sha256": "c332395b8cab0aa0c289d7f300ec2c762b4302ea8d2241679f2cbf22e711c9b7"
+      "bytes": 999,
+      "sha256": "3dbe236ba850bdafd6ea31fd37694534b0c17a81e675987a86e9843adc8149ee"
+    },
+    {
+      "path": "SECURITY_INCIDENT_NOTICE.md",
+      "bytes": 1639,
+      "sha256": "9152cb3c3fddd09c3217b2c55df410cd57e6944d38d0784051b0949453b7efb2"
     },
     {
       "path": "VALIDATION_REPORT.md",
@@ -40,7 +50,7 @@
     {
       "path": "VALIDATION_SUMMARY.json",
       "bytes": 234,
-      "sha256": "661547c244419dff86c244a2eab3ed54f5a191d58794ed26c97e20dc75f23511"
+      "sha256": "a05c29819f4f9e5f3b2f232170c2c83a821e952bfe5f772cf7643241671712de"
     },
     {
       "path": "source/legacy_reference/manual_marketing_de_rede.txt",
@@ -689,8 +699,8 @@
     },
     {
       "path": "source/mmn-ai-to-ai/todo.md",
-      "bytes": 204546,
-      "sha256": "920bbd8dd904ef9f3270f502a01fa428823a1ce748819392d003ee86d62c0875"
+      "bytes": 206263,
+      "sha256": "69ce71c9824ac7d90070e5662a3bd077cc3550e5e940ec3ab093f2955698869b"
     },
     {
       "path": "source/mmn-ai-to-ai/tsconfig.json",

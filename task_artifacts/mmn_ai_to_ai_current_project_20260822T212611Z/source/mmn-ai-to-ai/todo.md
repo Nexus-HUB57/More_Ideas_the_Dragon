@@ -14650,3 +14650,39 @@
 ## Última nota
 
 - [ ] Nenhum conteúdo existente foi tocado fora do namespace novo.
+
+## Incidente de segurança identificado durante a auditoria
+
+- [ ] Tratar o `.project-config.json` local como comprometido porque contém credenciais reais
+- [ ] Rotacionar a senha/credencial do banco de dados
+- [ ] Rotacionar credenciais de armazenamento/git backend
+- [ ] Rotacionar chaves e tokens de APIs, OAuth e Forge
+- [ ] Invalidar sessões ou tokens temporários expostos no arquivo
+- [ ] Confirmar que nenhum valor real foi copiado para o clone, staging, commit ou branch remota
+- [x] Excluir o `.project-config.json` real do pacote
+- [x] Adicionar somente `PROJECT_CONFIG_REDACTED.json`
+- [x] Atualizar `SECURITY_EXCLUSIONS.md` com a decisão
+- [ ] Revisar histórico local e remoto em busca do arquivo real
+- [ ] Confirmar rotação antes de qualquer novo empacotamento
+
+## Bloqueio de publicação por segurança
+
+- [ ] Não adicionar o arquivo real de configuração ao Git
+- [ ] Não incluir o ZIP legado enquanto a revisão de segurança estiver pendente
+- [ ] Não compartilhar valores de credenciais em relatório, chat ou URL
+- [ ] Solicitar ao mantenedor a confirmação de rotação das credenciais
+- [ ] Prosseguir somente com artefatos redigidos
+
+## Verificação pós-incidente
+
+- [ ] Executar scan de segredos no commit publicado
+- [ ] Executar scan de segredos na branch remota
+- [ ] Confirmar que apenas placeholders aparecem na configuração versionada
+- [ ] Registrar resultado sem armazenar os valores descobertos
+
+## Status do incidente
+
+- [ ] Credenciais locais classificadas como comprometidas até rotação
+- [ ] Arquivo real mantido fora do repositório
+- [ ] Versão redigida incluída para referência estrutural
+- [ ] Rotação aguarda ação do proprietário das credenciais
