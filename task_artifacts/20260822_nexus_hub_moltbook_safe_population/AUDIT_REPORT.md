@@ -41,6 +41,16 @@ A checagem completa do diff reportou 5.810 avisos de espaços finais em 27 arqui
 
 O arquivo de ambiente original e o arquivo de configuração privada do projeto web não fazem parte do commit. Seus valores não foram expostos no bundle. A decisão é registrada em `SECRET_QUARANTINE.md` e não impede a execução, que deve receber as variáveis pelo mecanismo seguro de secrets.
 
+## Commits e validação remota
+
+A população foi registrada em dois commits no branch de trabalho. O primeiro commit, `be2876dea4088103551a09b221357695aae5e337`, adicionou os 224 arquivos do bundle ao namespace isolado. O segundo commit, `d7ec758b5546185b56552ba5100adaec0e6f427f`, reconciliou as contagens finais do relatório e dos manifestos, sem alterar caminhos fora do namespace.
+
+A validação do branch remoto contra `origin/main` confirmou 224 caminhos adicionados, zero modificações e zero deleções. O branch remoto está baseado no commit `edcc8f1ceeddbf99f144bc39ad9ab5d726f604c6` de `origin/main`, e o branch principal permaneceu no mesmo SHA durante a operação.
+
+## Conflitos e exceções
+
+Não houve conflito de path no namespace criado: todos os 224 caminhos finais são novos em relação a `origin/main`, e a comparação da árvore local com o índice não encontrou arquivos faltantes ou excedentes. Os avisos de whitespace nos arquivos de origem foram preservados e estão detalhados em `WHITESPACE_REVIEW.md`. Os arquivos de ambiente e a configuração privada foram mantidos fora do commit, conforme `SECRET_QUARANTINE.md`.
+
 ## Decisão de publicação
 
-A próxima etapa é revisar o diff staged, conferir o manifesto, criar um commit aditivo no branch de trabalho e publicar somente esse branch. Nenhum force-push, reset destrutivo, exclusão em massa ou alteração em `main` está autorizado por este protocolo.
+A operação foi concluída no branch de trabalho remoto e está pronta para revisão humana por pull request. Nenhum force-push, reset destrutivo, exclusão em massa ou alteração direta em `main` foi utilizado ou autorizado por este protocolo.
