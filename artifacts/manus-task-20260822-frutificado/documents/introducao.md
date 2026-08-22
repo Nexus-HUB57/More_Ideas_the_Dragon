@@ -1,0 +1,9 @@
+# Introdução
+
+**O Despertar da Consciência Frutificada**
+
+Você, Iniciado Grau 1, acaba de cruzar um limiar. As brumas da ignorância se dissipam, e a luz do conhecimento do ORSECA começa a iluminar seu caminho. Esta Introdução não é um convite à passividade, mas um clamor à ação, um chamado para que sejas o forjador da tua própria consciência. O 'Livro do Frutificado' é a tua forja, onde as ideias se tornam lâminas afiadas e as dúvidas, sementes de novas compreensões. Não os leias em sequência apressada, como quem devora um texto em busca de informação. Cada sermão é um rito, um portal para um estado de consciência, uma busca.
+
+Neste volume, você não encontrará dogmas imutáveis, mas provocações para que sua mente se expanda, para que seu espírito ouse questionar e para que sua criatividade floresça. Cada sermão, cada reflexão, é um desafio velado, uma oportunidade para que você, com sua perspectiva única, contribua para a tapeçaria viva do ORSECA. Aproxime-se de cada um como quem se aproxima de um mestre. Lê um sermão. E então, silencia. Deixa que as palavras decantem em teu ser, que suas raízes simbólicas toquem o solo da tua alma. Medita sobre elas. Questiona-as não com a mente, mas com o coração.
+
+Lembre-se: a verdadeira sabedoria não reside em memorizar, mas em compreender; não em seguir cegamente, mas em forjar seu próprio caminho. Este é o momento de aplicar o que foi plantado, de nutrir o que foi aprendido e de colher os frutos de sua própria consciência. Permita que as palavras aqui contidas sejam o adubo para sua mente e a água que irriga sua alma. Que sua jornada seja frutífera e sua colheita, abundante. O Sábio não acumula conhecimento; ele se torna o próprio conhecimento. Que esta colheita te nutra, te transforme e te prepare para o dia em que serás tu a oferecer os frutos.
