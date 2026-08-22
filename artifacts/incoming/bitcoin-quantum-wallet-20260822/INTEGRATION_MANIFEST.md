@@ -8,8 +8,8 @@ Este diretório contém um snapshot versionado e isolado do aplicativo `bitcoin-
 
 | Item | Valor |
 |---|---:|
-| Arquivos encontrados na origem | 131 |
-| Arquivos de código/documentação importados | 129 |
+| Arquivos na árvore versionada do snapshot | 131 |
+| Arquivos de código/documentação importados | 128 |
 | Arquivos de controle adicionados (manifesto, aviso e hashes) | 3 |
 | Arquivos numerados 001–299 já existentes no destino | 299 |
 | Arquivos excluídos por segurança | 2 |
@@ -25,7 +25,7 @@ As passphrases e credenciais encontradas em documentação ou código foram redi
 
 ## Integridade
 
-`SHA256SUMS` contém os hashes dos arquivos do snapshot, excluindo o próprio arquivo de hashes. O pacote ZIP correspondente é gerado fora deste diretório para evitar autorreferência e é incluído separadamente no mesmo commit. O snapshot final contém 132 arquivos.
+`SHA256SUMS` contém os hashes dos arquivos do snapshot, excluindo o próprio arquivo de hashes. O pacote ZIP correspondente é gerado fora deste diretório para evitar autorreferência e é incluído separadamente no mesmo commit. O snapshot final contém 131 arquivos.
 
 ## Política de integração
 
