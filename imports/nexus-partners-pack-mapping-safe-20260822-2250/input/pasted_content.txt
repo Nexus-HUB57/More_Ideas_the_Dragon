@@ -1,0 +1,74 @@
+# Mapeamento da Conversão de Assinaturas do Nexus Partners Pack em XP/MMN para o Nexus Affil'IA'te
+
+Este documento estabelece o mapeamento de como as assinaturas do Nexus Partners Pack (NPP), um produto SaaS com modelo de assinatura comercial, se traduzem em pontos de experiência (XP) e contribuem para a estrutura de Marketing Multinível (MMN) e gamificação da plataforma Nexus Affil'IA'te (NA).
+
+## 1. Princípios Fundamentais
+
+*   **NPP como Fonte de Valor:** A aquisição e manutenção de uma assinatura do NPP por um usuário do NA (afiliado) gera valor para a rede MMN do NA.
+*   **XP como Recompensa por Ação Comercial:** O XP concedido no NA reflete o sucesso comercial do afiliado em adquirir ou manter assinaturas do NPP, alinhando-se com o modelo de gamificação do NA.
+*   **Transparência e Auditabilidade:** O processo de concessão de XP deve ser claro e auditável, com eventos bem definidos e rastreáveis.
+
+## 2. Eventos que Geram XP no Nexus Affil'IA'te
+
+Os principais eventos no ciclo de vida de uma assinatura do NPP que devem gerar XP na plataforma NA são:
+
+### 2.1. `NPP_SUBSCRIPTION_ACTIVATED`
+
+*   **Descrição:** Ocorre quando um afiliado do NA (ou um cliente indicado por um afiliado) ativa com sucesso uma nova assinatura do Nexus Partners Pack.
+*   **Payload Essencial:**
+    *   `userId`: ID do usuário/afiliado no NA que adquiriu a assinatura.
+    *   `subscriptionId`: ID da assinatura do NPP no sistema do NA.
+    *   `nppPlanTier`: O tier do plano de assinatura do NPP (e.g., Silver, Gold, Platinum, Diamond).
+    *   `nppSubscriptionValue`: Valor monetário da assinatura (mensal, anual, etc.).
+    *   `affiliateReferrerId` (opcional): ID do afiliado no NA que indicou o comprador (se aplicável).
+    *   `correlationId`, `causationId`: Para rastreamento de eventos.
+
+### 2.2. `NPP_SUBSCRIPTION_RENEWED`
+
+*   **Descrição:** Ocorre quando uma assinatura existente do NPP é renovada com sucesso.
+*   **Payload Essencial:** Similar ao `NPP_SUBSCRIPTION_ACTIVATED`, com a adição de um `renewalCount` ou `renewalPeriod`.
+
+### 2.3. `NPP_SUBSCRIPTION_UPGRADED`
+
+*   **Descrição:** Ocorre quando um afiliado do NA faz upgrade de seu plano de assinatura do NPP para um tier superior.
+*   **Payload Essencial:** Inclui `userId`, `subscriptionId`, `oldNppPlanTier`, `newNppPlanTier`, `upgradeValue` (diferença de valor), `correlationId`, `causationId`.
+
+## 3. Cálculo de XP por Assinatura do NPP
+
+O XP concedido deve ser proporcional ao valor e ao tier da assinatura do NPP. Sugere-se uma tabela de conversão:
+
+| Tier do NPP (Plano) | XP Base por Ativação/Renovação (Mensal) | Fator de Multiplicação (Anual) |
+| :------------------ | :-------------------------------------- | :----------------------------- |
+| Silver              | 100 XP                                  | 1.2x                           |
+| Gold                | 300 XP                                  | 1.2x                           |
+| Platinum            | 800 XP                                  | 1.2x                           |
+| Diamond             | 2000 XP                                 | 1.2x                           |
+
+*   **Cálculo Mensal:** `XP = XP Base por Ativação/Renovação (Mensal)`
+*   **Cálculo Anual:** `XP = XP Base por Ativação/Renovação (Mensal) * 12 * Fator de Multiplicação (Anual)`
+*   **Upgrades:** O XP para upgrades pode ser a diferença de XP entre os tiers, ou um valor fixo de bônus por upgrade.
+
+## 4. Impacto no Sistema MMN do Nexus Affil'IA'te
+
+O XP gerado pelas assinaturas do NPP impactará o NA da seguinte forma:
+
+### 4.1. XP Pessoal do Afiliado
+
+*   O `userId` que adquire ou renova a assinatura do NPP recebe o XP diretamente, contribuindo para seu `totalXp`, `level` e `rank` no NA.
+
+### 4.2. XP da Rede (Upline)
+
+*   Se a assinatura do NPP foi referenciada por outro afiliado (`affiliateReferrerId`), uma porcentagem do XP gerado pode ser distribuída para o `affiliateReferrerId` e/ou para a upline binária, conforme as regras de MMN do NA.
+*   **Sugestão:** 10-20% do XP gerado pode ser distribuído para o afiliado direto e uma porção menor para os níveis superiores da rede.
+
+### 4.3. Volume de Negócios
+
+*   O valor da assinatura do NPP (`nppSubscriptionValue`) pode ser considerado como 
+volume de negócios para o afiliado que adquiriu a assinatura e para sua rede, impactando métricas como `totalVolume` e `commissionBalance` no NA, o que, por sua vez, pode desencadear promoções de tier dentro do próprio NA.
+
+## 5. Próximos Passos
+
+1.  **Definição de Regras de Distribuição de XP:** Detalhar as regras exatas de distribuição de XP para a upline e os níveis binários no NA.
+2.  **Implementação de Event Publishers:** O Nexus Affil'IA'te precisará implementar publishers de eventos para `NPP_SUBSCRIPTION_ACTIVATED`, `NPP_SUBSCRIPTION_RENEWED` e `NPP_SUBSCRIPTION_UPGRADED`.
+3.  **Implementação de Subscribers de XP:** O sistema de XP do NA precisará de subscribers para esses eventos, que calcularão e concederão o XP apropriado.
+4.  **Monitoramento:** Estabelecer monitoramento para garantir que o XP esteja sendo concedido corretamente e que a integração esteja funcionando conforme o esperado.
