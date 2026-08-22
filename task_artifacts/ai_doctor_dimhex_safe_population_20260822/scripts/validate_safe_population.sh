@@ -44,7 +44,7 @@ unexpected="$(git -C "$ROOT" status --porcelain | awk 'substr($0,1,3)=="?? " {p=
 [ -z "$unexpected" ] || fail "há alterações fora das áreas isoladas: $unexpected"
 pass "nenhuma alteração fora das áreas isoladas"
 
-find "$BUNDLE" -type f -not -name '*.zip' -print0 | sort -z | xargs -0 sha256sum > "$BUNDLE/audit/content.sha256"
+find "$BUNDLE" -type f -not -name '*.zip' -not -path "$BUNDLE/audit/content.sha256" -not -path "$BUNDLE/audit/zip.sha256" -print0 | sort -z | xargs -0 sha256sum > "$BUNDLE/audit/content.sha256"
 pass "hashes de conteúdo gerados"
 printf 'bundle_files=%s\n' "$(find "$BUNDLE" -type f -not -name '*.zip' | wc -l)"
 printf 'tracked_files_now=%s\n' "$(git -C "$ROOT" ls-files | wc -l)"
