@@ -1,0 +1,31 @@
+{
+  "package": "manus-task-20260822-orseca-cover-proofs-safe-20260822-2145",
+  "created_at_utc": "2026-08-22T21:46:53.062645+00:00",
+  "source_branch": "origin/main",
+  "target_branch": "chore/orseca-cover-proofs-safe-20260822-2145",
+  "non_destructive": true,
+  "generated_covers": 16,
+  "reference_images": 3,
+  "total_assets": 19,
+  "files": [
+    "deliverables/generated_covers/Livro_das_Raizes_Nova_Arvore.png",
+    "deliverables/generated_covers/Livro_das_Raizes_Nova_Variacao_1.png",
+    "deliverables/generated_covers/Livro_das_Raizes_Nova_Variacao_2.png",
+    "deliverables/generated_covers/Livro_das_Raizes_Variacao_1.png",
+    "deliverables/generated_covers/Livro_das_Raizes_Variacao_2.png",
+    "deliverables/generated_covers/Livro_das_Raizes_Variacao_Raizes_1.png",
+    "deliverables/generated_covers/Livro_das_Raizes_Variacao_Raizes_2.png",
+    "deliverables/generated_covers/Livro_das_Raizes_Variacao_Raizes_3.png",
+    "deliverables/generated_covers/Livro_das_Raizes_Variacao_Raizes_4.png",
+    "deliverables/generated_covers/Livro_das_Sementes_Nova_Arvore.png",
+    "deliverables/generated_covers/Livro_das_Sementes_Nova_Variacao_1.png",
+    "deliverables/generated_covers/Livro_das_Sementes_Nova_Variacao_2.png",
+    "deliverables/generated_covers/Livro_das_Sementes_Variacao_1.png",
+    "deliverables/generated_covers/Livro_das_Sementes_Variacao_1_corrigida.png",
+    "deliverables/generated_covers/Livro_das_Sementes_Variacao_2.png",
+    "deliverables/generated_covers/Livro_das_Sementes_Variacao_2_corrigida.png",
+    "sources/reference_images/ChatGPTImage3dejul.de202512_01_06.png",
+    "sources/reference_images/ChatGPTImage7dejul.de202512_38_07.png",
+    "sources/reference_images/Livro_da_Vanguarda_Capa_Penas_Envergadas.png"
+  ]
+}

@@ -1,0 +1,4 @@
+ORSECA safe population validation
+assets_expected=19
+assets_found=19
+status=PASS
