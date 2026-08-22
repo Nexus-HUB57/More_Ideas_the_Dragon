@@ -1,0 +1,21 @@
+{
+  "task": "campanha_lucas_da_farmacia",
+  "candidate": "Lucas Thomaz",
+  "campaign_name": "Lucas da Farmácia",
+  "institution": "SUMPREV",
+  "position": "Conselho Administrativo",
+  "candidate_number": 11,
+  "election": {
+    "date": "24 de Novembro",
+    "mode": "Online"
+  },
+  "palette": ["azul", "verde", "branco"],
+  "asset_count_at_inventory": 22,
+  "folder_versions": ["v1", "v2", "v3", "v4"],
+  "preservation_policy": "Adicionar somente em diretório novo; não substituir, excluir, rebasear ou forçar alterações em trabalho existente.",
+  "source_urls": [
+    "https://sumare.atende.net/",
+    "https://www.facebook.com/SINDICATOSERVIDORESSUMARE/",
+    "https://www.sumprev.com.br/"
+  ]
+}
