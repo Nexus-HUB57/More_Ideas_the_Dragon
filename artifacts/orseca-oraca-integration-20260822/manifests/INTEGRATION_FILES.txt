@@ -1,0 +1,8 @@
+README.md
+docs/01_Livro_das_Sementes_Especificacao.md
+docs/02_ORACA_Arquitetura_Organismo.md
+docs/03_SAFE_RECOVERY_E_RASTREABILIDADE.md
+manifests/INTEGRATION_FILES.txt
+manifests/SHA256SUMS.txt
+scripts/validate_orseca_integration.sh
+source-index/EXISTING_ORSECA_ARTIFACTS.tsv
