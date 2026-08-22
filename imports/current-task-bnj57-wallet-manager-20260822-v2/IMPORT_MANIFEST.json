@@ -1,0 +1,178 @@
+{
+  "generated_at": "2026-08-22T19:05:18.927508+00:00",
+  "source_root": "/home/ubuntu/Master-MNS-BCK7",
+  "policy": "namespace-only; no overwrite/delete; secrets excluded",
+  "source_file_count_reviewed": 22,
+  "imported_count": 14,
+  "quarantined_count": 8,
+  "files": [
+    {
+      "source": ".github/workflows/mainnet_broadcast.yml",
+      "size": 986,
+      "sha256": "e1dd2743a030d62a727e30c790b1f8959beb1a9529c9d30f016f8a9c73edfd0e",
+      "status": "imported",
+      "destination": "imports/current-task-bnj57-wallet-manager-20260822-v2/source-reviewed/.github/workflows/mainnet_broadcast.yml",
+      "imported_sha256": "e1dd2743a030d62a727e30c790b1f8959beb1a9529c9d30f016f8a9c73edfd0e"
+    },
+    {
+      "source": "ALL_IDENTIFIED_WIFS.md",
+      "size": 1661,
+      "sha256": "466b8c15a870e02394a5513d6f29e8e93cb3901f055898ee136a49009cb6054f",
+      "status": "quarantined",
+      "reason": "material de chave privada"
+    },
+    {
+      "source": "CONSOLIDATED_PRIVATE_KEYS.md",
+      "size": 1310,
+      "sha256": "8a24feb0fee86d5b89c590fe22113847d3f8fc8979f2eb75ca31056bfedde2f6",
+      "status": "quarantined",
+      "reason": "material de chave privada"
+    },
+    {
+      "source": "MAINNET_TRANSITION_FINAL_REPORT.md",
+      "size": 4171,
+      "sha256": "22a9fbc9d5b01f4b7a1d0ab479769599a74b44d9072c850b8fd1013dc95a36a0",
+      "status": "imported",
+      "destination": "imports/current-task-bnj57-wallet-manager-20260822-v2/source-reviewed/MAINNET_TRANSITION_FINAL_REPORT.md",
+      "imported_sha256": "22a9fbc9d5b01f4b7a1d0ab479769599a74b44d9072c850b8fd1013dc95a36a0"
+    },
+    {
+      "source": "PESBM_Orchestrator.py",
+      "size": 3885,
+      "sha256": "aa9ffb5e88f59a3f4f75a4bf61aa952587ee51a04681d6ff484676638f41815b",
+      "status": "imported",
+      "destination": "imports/current-task-bnj57-wallet-manager-20260822-v2/source-reviewed/PESBM_Orchestrator.py",
+      "imported_sha256": "aa9ffb5e88f59a3f4f75a4bf61aa952587ee51a04681d6ff484676638f41815b"
+    },
+    {
+      "source": "README.md",
+      "size": 4846,
+      "sha256": "2ca3ac7c095c8d1adf49fbe5285d851893cc324f414a4267737cd832cf4f591c",
+      "status": "quarantined",
+      "reason": "não importar: README canônico do destino já existe"
+    },
+    {
+      "source": "SECRETS_GUIDE.md",
+      "size": 1123,
+      "sha256": "2a292ba6b452fe5a7631ffdcb73bae46eb21b9d0ac78eab61f27b64a57f16348",
+      "status": "quarantined",
+      "reason": "credenciais/instruções sensíveis"
+    },
+    {
+      "source": "all_wifs.json",
+      "size": 583,
+      "sha256": "cf92db0ce1cb5b0bc5c8d5a9ef3b1286510fc5d2fef5c4fe8121d9cd501a2663",
+      "status": "quarantined",
+      "reason": "chaves privadas"
+    },
+    {
+      "source": "ci_mainnet_broadcast.py",
+      "size": 3751,
+      "sha256": "21a5f4945d5e0e54dfaf3cf45627be7b2515c6ea594f1077b041d087a3ce1a14",
+      "status": "quarantined",
+      "reason": "padrão de segredo/chave privada detectado no conteúdo"
+    },
+    {
+      "source": "mainnet_production_final.py",
+      "size": 1945,
+      "sha256": "2072ebe1327f61eb501fd7b1ec7ba56cf9b2e0e05570a43e45f63d48db4bf15e",
+      "status": "imported",
+      "destination": "imports/current-task-bnj57-wallet-manager-20260822-v2/source-reviewed/mainnet_production_final.py",
+      "imported_sha256": "2072ebe1327f61eb501fd7b1ec7ba56cf9b2e0e05570a43e45f63d48db4bf15e"
+    },
+    {
+      "source": "minerva-web/MAINNET_VALIDATION_REPORT.md",
+      "size": 2225,
+      "sha256": "7c5b86c3fa042aacce3b336c41ea86c91df49332f26513625be798be7ee41587",
+      "status": "imported",
+      "destination": "imports/current-task-bnj57-wallet-manager-20260822-v2/source-reviewed/minerva-web/MAINNET_VALIDATION_REPORT.md",
+      "imported_sha256": "7c5b86c3fa042aacce3b336c41ea86c91df49332f26513625be798be7ee41587"
+    },
+    {
+      "source": "minerva-web/components.json",
+      "size": 388,
+      "sha256": "8be0e54515838be398164884e96319b52bcfcbd52b2e63171d51df4131cfcb03",
+      "status": "imported",
+      "destination": "imports/current-task-bnj57-wallet-manager-20260822-v2/source-reviewed/minerva-web/components.json",
+      "imported_sha256": "8be0e54515838be398164884e96319b52bcfcbd52b2e63171d51df4131cfcb03"
+    },
+    {
+      "source": "minerva-web/package.json",
+      "size": 3884,
+      "sha256": "ef7de64732c4dad6b2489d9d7f714eac8c813f47b121d19695fa77d1760369ca",
+      "status": "imported",
+      "destination": "imports/current-task-bnj57-wallet-manager-20260822-v2/source-reviewed/minerva-web/package.json",
+      "imported_sha256": "ef7de64732c4dad6b2489d9d7f714eac8c813f47b121d19695fa77d1760369ca"
+    },
+    {
+      "source": "minerva-web/server/db.ts",
+      "size": 2511,
+      "sha256": "16cff90aae436a580326ab9ad143cd9979dc627a4570d2eb225124739ab983a1",
+      "status": "imported",
+      "destination": "imports/current-task-bnj57-wallet-manager-20260822-v2/source-reviewed/minerva-web/server/db.ts",
+      "imported_sha256": "16cff90aae436a580326ab9ad143cd9979dc627a4570d2eb225124739ab983a1"
+    },
+    {
+      "source": "minerva-web/server/mainnetGuardrails.ts",
+      "size": 2745,
+      "sha256": "5575dde289343c90994d0f39610a6df65ea48cfd825a1b37ff3d79b50c6ecd79",
+      "status": "imported",
+      "destination": "imports/current-task-bnj57-wallet-manager-20260822-v2/source-reviewed/minerva-web/server/mainnetGuardrails.ts",
+      "imported_sha256": "5575dde289343c90994d0f39610a6df65ea48cfd825a1b37ff3d79b50c6ecd79"
+    },
+    {
+      "source": "minerva-web/server/routers.ts",
+      "size": 2905,
+      "sha256": "34801dca9439879b8fbfc8ad824ff595dfcf537eb2ca46cba934263cf93191c5",
+      "status": "imported",
+      "destination": "imports/current-task-bnj57-wallet-manager-20260822-v2/source-reviewed/minerva-web/server/routers.ts",
+      "imported_sha256": "34801dca9439879b8fbfc8ad824ff595dfcf537eb2ca46cba934263cf93191c5"
+    },
+    {
+      "source": "minerva-web/todo.md",
+      "size": 1665,
+      "sha256": "e2ebc56d14cb79b250435b39d42685d063360292877d00e9fad0f4c3cc7edbf2",
+      "status": "imported",
+      "destination": "imports/current-task-bnj57-wallet-manager-20260822-v2/source-reviewed/minerva-web/todo.md",
+      "imported_sha256": "e2ebc56d14cb79b250435b39d42685d063360292877d00e9fad0f4c3cc7edbf2"
+    },
+    {
+      "source": "minerva-web/validation-notes.md",
+      "size": 1230,
+      "sha256": "bb86904c28e2794a1cb776d4f9cf52410281210fc160f0e5d05d3b33964572a9",
+      "status": "imported",
+      "destination": "imports/current-task-bnj57-wallet-manager-20260822-v2/source-reviewed/minerva-web/validation-notes.md",
+      "imported_sha256": "bb86904c28e2794a1cb776d4f9cf52410281210fc160f0e5d05d3b33964572a9"
+    },
+    {
+      "source": "pesbm_production_final.py",
+      "size": 2527,
+      "sha256": "3fbe3fd5fd1ba22ab0e72c77307553432da01e85415d5813df9ef4d8c73b2e3b",
+      "status": "quarantined",
+      "reason": "padrão de segredo/chave privada detectado no conteúdo"
+    },
+    {
+      "source": "reports/daily_report_20260812.json",
+      "size": 702,
+      "sha256": "4f990f942b78acd509c46f2091ae3d0c16e24ebea1bbbf65e37d690a2785da10",
+      "status": "imported",
+      "destination": "imports/current-task-bnj57-wallet-manager-20260822-v2/source-reviewed/reports/daily_report_20260812.json",
+      "imported_sha256": "4f990f942b78acd509c46f2091ae3d0c16e24ebea1bbbf65e37d690a2785da10"
+    },
+    {
+      "source": "setup_github_secrets.sh",
+      "size": 740,
+      "sha256": "5bd02dec37c214d8e5fac9b628adbae1b22644a14ce58ad32632f7f79f6880c2",
+      "status": "quarantined",
+      "reason": "segredo WIF em texto claro"
+    },
+    {
+      "source": "surgical_audit_report.json",
+      "size": 300,
+      "sha256": "d8a1c74701190b3308b310d2f6c5aa4ecfd7a16367c8010cb74827d7b3cf1a1f",
+      "status": "imported",
+      "destination": "imports/current-task-bnj57-wallet-manager-20260822-v2/source-reviewed/surgical_audit_report.json",
+      "imported_sha256": "d8a1c74701190b3308b310d2f6c5aa4ecfd7a16367c8010cb74827d7b3cf1a1f"
+    }
+  ]
+}
