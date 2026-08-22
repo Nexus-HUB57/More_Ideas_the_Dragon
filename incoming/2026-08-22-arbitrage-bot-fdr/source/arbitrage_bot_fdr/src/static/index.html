@@ -1,0 +1,1055 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bot de Arbitragem Bitcoin - FDR</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        .tab-content { display: none; animation: fadeIn 0.3s ease; }
+        .tab-content.active { display: block; }
+        .tab-button.active {
+            border-bottom: 2px solid #3B82F6;
+            color: white;
+            background: linear-gradient(to bottom, rgba(59, 130, 246, 0.1), transparent);
+        }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+        @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+        .animate-spin { animation: spin 1.5s linear infinite; }
+        .status-indicator {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            display: inline-block;
+            margin-right: 8px;
+        }
+        .status-online { background-color: #10b981; }
+        .status-offline { background-color: #ef4444; }
+        .status-warning { background-color: #f59e0b; }
+    </style>
+</head>
+<body class="bg-gray-900 text-white min-h-screen">
+    <div class="container mx-auto px-4 py-8 max-w-7xl">
+        <!-- Cabeçalho -->
+        <header class="text-center mb-10">
+            <div class="inline-flex items-center justify-center bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-3 rounded-full mb-4">
+                <i class="fas fa-robot mr-3"></i>
+                <span class="text-sm font-semibold">BOT DE ARBITRAGEM BITCOIN</span>
+            </div>
+            <h1 class="text-4xl md:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400 mb-3">
+                FDR - Fundo Descentralizado de Reserva
+            </h1>
+            <p class="text-gray-400 max-w-2xl mx-auto">
+                Sistema automatizado de arbitragem Bitcoin com gerenciamento seguro de fundos
+            </p>
+        </header>
+
+        <!-- Status do Bot -->
+        <div class="bg-gray-800 rounded-xl p-6 shadow-lg mb-6">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center">
+                    <span id="botStatusIndicator" class="status-indicator status-offline"></span>
+                    <h2 class="text-xl font-bold">Status do Bot</h2>
+                </div>
+                <div class="flex space-x-3">
+                    <button id="startBotBtn" class="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded flex items-center">
+                        <i class="fas fa-play mr-2"></i> Iniciar
+                    </button>
+                    <button id="stopBotBtn" class="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded flex items-center">
+                        <i class="fas fa-stop mr-2"></i> Parar
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Barra de Navegação -->
+        <nav class="flex overflow-x-auto mb-10 bg-gray-800 rounded-lg p-1">
+            <button class="tab-button active px-6 py-3 font-medium whitespace-nowrap flex items-center" data-tab="dashboard">
+                <i class="fas fa-chart-pie mr-2"></i> Dashboard
+            </button>
+            <button class="tab-button px-6 py-3 font-medium text-gray-400 whitespace-nowrap flex items-center" data-tab="fdr">
+                <i class="fas fa-vault mr-2"></i> FDR
+            </button>
+            <button class="tab-button px-6 py-3 font-medium text-gray-400 whitespace-nowrap flex items-center" data-tab="arbitrage">
+                <i class="fas fa-exchange-alt mr-2"></i> Arbitragem
+            </button>
+            <button class="tab-button px-6 py-3 font-medium text-gray-400 whitespace-nowrap flex items-center" data-tab="executions">
+                <i class="fas fa-cogs mr-2"></i> Execuções
+            </button>
+            <button class="tab-button px-6 py-3 font-medium text-gray-400 whitespace-nowrap flex items-center" data-tab="settings">
+                <i class="fas fa-sliders-h mr-2"></i> Configurações
+            </button>
+        </nav>
+
+        <!-- Conteúdo Principal -->
+        <main>
+            <!-- Aba Dashboard -->
+            <section id="dashboard" class="tab-content active">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-6">
+                    <!-- Card Total FDR -->
+                    <div class="bg-gray-800 rounded-xl p-6 shadow-lg">
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <p class="text-gray-400 text-sm">Total FDR</p>
+                                <p class="text-2xl font-bold text-yellow-300" id="totalFdrBalance">0.00000000 BTC</p>
+                            </div>
+                            <i class="fas fa-bitcoin text-3xl text-yellow-400"></i>
+                        </div>
+                    </div>
+
+                    <!-- Card Lucro Total -->
+                    <div class="bg-gray-800 rounded-xl p-6 shadow-lg">
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <p class="text-gray-400 text-sm">Lucro Total</p>
+                                <p class="text-2xl font-bold text-green-300" id="totalProfit">$0.00</p>
+                            </div>
+                            <i class="fas fa-chart-line text-3xl text-green-400"></i>
+                        </div>
+                    </div>
+
+                    <!-- Card Oportunidades -->
+                    <div class="bg-gray-800 rounded-xl p-6 shadow-lg">
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <p class="text-gray-400 text-sm">Oportunidades (24h)</p>
+                                <p class="text-2xl font-bold text-blue-300" id="opportunitiesCount">0</p>
+                            </div>
+                            <i class="fas fa-search-dollar text-3xl text-blue-400"></i>
+                        </div>
+                    </div>
+
+                    <!-- Card Taxa de Sucesso -->
+                    <div class="bg-gray-800 rounded-xl p-6 shadow-lg">
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <p class="text-gray-400 text-sm">Taxa de Sucesso</p>
+                                <p class="text-2xl font-bold text-purple-300" id="successRate">0%</p>
+                            </div>
+                            <i class="fas fa-percentage text-3xl text-purple-400"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Gráficos e Atividade Recente -->
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                    <!-- Oportunidades Recentes -->
+                    <div class="bg-gray-800 rounded-xl p-6 shadow-lg">
+                        <h3 class="text-xl font-bold mb-4 flex items-center">
+                            <i class="fas fa-clock mr-2 text-blue-400"></i>
+                            Oportunidades Recentes
+                        </h3>
+                        <div id="recentOpportunities" class="space-y-3">
+                            <div class="text-center text-gray-500 py-4">
+                                <i class="fas fa-search text-2xl mb-2"></i>
+                                <p>Carregando oportunidades...</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Execuções Recentes -->
+                    <div class="bg-gray-800 rounded-xl p-6 shadow-lg">
+                        <h3 class="text-xl font-bold mb-4 flex items-center">
+                            <i class="fas fa-history mr-2 text-green-400"></i>
+                            Execuções Recentes
+                        </h3>
+                        <div id="recentExecutions" class="space-y-3">
+                            <div class="text-center text-gray-500 py-4">
+                                <i class="fas fa-cogs text-2xl mb-2"></i>
+                                <p>Carregando execuções...</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Aba FDR -->
+            <section id="fdr" class="tab-content">
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                    <!-- Status do FDR -->
+                    <div class="lg:col-span-2 bg-gray-800 rounded-xl p-6 shadow-lg">
+                        <h2 class="text-2xl font-bold mb-6 flex items-center">
+                            <i class="fas fa-vault mr-3 text-blue-400"></i>
+                            Status do FDR
+                        </h2>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+                            <div class="bg-gray-700/50 rounded-lg p-4">
+                                <p class="text-gray-400">Cold Storage</p>
+                                <p class="text-2xl font-bold text-blue-300" id="coldStorageBalance">0.00000000 BTC</p>
+                                <p class="text-sm text-gray-400" id="coldStoragePercentage">0%</p>
+                            </div>
+                            <div class="bg-gray-700/50 rounded-lg p-4">
+                                <p class="text-gray-400">Hot Wallets</p>
+                                <p class="text-2xl font-bold text-orange-300" id="hotWalletBalance">0.00000000 BTC</p>
+                                <p class="text-sm text-gray-400" id="hotWalletPercentage">0%</p>
+                            </div>
+                            <div class="bg-gray-700/50 rounded-lg p-4">
+                                <p class="text-gray-400">MultiSig</p>
+                                <p class="text-2xl font-bold text-purple-300" id="multisigBalance">0.00000000 BTC</p>
+                                <p class="text-sm text-gray-400" id="multisigPercentage">0%</p>
+                            </div>
+                        </div>
+
+                        <!-- Lista de Carteiras -->
+                        <div class="bg-gray-700/30 rounded-lg p-4">
+                            <div class="flex justify-between items-center mb-4">
+                                <h3 class="text-lg font-bold">Carteiras do FDR</h3>
+                                <button id="updateBalancesBtn" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded flex items-center">
+                                    <i class="fas fa-sync-alt mr-2"></i> Atualizar Saldos
+                                </button>
+                            </div>
+                            <div id="fdrWalletsList" class="space-y-2">
+                                <div class="text-center text-gray-500 py-4">
+                                    <i class="fas fa-wallet text-2xl mb-2"></i>
+                                    <p>Carregando carteiras...</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Adicionar Carteira -->
+                    <div class="bg-gray-800 rounded-xl p-6 shadow-lg">
+                        <h3 class="text-xl font-bold mb-4 flex items-center">
+                            <i class="fas fa-plus mr-2 text-green-400"></i>
+                            Adicionar Carteira
+                        </h3>
+                        
+                        <div class="space-y-4">
+                            <div>
+                                <label class="block text-gray-400 mb-2">Endereço Bitcoin</label>
+                                <input type="text" id="newWalletAddress" class="w-full bg-gray-700 border border-gray-600 rounded-lg p-3 font-mono" 
+                                       placeholder="1A1zP1eP5QGefi2DMPTfTL5SLmv7DivfNa">
+                            </div>
+                            
+                            <div>
+                                <label class="block text-gray-400 mb-2">Tipo de Carteira</label>
+                                <select id="newWalletType" class="w-full bg-gray-700 border border-gray-600 rounded-lg p-3">
+                                    <option value="cold">Cold Storage</option>
+                                    <option value="hot">Hot Wallet</option>
+                                    <option value="multisig">MultiSig</option>
+                                </select>
+                            </div>
+                            
+                            <button id="addWalletBtn" class="w-full bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-4 rounded-lg flex items-center justify-center">
+                                <i class="fas fa-plus mr-2"></i>
+                                Adicionar Carteira
+                            </button>
+                        </div>
+
+                        <!-- Histórico de Transações -->
+                        <div class="mt-6 pt-6 border-t border-gray-700">
+                            <h4 class="text-lg font-bold mb-3">Transações Recentes</h4>
+                            <div id="fdrTransactionsList" class="space-y-2 max-h-64 overflow-y-auto">
+                                <div class="text-center text-gray-500 py-4">
+                                    <i class="fas fa-exchange-alt text-xl mb-2"></i>
+                                    <p class="text-sm">Carregando transações...</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Aba Arbitragem -->
+            <section id="arbitrage" class="tab-content">
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                    <!-- Análise Manual -->
+                    <div class="bg-gray-800 rounded-xl p-6 shadow-lg">
+                        <h2 class="text-2xl font-bold mb-6 flex items-center">
+                            <i class="fas fa-search mr-3 text-blue-400"></i>
+                            Análise Manual
+                        </h2>
+                        
+                        <button id="runAnalysisBtn" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-4 rounded-lg flex items-center justify-center mb-4">
+                            <i class="fas fa-play mr-2"></i>
+                            Executar Análise
+                        </button>
+
+                        <div id="analysisResult" class="hidden bg-gray-700/50 rounded-lg p-4">
+                            <h4 class="font-bold mb-2">Resultado da Análise</h4>
+                            <div id="analysisDetails"></div>
+                        </div>
+
+                        <!-- Execução Automática -->
+                        <div class="mt-6 pt-6 border-t border-gray-700">
+                            <h4 class="text-lg font-bold mb-3">Execução Automática</h4>
+                            <div class="space-y-3">
+                                <div>
+                                    <label class="block text-gray-400 mb-2">Quantidade Máxima (BTC)</label>
+                                    <input type="number" id="maxAmountBtc" class="w-full bg-gray-700 border border-gray-600 rounded-lg p-3" 
+                                           value="0.1" step="0.01" min="0.01" max="1.0">
+                                </div>
+                                
+                                <button id="autoExecuteBtn" class="w-full bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-4 rounded-lg flex items-center justify-center">
+                                    <i class="fas fa-magic mr-2"></i>
+                                    Executar Melhor Oportunidade
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Lista de Oportunidades -->
+                    <div class="lg:col-span-2 bg-gray-800 rounded-xl p-6 shadow-lg">
+                        <div class="flex justify-between items-center mb-6">
+                            <h2 class="text-2xl font-bold flex items-center">
+                                <i class="fas fa-list mr-3 text-green-400"></i>
+                                Oportunidades Detectadas
+                            </h2>
+                            <div class="flex space-x-3">
+                                <select id="opportunityFilter" class="bg-gray-700 border border-gray-600 rounded-lg p-2">
+                                    <option value="24">Últimas 24h</option>
+                                    <option value="12">Últimas 12h</option>
+                                    <option value="6">Últimas 6h</option>
+                                    <option value="1">Última hora</option>
+                                </select>
+                                <button id="refreshOpportunitiesBtn" class="bg-gray-700 hover:bg-gray-600 text-white px-4 py-2 rounded flex items-center">
+                                    <i class="fas fa-sync-alt mr-2"></i> Atualizar
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="overflow-x-auto">
+                            <table class="w-full">
+                                <thead>
+                                    <tr class="text-gray-400 border-b border-gray-700">
+                                        <th class="pb-3 text-left">Comprar</th>
+                                        <th class="pb-3 text-left">Vender</th>
+                                        <th class="pb-3 text-right">Lucro %</th>
+                                        <th class="pb-3 text-right">Lucro USD</th>
+                                        <th class="pb-3 text-right">Volume</th>
+                                        <th class="pb-3 text-right">Ações</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="opportunitiesTable">
+                                    <tr>
+                                        <td colspan="6" class="py-4 text-center text-gray-500">Carregando oportunidades...</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Aba Execuções -->
+            <section id="executions" class="tab-content">
+                <div class="bg-gray-800 rounded-xl p-6 shadow-lg">
+                    <div class="flex justify-between items-center mb-6">
+                        <h2 class="text-2xl font-bold flex items-center">
+                            <i class="fas fa-cogs mr-3 text-purple-400"></i>
+                            Histórico de Execuções
+                        </h2>
+                        <button id="refreshExecutionsBtn" class="bg-gray-700 hover:bg-gray-600 text-white px-4 py-2 rounded flex items-center">
+                            <i class="fas fa-sync-alt mr-2"></i> Atualizar
+                        </button>
+                    </div>
+                    
+                    <div class="overflow-x-auto">
+                        <table class="w-full">
+                            <thead>
+                                <tr class="text-gray-400 border-b border-gray-700">
+                                    <th class="pb-3 text-left">ID</th>
+                                    <th class="pb-3 text-left">Exchanges</th>
+                                    <th class="pb-3 text-right">Quantidade</th>
+                                    <th class="pb-3 text-right">Lucro Esperado</th>
+                                    <th class="pb-3 text-right">Lucro Real</th>
+                                    <th class="pb-3 text-left">Status</th>
+                                    <th class="pb-3 text-left">Data</th>
+                                </tr>
+                            </thead>
+                            <tbody id="executionsTable">
+                                <tr>
+                                    <td colspan="7" class="py-4 text-center text-gray-500">Carregando execuções...</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Aba Configurações -->
+            <section id="settings" class="tab-content">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                    <!-- Configurações do Bot -->
+                    <div class="bg-gray-800 rounded-xl p-6 shadow-lg">
+                        <h2 class="text-2xl font-bold mb-6 flex items-center">
+                            <i class="fas fa-robot mr-3 text-blue-400"></i>
+                            Configurações do Bot
+                        </h2>
+                        
+                        <div class="space-y-4">
+                            <div>
+                                <label class="block text-gray-400 mb-2">Intervalo de Análise (minutos)</label>
+                                <input type="number" id="analysisInterval" class="w-full bg-gray-700 border border-gray-600 rounded-lg p-3" 
+                                       value="5" min="1" max="60">
+                            </div>
+                            
+                            <div class="flex items-center">
+                                <input type="checkbox" id="autoExecuteEnabled" class="mr-3">
+                                <label for="autoExecuteEnabled" class="text-gray-300">Execução Automática</label>
+                            </div>
+                            
+                            <div>
+                                <label class="block text-gray-400 mb-2">Lucro Mínimo (%)</label>
+                                <input type="number" id="minProfitPercentage" class="w-full bg-gray-700 border border-gray-600 rounded-lg p-3" 
+                                       value="0.5" step="0.1" min="0.1" max="5.0">
+                            </div>
+                            
+                            <div>
+                                <label class="block text-gray-400 mb-2">Volume Máximo por Operação (BTC)</label>
+                                <input type="number" id="maxVolumePerTrade" class="w-full bg-gray-700 border border-gray-600 rounded-lg p-3" 
+                                       value="1.0" step="0.1" min="0.1" max="10.0">
+                            </div>
+                            
+                            <button id="saveSettingsBtn" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-4 rounded-lg flex items-center justify-center">
+                                <i class="fas fa-save mr-2"></i>
+                                Salvar Configurações
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Estatísticas e Logs -->
+                    <div class="bg-gray-800 rounded-xl p-6 shadow-lg">
+                        <h2 class="text-2xl font-bold mb-6 flex items-center">
+                            <i class="fas fa-chart-bar mr-3 text-green-400"></i>
+                            Estatísticas
+                        </h2>
+                        
+                        <div id="performanceStats" class="space-y-4">
+                            <div class="bg-gray-700/50 rounded-lg p-4">
+                                <div class="flex justify-between">
+                                    <span class="text-gray-400">Total de Execuções</span>
+                                    <span id="statTotalExecutions" class="font-bold">0</span>
+                                </div>
+                            </div>
+                            
+                            <div class="bg-gray-700/50 rounded-lg p-4">
+                                <div class="flex justify-between">
+                                    <span class="text-gray-400">Execuções Bem-sucedidas</span>
+                                    <span id="statSuccessfulExecutions" class="font-bold text-green-300">0</span>
+                                </div>
+                            </div>
+                            
+                            <div class="bg-gray-700/50 rounded-lg p-4">
+                                <div class="flex justify-between">
+                                    <span class="text-gray-400">Taxa de Sucesso</span>
+                                    <span id="statSuccessRate" class="font-bold text-blue-300">0%</span>
+                                </div>
+                            </div>
+                            
+                            <div class="bg-gray-700/50 rounded-lg p-4">
+                                <div class="flex justify-between">
+                                    <span class="text-gray-400">Lucro Total</span>
+                                    <span id="statTotalProfit" class="font-bold text-yellow-300">$0.00</span>
+                                </div>
+                            </div>
+                            
+                            <div class="bg-gray-700/50 rounded-lg p-4">
+                                <div class="flex justify-between">
+                                    <span class="text-gray-400">Lucro Médio</span>
+                                    <span id="statAverageProfit" class="font-bold text-purple-300">$0.00</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script>
+        // Variáveis globais
+        let dashboardData = {};
+        let refreshInterval;
+
+        // Inicialização
+        document.addEventListener('DOMContentLoaded', function() {
+            setupTabs();
+            setupEventListeners();
+            loadDashboard();
+            startAutoRefresh();
+        });
+
+        // Sistema de abas
+        function setupTabs() {
+            document.querySelectorAll('.tab-button').forEach(tab => {
+                tab.addEventListener('click', function() {
+                    document.querySelectorAll('.tab-button').forEach(t => {
+                        t.classList.remove('active', 'text-white');
+                        t.classList.add('text-gray-400');
+                    });
+                    this.classList.add('active', 'text-white');
+                    this.classList.remove('text-gray-400');
+                    
+                    document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+                    const tabId = this.getAttribute('data-tab');
+                    document.getElementById(tabId).classList.add('active');
+                    
+                    // Carregar dados específicos da aba
+                    loadTabData(tabId);
+                });
+            });
+        }
+
+        // Event listeners
+        function setupEventListeners() {
+            // Bot controls
+            document.getElementById('startBotBtn').addEventListener('click', startBot);
+            document.getElementById('stopBotBtn').addEventListener('click', stopBot);
+            
+            // FDR
+            document.getElementById('addWalletBtn').addEventListener('click', addWallet);
+            document.getElementById('updateBalancesBtn').addEventListener('click', updateBalances);
+            
+            // Arbitragem
+            document.getElementById('runAnalysisBtn').addEventListener('click', runAnalysis);
+            document.getElementById('autoExecuteBtn').addEventListener('click', autoExecute);
+            document.getElementById('refreshOpportunitiesBtn').addEventListener('click', loadOpportunities);
+            
+            // Execuções
+            document.getElementById('refreshExecutionsBtn').addEventListener('click', loadExecutions);
+            
+            // Configurações
+            document.getElementById('saveSettingsBtn').addEventListener('click', saveSettings);
+        }
+
+        // Carregar dados do dashboard
+        async function loadDashboard() {
+            try {
+                const response = await fetch('/api/dashboard');
+                const data = await response.json();
+                
+                if (data.success) {
+                    dashboardData = data;
+                    updateDashboardUI(data);
+                }
+            } catch (error) {
+                console.error('Erro ao carregar dashboard:', error);
+            }
+        }
+
+        // Atualizar interface do dashboard
+        function updateDashboardUI(data) {
+            // Status do FDR
+            if (data.fdr_status) {
+                document.getElementById('totalFdrBalance').textContent = 
+                    (data.fdr_status.total_balance_btc || 0).toFixed(8) + ' BTC';
+                document.getElementById('coldStorageBalance').textContent = 
+                    (data.fdr_status.cold_storage_btc || 0).toFixed(8) + ' BTC';
+                document.getElementById('hotWalletBalance').textContent = 
+                    (data.fdr_status.hot_wallet_btc || 0).toFixed(8) + ' BTC';
+                document.getElementById('multisigBalance').textContent = 
+                    (data.fdr_status.multisig_btc || 0).toFixed(8) + ' BTC';
+                
+                document.getElementById('coldStoragePercentage').textContent = 
+                    (data.fdr_status.cold_storage_percentage || 0).toFixed(1) + '%';
+                document.getElementById('hotWalletPercentage').textContent = 
+                    (data.fdr_status.hot_wallet_percentage || 0).toFixed(1) + '%';
+            }
+
+            // Estatísticas de performance
+            if (data.performance_stats) {
+                document.getElementById('totalProfit').textContent = 
+                    '$' + (data.performance_stats.total_profit_usd || 0).toFixed(2);
+                document.getElementById('successRate').textContent = 
+                    (data.performance_stats.success_rate_percentage || 0).toFixed(1) + '%';
+            }
+
+            // Oportunidades
+            if (data.recent_opportunities) {
+                document.getElementById('opportunitiesCount').textContent = data.recent_opportunities.length;
+                updateRecentOpportunities(data.recent_opportunities);
+            }
+
+            // Execuções
+            if (data.recent_executions) {
+                updateRecentExecutions(data.recent_executions);
+            }
+
+            // Status do bot
+            if (data.bot_status) {
+                updateBotStatus(data.bot_status.running);
+            }
+        }
+
+        // Atualizar status do bot
+        function updateBotStatus(isRunning) {
+            const indicator = document.getElementById('botStatusIndicator');
+            if (isRunning) {
+                indicator.className = 'status-indicator status-online';
+            } else {
+                indicator.className = 'status-indicator status-offline';
+            }
+        }
+
+        // Iniciar bot
+        async function startBot() {
+            try {
+                const interval = document.getElementById('analysisInterval').value;
+                const autoExecute = document.getElementById('autoExecuteEnabled').checked;
+                const maxAmount = document.getElementById('maxAmountBtc').value;
+
+                const response = await fetch('/api/bot/start', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        interval_minutes: parseInt(interval),
+                        auto_execute: autoExecute,
+                        max_amount_btc: parseFloat(maxAmount)
+                    })
+                });
+
+                const data = await response.json();
+                if (data.success) {
+                    updateBotStatus(true);
+                    showNotification('Bot iniciado com sucesso!', 'success');
+                } else {
+                    showNotification('Erro ao iniciar bot: ' + data.error, 'error');
+                }
+            } catch (error) {
+                showNotification('Erro ao iniciar bot: ' + error.message, 'error');
+            }
+        }
+
+        // Parar bot
+        async function stopBot() {
+            try {
+                const response = await fetch('/api/bot/stop', { method: 'POST' });
+                const data = await response.json();
+                
+                if (data.success) {
+                    updateBotStatus(false);
+                    showNotification('Bot parado com sucesso!', 'success');
+                } else {
+                    showNotification('Erro ao parar bot: ' + data.error, 'error');
+                }
+            } catch (error) {
+                showNotification('Erro ao parar bot: ' + error.message, 'error');
+            }
+        }
+
+        // Adicionar carteira
+        async function addWallet() {
+            try {
+                const address = document.getElementById('newWalletAddress').value;
+                const walletType = document.getElementById('newWalletType').value;
+
+                if (!address) {
+                    showNotification('Endereço é obrigatório', 'error');
+                    return;
+                }
+
+                const response = await fetch('/api/fdr/wallets', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ address, wallet_type: walletType })
+                });
+
+                const data = await response.json();
+                if (data.success) {
+                    document.getElementById('newWalletAddress').value = '';
+                    showNotification('Carteira adicionada com sucesso!', 'success');
+                    loadFDRWallets();
+                } else {
+                    showNotification('Erro ao adicionar carteira: ' + data.error, 'error');
+                }
+            } catch (error) {
+                showNotification('Erro ao adicionar carteira: ' + error.message, 'error');
+            }
+        }
+
+        // Executar análise
+        async function runAnalysis() {
+            try {
+                const btn = document.getElementById('runAnalysisBtn');
+                btn.innerHTML = '<i class="fas fa-spinner animate-spin mr-2"></i> Analisando...';
+                btn.disabled = true;
+
+                const response = await fetch('/api/arbitrage/analyze', { method: 'POST' });
+                const data = await response.json();
+
+                if (data.success) {
+                    showNotification(`Análise concluída: ${data.opportunities_found} oportunidades encontradas`, 'success');
+                    loadOpportunities();
+                } else {
+                    showNotification('Erro na análise: ' + data.message, 'error');
+                }
+            } catch (error) {
+                showNotification('Erro na análise: ' + error.message, 'error');
+            } finally {
+                const btn = document.getElementById('runAnalysisBtn');
+                btn.innerHTML = '<i class="fas fa-play mr-2"></i> Executar Análise';
+                btn.disabled = false;
+            }
+        }
+
+        // Execução automática
+        async function autoExecute() {
+            try {
+                const maxAmount = document.getElementById('maxAmountBtc').value;
+                
+                const response = await fetch('/api/arbitrage/execute/auto', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ max_amount_btc: parseFloat(maxAmount) })
+                });
+
+                const data = await response.json();
+                if (data.success) {
+                    showNotification(`Arbitragem executada! Lucro: $${data.actual_profit.toFixed(2)}`, 'success');
+                    loadExecutions();
+                    loadDashboard();
+                } else {
+                    showNotification('Erro na execução: ' + data.error, 'error');
+                }
+            } catch (error) {
+                showNotification('Erro na execução: ' + error.message, 'error');
+            }
+        }
+
+        // Carregar dados específicos da aba
+        function loadTabData(tabId) {
+            switch(tabId) {
+                case 'fdr':
+                    loadFDRWallets();
+                    loadFDRTransactions();
+                    break;
+                case 'arbitrage':
+                    loadOpportunities();
+                    break;
+                case 'executions':
+                    loadExecutions();
+                    break;
+                case 'settings':
+                    loadStats();
+                    break;
+            }
+        }
+
+        // Carregar carteiras do FDR
+        async function loadFDRWallets() {
+            try {
+                const response = await fetch('/api/fdr/wallets');
+                const data = await response.json();
+                
+                if (data.success) {
+                    updateFDRWalletsList(data.wallets);
+                }
+            } catch (error) {
+                console.error('Erro ao carregar carteiras:', error);
+            }
+        }
+
+        // Atualizar lista de carteiras do FDR
+        function updateFDRWalletsList(wallets) {
+            const container = document.getElementById('fdrWalletsList');
+            
+            if (wallets.length === 0) {
+                container.innerHTML = '<div class="text-center text-gray-500 py-4">Nenhuma carteira cadastrada</div>';
+                return;
+            }
+
+            container.innerHTML = wallets.map(wallet => `
+                <div class="bg-gray-700/50 rounded-lg p-3 flex justify-between items-center">
+                    <div>
+                        <p class="font-mono text-sm">${wallet.address.substring(0, 20)}...</p>
+                        <p class="text-xs text-gray-400">${wallet.wallet_type.toUpperCase()}</p>
+                    </div>
+                    <div class="text-right">
+                        <p class="font-bold">${wallet.balance_btc.toFixed(8)} BTC</p>
+                        <p class="text-xs text-gray-400">${wallet.last_updated ? new Date(wallet.last_updated).toLocaleDateString() : 'Nunca'}</p>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // Carregar oportunidades
+        async function loadOpportunities() {
+            try {
+                const hours = document.getElementById('opportunityFilter').value;
+                const response = await fetch(`/api/arbitrage/opportunities?hours=${hours}`);
+                const data = await response.json();
+                
+                if (data.success) {
+                    updateOpportunitiesTable(data.opportunities);
+                }
+            } catch (error) {
+                console.error('Erro ao carregar oportunidades:', error);
+            }
+        }
+
+        // Atualizar tabela de oportunidades
+        function updateOpportunitiesTable(opportunities) {
+            const tbody = document.getElementById('opportunitiesTable');
+            
+            if (opportunities.length === 0) {
+                tbody.innerHTML = '<tr><td colspan="6" class="py-4 text-center text-gray-500">Nenhuma oportunidade encontrada</td></tr>';
+                return;
+            }
+
+            tbody.innerHTML = opportunities.map(opp => `
+                <tr class="border-b border-gray-700">
+                    <td class="py-3">${opp.buy_exchange}</td>
+                    <td class="py-3">${opp.sell_exchange}</td>
+                    <td class="py-3 text-right text-green-300">${opp.profit_percentage.toFixed(2)}%</td>
+                    <td class="py-3 text-right">$${opp.profit_usd.toFixed(2)}</td>
+                    <td class="py-3 text-right">${opp.volume_btc.toFixed(4)} BTC</td>
+                    <td class="py-3 text-right">
+                        <button onclick="executeOpportunity(${opp.id})" class="bg-green-600 hover:bg-green-700 text-white px-3 py-1 rounded text-sm">
+                            Executar
+                        </button>
+                    </td>
+                </tr>
+            `).join('');
+        }
+
+        // Executar oportunidade específica
+        async function executeOpportunity(opportunityId) {
+            try {
+                const amount = prompt('Quantidade em BTC (máximo 1.0):');
+                if (!amount || amount <= 0 || amount > 1) return;
+
+                const response = await fetch('/api/arbitrage/execute', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        opportunity_id: opportunityId,
+                        amount_btc: parseFloat(amount)
+                    })
+                });
+
+                const data = await response.json();
+                if (data.success) {
+                    showNotification(`Arbitragem executada! Lucro: $${data.actual_profit.toFixed(2)}`, 'success');
+                    loadExecutions();
+                    loadDashboard();
+                } else {
+                    showNotification('Erro na execução: ' + data.error, 'error');
+                }
+            } catch (error) {
+                showNotification('Erro na execução: ' + error.message, 'error');
+            }
+        }
+
+        // Carregar execuções
+        async function loadExecutions() {
+            try {
+                const response = await fetch('/api/arbitrage/executions');
+                const data = await response.json();
+                
+                if (data.success) {
+                    updateExecutionsTable(data.executions);
+                }
+            } catch (error) {
+                console.error('Erro ao carregar execuções:', error);
+            }
+        }
+
+        // Atualizar tabela de execuções
+        function updateExecutionsTable(executions) {
+            const tbody = document.getElementById('executionsTable');
+            
+            if (executions.length === 0) {
+                tbody.innerHTML = '<tr><td colspan="7" class="py-4 text-center text-gray-500">Nenhuma execução encontrada</td></tr>';
+                return;
+            }
+
+            tbody.innerHTML = executions.map(exec => {
+                const statusClass = exec.status === 'completed' ? 'text-green-300' : 
+                                  exec.status === 'failed' ? 'text-red-300' : 'text-yellow-300';
+                
+                return `
+                    <tr class="border-b border-gray-700">
+                        <td class="py-3">#${exec.id}</td>
+                        <td class="py-3">${exec.buy_exchange || 'N/A'} → ${exec.sell_exchange || 'N/A'}</td>
+                        <td class="py-3 text-right">${exec.amount_btc.toFixed(4)} BTC</td>
+                        <td class="py-3 text-right">$${exec.expected_profit.toFixed(2)}</td>
+                        <td class="py-3 text-right">$${(exec.actual_profit || 0).toFixed(2)}</td>
+                        <td class="py-3 ${statusClass}">${exec.status.toUpperCase()}</td>
+                        <td class="py-3">${new Date(exec.started_at).toLocaleDateString()}</td>
+                    </tr>
+                `;
+            }).join('');
+        }
+
+        // Carregar estatísticas
+        async function loadStats() {
+            try {
+                const response = await fetch('/api/arbitrage/stats');
+                const data = await response.json();
+                
+                if (data.success) {
+                    updateStatsUI(data.stats);
+                }
+            } catch (error) {
+                console.error('Erro ao carregar estatísticas:', error);
+            }
+        }
+
+        // Atualizar interface de estatísticas
+        function updateStatsUI(stats) {
+            document.getElementById('statTotalExecutions').textContent = stats.total_executions || 0;
+            document.getElementById('statSuccessfulExecutions').textContent = stats.successful_executions || 0;
+            document.getElementById('statSuccessRate').textContent = (stats.success_rate_percentage || 0).toFixed(1) + '%';
+            document.getElementById('statTotalProfit').textContent = '$' + (stats.total_profit_usd || 0).toFixed(2);
+            document.getElementById('statAverageProfit').textContent = '$' + (stats.average_profit_usd || 0).toFixed(2);
+        }
+
+        // Atualizar saldos
+        async function updateBalances() {
+            try {
+                const btn = document.getElementById('updateBalancesBtn');
+                btn.innerHTML = '<i class="fas fa-spinner animate-spin mr-2"></i> Atualizando...';
+                btn.disabled = true;
+
+                const response = await fetch('/api/fdr/balances/update', { method: 'POST' });
+                const data = await response.json();
+
+                if (data.success) {
+                    showNotification(`${data.updated_wallets} carteiras atualizadas`, 'success');
+                    loadFDRWallets();
+                    loadDashboard();
+                } else {
+                    showNotification('Erro ao atualizar saldos: ' + data.error, 'error');
+                }
+            } catch (error) {
+                showNotification('Erro ao atualizar saldos: ' + error.message, 'error');
+            } finally {
+                const btn = document.getElementById('updateBalancesBtn');
+                btn.innerHTML = '<i class="fas fa-sync-alt mr-2"></i> Atualizar Saldos';
+                btn.disabled = false;
+            }
+        }
+
+        // Salvar configurações
+        function saveSettings() {
+            // Implementar salvamento de configurações
+            showNotification('Configurações salvas!', 'success');
+        }
+
+        // Atualizar oportunidades recentes
+        function updateRecentOpportunities(opportunities) {
+            const container = document.getElementById('recentOpportunities');
+            
+            if (opportunities.length === 0) {
+                container.innerHTML = '<div class="text-center text-gray-500 py-4">Nenhuma oportunidade recente</div>';
+                return;
+            }
+
+            container.innerHTML = opportunities.map(opp => `
+                <div class="bg-gray-700/50 rounded-lg p-3">
+                    <div class="flex justify-between items-center">
+                        <div>
+                            <p class="font-bold text-sm">${opp.buy_exchange} → ${opp.sell_exchange}</p>
+                            <p class="text-xs text-gray-400">${new Date(opp.created_at).toLocaleTimeString()}</p>
+                        </div>
+                        <div class="text-right">
+                            <p class="text-green-300 font-bold">${opp.profit_percentage.toFixed(2)}%</p>
+                            <p class="text-xs text-gray-400">$${opp.profit_usd.toFixed(2)}</p>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // Atualizar execuções recentes
+        function updateRecentExecutions(executions) {
+            const container = document.getElementById('recentExecutions');
+            
+            if (executions.length === 0) {
+                container.innerHTML = '<div class="text-center text-gray-500 py-4">Nenhuma execução recente</div>';
+                return;
+            }
+
+            container.innerHTML = executions.map(exec => {
+                const statusClass = exec.status === 'completed' ? 'text-green-300' : 
+                                  exec.status === 'failed' ? 'text-red-300' : 'text-yellow-300';
+                
+                return `
+                    <div class="bg-gray-700/50 rounded-lg p-3">
+                        <div class="flex justify-between items-center">
+                            <div>
+                                <p class="font-bold text-sm">#${exec.id}</p>
+                                <p class="text-xs text-gray-400">${new Date(exec.started_at).toLocaleTimeString()}</p>
+                            </div>
+                            <div class="text-right">
+                                <p class="${statusClass} font-bold text-sm">${exec.status.toUpperCase()}</p>
+                                <p class="text-xs text-gray-400">$${(exec.actual_profit || 0).toFixed(2)}</p>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            }).join('');
+        }
+
+        // Carregar transações do FDR
+        async function loadFDRTransactions() {
+            try {
+                const response = await fetch('/api/fdr/transactions');
+                const data = await response.json();
+                
+                if (data.success) {
+                    updateFDRTransactionsList(data.transactions);
+                }
+            } catch (error) {
+                console.error('Erro ao carregar transações:', error);
+            }
+        }
+
+        // Atualizar lista de transações do FDR
+        function updateFDRTransactionsList(transactions) {
+            const container = document.getElementById('fdrTransactionsList');
+            
+            if (transactions.length === 0) {
+                container.innerHTML = '<div class="text-center text-gray-500 py-4 text-sm">Nenhuma transação</div>';
+                return;
+            }
+
+            container.innerHTML = transactions.slice(0, 5).map(tx => `
+                <div class="bg-gray-700/30 rounded p-2">
+                    <div class="flex justify-between items-center">
+                        <div>
+                            <p class="text-xs font-mono">${tx.txid.substring(0, 12)}...</p>
+                            <p class="text-xs text-gray-400">${tx.transaction_type}</p>
+                        </div>
+                        <div class="text-right">
+                            <p class="text-xs font-bold">${tx.amount_btc.toFixed(4)} BTC</p>
+                            <p class="text-xs text-gray-400">${tx.status}</p>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // Auto-refresh
+        function startAutoRefresh() {
+            refreshInterval = setInterval(() => {
+                loadDashboard();
+            }, 30000); // 30 segundos
+        }
+
+        // Mostrar notificação
+        function showNotification(message, type = 'info') {
+            // Implementar sistema de notificações
+            console.log(`[${type.toUpperCase()}] ${message}`);
+            
+            // Criar elemento de notificação temporário
+            const notification = document.createElement('div');
+            notification.className = `fixed top-4 right-4 p-4 rounded-lg text-white z-50 ${
+                type === 'success' ? 'bg-green-600' : 
+                type === 'error' ? 'bg-red-600' : 'bg-blue-600'
+            }`;
+            notification.textContent = message;
+            
+            document.body.appendChild(notification);
+            
+            setTimeout(() => {
+                notification.remove();
+            }, 5000);
+        }
+    </script>
+</body>
+</html>

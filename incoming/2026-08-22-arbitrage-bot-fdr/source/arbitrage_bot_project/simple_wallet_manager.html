@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerenciador de Wallets Simplificado</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; background-color: #282c34; color: #abb2bf; }
+        .container { max-width: 600px; margin: auto; background-color: #3a404a; padding: 20px; border-radius: 8px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); }
+        h1, h2 { color: #61afef; }
+        label { display: block; margin-top: 10px; margin-bottom: 5px; }
+        input[type="text"], textarea { width: calc(100% - 22px); padding: 10px; margin-bottom: 10px; border: 1px solid #5c6370; border-radius: 4px; background-color: #4b5263; color: #abb2bf; }
+        button { background-color: #98c379; color: white; padding: 10px 15px; border: none; border-radius: 4px; cursor: pointer; font-size: 16px; }
+        button:hover { background-color: #82b36a; }
+        #walletList { margin-top: 20px; border-top: 1px solid #5c6370; padding-top: 10px; }
+        .wallet-item { background-color: #4b5263; padding: 10px; margin-bottom: 5px; border-radius: 4px; }
+        .error { color: #e06c75; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Gerenciador de Wallets Simplificado</h1>
+
+        <h2>Importar Wallet</h2>
+        <div>
+            <label for="importType">Tipo de Importação:</label>
+            <select id="importType">
+                <option value="wif">Chave WIF</option>
+                <option value="seed">Mnemonic Seed</option>
+            </select>
+        </div>
+        <div id="wifInput" style="display: block;">
+            <label for="wifKey">Chave WIF:</label>
+            <input type="text" id="wifKey" placeholder="Insira sua Chave WIF">
+        </div>
+        <div id="seedInput" style="display: none;">
+            <label for="mnemonicSeed">Mnemonic Seed:</label>
+            <textarea id="mnemonicSeed" rows="3" placeholder="Insira sua Mnemonic Seed (12 ou 24 palavras)"></textarea>
+        </div>
+        <button id="importButton">Importar Wallet</button>
+        <p id="importStatus" class="error"></p>
+
+        <h2>Minhas Wallets</h2>
+        <div id="walletList"></div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bitcoinjs-lib/6.0.0/bitcoinjs-lib.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bip39/3.0.0/bip39.min.js"></script>
+    <script>
+        const importTypeSelect = document.getElementById('importType');
+        const wifInputDiv = document.getElementById('wifInput');
+        const seedInputDiv = document.getElementById('seedInput');
+        const wifKeyInput = document.getElementById('wifKey');
+        const mnemonicSeedInput = document.getElementById('mnemonicSeed');
+        const importButton = document.getElementById('importButton');
+        const importStatus = document.getElementById('importStatus');
+        const walletList = document.getElementById('walletList');
+
+        let wallets = [];
+
+        function displayWallets() {
+            walletList.innerHTML = '';
+            if (wallets.length === 0) {
+                walletList.innerHTML = '<p>Nenhuma wallet importada.</p>';
+                return;
+            }
+            wallets.forEach((wallet, index) => {
+                const walletItem = document.createElement('div');
+                walletItem.className = 'wallet-item';
+                walletItem.innerHTML = `
+                    <h3>Wallet ${index + 1}</h3>
+                    <p><strong>Tipo:</strong> ${wallet.type}</p>
+                    <p><strong>Endereço:</strong> ${wallet.address}</p>
+                    <p><strong>Saldo:</strong> <span id="balance-${wallet.address}">Carregando...</span> BTC</p>
+                `;
+                walletList.appendChild(walletItem);
+                fetchBalance(wallet.address);
+            });
+        }
+
+        async function fetchBalance(address) {
+            const balanceSpan = document.getElementById(`balance-${address}`);
+            try {
+                const response = await fetch(`https://api.blockchair.com/bitcoin/dashboards/address/${address}`);
+                const data = await response.json();
+                if (data.data && data.data[address] && data.data[address].address) {
+                    const balanceSatoshis = data.data[address].address.balance;
+                    const balanceBTC = balanceSatoshis / 100000000;
+                    balanceSpan.textContent = balanceBTC.toFixed(8);
+                } else {
+                    balanceSpan.textContent = 'N/A (Erro ao buscar)';
+                }
+            } catch (error) {
+                console.error('Erro ao buscar saldo:', error);
+                balanceSpan.textContent = 'N/A (Erro de rede)';
+            }
+        }
+
+        importTypeSelect.addEventListener('change', () => {
+            if (importTypeSelect.value === 'wif') {
+                wifInputDiv.style.display = 'block';
+                seedInputDiv.style.display = 'none';
+            } else {
+                wifInputDiv.style.display = 'none';
+                seedInputDiv.style.display = 'block';
+            }
+            importStatus.textContent = '';
+        });
+
+        importButton.addEventListener('click', () => {
+            importStatus.textContent = '';
+            const type = importTypeSelect.value;
+            let address = '';
+
+            try {
+                if (type === 'wif') {
+                    const wif = wifKeyInput.value.trim();
+                    if (!wif) throw new Error('Chave WIF não pode estar vazia.');
+                    const keyPair = bitcoin.ECPair.fromWIF(wif);
+                    const { address: derivedAddress } = bitcoin.payments.p2pkh({ pubkey: keyPair.publicKey });
+                    address = derivedAddress;
+                } else if (type === 'seed') {
+                    const mnemonic = mnemonicSeedInput.value.trim();
+                    if (!mnemonic) throw new Error('Mnemonic Seed não pode estar vazia.');
+                    if (!bip39.validateMnemonic(mnemonic)) throw new Error('Mnemonic Seed inválida.');
+                    const seed = bip39.mnemonicToSeedSync(mnemonic);
+                    const root = bitcoin.bip32.fromSeed(seed);
+                    const child = root.derivePath("m/44'/0'/0'/0/0"); // Padrão BIP44
+                    const { address: derivedAddress } = bitcoin.payments.p2pkh({ pubkey: child.publicKey });
+                    address = derivedAddress;
+                }
+
+                if (address) {
+                    wallets.push({ type: type, address: address });
+                    displayWallets();
+                    importStatus.textContent = 'Wallet importada com sucesso!';
+                    wifKeyInput.value = '';
+                    mnemonicSeedInput.value = '';
+                } else {
+                    throw new Error('Não foi possível derivar o endereço da wallet.');
+                }
+            } catch (error) {
+                importStatus.textContent = `Erro ao importar: ${error.message}`;
+                console.error('Erro de importação:', error);
+            }
+        });
+
+        displayWallets(); // Inicializa a lista de wallets
+    </script>
+</body>
+</html>
+
+
