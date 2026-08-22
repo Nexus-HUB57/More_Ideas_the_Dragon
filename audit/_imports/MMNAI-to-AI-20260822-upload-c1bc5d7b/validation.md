@@ -1,18 +1,11 @@
 # Validação da população segura
 
-'
-    f'- Arquivos adicionados esperados/presentes: 6/6
-'
-    f'- Entradas regulares dentro do ZIP: 3133
-'
-    f'- ZIP idêntico ao enviado: `True`
-'
-    f'- Caminhos traversal detectados: `0`
-'
-    f'- Sobrescritas existentes: `False`
-'
-    f'- Exclusões existentes: `False`
-'
-    f'- Commits reescritos: `False`
-'
-    f'- Arquivos de texto comparados byte a byte: ARCHITECTURE.md, commissions.ts, db.ts, mmn.ts, schema.ts
+- Arquivos de payload no namespace: 3139
+- Entradas regulares no ZIP: 3133
+- Arquivos extraídos: 3133
+- Arquivos extraídos que correspondem ao ZIP: 3133
+- Arquivos ausentes ou divergentes: 0
+- ZIP idêntico ao enviado: `True`
+- Caminhos traversal: `0`; nomes duplicados: `0`
+- Sobrescritas, exclusões e reescritas de commits: `false`
+- Arquivos legados não foram executados.

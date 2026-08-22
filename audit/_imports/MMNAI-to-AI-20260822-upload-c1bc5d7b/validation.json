@@ -1,15 +1,24 @@
 {
   "repository": "Nexus-HUB57/More_Ideas_the_Dragon",
   "branch": "integration/mmnai-to-ai-upload-20260822-c1bc5d7b",
-  "base_commit": "f71796465fa9aa0233dee8d06f3ff48def92c895",
+  "base_commit": "57284006def33106fd441cb8c51447634675b6fb",
   "origin_main_at_baseline": "f71796465fa9aa0233dee8d06f3ff48def92c895",
   "namespace": "_imports/MMNAI-to-AI-20260822-upload-c1bc5d7b",
-  "added_files_expected": 6,
-  "added_files_present": 6,
   "zip_size_bytes": 24076711,
   "zip_sha256": "c1bc5d7b8bdfe39ae2506a936b8ab8b6b1ff81623a758dd1c16196525c359248",
-  "zip_entries": 3133,
-  "path_traversal_candidates": [],
+  "zip_regular_entries": 3133,
+  "zip_path_traversal_candidates": [],
+  "zip_duplicate_names": [],
+  "archive_extracted_files": 3133,
+  "archive_files_matching_zip_bytes": 3133,
+  "archive_missing_files": [],
+  "archive_different_files": [],
+  "source_text_files": 5,
+  "payload_files_in_namespace": 3139,
+  "destructive_operations_performed": false,
+  "existing_paths_overwritten": false,
+  "existing_paths_deleted": false,
+  "existing_commits_rewritten": false,
   "source_hashes_match_uploaded_zip": true,
   "source_text_files_match": {
     "ARCHITECTURE.md": true,
@@ -17,9 +26,5 @@
     "db.ts": true,
     "mmn.ts": true,
     "schema.ts": true
-  },
-  "destructive_operations_performed": false,
-  "existing_paths_overwritten": false,
-  "existing_paths_deleted": false,
-  "existing_commits_rewritten": false
+  }
 }
