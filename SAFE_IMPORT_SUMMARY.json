@@ -1,0 +1,13 @@
+{
+  "target": "/home/ubuntu/repo-audit/imports/manus/fase-9-dashboard-dynamic-20260822",
+  "bundle": "/home/ubuntu/repo-audit/artifacts/manus-fase-9-dashboard-dynamic-20260822-end-to-end.zip",
+  "source_zip_entries": 3174,
+  "source_extracted_files": 3174,
+  "application_files": 131,
+  "task_document_files": 2,
+  "namespace_files": 3308,
+  "namespace_bytes": 69869903,
+  "bundle_bytes": 48395118,
+  "bundle_sha256": "dd79e3c278416e374008d1184e65c508c725a1207b97c76c8d493b6d7beda92b",
+  "manifest_sha256": "6f740f064d5a2a9ef8db6d3a0da6b4e0d38ef754f815c390af953edfb623a0f1"
+}
