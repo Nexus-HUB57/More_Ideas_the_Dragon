@@ -1,7 +1,7 @@
 # Validação Safe Recovery — População 001–299
 
-**Data da auditoria:** 22 de agosto de 2026  
-**Repositório:** Nexus-HUB57/More_Ideas_the_Dragon  
+**Data da auditoria:** 22 de agosto de 2026
+**Repositório:** `Nexus-HUB57/More_Ideas_the_Dragon`
 **Commit-base auditado:** a16f6e1574218d3079720be7b19d31943e0ce80f
 
 ## Resultado
