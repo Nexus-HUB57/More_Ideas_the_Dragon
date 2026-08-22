@@ -1,0 +1,60 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --neon-pink: #FF00FF;
+  --neon-cyan: #00FFFF;
+  --neon-purple: #9D00FF;
+  
+  --background: 0 0% 0%;
+  --foreground: 0 0% 100%;
+  --card: 0 0% 3%;
+  --card-foreground: 0 0% 100%;
+  --popover: 0 0% 3%;
+  --popover-foreground: 0 0% 100%;
+  --primary: 300 100% 50%;
+  --primary-foreground: 0 0% 0%;
+  --secondary: 180 100% 50%;
+  --secondary-foreground: 0 0% 0%;
+  --muted: 0 0% 15%;
+  --muted-foreground: 0 0% 65%;
+  --accent: 300 100% 50%;
+  --accent-foreground: 0 0% 0%;
+  --destructive: 0 84% 60%;
+  --destructive-foreground: 0 0% 100%;
+  --border: 0 0% 20%;
+  --input: 0 0% 20%;
+  --ring: 300 100% 50%;
+  --radius: 0.5rem;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-black text-white;
+    font-family: 'Inter', sans-serif;
+  }
+}
+
+/* Custom Neon Classes */
+.text-neon-pink { color: var(--neon-pink); }
+.text-neon-cyan { color: var(--neon-cyan); }
+.text-neon-purple { color: var(--neon-purple); }
+
+.bg-neon-pink { background-color: var(--neon-pink); }
+.bg-neon-cyan { background-color: var(--neon-cyan); }
+.bg-neon-purple { background-color: var(--neon-purple); }
+
+.border-neon-pink { border-color: var(--neon-pink); }
+.border-neon-cyan { border-color: var(--neon-cyan); }
+
+.neon-glow-pink {
+  text-shadow: 0 0 10px rgba(255, 0, 255, 0.8), 0 0 20px rgba(255, 0, 255, 0.4);
+}
+
+.neon-glow-cyan {
+  text-shadow: 0 0 10px rgba(0, 255, 255, 0.8), 0 0 20px rgba(0, 255, 255, 0.4);
+}
