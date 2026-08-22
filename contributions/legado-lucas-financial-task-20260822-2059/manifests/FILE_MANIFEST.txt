@@ -1,0 +1,15 @@
+README.md
+calculations/calculo_pl_fundos_ano7.txt
+manifests/FILE_MANIFEST.txt
+manifests/SHA256SUMS.txt
+reports/balanco_patrimonial_geral_ano6.md
+reports/comparativo_roe_ano5_ano6.md
+reports/composicao_pl_ano7.md
+reports/detalhamento_ajuste_consolidacao.md
+reports/fechamento_financeiro_jr_ano7.md
+reports/fechamento_financeiro_jr_ano7_corrigido.md
+reports/projecao_resultados_emb_2032.md
+reports/relatorio_anomalias_ano7.md
+reports/relatorio_financeiro_geral_ano7.md
+source/RelatóriodeFechamentoOrçamentárioeBalançoPatrimonialAno6-Revisado.docx
+source/RelatóriodeFechamentoOrçamentárioeBalançoPatrimonialAno7-revisado.docx
