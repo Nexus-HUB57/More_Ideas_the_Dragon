@@ -1,0 +1,16 @@
+./PATCH_AUDIT.md
+./README.md
+./source-file-list.txt
+./source/client/src/App.tsx
+./source/client/src/pages/Home.tsx
+./source/client/src/pages/Modules.tsx
+./source/docs/NEXUS_HUB_ARCHITECTURE.md
+./source/docs/OPERATIONS.md
+./source/scripts/test-frontend-contract.mjs
+./source/server/criticalAlerts.test.ts
+./source/server/criticalAlerts.ts
+./source/server/modules.integration.test.ts
+./source/server/routers/agents.ts
+./source/server/routers/notifications.ts
+./source/server/routers/transactions.ts
+./source/vite.config.ts
