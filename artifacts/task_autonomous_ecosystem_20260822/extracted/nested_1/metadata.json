@@ -1,0 +1,6 @@
+{
+  "name": "Alibaba Cloud OpenAPI Portal",
+  "description": "An interactive playground and SDK blueprint draftsman for testing Alibaba Cloud APIs with live HMAC signatures and Gemini-powered assistance.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
