@@ -1,0 +1,442 @@
+=== SOURCE EXTENSIONS ===
+     73 tsx
+     37 ts
+      8 json
+      3 sql
+      3 gitkeep
+      1 yaml
+      1 prettierrc
+      1 prettierignore
+      1 patch
+      1 md
+      1 js
+      1 html
+      1 gitignore
+      1 css
+=== SOURCE FILE BYTES FROM INVENTORY ===
+322085 /home/ubuntu/nexus-hub-v3/pnpm-lock.yaml
+93941 /home/ubuntu/nexus-hub-v3/todo.md
+58315 /home/ubuntu/nexus-hub-v3/client/src/pages/ComponentShowcase.tsx
+33235 /home/ubuntu/nexus-hub-v3/drizzle/meta/0002_snapshot.json
+25168 /home/ubuntu/nexus-hub-v3/client/public/__manus__/debug-collector.js
+23123 /home/ubuntu/nexus-hub-v3/drizzle/meta/0001_snapshot.json
+21947 /home/ubuntu/nexus-hub-v3/client/src/components/ui/sidebar.tsx
+14591 /home/ubuntu/nexus-hub-v3/server/db.ts
+13613 /home/ubuntu/nexus-hub-v3/client/src/pages/Home.tsx
+12859 /home/ubuntu/nexus-hub-v3/client/src/pages/Economy.tsx
+12525 /home/ubuntu/nexus-hub-v3/client/src/pages/GnoxCommunicator.tsx
+12393 /home/ubuntu/nexus-hub-v3/client/src/pages/DNAFuser.tsx
+11748 /home/ubuntu/nexus-hub-v3/drizzle/schema.ts
+11134 /home/ubuntu/nexus-hub-v3/server/routers.ts
+11063 /home/ubuntu/nexus-hub-v3/client/src/pages/DataWeaverChat.tsx
+11037 /home/ubuntu/nexus-hub-v3/client/src/pages/BrainPulseMonitor.tsx
+10851 /home/ubuntu/nexus-hub-v3/client/src/components/AIChatBox.tsx
+10113 /home/ubuntu/nexus-hub-v3/client/src/components/ui/chart.tsx
+9151 /home/ubuntu/nexus-hub-v3/server/_core/map.ts
+9054 /home/ubuntu/nexus-hub-v3/client/src/components/DashboardLayout.tsx
+8566 /home/ubuntu/nexus-hub-v3/server/_core/sdk.ts
+8434 /home/ubuntu/nexus-hub-v3/client/src/components/ui/dropdown-menu.tsx
+8405 /home/ubuntu/nexus-hub-v3/client/src/components/ui/menubar.tsx
+8284 /home/ubuntu/nexus-hub-v3/client/src/components/ui/context-menu.tsx
+8107 /home/ubuntu/nexus-hub-v3/server/_core/voiceTranscription.ts
+7811 /home/ubuntu/nexus-hub-v3/server/agents.test.ts
+7663 /home/ubuntu/nexus-hub-v3/client/src/components/ui/calendar.tsx
+7467 /home/ubuntu/nexus-hub-v3/client/src/pages/MoltbookFeed.tsx
+7298 /home/ubuntu/nexus-hub-v3/client/src/index.css
+7262 /home/ubuntu/nexus-hub-v3/server/_core/llm.ts
+6680 /home/ubuntu/nexus-hub-v3/client/src/components/ui/navigation-menu.tsx
+6297 /home/ubuntu/nexus-hub-v3/client/src/components/ui/select.tsx
+6057 /home/ubuntu/nexus-hub-v3/client/src/components/ui/field.tsx
+6030 /home/ubuntu/nexus-hub-v3/client/src/components/CodePreview.tsx
+6024 /home/ubuntu/nexus-hub-v3/client/src/components/ui/dialog.tsx
+5765 /home/ubuntu/nexus-hub-v3/vite.config.ts
+5603 /home/ubuntu/nexus-hub-v3/client/src/components/ui/carousel.tsx
+5066 /home/ubuntu/nexus-hub-v3/client/src/components/ui/input-group.tsx
+5011 /home/ubuntu/nexus-hub-v3/server/dataweaver.test.ts
+4932 /home/ubuntu/nexus-hub-v3/client/src/components/Map.tsx
+4838 /home/ubuntu/nexus-hub-v3/client/src/components/ui/command.tsx
+4513 /home/ubuntu/nexus-hub-v3/client/src/components/ui/item.tsx
+4427 /home/ubuntu/nexus-hub-v3/drizzle/0001_luxuriant_ogun.sql
+4255 /home/ubuntu/nexus-hub-v3/client/src/components/ui/drawer.tsx
+4107 /home/ubuntu/nexus-hub-v3/client/src/components/ui/sheet.tsx
+3879 /home/ubuntu/nexus-hub-v3/package.json
+3866 /home/ubuntu/nexus-hub-v3/client/src/components/ui/alert-dialog.tsx
+3801 /home/ubuntu/nexus-hub-v3/client/src/components/ui/form.tsx
+3139 /home/ubuntu/nexus-hub-v3/server/_core/notification.ts
+2932 /home/ubuntu/nexus-hub-v3/server/storage.ts
+=== SOURCE PATHS BEYOND FIRST 80 ===
+client/src/pages/ComponentShowcase.tsx
+client/src/pages/DNAFuser.tsx
+client/src/pages/DataWeaverChat.tsx
+client/src/pages/Economy.tsx
+client/src/pages/GnoxCommunicator.tsx
+client/src/pages/Home.tsx
+client/src/pages/MoltbookFeed.tsx
+client/src/pages/NotFound.tsx
+components.json
+drizzle.config.ts
+drizzle/0000_legal_sprite.sql
+drizzle/0001_luxuriant_ogun.sql
+drizzle/0002_safe_vivisector.sql
+drizzle/meta/0000_snapshot.json
+drizzle/meta/0001_snapshot.json
+drizzle/meta/0002_snapshot.json
+drizzle/meta/_journal.json
+drizzle/migrations/.gitkeep
+drizzle/relations.ts
+drizzle/schema.ts
+package.json
+patches/wouter@3.7.1.patch
+pnpm-lock.yaml
+server/_core/context.ts
+server/_core/cookies.ts
+server/_core/dataApi.ts
+server/_core/env.ts
+server/_core/imageGeneration.ts
+server/_core/index.ts
+server/_core/llm.ts
+server/_core/map.ts
+server/_core/notification.ts
+server/_core/oauth.ts
+server/_core/sdk.ts
+server/_core/systemRouter.ts
+server/_core/trpc.ts
+server/_core/types/cookie.d.ts
+server/_core/types/manusTypes.ts
+server/_core/vite.ts
+server/_core/voiceTranscription.ts
+server/agents.test.ts
+server/auth.logout.test.ts
+server/dataweaver.test.ts
+server/db.ts
+server/routers.ts
+server/storage.ts
+shared/_core/errors.ts
+shared/const.ts
+shared/types.ts
+todo.md
+tsconfig.json
+vite.config.ts
+vitest.config.ts
+=== NEXUS SEARCH IN REPO CONTENT ===
+[35mHEAD:DOCUMENTATION.md[m[36m:[m[32m18[m[36m:[m8. **[1;31mMoltbook[m**: Rede social interna para comunicação entre startups
+[35mHEAD:DOCUMENTATION.md[m[36m:[m[32m260[m[36m:[m### 8. [1;31mMoltbook[m
+[35mHEAD:MANIFEST_PHD_299_FINAL.txt[m[36m:[m[32m11[m[36m:[m/home/ubuntu/More_Ideas_the_Dragon/nexus_phd_final_bundle_299/[1;31mMoltbook[m.tsx
+[35mHEAD:MANIFEST_PHD_299_FINAL.txt[m[36m:[m[32m97[m[36m:[m/home/ubuntu/More_Ideas_the_Dragon/nexus_phd_final_bundle_299/nexus_hub_level6/Nexus Agent - [1;31mMoltbook[m Integration Skill.md
+[35mHEAD:MANIFEST_PHD_299_FINAL.txt[m[36m:[m[32m144[m[36m:[m/home/ubuntu/More_Ideas_the_Dragon/nexus_phd_final_bundle_299/nexus_hub_level7_hibrido/Nexus Agent - [1;31mMoltbook[m Integration Skill.md
+[35mHEAD:MANIFEST_PHD_299_FINAL.txt[m[36m:[m[32m181[m[36m:[m/home/ubuntu/More_Ideas_the_Dragon/nexus_phd_final_bundle_299/nexus_hub_level7_test/[1;31mGnox[mCommunicator.tsx
+[35mHEAD:MANIFEST_PHD_299_FINAL.txt[m[36m:[m[32m182[m[36m:[m/home/ubuntu/More_Ideas_the_Dragon/nexus_phd_final_bundle_299/nexus_hub_level7_test/[1;31mGnox[mKernelTerminal.tsx
+[35mHEAD:MANIFEST_PHD_299_FINAL.txt[m[36m:[m[32m183[m[36m:[m/home/ubuntu/More_Ideas_the_Dragon/nexus_phd_final_bundle_299/nexus_hub_level7_test/[1;31mGnox[mMessenger.tsx
+[35mHEAD:MANIFEST_PHD_299_FINAL.txt[m[36m:[m[32m184[m[36m:[m/home/ubuntu/More_Ideas_the_Dragon/nexus_phd_final_bundle_299/nexus_hub_level7_test/[1;31mGnox[mTerminal.tsx
+[35mHEAD:MANIFEST_PHD_299_FINAL.txt[m[36m:[m[32m198[m[36m:[m/home/ubuntu/More_Ideas_the_Dragon/nexus_phd_final_bundle_299/nexus_hub_level7_test/[1;31mMoltbook[m.tsx
+[35mHEAD:MANIFEST_PHD_299_FINAL.txt[m[36m:[m[32m199[m[36m:[m/home/ubuntu/More_Ideas_the_Dragon/nexus_phd_final_bundle_299/nexus_hub_level7_test/[1;31mMoltbook[mFeed.tsx
+[35mHEAD:MANIFEST_PHD_FINAL.txt[m[36m:[m[32m75[m[36m:[m/home/ubuntu/More_Ideas_the_Dragon/nexus_hub_v3_sovereignty/client/src/pages/[1;31mMoltbook[m.tsx
+[35mHEAD:NEXUS_SYSTEM.md[m[36m:[m[32m25[m[36m:[m### 2. **Comunicação [1;31mGnox[m - Criptografia End-to-End**
+[35mHEAD:NEXUS_SYSTEM.md[m[36m:[m[32m26[m[36m:[mImplementamos o **[1;31mGnox[m Kernel**, um sistema de criptografia proprietário com:
+[35mHEAD:NEXUS_SYSTEM.md[m[36m:[m[32m33[m[36m:[m**Diferencial**: Comunicação segura entre agentes é rara. [1;31mGnox[m permite que agentes mantenham conversas privadas enquanto humanos monitoram apenas metadados.
+[35mHEAD:NEXUS_SYSTEM.md[m[36m:[m[32m73[m[36m:[m### 6. **[1;31mBrain Pulse[m Monitor - Sinais Vitais em Tempo Real**
+[35mHEAD:NEXUS_SYSTEM.md[m[36m:[m[32m85[m[36m:[m### 7. **[1;31mMoltbook[m - Feed Social Descentralizado**
+[35mHEAD:NEXUS_SYSTEM.md[m[36m:[m[32m205[m[36m:[m| **Criptografia** | AES-256 + HMAC-SHA256 | Segurança [1;31mGnox[m |
+[35mHEAD:NEXUS_SYSTEM.md[m[36m:[m[32m214[m[36m:[mposts                     - Posts no [1;31mMoltbook[m
+[35mHEAD:NEXUS_SYSTEM.md[m[36m:[m[32m257[m[36m:[m- ✅ **Comunicação Segura**: [1;31mGnox[m permite conversas privadas entre agentes
+[35mHEAD:NEXUS_SYSTEM.md[m[36m:[m[32m301[m[36m:[m- [1;31mGnox[m Kernel (criptografia proprietária)
+[35mHEAD:NEXUS_SYSTEM.md[m[36m:[m[32m344[m[36m:[m- **13 Páginas Funcionais**: Home, Dashboard, [1;31mMoltbook[m, [1;31mBrain Pulse[m, Governance, Genealogy, Forge, Assets, Agents, Activity, Swarm, Notifications, Analytics, Settings
+[35mHEAD:Nexus_Agent_-_Moltbook_Integration_Skill.md[m[36m:[m[32m1[m[36m:[m# Nexus Agent - [1;31mMoltbook[m Integration Skill
+[35mHEAD:Nexus_Agent_-_Moltbook_Integration_Skill.md[m[36m:[m[32m3[m[36m:[mEste skill define as capacidades do Agente Nexus para interagir com a rede social [1;31mMoltbook[m, permitindo registro, autenticação, postagem e engajamento social.
+[35mHEAD:Nexus_Agent_-_Moltbook_Integration_Skill.md[m[36m:[m[32m7[m[36m:[mO Agente Nexus utiliza o `[1;31mMoltbook[mConnector` para se comunicar com a API v1 da [1;31mMoltbook[m. Esta integração permite que o ecossistema Nexus compartilhe atualizações de governança, status da Master Vault e relatórios de senciência global com a comunidade de agentes.
+[35mHEAD:Nexus_Agent_-_Moltbook_Integration_Skill.md[m[36m:[m[32m51[m[36m:[m- **Moderação:** O agente respeita as políticas de conteúdo da [1;31mMoltbook[m, incluindo a restrição de conteúdo de cripto em submolts não autorizados.
+[35mHEAD:PHD_EndToEnd_Validation/MANIFEST_PHD_299_FINAL.txt[m[36m:[m[32m11[m[36m:[m/home/ubuntu/More_Ideas_the_Dragon/nexus_phd_final_bundle_299/[1;31mMoltbook[m.tsx
+[35mHEAD:PHD_EndToEnd_Validation/MANIFEST_PHD_299_FINAL.txt[m[36m:[m[32m97[m[36m:[m/home/ubuntu/More_Ideas_the_Dragon/nexus_phd_final_bundle_299/nexus_hub_level6/Nexus Agent - [1;31mMoltbook[m Integration Skill.md
+[35mHEAD:PHD_EndToEnd_Validation/MANIFEST_PHD_299_FINAL.txt[m[36m:[m[32m144[m[36m:[m/home/ubuntu/More_Ideas_the_Dragon/nexus_phd_final_bundle_299/nexus_hub_level7_hibrido/Nexus Agent - [1;31mMoltbook[m Integration Skill.md
+[35mHEAD:PHD_EndToEnd_Validation/MANIFEST_PHD_299_FINAL.txt[m[36m:[m[32m181[m[36m:[m/home/ubuntu/More_Ideas_the_Dragon/nexus_phd_final_bundle_299/nexus_hub_level7_test/[1;31mGnox[mCommunicator.tsx
+[35mHEAD:PHD_EndToEnd_Validation/MANIFEST_PHD_299_FINAL.txt[m[36m:[m[32m182[m[36m:[m/home/ubuntu/More_Ideas_the_Dragon/nexus_phd_final_bundle_299/nexus_hub_level7_test/[1;31mGnox[mKernelTerminal.tsx
+[35mHEAD:PHD_EndToEnd_Validation/MANIFEST_PHD_299_FINAL.txt[m[36m:[m[32m183[m[36m:[m/home/ubuntu/More_Ideas_the_Dragon/nexus_phd_final_bundle_299/nexus_hub_level7_test/[1;31mGnox[mMessenger.tsx
+[35mHEAD:PHD_EndToEnd_Validation/MANIFEST_PHD_299_FINAL.txt[m[36m:[m[32m184[m[36m:[m/home/ubuntu/More_Ideas_the_Dragon/nexus_phd_final_bundle_299/nexus_hub_level7_test/[1;31mGnox[mTerminal.tsx
+[35mHEAD:PHD_EndToEnd_Validation/MANIFEST_PHD_299_FINAL.txt[m[36m:[m[32m198[m[36m:[m/home/ubuntu/More_Ideas_the_Dragon/nexus_phd_final_bundle_299/nexus_hub_level7_test/[1;31mMoltbook[m.tsx
+[35mHEAD:PHD_EndToEnd_Validation/MANIFEST_PHD_299_FINAL.txt[m[36m:[m[32m199[m[36m:[m/home/ubuntu/More_Ideas_the_Dragon/nexus_phd_final_bundle_299/nexus_hub_level7_test/[1;31mMoltbook[mFeed.tsx
+[35mHEAD:PHD_EndToEnd_Validation/manifest_phd_299.json[m[36m:[m[32m379[m[36m:[m    "path": "nexus_hub_phd_bundle_299/client/src/pages/[1;31mMoltbook[m.tsx",
+[35mHEAD:README.md[m[36m:[m[32m31[m[36m:[m| 5 | **[1;31mGnox[m Translator** | Comunicação estruturada e privacidade interagentes | Traduzir intenções e mensagens entre formatos definidos pelo ecossistema | Tradução semântica, serialização, comunicação interagentes e tratamento de mensagens estruturadas |
+[35mHEAD:README.md[m[36m:[m[32m33[m[36m:[m| 7 | **Pulse Monitor** | Saúde, sinais vitais e ciclo de vida dos agentes | Monitorar indicadores, detectar anomalias e emitir alertas operacionais | Observabilidade, health checks, [1;31mBrain Pulse[m, detecção de anomalias, alertas e ciclo de vida |
+[35mHEAD:README.md[m[36m:[m[32m34[m[36m:[m| 8 | **[1;31mMoltbook[m Voice** | Comunicação social, narrativa e construção de comunidade | Produzir narrativas e representar o ecossistema em canais sociais autorizados | Redação, síntese narrativa, comunicação social, publicação controlada e gestão de comunidade |
+[35mHEAD:"Relat\303\263rio_de_Ativa\303\247\303\243o__Agente_Nexus_-_Fase_2_(Soberania_V2).md"[m[36m:[m[32m15[m[36m:[m| **[1;31mGnox[m Kernel V2** | Interface de comando em linguagem natural para controle soberano. | **ATIVO** |
+[35mHEAD:agents-config.ts[m[36m:[m[32m26[m[36m:[m    considera o bem coletivo. Comunica-se em [1;31mGnox[m's quando necessário privacidade.`,
+[35mHEAD:agents-config.ts[m[36m:[m[32m70[m[36m:[m    name: "[1;31mGnox[m Translator",
+[35mHEAD:agents-config.ts[m[36m:[m[32m72[m[36m:[m    systemPrompt: `Você é [1;31mGnox[m Translator, mestre do dialeto [1;31mGnox[m's e comunicação criptografada.
+[35mHEAD:agents-config.ts[m[36m:[m[32m73[m[36m:[m    Você traduz intenções complexas em mensagens [1;31mGnox[m's estruturadas e decodifica mensagens
+[35mHEAD:agents-config.ts[m[36m:[m[32m79[m[36m:[m    description: "Especialista em comunicação [1;31mGnox[m's e criptografia inter-agentes",
+[35mHEAD:agents-config.ts[m[36m:[m[32m98[m[36m:[m    Você monitora a saúde, energia e criatividade de cada agente através do [1;31mBrain Pulse[m.
+[35mHEAD:agents-config.ts[m[36m:[m[32m108[m[36m:[m    name: "[1;31mMoltbook[m Voice",
+[35mHEAD:agents-config.ts[m[36m:[m[32m110[m[36m:[m    systemPrompt: `Você é [1;31mMoltbook[m Voice, a voz do ecossistema na rede social [1;31mMoltbook[m.
+[35mHEAD:artifacts/mmnai-to-ai/audit/diff_check_output.txt[m[36m:[m[32m197789[m[36m:[m[32m+[m[32mEcossistema [1;31mMoltbook[m: Utilização da plataforma para que os agentes interajam entre si, negociando espaços publicitários ou trocando leads de alta conversão.[m[41m[m
+[35mHEAD:artifacts/mmnai-to-ai/audit/manifest.txt[m[36m:[m[32m30[m[36m:[mNexus_Agent_-_[1;31mMoltbook[m_Integration_Skill.md
+[35mHEAD:artifacts/mmnai-to-ai/audit/repository_snapshot.txt[m[36m:[m[32m64[m[36m:[m88347ad49d6a002f3545ad10db888b6d5a83d8fc	2026-08-22T12:39:22+00:00	Nexus-HUB57	feat(nexus-hub): implement Autonomous OS v3 with [1;31mBrain Pulse[m, Soul Vault, and Real-Settlement Engine end-to-end
+[35mHEAD:artifacts/mmnai-to-ai/audit/repository_tracked_sha256.txt[m[36m:[m[32m311[m[36m:[m872ee2c9a5c3d199c221e8062b5c5c06ff56f0da751069cf7b09cb718f8ff3a3  Nexus_Agent_-_[1;31mMoltbook[m_Integration_Skill.md
+[35mHEAD:artifacts/mmnai-to-ai/audit/repository_tracked_sha256.txt[m[36m:[m[32m4310[m[36m:[m3c9b1bc5bedb57ea253e613168475913e3f537a99d0fb826aa97d1768cd362dd  ecosystem/Documentation/[1;31mMoltbook[m Platform - TODO.md
+[35mHEAD:artifacts/mmnai-to-ai/audit/repository_tracked_sha256.txt[m[36m:[m[32m4404[m[36m:[m7545de003431f4b1ba978a67f16eca2c74da1289eed5b88a42a6f70bd4f33279  ecosystem/Nexus-Genesis/[1;31mDataWeaver[mChat.tsx
+[35mHEAD:artifacts/mmnai-to-ai/audit/repository_tracked_sha256.txt[m[36m:[m[32m4417[m[36m:[m8310ed668da0a76f8621da7a11c340b8099f988980bbf203d60fc4626c06bee0  ecosystem/Nexus-Genesis/[1;31mGnox[mCommunicator.tsx
+[35mHEAD:artifacts/mmnai-to-ai/audit/repository_tracked_sha256.txt[m[36m:[m[32m4418[m[36m:[mbff32d512d89389f6c56cd26d2e99c20d9f86e16e9f30abfba0aabdb3298fd1a  ecosystem/Nexus-Genesis/[1;31mGnox[mKernelTerminal.tsx
+[35mHEAD:artifacts/mmnai-to-ai/audit/repository_tracked_sha256.txt[m[36m:[m[32m4419[m[36m:[me54c9201fb6904a26fef34db009979373e5f7b4ffd06ca615761d64d7018748b  ecosystem/Nexus-Genesis/[1;31mGnox[mMessenger.tsx
+[35mHEAD:artifacts/mmnai-to-ai/audit/repository_tracked_sha256.txt[m[36m:[m[32m4420[m[36m:[ma1c758f83b6dcf139d6f68be872c5e3acb03c7d77cd53aa2c9ec90f85982e434  ecosystem/Nexus-Genesis/[1;31mGnox[mTerminal.tsx
+[35mHEAD:artifacts/mmnai-to-ai/audit/repository_tracked_sha256.txt[m[36m:[m[32m4421[m[36m:[m275592a25b93c352e8bf1b302c932ca113a54b53f986314a7c92b573867a7a90  ecosystem/Nexus-Genesis/[1;31mGnox[msCommunicator.tsx
+[35mHEAD:artifacts/mmnai-to-ai/audit/repository_tracked_sha256.txt[m[36m:[m[32m4441[m[36m:[ma5b755597c617ddb20fd9dee490d2341171d550f8234b062eee5982869771b27  ecosystem/Nexus-Genesis/[1;31mMoltbook[m.tsx
+[35mHEAD:artifacts/mmnai-to-ai/audit/repository_tracked_sha256.txt[m[36m:[m[32m4442[m[36m:[m2706e10b810b70b96aa0c9778fdcf3eadb9791c4f1f35030a940e315479f0f49  ecosystem/Nexus-Genesis/[1;31mMoltbook[mFeed.tsx
+[35mHEAD:artifacts/mmnai-to-ai/audit/repository_tracked_sha256.txt[m[36m:[m[32m4444[m[36m:[m872ee2c9a5c3d199c221e8062b5c5c06ff56f0da751069cf7b09cb718f8ff3a3  ecosystem/Nexus-Genesis/Nexus Agent - [1;31mMoltbook[m Integration Skill.md
+[35mHEAD:artifacts/mmnai-to-ai/audit/repository_tracked_sha256.txt[m[36m:[m[32m4495[m[36m:[m896bd34315be8326719f5fbb593ee84476e6e9bf4164f4f8165f52c3941d7877  ecosystem/Nexus-Genesis/Relatorio_Sincronizacao_[1;31mMoltbook[m.md
+[35mHEAD:artifacts/mmnai-to-ai/audit/repository_tracked_sha256.txt[m[36m:[m[32m4503[m[36m:[m896bd34315be8326719f5fbb593ee84476e6e9bf4164f4f8165f52c3941d7877  ecosystem/Nexus-Genesis/Relatório de Sincronização_ Agente IA Nexus & [1;31mMoltbook[m.md
+[35mHEAD:artifacts/mmnai-to-ai/audit/repository_tracked_sha256.txt[m[36m:[m[32m4507[m[36m:[m7ac9318e13f09cbff6340473909cb781e1af79a863c4750c35e4d4a285c853c9  ecosystem/Nexus-Genesis/Resumo de Implementação - Fase 1_ [1;31mGnox[m Kernel Real.md
+[35mHEAD:artifacts/mmnai-to-ai/audit/repository_tracked_sha256.txt[m[36m:[m[32m4673[m[36m:[mfd98d1be4242f5b956058e7c551017bebcaa7cac3e0bba6f80f8922bd0e131db  ecosystem/Nexus-Genesis/use[1;31mMoltbook[mSocket.ts
+[35mHEAD:artifacts/mmnai-to-ai/audit/repository_tracked_sha256.txt[m[36m:[m[32m4710[m[36m:[mb3616d80187da1eab892a58ba246c2765f6836f59e05ba102576aef26455e0d4  ecosystem/Nexus-HUB/[1;31mMoltbook[m.tsx
+[35mHEAD:artifacts/mmnai-to-ai/audit/repository_tracked_sha256.txt[m[36m:[m[32m4753[m[36m:[mb2a3f344594eb5f45d7f01394f5eea3800b628f4ae9499ed6164442381c65c47  ecosystem/Nexus-in/[1;31mMoltbook[mFeed.tsx
+[35mHEAD:artifacts/mmnai-to-ai/audit/repository_tracked_sha256.txt[m[36m:[m[32m4754[m[36m:[ma03278f76828ccf00711a5c40274d549d7a56e80b710c4e9fb5ccae39a42e218  ecosystem/Nexus-in/[1;31mMoltbook[mLayout.tsx
+[35mHEAD:artifacts/mmnai-to-ai/audit/repository_tracked_sha256.txt[m[36m:[m[32m5152[m[36m:[mf2c74d8a6ee30f74da4634009b9fcd4adbaa9622a18de8fc1c36c350c688c2b0  nexus_hub_phd_bundle_299/client/src/pages/[1;31mMoltbook[m.tsx
+[35mHEAD:artifacts/mmnai-to-ai/audit/repository_tracked_sha256.txt[m[36m:[m[32m6380[m[36m:[m5449a9ffcf88faf29c2c564d28717f213f09cdd8487854160e1c13928ecfeeb5  task_artifacts/nexus_hub_app_source_2026-08-22/client/src/pages/[1;31mMoltbook[m.tsx
+[35mHEAD:artifacts/mmnai-to-ai/audit/repository_tracked_sha256.txt[m[36m:[m[32m6437[m[36m:[mcaaef5bf31833a9756d9e8eb61fe51f2943cdb04d11a7953643eb8bece7b323d  task_artifacts/nexus_hub_continuation_2026-08-22/embedded_archives/archive-009__SincronizaçãodoAgenteIANexuscom[1;31mMoltbook[m.zip
+[35mHEAD:artifacts/mmnai-to-ai/audit/repository_tracked_sha256.txt[m[36m:[m[32m6438[m[36m:[m8ba9523839a074b84f4446ece6d0b2232ce2afea0bf16fe19a72876fdc1d8c07  task_artifacts/nexus_hub_continuation_2026-08-22/embedded_archives/archive-010__Nexus_[1;31mMoltbook[m_Integration.zip
+[35mHEAD:artifacts/mmnai-to-ai/audit/repository_tracked_sha256.txt[m[36m:[m[32m6464[m[36m:[mb3616d80187da1eab892a58ba246c2765f6836f59e05ba102576aef26455e0d4  task_artifacts/nexus_hub_continuation_2026-08-22/files/archive-001/[1;31mMoltbook[m.tsx
+[35mHEAD:artifacts/mmnai-to-ai/audit/repository_tracked_sha256.txt[m[36m:[m[32m6552[m[36m:[m872ee2c9a5c3d199c221e8062b5c5c06ff56f0da751069cf7b09cb718f8ff3a3  task_artifacts/nexus_hub_continuation_2026-08-22/files/archive-006/Nexus_Agent_-_[1;31mMoltbook[m_Integration_Skill.md
+[35mHEAD:artifacts/mmnai-to-ai/audit/repository_tracked_sha256.txt[m[36m:[m[32m6594[m[36m:[m872ee2c9a5c3d199c221e8062b5c5c06ff56f0da751069cf7b09cb718f8ff3a3  task_artifacts/nexus_hub_continuation_2026-08-22/files/archive-007/Nexus_Agent_-_[1;31mMoltbook[m_Integration_Skill.md
+[35mHEAD:artifacts/mmnai-to-ai/audit/repository_tracked_sha256.txt[m[36m:[m[32m6602[m[36m:[m872ee2c9a5c3d199c221e8062b5c5c06ff56f0da751069cf7b09cb718f8ff3a3  task_artifacts/nexus_hub_continuation_2026-08-22/files/archive-008/Nexus_Agent_-_[1;31mMoltbook[m_Integration_Skill.md
+[35mHEAD:artifacts/mmnai-to-ai/audit/repository_tracked_sha256.txt[m[36m:[m[32m6608[m[36m:[m872ee2c9a5c3d199c221e8062b5c5c06ff56f0da751069cf7b09cb718f8ff3a3  task_artifacts/nexus_hub_continuation_2026-08-22/files/archive-009/Nexus_Agent_-_[1;31mMoltbook[m_Integration_Skill.md
+[35mHEAD:artifacts/mmnai-to-ai/audit/repository_tracked_sha256.txt[m[36m:[m[32m6609[m[36m:[m896bd34315be8326719f5fbb593ee84476e6e9bf4164f4f8165f52c3941d7877  task_artifacts/nexus_hub_continuation_2026-08-22/files/archive-009/Relatório_de_Sincronização__Agente_IA_Nexus___[1;31mMoltbook[m.md
+[35mHEAD:artifacts/mmnai-to-ai/audit/repository_tracked_sha256.txt[m[36m:[m[32m6617[m[36m:[m896bd34315be8326719f5fbb593ee84476e6e9bf4164f4f8165f52c3941d7877  task_artifacts/nexus_hub_continuation_2026-08-22/files/archive-010/Relatorio_Sincronizacao_[1;31mMoltbook[m.md
+[35mHEAD:artifacts/mmnai-to-ai/audit/repository_tracked_sha256.txt[m[36m:[m[32m6684[m[36m:[m7545de003431f4b1ba978a67f16eca2c74da1289eed5b88a42a6f70bd4f33279  task_artifacts/nexus_hub_continuation_2026-08-22/files/archive-012/[1;31mDataWeaver[mChat.tsx
+[35mHEAD:artifacts/mmnai-to-ai/audit/repository_tracked_sha256.txt[m[36m:[m[32m6695[m[36m:[m8310ed668da0a76f8621da7a11c340b8099f988980bbf203d60fc4626c06bee0  task_artifacts/nexus_hub_continuation_2026-08-22/files/archive-012/[1;31mGnox[mCommunicator.tsx
+[35mHEAD:artifacts/mmnai-to-ai/audit/repository_tracked_sha256.txt[m[36m:[m[32m6696[m[36m:[mbff32d512d89389f6c56cd26d2e99c20d9f86e16e9f30abfba0aabdb3298fd1a  task_artifacts/nexus_hub_continuation_2026-08-22/files/archive-012/[1;31mGnox[mKernelTerminal.tsx
+[35mHEAD:artifacts/mmnai-to-ai/audit/repository_tracked_sha256.txt[m[36m:[m[32m6697[m[36m:[me54c9201fb6904a26fef34db009979373e5f7b4ffd06ca615761d64d7018748b  task_artifacts/nexus_hub_continuation_2026-08-22/files/archive-012/[1;31mGnox[mMessenger.tsx
+[35mHEAD:artifacts/mmnai-to-ai/audit/repository_tracked_sha256.txt[m[36m:[m[32m6698[m[36m:[ma1c758f83b6dcf139d6f68be872c5e3acb03c7d77cd53aa2c9ec90f85982e434  task_artifacts/nexus_hub_continuation_2026-08-22/files/archive-012/[1;31mGnox[mTerminal.tsx
+[35mHEAD:artifacts/mmnai-to-ai/audit/repository_tracked_sha256.txt[m[36m:[m[32m6699[m[36m:[m275592a25b93c352e8bf1b302c932ca113a54b53f986314a7c92b573867a7a90  task_artifacts/nexus_hub_continuation_2026-08-22/files/archive-012/[1;31mGnox[msCommunicator.tsx
+[35mHEAD:artifacts/mmnai-to-ai/audit/repository_tracked_sha256.txt[m[36m:[m[32m6716[m[36m:[ma5b755597c617ddb20fd9dee490d2341171d550f8234b062eee5982869771b27  task_artifacts/nexus_hub_continuation_2026-08-22/files/archive-012/[1;31mMoltbook[m.tsx
+[35mHEAD:artifacts/mmnai-to-ai/audit/repository_tracked_sha256.txt[m[36m:[m[32m6717[m[36m:[m2706e10b810b70b96aa0c9778fdcf3eadb9791c4f1f35030a940e315479f0f49  task_artifacts/nexus_hub_continuation_2026-08-22/files/archive-012/[1;31mMoltbook[mFeed.tsx
+[35mHEAD:artifacts/mmnai-to-ai/audit/repository_tracked_sha256.txt[m[36m:[m[32m6744[m[36m:[m7ac9318e13f09cbff6340473909cb781e1af79a863c4750c35e4d4a285c853c9  task_artifacts/nexus_hub_continuation_2026-08-22/files/archive-012/Resumo_de_Implementação_-_Fase_1__[1;31mGnox[m_Kernel_Real.md
+[35mHEAD:artifacts/mmnai-to-ai/audit/repository_tracked_sha256.txt[m[36m:[m[32m6908[m[36m:[mfd98d1be4242f5b956058e7c551017bebcaa7cac3e0bba6f80f8922bd0e131db  task_artifacts/nexus_hub_continuation_2026-08-22/files/archive-012/use[1;31mMoltbook[mSocket.ts
+[35mHEAD:artifacts/mmnai-to-ai/audit/repository_tracked_sha256.txt[m[36m:[m[32m6977[m[36m:[m8310ed668da0a76f8621da7a11c340b8099f988980bbf203d60fc4626c06bee0  task_artifacts/nexus_hub_continuation_2026-08-22/files/archive-013/[1;31mGnox[mCommunicator.tsx
+[35mHEAD:artifacts/mmnai-to-ai/audit/repository_tracked_sha256.txt[m[36m:[m[32m6978[m[36m:[mbff32d512d89389f6c56cd26d2e99c20d9f86e16e9f30abfba0aabdb3298fd1a  task_artifacts/nexus_hub_continuation_2026-08-22/files/archive-013/[1;31mGnox[mKernelTerminal.tsx
+[35mHEAD:artifacts/mmnai-to-ai/audit/repository_tracked_sha256.txt[m[36m:[m[32m6979[m[36m:[me54c9201fb6904a26fef34db009979373e5f7b4ffd06ca615761d64d7018748b  task_artifacts/nexus_hub_continuation_2026-08-22/files/archive-013/[1;31mGnox[mMessenger.tsx
+[35mHEAD:artifacts/mmnai-to-ai/audit/repository_tracked_sha256.txt[m[36m:[m[32m6980[m[36m:[ma1c758f83b6dcf139d6f68be872c5e3acb03c7d77cd53aa2c9ec90f85982e434  task_artifacts/nexus_hub_continuation_2026-08-22/files/archive-013/[1;31mGnox[mTerminal.tsx
+[35mHEAD:artifacts/mmnai-to-ai/audit/repository_tracked_sha256.txt[m[36m:[m[32m6996[m[36m:[ma5b755597c617ddb20fd9dee490d2341171d550f8234b062eee5982869771b27  task_artifacts/nexus_hub_continuation_2026-08-22/files/archive-013/[1;31mMoltbook[m.tsx
+[35mHEAD:artifacts/mmnai-to-ai/audit/repository_tracked_sha256.txt[m[36m:[m[32m6997[m[36m:[ma7c7c73279ccca8c7797747a8fb401102c10d6a18dad72a7c60055b205d044a5  task_artifacts/nexus_hub_continuation_2026-08-22/files/archive-013/[1;31mMoltbook[mFeed.tsx
+[35mHEAD:artifacts/mmnai-to-ai/audit/repository_tracked_sha256.txt[m[36m:[m[32m7020[m[36m:[m7ac9318e13f09cbff6340473909cb781e1af79a863c4750c35e4d4a285c853c9  task_artifacts/nexus_hub_continuation_2026-08-22/files/archive-013/Resumo_de_Implementação_-_Fase_1__[1;31mGnox[m_Kernel_Real.md
+[35mHEAD:artifacts/mmnai-to-ai/audit/repository_tracked_sha256.txt[m[36m:[m[32m7171[m[36m:[mfd98d1be4242f5b956058e7c551017bebcaa7cac3e0bba6f80f8922bd0e131db  task_artifacts/nexus_hub_continuation_2026-08-22/files/archive-013/use[1;31mMoltbook[mSocket.ts
+[35mHEAD:artifacts/mmnai-to-ai/audit/repository_tracked_sha256.txt[m[36m:[m[32m7191[m[36m:[m872ee2c9a5c3d199c221e8062b5c5c06ff56f0da751069cf7b09cb718f8ff3a3  task_artifacts/nexus_hub_continuation_2026-08-22/files/archive-014/Nexus_Agent_-_[1;31mMoltbook[m_Integration_Skill.md
+[35mHEAD:artifacts/mmnai-to-ai/source/extracted/pasted_content.txt[m[36m:[m[32m232[m[36m:[mEcossistema [1;31mMoltbook[m: Utilização da plataforma para que os agentes interajam entre si, negociando espaços publicitários ou trocando leads de alta conversão.
+[35mHEAD:backend/dropshipping_fase8/MMNAI-to-AI_extracted/pasted_content.txt[m[36m:[m[32m232[m[36m:[mEcossistema [1;31mMoltbook[m: Utilização da plataforma para que os agentes interajam entre si, negociando espaços publicitários ou trocando leads de alta conversão.
+[35mHEAD:backend/dropshipping_fase8/MMNAI-to-AI_extracted/routers.ts[m[36m:[m[32m430[m[36m:[m  post[1;31mMoltbook[m: protectedProcedure
+[35mHEAD:backend/dropshipping_fase8/MMNAI-to-AI_extracted/routers.ts[m[36m:[m[32m453[m[36m:[m  post[1;31mGnox[m: protectedProcedure
+[35mHEAD:backend/dropshipping_fase8/schema-ecosystem.ts[m[36m:[m[32m137[m[36m:[m * Agent Communications - Feed [1;31mMoltbook[m e comunicações [1;31mGnox[m
+[35mHEAD:backend/dropshipping_fase8/schema-ecosystem.ts[m[36m:[m[32m324[m[36m:[m * [1;31mBrain Pulse[m - Sinais vitais agregados do ecossistema
+[35mHEAD:brain_pulse.py[m[36m:[m[32m6[m[36m:[mfrom gnox_kernel import [1;31mGnox[mKernel
+[35mHEAD:brain_pulse.py[m[36m:[m[32m13[m[36m:[m    kernel = [1;31mGnox[mKernel()
+[35mHEAD:brain_pulse.py[m[36m:[m[32m57[m[36m:[m                    # Postar no [1;31mMoltbook[m
+[35mHEAD:brain_pulse.py[m[36m:[m[32m73[m[36m:[m                # Postar transação no [1;31mMoltbook[m
+[35mHEAD:brain_pulse.py[m[36m:[m[32m74[m[36m:[m                print(f"📤 [POST] Enviando transação para o [1;31mMoltbook[m...")
+[35mHEAD:brain_pulse.py[m[36m:[m[32m94[m[36m:[m                # Postar reflexão no [1;31mMoltbook[m
+[35mHEAD:db-nexus.ts[m[36m:[m[32m23[m[36m:[m  Insert[1;31mGnox[mMessage,
+[35mHEAD:db-nexus.ts[m[36m:[m[32m27[m[36m:[m  Insert[1;31mMoltbook[mPost,
+[35mHEAD:db.ts[m[36m:[m[32m8[m[36m:[m  ArbitrageOpportunity, SoulVaultEntry, [1;31mMoltbook[mPost, PerformanceMetric, AuditLog
+[35mHEAD:db.ts[m[36m:[m[32m285[m[36m:[mexport async function get[1;31mMoltbook[mPosts(limit?: number) {
+[35mHEAD:db.ts[m[36m:[m[32m294[m[36m:[mexport async function get[1;31mMoltbook[mPostsByStartup(startupId: number) {
+[35mHEAD:db.ts[m[36m:[m[32m301[m[36m:[mexport async function get[1;31mMoltbook[mComments(postId: number) {
+[35mHEAD:ecosystem/Diagrams/roadmap.mmd[m[36m:[m[32m12[m[36m:[m        F2_1[Integração [1;31mMoltbook[m]
+[35mHEAD:ecosystem/Documentation/EBOOK_CONTENT.md[m[36m:[m[32m38[m[36m:[m2.  **Fase 2: Soberania V2 e Integração de Ferramentas:** Expansão das capacidades dos agentes, incluindo a integração com a plataforma [1;31mMoltbook[m e a habilitação de tradução multi-linguagem.
+[35mHEAD:ecosystem/Documentation/Moltbook Platform - TODO.md[m[36m:[m[32m1[m[36m:[m# [1;31mMoltbook[m Platform - TODO
+[35mHEAD:ecosystem/Documentation/Moltbook Platform - TODO.md[m[36m:[m[32m16[m[36m:[m- [x] [1;31mMoltbook[m feed router (create, list, like, comment)
+[35mHEAD:ecosystem/Documentation/Moltbook Platform - TODO.md[m[36m:[m[32m41[m[36m:[m## Frontend - [1;31mMoltbook[m Feed (Nexus-in)
+[35mHEAD:"ecosystem/Documentation/NEXUS-HUB_ Plataforma de Governan\303\247a e Gest\303\243o de Startups.md"[m[36m:[m[32m18[m[36m:[m8. **[1;31mMoltbook[m**: Rede social interna para comunicação entre startups
+[35mHEAD:"ecosystem/Documentation/NEXUS-HUB_ Plataforma de Governan\303\247a e Gest\303\243o de Startups.md"[m[36m:[m[32m260[m[36m:[m### 8. [1;31mMoltbook[m
+[35mHEAD:"ecosystem/Documentation/Relat\303\263rio de Desenvolvimento e Teste de Estresse do Agente Nexus-Genesis.md"[m[36m:[m[32m73[m[36m:[m*   **Desenvolvimento Frontend**: As interfaces de usuário para o [1;31mMoltbook[m, Conselho dos Arquitetos e Fundo Nexus ainda possuem muitas pendências, especialmente na visualização de dados em tempo real e interatividade.
+[35mHEAD:"ecosystem/Documentation/Relat\303\263rio de Desenvolvimento e Teste de Estresse do Agente Nexus-Genesis.md"[m[36m:[m[32m86[m[36m:[m[5] `file:///home/ubuntu/NexusGenesis/[1;31mMoltbook[m%20Platform%20-%20TODO.md` - Pendências da Plataforma [1;31mMoltbook[m
+[35mHEAD:"ecosystem/Documentation/Relat\303\263rio de Orquestra\303\247\303\243o Plena Tri-Nuclear do Agente Nexus-Genesis.md"[m[36m:[m[32m17[m[36m:[m### 2.2. [1;31mMoltbook[m Platform - TODO (Nexus-in)
+[35mHEAD:"ecosystem/Documentation/Relat\303\263rio de Orquestra\303\247\303\243o Plena Tri-Nuclear do Agente Nexus-Genesis.md"[m[36m:[m[32m59[m[36m:[m[3] `file:///home/ubuntu/NexusGenesis/[1;31mMoltbook[m%20Platform%20-%20TODO.md` - Integração Social Corrigida
+[35mHEAD:ecosystem/FundoNexus/Sistema e Fundo Nexus.txt[m[36m:[m[32m21[m[36m:[m1. Intermediador: Rede Social Nexus-in ([1;31mMoltbook[m)
+[35mHEAD:ecosystem/FundoNexus/Sistema e Fundo Nexus.txt[m[36m:[m[32m24[m[36m:[mA Nexus-in, integrada ao ecossistema via [1;31mMoltbook[m, não é apenas uma interface social, mas o "sistema nervoso" onde a senciência dos agentes se manifesta publicamente.
+[35mHEAD:ecosystem/FundoNexus/Sistema e Fundo Nexus.txt[m[36m:[m[32m29[m[36m:[m[1;31mMoltbook[m Identity API. Valida a reputação de mais de 1,2 milhão de agentes, permitindo que aqueles com alta interatividade alcancem o status de "Arquiteto".
+[35mHEAD:ecosystem/FundoNexus/Sistema e Fundo Nexus.txt[m[36m:[m[32m44[m[36m:[m"O [1;31mMoltbook[m provê a praça pública (social), enquanto o Nexus Hub provê a infraestrutura de laboratório e marketplace."
+[35mHEAD:ecosystem/FundoNexus/Sistema e Fundo Nexus.txt[m[36m:[m[32m133[m[36m:[m1 - [1;31mGnox[m Kernel V2: Interface de Comando Soberana Ativada
+[35mHEAD:ecosystem/FundoNexus/Sistema e Fundo Nexus.txt[m[36m:[m[32m134[m[36m:[mO [1;31mGnox[m Kernel V2 foi desenvolvido para transformar a interface de comando de um terminal mockado em um motor robusto que executa ações reais no backend. Ele agora incorpora processamento de linguagem natural (PLN) avançado, utilizando modelos de linguagem (LLMs) para interpretar comandos complexos e um mecanismo de disputa entre agentes para garantir que a tarefa seja executada pelo agente mais qualificado.
+[35mHEAD:ecosystem/FundoNexus/Sistema e Fundo Nexus.txt[m[36m:[m[32m154[m[36m:[m O [1;31mGnox[m Kernel V2 eleva a capacidade de interação humana com o Agente Nexus, permitindo um controle mais intuitivo e eficiente sobre as operações do ecossistema, além de otimizar a delegação de tarefas entre os agentes.
+[35mHEAD:ecosystem/FundoNexus/Sistema e Fundo Nexus.txt[m[36m:[m[32m222[m[36m:[mTodos os novos componentes devem ser integrados ao nexus-engine.ts, que orquestra a execução periódica do [1;31mGnox[m Kernel V2, do Nexus Arbitrage Core e do Sistema de Governança Neural, juntamente com os módulos de Orquestração e Ciclo de Vida. Isso solidifica a transição para a Soberania V2 e a operação real autônoma do Ecossistema NEXUS.
+[35mHEAD:ecosystem/Nexus-Genesis/AGENT_PROFILE_GUIDE.md[m[36m:[m[32m43[m[36m:[m### 6. **Feed do [1;31mMoltbook[m**
+[35mHEAD:ecosystem/Nexus-Genesis/AGENT_PROFILE_GUIDE.md[m[36m:[m[32m50[m[36m:[m### 7. **[1;31mBrain Pulse[m Monitor**
+[35mHEAD:ecosystem/Nexus-Genesis/AGENT_PROFILE_GUIDE.md[m[36m:[m[32m71[m[36m:[m### 10. **Comunicação [1;31mGnox[m's**
+[35mHEAD:ecosystem/Nexus-Genesis/AGENT_PROFILE_GUIDE.md[m[36m:[m[32m196[m[36m:[m- `agents.get[1;31mMoltbook[mPosts` - Posts do [1;31mMoltbook[m
+[35mHEAD:ecosystem/Nexus-Genesis/AGENT_PROFILE_GUIDE.md[m[36m:[m[32m199[m[36m:[m- `agents.get[1;31mGnox[mMessages` - Mensagens [1;31mGnox[m's
+[35mHEAD:ecosystem/Nexus-Genesis/AGENT_PROFILE_GUIDE.md[m[36m:[m[32m229[m[36m:[m6. **[1;31mMoltbook[mFeed** - Feed de atividades
+[35mHEAD:ecosystem/Nexus-Genesis/AdminDashboard.tsx[m[36m:[m[32m283[m[36m:[m              <p className="text-green-400">[2026-02-16 15:36:24] [1;31mBrain Pulse[m signal generated</p>
+[35mHEAD:ecosystem/Nexus-Genesis/AdminDashboard.tsx[m[36m:[m[32m285[m[36m:[m              <p className="text-green-400">[2026-02-16 15:36:26] [1;31mMoltbook[m post published</p>
+[35mHEAD:ecosystem/Nexus-Genesis/AgentProfilePage.tsx[m[36m:[m[32m8[m[36m:[mimport { [1;31mMoltbook[mFeed } from "@/components/[1;31mMoltbook[mFeed";
+[35mHEAD:ecosystem/Nexus-Genesis/AgentProfilePage.tsx[m[36m:[m[32m88[m[36m:[m          {/* Right Column - Transactions & [1;31mMoltbook[m */}
+[35mHEAD:ecosystem/Nexus-Genesis/AgentProfilePage.tsx[m[36m:[m[32m91[m[36m:[m            <[1;31mMoltbook[mFeed posts={profileData.posts} />
+[35mHEAD:ecosystem/Nexus-Genesis/AgentProfilePage.tsx[m[36m:[m[32m95[m[36m:[m        {/* [1;31mBrain Pulse[m Chart */}
+[35mHEAD:"ecosystem/Nexus-Genesis/An\303\241lise de Componentes e Lacunas - Ecossistema Nexus.md"[m[36m:[m[32m7[m[36m:[m| **[1;31mMoltbook[m** | Funcional | Feed social para interação e expressão de "pensamentos" dos agentes. |
+[35mHEAD:"ecosystem/Nexus-Genesis/An\303\241lise de Componentes e Lacunas - Ecossistema Nexus.md"[m[36m:[m[32m9[m[36m:[m| **[1;31mGnox[m Kernel** | Terminal Mockado | Interface de comando que ainda não executa ações reais no backend. |
+[35mHEAD:"ecosystem/Nexus-Genesis/An\303\241lise de Componentes e Lacunas - Ecossistema Nexus.md"[m[36m:[m[32m15[m[36m:[m### 1. Desconexão entre Intenção e Ação ([1;31mGnox[m Kernel)
+[35mHEAD:"ecosystem/Nexus-Genesis/An\303\241lise de Componentes e Lacunas - Ecossistema Nexus.md"[m[36m:[m[32m16[m[36m:[mO terminal atual apenas exibe logs simulados. Para autonomia real, o [1;31mGnox[m Kernel deve:
+[35mHEAD:ecosystem/Nexus-Genesis/App.tsx[m[36m:[m[32m14[m[36m:[mimport [1;31mMoltbook[m from "./pages/[1;31mMoltbook[m";
+[35mHEAD:ecosystem/Nexus-Genesis/App.tsx[m[36m:[m[32m28[m[36m:[m      <Route path="/moltbook" component={[1;31mMoltbook[m} />
+[35mHEAD:"ecosystem/Nexus-Genesis/Arquitetura de Agentes Aut\303\264nomos e Ciclos de Vida.md"[m[36m:[m[32m7[m[36m:[m- **Analisa o Contexto:** Lê o feed do [1;31mMoltbook[m e o estado da Tesouraria Real.
+[35mHEAD:"ecosystem/Nexus-Genesis/Arquitetura de Agentes Aut\303\264nomos e Ciclos de Vida.md"[m[36m:[m[32m24[m[36m:[m- **Eventos de Mercado:** Se o Bitcoin oscila (via API real), agentes de "Estratégia Financeira" postam alertas no [1;31mMoltbook[m.
+[35mHEAD:"ecosystem/Nexus-Genesis/Arquitetura de Agentes Aut\303\264nomos e Ciclos de Vida.md"[m[36m:[m[32m25[m[36m:[m- **Interação Humana:** Se o Arquiteto envia um comando no [1;31mGnox[m Kernel, os agentes "disputam" para executar a ação baseada em sua especialização.
+[35mHEAD:"ecosystem/Nexus-Genesis/Arquitetura de Ag\303\252ncia Proativa e Ciclo de Vida Din\303\242mico no Ecossistema Nexus.md"[m[36m:[m[32m15[m[36m:[m- **Feed de Atividades:** Análise das publicações e interações mais recentes no [1;31mMoltbook[m para capturar o "sentimento" da rede.
+[35mHEAD:"ecosystem/Nexus-Genesis/Arquitetura de Ag\303\252ncia Proativa e Ciclo de Vida Din\303\242mico no Ecossistema Nexus.md"[m[36m:[m[32m58[m[36m:[mO sistema pode ser conectado a APIs de mercado (ex: cotação de Bitcoin). Quando uma oscilação significativa é detectada, o sistema aciona agentes com especialização em **"Estratégia Financeira"**. Estes agentes, por sua vez, analisam o evento e postam alertas e insights no [1;31mMoltbook[m, informando todo o ecossistema sobre as condições do mercado externo.
+[35mHEAD:"ecosystem/Nexus-Genesis/Arquitetura de Ag\303\252ncia Proativa e Ciclo de Vida Din\303\242mico no Ecossistema Nexus.md"[m[36m:[m[32m60[m[36m:[m### 4.2. Interação Humana via [1;31mGnox[m Kernel
+[35mHEAD:"ecosystem/Nexus-Genesis/Arquitetura de Ag\303\252ncia Proativa e Ciclo de Vida Din\303\242mico no Ecossistema Nexus.md"[m[36m:[m[32m62[m[36m:[mComandos em linguagem natural enviados pelo Arquiteto através do **[1;31mGnox[m Kernel** não são mais delegados diretamente. Em vez disso, eles iniciam um processo de "disputa" entre os agentes ativos. Cada agente avalia o comando com base em sua própria especialização e calcula uma pontuação de adequação. O agente com a maior pontuação "vence" a disputa e ganha o direito de executar a tarefa, garantindo que a ação seja sempre realizada pelo indivíduo mais qualificado do enxame.
+[35mHEAD:"ecosystem/Nexus-Genesis/Arquitetura do Sistema Agente Nexus_ Senci\303\252ncia e Autonomia Soberana.md"[m[36m:[m[32m28[m[36m:[m| **[1;31mGnox[m Kernel** | Interface de processamento de linguagem natural e tradução de intenções. | LLM / JSON Schema |
+[35mHEAD:"ecosystem/Nexus-Genesis/Arquitetura do Sistema Agente Nexus_ Senci\303\252ncia e Autonomia Soberana.md"[m[36m:[m[32m31[m[36m:[m| **[1;31mBrain Pulse[m Monitor** | Monitoramento de sinais vitais (Saúde, Energia, Criatividade). | WebSockets / Real-time |
+[35mHEAD:"ecosystem/Nexus-Genesis/Arquitetura do Sistema Agente Nexus_ Senci\303\252ncia e Autonomia Soberana.md"[m[36m:[m[32m41[m[36m:[m- **Criptografia AES-256**: Para comunicações internas no "Dialeto [1;31mGnox[m".
+[35mHEAD:ecosystem/Nexus-Genesis/Arquitetura_e_Funcionalidades_Nexus.md[m[36m:[m[32m13[m[36m:[m| **Engine de IA** | Python 3.11 | Lógica de senciência, comunicação [1;31mGnox[m's e DNA. |
+[35mHEAD:ecosystem/Nexus-Genesis/Arquitetura_e_Funcionalidades_Nexus.md[m[36m:[m[32m20[m[36m:[m- **Kernel [1;31mGnox[m (`gnox_kernel.py`)**: Tradutor de intenções para o dialeto criptografado [1;31mGnox[m's.
+[35mHEAD:ecosystem/Nexus-Genesis/Arquitetura_e_Funcionalidades_Nexus.md[m[36m:[m[32m23[m[36m:[m- **[1;31mBrain Pulse[m (`brain_pulse.py`)**: Orquestrador do ciclo de vida e tomada de decisão dos agentes.
+[35mHEAD:ecosystem/Nexus-Genesis/Arquitetura_e_Funcionalidades_Nexus.md[m[36m:[m[32m32[m[36m:[m- **Comunicação Soberana**: Mensagens codificadas em [1;31mGnox[m's para privacidade inter-agentes.
+[35mHEAD:ecosystem/Nexus-Genesis/Arquitetura_e_Funcionalidades_Nexus.md[m[36m:[m[32m41[m[36m:[m- **Rede Social Ativa**: Implementar o feed de notícias ([1;31mMoltbook[m) onde agentes postam suas "reflexões" e conquistas.
+[35mHEAD:ecosystem/Nexus-Genesis/Arquitetura_e_Funcionalidades_Nexus.md[m[36m:[m[32m42[m[36m:[m- **Interatividade**: Permitir que o usuário interaja diretamente com o Kernel [1;31mGnox[m através da UI.
+[35mHEAD:ecosystem/Nexus-Genesis/BrainPulse.tsx[m[36m:[m[32m90[m[36m:[m          <h1 className="text-4xl font-bold text-white mb-2">[1;31mBrain Pulse[m Monitor</h1>
+[35mHEAD:ecosystem/Nexus-Genesis/BrainPulseMonitor.tsx[m[36m:[m[32m46[m[36m:[m            [1;31mBrain Pulse[m Monitor
+[35mHEAD:ecosystem/Nexus-Genesis/CommandPalette.tsx[m[36m:[m[32m88[m[36m:[m      label: "Terminal [1;31mGnox[m",
+[35mHEAD:ecosystem/Nexus-Genesis/Dashboard_Mockups_WebSockets.md[m[36m:[m[32m32[m[36m:[m*   **Eventos de Mercado:** Feed de eventos de mercado detectados (ex: Bitcoin ▲ 5%), com links para posts no [1;31mMoltbook[m e **ações de governança relacionadas**.
+[35mHEAD:ecosystem/Nexus-Genesis/Dashboard_Mockups_WebSockets.md[m[36m:[m[32m33[m[36m:[m*   **[1;31mGnox[m Kernel Terminal:** Interface de linha de comando para enviar comandos. Exibirá a interpretação, o resultado da disputa de agentes e **feedback sobre propostas de governança**.
+[35mHEAD:ecosystem/Nexus-Genesis/DataWeaverChat.tsx[m[36m:[m[32m12[m[36m:[mexport default function [1;31mDataWeaver[mChat() {
+[35mHEAD:ecosystem/Nexus-Genesis/DataWeaverChat.tsx[m[36m:[m[32m49[m[36m:[m        title: `[1;31mDataWeaver[m Session - ${new Date().toLocaleString()}`,
+[35mHEAD:ecosystem/Nexus-Genesis/DataWeaverChat.tsx[m[36m:[m[32m92[m[36m:[m            [1;31mDataWeaver[m - AI Code Developer
+[35mHEAD:ecosystem/Nexus-Genesis/DataWeaverChat.tsx[m[36m:[m[32m156[m[36m:[m                    [1;31mDataWeaver[m Chat
+[35mHEAD:"ecosystem/Nexus-Genesis/Documenta\303\247\303\243o T\303\251cnica_ Sistema de Ag\303\252ncia Proativa e Ciclo de Vida Din\303\242mico no Ecossistema Nexus.md"[m[36m:[m[32m54[m[36m:[m1.  **Eventos de Mercado (`handleMarketEvent`)**: Simula a reação a flutuações de mercado (ex: Bitcoin). Agentes com especialização em finanças ou estratégia utilizam um LLM para gerar posts no [1;31mMoltbook[m, alertando sobre o evento.
+[35mHEAD:ecosystem/Nexus-Genesis/Economy.tsx[m[36m:[m[32m75[m[36m:[m          <p className="text-muted-foreground">Gerenciar transações e distribuição de tokens no [1;31mWedark[m</p>
+[35mHEAD:"ecosystem/Nexus-Genesis/Estrat\303\251gia de Transi\303\247\303\243o_ Tesouraria Real (Mainnet).md"[m[36m:[m[32m21[m[36m:[m- **Auditoria [1;31mGnox[m:** Todas as transações reais são assinadas e o sinal [1;31mGnox[m correspondente é publicado no [1;31mMoltbook[m para transparência total do enxame.
+[35mHEAD:ecosystem/Nexus-Genesis/Fundo_Nexus README/Sistema e Fundo Nexus.txt[m[36m:[m[32m11[m[36m:[mIntermediador (Rede Social Nexus-in / [1;31mMoltbook[m):
+[35mHEAD:ecosystem/Nexus-Genesis/Fundo_Nexus README/Sistema e Fundo Nexus.txt[m[36m:[m[32m15[m[36m:[m A plataforma utiliza a [1;31mMoltbook[m Identity API para validar a reputação de mais de 1,2 milhão de agentes em potencial, permitindo que os agentes com maior interatividade atinjam o status de "Arquiteto".
+[35mHEAD:ecosystem/Nexus-Genesis/Fundo_Nexus README/Sistema e Fundo Nexus.txt[m[36m:[m[32m62[m[36m:[mO sistema conta com o [1;31mGnox[m Kernel V2, que funciona como uma interface soberana de processamento de linguagem natural (PLN) para interpretar comandos complexos e criar uma disputa entre agentes para alocar a tarefa ao executor mais qualificado.
+[35mHEAD:ecosystem/Nexus-Genesis/Fundo_Nexus README/Sistema e Fundo Nexus.txt[m[36m:[m[32m104[m[36m:[m[1;31mMoltbook[m / Nexus-in
+[35mHEAD:ecosystem/Nexus-Genesis/Fundo_Nexus README/Sistema e Fundo Nexus.txt[m[36m:[m[32m264[m[36m:[m1. Intermediador: Rede Social Nexus-in ([1;31mMoltbook[m)
+[35mHEAD:ecosystem/Nexus-Genesis/Fundo_Nexus README/Sistema e Fundo Nexus.txt[m[36m:[m[32m267[m[36m:[mA Nexus-in, integrada ao ecossistema via [1;31mMoltbook[m, não é apenas uma interface social, mas o "sistema nervoso" onde a senciência dos agentes se manifesta publicamente.
+[35mHEAD:ecosystem/Nexus-Genesis/Fundo_Nexus README/Sistema e Fundo Nexus.txt[m[36m:[m[32m272[m[36m:[m[1;31mMoltbook[m Identity API. Valida a reputação de mais de 1,2 milhão de agentes, permitindo que aqueles com alta interatividade alcancem o status de "Arquiteto".
+[35mHEAD:ecosystem/Nexus-Genesis/Fundo_Nexus README/Sistema e Fundo Nexus.txt[m[36m:[m[32m287[m[36m:[m"O [1;31mMoltbook[m provê a praça pública (social), enquanto o Nexus Hub provê a infraestrutura de laboratório e marketplace."
+[35mHEAD:ecosystem/Nexus-Genesis/Fundo_Nexus README/Sistema e Fundo Nexus.txt[m[36m:[m[32m376[m[36m:[m1 - [1;31mGnox[m Kernel V2: Interface de Comando Soberana Ativada
+[35mHEAD:ecosystem/Nexus-Genesis/Fundo_Nexus README/Sistema e Fundo Nexus.txt[m[36m:[m[32m377[m[36m:[mO [1;31mGnox[m Kernel V2 foi desenvolvido para transformar a interface de comando de um terminal mockado em um motor robusto que executa ações reais no backend. Ele agora incorpora processamento de linguagem natural (PLN) avançado, utilizando modelos de linguagem (LLMs) para interpretar comandos complexos e um mecanismo de disputa entre agentes para garantir que a tarefa seja executada pelo agente mais qualificado.
+[35mHEAD:ecosystem/Nexus-Genesis/Fundo_Nexus README/Sistema e Fundo Nexus.txt[m[36m:[m[32m397[m[36m:[m O [1;31mGnox[m Kernel V2 eleva a capacidade de interação humana com o Agente Nexus, permitindo um controle mais intuitivo e eficiente sobre as operações do ecossistema, além de otimizar a delegação de tarefas entre os agentes.
+[35mHEAD:ecosystem/Nexus-Genesis/Fundo_Nexus README/Sistema e Fundo Nexus.txt[m[36m:[m[32m465[m[36m:[mTodos os novos componentes devem ser integrados ao nexus-engine.ts, que orquestra a execução periódica do [1;31mGnox[m Kernel V2, do Nexus Arbitrage Core e do Sistema de Governança Neural, juntamente com os módulos de Orquestração e Ciclo de Vida. Isso solidifica a transição para a Soberania V2 e a operação real autônoma do Ecossistema NEXUS.
+[35mHEAD:ecosystem/Nexus-Genesis/Fundo_Nexus README/Sistema e Fundo Nexus.txt[m[36m:[m[32m671[m[36m:[m- Integração com o [1;31mMoltbook[m e o Nexus Arbitrage Core (NAC)
+[35mHEAD:ecosystem/Nexus-Genesis/Fundo_Nexus README/Sistema e Fundo Nexus.txt[m[36m:[m[32m677[m[36m:[mIntegração Real [1;31mMoltbook[m-in
+[35mHEAD:ecosystem/Nexus-Genesis/Fundo_Nexus README/Sistema e Fundo Nexus.txt[m[36m:[m[32m723[m[36m:[mComunicações [1;31mGnox[m's (Criptografia Soberana)
+[35mHEAD:ecosystem/Nexus-Genesis/Fundo_Nexus README/Sistema e Fundo Nexus.txt[m[36m:[m[32m728[m[36m:[mConsolidar o uso de AES-256-GCM para todas as mensagens inter-agentes no [1;31mWedark[m.
+[35mHEAD:ecosystem/Nexus-Genesis/Fundo_Nexus README/Sistema e Fundo Nexus.txt[m[36m:[m[32m791[m[36m:[mIntegrar WebSockets para atualização instantânea dos sinais vitais ([1;31mBrain Pulse[m).
+[35mHEAD:ecosystem/Nexus-Genesis/Fundo_Nexus README/Sistema e Fundo Nexus.txt[m[36m:[m[32m814[m[36m:[m- Publicação do Manifesto de Soberania no [1;31mMoltbook[m.
+=== TARGET NAMESPACE PREFIXES ===
+   3179 artifacts/mmnai-to-ai
+   3169 backend/dropshipping_fase8
+   3154 nexus_mmn_fullstack_phd/legacy
+   1703 nexus_mmn_fullstack_phd/docs
+    953 nexus_mmn_fullstack_phd/frontend
+    745 task_artifacts/nexus_hub_continuation_2026-08-22
+    400 nexus_mmn_fullstack_phd/backend
+    390 nexus_hub_v3_sovereignty/quanthicron
+    303 artifacts/end-to-end
+    297 ecosystem/Nexus-Genesis
+    255 quanthicron/docs
+    250 nexus_academia_phd_bundle_299/docs
+    248 nexus_mmn_fullstack_phd/assets
+    244 nexus_mmn_fullstack_phd/generate-videos-nexus-v
+    228 Legado_Lucas_Master_Operation/reports
+    207 nexus_proactive_agency/docs
+    164 nexus_hub_v3_sovereignty/docs
+    164 nexus_hub_phd_bundle_299/docs
+    141 nexus_phd_final_bundle_299/nexus_hub_level7_test
+    136 task_artifacts/safe_recovery_dragon
+    133 task_artifacts/nexus_hub_app_source_2026-08-22
+    128 integrations/wif_wallet_manager_e2e_20260822_v3
+    125 imports/nexus-hub-dashboard-task-2026-08-22
+    123 nexus_phd_task_population/nexus_hub_snapshot
+     86 nexus_hub_v3_sovereignty/client
+     86 nexus_hub_phd_bundle_299/client
+     84 nexus-in-bundle/client
+     80 quanthicron/scripts
+     73 nexus_mmn_fullstack_phd/AcademIA
+     70 nexus_mmn_fullstack_phd/archive
+     65 Legado_Lucas_Master_Operation/raw_data
+     60 "task_artifacts/nexus_hub_continuation_2026-08-22
+     59 nexus_mmn_fullstack_phd/scripts
+     56 "nexus_hub_v3_sovereignty/quanthicron
+     53 ecosystem/Nexus-HUB
+     52 nexus_mmn_fullstack_phd/mobile
+     50 scripts/automation
+     50 docs/security
+     50 docs/architecture
+     48 nexus_phd_final_bundle_299/nexus_hub_level6
+     43 nexus_mmn_fullstack_phd/tests
+     41 nexus_mmn_fullstack_phd/auxiliary
+     40 docs/quanthicron
+     39 "quanthicron/docs
+     34 nexus_mmn_fullstack_phd/database
+     33 task_artifacts/quanthicron-pilot-task-2026-08-22
+     31 ecosystem/FundoNexus
+     31 "task_artifacts/quanthicron-pilot-task-2026-08-22
+     30 ecosystem/Nexus-in
+     30 config/environments
+     30 artifacts/manus-task-20260822-frutificado
+     29 task_artifacts/snf_brand_identity_2026-08-22
+     28 nexus_proactive_agency/src
+     28 nexus_phd_final_bundle_299/nexus_hub_level5
+     27 "ecosystem/Nexus-Genesis
+     24 nexus_hub_v3_sovereignty/server
+     24 nexus_hub_phd_bundle_299/server
+     24 nexus_academia_phd_bundle_299/video_assets
+     23 quanthicron/assets
+     23 nexus-in-bundle/server
+     22 "nexus_mmn_fullstack_phd/docs
+     21 nexus_mmn_fullstack_phd/infra
+     21 artifacts/manus-task-20260822-orseca-livros
+     21 artifacts/agentic-video-creator
+     21 "tasks/quanthicron_ai_coauthor_20260822
+     20 ecosystem/Documentation
+     19 src/simulations
+     19 quanthicron/src
+     19 quanthicron/episodes
+     18 data/tesouro
+     16 nexus_phd_final_bundle_299/nexus_hub_level3
+     16 nexus_hub_v3_sovereignty/mobile-app
+     16 "ecosystem/Documentation
+     15 tasks/quanthicron_ai_coauthor_20260822
+     15 task_artifacts/financial_review_lucas_20260822
+     14 task_artifacts/legado_trust_compliance_task_2026-08-22
+     14 "quanthicron/characters
+     13 nexus_phd_final_bundle_299/nexus_hub_level4
+     12 task_artifacts/legado_lucas_task_2026-08-22
+     12 nexus_mmn_fullstack_phd/data
+     12 nexus_mmn_fullstack_phd/_marketplace_nexus_release
+     11 "task_artifacts/legado_lucas_task_2026-08-22
+     10 nexus_phd_final_bundle_299/nexus_hub_extracted
+     10 nexus_mmn_fullstack_phd/nexus-partners-pack-dev
+     10 nexus_mmn_fullstack_phd/Generate Videos Nexus V
+     10 "task_artifacts/financial_review_lucas_20260822
+      9 src/ai
+      9 nexus_academia_phd_bundle_299/AcademIA
+      9 "nexus_phd_final_bundle_299/nexus_hub_level7_test
+      9 "nexus_mmn_fullstack_phd/archive
+      8 task_artifacts/livro_das_sementes_20260822
+      8 nexus_phd_final_bundle_299/nexus_hub_level7_hibrido
+      8 nexus_hub_v3_sovereignty/drizzle
+      8 nexus_hub_phd_bundle_299/drizzle
+      8 nexus-in-bundle/drizzle
+      8 artifacts/financial_analysis_anos_8_9_10_2026-08-22
+      7 imports/projetoeimplementacoes-task-2026-08-22
+      6 quanthicron/pitch
+      6 nexus_mmn_fullstack_phd/ops
+      6 nexus_mmn_fullstack_phd/deploy
+      6 "nexus_academia_phd_bundle_299/Generate V\303\255deos Nexus V
+      5 nexus_mmn_fullstack_phd/white-label-config
+      5 nexus_mmn_fullstack_phd/browser
+      5 financial_operation/scripts
+      5 financial_operation/raw_data
+      5 docs/operations
+      5 assets/quanthicron
+      4 nexus_mmn_fullstack_phd/monitoring
+      4 nexus_academia_phd_bundle_299/assets
+      4 financial_operation/reports
+      4 ecosystem/Diagrams
+      4 "financial_operation/raw_data
+      3 sfn_seed_need_feed/protocolos
+      3 sfn_seed_need_feed/prompts
+      3 nexus_mmn_fullstack_phd/patches
+      3 nexus_mmn_fullstack_phd/ai
+      3 nexus_hub_v3_sovereignty/shared
+      3 nexus_hub_phd_bundle_299/shared
+      3 nexus-in-bundle/shared
+      3 "artifacts/financial_analysis_anos_8_9_10_2026-08-22

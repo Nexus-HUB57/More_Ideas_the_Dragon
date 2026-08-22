@@ -1,0 +1,27 @@
+{
+  "version": "7",
+  "dialect": "mysql",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "5",
+      "when": 1770930040400,
+      "tag": "0000_legal_sprite",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "5",
+      "when": 1770930155665,
+      "tag": "0001_luxuriant_ogun",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "5",
+      "when": 1771663605388,
+      "tag": "0002_safe_vivisector",
+      "breakpoints": true
+    }
+  ]
+}

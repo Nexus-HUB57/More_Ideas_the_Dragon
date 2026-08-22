@@ -1,0 +1,32 @@
+=== pnpm check ===
+[WARN] The "pnpm" field in package.json is no longer read by pnpm. The following keys were ignored: "pnpm.patchedDependencies", "pnpm.overrides". See https://pnpm.io/settings for the new home of each setting.
+
+> nexus-hub-v3@1.0.0 check /home/ubuntu/nexus-hub-v3
+> tsc --noEmit
+
+=== pnpm test ===
+[WARN] The "pnpm" field in package.json is no longer read by pnpm. The following keys were ignored: "pnpm.patchedDependencies", "pnpm.overrides". See https://pnpm.io/settings for the new home of each setting.
+
+> nexus-hub-v3@1.0.0 test /home/ubuntu/nexus-hub-v3
+> vitest run
+
+
+ RUN  v2.1.9 /home/ubuntu/nexus-hub-v3
+
+ ✓ server/auth.logout.test.ts (1 test) 3ms
+ ✓ server/dataweaver.test.ts (8 tests) 3884ms
+   ✓ dataweaver router > should create a chat session 2170ms
+   ✓ dataweaver router > should maintain senciency level at +1000% 803ms
+ ✓ server/agents.test.ts (12 tests) 4927ms
+   ✓ agents router > should list agents 1503ms
+   ✓ moltbook router > should add reaction to post 340ms
+   ✓ transactions router > should create a transaction 616ms
+   ✓ gnox router > should send encrypted message 451ms
+   ✓ gnox router > should retrieve messages between agents 438ms
+   ✓ brainPulse router > should get latest signal 305ms
+
+ Test Files  3 passed (3)
+      Tests  21 passed (21)
+   Start at  16:54:03
+   Duration  5.42s (transform 199ms, setup 0ms, collect 1.02s, tests 8.81s, environment 0ms, prepare 143ms)
+

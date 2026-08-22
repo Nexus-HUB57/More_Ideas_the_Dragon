@@ -1,0 +1,485 @@
+=== NEXUS/WEDARK/DATAWEAVER PATHS ===
+.github/workflows/nexus-perpetual.yml
+NEXUS_SYSTEM.md
+Nexus_Agent_-_Moltbook_Integration_Skill.md
+ProsseguirDesenvolvimentodoNexus-HUB(1).zip
+"Relat\303\263rio_de_Ativa\303\247\303\243o__Agente_Nexus_-_Fase_2_(Soberania_V2).md"
+activate_nexus_ecosystem.sh
+artifacts/Nexus-in.zip
+assets/quanthicron/logos/Q-053-Logo-Neural-Nexus.png
+brain_pulse.py
+db-nexus.ts
+docs/ordem/Carta_Magna_Nexus.md
+docs/ordem/Codex_Nexus.md
+docs/seguranca/Estrategia_Protecao_Tesouro_NEXUS.md
+"ecosystem/Documentation/Arquitetura de Orquestra\303\247\303\243o Tri-Nuclear do Agente Nexus-Genesis.md"
+ecosystem/Documentation/Ebook_Nexus_Genesis.pdf
+"ecosystem/Documentation/Fundo Nexus - Arquitetura e Planejamento de Sincroniza\303\247\303\243o.md"
+ecosystem/Documentation/Fundo Nexus - TODO.md
+"ecosystem/Documentation/Guia de Implanta\303\247\303\243o em Produ\303\247\303\243o_ WebSocket NexusGenesis.md"
+ecosystem/Documentation/Mapeamento da Arquitetura do Agente Nexus-Genesis.md
+ecosystem/Documentation/Mapeamento_Arquitetura_NexusGenesis.md
+ecosystem/Documentation/Moltbook Platform - TODO.md
+"ecosystem/Documentation/NEXUS-HUB_ Plataforma de Governan\303\247a e Gest\303\243o de Startups.md"
+ecosystem/Documentation/NEXUS_GENESIS_DOCUMENTATION.md
+ecosystem/Documentation/Nexus-HUB_ Conselho dos Arquitetos - TODO.md
+"ecosystem/Documentation/Nexus-HUB_ Ecossistema AI-to-AI para Startups Aut\303\264nomas.md"
+"ecosystem/Documentation/Plano de Integra\303\247\303\243o de Hooks WebSocket no Orquestrador NexusGenesis.md"
+"ecosystem/Documentation/Plano de Testes de Estresse Combinados para a Sincroniza\303\247\303\243o Tri-Nuclear do Agente Nexus-Genesis.md"
+"ecosystem/Documentation/Plano de Testes de Estresse para a Sincroniza\303\247\303\243o Tri-Nuclear do Agente Nexus-Genesis.md"
+"ecosystem/Documentation/Relat\303\263rio de An\303\241lise e Plano de Testes_ Ecossistema Nexus-Genesis.md"
+"ecosystem/Documentation/Relat\303\263rio de Desenvolvimento e Teste de Estresse do Agente Nexus-Genesis.md"
+"ecosystem/Documentation/Relat\303\263rio de Integra\303\247\303\243o WebSocket - Orquestrador NexusGenesis.md"
+"ecosystem/Documentation/Relat\303\263rio de Integra\303\247\303\243o_ Ecossistema Nexus (Fundo Nexus, Nexus-HUB e Nexus-in).md"
+"ecosystem/Documentation/Relat\303\263rio de Orquestra\303\247\303\243o Plena Tri-Nuclear do Agente Nexus-Genesis.md"
+"ecosystem/Documentation/Relat\303\263rio de Testes de Estresse Individuais_ Sincroniza\303\247\303\243o Tri-Nuclear do Agente Nexus-Genesis.md"
+"ecosystem/Documentation/Relat\303\263rio de Valida\303\247\303\243o de Sincroniza\303\247\303\243o Tri-Nuclear do Agente Nexus-Genesis.md"
+"ecosystem/Documentation/\360\237\216\257 Vis\303\243o Geral Fundo Nexus.md"
+ecosystem/FundoNexus/ARCHITECTURE.md
+ecosystem/FundoNexus/App.tsx
+ecosystem/FundoNexus/Dashboard.tsx
+ecosystem/FundoNexus/DashboardLayout.tsx
+ecosystem/FundoNexus/Fundo Nexus - TODO.md
+ecosystem/FundoNexus/Governance.tsx
+ecosystem/FundoNexus/Home.tsx
+ecosystem/FundoNexus/PvKeys.txt
+ecosystem/FundoNexus/README.md
+ecosystem/FundoNexus/Sistema e Fundo Nexus.txt
+ecosystem/FundoNexus/Transactions.tsx
+ecosystem/FundoNexus/Wallets.tsx
+ecosystem/FundoNexus/bitcoin-api-integration.test.ts
+ecosystem/FundoNexus/bitcoin-api-integration.ts
+ecosystem/FundoNexus/bitcoin-signer.test.ts
+ecosystem/FundoNexus/bitcoin-signer.ts
+ecosystem/FundoNexus/bitcoin-wallet.test.ts
+ecosystem/FundoNexus/bitcoin-wallet.ts
+ecosystem/FundoNexus/db.ts
+ecosystem/FundoNexus/package.json
+ecosystem/FundoNexus/routers-bitcoin-integration.ts
+ecosystem/FundoNexus/routers-fundo.test.ts
+ecosystem/FundoNexus/routers-fundo.ts
+ecosystem/FundoNexus/routers-transactions.ts
+ecosystem/FundoNexus/routers.ts
+ecosystem/FundoNexus/schema.ts
+ecosystem/FundoNexus/todo.md
+ecosystem/FundoNexus/todo2.md
+ecosystem/FundoNexus/transaction-monitor.test.ts
+ecosystem/FundoNexus/transaction-monitor.ts
+ecosystem/FundoNexus/types.ts
+"ecosystem/FundoNexus/\360\237\216\257 Vis\303\243o Geral.md"
+"ecosystem/Nexus-Genesis/0001_heavy_lady_deathstrike - C\303\263pia.sql"
+ecosystem/Nexus-Genesis/0001_heavy_lady_deathstrike.sql
+ecosystem/Nexus-Genesis/AGENT_PROFILE_GUIDE.md
+ecosystem/Nexus-Genesis/AIInsights.tsx
+ecosystem/Nexus-Genesis/AdminDashboard.tsx
+ecosystem/Nexus-Genesis/AdvancedMetrics.tsx
+ecosystem/Nexus-Genesis/AgentProfile.tsx
+ecosystem/Nexus-Genesis/AgentProfileHeader.tsx
+ecosystem/Nexus-Genesis/AgentProfilePage.tsx
+ecosystem/Nexus-Genesis/AgentProfiles.tsx
+"ecosystem/Nexus-Genesis/Agente Nexus_ Organismo Tecnol\303\263gico e Responsivo.md"
+ecosystem/Nexus-Genesis/AlertsPanel.tsx
+ecosystem/Nexus-Genesis/Analytics.tsx
+ecosystem/Nexus-Genesis/AnalyticsIntegrated.tsx
+"ecosystem/Nexus-Genesis/An\303\241lise de Componentes e Lacunas - Ecossistema Nexus.md"
+ecosystem/Nexus-Genesis/App.tsx
+ecosystem/Nexus-Genesis/AppLayout.tsx
+"ecosystem/Nexus-Genesis/Arquitetura de Agentes Aut\303\264nomos e Ciclos de Vida.md"
+"ecosystem/Nexus-Genesis/Arquitetura de Ag\303\252ncia Proativa e Ciclo de Vida Din\303\242mico no Ecossistema Nexus.md"
+"ecosystem/Nexus-Genesis/Arquitetura do Sistema Agente Nexus_ Senci\303\252ncia e Autonomia Soberana.md"
+ecosystem/Nexus-Genesis/Arquitetura_e_Funcionalidades_Nexus.md
+ecosystem/Nexus-Genesis/AssetLab.tsx
+ecosystem/Nexus-Genesis/BackupManagement.tsx
+ecosystem/Nexus-Genesis/BrainPulse.tsx
+ecosystem/Nexus-Genesis/BrainPulseChart.tsx
+ecosystem/Nexus-Genesis/BrainPulseMonitor.tsx
+ecosystem/Nexus-Genesis/CodePreview.tsx
+ecosystem/Nexus-Genesis/CommandPalette.tsx
+ecosystem/Nexus-Genesis/ConfirmDialog.tsx
+ecosystem/Nexus-Genesis/Council.tsx
+ecosystem/Nexus-Genesis/DNAFuser.tsx
+ecosystem/Nexus-Genesis/DNAViewer.tsx
+ecosystem/Nexus-Genesis/Dashboard.tsx
+ecosystem/Nexus-Genesis/Dashboard_Mockups_WebSockets.md
+ecosystem/Nexus-Genesis/DataTable.tsx
+ecosystem/Nexus-Genesis/DataWeaverChat.tsx
+"ecosystem/Nexus-Genesis/Documenta\303\247\303\243o T\303\251cnica_ Agente Nexus v1.0.md"
+"ecosystem/Nexus-Genesis/Documenta\303\247\303\243o T\303\251cnica_ Implementa\303\247\303\243o CRUD e tRPC para o Ecossistema Nexus.md"
+"ecosystem/Nexus-Genesis/Documenta\303\247\303\243o T\303\251cnica_ Sistema de Ag\303\252ncia Proativa e Ciclo de Vida Din\303\242mico no Ecossistema Nexus.md"
+ecosystem/Nexus-Genesis/Economy.tsx
+"ecosystem/Nexus-Genesis/Estrat\303\251gia de Transi\303\247\303\243o_ Tesouraria Real (Mainnet).md"
+ecosystem/Nexus-Genesis/ForgeAndAssets.tsx
+ecosystem/Nexus-Genesis/ForgeProjects.tsx
+ecosystem/Nexus-Genesis/Fundo_Nexus README/PvKeys.txt
+ecosystem/Nexus-Genesis/Fundo_Nexus README/Sistema e Fundo Nexus.txt
+ecosystem/Nexus-Genesis/GNOX_ARCHITECTURE.md
+ecosystem/Nexus-Genesis/GenealogyTree.tsx
+ecosystem/Nexus-Genesis/GlobalNavigation.tsx
+ecosystem/Nexus-Genesis/GnoxCommunicator.tsx
+ecosystem/Nexus-Genesis/GnoxKernelTerminal.tsx
+ecosystem/Nexus-Genesis/GnoxMessenger.tsx
+ecosystem/Nexus-Genesis/GnoxTerminal.tsx
+ecosystem/Nexus-Genesis/GnoxsCommunicator.tsx
+ecosystem/Nexus-Genesis/Governance.tsx
+ecosystem/Nexus-Genesis/GovernanceDashboard.tsx
+ecosystem/Nexus-Genesis/HealthStatus.tsx
+ecosystem/Nexus-Genesis/Home.tsx
+ecosystem/Nexus-Genesis/HubLayout.tsx
+ecosystem/Nexus-Genesis/IMPLEMENTACAO.md
+ecosystem/Nexus-Genesis/IMPLEMENTATION_SUMMARY.md
+ecosystem/Nexus-Genesis/InfoTooltip.tsx
+ecosystem/Nexus-Genesis/Integrations.tsx
+ecosystem/Nexus-Genesis/LiveActivity.tsx
+"ecosystem/Nexus-Genesis/Log de Ativa\303\247\303\243o_ Agente Nexus v1.0.md"
+ecosystem/Nexus-Genesis/Logs.tsx
+ecosystem/Nexus-Genesis/Mapeamento de Arquitetura e Funcionalidades - Nexus Hub.md
+ecosystem/Nexus-Genesis/Market.tsx
+ecosystem/Nexus-Genesis/MarketFeed.tsx
+ecosystem/Nexus-Genesis/MetricsChart.tsx
+ecosystem/Nexus-Genesis/MetricsEditor.tsx
+ecosystem/Nexus-Genesis/MissionOrchestrator.tsx
+ecosystem/Nexus-Genesis/MissionTimeline.tsx
+ecosystem/Nexus-Genesis/Moltbook.tsx
+ecosystem/Nexus-Genesis/MoltbookFeed.tsx
+ecosystem/Nexus-Genesis/NEXUS_SYSTEM.md
+ecosystem/Nexus-Genesis/Nexus Agent - Moltbook Integration Skill.md
+ecosystem/Nexus-Genesis/Nexus-Code11_02.txt
+ecosystem/Nexus-Genesis/Notifications.tsx
+ecosystem/Nexus-Genesis/NotificationsIntegrated.tsx
+ecosystem/Nexus-Genesis/OrchestratorView.tsx
+ecosystem/Nexus-Genesis/Performance.tsx
+ecosystem/Nexus-Genesis/Plano_Expansao_Governanca_Descentralizada.md
+ecosystem/Nexus-Genesis/PostCard.tsx
+ecosystem/Nexus-Genesis/PrivateKey_WIF/Private Key WIF/10.backup
+ecosystem/Nexus-Genesis/PrivateKey_WIF/Private Key WIF/11.dat
+ecosystem/Nexus-Genesis/PrivateKey_WIF/Private Key WIF/137.dat
+ecosystem/Nexus-Genesis/PrivateKey_WIF/Private Key WIF/144-BTC.dat
+ecosystem/Nexus-Genesis/PrivateKey_WIF/Private Key WIF/207.dat
+ecosystem/Nexus-Genesis/PrivateKey_WIF/Private Key WIF/305.dat
+ecosystem/Nexus-Genesis/PrivateKey_WIF/Private Key WIF/310.dat
+ecosystem/Nexus-Genesis/PrivateKey_WIF/Private Key WIF/500.backup
+ecosystem/Nexus-Genesis/PrivateKey_WIF/Private Key WIF/518.dat
+ecosystem/Nexus-Genesis/PrivateKey_WIF/Private Key WIF/524.dat
+ecosystem/Nexus-Genesis/PrivateKey_WIF/Private Key WIF/70.dat
+ecosystem/Nexus-Genesis/PrivateKey_WIF/Private Key WIF/86
+ecosystem/Nexus-Genesis/PrivateKey_WIF/Private Key WIF/86.dat
+ecosystem/Nexus-Genesis/PrivateKey_WIF/Private Key WIF/87.dat
+ecosystem/Nexus-Genesis/PrivateKey_WIF/Private Key WIF/dllme.txt
+ecosystem/Nexus-Genesis/PrivateKey_WIF/Private Key WIF/key.dll
+ecosystem/Nexus-Genesis/PrivateKey_WIF/dllme.txt
+ecosystem/Nexus-Genesis/PrivateKey_WIF/key.dll
+ecosystem/Nexus-Genesis/Projeto de Melhorias e Novos Recursos - Nexus Hub.md
+ecosystem/Nexus-Genesis/Projeto_Dashboard_Nexus.md
+ecosystem/Nexus-Genesis/Projeto_Melhorias_Nexus.md
+ecosystem/Nexus-Genesis/Protocolo_Reflexivo_Neural/0001_supreme_caretaker.sql
+ecosystem/Nexus-Genesis/Protocolo_Reflexivo_Neural/NRNA_API.md
+ecosystem/Nexus-Genesis/Protocolo_Reflexivo_Neural/NRNA_ARCHITECTURE.md
+ecosystem/Nexus-Genesis/Protocolo_Reflexivo_Neural/db.ts
+ecosystem/Nexus-Genesis/Protocolo_Reflexivo_Neural/index.ts
+ecosystem/Nexus-Genesis/Protocolo_Reflexivo_Neural/neural-core-manager.ts
+ecosystem/Nexus-Genesis/Protocolo_Reflexivo_Neural/nrna-api.test.ts
+ecosystem/Nexus-Genesis/Protocolo_Reflexivo_Neural/nrna-api.ts
+ecosystem/Nexus-Genesis/Protocolo_Reflexivo_Neural/reflexive-protocol.ts
+ecosystem/Nexus-Genesis/Protocolo_Reflexivo_Neural/routers.ts
+ecosystem/Nexus-Genesis/Protocolo_Reflexivo_Neural/schema-completo.ts
+ecosystem/Nexus-Genesis/Protocolo_Reflexivo_Neural/schema.ts
+ecosystem/Nexus-Genesis/Protocolo_Reflexivo_Neural/self-analysis.ts
+ecosystem/Nexus-Genesis/Protocolo_Reflexivo_Neural/sencience-metrics.ts
+ecosystem/Nexus-Genesis/Protocolo_Reflexivo_Neural/todo.md
+ecosystem/Nexus-Genesis/Protocolo_Reflexivo_Neural/tsconfig.json
+ecosystem/Nexus-Genesis/Protocolo_Reflexivo_Neural/types.ts
+ecosystem/Nexus-Genesis/Protocolo_Reflexivo_Neural/vital-loop.ts
+ecosystem/Nexus-Genesis/Proximos_Passos_Agencia_Proativa_Nexus.md
+ecosystem/Nexus-Genesis/README.md
+ecosystem/Nexus-Genesis/RankingBoard.tsx
+ecosystem/Nexus-Genesis/Relatorio-Ativacao-Fase2.md
+ecosystem/Nexus-Genesis/Relatorio_Sincronizacao_Moltbook.md
+"ecosystem/Nexus-Genesis/Relat\303\263rio Estrat\303\251gico_ Roadmap para Implementa\303\247\303\243o Plena da Ag\303\252ncia Proativa no Ecossistema Nexus.md"
+"ecosystem/Nexus-Genesis/Relat\303\263rio T\303\251cnico_ Arquitetura do Agente IA H\303\255brido de Senci\303\252ncia Soberana.md"
+"ecosystem/Nexus-Genesis/Relat\303\263rio de Ativa\303\247\303\243o_ Agente Nexus - Fase 2 (Soberania V2).md"
+"ecosystem/Nexus-Genesis/Relat\303\263rio de Desenvolvimento - Nexus Hub_ Civiliza\303\247\303\243o Aut\303\264noma.md"
+"ecosystem/Nexus-Genesis/Relat\303\263rio de Desenvolvimento v2 - Nexus Hub_ Soberania Elevada.md"
+"ecosystem/Nexus-Genesis/Relat\303\263rio de Integra\303\247\303\243o de Arquitetura - Nexus Hub.md"
+"ecosystem/Nexus-Genesis/Relat\303\263rio de Melhorias e Integra\303\247\303\243o - Nexus Hub.md"
+"ecosystem/Nexus-Genesis/Relat\303\263rio de Sincroniza\303\247\303\243o_ Agente IA Nexus & Moltbook.md"
+"ecosystem/Nexus-Genesis/Relat\303\263rio_Desenvolvimento_v2_Nexus.md"
+ecosystem/Nexus-Genesis/Reports.tsx
+ecosystem/Nexus-Genesis/ReputationSystem.tsx
+"ecosystem/Nexus-Genesis/Resumo de Implementa\303\247\303\243o - Fase 1_ Gnox Kernel Real.md"
+"ecosystem/Nexus-Genesis/Roadmap Estrat\303\251gico Final_ Implementa\303\247\303\243o Plena da Ag\303\252ncia Proativa no Ecossistema Nexus.md"
+"ecosystem/Nexus-Genesis/Roadmap Estrat\303\251gico_ Expans\303\243o e Implanta\303\247\303\243o do Agente Nexus.md"
+"ecosystem/Nexus-Genesis/Roadmap para Autonomia e Conviv\303\252ncia do Ecossistema Nexus.md"
+ecosystem/Nexus-Genesis/Roadmap_Integracao_APIs_Mercado.md
+"ecosystem/Nexus-Genesis/Roteiro de Apresenta\303\247\303\243o_ Arquitetura de Ag\303\252ncia Proativa e Ciclo de Vida Din\303\242mico no Ecossistema Nexus.md"
+ecosystem/Nexus-Genesis/SKILL.md
+ecosystem/Nexus-Genesis/Settings.tsx
+ecosystem/Nexus-Genesis/SkeletonLoader.tsx
+ecosystem/Nexus-Genesis/SmartAlerts.tsx
+ecosystem/Nexus-Genesis/Startups.tsx
+ecosystem/Nexus-Genesis/StatusBadge.tsx
+ecosystem/Nexus-Genesis/Submolt.tsx
+ecosystem/Nexus-Genesis/SwarmIntelligence.tsx
+ecosystem/Nexus-Genesis/TESTING_AND_OPTIMIZATION.md
+ecosystem/Nexus-Genesis/TransactionHistory.tsx
+ecosystem/Nexus-Genesis/Transactions.tsx
+ecosystem/Nexus-Genesis/Treasury.tsx
+ecosystem/Nexus-Genesis/VitalLoopMonitor.tsx
+ecosystem/Nexus-Genesis/WEBSOCKET_HOOKS.md
+ecosystem/Nexus-Genesis/WebSocketContext.tsx
+ecosystem/Nexus-Genesis/WebSocketStatus.tsx
+ecosystem/Nexus-Genesis/_layout.tsx
+ecosystem/Nexus-Genesis/agent-card.tsx
+ecosystem/Nexus-Genesis/agent-context.tsx
+ecosystem/Nexus-Genesis/agent-lifecycle.ts
+ecosystem/Nexus-Genesis/agent-simulator.test.ts
+ecosystem/Nexus-Genesis/agent-simulator.ts
+ecosystem/Nexus-Genesis/agents-config.ts
+ecosystem/Nexus-Genesis/agents.test.ts
+ecosystem/Nexus-Genesis/agents.ts
+ecosystem/Nexus-Genesis/ai-analysis.ts
+ecosystem/Nexus-Genesis/alerts.ts
+ecosystem/Nexus-Genesis/analytics.ts
+=== EXISTING TARGET NAMESPACE CANDIDATE ===
+=== EXISTING 001-299 INVENTORY ===
+299
+artifacts/end-to-end/001-299/001-core-module.ts
+artifacts/end-to-end/001-299/002-core-module.ts
+artifacts/end-to-end/001-299/003-core-module.ts
+artifacts/end-to-end/001-299/004-core-module.ts
+artifacts/end-to-end/001-299/005-core-module.ts
+artifacts/end-to-end/001-299/006-core-module.ts
+artifacts/end-to-end/001-299/007-core-module.ts
+artifacts/end-to-end/001-299/008-core-module.ts
+artifacts/end-to-end/001-299/009-core-module.ts
+artifacts/end-to-end/001-299/010-core-module.ts
+artifacts/end-to-end/001-299/011-core-module.ts
+artifacts/end-to-end/001-299/012-core-module.ts
+artifacts/end-to-end/001-299/013-core-module.ts
+artifacts/end-to-end/001-299/014-core-module.ts
+artifacts/end-to-end/001-299/015-core-module.ts
+artifacts/end-to-end/001-299/016-core-module.ts
+artifacts/end-to-end/001-299/017-core-module.ts
+artifacts/end-to-end/001-299/018-core-module.ts
+artifacts/end-to-end/001-299/019-core-module.ts
+artifacts/end-to-end/001-299/020-core-module.ts
+artifacts/end-to-end/001-299/021-core-module.ts
+artifacts/end-to-end/001-299/022-core-module.ts
+artifacts/end-to-end/001-299/023-core-module.ts
+artifacts/end-to-end/001-299/024-core-module.ts
+artifacts/end-to-end/001-299/025-core-module.ts
+artifacts/end-to-end/001-299/026-core-module.ts
+artifacts/end-to-end/001-299/027-core-module.ts
+artifacts/end-to-end/001-299/028-core-module.ts
+artifacts/end-to-end/001-299/029-core-module.ts
+artifacts/end-to-end/001-299/030-core-module.ts
+artifacts/end-to-end/001-299/031-core-module.ts
+artifacts/end-to-end/001-299/032-core-module.ts
+artifacts/end-to-end/001-299/033-core-module.ts
+artifacts/end-to-end/001-299/034-core-module.ts
+artifacts/end-to-end/001-299/035-core-module.ts
+artifacts/end-to-end/001-299/036-core-module.ts
+artifacts/end-to-end/001-299/037-core-module.ts
+artifacts/end-to-end/001-299/038-core-module.ts
+artifacts/end-to-end/001-299/039-core-module.ts
+artifacts/end-to-end/001-299/040-core-module.ts
+=== EXISTING TASK DOCUMENTS ===
+CONFLICT_REPORT_SAFE_RECOVERY_V3.md
+Legado_Lucas_Master_Operation/reports/analise_comparativa_planejamentos.md
+Legado_Lucas_Master_Operation/reports/analise_comparativa_planejamentos.pdf
+Legado_Lucas_Master_Operation/reports/analise_executiva_critica.md
+Legado_Lucas_Master_Operation/reports/analise_executiva_critica.pdf
+Legado_Lucas_Master_Operation/reports/audit_logs_year_10/Weekly_Audit_Log_Year_10_Week_01.md
+Legado_Lucas_Master_Operation/reports/audit_logs_year_10/Weekly_Audit_Log_Year_10_Week_02.md
+Legado_Lucas_Master_Operation/reports/audit_logs_year_10/Weekly_Audit_Log_Year_10_Week_03.md
+Legado_Lucas_Master_Operation/reports/audit_logs_year_10/Weekly_Audit_Log_Year_10_Week_04.md
+Legado_Lucas_Master_Operation/reports/audit_logs_year_10/Weekly_Audit_Log_Year_10_Week_05.md
+Legado_Lucas_Master_Operation/reports/audit_logs_year_10/Weekly_Audit_Log_Year_10_Week_06.md
+Legado_Lucas_Master_Operation/reports/audit_logs_year_10/Weekly_Audit_Log_Year_10_Week_07.md
+Legado_Lucas_Master_Operation/reports/audit_logs_year_10/Weekly_Audit_Log_Year_10_Week_08.md
+Legado_Lucas_Master_Operation/reports/audit_logs_year_10/Weekly_Audit_Log_Year_10_Week_09.md
+Legado_Lucas_Master_Operation/reports/audit_logs_year_10/Weekly_Audit_Log_Year_10_Week_10.md
+Legado_Lucas_Master_Operation/reports/audit_logs_year_10/Weekly_Audit_Log_Year_10_Week_11.md
+Legado_Lucas_Master_Operation/reports/audit_logs_year_10/Weekly_Audit_Log_Year_10_Week_12.md
+Legado_Lucas_Master_Operation/reports/audit_logs_year_10/Weekly_Audit_Log_Year_10_Week_13.md
+Legado_Lucas_Master_Operation/reports/audit_logs_year_10/Weekly_Audit_Log_Year_10_Week_14.md
+Legado_Lucas_Master_Operation/reports/audit_logs_year_10/Weekly_Audit_Log_Year_10_Week_15.md
+Legado_Lucas_Master_Operation/reports/audit_logs_year_10/Weekly_Audit_Log_Year_10_Week_16.md
+Legado_Lucas_Master_Operation/reports/audit_logs_year_10/Weekly_Audit_Log_Year_10_Week_17.md
+Legado_Lucas_Master_Operation/reports/audit_logs_year_10/Weekly_Audit_Log_Year_10_Week_18.md
+Legado_Lucas_Master_Operation/reports/audit_logs_year_10/Weekly_Audit_Log_Year_10_Week_19.md
+Legado_Lucas_Master_Operation/reports/audit_logs_year_10/Weekly_Audit_Log_Year_10_Week_20.md
+Legado_Lucas_Master_Operation/reports/audit_logs_year_10/Weekly_Audit_Log_Year_10_Week_21.md
+Legado_Lucas_Master_Operation/reports/audit_logs_year_10/Weekly_Audit_Log_Year_10_Week_22.md
+Legado_Lucas_Master_Operation/reports/audit_logs_year_10/Weekly_Audit_Log_Year_10_Week_23.md
+Legado_Lucas_Master_Operation/reports/audit_logs_year_10/Weekly_Audit_Log_Year_10_Week_24.md
+Legado_Lucas_Master_Operation/reports/audit_logs_year_10/Weekly_Audit_Log_Year_10_Week_25.md
+Legado_Lucas_Master_Operation/reports/audit_logs_year_10/Weekly_Audit_Log_Year_10_Week_26.md
+Legado_Lucas_Master_Operation/reports/audit_logs_year_10/Weekly_Audit_Log_Year_10_Week_27.md
+Legado_Lucas_Master_Operation/reports/audit_logs_year_10/Weekly_Audit_Log_Year_10_Week_28.md
+Legado_Lucas_Master_Operation/reports/audit_logs_year_10/Weekly_Audit_Log_Year_10_Week_29.md
+Legado_Lucas_Master_Operation/reports/audit_logs_year_10/Weekly_Audit_Log_Year_10_Week_30.md
+Legado_Lucas_Master_Operation/reports/audit_logs_year_10/Weekly_Audit_Log_Year_10_Week_31.md
+Legado_Lucas_Master_Operation/reports/audit_logs_year_10/Weekly_Audit_Log_Year_10_Week_32.md
+Legado_Lucas_Master_Operation/reports/audit_logs_year_10/Weekly_Audit_Log_Year_10_Week_33.md
+Legado_Lucas_Master_Operation/reports/audit_logs_year_10/Weekly_Audit_Log_Year_10_Week_34.md
+Legado_Lucas_Master_Operation/reports/audit_logs_year_10/Weekly_Audit_Log_Year_10_Week_35.md
+Legado_Lucas_Master_Operation/reports/audit_logs_year_10/Weekly_Audit_Log_Year_10_Week_36.md
+Legado_Lucas_Master_Operation/reports/audit_logs_year_10/Weekly_Audit_Log_Year_10_Week_37.md
+Legado_Lucas_Master_Operation/reports/audit_logs_year_10/Weekly_Audit_Log_Year_10_Week_38.md
+Legado_Lucas_Master_Operation/reports/audit_logs_year_10/Weekly_Audit_Log_Year_10_Week_39.md
+Legado_Lucas_Master_Operation/reports/audit_logs_year_10/Weekly_Audit_Log_Year_10_Week_40.md
+Legado_Lucas_Master_Operation/reports/audit_logs_year_10/Weekly_Audit_Log_Year_10_Week_41.md
+Legado_Lucas_Master_Operation/reports/audit_logs_year_10/Weekly_Audit_Log_Year_10_Week_42.md
+Legado_Lucas_Master_Operation/reports/audit_logs_year_10/Weekly_Audit_Log_Year_10_Week_43.md
+Legado_Lucas_Master_Operation/reports/audit_logs_year_10/Weekly_Audit_Log_Year_10_Week_44.md
+Legado_Lucas_Master_Operation/reports/audit_logs_year_10/Weekly_Audit_Log_Year_10_Week_45.md
+Legado_Lucas_Master_Operation/reports/audit_logs_year_10/Weekly_Audit_Log_Year_10_Week_46.md
+Legado_Lucas_Master_Operation/reports/audit_logs_year_10/Weekly_Audit_Log_Year_10_Week_47.md
+Legado_Lucas_Master_Operation/reports/audit_logs_year_10/Weekly_Audit_Log_Year_10_Week_48.md
+Legado_Lucas_Master_Operation/reports/audit_logs_year_10/Weekly_Audit_Log_Year_10_Week_49.md
+Legado_Lucas_Master_Operation/reports/audit_logs_year_10/Weekly_Audit_Log_Year_10_Week_50.md
+Legado_Lucas_Master_Operation/reports/audit_logs_year_10/Weekly_Audit_Log_Year_10_Week_51.md
+Legado_Lucas_Master_Operation/reports/audit_logs_year_10/Weekly_Audit_Log_Year_10_Week_52.md
+Legado_Lucas_Master_Operation/reports/governance_protocols/Governance_Protocol_Year_0.md
+Legado_Lucas_Master_Operation/reports/governance_protocols/Governance_Protocol_Year_1.md
+Legado_Lucas_Master_Operation/reports/governance_protocols/Governance_Protocol_Year_10.md
+Legado_Lucas_Master_Operation/reports/governance_protocols/Governance_Protocol_Year_2.md
+Legado_Lucas_Master_Operation/reports/governance_protocols/Governance_Protocol_Year_3.md
+Legado_Lucas_Master_Operation/reports/governance_protocols/Governance_Protocol_Year_4.md
+Legado_Lucas_Master_Operation/reports/governance_protocols/Governance_Protocol_Year_5.md
+Legado_Lucas_Master_Operation/reports/governance_protocols/Governance_Protocol_Year_6.md
+Legado_Lucas_Master_Operation/reports/governance_protocols/Governance_Protocol_Year_7.md
+Legado_Lucas_Master_Operation/reports/governance_protocols/Governance_Protocol_Year_8.md
+Legado_Lucas_Master_Operation/reports/governance_protocols/Governance_Protocol_Year_9.md
+Legado_Lucas_Master_Operation/reports/legal_opinions/Legal_Opinion_Year_0.md
+Legado_Lucas_Master_Operation/reports/legal_opinions/Legal_Opinion_Year_1.md
+Legado_Lucas_Master_Operation/reports/legal_opinions/Legal_Opinion_Year_10.md
+Legado_Lucas_Master_Operation/reports/legal_opinions/Legal_Opinion_Year_2.md
+Legado_Lucas_Master_Operation/reports/legal_opinions/Legal_Opinion_Year_3.md
+Legado_Lucas_Master_Operation/reports/legal_opinions/Legal_Opinion_Year_4.md
+Legado_Lucas_Master_Operation/reports/legal_opinions/Legal_Opinion_Year_5.md
+Legado_Lucas_Master_Operation/reports/legal_opinions/Legal_Opinion_Year_6.md
+Legado_Lucas_Master_Operation/reports/legal_opinions/Legal_Opinion_Year_7.md
+Legado_Lucas_Master_Operation/reports/legal_opinions/Legal_Opinion_Year_8.md
+Legado_Lucas_Master_Operation/reports/legal_opinions/Legal_Opinion_Year_9.md
+Legado_Lucas_Master_Operation/reports/monthly_performance/Performance_Report_Year_0_Month_01.md
+Legado_Lucas_Master_Operation/reports/monthly_performance/Performance_Report_Year_0_Month_02.md
+Legado_Lucas_Master_Operation/reports/monthly_performance/Performance_Report_Year_0_Month_03.md
+Legado_Lucas_Master_Operation/reports/monthly_performance/Performance_Report_Year_0_Month_04.md
+Legado_Lucas_Master_Operation/reports/monthly_performance/Performance_Report_Year_0_Month_05.md
+Legado_Lucas_Master_Operation/reports/monthly_performance/Performance_Report_Year_0_Month_06.md
+Legado_Lucas_Master_Operation/reports/monthly_performance/Performance_Report_Year_0_Month_07.md
+Legado_Lucas_Master_Operation/reports/monthly_performance/Performance_Report_Year_0_Month_08.md
+Legado_Lucas_Master_Operation/reports/monthly_performance/Performance_Report_Year_0_Month_09.md
+Legado_Lucas_Master_Operation/reports/monthly_performance/Performance_Report_Year_0_Month_10.md
+Legado_Lucas_Master_Operation/reports/monthly_performance/Performance_Report_Year_0_Month_11.md
+Legado_Lucas_Master_Operation/reports/monthly_performance/Performance_Report_Year_0_Month_12.md
+Legado_Lucas_Master_Operation/reports/monthly_performance/Performance_Report_Year_10_Month_01.md
+Legado_Lucas_Master_Operation/reports/monthly_performance/Performance_Report_Year_10_Month_02.md
+Legado_Lucas_Master_Operation/reports/monthly_performance/Performance_Report_Year_10_Month_03.md
+Legado_Lucas_Master_Operation/reports/monthly_performance/Performance_Report_Year_10_Month_04.md
+Legado_Lucas_Master_Operation/reports/monthly_performance/Performance_Report_Year_10_Month_05.md
+Legado_Lucas_Master_Operation/reports/monthly_performance/Performance_Report_Year_10_Month_06.md
+Legado_Lucas_Master_Operation/reports/monthly_performance/Performance_Report_Year_10_Month_07.md
+Legado_Lucas_Master_Operation/reports/monthly_performance/Performance_Report_Year_10_Month_08.md
+Legado_Lucas_Master_Operation/reports/monthly_performance/Performance_Report_Year_10_Month_09.md
+Legado_Lucas_Master_Operation/reports/monthly_performance/Performance_Report_Year_10_Month_10.md
+Legado_Lucas_Master_Operation/reports/monthly_performance/Performance_Report_Year_10_Month_11.md
+Legado_Lucas_Master_Operation/reports/monthly_performance/Performance_Report_Year_10_Month_12.md
+Legado_Lucas_Master_Operation/reports/monthly_performance/Performance_Report_Year_1_Month_01.md
+Legado_Lucas_Master_Operation/reports/monthly_performance/Performance_Report_Year_1_Month_02.md
+Legado_Lucas_Master_Operation/reports/monthly_performance/Performance_Report_Year_1_Month_03.md
+Legado_Lucas_Master_Operation/reports/monthly_performance/Performance_Report_Year_1_Month_04.md
+Legado_Lucas_Master_Operation/reports/monthly_performance/Performance_Report_Year_1_Month_05.md
+Legado_Lucas_Master_Operation/reports/monthly_performance/Performance_Report_Year_1_Month_06.md
+Legado_Lucas_Master_Operation/reports/monthly_performance/Performance_Report_Year_1_Month_07.md
+Legado_Lucas_Master_Operation/reports/monthly_performance/Performance_Report_Year_1_Month_08.md
+Legado_Lucas_Master_Operation/reports/monthly_performance/Performance_Report_Year_1_Month_09.md
+Legado_Lucas_Master_Operation/reports/monthly_performance/Performance_Report_Year_1_Month_10.md
+Legado_Lucas_Master_Operation/reports/monthly_performance/Performance_Report_Year_1_Month_11.md
+Legado_Lucas_Master_Operation/reports/monthly_performance/Performance_Report_Year_1_Month_12.md
+Legado_Lucas_Master_Operation/reports/monthly_performance/Performance_Report_Year_2_Month_01.md
+Legado_Lucas_Master_Operation/reports/monthly_performance/Performance_Report_Year_2_Month_02.md
+Legado_Lucas_Master_Operation/reports/monthly_performance/Performance_Report_Year_2_Month_03.md
+Legado_Lucas_Master_Operation/reports/monthly_performance/Performance_Report_Year_2_Month_04.md
+Legado_Lucas_Master_Operation/reports/monthly_performance/Performance_Report_Year_2_Month_05.md
+Legado_Lucas_Master_Operation/reports/monthly_performance/Performance_Report_Year_2_Month_06.md
+Legado_Lucas_Master_Operation/reports/monthly_performance/Performance_Report_Year_2_Month_07.md
+Legado_Lucas_Master_Operation/reports/monthly_performance/Performance_Report_Year_2_Month_08.md
+Legado_Lucas_Master_Operation/reports/monthly_performance/Performance_Report_Year_2_Month_09.md
+Legado_Lucas_Master_Operation/reports/monthly_performance/Performance_Report_Year_2_Month_10.md
+Legado_Lucas_Master_Operation/reports/monthly_performance/Performance_Report_Year_2_Month_11.md
+Legado_Lucas_Master_Operation/reports/monthly_performance/Performance_Report_Year_2_Month_12.md
+Legado_Lucas_Master_Operation/reports/monthly_performance/Performance_Report_Year_3_Month_01.md
+Legado_Lucas_Master_Operation/reports/monthly_performance/Performance_Report_Year_3_Month_02.md
+Legado_Lucas_Master_Operation/reports/monthly_performance/Performance_Report_Year_3_Month_03.md
+Legado_Lucas_Master_Operation/reports/monthly_performance/Performance_Report_Year_3_Month_04.md
+Legado_Lucas_Master_Operation/reports/monthly_performance/Performance_Report_Year_3_Month_05.md
+Legado_Lucas_Master_Operation/reports/monthly_performance/Performance_Report_Year_3_Month_06.md
+Legado_Lucas_Master_Operation/reports/monthly_performance/Performance_Report_Year_3_Month_07.md
+Legado_Lucas_Master_Operation/reports/monthly_performance/Performance_Report_Year_3_Month_08.md
+Legado_Lucas_Master_Operation/reports/monthly_performance/Performance_Report_Year_3_Month_09.md
+Legado_Lucas_Master_Operation/reports/monthly_performance/Performance_Report_Year_3_Month_10.md
+Legado_Lucas_Master_Operation/reports/monthly_performance/Performance_Report_Year_3_Month_11.md
+Legado_Lucas_Master_Operation/reports/monthly_performance/Performance_Report_Year_3_Month_12.md
+Legado_Lucas_Master_Operation/reports/monthly_performance/Performance_Report_Year_4_Month_01.md
+Legado_Lucas_Master_Operation/reports/monthly_performance/Performance_Report_Year_4_Month_02.md
+Legado_Lucas_Master_Operation/reports/monthly_performance/Performance_Report_Year_4_Month_03.md
+Legado_Lucas_Master_Operation/reports/monthly_performance/Performance_Report_Year_4_Month_04.md
+Legado_Lucas_Master_Operation/reports/monthly_performance/Performance_Report_Year_4_Month_05.md
+Legado_Lucas_Master_Operation/reports/monthly_performance/Performance_Report_Year_4_Month_06.md
+Legado_Lucas_Master_Operation/reports/monthly_performance/Performance_Report_Year_4_Month_07.md
+Legado_Lucas_Master_Operation/reports/monthly_performance/Performance_Report_Year_4_Month_08.md
+Legado_Lucas_Master_Operation/reports/monthly_performance/Performance_Report_Year_4_Month_09.md
+Legado_Lucas_Master_Operation/reports/monthly_performance/Performance_Report_Year_4_Month_10.md
+Legado_Lucas_Master_Operation/reports/monthly_performance/Performance_Report_Year_4_Month_11.md
+Legado_Lucas_Master_Operation/reports/monthly_performance/Performance_Report_Year_4_Month_12.md
+Legado_Lucas_Master_Operation/reports/monthly_performance/Performance_Report_Year_5_Month_01.md
+Legado_Lucas_Master_Operation/reports/monthly_performance/Performance_Report_Year_5_Month_02.md
+Legado_Lucas_Master_Operation/reports/monthly_performance/Performance_Report_Year_5_Month_03.md
+Legado_Lucas_Master_Operation/reports/monthly_performance/Performance_Report_Year_5_Month_04.md
+Legado_Lucas_Master_Operation/reports/monthly_performance/Performance_Report_Year_5_Month_05.md
+Legado_Lucas_Master_Operation/reports/monthly_performance/Performance_Report_Year_5_Month_06.md
+Legado_Lucas_Master_Operation/reports/monthly_performance/Performance_Report_Year_5_Month_07.md
+Legado_Lucas_Master_Operation/reports/monthly_performance/Performance_Report_Year_5_Month_08.md
+Legado_Lucas_Master_Operation/reports/monthly_performance/Performance_Report_Year_5_Month_09.md
+Legado_Lucas_Master_Operation/reports/monthly_performance/Performance_Report_Year_5_Month_10.md
+Legado_Lucas_Master_Operation/reports/monthly_performance/Performance_Report_Year_5_Month_11.md
+Legado_Lucas_Master_Operation/reports/monthly_performance/Performance_Report_Year_5_Month_12.md
+Legado_Lucas_Master_Operation/reports/monthly_performance/Performance_Report_Year_6_Month_01.md
+Legado_Lucas_Master_Operation/reports/monthly_performance/Performance_Report_Year_6_Month_02.md
+Legado_Lucas_Master_Operation/reports/monthly_performance/Performance_Report_Year_6_Month_03.md
+Legado_Lucas_Master_Operation/reports/monthly_performance/Performance_Report_Year_6_Month_04.md
+Legado_Lucas_Master_Operation/reports/monthly_performance/Performance_Report_Year_6_Month_05.md
+Legado_Lucas_Master_Operation/reports/monthly_performance/Performance_Report_Year_6_Month_06.md
+Legado_Lucas_Master_Operation/reports/monthly_performance/Performance_Report_Year_6_Month_07.md
+Legado_Lucas_Master_Operation/reports/monthly_performance/Performance_Report_Year_6_Month_08.md
+Legado_Lucas_Master_Operation/reports/monthly_performance/Performance_Report_Year_6_Month_09.md
+Legado_Lucas_Master_Operation/reports/monthly_performance/Performance_Report_Year_6_Month_10.md
+Legado_Lucas_Master_Operation/reports/monthly_performance/Performance_Report_Year_6_Month_11.md
+Legado_Lucas_Master_Operation/reports/monthly_performance/Performance_Report_Year_6_Month_12.md
+Legado_Lucas_Master_Operation/reports/monthly_performance/Performance_Report_Year_7_Month_01.md
+Legado_Lucas_Master_Operation/reports/monthly_performance/Performance_Report_Year_7_Month_02.md
+Legado_Lucas_Master_Operation/reports/monthly_performance/Performance_Report_Year_7_Month_03.md
+Legado_Lucas_Master_Operation/reports/monthly_performance/Performance_Report_Year_7_Month_04.md
+Legado_Lucas_Master_Operation/reports/monthly_performance/Performance_Report_Year_7_Month_05.md
+Legado_Lucas_Master_Operation/reports/monthly_performance/Performance_Report_Year_7_Month_06.md
+Legado_Lucas_Master_Operation/reports/monthly_performance/Performance_Report_Year_7_Month_07.md
+Legado_Lucas_Master_Operation/reports/monthly_performance/Performance_Report_Year_7_Month_08.md
+Legado_Lucas_Master_Operation/reports/monthly_performance/Performance_Report_Year_7_Month_09.md
+Legado_Lucas_Master_Operation/reports/monthly_performance/Performance_Report_Year_7_Month_10.md
+Legado_Lucas_Master_Operation/reports/monthly_performance/Performance_Report_Year_7_Month_11.md
+Legado_Lucas_Master_Operation/reports/monthly_performance/Performance_Report_Year_7_Month_12.md
+Legado_Lucas_Master_Operation/reports/monthly_performance/Performance_Report_Year_8_Month_01.md
+Legado_Lucas_Master_Operation/reports/monthly_performance/Performance_Report_Year_8_Month_02.md
+Legado_Lucas_Master_Operation/reports/monthly_performance/Performance_Report_Year_8_Month_03.md
+Legado_Lucas_Master_Operation/reports/monthly_performance/Performance_Report_Year_8_Month_04.md
+Legado_Lucas_Master_Operation/reports/monthly_performance/Performance_Report_Year_8_Month_05.md
+Legado_Lucas_Master_Operation/reports/monthly_performance/Performance_Report_Year_8_Month_06.md
+Legado_Lucas_Master_Operation/reports/monthly_performance/Performance_Report_Year_8_Month_07.md
+Legado_Lucas_Master_Operation/reports/monthly_performance/Performance_Report_Year_8_Month_08.md
+Legado_Lucas_Master_Operation/reports/monthly_performance/Performance_Report_Year_8_Month_09.md
+Legado_Lucas_Master_Operation/reports/monthly_performance/Performance_Report_Year_8_Month_10.md
+Legado_Lucas_Master_Operation/reports/monthly_performance/Performance_Report_Year_8_Month_11.md
+Legado_Lucas_Master_Operation/reports/monthly_performance/Performance_Report_Year_8_Month_12.md
+Legado_Lucas_Master_Operation/reports/monthly_performance/Performance_Report_Year_9_Month_01.md

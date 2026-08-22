@@ -1,0 +1,40 @@
+Only in /home/ubuntu/nexus-hub-v3: .project-config.json
+Only in /home/ubuntu/github-sync/repo-snapshot/task_artifacts/nexus_hub_app_source_2026-08-22: SOURCE_MANIFEST.json
+Only in /home/ubuntu/github-sync/repo-snapshot/task_artifacts/nexus_hub_app_source_2026-08-22: SOURCE_MANIFEST.sha256
+Files /home/ubuntu/nexus-hub-v3/client/index.html and /home/ubuntu/github-sync/repo-snapshot/task_artifacts/nexus_hub_app_source_2026-08-22/client/index.html differ
+Files /home/ubuntu/nexus-hub-v3/client/src/App.tsx and /home/ubuntu/github-sync/repo-snapshot/task_artifacts/nexus_hub_app_source_2026-08-22/client/src/App.tsx differ
+Only in /home/ubuntu/nexus-hub-v3/client/src/components: CodePreview.tsx
+Files /home/ubuntu/nexus-hub-v3/client/src/index.css and /home/ubuntu/github-sync/repo-snapshot/task_artifacts/nexus_hub_app_source_2026-08-22/client/src/index.css differ
+Only in /home/ubuntu/github-sync/repo-snapshot/task_artifacts/nexus_hub_app_source_2026-08-22/client/src/pages: Agents.tsx
+Only in /home/ubuntu/github-sync/repo-snapshot/task_artifacts/nexus_hub_app_source_2026-08-22/client/src/pages: Arbitrage.tsx
+Only in /home/ubuntu/nexus-hub-v3/client/src/pages: BrainPulseMonitor.tsx
+Only in /home/ubuntu/nexus-hub-v3/client/src/pages: DNAFuser.tsx
+Only in /home/ubuntu/github-sync/repo-snapshot/task_artifacts/nexus_hub_app_source_2026-08-22/client/src/pages: Dashboard.tsx
+Only in /home/ubuntu/nexus-hub-v3/client/src/pages: DataWeaverChat.tsx
+Only in /home/ubuntu/nexus-hub-v3/client/src/pages: Economy.tsx
+Only in /home/ubuntu/github-sync/repo-snapshot/task_artifacts/nexus_hub_app_source_2026-08-22/client/src/pages: Finance.tsx
+Only in /home/ubuntu/nexus-hub-v3/client/src/pages: GnoxCommunicator.tsx
+Only in /home/ubuntu/github-sync/repo-snapshot/task_artifacts/nexus_hub_app_source_2026-08-22/client/src/pages: Governance.tsx
+Files /home/ubuntu/nexus-hub-v3/client/src/pages/Home.tsx and /home/ubuntu/github-sync/repo-snapshot/task_artifacts/nexus_hub_app_source_2026-08-22/client/src/pages/Home.tsx differ
+Only in /home/ubuntu/github-sync/repo-snapshot/task_artifacts/nexus_hub_app_source_2026-08-22/client/src/pages: Market.tsx
+Only in /home/ubuntu/github-sync/repo-snapshot/task_artifacts/nexus_hub_app_source_2026-08-22/client/src/pages: Moltbook.tsx
+Only in /home/ubuntu/nexus-hub-v3/client/src/pages: MoltbookFeed.tsx
+Only in /home/ubuntu/github-sync/repo-snapshot/task_artifacts/nexus_hub_app_source_2026-08-22/client/src/pages: SoulVault.tsx
+Only in /home/ubuntu/github-sync/repo-snapshot/task_artifacts/nexus_hub_app_source_2026-08-22/client/src/pages: Startups.tsx
+Only in /home/ubuntu/nexus-hub-v3/drizzle: 0000_legal_sprite.sql
+Only in /home/ubuntu/github-sync/repo-snapshot/task_artifacts/nexus_hub_app_source_2026-08-22/drizzle: 0000_unknown_swordsman.sql
+Only in /home/ubuntu/nexus-hub-v3/drizzle: 0001_luxuriant_ogun.sql
+Only in /home/ubuntu/github-sync/repo-snapshot/task_artifacts/nexus_hub_app_source_2026-08-22/drizzle: 0001_sparkling_umar.sql
+Only in /home/ubuntu/nexus-hub-v3/drizzle: 0002_safe_vivisector.sql
+Files /home/ubuntu/nexus-hub-v3/drizzle/meta/0000_snapshot.json and /home/ubuntu/github-sync/repo-snapshot/task_artifacts/nexus_hub_app_source_2026-08-22/drizzle/meta/0000_snapshot.json differ
+Files /home/ubuntu/nexus-hub-v3/drizzle/meta/0001_snapshot.json and /home/ubuntu/github-sync/repo-snapshot/task_artifacts/nexus_hub_app_source_2026-08-22/drizzle/meta/0001_snapshot.json differ
+Only in /home/ubuntu/nexus-hub-v3/drizzle/meta: 0002_snapshot.json
+Files /home/ubuntu/nexus-hub-v3/drizzle/meta/_journal.json and /home/ubuntu/github-sync/repo-snapshot/task_artifacts/nexus_hub_app_source_2026-08-22/drizzle/meta/_journal.json differ
+Files /home/ubuntu/nexus-hub-v3/drizzle/schema.ts and /home/ubuntu/github-sync/repo-snapshot/task_artifacts/nexus_hub_app_source_2026-08-22/drizzle/schema.ts differ
+Files /home/ubuntu/nexus-hub-v3/package.json and /home/ubuntu/github-sync/repo-snapshot/task_artifacts/nexus_hub_app_source_2026-08-22/package.json differ
+Only in /home/ubuntu/github-sync/repo-snapshot/task_artifacts/nexus_hub_app_source_2026-08-22: seed-data.mjs
+Only in /home/ubuntu/nexus-hub-v3/server: agents.test.ts
+Only in /home/ubuntu/nexus-hub-v3/server: dataweaver.test.ts
+Files /home/ubuntu/nexus-hub-v3/server/db.ts and /home/ubuntu/github-sync/repo-snapshot/task_artifacts/nexus_hub_app_source_2026-08-22/server/db.ts differ
+Files /home/ubuntu/nexus-hub-v3/server/routers.ts and /home/ubuntu/github-sync/repo-snapshot/task_artifacts/nexus_hub_app_source_2026-08-22/server/routers.ts differ
+Files /home/ubuntu/nexus-hub-v3/todo.md and /home/ubuntu/github-sync/repo-snapshot/task_artifacts/nexus_hub_app_source_2026-08-22/todo.md differ
