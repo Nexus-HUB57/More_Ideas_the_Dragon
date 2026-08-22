@@ -1,0 +1,11 @@
+path	reason	observed_indicator	repository_action
+FDR_Encrypted_Backup_20251006_143557.json	backup contains wallet material	73 WIF-like matches	blocked; hash retained only
+FDR_Master_Wallet_Complete_20251006_143555.csv	private-key-bearing wallet dataset	1083 WIF-like and 422107 64-hex matches	blocked; hash retained only
+FDR_Wallet_Report_20251006_143557.txt	operational wallet report	mentions seed/private material	blocked; hash retained only
+export_wallet_data.py	wallet export logic	mentions secret/private-key fields	blocked from execution/import
+extracted_keys_and_addresses.txt	private-key-bearing text	252 64-hex matches	blocked; hash retained only
+import_report.txt	sensitive operational metadata	wallet import context	blocked pending manual review
+pasted_content_2.txt	WIF/secret-bearing text	654 WIF-like and 67 secret-related matches	blocked; hash retained only
+process_wallet_files.py	wallet processing logic	reads and transforms wallet files	blocked from execution/import
+validate_and_organize_keys.py	key processing logic	mentions private keys/secrets	blocked from execution/import
+PlanoRich.py	transaction and key-handling script	contains broadcast/private-key workflow and embedded addresses	blocked from execution/import
