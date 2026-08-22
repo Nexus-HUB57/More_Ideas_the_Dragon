@@ -1,0 +1,135 @@
+--- OUTER ZIP ---
+Archive:  /home/ubuntu/upload/DevelopingaFull-StackAppwithLlama4Maverick.zip
+  Length      Date    Time    Name
+---------  ---------- -----   ----
+    10704  2025-11-17 11:11   DOCUMENTATION.md
+     5125  2025-11-17 11:11   commissions.test.ts
+     2780  2025-11-17 11:11   todo.md
+     1583  2025-11-17 11:11   App.tsx
+    14984  2025-11-17 11:11   AIAssistant.tsx
+     1288  2025-11-17 11:11   routers.ts
+    12168  2025-11-17 11:11   ai.ts
+    14412  2025-11-17 11:11   AffiliateDashboard.tsx
+    13772  2025-11-17 11:11   AdminDashboard.tsx
+     6190  2025-11-17 11:11   network.ts
+     6675  2025-11-17 11:11   accounts.ts
+     5495  2025-11-17 11:11   commissions.ts
+     6013  2025-11-17 11:11   payments.ts
+     4837  2025-11-17 11:11   affiliates.ts
+     9297  2025-11-17 11:11   db.ts
+     6851  2025-11-17 11:11   schema.ts
+     4755  2025-11-17 11:11   jhon_riffs_arquitetura_tecnica.md
+     6024  2025-11-17 11:11   Análise e Estruturação do Projeto Jhon Riff's.md
+ 42839074  2025-11-17 11:11   JhonRiff'sProjectOverviewandKeyFundamentals.zip
+---------                     -------
+ 42972027                     19 files
+--- NESTED ZIP ---
+Archive:  /home/ubuntu/jhon_riffs_ingest_20260822/JhonRiffsProjectOverviewandKeyFundamentals.zip
+  Length      Date    Time    Name
+---------  ---------- -----   ----
+     6851  2025-11-14 19:42   schema.ts
+     2780  2025-11-14 19:42   todo.md
+     4840  2025-11-14 19:42   jhon_riffs_arquitetura_tecnica.md
+ 24006174  2025-11-14 19:42   dinheiro_wer34dgf98.zip
+ 15932620  2025-11-14 19:42   JhonRiffs.pdf
+     6075  2025-11-14 19:42   Análise e Estruturação do Projeto Jhon Riff's.md
+  2878702  2025-11-14 19:42   JhonRiff’s.docx
+---------                     -------
+ 42838042                     7 files
+--- COUNTS ---
+outer_archive_entries=19
+outer_regular_files=19
+nested_archive_entries=7
+nested_regular_files=7
+all_extracted_regular_files=26
+--- PATH SAFETY ---
+unsafe_outer_paths=0
+unsafe_nested_paths=0
+--- REMOTE DELTA FROM LOCAL HEAD ---
+[33m828e629[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m Merge pull request #77 from Nexus-HUB57/chore/legado-lucas-financial-tax-planning-safe-2026-08-22
+[33m6076f8b[m[33m ([m[1;31morigin/chore/legado-lucas-financial-tax-planning-safe-2026-08-22[m[33m)[m chore: importar artefatos financeiros e tributários do Legado
+--- REMOTE BRANCHES ---
+origin 828e629 Merge pull request #77 from Nexus-HUB57/chore/legado-lucas-financial-tax-planning-safe-2026-08-22
+origin/agent/academia-task-safe-population-20260822 c98e9cb docs(academia): safely preserve task materials and source zip
+origin/agent/ai-doctor-dimhex-safe-population-20260822 f4906aa chore: make safe population validation deterministic
+origin/agent/fdr-dashboard-safe-population-20260822 b442b71 chore: add FDR mainnet readonly dashboard artifacts
+origin/agent/financial-analysis-anos-8-9-10-safe-20260822 08dc5a2 docs(finance): add safe analysis bundle for years 8-10
+origin/agent/financial-report-safe-population-20260822 c8b9a65 chore(finance): record safe delivery validation
+origin/agent/gestao-grandes-fortunas-20260822 f191069 docs: add gestao de grandes fortunas task package
+origin/agent/legado-lucas-task-safe-20260822 18ad46a docs: add Legado Lucas end-to-end task package
+origin/agent/legado-trust-compliance-safe-20260822 4d3b6de docs(legado): add trust compliance task package safely
+origin/agent/livro-das-sementes-safe-20260822 81b08a2 feat(artifacts): add Livro das Sementes cover package
+origin/agent/manus-bait-complete-population-20260822-183920 beb324f feat: populate BAIT end-to-end contribution namespace
+origin/agent/mmnai-ai-phase8-safe-population-20260822 82e0885 chore: add MMNAI-to-AI task archive safely
+origin/agent/mmnai-to-ai-phase6-safe-population-20260822 6206b97 chore(mmnai-to-ai): retain ignored legacy task files
+origin/agent/nexus-frontend-ux-safe-20260822-164435 c135242 feat(nexus): import WebSocket UX task artifacts safely
+origin/agent/nexus-fullstack-task-population-safe-20260822 b0f8e57 docs(nexus): record safe import audit
+origin/agent/nexus-genesis-safe-population-20260822 5153202 feat(nexus-genesis): add safe orchestrator task bundle
+origin/agent/nexus-genesis-sync-safe-population-20260822 5b0b425 docs(nexus): add sanitized genesis sync task artifacts
+origin/agent/nexus-in-safe-import-20260822-1709 a675253 feat(nexus-in): add isolated project package and recovery artifacts
+origin/agent/nexus-in-safe-import-redacted-20260822-1717 1d03e08 docs(nexus-in): clarify safe archive handling
+origin/agent/nexus-wedark-full-sync-20260822-1652 9ea724f chore(nexus): record remote delivery verification
+origin/agent/nexusai-to-ai-phase6-safe-20260822 e498766 docs: add NexusAI-to-AI Phase 6 task package safely
+origin/agent/phase10-affiliate-dashboard-safe-population-20260822 ca767e5 Merge remote-tracking branch 'origin/main' into agent/phase10-affiliate-dashboard-safe-population-20260822
+origin/agent/projecao-2030-safe-population-20260822 13753e6 docs: add safe 2030 projection task bundle
+origin/agent/quanthicron-author-artifacts-safe-20260822 71118e3 docs(quanthicron): add complete author artifact package
+origin/agent/quanthicron-task-safe-population-20260822 ccd90e3 feat(quanthicron): add complete coauthor task artifact bundle safely
+origin/agent/safe-import-bnj57-wallet-task-20260822 0f30891 chore(safe-recovery): import BNJ57 wallet task artifacts and sanitized bundle
+origin/agent/safe-import-fullstack-mmn-20260822-1742 49fc30f docs(safe-recovery): add fullstack MMN delivery report
+origin/agent/safe-import-mmn-ai-to-ai-20260822 08050c7 chore: safely import MMN AI-to-AI task bundle
+origin/agent/safe-import-mobile-opal-20260822 6ffb487 feat(mobile): stage MMN app and Opal integration records
+origin/agent/safe-population-agentic-task-20260822 b00208d chore(safe-recovery): add agentic task artifacts and end-to-end archive
+origin/agent/safe-population-current-task-20260822 1a286e6 chore(safe-import): add current Nexus task materials and verified archive
+origin/agent/safe-population-nexus-upload-20260822 bb9691b docs(nexus): close safe population validation
+origin/agent/safe-population-task-20260822-1805 4f4f1f9 docs(safe-recovery): record sensitive artifact quarantine
+origin/agent/safe-population-task-20260822T183857Z f7537ad chore(safe-population): add autonomous ecosystem task bundle
+origin/agent/safe-recovery-legado-lucas-20260822 eaaa9af docs(recovery): add Legado Lucas task artifacts safely
+origin/agent/safe-recovery-opal-audit-20260822 03cbfbb audit: validate 299-item population and Opal access safely
+origin/agent/snf-branding-20260822 0abaa3b Add SNF E2 futuristic brand identity assets
+origin/agent/trinuclear-safe-recovery-20260822 b38175a feat: add trinuclear 001-299 safe recovery bundle
+origin/audit/readme-cirurgical-20260822T141500Z f3472fd docs(audit): add executive review and repository map
+origin/audit/safe-recovery-299-20260822 b24eff3 chore(safe-recovery): package audit evidence
+origin/chore/import-projetoeimplementacoes-20260822 217126a chore: import project artifacts securely
+origin/chore/legado-lucas-financial-tax-planning-safe-2026-08-22 6076f8b chore: importar artefatos financeiros e tributários do Legado
+origin/chore/nexus-phase6-safe-population-20260822-1728 71f58f6 chore(nexus): safely populate phase 5 and 6 artifacts
+origin/chore/orseca-livros-task-20260822 e19affc docs(orseca): add end-to-end book task artifacts
+origin/chore/quanthicron-pilot-task-safe-20260822 df38a96 chore(quanthicron): add safe end-to-end pilot task bundle
+origin/chore/safe-import-phase6-20260822-1753 508672c chore(safe-recovery): import phase 6 task bundle end-to-end
+origin/chore/safe-population-299-end-to-end-20260822 ac15d00 chore(safe-recovery): add validated 299-item end-to-end bundle
+origin/chore/safe-repo-population-audit-20260822 35a33b5 chore: add non-destructive repository population audit
+origin/chore/safe-update-20260822 48a0acb docs(safe-recovery): record non-destructive repository update
+origin/codex/agentic-video-creator-safe-20260822 aabffcc feat(agentic-video): add safe recovery artifact bundle
+origin/codex/legado-lucas-documentos-20260822 c658190 docs: add Legado Lucas financial analysis bundle
+origin/contrib/legado-lucas-complete-20260822 f4b394f chore(legado-lucas): refresh archive and integrity manifest
+origin/dev-phd-task-population 8b5b7f0 feat: population of 299 files for BJN57 and Llama-4 Maverick protocols - PhD Dev Task
+origin/dev-phd-task-population-safe 0591127 Devs PHD: Population of end-to-end specifications 101 to 299 under Safe Recovery Protocols
+origin/docs/agent-catalog-end-to-end-20260822 7700620 docs: document integrated AI agent catalog
+origin/feat/manus-task-artifacts-safe-20260822 2e3a6c5 docs: add complete Manus task artifact bundle safely
+origin/feat/phd-academia-nexus-bundle-299 4ecc482 Merge pull request #23 from Nexus-HUB57/main
+origin/feat/safe-population-20260822T130036Z a87dd36 feat(automation): add end-to-end production real automation modules (001-299), manifests, and safe recovery docs
+origin/feat/safe-population-more-ideas-20260822T134554Z 7e41ca3 Merge pull request #21 from Nexus-HUB57/main
+origin/feat/sfn-safe-population-20260822 d0d3032 chore(sfn): include reproducible methodology bundle
+origin/feature/nexus-dashboard-safe-population-1787403421 81708a1 Merge branch 'main' into feature/nexus-dashboard-safe-population-1787403421
+origin/feature/nexus-hub-autonomous-os-v3 88347ad feat(nexus-hub): implement Autonomous OS v3 with Brain Pulse, Soul Vault, and Real-Settlement Engine end-to-end
+origin/feature/nexus-phd-population-safe-1787401862 b5020cb feat(phd-dev): populate Nexus-HUB57/More_Ideas_the_Dragon with end-to-end task artifacts and complete Nexus Hub bundle following Safe Recovery Protocols
+origin/feature/nexus-phd-population-safe-299-files 33f1489 docs(phd-dev): add audit manifest for 299 files population package
+origin/feature/nexus-task-artifacts-safe-20260822 724c761 chore(phd-dev): add Nexus-HUB continuation artifacts and manifests
+origin/feature/phd-final-population-299-files-manus-1787405478 3307131 feat(phd): final end-to-end population of 299 files and zip - Safe Recovery Protocol Applied
+origin/feature/phd-nexus-mmn-quanthicron-population-final 77c6858 feat: population of MMN app and Quanthicron 299 modules - PHD Task
+origin/feature/phd-safe-population-299-files-1787402847 21f57c1 feat(phd-dev): populate Nexus ecosystem task bundle and artifacts following Safe Recovery Protocols
+origin/feature/quanthicron-full-population-phd 3c00978 Merge branch 'main' into feature/quanthicron-full-population-phd
+origin/feature/quanthicron-series-dev-phd 87b3d9e feat(quanthicron): add comprehensive V3.0 pilot, thematic analysis, scenes, monologue and CPM activation scripts (End-to-End Task Population)
+origin/integration/safe-mmnai-ai-20260822T132042Z bdb4605 docs(safe-recovery): correct integration base in report
+origin/main 828e629 Merge pull request #77 from Nexus-HUB57/chore/legado-lucas-financial-tax-planning-safe-2026-08-22
+origin/manus/wif-wallet-manager-integration-20260822 10d623c feat(wif): add sanitized end-to-end wallet manager package
+origin/task/nexus-hub-architecture-integration-20260822 140276a feat(nexus): add isolated architecture integration bundle
+origin/task/nexus-project-population-safe-20260822-170322 eba8c7e chore: add safe Nexus project artifacts
+origin/test/safe-push-check 1f903cf test: verify push capability for safe recovery protocol
+origin/test/safe-push-check-unique-1787401106 f14c297 test: unique verify push capability
+--- REPO MATCHES FOR SOURCE NAMES ---
+App.tsx
+DOCUMENTATION.md
+db.ts
+routers.ts
+schema.ts
+todo.md

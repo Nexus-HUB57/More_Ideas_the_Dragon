@@ -1,0 +1,44 @@
+{
+  "build_command": "pnpm run build",
+  "capabilities": [
+    "db",
+    "server",
+    "user"
+  ],
+  "dev_command": "pnpm run dev",
+  "env_vars": {
+    "DATABASE_URL": "mysql://3AU5ihcWuQiegbM.da99e5bfeae6:ZlA2lcHpI8FQmu595RO6@gateway02.us-east-1.prod.aws.tidbcloud.com:4000/XkzBfCt8Df4FozDWG2VEsC?ssl={\"rejectUnauthorized\":true}"
+  },
+  "experiments": [
+    "no_db_push"
+  ],
+  "git_remote": {
+    "repo_url": "s3://vida-prod-gitrepo/webdev-git/310519663082008210/XkzBfCt8Df4FozDWG2VEsC",
+    "access_key_id": "ASIAZV3A2ECZPDDJZVE7",
+    "secret_access_key": "SYq8zQbrb1048jiiVVKl4K47hJZ3poC0xHbHuu5F",
+    "session_token": "IQoJb3JpZ2luX2VjEPz//////////wEaCXVzLWVhc3QtMSJHMEUCIG71oc7dLDb6nq9wfZ6UkuOMK3Ll1UbmGF/McqLcl+XPAiEAlYRYjCaQXhAD9aBSogfub49OKFraXiObUUqJA/iFPscq/gMIxP//////////ARAEGgw2NjUzODYwOTg4NjYiDECHF0x6/ZWUaC4G8yrSA+Wl4/1Iuu7Gqd75IDgjP0dlnxr9POVdqaySAtXsmPrQwJE5JPeq9kVdjd08SmyxRWqVReO6T114CNxwg3n3HzfSQEFtWB37RycpnxRgAWW+OwUNn3zmUeHVBzYpdIomrjxDWfO4Dx7HvuSraR7W/pDK0Jt7mS0NgKcFZxP2jDd+s2nQuLzwv19o2xuzQsJlmo5k6/oA8qtio2eYCydQKh+4+v6tO1JwWGH5IUDK34U1A4vvgnmcrzgqVVWEyn83Pzd1tXyNF7dxABaTfCAFPYhSYdvlAzN/PZPVh4hRkeq9zbhFnPkqh+g0La0zOAFM8k0ExFG97QYK969ubsx5PJJ7RvQsVxg1vGkp2coEil65Y/KHdyBLDyBvKmav6V0QzsL5CE8k0d+qJgaEbJbuc6bzg1uG5wsPndZC6I2I54Ctvntjmevjh8SQq7uW9bL2nI2AaBOrDfXs6FTsymXyODJMf25lbKermDVe6c0r2A4PjCA0xQHM8RY7CoOI/dwXmlbtC0PcX3MynfVJH2nk6NbNDkawtPqL+TulP81Cc3XptayjzU17+eCEhJDdsHQpuO7pqDLEBy39YnemNSDriDPZwVlh4n/z4jYmmZ3wCvBNceQw3eWn1AY6nQFvP6krnX65y4W0V2j+SGdONFQkpYWq6hOIXfXbLzi7Sip3tCkvrWGRTe4R8P3jaoqyjD/crgCe3oWG5BHfcv2b7zd+HHMdIaUIxZYjkzYpr7LAIb3n6ncpgxlFIGD99sZMC/ZTHEqWTRwGSVarubEvX6L7Z2iZqDsniVv5xFDVIifkPh56r8Jep2aSGVUK2vwcX1kt7XnQAJOexA7g",
+    "expiration": "2026-08-23T07:05:01.000Z",
+    "backend": "GIT_BACKEND_S3"
+  },
+  "name": "jhon_riffs_system",
+  "path": "/home/ubuntu/jhon_riffs_system",
+  "port": 3000,
+  "secrets": {
+    "BUILT_IN_FORGE_API_KEY": "MTctaUFrbYL6JjuRqB47ya",
+    "BUILT_IN_FORGE_API_URL": "https://forge.manus.ai",
+    "JWT_SECRET": "72raVmgkAd7JPep94Sy7hT",
+    "OAUTH_SERVER_URL": "https://api.manus.im",
+    "OWNER_NAME": "Construindo Sonhos Bem Viver Brasil",
+    "OWNER_OPEN_ID": "P3mz5VcGxqGHkyJCb4xVLw",
+    "VITE_ANALYTICS_ENDPOINT": "https://manus-analytics.com",
+    "VITE_ANALYTICS_WEBSITE_ID": "e381a23f-adb9-4271-bc62-ed42ddfaf0ed",
+    "VITE_APP_ID": "XkzBfCt8Df4FozDWG2VEsC",
+    "VITE_APP_LOGO": "https://files.manuscdn.com/user_upload_by_module/web_dev_logo/310519663082008210/emSSzXMtFzFyuRIz.png",
+    "VITE_APP_TITLE": "Jhon Riff's Back Office System",
+    "VITE_FRONTEND_FORGE_API_KEY": "7oscz2fekWTGkWaRASNcBf",
+    "VITE_FRONTEND_FORGE_API_URL": "https://forge.manus.ai",
+    "VITE_OAUTH_PORTAL_URL": "https://manus.im"
+  },
+  "template_id": "web-db-user",
+  "test_command": "pnpm test"
+}
