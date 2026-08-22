@@ -1,0 +1,57 @@
+# =============================================================================
+# MMN AI-to-AI · oneverso.com.br · HostGator SPA + tRPC
+# Arquivo versionado e copiado pelo Vite para frontend/dist/.htaccess
+# =============================================================================
+
+Options -MultiViews
+
+# Forçar HTTPS
+RewriteEngine On
+RewriteCond %{HTTPS} off
+RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
+
+# Garantir MIME types corretos dos assets estáticos
+<IfModule mod_mime.c>
+  AddType text/javascript .js .mjs
+  AddType text/css .css
+  AddType application/json .json
+</IfModule>
+
+# Nunca reescrever assets versionados e artefatos estáticos
+# Asset existente é servido; asset ausente retorna 404 explícito (não cai no SPA fallback)
+RewriteCond %{REQUEST_URI} ^/assets/
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule . - [R=404,L]
+
+RewriteRule ^assets/ - [L]
+RewriteRule ^favicon\.ico$ - [L]
+RewriteRule ^favicon\.svg$ - [L]
+RewriteRule ^robots\.txt$ - [L]
+RewriteRule ^manifest\.webmanifest$ - [L]
+
+# SPA fallback — apenas rotas client-side (não-asset) caem no index.html
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /index.html [L]
+
+# Cache agressivo dos assets versionados pelo Vite
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType text/css                "access plus 1 year"
+  ExpiresByType application/javascript  "access plus 1 year"
+  ExpiresByType text/javascript         "access plus 1 year"
+  ExpiresByType image/svg+xml           "access plus 1 month"
+  ExpiresDefault                        "access plus 1 hour"
+</IfModule>
+
+# Compressão
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/css text/javascript application/javascript application/json
+</IfModule>
+
+# Headers de segurança
+<IfModule mod_headers.c>
+  Header set X-Content-Type-Options "nosniff"
+  Header set X-Frame-Options "SAMEORIGIN"
+  Header set Referrer-Policy "strict-origin-when-cross-origin"
+</IfModule>
