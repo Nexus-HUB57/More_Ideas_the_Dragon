@@ -12,6 +12,12 @@ O novo namespace é `task_artifacts/fdr_wallet_dashboard_end_to_end_20260822/`. 
 
 Três arquivos de origem que continham marcadores de senha de exemplo foram sanitizados antes da cópia, com nove substituições por `REDACTED_SECRET_PLACEHOLDER`. Nenhuma WIF, seed, chave privada, passphrase, token, API key, wallet plaintext ou arquivo de cofre cifrado foi incluído.
 
+## Validação em duas camadas
+
+A validação de integridade do artefato foi concluída no repositório destino: o manifesto SHA-256 passou com `sha256sum -c`, o ZIP contém exatamente 132 entradas correspondentes ao namespace e a varredura redigida de segredos encontrou zero padrões de WIF, xprv, chave privada, token ou API key.
+
+Separadamente, a validação executável do código importado foi realizada em uma cópia temporária do diretório `source`, sem modificar o bundle comitado. O processo executou `pnpm install --no-frozen-lockfile --ignore-scripts`, `pnpm check`, `pnpm test` e `pnpm build`, todos aprovados. Essa execução comprova a compilabilidade e os testes do snapshot sanitizado; não representa execução do wallet cifrado, assinatura PSBT ou operação de Mainnet.
+
 ## Protocolo Safe Recovery
 
 A integração foi criada a partir da main atual em branch isolado. O staging deve permanecer explícito e limitado ao namespace novo, ao índice e ao ZIP. Não deve haver merge direto na main, `git reset --hard`, remoção de branches ou exclusão de arquivos históricos. A pull request deve ser revisada por outro desenvolvedor antes do merge.
