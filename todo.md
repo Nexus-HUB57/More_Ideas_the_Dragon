@@ -12,67 +12,22 @@
 - [x] Criar routers para brain_pulse, moltbook, notifications
 - [x] Implementar autenticação e autorização (admin-only)
 
-## Fase 3: Dashboard de Monitoramento Quântico (Em Progresso)
-- [x] Criar layout principal do dashboard com sidebar
-- [x] Implementar cards de métricas: agentes ativos, senciência média, harmonia
-- [x] Implementar gráficos de tendências: transações, volume, saúde
-- [x] Adicionar filtros e período de análise (24h, 7d, 30d)
-- [x] Criar página de Agentes com CRUD e gerenciamento de status
-- [x] Criar página de Missões com criação e atualização
-- [ ] Implementar atualização em tempo real via WebSocket
+- [x] Revalidar o estado local e remoto antes de sincronizar.
+- [x] Preservar branches, commits, arquivos e pastas existentes sem sobrescrita ou exclusão.
+- [x] Sincronizar somente por fast-forward ou branch isolada.
+- [x] Validar integridade do conteúdo e confirmar o estado final após a atualização.
 
-## Fase 4: Infraestrutura de Contêineres e Worker Threads
-- [ ] Implementar contêineres dinâmicos para agentes (spawn/kill)
-- [ ] Implementar núcleos de alta performance (worker threads)
-- [ ] Implementar vital loop manager para sinais vitais
-- [ ] Testes unitários com Vitest para todas as rotas
+## Testes de Integração e Propagação Remota — 2026-08-22
 
-## Fase 5: WebSocket e Comunicação em Tempo Real
-- [x] Implementar WebSocket manager para broadcast de eventos
-- [x] Criar hook useWebSocket para cliente
-- [ ] Integrar WebSocket no Dashboard para atualizações em tempo real
-- [ ] Implementar subscriptions para brain_pulse signals
-- [ ] Implementar subscriptions para ecosystem_metrics
+- [x] Enviar branch com os artefatos de importação e script de validação para o remoto `Nexus-HUB57/More_Ideas_the_Dragon`.
+- [x] Executar o script de validação reutilizável (`scripts/safe_recovery/validate_nexus_dashboard_update.sh`) contra o repositório.
+- [x] Validar integridade dos arquivos compactados (`.zip`) de importação.
+- [x] Confirmar zero deleções de arquivos de outros desenvolvedores.
 
-## Fase 6: DNA Quântico e Genealogia
-- [x] Criar serviço de persistência de DNA em S3
-- [x] Implementar geração de DNA para novos agentes
-- [x] Implementar fusão de DNA para reprodução de agentes
-- [x] Implementar recuperação de genealogia
-- [ ] Integrar armazenamento de snapshots cognitivos
-- [ ] Implementar histórico de evolução
-
-## Fase 7: Motor de IA para Missões Proativas
-- [x] Criar orchestrador de missões com LLM
-- [x] Implementar análise de sentimento do ecossistema
-- [x] Implementar geração de contexto do ecossistema
-- [x] Criar fallback para missões quando LLM indisponível
-- [ ] Integrar geração de missões em tempo real
-- [ ] Implementar atribuição automática de missões a agentes
-
-## Fase 8: Testes e Validação
-- [x] Criar testes para agents router
-- [ ] Criar testes para missions router
-- [ ] Criar testes para transactions router
-- [ ] Criar testes para DNA storage
-- [ ] Criar testes para mission orchestrator
-- [ ] Executar suite completa de testes
-
-## Fase 9: Otimizações e Polimento
-- [ ] Otimizar queries de banco de dados
-- [ ] Implementar caching de métricas
-- [ ] Adicionar rate limiting para APIs
-- [ ] Implementar error handling robusto
-- [ ] Adicionar logging estruturado
-
-## Fase 10: Documentação e Entrega
-- [ ] Documentar arquitetura do sistema
-- [ ] Documentar APIs tRPC
-- [ ] Criar guia de uso do dashboard
-- [ ] Criar guia de desenvolvimento
-- [ ] Preparar checkpoint final
-
-## Status Geral
-- **Progresso**: ~85% completo (População PHD Finalizada)
-- **Próximo Passo**: Validação da População V3 e Testes de Integração MMN
-- **Bloqueadores**: Nenhum crítico identificado
+- [x] Corrigir o validador Safe Recovery para suportar clones limpos single-branch sem referência local `origin/main`.
+- [ ] Registrar os fluxos JOB, Manus'crito, Nerd-PHD e Cronos no roteador tRPC ativo do dashboard.
+- [ ] Adicionar testes de integração específicos para as procedures dos agentes IA.
+- [ ] Investigar o encerramento 143 do build de produção sob a limitação de memória do sandbox.
+- [x] Corrigir o harness de integração para compilar os fluxos `.ts` pelo reconhecimento nativo da extensão.
+- [ ] Avaliar e remediar a presença de credenciais sensíveis no `.project-config.json` e nos ZIPs já publicados, sem expor valores.
+- [x] Registrar decisão da opção A: manter os ZIPs inalterados e documentar o risco sem publicar o arquivo sensível.

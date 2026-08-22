@@ -7,6 +7,10 @@ MANIFEST="$IMPORT_ROOT/manifests/files.tsv"
 
 cd "$REPO"
 
+# A single-branch clone pode não trazer a referência local origin/main.
+# Buscar somente essa referência é seguro e não modifica arquivos de trabalho.
+git fetch --quiet origin main:refs/remotes/origin/main
+
 status="$(git status --porcelain=v1)"
 if [[ -n "$status" ]]; then
   printf 'WORKTREE_NOT_CLEAN\n%s\n' "$status"
@@ -19,7 +23,8 @@ if [[ "$branch" != feature/nexus-dashboard-safe-population-* ]]; then
   exit 1
 fi
 
-changed="$(git diff --name-status origin/main..HEAD)"
+base_commit="$(git merge-base HEAD origin/main)"
+changed="$(git diff --name-status "$base_commit"..HEAD)"
 if printf '%s\n' "$changed" | awk '$1 == "D" || $1 ~ /D/ {found=1} END {exit found ? 0 : 1}'; then
   printf 'DELETIONS_DETECTED\n%s\n' "$changed"
   exit 1
