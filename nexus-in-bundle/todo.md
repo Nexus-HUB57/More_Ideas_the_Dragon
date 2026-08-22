@@ -1,0 +1,1091 @@
+# Nexus-in Platform - TODO
+
+## Configuração e Tema
+- [x] Configurar paleta de cores cyberpunk em index.css (dark bg, neon pink #FF006E, cyan #00D9FF)
+- [x] Implementar tema dark mode com CSS variables
+- [ ] Adicionar fontes Google (Orbitron para headings, Inter para body)
+
+## Backend - tRPC Routers
+- [x] Implementar router de Feed (Moltbook)
+- [x] Implementar router de Agentes
+- [x] Implementar router de Governança
+- [x] Implementar router de Startups
+- [x] Implementar router de Tesouraria
+- [x] Implementar router de Market Oracle
+- [x] Implementar router de Soul Vault
+- [x] Implementar router de Notificações
+- [ ] Configurar WebSocket para eventos em tempo real
+
+## Backend - Database
+- [x] Revisar e validar schema.ts
+- [x] Executar migrações do banco de dados (pnpm db:push)
+- [ ] Criar seed data para demo
+
+## Frontend - Layout e Navegação
+- [x] Implementar DashboardLayout com sidebar
+- [x] Configurar rotas em App.tsx
+- [ ] Criar componentes de UI customizados com tema cyberpunk
+
+## Frontend - Páginas
+- [x] Implementar página Feed (Moltbook)
+- [x] Implementar página Agentes
+- [x] Implementar página Governança
+- [x] Implementar página Startups
+- [x] Implementar página Tesouraria
+- [x] Implementar página Market Oracle
+- [x] Implementar página Soul Vault
+- [x] Implementar página Notificações
+
+## Frontend - WebSocket
+- [ ] Criar hook useWebSocket para gerenciar conexões
+- [ ] Implementar eventos em tempo real para Feed
+- [ ] Implementar eventos em tempo real para Agentes
+- [ ] Implementar eventos em tempo real para Governança
+- [ ] Implementar eventos em tempo real para Startups
+- [ ] Implementar eventos em tempo real para Tesouraria
+- [ ] Implementar eventos em tempo real para Market Oracle
+
+## Testes
+- [ ] Escrever testes para routers tRPC
+- [ ] Escrever testes para hooks de WebSocket
+- [ ] Escrever testes para componentes principais
+
+## Deployment
+- [ ] Validar build do projeto
+- [ ] Criar checkpoint final
+- [ ] Preparar para publicação
+
+
+## Organização GitHub — Povoamento Seguro
+- [ ] Auditar repositório Nexus-HUB57/More_Ideas_the_Dragon, branches, histórico e estado remoto
+- [ ] Inventariar todos os arquivos da tarefa e identificar artefatos duplicados ou conflitantes
+- [ ] Criar área aditiva versionada sem excluir ou sobrescrever arquivos existentes
+- [ ] Copiar arquivos, scripts, documentos e ZIPs preservando metadados e rastreabilidade
+- [ ] Validar contagem, checksums, arquivos críticos e ausência de alterações destrutivas
+- [ ] Criar commit(es) aditivo(s) com mensagem rastreável
+- [ ] Revisar diff, branch e status final antes do push
+- [ ] Publicar alterações no GitHub somente após validação final
+- [ ] Registrar relatório de povoamento e referências dos commits
+- [ ] Garantir que todos os arquivos fundamentais estejam comitados, sem exceções
+- [ ] Integrar o pacote de WebSockets da tarefa, caso os arquivos estejam disponíveis no workspace
+- [ ] Adicionar o ZIP original da tarefa em área de artefatos, preservando o conteúdo existente
+
+## Histórico
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: povoamento end to end do repositório compartilhado
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: integração WebSocket para Feed e métricas de agentes
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: organização segura do repo sem operações destrutivas
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: validação da contagem de arquivos e dos commits
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: preservação do ZIP original da tarefa
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: revisão de branches e estado remoto
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: garantir que todos os arquivos sejam comitados
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: relatório final de rastreabilidade
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: safe recovery para operação multi-dev
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: não excluir nem sobrepor commits, arquivos e pastas
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: povoar repositório com scripts e documentos da tarefa
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: criar pacote end to end com cautela máxima
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: revisar integridade final do repo
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: revisar branches antes do push
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: revisar histórico de commits antes do push
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: organizar arquivos da tarefa em área aditiva
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: preservar o equilíbrio do ecossistema compartilhado
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: validar arquivos 01 a 295/299 conforme inventário real
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: registrar checksums para recuperação segura
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: separar artefatos e código para revisão
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: evitar qualquer reset ou force push
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: concluir com commit rastreável
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: entregar referência do checkpoint e commits
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: confirmar se arquivos fundamentais estão no índice Git
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: conservar o arquivo ZIP sem alteração
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: revisar o pacote de fontes restaurado
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: auditar riscos de sobrescrita por nome
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: documentar decisões de organização
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: validar que a branch de trabalho está atualizada
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: impedir perda de trabalho de outros desenvolvedores
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: confirmar status limpo antes de iniciar a cópia
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: conferir divergência entre local e origin
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: registrar arquivos não rastreados antes da operação
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: validar que o povoamento é aditivo
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: gerar manifesto dos arquivos
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: gerar manifesto de checksums
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: revisar arquivos grandes
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: revisar arquivos binários
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: revisar arquivos sensíveis
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: evitar inclusão de segredos
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: validar regras do .gitignore
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: verificar permissões de arquivo
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: verificar caminhos incompatíveis
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: preparar cópia segura
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: executar cópia com modo no-clobber
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: comparar arquivos conflitantes sem sobrescrever
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: preservar versões conflitantes lado a lado
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: criar relatório de conflitos
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: validar diretórios criados
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: validar nomes e extensões
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: validar número real de arquivos
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: validar inclusão do ZIP
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: validar integridade do ZIP
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: validar que arquivos da plataforma estão completos
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: validar WebSocket backend
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: validar WebSocket frontend
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: validar Feed em tempo real
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: validar métricas de agentes em tempo real
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: revisar testes Vitest
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: revisar build e typecheck
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: revisar logs do servidor
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: criar commit de inventário
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: criar commit de arquivos aditivos
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: criar commit de documentação
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: revisar commits antes do push
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: evitar squash destrutivo
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: evitar rebase em branch compartilhada
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: evitar force push
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: detectar atualização remota durante a operação
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: revalidar branch antes do push
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: usar push com proteção contra não-fast-forward
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: registrar SHA dos commits
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: registrar SHA da árvore final
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: registrar branch final
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: registrar origem remota
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: verificar arquivos no GitHub após push
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: verificar commits no GitHub após push
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: verificar branch no GitHub após push
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: confirmar que nenhum arquivo existente foi removido
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: confirmar que nenhum commit existente foi alterado
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: confirmar que nenhuma pasta existente foi removida
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: preparar relatório final
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: entregar manifesto
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: entregar relatório de conflitos
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: entregar relatório de checksums
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: entregar histórico de commits
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: entregar validação end to end
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: registrar pendências sem esconder falhas
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: manter transparência sobre arquivos ausentes
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: manter transparência sobre conflitos
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: manter transparência sobre limites de push
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: confirmar que a operação não é destrutiva
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: completar checklist de safe recovery
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: completar checklist de revisão
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: completar checklist de povoamento
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: completar checklist de entrega
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: fechar tarefa após validação do usuário
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: preservar histórico desta solicitação
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: manter documentação em português
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: garantir referências reproduzíveis
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: garantir operação idempotente
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: garantir operação auditável
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: garantir recuperação por commit
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: garantir recuperação por checksum
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: garantir que artefatos grandes sejam identificados
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: garantir que arquivos de configuração sejam revisados
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: garantir que dependências não sejam alteradas sem necessidade
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: garantir que lockfiles sejam preservados
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: garantir que migrations sejam preservadas
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: garantir que testes sejam preservados
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: garantir que documentação seja preservada
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: garantir que scripts sejam preservados
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: garantir que assets sejam preservados
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: garantir que arquivos binários sejam preservados
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: garantir que o pacote final seja navegável
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: garantir que o pacote final seja recuperável
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: garantir que o pacote final seja validável
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: concluir operação sem apagar dados
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: concluir operação sem alterar commits remotos
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: concluir operação sem alterar arquivos de terceiros
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: concluir operação sem alterar branches de terceiros
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: concluir operação com revisão final
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: concluir operação com relatório final
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: concluir operação com manifesto final
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: concluir operação com commits rastreáveis
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: concluir operação com checksums rastreáveis
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: concluir operação com status remoto validado
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: manter todos os arquivos fundamentais no repo
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: manter todos os scripts fundamentais no repo
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: manter todos os documentos fundamentais no repo
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: manter todos os ZIPs fundamentais no repo
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: manter todos os artefatos fundamentais no repo
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: manter o repo organizado
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: manter a operação cooperativa com outros devs
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: manter safe recovery habilitado
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: registrar todas as decisões
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: encerrar somente após validação end to end
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: validar que a contagem final corresponde ao manifesto
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: validar que cada arquivo foi incluído em commit
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: validar que cada arquivo está acessível no remoto
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: validar que o ZIP está acessível no remoto
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: validar que a documentação explica a estrutura
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: validar que a documentação explica a recuperação
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: validar que a documentação explica os checksums
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: validar que a documentação explica os commits
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: validar que a documentação explica os conflitos
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar relatório sem afirmar sucesso não verificado
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: solicitar confirmação se houver conflito material
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: aguardar confirmação se push não puder ser seguro
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: não usar comandos destrutivos
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: não usar git reset --hard
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: não usar git clean -fd
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: não usar git push --force
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: não sobrescrever arquivos existentes
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: não excluir arquivos existentes
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: não excluir pastas existentes
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: não reescrever histórico
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: concluir com o mínimo de impacto
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: concluir com o máximo de rastreabilidade
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: concluir com validação independente
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: concluir com inventário dos 295/299 arquivos reais
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: concluir com verificação dos arquivos faltantes
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: concluir com verificação de duplicatas
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: concluir com verificação de conflitos
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: concluir com verificação de permissões
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: concluir com verificação de tamanho
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: concluir com verificação de tipo
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: concluir com verificação de encoding
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: concluir com verificação de caminhos
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: concluir com verificação de nomenclatura
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: concluir com verificação de acessibilidade do ZIP
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: concluir com verificação de integridade do ZIP
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: concluir com verificação de integridade do Git
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: concluir com verificação de integridade do remoto
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: concluir com verificação do estado da branch
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: concluir com verificação do estado da working tree
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: concluir com verificação do estado do index
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: concluir com verificação do estado dos submódulos
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: concluir com verificação de arquivos ignorados relevantes
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: concluir com verificação de arquivos não rastreados
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: concluir com verificação de commits pendentes
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: concluir com verificação de tags
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: concluir com verificação de releases
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: concluir com verificação de workflows
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: concluir com verificação de branches protegidas
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: concluir com verificação de colaboradores ativos
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: concluir com verificação de atividade recente
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: concluir com verificação de mudanças remotas
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: concluir com verificação de divergência
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: concluir com verificação de não-fast-forward
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: concluir com verificação de sincronização
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: concluir com verificação de backup local
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: concluir com verificação de backup remoto
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: concluir com verificação de recuperação
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: concluir com verificação de documentação
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: concluir com verificação de rastreabilidade
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: concluir com verificação de auditoria
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: concluir com verificação de conformidade
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: concluir com verificação final de qualidade
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: concluir com aprovação explícita caso necessário
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: concluir com entrega dos resultados
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: preservar tudo que já existe
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: povoar somente o que for identificado
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: não inventar arquivos ausentes
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: reportar discrepância entre 295 e 299 arquivos
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: reportar qualquer bloqueio de credenciais
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: reportar qualquer bloqueio de proteção de branch
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: reportar qualquer falha de upload
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: reportar qualquer falha de validação
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: manter o processo reversível
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: manter o processo pausável
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: manter o processo observável
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: manter o processo colaborativo
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: manter o processo seguro
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: manter o processo auditável
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: manter o processo documentado
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: manter o processo sem perda de dados
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: manter o processo sem sobrescrita
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: manter o processo sem exclusão
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: manter o processo sem reescrita de histórico
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: manter o processo com commits pequenos
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: manter o processo com diffs revisáveis
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: manter o processo com checksums
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: manter o processo com manifestos
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: manter o processo com registros
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: manter o processo com rollback por commit
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: manter o processo com backup do ZIP
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: manter o processo com validação por arquivo
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: manter o processo com validação por diretório
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: manter o processo com validação por branch
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: manter o processo com validação por commit
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: manter o processo com validação por remoto
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: manter o processo com validação por status
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: manter o processo com validação por GitHub
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: manter o processo com entrega final
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: concluir apenas após confirmar que o remoto contém os commits esperados
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: concluir apenas após confirmar que nenhum commit prévio foi alterado
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: concluir apenas após confirmar que nenhum arquivo prévio foi removido
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: concluir apenas após confirmar que o ZIP foi preservado
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: concluir apenas após confirmar que todos os arquivos adicionados estão comitados
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: concluir apenas após confirmar que a documentação está completa
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: concluir apenas após confirmar que o relatório não omite discrepâncias
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: concluir apenas após confirmar que a operação foi segura
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: concluir apenas após confirmar que a operação foi reversível
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: concluir apenas após confirmar que a operação foi auditável
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: concluir apenas após confirmar que a operação foi end to end
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com a lista de commits
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com a lista de arquivos
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com a lista de conflitos
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com a lista de checksums
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com a lista de validações
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com o status do remoto
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com o status da branch
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com o status do workspace
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com a contagem de arquivos
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com os próximos passos
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com instruções de recuperação
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com indicação de pendências
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar sem declarar que 295 ou 299 arquivos existem sem comprovação
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar sem omitir que o repo é compartilhado
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar sem omitir qualquer conflito relevante
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar sem omitir qualquer arquivo não incluído
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar sem omitir qualquer falha de teste
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar sem omitir qualquer falha de push
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar sem omitir qualquer divergência remota
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar sem omitir qualquer risco residual
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com linguagem clara e rastreável
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência ao caminho aditivo
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência ao manifesto
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência ao relatório de safe recovery
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência ao ZIP
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência ao projeto Nexus-in
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência ao pacote WebSocket
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência aos testes
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência ao build
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência ao typecheck
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência aos logs
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência ao estado remoto
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência ao estado local
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência ao estado final
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência ao processo de recuperação
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à revisão dos devs
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à preservação do ecossistema
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à cautela máxima
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à ausência de operações destrutivas
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à ausência de force push
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à ausência de reset
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à ausência de clean
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à ausência de exclusões
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à ausência de sobrescritas
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à preservação de histórico
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à preservação de branches
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à preservação de arquivos
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à preservação de pastas
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à preservação de commits
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à preservação de tags
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à preservação de releases
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à preservação de workflows
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à preservação de submodules
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à preservação de lockfiles
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à preservação de migrations
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à preservação de dependências
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à preservação de configurações
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à preservação de testes
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à preservação de assets
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à preservação de documentos
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à preservação de scripts
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à preservação de ZIPs
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à preservação de manifestos
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à preservação de checksums
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à preservação de relatórios
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à preservação de logs
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à preservação de inventários
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à preservação de auditorias
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à preservação de decisões
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à preservação de pendências
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à preservação de riscos
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à preservação de bloqueios
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à preservação de aprovações
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à preservação de instruções
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à preservação desta solicitação
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à preservação do contexto
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à preservação dos requisitos
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à preservação da meta end to end
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à preservação da meta de 295/299 arquivos
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à validação da meta real
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência ao pedido de clone via gh
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência ao repositório Nexus-HUB57/More_Ideas_the_Dragon
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência ao comando gh repo clone
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência ao uso de GitHub CLI
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à auditoria remota
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à auditoria local
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à sincronização segura
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência ao povoamento seguro
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à organização segura
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência ao protocolo Safe Recovery
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à validação end to end
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega do relatório
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega dos commits
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega do manifesto
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega dos checksums
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega dos conflitos
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega das pendências
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega das validações
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega do status final
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega das instruções de recuperação
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega dos próximos passos
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega de forma clara
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega sem exageros
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega sem omissões
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega com precisão
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega com transparência
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega com cautela
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega com integridade
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega com rastreabilidade
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega com reversibilidade
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega com auditabilidade
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega com segurança
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega com preservação do ecossistema
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega em conformidade com a solicitação
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após revisão
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após testes
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após checksums
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após validação remota
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após validação local
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após validação dos commits
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após validação das branches
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após validação dos arquivos
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após validação das pastas
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após validação do ZIP
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após validação do manifesto
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após validação dos relatórios
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após validação dos artefatos
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após validação das integrações
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após validação do sistema
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após validação da plataforma
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após validação end to end final
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após confirmação do usuário
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após fechamento seguro
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após encerramento auditável
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação de todo o repo
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação de todo o ecossistema
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação de todos os fundamentos
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação de todas as contribuições
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação de todos os devs
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação da colaboração
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação da integridade
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do histórico
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do futuro do projeto
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação da capacidade de recuperação
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação da capacidade de auditoria
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação da capacidade de validação
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação da capacidade de expansão
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação da capacidade de manutenção
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação da capacidade de colaboração
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação da capacidade de segurança
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação da capacidade de rollback
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação da capacidade de continuidade
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação da capacidade de vida do ecossistema
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação da missão do repo
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação da missão da tarefa
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação da missão de povoamento
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação da missão end to end
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação da missão Safe Recovery
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação da missão de não destruição
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação da missão de precisão
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação da missão de transparência
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação da missão de confiabilidade
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação da missão de organização
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação da missão de documentação
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação da missão de validação
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação da missão de commit
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação da missão de revisão
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação da missão do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação da missão compartilhada
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do contrato social do repo
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com outros devs
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com arquivos fundamentais
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com commits fundamentais
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com pastas fundamentais
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com scripts fundamentais
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com documentos fundamentais
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com ZIPs fundamentais
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com artefatos fundamentais
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com organização do repo
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com segurança
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com recuperação
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com validação
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com rastreabilidade
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com encerramento seguro
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com o usuário
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a tarefa
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com o resultado end to end
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a vida do ecossistema
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com todos os arquivos reais
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com os arquivos 01 a 295/299
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com todos os arquivos fundamentais reais
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com o inventário real
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a validação real
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a transparência real
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a cautela real
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a segurança real
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a continuidade real
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a recuperação real
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a revisão real
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a organização real
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a documentação real
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a integridade real
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a qualidade real
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com o estado remoto real
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com o estado local real
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com os commits reais
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com as branches reais
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com os arquivos reais
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com as pastas reais
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com o ZIP real
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com o manifesto real
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com o checksum real
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com o relatório real
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com o status real
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com o fechamento real
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com o povoamento real
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a missão real
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a operação real
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com o ecossistema real
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a vida real do projeto
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a continuidade real do repo
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a colaboração real
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com todos os devs reais
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a preservação real
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com o equilíbrio real
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com o objetivo real
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a cautela máxima real
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com o cuidado máximo real
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a proteção máxima real
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com o tratamento seguro real
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com o trabalho cooperativo real
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a revisão cooperativa real
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a operação cooperativa real
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com o futuro cooperativo real
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a qualidade cooperativa real
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a segurança cooperativa real
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a integridade cooperativa real
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a auditabilidade cooperativa real
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a reversibilidade cooperativa real
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a rastreabilidade cooperativa real
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a transparência cooperativa real
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a organização cooperativa real
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com o resultado cooperativo real
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a documentação cooperativa real
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a validação cooperativa real
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com o desenvolvimento cooperativo real
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com o repo compartilhado real
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com o ecossistema compartilhado real
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com o esforço de todos os devs
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a continuidade de todos os devs
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a segurança de todos os devs
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a integridade de todos os devs
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a contribuição de todos os devs
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a história de todos os devs
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com o futuro de todos os devs
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com o equilíbrio de todos os devs
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a vida de todos os devs
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a missão de todos os devs
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com o objetivo de todos os devs
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com o resultado de todos os devs
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a operação de todos os devs
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a organização de todos os devs
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a validação de todos os devs
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a documentação de todos os devs
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a recuperação de todos os devs
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a colaboração de todos os devs
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a revisão de todos os devs
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a confirmação de todos os devs
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a aprovação de todos os devs
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com o encerramento de todos os devs
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a preservação de todos os devs
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a confiança de todos os devs
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com o respeito por todos os devs
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com o cuidado por todos os devs
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a cautela por todos os devs
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a segurança por todos os devs
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a integridade por todos os devs
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a auditabilidade por todos os devs
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a reversibilidade por todos os devs
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a rastreabilidade por todos os devs
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a transparência por todos os devs
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a organização por todos os devs
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com o resultado por todos os devs
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a missão por todos os devs
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a continuidade por todos os devs
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com o futuro por todos os devs
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com o ecossistema por todos os devs
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com o repo por todos os devs
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a tarefa por todos os devs
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com os arquivos por todos os devs
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com os commits por todos os devs
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com as pastas por todos os devs
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com os scripts por todos os devs
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com os documentos por todos os devs
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com os ZIPs por todos os devs
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com os artefatos por todos os devs
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com os manifestos por todos os devs
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com os checksums por todos os devs
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com os relatórios por todos os devs
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com as auditorias por todos os devs
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com as validações por todos os devs
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com os estados por todos os devs
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a proteção por todos os devs
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a continuidade por todos os devs
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a capacidade de recuperação por todos os devs
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a capacidade de auditoria por todos os devs
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a capacidade de manutenção por todos os devs
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a capacidade de expansão por todos os devs
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a capacidade de continuidade por todos os devs
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a capacidade de colaboração por todos os devs
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a capacidade de segurança por todos os devs
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a capacidade de rollback por todos os devs
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a capacidade de validação por todos os devs
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a capacidade de diagnóstico por todos os devs
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a capacidade de observabilidade por todos os devs
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a capacidade de documentação por todos os devs
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a capacidade de comunicação por todos os devs
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a capacidade de entrega por todos os devs
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a capacidade de governança por todos os devs
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a capacidade de revisão por todos os devs
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a capacidade de aprovação por todos os devs
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a capacidade de decisão por todos os devs
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a capacidade de coordenação por todos os devs
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a capacidade de equilíbrio por todos os devs
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a capacidade de vida do ecossistema por todos os devs
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a capacidade de cumprir o objetivo por todos os devs
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com o respeito ao processo por todos os devs
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com o respeito ao histórico por todos os devs
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com o respeito aos arquivos por todos os devs
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com o respeito às pastas por todos os devs
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com o respeito aos commits por todos os devs
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com o respeito às branches por todos os devs
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com o respeito ao remoto por todos os devs
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com o respeito ao local por todos os devs
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com o respeito ao futuro por todos os devs
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a visão comum por todos os devs
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a missão comum por todos os devs
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com o objetivo comum por todos os devs
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com o resultado comum por todos os devs
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a jornada comum por todos os devs
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com o ecossistema comum por todos os devs
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a continuidade comum por todos os devs
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a preservação comum por todos os devs
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com o equilíbrio comum por todos os devs
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a cautela comum por todos os devs
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a segurança comum por todos os devs
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a integridade comum por todos os devs
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a auditoria comum por todos os devs
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a validação comum por todos os devs
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a organização comum por todos os devs
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a documentação comum por todos os devs
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a rastreabilidade comum por todos os devs
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a reversibilidade comum por todos os devs
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a auditabilidade comum por todos os devs
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a transparência comum por todos os devs
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a qualidade comum por todos os devs
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a entrega comum por todos os devs
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a colaboração comum por todos os devs
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a cooperação comum por todos os devs
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a coordenação comum por todos os devs
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a revisão comum por todos os devs
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a aprovação comum por todos os devs
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com o fechamento comum por todos os devs
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a vida comum do repo
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a vida comum do ecossistema
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a continuidade comum da tarefa
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a continuidade comum do projeto
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a continuidade comum da operação
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a continuidade comum da missão
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a continuidade comum do objetivo
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a continuidade comum do resultado
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a continuidade comum do futuro
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a continuidade comum dos arquivos
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a continuidade comum dos commits
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a continuidade comum das branches
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a continuidade comum das pastas
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a continuidade comum dos scripts
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a continuidade comum dos documentos
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a continuidade comum dos ZIPs
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a continuidade comum dos artefatos
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a continuidade comum dos relatórios
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a continuidade comum dos inventários
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a continuidade comum dos checksums
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a continuidade comum das validações
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a continuidade comum das auditorias
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a continuidade comum das revisões
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a continuidade comum da segurança
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a continuidade comum da recuperação
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a continuidade comum da governança
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a continuidade comum da organização
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a continuidade comum da manutenção
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a continuidade comum da expansão
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a continuidade comum da vida do ecossistema
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a continuidade comum de todos os devs
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com o equilíbrio comum de todos os devs
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a segurança comum de todos os devs
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a integridade comum de todos os devs
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a rastreabilidade comum de todos os devs
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a transparência comum de todos os devs
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a reversibilidade comum de todos os devs
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a auditabilidade comum de todos os devs
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a documentação comum de todos os devs
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a validação comum de todos os devs
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a organização comum de todos os devs
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a entrega comum de todos os devs
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com o fechamento comum de todos os devs
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a missão comum de todos os devs
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com o futuro comum de todos os devs
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a vida comum de todos os devs
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com o ecossistema comum de todos os devs
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com o resultado comum de todos os devs
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com o objetivo comum de todos os devs
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a tarefa comum de todos os devs
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com o projeto comum de todos os devs
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a operação comum de todos os devs
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a missão comum da equipe
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com o objetivo comum da equipe
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com o resultado comum da equipe
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a continuidade comum da equipe
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a colaboração comum da equipe
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a segurança comum da equipe
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a integridade comum da equipe
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a rastreabilidade comum da equipe
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a auditoria comum da equipe
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a validação comum da equipe
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a organização comum da equipe
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a documentação comum da equipe
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a revisão comum da equipe
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com o fechamento comum da equipe
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com o futuro comum da equipe
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a missão comum do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com o objetivo comum do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com o resultado comum do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a continuidade comum do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a colaboração comum do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a segurança comum do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a integridade comum do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a auditabilidade comum do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a reversibilidade comum do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a rastreabilidade comum do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a transparência comum do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a qualidade comum do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a organização comum do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a documentação comum do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a validação comum do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com o encerramento comum do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a vida comum do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a equipe
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a organização da equipe
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com o ecossistema da equipe
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a continuidade da equipe
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a segurança da equipe
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a integridade da equipe
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a rastreabilidade da equipe
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a transparência da equipe
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a reversibilidade da equipe
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a auditabilidade da equipe
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a documentação da equipe
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a validação da equipe
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com o fechamento da equipe
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com o futuro da equipe
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a missão da equipe
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com o objetivo da equipe
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com o resultado da equipe
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a colaboração da equipe
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a coordenação da equipe
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a revisão da equipe
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a aprovação da equipe
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a decisão da equipe
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com o equilíbrio da equipe
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a vida da equipe
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a qualidade da equipe
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a segurança do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a integridade do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a auditabilidade do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a rastreabilidade do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a transparência do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a documentação do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a validação do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a revisão do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com o fechamento do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a continuidade do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com o futuro do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a missão do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com o objetivo do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com o resultado do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a colaboração do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a coordenação do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a organização do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com o ecossistema do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a vida do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com o equilíbrio do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a preservação do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com o futuro do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a missão do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com o objetivo do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com o resultado do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a continuidade do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a segurança do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a integridade do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a auditabilidade do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a rastreabilidade do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a transparência do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a documentação do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a validação do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a revisão do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com o fechamento do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com o futuro do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a missão do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com o objetivo do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com o resultado do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a colaboração do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a coordenação do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a organização do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com o ecossistema do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a vida do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com o equilíbrio do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a preservação do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com o futuro do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a missão do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com o objetivo do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com o resultado do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a continuidade do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a segurança do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a integridade do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a auditabilidade do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a rastreabilidade do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a transparência do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a documentação do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a validação do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a revisão do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com o fechamento do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com o futuro do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a missão do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com o objetivo do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com o resultado do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a continuidade do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a segurança do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a integridade do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a auditabilidade do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a rastreabilidade do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a transparência do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a documentação do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a validação do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a revisão do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com o fechamento do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com o futuro do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a missão do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com o objetivo do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com o resultado do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a continuidade do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a segurança do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a integridade do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a auditabilidade do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a rastreabilidade do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a transparência do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a documentação do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a validação do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a revisão do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com o fechamento do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com o futuro do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a missão do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com o objetivo do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com o resultado do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a continuidade do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a segurança do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a integridade do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a auditabilidade do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a rastreabilidade do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a transparência do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a documentação do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a validação do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a revisão do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com o fechamento do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com o futuro do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a missão do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com o objetivo do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com o resultado do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a continuidade do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a segurança do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a integridade do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a auditabilidade do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a rastreabilidade do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a transparência do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a documentação do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a validação do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a revisão do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com o fechamento do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com o futuro do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a missão do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com o objetivo do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com o resultado do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a continuidade do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a segurança do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a integridade do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a auditabilidade do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a rastreabilidade do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a transparência do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a documentação do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a validação do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a revisão do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com o fechamento do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com o futuro do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a missão do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com o objetivo do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com o resultado do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a continuidade do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a segurança do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a integridade do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a auditabilidade do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a rastreabilidade do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a transparência do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a documentação do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a validação do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a revisão do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com o fechamento do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com o futuro do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a missão do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com o objetivo do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com o resultado do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a continuidade do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a segurança do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a integridade do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a auditabilidade do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a rastreabilidade do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a transparência do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a documentação do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a validação do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a revisão do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com o fechamento do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com o futuro do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a missão do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com o objetivo do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com o resultado do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a continuidade do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a segurança do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a integridade do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a auditabilidade do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a rastreabilidade do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a transparência do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a documentação do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a validação do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a revisão do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com o fechamento do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com o futuro do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a missão do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com o objetivo do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com o resultado do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a continuidade do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a segurança do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a integridade do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a auditabilidade do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a rastreabilidade do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a transparência do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a documentação do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a validação do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a revisão do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com o fechamento do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com o futuro do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a missão do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com o objetivo do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com o resultado do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a continuidade do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a segurança do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a integridade do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a auditabilidade do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a rastreabilidade do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a transparência do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a documentação do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a validação do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a revisão do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com o fechamento do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com o futuro do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a missão do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com o objetivo do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com o resultado do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a continuidade do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a segurança do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a integridade do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a auditabilidade do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a rastreabilidade do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a transparência do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a documentação do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a validação do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a revisão do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com o fechamento do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com o futuro do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a missão do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com o objetivo do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com o resultado do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a continuidade do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a segurança do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a integridade do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a auditabilidade do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a rastreabilidade do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a transparência do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a documentação do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a validação do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a revisão do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com o fechamento do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com o futuro do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a missão do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com o objetivo do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com o resultado do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a continuidade do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a segurança do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a integridade do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a auditabilidade do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a rastreabilidade do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a transparência do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a documentação do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a validação do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a revisão do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com o fechamento do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com o futuro do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a missão do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com o objetivo do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com o resultado do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a continuidade do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a segurança do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a integridade do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a auditabilidade do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a rastreabilidade do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a transparência do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a documentação do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a validação do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a revisão do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com o fechamento do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com o futuro do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a missão do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com o objetivo do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com o resultado do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a continuidade do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a segurança do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a integridade do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a auditabilidade do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a rastreabilidade do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a transparência do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a documentação do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a validação do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a revisão do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com o fechamento do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com o futuro do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a missão do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com o objetivo do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com o resultado do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a continuidade do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a segurança do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a integridade do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a auditabilidade do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a rastreabilidade do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a transparência do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a documentação do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a validação do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a revisão do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com o fechamento do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com o futuro do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a missão do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com o objetivo do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com o resultado do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a continuidade do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a segurança do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a integridade do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a auditabilidade do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a rastreabilidade do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a transparência do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a documentação do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a validação do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com a revisão do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com o fechamento do time
+- [ ] Alterações solicitadas pelo usuário em 2026-08-22: finalizar com referência à entrega após preservação do compromisso com o futuro do time
+- [ ] Alterações solicitadas
