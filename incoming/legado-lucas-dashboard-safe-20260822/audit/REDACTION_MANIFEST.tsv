@@ -1,0 +1,3 @@
+relative_path	redaction_rule	status
+source_project/client/src/pages/CerberusWallet.tsx	literal passphrase replaced with secret-manager placeholder	redacted
+source_project/todo.md	literal passphrase reference replaced with non-secret wording	redacted

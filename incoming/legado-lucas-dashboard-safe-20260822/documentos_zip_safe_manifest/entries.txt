@@ -1,0 +1,125 @@
+Legado Lucas /
+Legado Lucas /Análise Comparativa Crítica.docx
+Legado Lucas /Planejamento Estratégico.docx
+Legado Lucas /Planejamento Legado 2026
+Legado Lucas /Relatorio_Ano_0.docx
+Legado Lucas /Relatorio_Ano_1.docx
+Legado Lucas /Relatorio_Ano_2.docx
+Legado Lucas /Relatorio_Ano_3.docx
+Legado Lucas /Relatorio_Ano_4.docx
+Legado Lucas /Relatorio_Ano_5.docx
+Legado Lucas /Relatorio_Ano_6.docx
+Legado Lucas /Relatorio_Ano_7.docx
+Legado Lucas /Relatorio_Ano_8.docx
+Legado Lucas /Relatorio_Ano_9.docx
+Legado Lucas /Relatorio_Ano_10.docx
+Legado Lucas /Tabela_Comparativa_de_Métricas_Financeiras_(Ano_0_ao_Ano_10).docx
+Legado Lucas /LEGADO - JOGO DA VIRADA 2025.docx
+Carteira Bitcoin Fortuna 30000 BTC/
+Carteira Bitcoin Fortuna 30000 BTC/1.txt
+Carteira Bitcoin Fortuna 30000 BTC/10.txt
+Carteira Bitcoin Fortuna 30000 BTC/11.txt
+Carteira Bitcoin Fortuna 30000 BTC/12.txt
+Carteira Bitcoin Fortuna 30000 BTC/13.txt
+Carteira Bitcoin Fortuna 30000 BTC/14.txt
+Carteira Bitcoin Fortuna 30000 BTC/15.txt
+Carteira Bitcoin Fortuna 30000 BTC/16.txt
+Carteira Bitcoin Fortuna 30000 BTC/17.txt
+Carteira Bitcoin Fortuna 30000 BTC/18.txt
+Carteira Bitcoin Fortuna 30000 BTC/2.txt
+Carteira Bitcoin Fortuna 30000 BTC/3.txt
+Carteira Bitcoin Fortuna 30000 BTC/4. Resultados dos Testes e Validação.md
+Carteira Bitcoin Fortuna 30000 BTC/4.txt
+Carteira Bitcoin Fortuna 30000 BTC/5.txt
+Carteira Bitcoin Fortuna 30000 BTC/6.txt
+Carteira Bitcoin Fortuna 30000 BTC/7.txt
+Carteira Bitcoin Fortuna 30000 BTC/8.txt
+Carteira Bitcoin Fortuna 30000 BTC/9.txt
+Carteira Bitcoin Fortuna 30000 BTC/address_analysis.py
+Carteira Bitcoin Fortuna 30000 BTC/address_report_raw.txt
+Carteira Bitcoin Fortuna 30000 BTC/all_new_addresses.txt
+Carteira Bitcoin Fortuna 30000 BTC/analise_recuperacao_preliminar.md
+Carteira Bitcoin Fortuna 30000 BTC/Análise Aprofundada dos Protocolos Existentes no Projeto de Carteira de Custódia Bitcoin.md
+Carteira Bitcoin Fortuna 30000 BTC/Análise do Projeto de Carteira de Custódia Bitcoin.md
+Carteira Bitcoin Fortuna 30000 BTC/Análise dos Arquivos de Carteira Bitcoin.md
+Carteira Bitcoin Fortuna 30000 BTC/api_broadcast_system.py
+Carteira Bitcoin Fortuna 30000 BTC/App.css
+Carteira Bitcoin Fortuna 30000 BTC/App.jsx
+Carteira Bitcoin Fortuna 30000 BTC/Arquitetura da Carteira Digital Bitcoin_ Modelo Gênesis-Cerberus.md
+Carteira Bitcoin Fortuna 30000 BTC/arquitetura_genesis_cerberus.md
+Carteira Bitcoin Fortuna 30000 BTC/base58_protocol.py
+Carteira Bitcoin Fortuna 30000 BTC/bitcoin_transaction_engine.py
+Carteira Bitcoin Fortuna 30000 BTC/BROADCAST_INTEGRATION.md
+Carteira Bitcoin Fortuna 30000 BTC/caisk_protocol.py
+Carteira Bitcoin Fortuna 30000 BTC/cerberusService.ts
+Carteira Bitcoin Fortuna 30000 BTC/cerberus_addresses.txt
+Carteira Bitcoin Fortuna 30000 BTC/cerberus_addresses_generated.txt
+Carteira Bitcoin Fortuna 30000 BTC/component_diagram.d2
+Carteira Bitcoin Fortuna 30000 BTC/component_diagram.mmd
+Carteira Bitcoin Fortuna 30000 BTC/component_diagram.png
+Carteira Bitcoin Fortuna 30000 BTC/consolidated_wifs.txt
+Carteira Bitcoin Fortuna 30000 BTC/Criar Carteira Bitcoin e Listar Endereços Gênesis e Cerberus.zip
+Carteira Bitcoin Fortuna 30000 BTC/crypto.ts
+Carteira Bitcoin Fortuna 30000 BTC/custody.py
+Carteira Bitcoin Fortuna 30000 BTC/decrypt_electrum_seed.py
+Carteira Bitcoin Fortuna 30000 BTC/export_wallet_data.py
+Carteira Bitcoin Fortuna 30000 BTC/extracted_addresses.txt
+Carteira Bitcoin Fortuna 30000 BTC/extracted_keys_and_addresses.txt
+Carteira Bitcoin Fortuna 30000 BTC/FDR_Encrypted_Backup_20251006_143557.json
+Carteira Bitcoin Fortuna 30000 BTC/FDR_Master_Wallet_Complete_20251006_143555.csv
+Carteira Bitcoin Fortuna 30000 BTC/fdr_protocol.py
+Carteira Bitcoin Fortuna 30000 BTC/FDR_Wallet_Report_20251006_143557.txt
+Carteira Bitcoin Fortuna 30000 BTC/generate_wallet.js
+Carteira Bitcoin Fortuna 30000 BTC/generate_wallet.ts
+Carteira Bitcoin Fortuna 30000 BTC/genesis_addresses.txt
+Carteira Bitcoin Fortuna 30000 BTC/genesis_addresses_generated.txt
+Carteira Bitcoin Fortuna 30000 BTC/guardian_protocol.py
+Carteira Bitcoin Fortuna 30000 BTC/hex_to_mnemonic.py
+Carteira Bitcoin Fortuna 30000 BTC/HowtoRecoveraLostBitcoinWalletAddress.zip
+Carteira Bitcoin Fortuna 30000 BTC/Importar Endereços e Chaves na Carteira BTC.zip
+Carteira Bitcoin Fortuna 30000 BTC/import_report.txt
+Carteira Bitcoin Fortuna 30000 BTC/index.html
+Carteira Bitcoin Fortuna 30000 BTC/Integração de Broadcast de Transações Bitcoin com Fallback.md
+Carteira Bitcoin Fortuna 30000 BTC/main.py
+Carteira Bitcoin Fortuna 30000 BTC/new_cerberus_addresses.txt
+Carteira Bitcoin Fortuna 30000 BTC/new_genesis_addresses.txt
+Carteira Bitcoin Fortuna 30000 BTC/pasted_content.txt
+Carteira Bitcoin Fortuna 30000 BTC/pasted_content_2.txt
+Carteira Bitcoin Fortuna 30000 BTC/pesbm_protocol.py
+Carteira Bitcoin Fortuna 30000 BTC/private_key_search.txt
+Carteira Bitcoin Fortuna 30000 BTC/process_wallet_files.py
+Carteira Bitcoin Fortuna 30000 BTC/project_analysis.md
+Carteira Bitcoin Fortuna 30000 BTC/protocols.py
+Carteira Bitcoin Fortuna 30000 BTC/protocol_analysis.md
+Carteira Bitcoin Fortuna 30000 BTC/recharge_flow_diagram.d2
+Carteira Bitcoin Fortuna 30000 BTC/recharge_flow_diagram.mmd
+Carteira Bitcoin Fortuna 30000 BTC/recharge_flow_diagram.png
+Carteira Bitcoin Fortuna 30000 BTC/Relatório de Análise Criptográfica do Endereço Bitcoin.md
+Carteira Bitcoin Fortuna 30000 BTC/Relatório de Geração de Carteira Gênesis-Cerberus.md
+Carteira Bitcoin Fortuna 30000 BTC/requirements.txt
+Carteira Bitcoin Fortuna 30000 BTC/rich_address_analysis.py
+Carteira Bitcoin Fortuna 30000 BTC/simple_caisk.py
+Carteira Bitcoin Fortuna 30000 BTC/simple_fdr.py
+Carteira Bitcoin Fortuna 30000 BTC/spend_flow_diagram.d2
+Carteira Bitcoin Fortuna 30000 BTC/spend_flow_diagram.mmd
+Carteira Bitcoin Fortuna 30000 BTC/spend_flow_diagram.png
+Carteira Bitcoin Fortuna 30000 BTC/todo.md
+Carteira Bitcoin Fortuna 30000 BTC/top_100_addresses.txt
+Carteira Bitcoin Fortuna 30000 BTC/tsra_protocol.py
+Carteira Bitcoin Fortuna 30000 BTC/UploadedFileContentAnalysis.zip
+Carteira Bitcoin Fortuna 30000 BTC/validate_and_organize_keys.py
+Carteira Bitcoin Fortuna 30000 BTC/verify_mnemonic.py
+Carteira Bitcoin Fortuna 30000 BTC/wallet_analysis.md
+Carteira Bitcoin Fortuna 30000 BTC/wallet_ben.dat
+Carteira Bitcoin Fortuna 30000 BTC/wallet_encryption.py
+Carteira Bitcoin Fortuna 30000 BTC/wallet_importer.py
+Carteira Bitcoin Fortuna 30000 BTC/wallet_processor.py
+Carteira Bitcoin Fortuna 30000 BTC/__init__.py
+Carteira Bitcoin Fortuna 30000 BTC/bitcoin.ts
+Carteira Bitcoin Fortuna 30000 BTC/BitcoinDashboardLayout.tsx
+Carteira Bitcoin Fortuna 30000 BTC/Dashboard.tsx
+Carteira Bitcoin Fortuna 30000 BTC/db.ts
+Carteira Bitcoin Fortuna 30000 BTC/encryption.ts
+Carteira Bitcoin Fortuna 30000 BTC/keys.ts
+Carteira Bitcoin Fortuna 30000 BTC/routers.ts
+Carteira Bitcoin Fortuna 30000 BTC/schema.ts

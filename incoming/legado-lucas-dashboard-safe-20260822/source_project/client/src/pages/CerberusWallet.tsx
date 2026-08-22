@@ -1,0 +1,220 @@
+import { trpc } from "@/lib/trpc";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Loader2, Lock, Shield, Key, Copy, Eye, EyeOff } from "lucide-react";
+import { useState } from "react";
+import { toast } from "sonner";
+
+export default function CerberusWallet() {
+  const { data: addresses, isLoading } = trpc.cerberus.getAddresses.useQuery();
+  const [showBalances, setShowBalances] = useState(false);
+  const [copiedId, setCopiedId] = useState<number | null>(null);
+
+  const copyToClipboard = (address: string, id: number) => {
+    navigator.clipboard.writeText(address);
+    setCopiedId(id);
+    toast.success("Endereço copiado!");
+    setTimeout(() => setCopiedId(null), 2000);
+  };
+
+  const formatBTC = (sats: string | null) => {
+    const value = sats || "0";
+    const num = parseInt(value) / 1e8;
+    return num.toFixed(8);
+  };
+
+  if (isLoading) {
+    return (
+      <div className="flex items-center justify-center h-96">
+        <Loader2 className="animate-spin text-purple-400" size={32} />
+      </div>
+    );
+  }
+
+  const totalBalance = addresses?.reduce((sum, addr) => {
+    return sum + (parseInt(addr.balanceSats || "0") / 1e8);
+  }, 0) || 0;
+
+  return (
+    <div className="space-y-8">
+      {/* Header */}
+      <div className="space-y-2">
+        <h1 className="text-3xl font-bold text-white">Cerberus - Cold Storage</h1>
+        <p className="text-slate-400">Armazenamento seguro de longo prazo com máxima proteção criptográfica</p>
+      </div>
+
+      {/* Saldo Total */}
+      <Card className="bg-gradient-to-r from-purple-500/10 to-pink-500/10 border-purple-500/30">
+        <CardHeader>
+          <CardTitle className="text-purple-400">Saldo Total em Cold Storage</CardTitle>
+          <CardDescription>Fundos protegidos em armazenamento seguro</CardDescription>
+        </CardHeader>
+        <CardContent>
+          <div className="flex items-center justify-between">
+            <div>
+              <p className="text-4xl font-bold text-white">{totalBalance.toFixed(8)} BTC</p>
+              <p className="text-sm text-slate-400 mt-2">
+                {addresses?.length || 0} endereço(s) de vault
+              </p>
+            </div>
+            <Button
+              onClick={() => setShowBalances(!showBalances)}
+              variant="outline"
+              size="sm"
+              className="border-purple-500/30 hover:bg-purple-500/10"
+            >
+              {showBalances ? <Eye size={16} /> : <EyeOff size={16} />}
+            </Button>
+          </div>
+        </CardContent>
+      </Card>
+
+      {/* Alertas de Segurança */}
+      <Card className="bg-yellow-500/5 border-yellow-500/20">
+        <CardHeader>
+          <CardTitle className="text-yellow-400 text-sm flex items-center gap-2">
+            <Shield size={16} />
+            ⚠️ Segurança Máxima
+          </CardTitle>
+        </CardHeader>
+        <CardContent className="text-sm text-slate-300 space-y-2">
+          <p>
+            • Master Key protegida com passphrase <strong>[REDACTED — configure via secret manager]</strong>
+          </p>
+          <p>
+            • Derivação BIP39/BIP32 com múltiplas camadas de criptografia
+          </p>
+          <p>
+            • Operações exclusivamente em Mainnet (validação TSRA)
+          </p>
+          <p>
+            • Movimentações para Gênesis requerem aprovação adicional
+          </p>
+        </CardContent>
+      </Card>
+
+      {/* Ações de Segurança */}
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <Button className="bg-purple-600 hover:bg-purple-700 text-white h-12" disabled>
+          <Lock size={16} className="mr-2" />
+          Gerar Novo Endereço
+        </Button>
+        <Button className="bg-blue-600 hover:bg-blue-700 text-white h-12" disabled>
+          <Key size={16} className="mr-2" />
+          Derivar Chaves
+        </Button>
+        <Button className="bg-orange-600 hover:bg-orange-700 text-white h-12" disabled>
+          <Shield size={16} className="mr-2" />
+          Transferir para Gênesis
+        </Button>
+      </div>
+
+      {/* Lista de Endereços de Vault */}
+      <Card className="bg-slate-800/50 border-slate-700">
+        <CardHeader>
+          <CardTitle>Endereços de Vault</CardTitle>
+          <CardDescription>Todos os endereços Cerberus registrados em Cold Storage</CardDescription>
+        </CardHeader>
+        <CardContent>
+          {!addresses || addresses.length === 0 ? (
+            <div className="text-center py-8">
+              <p className="text-slate-400">Nenhum endereço Cerberus configurado</p>
+            </div>
+          ) : (
+            <div className="space-y-4">
+              {addresses.map((address) => (
+                <div
+                  key={address.id}
+                  className="p-4 bg-slate-700/30 rounded-lg border border-slate-600 hover:border-purple-500/50 transition"
+                >
+                  <div className="flex items-start justify-between mb-3">
+                    <div className="flex-1">
+                      <div className="flex items-center gap-2 mb-1">
+                        <Lock size={14} className="text-purple-400" />
+                        <p className="text-sm font-medium text-slate-300">
+                          {address.label ? address.label : "Sem rótulo"}
+                        </p>
+                      </div>
+                      <p className="text-xs text-slate-500 break-all font-mono">{address.address}</p>
+                    </div>
+                    <button
+                      onClick={() => copyToClipboard(address.address, address.id)}
+                      className="p-2 hover:bg-slate-600 rounded transition"
+                    >
+                      {copiedId === address.id ? (
+                        <span className="text-xs text-green-400">✓</span>
+                      ) : (
+                        <Copy size={16} className="text-slate-400" />
+                      )}
+                    </button>
+                  </div>
+
+                  <div className="grid grid-cols-3 gap-3 pt-3 border-t border-slate-600">
+                    <div>
+                      <p className="text-xs text-slate-400">Saldo</p>
+                      {showBalances ? (
+                        <p className="text-sm font-mono text-purple-400">
+                          {formatBTC(address.balanceSats)} BTC
+                        </p>
+                      ) : (
+                        <p className="text-sm font-mono text-slate-500">••••••••</p>
+                      )}
+                    </div>
+                    <div>
+                      <p className="text-xs text-slate-400">Satoshis</p>
+                      {showBalances ? (
+                        <p className="text-sm font-mono text-slate-300">{address.balanceSats || "0"}</p>
+                      ) : (
+                        <p className="text-sm font-mono text-slate-500">••••••••</p>
+                      )}
+                    </div>
+                    <div>
+                      <p className="text-xs text-slate-400">Status</p>
+                      <p className="text-sm font-mono text-green-400">Seguro</p>
+                    </div>
+                  </div>
+
+                  <div className="mt-3 flex gap-2">
+                    <Button size="sm" variant="outline" className="flex-1 text-xs" disabled>
+                      Transferir
+                    </Button>
+                    <Button size="sm" variant="outline" className="flex-1 text-xs">
+                      Detalhes
+                    </Button>
+                  </div>
+                </div>
+              ))}
+            </div>
+          )}
+        </CardContent>
+      </Card>
+
+      {/* Informações de Segurança */}
+      <Card className="bg-purple-500/5 border-purple-500/20">
+        <CardHeader>
+          <CardTitle className="text-purple-400 text-sm">🔐 Sobre Cerberus (Cold Storage)</CardTitle>
+        </CardHeader>
+        <CardContent className="text-sm text-slate-300 space-y-2">
+          <p>
+            • <strong>Cerberus</strong> é o Cold Storage para armazenamento de longo prazo de +30.000 BTC
+          </p>
+          <p>
+            • Implementa o Modelo Gênesis-Cerberus com máxima segurança criptográfica
+          </p>
+          <p>
+            • Master Key derivada com BIP39/BIP32 e protegida com passphrase única
+          </p>
+          <p>
+            • Chaves privadas nunca são expostas em operações normais
+          </p>
+          <p>
+            • Transferências para Gênesis requerem aprovação e validação TSRA (Mainnet-only)
+          </p>
+          <p>
+            • Guardian Protocol monitora limites diários de movimentação
+          </p>
+        </CardContent>
+      </Card>
+    </div>
+  );
+}
