@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cronograma e Orçamento - Fase 1</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        .slide-container {
+            width: 1280px;
+            min-height: 720px;
+            background: linear-gradient(135deg, #0B0C15 0%, #1a1b2e 100%);
+            display: flex;
+            flex-direction: column;
+            padding-top: 40px;
+            padding-left: 60px;
+            padding-right: 60px;
+        }
+        
+        .headline {
+            font-family: 'Playfair Display', serif;
+            font-size: 36px;
+            font-weight: 700;
+            color: #D4AF37;
+            margin-bottom: 40px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .content-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            flex: 1;
+        }
+        
+        .section {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        
+        .section-title {
+            font-family: 'Inter', sans-serif;
+            font-size: 16px;
+            color: #00E5FF;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .timeline {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        
+        .timeline-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .timeline-marker {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #D4AF37;
+            flex-shrink: 0;
+        }
+        
+        .timeline-text {
+            font-family: 'Inter', sans-serif;
+            font-size: 13px;
+            color: #FFFFFF;
+            line-height: 1.4;
+        }
+        
+        .timeline-text strong {
+            color: #00E5FF;
+            font-weight: 600;
+        }
+        
+        .budget-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-family: 'Inter', sans-serif;
+            font-size: 12px;
+        }
+        
+        .budget-table th {
+            background: rgba(212, 175, 55, 0.1);
+            color: #D4AF37;
+            padding: 10px;
+            text-align: left;
+            font-weight: 600;
+            border-bottom: 2px solid #D4AF37;
+        }
+        
+        .budget-table td {
+            padding: 10px;
+            color: #FFFFFF;
+            border-bottom: 1px solid rgba(0, 229, 255, 0.2);
+        }
+        
+        .budget-table tr:last-child td {
+            border-bottom: none;
+        }
+        
+        .category-legal {
+            color: #D4AF37;
+            font-weight: 600;
+        }
+        
+        .category-governance {
+            color: #00E5FF;
+            font-weight: 600;
+        }
+        
+        .category-technology {
+            color: #FF6B9D;
+            font-weight: 600;
+        }
+        
+        .amount {
+            text-align: right;
+            font-weight: 600;
+            color: #D4AF37;
+        }
+        
+        .total-row {
+            background: rgba(212, 175, 55, 0.15);
+            font-weight: 700;
+            color: #D4AF37;
+        }
+        
+        .total-row td {
+            border-top: 2px solid #D4AF37;
+            border-bottom: 2px solid #D4AF37;
+        }
+        
+        .chart-container {
+            position: relative;
+            height: 280px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="headline">Cronograma de 120 Dias e Orçamento de R$ 1.000.000</div>
+        
+        <div class="content-grid">
+            <!-- Seção de Cronograma -->
+            <div class="section">
+                <div class="section-title">Fases do Cronograma</div>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-text"><strong>Mês 1-2 (D1-D60):</strong> Estrutura Jurídica (QLF) e Papéis Fundadores</div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-text"><strong>Mês 3-4 (D61-D90):</strong> Governança Ativa (Conselho de Sábios) e QVT Beta</div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-text"><strong>Mês 4 (D91-D120):</strong> Testes Finais e Preparação para Ativação</div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-text"><strong>Marco Final (D120):</strong> QLF Constituída, QVT em Testes, Constituição Pronta</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Seção de Orçamento -->
+            <div class="section">
+                <div class="section-title">Alocação de Orçamento</div>
+                <table class="budget-table">
+                    <thead>
+                        <tr>
+                            <th>Categoria</th>
+                            <th class="amount">Valor (R$)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><span class="category-legal">Legal/Compliance</span></td>
+                            <td class="amount">R$ 330.000</td>
+                        </tr>
+                        <tr>
+                            <td><span class="category-governance">Governance/Consulting</span></td>
+                            <td class="amount">R$ 220.000</td>
+                        </tr>
+                        <tr>
+                            <td><span class="category-technology">Technology/Development</span></td>
+                            <td class="amount">R$ 410.000</td>
+                        </tr>
+                        <tr>
+                            <td><span class="category-governance">Internal/RH</span></td>
+                            <td class="amount">R$ 40.000</td>
+                        </tr>
+                        <tr class="total-row">
+                            <td>TOTAL ESTIMADO</td>
+                            <td class="amount">R$ 1.000.000</td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <div style="font-family: 'Inter', sans-serif; font-size: 12px; color: #00E5FF; margin-top: 20px; line-height: 1.6;">
+                    <strong>Investimento Patrimonial:</strong> R$ 5.000.000.000 transferidos para a QLF
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
