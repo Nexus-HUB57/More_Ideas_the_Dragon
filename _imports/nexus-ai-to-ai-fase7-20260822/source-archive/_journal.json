@@ -1,0 +1,27 @@
+{
+  "version": "7",
+  "dialect": "mysql",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "5",
+      "when": 1772206237440,
+      "tag": "0000_bizarre_miek",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "5",
+      "when": 1772206389051,
+      "tag": "0001_light_kat_farrell",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "5",
+      "when": 1772206406391,
+      "tag": "0002_adorable_boomer",
+      "breakpoints": true
+    }
+  ]
+}

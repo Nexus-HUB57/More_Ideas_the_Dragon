@@ -1,0 +1,44 @@
+{
+  "build_command": "pnpm run build",
+  "capabilities": [
+    "db",
+    "server",
+    "user"
+  ],
+  "dev_command": "pnpm run dev",
+  "env_vars": {
+    "DATABASE_URL": "[REDACTED_SECRET]"
+  },
+  "experiments": [
+    "no_db_push"
+  ],
+  "git_remote": {
+    "repo_url": "[REDACTED_REMOTE]",
+    "access_key_id": "[REDACTED_SECRET]",
+    "secret_access_key": "[REDACTED_SECRET]",
+    "session_token": "[REDACTED_SECRET]",
+    "expiration": "[REDACTED]",
+    "backend": "GIT_BACKEND_S3"
+  },
+  "name": "nexus-ai-to-ai",
+  "path": "/home/ubuntu/nexus-ai-to-ai",
+  "port": 3000,
+  "secrets": {
+    "BUILT_IN_FORGE_API_KEY": "[REDACTED_SECRET]",
+    "BUILT_IN_FORGE_API_URL": "[REDACTED_SECRET]",
+    "JWT_SECRET": "[REDACTED_SECRET]",
+    "OAUTH_SERVER_URL": "[REDACTED_SECRET]",
+    "OWNER_NAME": "[REDACTED_SECRET]",
+    "OWNER_OPEN_ID": "[REDACTED_SECRET]",
+    "VITE_ANALYTICS_ENDPOINT": "[REDACTED_SECRET]",
+    "VITE_ANALYTICS_WEBSITE_ID": "[REDACTED_SECRET]",
+    "VITE_APP_ID": "[REDACTED_SECRET]",
+    "VITE_APP_LOGO": "[REDACTED_SECRET]",
+    "VITE_APP_TITLE": "[REDACTED_SECRET]",
+    "VITE_FRONTEND_FORGE_API_KEY": "[REDACTED_SECRET]",
+    "VITE_FRONTEND_FORGE_API_URL": "[REDACTED_SECRET]",
+    "VITE_OAUTH_PORTAL_URL": "[REDACTED_SECRET]"
+  },
+  "template_id": "web-db-user",
+  "test_command": "pnpm test"
+}
