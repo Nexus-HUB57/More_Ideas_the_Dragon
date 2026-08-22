@@ -1,0 +1,58 @@
+REPO=Nexus-HUB57/More_Ideas_the_Dragon
+HEAD=ca1517fe2d947528cbb4aca08a536527ba804d71
+BRANCH=main
+STATUS:
+## main...origin/main
+BRANCHES:
+* [32mmain[m
+  [31mremotes/origin/HEAD[m -> origin/main
+  [31mremotes/origin/agent/livro-das-sementes-safe-20260822[m
+  [31mremotes/origin/agent/quanthicron-task-safe-population-20260822[m
+  [31mremotes/origin/agent/snf-branding-20260822[m
+  [31mremotes/origin/audit/readme-cirurgical-20260822T141500Z[m
+  [31mremotes/origin/audit/safe-recovery-299-20260822[m
+  [31mremotes/origin/chore/import-projetoeimplementacoes-20260822[m
+  [31mremotes/origin/chore/orseca-livros-task-20260822[m
+  [31mremotes/origin/chore/quanthicron-pilot-task-safe-20260822[m
+  [31mremotes/origin/chore/safe-repo-population-audit-20260822[m
+  [31mremotes/origin/codex/agentic-video-creator-safe-20260822[m
+  [31mremotes/origin/dev-phd-task-population[m
+  [31mremotes/origin/dev-phd-task-population-safe[m
+  [31mremotes/origin/docs/agent-catalog-end-to-end-20260822[m
+  [31mremotes/origin/feat/manus-task-artifacts-safe-20260822[m
+  [31mremotes/origin/feat/phd-academia-nexus-bundle-299[m
+  [31mremotes/origin/feat/safe-population-20260822T130036Z[m
+  [31mremotes/origin/feat/safe-population-more-ideas-20260822T134554Z[m
+  [31mremotes/origin/feat/sfn-safe-population-20260822[m
+  [31mremotes/origin/feature/nexus-dashboard-safe-population-1787403421[m
+  [31mremotes/origin/feature/nexus-hub-autonomous-os-v3[m
+  [31mremotes/origin/feature/nexus-phd-population-safe-1787401862[m
+  [31mremotes/origin/feature/nexus-phd-population-safe-299-files[m
+  [31mremotes/origin/feature/nexus-task-artifacts-safe-20260822[m
+  [31mremotes/origin/feature/phd-final-population-299-files-manus-1787405478[m
+  [31mremotes/origin/feature/phd-nexus-mmn-quanthicron-population-final[m
+  [31mremotes/origin/feature/phd-safe-population-299-files-1787402847[m
+  [31mremotes/origin/feature/quanthicron-full-population-phd[m
+  [31mremotes/origin/feature/quanthicron-series-dev-phd[m
+  [31mremotes/origin/integration/safe-mmnai-ai-20260822T132042Z[m
+  [31mremotes/origin/main[m
+  [31mremotes/origin/manus/wif-wallet-manager-integration-20260822[m
+  [31mremotes/origin/test/safe-push-check[m
+  [31mremotes/origin/test/safe-push-check-unique-1787401106[m
+TRACKED_FILES=19315
+WORKTREE_FILES=19314
+RECENT_COMMITS:
+[33mca1517f[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m Merge pull request #35 from Nexus-HUB57/chore/orseca-livros-task-20260822
+[33mf687f00[m Merge pull request #34 from Nexus-HUB57/agent/livro-das-sementes-safe-20260822
+[33m81b08a2[m[33m ([m[1;31morigin/agent/livro-das-sementes-safe-20260822[m[33m)[m feat(artifacts): add Livro das Sementes cover package
+[33me19affc[m[33m ([m[1;31morigin/chore/orseca-livros-task-20260822[m[33m)[m docs(orseca): add end-to-end book task artifacts
+[33me2f971f[m Merge pull request #33 from Nexus-HUB57/agent/snf-branding-20260822
+[33m655e9f6[m Merge pull request #32 from Nexus-HUB57/feat/sfn-safe-population-20260822
+[33m0abaa3b[m[33m ([m[1;31morigin/agent/snf-branding-20260822[m[33m)[m Add SNF E2 futuristic brand identity assets
+[33md0d3032[m[33m ([m[1;31morigin/feat/sfn-safe-population-20260822[m[33m)[m chore(sfn): include reproducible methodology bundle
+[33m33fd07a[m feat(sfn): add safe seed need feed methodology package
+[33m9bfb100[m Merge pull request #30 from Nexus-HUB57/docs/agent-catalog-end-to-end-20260822
+[33mbe65011[m Merge pull request #31 from Nexus-HUB57/chore/safe-repo-population-audit-20260822
+[33m7700620[m[33m ([m[1;31morigin/docs/agent-catalog-end-to-end-20260822[m[33m)[m docs: document integrated AI agent catalog
+TASK_PATHS:
+549
