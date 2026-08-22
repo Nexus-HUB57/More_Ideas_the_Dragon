@@ -1,0 +1,12 @@
+source_path	size_bytes	sha256	decision	reason
+/home/ubuntu/upload/273endalb.1.backup	1171868	9fe6af59c902ef8b7db25c24a73234d21d589159b32847bb2deff97d63181d42	excluded	potential wallet/private-key, signed transaction, or unclassified sensitive input
+/home/ubuntu/upload/Alb1.1.py	2315910	dc05c31c71a630f534689e2a33b5d062f5081dcdaf82340026b9783b79b92745	excluded	potential wallet/private-key, signed transaction, or unclassified sensitive input
+/home/ubuntu/upload/Alb1.2020.txt	729372	903836d4bdcdce52097af27dfdf8e3cedeed4bac1f6d1d3927ad0c641d0ec579	excluded	potential wallet/private-key, signed transaction, or unclassified sensitive input
+/home/ubuntu/upload/alb.1.backup	1170952	d24342e17de1b3e128777aa13a988b3056f0f392b62c39a41e060433a61541ba	excluded	potential wallet/private-key, signed transaction, or unclassified sensitive input
+/home/ubuntu/upload/alb1.2020.backup	2315910	cab71adce7fd25fc94563768948b9948039b0978849170ff406d58ac746c17d6	excluded	potential wallet/private-key, signed transaction, or unclassified sensitive input
+/home/ubuntu/upload/end.al1entry.txt	729372	6f0d60c8e54f12ceee45dfecb14364106558204f05a330ce400352ba34233910	excluded	potential wallet/private-key, signed transaction, or unclassified sensitive input
+/home/ubuntu/upload/import.enviotranssat	2314358	eb1196ebb4b80c62a42b0e325a4f08866029b9f7193808bbb4d495e06c05a30c	excluded	potential wallet/private-key, signed transaction, or unclassified sensitive input
+/home/ubuntu/upload/import.sat	2325443	3480fbf477587683b418c015745de614eea9acf0d728327cc27baed53d6f51f9	excluded	potential wallet/private-key, signed transaction, or unclassified sensitive input
+/home/ubuntu/upload/pasted_content.txt	11006	bfeaa88605e123fae8b29ff94bbf35a5bb4a20fea8e48eaf835b84b2bc6d8120	excluded	potential wallet/private-key, signed transaction, or unclassified sensitive input
+/home/ubuntu/upload/satoshi_nakamoto_apocalipse1.txt	2315910	a4a37bed69de7bf1b9e48421c87939ec858c93b4500da574ade6602911d48d02	excluded	potential wallet/private-key, signed transaction, or unclassified sensitive input
+/home/ubuntu/upload/signed_0dd5fc1b.txn	2954	0a9397526e56e6dcf5168c7731b8f0f955872d81b795a7960606444e322ccd7f	excluded	potential wallet/private-key, signed transaction, or unclassified sensitive input

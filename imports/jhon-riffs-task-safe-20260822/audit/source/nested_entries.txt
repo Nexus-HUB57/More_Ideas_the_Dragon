@@ -1,0 +1,7 @@
+Análise e Estruturação do Projeto Jhon Riff's.md
+JhonRiffs.pdf
+JhonRiff’s.docx
+dinheiro_wer34dgf98.zip
+jhon_riffs_arquitetura_tecnica.md
+schema.ts
+todo.md

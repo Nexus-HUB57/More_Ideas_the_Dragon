@@ -1,0 +1,5 @@
+# Safe import bundles exceed GitHub's 100 MB regular-file limit.
+# Keep the original source archives as ordinary Git files; track only the two
+# generated end-to-end snapshots through Git LFS.
+imports/jhon-riffs-task-safe-20260822/archives/JhonRiffs-safe-import-end-to-end-20260822.zip filter=lfs diff=lfs merge=lfs -text
+imports/jhon-riffs-task-safe-20260822/archives/JhonRiffs-safe-import-end-to-end-20260822-v2.zip filter=lfs diff=lfs merge=lfs -text

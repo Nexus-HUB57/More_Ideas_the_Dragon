@@ -1,0 +1,5 @@
+/home/ubuntu/jhon_riffs_ingest_20260822/recursive/dinheiro/inc123/PagSeguroLibrary/domain/PagSeguroAccountCredentials.class.php
+/home/ubuntu/jhon_riffs_ingest_20260822/recursive/dinheiro/inc123/PagSeguroLibrary/domain/PagSeguroApplicationCredentials.class.php
+/home/ubuntu/jhon_riffs_ingest_20260822/recursive/dinheiro/inc123/PagSeguroLibrary/domain/PagSeguroCredentials.class.php
+/home/ubuntu/jhon_riffs_ingest_20260822/recursive/dinheiro/inc123/js/jquery.validate.password.js
+/home/ubuntu/jhon_riffs_ingest_20260822/recursive/dinheiro/inc123/mercadopago/lib/cacert.pem
