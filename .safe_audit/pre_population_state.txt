@@ -1,0 +1,7 @@
+HEAD=50d5dbdc9f6f025c51b181d8bf46468080f9b550
+BRANCH=agent/ai-doctor-dimhex-safe-population-20260822
+## [32magent/ai-doctor-dimhex-safe-population-20260822[m
+[31m??[m .safe_audit/
+technical_specs=299
+tracked_files=24408
+remote_refs=64
