@@ -26,10 +26,10 @@ Foram excluídos somente metadados e artefatos locais não apropriados para vers
 
 ## Resultado das validações
 
-A integração foi concluída na branch `safe-recovery/nexus-hub-population-20260822-230540`, derivada de `origin/main`. Foram adicionados 151 arquivos no diretório novo: 127 arquivos persistentes do projeto local, 20 arquivos extraídos do ZIP, o ZIP original preservado e os três arquivos de controle desta integração. O manifesto contém 148 entradas de arquivos de origem e o SHA-256 do ZIP foi confirmado como `c15b29c7f8a6c6b7eec4c06244584c39ef0994b96cd0af24c02d312ae42ada27`.
+A integração foi concluída na branch `safe-recovery/nexus-hub-population-20260822-230540`, derivada de `origin/main`. Foram adicionados 151 arquivos no diretório novo: 127 arquivos persistentes do projeto local, 20 arquivos extraídos do ZIP, o ZIP original preservado e os três arquivos de controle desta integração. O manifesto contém 148 entradas de arquivos de origem e o SHA-256 do ZIP foi confirmado como `c15b29c7f8a6c6b7eec4c06244584c39ef0994b96cd0af24c02d312ae42ada27`. O metadado `.project-config.json` foi incluído somente após a redação local dos três campos AWS detectados pelo Push Protection; nenhum valor secreto foi publicado.
 
 A validação encontrou zero colisões com caminhos preexistentes, zero symlinks, zero arquivos sensíveis importados, zero deleções staged e zero caminhos staged fora do diretório de destino. O conjunto 001–299 já existente no repositório foi conferido e possui 299 itens. Os testes do projeto local passaram com 20/20 casos e o build passou. O `git diff --check` reporta apenas 142 avisos de whitespace herdados dos arquivos de origem; esses arquivos foram preservados sem reformatar ou sobrescrever seu conteúdo.
 
 ## Estado
 
-A revisão de conteúdo e integridade foi concluída. O próximo passo é criar o commit atômico na branch dedicada e publicar essa branch no GitHub para revisão. O merge na branch padrão não faz parte desta etapa automática; a aprovação deve ocorrer por revisão dos demais desenvolvedores.
+A revisão de conteúdo e integridade foi concluída. O commit final remoto é `23047e80f0550f64b45d6f207e11eb1400f8d38e` e a branch está sincronizada com o GitHub, sem alterações pendentes. O commit pai é o primeiro commit da população e a branch continua separada de `main`. O merge na branch padrão não faz parte desta etapa automática; a aprovação deve ocorrer por revisão dos demais desenvolvedores.
