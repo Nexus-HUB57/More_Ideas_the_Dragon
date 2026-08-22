@@ -1,5 +1,5 @@
 {
-  "generatedAtUtc": "2026-08-22T21:52:12.436235+00:00",
+  "generatedAtUtc": "2026-08-22T21:53:20.695927+00:00",
   "fileCount": 144,
   "files": [
     {
@@ -25,12 +25,12 @@
     {
       "path": "MANIFEST.json",
       "bytes": 26268,
-      "sha256": "ab5a6b5ba1209c9f04eb93fae96e36d1a49f33a13bc2dff673aa171bd4beb670"
+      "sha256": "a68ff8f5f2ea3336eff591e4a1a4a884f2fcec2cfadbb628777132f0ae2fb0b2"
     },
     {
       "path": "MANIFEST.md",
       "bytes": 18786,
-      "sha256": "cc06b3ab7211285b7c32128b2fe737d2b83420d141c4a1dc8caeb9f9ea974ad7"
+      "sha256": "5f2a1522968d9775ed44d6b2da16dca72caa1702205b6260482a7ef4d98e5518"
     },
     {
       "path": "PROJECT_CONFIG_REDACTED.json",
@@ -55,7 +55,7 @@
     {
       "path": "VALIDATION_SUMMARY.json",
       "bytes": 234,
-      "sha256": "2f69ea80a722e5bd8460a676b93a76c44bf59421e1a178d984efe5f261b49086"
+      "sha256": "723ff83406f5ef68d1f5a28c14d3f2f87ed9aef3ba586d1f2803c6873cbb28cd"
     },
     {
       "path": "source/legacy_reference/manual_marketing_de_rede.txt",
@@ -704,8 +704,8 @@
     },
     {
       "path": "source/mmn-ai-to-ai/todo.md",
-      "bytes": 206851,
-      "sha256": "2f4201a555c10557eac0c2a87f67a351ec4e1e3135dfe99288f8d5456f49ca51"
+      "bytes": 206883,
+      "sha256": "cf4f7f5467a4a26ad3469dfe4563ea21fc3ea7261c7713bca5476260ed467bb9"
     },
     {
       "path": "source/mmn-ai-to-ai/tsconfig.json",

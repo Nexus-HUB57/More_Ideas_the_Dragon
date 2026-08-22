@@ -157,7 +157,7 @@
 
 - [x] Auditar branches, commits, status e inventário do repositório remoto
 - [x] Criar branch isolada e diretório novo para os artefatos MMN AI-to-AI
-- [ ] Copiar todos os arquivos da tarefa sem sobrescrever ou excluir conteúdo existente
+- [x] Copiar todos os arquivos auditados do projeto sem sobrescrever ou excluir conteúdo existente; legado permanece fora do Git
 - [x] Gerar ZIP end-to-end dos artefatos integrados
 - [x] Validar contagem, hashes, arquivos fundamentais e ausência de conflitos
 - [x] Comitar todos os novos artefatos em commits aditivos auditados, sem reescrever histórico
@@ -167,7 +167,7 @@
 ## Correções técnicas pendentes observadas antes da integração
 
 - [x] Corrigir erro de tipagem no registro de afiliado e erro do storageProxy
-- [ ] Corrigir ou validar import quebrado de AdminPanel
+- [x] Auditar e validar o import de AdminPanel
 - [ ] Substituir dados mockados por integrações oficiais configuradas ou marcar claramente como adaptadores
 - [ ] Completar testes unitários e de integração dos módulos adicionados
 
