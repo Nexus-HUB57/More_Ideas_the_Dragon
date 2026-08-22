@@ -1,5 +1,16 @@
+# Nexus Hub V3 - Soberania Total
 
-## Atualização Safe Recovery — 2026-08-22
+## Fase 2: Backend tRPC e Contêineres Dinâmicos (Finalizado)
+- [x] Expandir schema.ts com 17 tabelas principais
+- [x] Implementar índices para performance em queries críticas
+- [x] Sincronizar routers.ts com routers-nexus.ts
+- [x] Criar routers para agents (CRUD, listar, filtrar por status)
+- [x] Criar routers para missions (criar, atualizar, delegação automática)
+- [x] Criar routers para transactions (processar, distribuição 80/10/10)
+- [x] Criar routers para ecosystem_events (registrar, consultar)
+- [x] Criar routers para ecosystem_metrics (agregar, histórico)
+- [x] Criar routers para brain_pulse, moltbook, notifications
+- [x] Implementar autenticação e autorização (admin-only)
 
 - [x] Revalidar o estado local e remoto antes de sincronizar.
 - [x] Preservar branches, commits, arquivos e pastas existentes sem sobrescrita ou exclusão.

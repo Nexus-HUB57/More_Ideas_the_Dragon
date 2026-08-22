@@ -1,0 +1,159 @@
+import { TRPCError } from "@trpc/server";
+
+import { copywriterPersuasivoHandler } from "./copywriterPersuasivo";
+import { abTestDesignerHandler } from "./abTestDesigner";
+import { analyticsReporterHandler } from "./analyticsReporter";
+import { audienceSegmenterHandler } from "./audienceSegmenter";
+import { coldEmailerHandler } from "./coldEmailer";
+import { commissionCalculatorHandler } from "./commissionCalculator";
+import { contentTranslatorHandler } from "./contentTranslator";
+import { creatorMatcherHandler } from "./creatorMatcher";
+import { detectorTendenciasHandler } from "./detectorTendencias";
+import { autoPublisherHandler } from "./autoPublisher";
+import { judgeRevisorHandler } from "./judgeRevisor";
+import { prospeccaoOutboundHandler } from "./prospeccaoOutbound";
+import { followUpStrategistHandler } from "./followUpStrategist";
+import { analyticsReporterHandler } from "./analyticsReporter";
+import { audienceSegmenterHandler } from "./audienceSegmenter";
+import { funnelArchitectHandler } from "./funnelArchitect";
+import { leadEnricherHandler } from "./leadEnricher";
+import { objectionHandlerHandler } from "./objectionHandler";
+import { pricingOptimizerHandler } from "./pricingOptimizer";
+import { abTestDesignerHandler } from "./abTestDesigner";
+import { commissionCalculatorHandler } from "./commissionCalculator";
+import { contentTranslatorHandler } from "./contentTranslator";
+import { creatorMatcherHandler } from "./creatorMatcher";
+import { lifecycleOrchestratorHandler } from "./lifecycleOrchestrator";
+import { webhookRouterHandler } from "./webhookRouter";
+import { fraudDetectorHandler } from "./fraudDetector";
+import { complianceAuditorHandler } from "./complianceAuditor";
+import { roiAttributorHandler } from "./roiAttributor";
+import { coldEmailerHandler } from "./coldEmailer";
+import { upsellStrategistHandler } from "./upsellStrategist";
+import { socialSellerHandler } from "./socialSeller";
+import { webinarEngineHandler } from "./webinarEngine";
+import type {
+  SkillExecutionContext,
+  SkillExecutionResult,
+  SkillHandler,
+  SkillSlug,
+} from "./types";
+
+/**
+ * Dispatcher central das Skills operacionais.
+ * -----------------------------------------------------------------------------
+ * Mantém o registro de handlers disponíveis no runtime. Skills sem handler
+ * ainda existem no catálogo (entitlement), mas só viram "operacionais" quando
+ * o handler correspondente é registrado aqui.
+ *
+ * Esta é a peça que permite ao Autonomy Score sair do plano teórico:
+ *  - skills com handler -> contam como "operacionais"
+ *  - skills sem handler -> contam apenas como "entitlement"
+ */
+const HANDLERS: Record<string, SkillHandler<any, any>> = {
+  [copywriterPersuasivoHandler.slug]: copywriterPersuasivoHandler,
+  [abTestDesignerHandler.slug]: abTestDesignerHandler,
+  [analyticsReporterHandler.slug]: analyticsReporterHandler,
+  [audienceSegmenterHandler.slug]: audienceSegmenterHandler,
+  [coldEmailerHandler.slug]: coldEmailerHandler,
+  [commissionCalculatorHandler.slug]: commissionCalculatorHandler,
+  [contentTranslatorHandler.slug]: contentTranslatorHandler,
+  [creatorMatcherHandler.slug]: creatorMatcherHandler,
+  [detectorTendenciasHandler.slug]: detectorTendenciasHandler,
+  [autoPublisherHandler.slug]: autoPublisherHandler,
+  [judgeRevisorHandler.slug]: judgeRevisorHandler,
+  [prospeccaoOutboundHandler.slug]: prospeccaoOutboundHandler,
+  [followUpStrategistHandler.slug]: followUpStrategistHandler,
+  [analyticsReporterHandler.slug]: analyticsReporterHandler,
+  [audienceSegmenterHandler.slug]: audienceSegmenterHandler,
+  [funnelArchitectHandler.slug]: funnelArchitectHandler,
+  [leadEnricherHandler.slug]: leadEnricherHandler,
+  [objectionHandlerHandler.slug]: objectionHandlerHandler,
+  [pricingOptimizerHandler.slug]: pricingOptimizerHandler,
+  [abTestDesignerHandler.slug]: abTestDesignerHandler,
+  [commissionCalculatorHandler.slug]: commissionCalculatorHandler,
+  [contentTranslatorHandler.slug]: contentTranslatorHandler,
+  [creatorMatcherHandler.slug]: creatorMatcherHandler,
+  [lifecycleOrchestratorHandler.slug]: lifecycleOrchestratorHandler,
+  [webhookRouterHandler.slug]: webhookRouterHandler,
+  [fraudDetectorHandler.slug]: fraudDetectorHandler,
+  [complianceAuditorHandler.slug]: complianceAuditorHandler,
+  [roiAttributorHandler.slug]: roiAttributorHandler,
+  [coldEmailerHandler.slug]: coldEmailerHandler,
+  [upsellStrategistHandler.slug]: upsellStrategistHandler,
+  [socialSellerHandler.slug]: socialSellerHandler,
+  [webinarEngineHandler.slug]: webinarEngineHandler,
+  [webinarEngineHandler.slug]: webinarEngineHandler,
+};
+
+export function listRegisteredSkillHandlers(): Array<{
+  slug: SkillSlug;
+  title: string;
+  category: string;
+  version: string;
+  supportsAutonomous: boolean;
+}> {
+  return Object.values(HANDLERS).map((handler) => ({
+    slug: handler.slug,
+    title: handler.title,
+    category: handler.category,
+    version: handler.version,
+    supportsAutonomous: handler.supportsAutonomous,
+  }));
+}
+
+export function hasSkillHandler(slug: string): boolean {
+  return Object.prototype.hasOwnProperty.call(HANDLERS, slug);
+}
+
+export async function executeSkill(params: {
+  slug: string;
+  rawInput: unknown;
+  context: SkillExecutionContext;
+}): Promise<SkillExecutionResult> {
+  const handler = HANDLERS[params.slug];
+  if (!handler) {
+    throw new TRPCError({
+      code: "NOT_FOUND",
+      message: `Skill "${params.slug}" ainda não possui handler operacional registrado.`,
+    });
+  }
+
+  let parsedInput: unknown;
+  try {
+    parsedInput = handler.parseInput(params.rawInput);
+  } catch (error) {
+    throw new TRPCError({
+      code: "BAD_REQUEST",
+      message:
+        error instanceof Error
+          ? `Entrada inválida para a skill "${params.slug}": ${error.message}`
+          : `Entrada inválida para a skill "${params.slug}".`,
+    });
+  }
+
+  try {
+    const result = await handler.execute(
+      parsedInput,
+      params.context,
+    );
+
+    // Integrar reasoningTrace na UI do operador para transparência total
+    if (result.output && (result.output as any).reasoningTrace) {
+      const ui = (params.context as any).operatorUI;
+      if (ui) {
+        ui.displayReasoning(result.executionId, (result.output as any).reasoningTrace);
+      }
+    }
+
+    return result;
+  } catch (error) {
+    throw new TRPCError({
+      code: "INTERNAL_SERVER_ERROR",
+      message:
+        error instanceof Error
+          ? `Falha ao executar skill "${params.slug}": ${error.message}`
+          : `Falha ao executar skill "${params.slug}".`,
+    });
+  }
+}

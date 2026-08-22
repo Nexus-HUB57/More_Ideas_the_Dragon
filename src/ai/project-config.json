@@ -1,0 +1,44 @@
+{
+  "build_command": "pnpm run build",
+  "capabilities": [
+    "db",
+    "server",
+    "user"
+  ],
+  "dev_command": "pnpm run dev",
+  "env_vars": {
+    "DATABASE_URL": "mysql://7PytTVKMgzeQiC2.b29113af0102:56Z27iapMh7jNE6ObjII@gateway02.us-east-1.prod.aws.tidbcloud.com:4000/PJbN3ABSKhmdaWvKyXf3GG?ssl={\"rejectUnauthorized\":true}"
+  },
+  "experiments": [
+    "no_db_push"
+  ],
+  "git_remote": {
+    "repo_url": "s3://vida-prod-gitrepo/webdev-git/310519663083288368/PJbN3ABSKhmdaWvKyXf3GG",
+    "access_key_id": "ASIAZV3A2ECZCKDXV7N5",
+    "secret_access_key": "mlIC3e0dVmOrje6pu4Y7y6bUe4MQizmnlfB0mYWQ",
+    "session_token": "IQoJb3JpZ2luX2VjEPX//////////wEaCXVzLWVhc3QtMSJHMEUCIFXjzaYThDGSNYXLer5SU2kkMxP3kKVWvqw1NhE30sEwAiEAm0LqfLJ0TI8nsV9uhIP09pBQu1hKcvBB1hIDNFRUeKAq/wMIvv//////////ARAEGgw2NjUzODYwOTg4NjYiDEvCMJFzPXaDTBXD1SrTA8eGNGGoiixxQZe9a0i7oB705MRkd7OD6jYOoIyFx9v913GafYnWMRmWQg0cdTXqaetUzIhbpdxUPNclehZ2FYZKf9x59i+QlObU6MkN4mZlmyGU20mTQyVAo0JPGgR4jHvD9ZEIherRoce/+DBWwAGBQZI7eDBPR5RWe/Sf91i+qXe56Q1OOv4L5gpZOXUuIBYtYEu2Ej3YSDQ8UwhwfKsU5USfU5nCS3QMViMXvpVYULAGwqnzhg+CyMDKEecBMsk4YK2R+lJ9X5nxODaiMmNFkqeZkrNljIYjPzZWfEb3LYtgr+E/m55GMBQfBV6eYOj9milpu15kbI2M1+GTnuXEpnCuhQbg8/9S9zc0RW43jds/avRh8pVZyD44niE75tVVwTpsYPTOeLrah/Ax+yT3GjfK4vKYr13vM3j06dJn9P8hlvU4XMKfiY+uM5FITnbv+57FweUssYza13W8j01RZKC8si37/MahXCqtQ0DLuJn6n2GnwBY17Ilt6HoEvrGNgRLkIxibmiZcIM+inTn2TXYAnO0vumsQ5jkc48wRXUd5Ts/LVJBiiLgqVVXmR4L5z/SGJ4cBj8P63eA2zA9KxzQVECMDx0VoXCro3pL6fACoMP62ptQGOp0BjQhkfrxQnDggTIMIo5940jEMHQzP1R5pS0+7IzGOI7Ae/0X2aSyuKW0ZAxoXGqB1nVh+do/WSanFIuGYhUvVp0PLCtoEnYy4782lKT85phrJy9nqdhHIu+PQUnnuNFM3l/YOVbQ4cIbmwQMQqB6nR7uLtE1GpwDN/Byf+X1oAzaIo58b/Pb2YzSqd9+v19DOQVVlkEWW7HDu43lhrw==",
+    "expiration": "2026-08-23T00:52:14.000Z",
+    "backend": "GIT_BACKEND_S3"
+  },
+  "name": "nexus-hub-dashboard",
+  "path": "/home/ubuntu/nexus-hub-dashboard",
+  "port": 3000,
+  "secrets": {
+    "BUILT_IN_FORGE_API_KEY": "5PvnGnSTn7A3mcfvYScQzn",
+    "BUILT_IN_FORGE_API_URL": "https://forge.manus.ai",
+    "JWT_SECRET": "meBXcd3yibuWrWfx8yCuEs",
+    "OAUTH_SERVER_URL": "https://api.manus.im",
+    "OWNER_NAME": "Lucas Thomaz",
+    "OWNER_OPEN_ID": "ffx7LdC3dsDgcC9CMFDa8o",
+    "VITE_ANALYTICS_ENDPOINT": "https://manus-analytics.com",
+    "VITE_ANALYTICS_WEBSITE_ID": "abc18caa-43fc-4041-8abe-c5906641b046",
+    "VITE_APP_ID": "PJbN3ABSKhmdaWvKyXf3GG",
+    "VITE_APP_LOGO": "https://files.manuscdn.com/user_upload_by_module/web_dev_logo/310519663083288368/DSGrQvTRavzxaOwA.png",
+    "VITE_APP_TITLE": "Nexus-HUB Dashboard - Phase 7 Universal Consciousness",
+    "VITE_FRONTEND_FORGE_API_KEY": "n4quwFtap7McwqCyda6k2W",
+    "VITE_FRONTEND_FORGE_API_URL": "https://forge.manus.ai",
+    "VITE_OAUTH_PORTAL_URL": "https://manus.im"
+  },
+  "template_id": "web-db-user",
+  "test_command": "pnpm test"
+}
