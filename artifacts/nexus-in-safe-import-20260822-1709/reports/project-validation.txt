@@ -1,0 +1,32 @@
+## Project validation
+timestamp=2026-08-22T17:12:49+00:00
+source_files=135
+extracted_files=135
+zip_hash=0e455e044f7d87d19692a67c302ca97cbeff25976ab25116e496aab8537a341b
+zip_manifest_match=True
+[WARN] The "pnpm" field in package.json is no longer read by pnpm. The following keys were ignored: "pnpm.patchedDependencies", "pnpm.overrides". See https://pnpm.io/settings for the new home of each setting.
+
+> nexus-in-project@1.0.0 check /home/ubuntu/nexus-in-project
+> tsc --noEmit
+
+pnpm_check=passed
+[WARN] The "pnpm" field in package.json is no longer read by pnpm. The following keys were ignored: "pnpm.patchedDependencies", "pnpm.overrides". See https://pnpm.io/settings for the new home of each setting.
+
+> nexus-in-project@1.0.0 test /home/ubuntu/nexus-in-project
+> vitest run
+
+
+ RUN  v2.1.9 /home/ubuntu/nexus-in-project
+
+ ✓ server/auth.logout.test.ts (1 test) 2ms
+ ✓ server/agents.test.ts (3 tests) 1461ms
+   ✓ agents router > should list agents 1416ms
+ ✓ server/moltbook.test.ts (4 tests) 1473ms
+   ✓ moltbook router > should get posts 1417ms
+
+ Test Files  3 passed (3)
+      Tests  8 passed (8)
+   Start at  17:12:52
+   Duration  1.87s (transform 102ms, setup 0ms, collect 784ms, tests 2.94s, environment 0ms, prepare 113ms)
+
+pnpm_test=passed

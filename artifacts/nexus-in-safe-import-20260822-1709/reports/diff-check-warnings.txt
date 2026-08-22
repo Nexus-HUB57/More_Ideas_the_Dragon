@@ -1,0 +1,68 @@
+artifacts/nexus-in-safe-import-20260822-1709/source/client/index.html:9: trailing whitespace.
+[32m+[m[32m    <title>Nexus-in Platform</title>[m[41m    [m
+artifacts/nexus-in-safe-import-20260822-1709/source/client/src/components/ui/dialog.tsx:209: new blank line at EOF.
+artifacts/nexus-in-safe-import-20260822-1709/source/client/src/components/ui/sidebar.tsx:734: new blank line at EOF.
+artifacts/nexus-in-safe-import-20260822-1709/source/patches/wouter@3.7.1.patch:8: trailing whitespace.
+[32m+[m[41m [m
+artifacts/nexus-in-safe-import-20260822-1709/source/patches/wouter@3.7.1.patch:28: trailing whitespace.
+[32m+[m[41m [m
+artifacts/nexus-in-safe-import-20260822-1709/source/patches/wouter@3.7.1.patch:28: new blank line at EOF.
+artifacts/nexus-in-safe-import-20260822-1709/source/server/_core/map.ts:3: trailing whitespace.
+[32m+[m[32m *[m[41m [m
+artifacts/nexus-in-safe-import-20260822-1709/source/server/_core/map.ts:6: trailing whitespace.
+[32m+[m[32m *[m[41m [m
+artifacts/nexus-in-safe-import-20260822-1709/source/server/_core/map.ts:48: trailing whitespace.
+[32m+[m[32m *[m[41m [m
+artifacts/nexus-in-safe-import-20260822-1709/source/server/_core/map.ts:316: new blank line at EOF.
+artifacts/nexus-in-safe-import-20260822-1709/source/server/_core/voiceTranscription.ts:8: trailing whitespace.
+[32m+[m[32m *[m[41m [m
+artifacts/nexus-in-safe-import-20260822-1709/source/server/_core/voiceTranscription.ts:19: trailing whitespace.
+[32m+[m[32m *[m[41m [m
+artifacts/nexus-in-safe-import-20260822-1709/source/server/_core/voiceTranscription.ts:69: trailing whitespace.
+[32m+[m[32m *[m[41m [m
+artifacts/nexus-in-safe-import-20260822-1709/source/server/_core/voiceTranscription.ts:105: trailing whitespace.
+[32m+[m[41m      [m
+artifacts/nexus-in-safe-import-20260822-1709/source/server/_core/voiceTranscription.ts:108: trailing whitespace.
+[32m+[m[41m      [m
+artifacts/nexus-in-safe-import-20260822-1709/source/server/_core/voiceTranscription.ts:128: trailing whitespace.
+[32m+[m[41m    [m
+artifacts/nexus-in-safe-import-20260822-1709/source/server/_core/voiceTranscription.ts:133: trailing whitespace.
+[32m+[m[41m    [m
+artifacts/nexus-in-safe-import-20260822-1709/source/server/_core/voiceTranscription.ts:136: trailing whitespace.
+[32m+[m[41m    [m
+artifacts/nexus-in-safe-import-20260822-1709/source/server/_core/voiceTranscription.ts:139: trailing whitespace.
+[32m+[m[32m      options.language[m[41m [m
+artifacts/nexus-in-safe-import-20260822-1709/source/server/_core/voiceTranscription.ts:149: trailing whitespace.
+[32m+[m[41m    [m
+artifacts/nexus-in-safe-import-20260822-1709/source/server/_core/voiceTranscription.ts:175: trailing whitespace.
+[32m+[m[41m    [m
+artifacts/nexus-in-safe-import-20260822-1709/source/server/_core/voiceTranscription.ts:211: trailing whitespace.
+[32m+[m[41m  [m
+artifacts/nexus-in-safe-import-20260822-1709/source/server/_core/voiceTranscription.ts:240: trailing whitespace.
+[32m+[m[41m  [m
+artifacts/nexus-in-safe-import-20260822-1709/source/server/_core/voiceTranscription.ts:246: trailing whitespace.
+[32m+[m[32m *[m[41m [m
+artifacts/nexus-in-safe-import-20260822-1709/source/server/_core/voiceTranscription.ts:250: trailing whitespace.
+[32m+[m[32m *[m[41m [m
+artifacts/nexus-in-safe-import-20260822-1709/source/server/_core/voiceTranscription.ts:260: trailing whitespace.
+[32m+[m[32m *[m[41m       [m
+artifacts/nexus-in-safe-import-20260822-1709/source/server/_core/voiceTranscription.ts:269: trailing whitespace.
+[32m+[m[32m *[m[41m       [m
+artifacts/nexus-in-safe-import-20260822-1709/source/server/_core/voiceTranscription.ts:279: trailing whitespace.
+[32m+[m[32m *[m[41m       [m
+artifacts/nexus-in-safe-import-20260822-1709/source/server/routers.ts:6: trailing whitespace.
+[32m+[m[32mimport {[m[41m [m
+artifacts/nexus-in-safe-import-20260822-1709/source/server/routers.ts:7: trailing whitespace.
+[32m+[m[32m  getMoltbookPosts,[m[41m [m
+artifacts/nexus-in-safe-import-20260822-1709/source/server/routers.ts:8: trailing whitespace.
+[32m+[m[32m  createMoltbookPost,[m[41m [m
+artifacts/nexus-in-safe-import-20260822-1709/source/server/routers.ts:9: trailing whitespace.
+[32m+[m[32m  getAgents,[m[41m [m
+artifacts/nexus-in-safe-import-20260822-1709/source/server/routers.ts:26: trailing whitespace.
+[32m+[m[41m  [m
+# Diff check result
+generated_at=2026-08-22T17:14:03+00:00
+result=warnings_present_in_imported_source
+policy=source_kept_byte_faithful; no_normalization_applied
+
+The warnings below come from copied source files and are preserved for review; no existing file was edited.

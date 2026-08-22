@@ -1,0 +1,50 @@
+# Resumo de auditoria Nexus-in → GitHub
+timestamp=2026-08-22T17:09:01+00:00
+repo_dir=/home/ubuntu/More_Ideas_the_Dragon-audit-20260822-165714
+source_dir=/home/ubuntu/nexus-in-project
+
+## Git status
+remote=https://github.com/Nexus-HUB57/More_Ideas_the_Dragon.git
+branch=main
+head=f7eb6481c288ef3c39664bef99d7fb8d82c186ab
+origin_head=f7eb6481c288ef3c39664bef99d7fb8d82c186ab
+status=## main...origin/main
+
+## Repo metadata
+[1;37m{[m
+  [1;34m"defaultBranchRef"[m[1;37m:[m [1;37m{[m
+    [1;34m"name"[m[1;37m:[m [32m"main"[m
+  [1;37m}[m[1;37m,[m
+  [1;34m"isFork"[m[1;37m:[m [33mfalse[m[1;37m,[m
+  [1;34m"isPrivate"[m[1;37m:[m [33mfalse[m[1;37m,[m
+  [1;34m"nameWithOwner"[m[1;37m:[m [32m"Nexus-HUB57/More_Ideas_the_Dragon"[m[1;37m,[m
+  [1;34m"pushedAt"[m[1;37m:[m [32m"2026-08-22T17:07:24Z"[m[1;37m,[m
+  [1;34m"updatedAt"[m[1;37m:[m [32m"2026-08-22T17:01:43Z"[m[1;37m,[m
+  [1;34m"url"[m[1;37m:[m [32m"https://github.com/Nexus-HUB57/More_Ideas_the_Dragon"[m[1;37m,[m
+  [1;34m"visibility"[m[1;37m:[m [32m"PUBLIC"[m
+[1;37m}[m
+
+## Open PRs
+[1;37m[[m
+  [1;37m{[m
+    [1;34m"baseRefName"[m[1;37m:[m [32m"main"[m[1;37m,[m
+    [1;34m"headRefName"[m[1;37m:[m [32m"agent/safe-recovery-legado-lucas-20260822"[m[1;37m,[m
+    [1;34m"number"[m[1;37m:[m 47[1;37m,[m
+    [1;34m"title"[m[1;37m:[m [32m"docs(recovery): add Legado Lucas task artifacts safely"[m[1;37m,[m
+    [1;34m"updatedAt"[m[1;37m:[m [32m"2026-08-22T17:06:48Z"[m[1;37m,[m
+    [1;34m"url"[m[1;37m:[m [32m"https://github.com/Nexus-HUB57/More_Ideas_the_Dragon/pull/47"[m
+  [1;37m}[m
+[1;37m][m
+
+## Counts
+remote_tracked_files=19843
+source_nontransient_files=135
+source_all_files=45159
+remote_tags=0
+
+## Candidate destinations
+nexus-in
+nexus-in-project
+tasks/nexus-in
+tasks/nexus-in-project
+task_artifacts/nexus-in

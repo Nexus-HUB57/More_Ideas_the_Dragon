@@ -1,0 +1,20 @@
+# Nexus-in Import Metadata
+generated_at=2026-08-22T17:12:31+00:00
+repository=Nexus-HUB57/More_Ideas_the_Dragon
+repository_url=https://github.com/Nexus-HUB57/More_Ideas_the_Dragon.git
+base_branch=main
+base_commit=10e9189619b42ab1079a6739bb2fa909df0f9a4a
+work_branch=agent/nexus-in-safe-import-20260822-1709
+isolated_directory=artifacts/nexus-in-safe-import-20260822-1709
+source_file_count=135
+source_bytes=2542874
+existing_tracked_files_before_staging=19994
+original_upload_zip_sha256=34babd8d97ae9b8120f1c61ca453792427c8ff07356834089bcc05ec2244c181
+generated_source_zip_sha256=0e455e044f7d87d19692a67c302ca97cbeff25976ab25116e496aab8537a341b
+generated_source_zip_bytes=415281
+copy_policy=additive_only
+main_branch_modified=False
+merge_performed=False
+force_push_performed=False
+destructive_operations_performed=False
+secrets_added=False
