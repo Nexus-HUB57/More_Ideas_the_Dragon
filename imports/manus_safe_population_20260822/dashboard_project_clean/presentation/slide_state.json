@@ -1,0 +1,67 @@
+{
+  "project_info": {
+    "title": "Visão Geral do Projeto PESBM",
+    "created": 1786557838.724,
+    "last_updated": 1786557874.685,
+    "total_slides": 5
+  },
+  "slides": [
+    {
+      "id": "slide_1_overview",
+      "state": "edited",
+      "pageNum": 1
+    },
+    {
+      "id": "slide_2_security",
+      "state": "edited",
+      "pageNum": 2
+    },
+    {
+      "id": "slide_3_ai_agents",
+      "state": "edited",
+      "pageNum": 3
+    },
+    {
+      "id": "slide_4_results",
+      "state": "edited",
+      "pageNum": 4
+    },
+    {
+      "id": "slide_5_roadmap",
+      "state": "edited",
+      "pageNum": 5
+    }
+  ],
+  "outline": [
+    {
+      "id": "slide_1_overview",
+      "title": "Visão Geral do Projeto PESBM",
+      "summary": "Introdução aos objetivos de consolidação automatizada e integração end-to-end com a Binance.",
+      "image_plan": "Use a suitable image if needed"
+    },
+    {
+      "id": "slide_2_security",
+      "title": "Arquitetura de Segurança e Master Key",
+      "summary": "Detalhes sobre a derivação BIP39/Electrum e proteção de chaves privadas.",
+      "image_plan": "Use a suitable image if needed"
+    },
+    {
+      "id": "slide_3_ai_agents",
+      "title": "O Organismo Cripto: Agentes de IA",
+      "summary": "Apresentação dos agentes Sentinela, Estrategista e Gas na gestão do ecossistema.",
+      "image_plan": "Use a suitable image if needed"
+    },
+    {
+      "id": "slide_4_results",
+      "title": "Resultados e Monitoramento Real-Time",
+      "summary": "Dados do teste de estresse e sistema de rastreio via Mempool.space.",
+      "image_plan": "Use a suitable image if needed"
+    },
+    {
+      "id": "slide_5_roadmap",
+      "title": "Roadmap de Implementação e Transição",
+      "summary": "Próximos passos para a operação em escala na Mainnet.",
+      "image_plan": "Use a suitable image if needed"
+    }
+  ]
+}
