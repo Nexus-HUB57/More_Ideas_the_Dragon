@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@800&family=Inter:wght@400&display=swap" rel="stylesheet">
+    <style>
+        *{box-sizing:border-box}
+        body{margin:0}
+        .slide-container {
+            width: 1280px;
+            min-height: 720px;
+            background-color: #FFFFFF;
+            font-family: 'Inter', sans-serif;
+            color: #457B9D;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            top: -1px; /* shift up 1px to ensure page height < 720px without changing min-height */
+        }
+        .header-section {
+            padding-top: 50px;
+            padding-left: 80px;
+            padding-right: 80px;
+        }
+        h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 64px;
+            font-weight: 800;
+            color: #1D3557;
+            margin-bottom: 10px;
+        }
+        .rules {
+            margin-top: 10px;
+            margin-bottom: 30px;
+        }
+        .rule-1 { border-top: 1px solid #1D3557; width: 100%; margin-bottom: 3px; }
+        .rule-3 { border-top: 3px solid #1D3557; width: 100%; }
+        
+        .main-content {
+            display: flex;
+            justify-content: space-between;
+            padding-left: 80px;
+            padding-right: 80px;
+        }
+        .text-column {
+            width: 50%;
+        }
+        .image-column {
+            width: 45%;
+        }
+        .paragraph {
+            font-size: 20px;
+            line-height: 1.6;
+            color: #457B9D;
+            text-align: justify;
+            margin: 0;
+        }
+        .paragraph::first-letter {
+            float: left;
+            font-family: 'Playfair Display', serif;
+            font-size: 80px;
+            line-height: 60px;
+            padding-top: 4px;
+            padding-right: 8px;
+            padding-left: 3px;
+            color: #1D3557;
+            font-weight: 800;
+        }
+        .list-items {
+            margin-top: 20px; /* reduced from 30px */
+            list-style: none;
+            padding: 0;
+        }
+        .list-item {
+            margin-top: 10px; /* reduced from 15px */
+            font-size: 22px;
+            color: #1D3557;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+        }
+        .list-item::before {
+            content: "•";
+            color: #E07A5F;
+            font-size: 30px;
+            margin-right: 15px;
+        }
+        .command-image {
+            width: 540px;
+            height: 352px; /* slightly reduced from 360px to save a few px */
+            object-fit: cover;
+            border: 4px solid #1D3557;
+            display:block;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header-section">
+            <h2>O Ecossistema Nexus</h2>
+            <div class="rules">
+                <div class="rule-1"></div>
+                <div class="rule-3"></div>
+            </div>
+        </div>
+        <div class="main-content">
+            <div class="text-column">
+                <p class="paragraph">
+                    A Nexus Academy não é apenas um portal de cursos; é o cérebro que alimenta o seu agente principal. Estruturamos a jornada do afiliado para que a educação se transforme em capacidade operacional imediata no runtime.
+                </p>
+                <ul class="list-items">
+                    <li class="list-item">Integração total entre Educação e Runtime</li>
+                    <li class="list-item">Formação baseada em competências operacionais</li>
+                    <li class="list-item">Governança Zero-Trust e Escala Estruturada</li>
+                </ul>
+            </div>
+            <div class="image-column">
+                <img src="/home/ubuntu/MMN_AI-to-AI/AcademIA/personas/assets/nexus_command_center.png" class="command-image" alt="Centro de Comando">
+            </div>
+        </div>
+    </div>
+</body>
+</html>
