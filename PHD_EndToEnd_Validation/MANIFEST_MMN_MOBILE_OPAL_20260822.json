@@ -1,0 +1,476 @@
+{
+  "schema": "mmn-mobile-opal-integration-manifest/v1",
+  "repository": "Nexus-HUB57/More_Ideas_the_Dragon",
+  "base_commit": "f1da34e551aa5cec65d49782adf3560d2f2285e9",
+  "branch": "agent/safe-import-mobile-opal-20260822",
+  "opal_url": "https://opal.google/app/1BmyCCIEcF78_rtuKa9I3wyC2OdJk5d9o",
+  "source_project": "/home/ubuntu/mmn-mobile-app",
+  "file_count": 93,
+  "files": [
+    {
+      "path": "docs/operations/opal_inspection_20260822.md",
+      "sha256": "160e12a66b6821605cba19b7d64a05de7fc2b24d36b28134cc8430b8a89d3970",
+      "bytes": 125212
+    },
+    {
+      "path": "docs/operations/opal_mobile_integration_20260822.md",
+      "sha256": "297e9801b7fca8b21c79181db13f784fa59e927afdb92c07610c6fb98ec98fed",
+      "bytes": 26047
+    },
+    {
+      "path": "imports/mmn-mobile-app-m1-20260822/.gitignore",
+      "sha256": "dc72b27703c33d92a88473119bbc08d357919ab351601b9dca15c7cb14b159ed",
+      "bytes": 650
+    },
+    {
+      "path": "imports/mmn-mobile-app-m1-20260822/.gitkeep",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "imports/mmn-mobile-app-m1-20260822/.npmrc",
+      "sha256": "a28c9d86a8981049d203ad164cff1e753ed61dc0460ee8765316cbb3d0007d00",
+      "bytes": 20
+    },
+    {
+      "path": "imports/mmn-mobile-app-m1-20260822/.project-config.json",
+      "sha256": "d029988b8d2dcf9723c727c66fdea48be21dc226183c7b2e650ea5b6e89212c0",
+      "bytes": 3025
+    },
+    {
+      "path": "imports/mmn-mobile-app-m1-20260822/.watchmanconfig",
+      "sha256": "f0bf088efd1aeca30c650c5a42d334396ea01f04c22c3125b07c836d2db4d1d7",
+      "bytes": 46
+    },
+    {
+      "path": "imports/mmn-mobile-app-m1-20260822/app.config.ts",
+      "sha256": "fd0b2de707517e64eb1763bbcbd0954ea4d8ae6b0ae363563027443062d2f9be",
+      "bytes": 3756
+    },
+    {
+      "path": "imports/mmn-mobile-app-m1-20260822/app/(tabs)/_layout.tsx",
+      "sha256": "eb8a3d67ad9bc0fedda98b6afaa78c39f58554fccd14889bba84c3c66d72ccc4",
+      "bytes": 1168
+    },
+    {
+      "path": "imports/mmn-mobile-app-m1-20260822/app/(tabs)/index.tsx",
+      "sha256": "2ae75b837ca230142f5c36d20761c410e96b2ec52e0a70b85029ef35108e4e01",
+      "bytes": 1922
+    },
+    {
+      "path": "imports/mmn-mobile-app-m1-20260822/app/_layout.tsx",
+      "sha256": "fcd8aa51a4aeaf3e74d6c3ed0025883574f345f833db9285d88c87e1a671798e",
+      "bytes": 4234
+    },
+    {
+      "path": "imports/mmn-mobile-app-m1-20260822/app/dev/theme-lab.tsx",
+      "sha256": "5af12b486e259b604d411630cfa5a63b62f9d2acfaa3b1e3349adce161c685dd",
+      "bytes": 8890
+    },
+    {
+      "path": "imports/mmn-mobile-app-m1-20260822/app/oauth/callback.tsx",
+      "sha256": "532762a6e1d400a58298b445e94f13bf46201117cb6921d33786e2f7da6dd176",
+      "bytes": 10493
+    },
+    {
+      "path": "imports/mmn-mobile-app-m1-20260822/assets/images/android-icon-background.png",
+      "sha256": "fb139c2dee362ebf2070e23b96da6fc0d43f8492de38b8af1fd7223e19b5861d",
+      "bytes": 17549
+    },
+    {
+      "path": "imports/mmn-mobile-app-m1-20260822/assets/images/android-icon-foreground.png",
+      "sha256": "9e3d0315a33c6799de601dd34cd8bf8cc3a8d16f3bf75592baec2ceb7240b391",
+      "bytes": 78796
+    },
+    {
+      "path": "imports/mmn-mobile-app-m1-20260822/assets/images/android-icon-monochrome.png",
+      "sha256": "6371fc2c12e33ad2215a86c281db3d682a81bebe7c957a842c13b8bf00cceb83",
+      "bytes": 4140
+    },
+    {
+      "path": "imports/mmn-mobile-app-m1-20260822/assets/images/favicon.png",
+      "sha256": "a4e030697a7571b3e95d31860e4da55d2f98e5e861e2b55e414f45a8556828ba",
+      "bytes": 1129
+    },
+    {
+      "path": "imports/mmn-mobile-app-m1-20260822/assets/images/icon.png",
+      "sha256": "119462bb78eb240a65c869fc067ee599639b3cb5a41953f25c07b17d2a8c7e0f",
+      "bytes": 393493
+    },
+    {
+      "path": "imports/mmn-mobile-app-m1-20260822/assets/images/partial-react-logo.png",
+      "sha256": "015a72aeb24c1166243ebc185355c9488cc892fbf3aa82f9ae66819a10f3451c",
+      "bytes": 5075
+    },
+    {
+      "path": "imports/mmn-mobile-app-m1-20260822/assets/images/react-logo.png",
+      "sha256": "224b7636b15e672801579b5b418077cbc2ca42f0146389062364356b0ecb5c5c",
+      "bytes": 6341
+    },
+    {
+      "path": "imports/mmn-mobile-app-m1-20260822/assets/images/react-logo@2x.png",
+      "sha256": "fa600be9ad2f869c7a8dbaffc78bb15af741123e1319c948f0be51753a153cde",
+      "bytes": 14225
+    },
+    {
+      "path": "imports/mmn-mobile-app-m1-20260822/assets/images/react-logo@3x.png",
+      "sha256": "cd84e02a5d542a3e71b7fa10a685c1b9fb51db4aff92aca6c0da6461ce17be16",
+      "bytes": 21252
+    },
+    {
+      "path": "imports/mmn-mobile-app-m1-20260822/assets/images/splash-icon.png",
+      "sha256": "5f4c0a732b6325bf4071d9124d2ae67e037cb24fcc9c482ef82bea742109a3b8",
+      "bytes": 17547
+    },
+    {
+      "path": "imports/mmn-mobile-app-m1-20260822/babel.config.js",
+      "sha256": "eb65280c4b785ba798ff5395b49f82e0a7408b15ab55eaf4cc24e46d3d5ff8e5",
+      "bytes": 248
+    },
+    {
+      "path": "imports/mmn-mobile-app-m1-20260822/components/external-link.tsx",
+      "sha256": "2a4b7d4daaaa544ebedc67429235a6d7ee2f25c6402b83974a48bb940bf1d664",
+      "bytes": 794
+    },
+    {
+      "path": "imports/mmn-mobile-app-m1-20260822/components/haptic-tab.tsx",
+      "sha256": "7a137909d97c96512b610a1025c92c5b3c18a6b55f055b4908ad55596c0b54bc",
+      "bytes": 564
+    },
+    {
+      "path": "imports/mmn-mobile-app-m1-20260822/components/hello-wave.tsx",
+      "sha256": "e03908c1b822ef27149dcd65c0552d0f30532b072ef47401a8bd24f8e4fd9bee",
+      "bytes": 410
+    },
+    {
+      "path": "imports/mmn-mobile-app-m1-20260822/components/parallax-scroll-view.tsx",
+      "sha256": "3741cb292ea5506069a693eaf83a3d8e4eb9e38f05592a1ac102952398be662b",
+      "bytes": 2102
+    },
+    {
+      "path": "imports/mmn-mobile-app-m1-20260822/components/screen-container.tsx",
+      "sha256": "e98f22672cf7e0b243a87fbff64cfd7db48a70415a516ae80f99b41142b747a5",
+      "bytes": 1661
+    },
+    {
+      "path": "imports/mmn-mobile-app-m1-20260822/components/themed-view.tsx",
+      "sha256": "cec7921ecee6ee6590ed8cee4c1a3316a9d72d5a9ee695203b15beeec57220b9",
+      "bytes": 461
+    },
+    {
+      "path": "imports/mmn-mobile-app-m1-20260822/components/ui/collapsible.tsx",
+      "sha256": "c4dd5a6eba6677bdee7b75a3d690f80a2312c6f78cb44cc4f563453d51a859d5",
+      "bytes": 1004
+    },
+    {
+      "path": "imports/mmn-mobile-app-m1-20260822/components/ui/icon-symbol.ios.tsx",
+      "sha256": "410e970a44835a834ae34981a23db258e63ce5e712ad9aaf73d3bf892696a6a1",
+      "bytes": 598
+    },
+    {
+      "path": "imports/mmn-mobile-app-m1-20260822/components/ui/icon-symbol.tsx",
+      "sha256": "084d5e2f476bca159bbafe1559f9476eceb981df327f5aa8592e5ff03647a18e",
+      "bytes": 1422
+    },
+    {
+      "path": "imports/mmn-mobile-app-m1-20260822/constants/const.ts",
+      "sha256": "d9fedf20dc67e22f79ee6c624e613fdbc16e2cc7db872201f89ffbad7f5c163b",
+      "bytes": 275
+    },
+    {
+      "path": "imports/mmn-mobile-app-m1-20260822/constants/oauth.ts",
+      "sha256": "657d96013ffbabcca9a56f4c58bb91f2cb28c830d14618b3e544182d9be25cd2",
+      "bytes": 4133
+    },
+    {
+      "path": "imports/mmn-mobile-app-m1-20260822/constants/theme.ts",
+      "sha256": "01fbaa9f3e507ec1e63166f009bd61c2ac793060bd143c6d6370d818842e5278",
+      "bytes": 275
+    },
+    {
+      "path": "imports/mmn-mobile-app-m1-20260822/drizzle.config.ts",
+      "sha256": "9610673b3fe7b6b950a8e7e54cb1e91f9dd25f87d7ae6a41d2f6ada957065d01",
+      "bytes": 353
+    },
+    {
+      "path": "imports/mmn-mobile-app-m1-20260822/drizzle/0000_elite_eternals.sql",
+      "sha256": "814a08e40d7fc2bcfd458759d18319198ca8ae394f2fa15617a78678e9c9c93b",
+      "bytes": 483
+    },
+    {
+      "path": "imports/mmn-mobile-app-m1-20260822/drizzle/meta/0000_snapshot.json",
+      "sha256": "b7a2022015ccca4b794abe639c7c94a54749472bc4967a0d89fc104cfa589033",
+      "bytes": 2546
+    },
+    {
+      "path": "imports/mmn-mobile-app-m1-20260822/drizzle/meta/_journal.json",
+      "sha256": "23e018eb452bf58aa1a157ac8298c12cb9d2f7bb6ce5eae9dbb7a426cde4a330",
+      "bytes": 204
+    },
+    {
+      "path": "imports/mmn-mobile-app-m1-20260822/drizzle/migrations/.gitkeep",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "imports/mmn-mobile-app-m1-20260822/drizzle/relations.ts",
+      "sha256": "85acb8ece8fbb5031fc56fa8c70338d9b8b06ef3b032391fff8532c6373c7186",
+      "bytes": 27
+    },
+    {
+      "path": "imports/mmn-mobile-app-m1-20260822/drizzle/schema.ts",
+      "sha256": "76be5234ccf82fb751ea22195cf695d3b29a16c0f743d34ce5927d3294f79a9f",
+      "bytes": 1196
+    },
+    {
+      "path": "imports/mmn-mobile-app-m1-20260822/eslint.config.js",
+      "sha256": "0a16c7a62375d4756b81fbe44f37abf9e9b6969fac84e77c7021972a5a783c63",
+      "bytes": 228
+    },
+    {
+      "path": "imports/mmn-mobile-app-m1-20260822/expo-env.d.ts",
+      "sha256": "6fc02634da46d3edc5a88eec9173ba6bf709726be3cba83c73ebd8e859d5c147",
+      "bytes": 110
+    },
+    {
+      "path": "imports/mmn-mobile-app-m1-20260822/global.css",
+      "sha256": "cc1a7ad0d019ddb1d32d0ecb588ba0ac26ce41d8625dd6c366348b25f83a28ec",
+      "bytes": 59
+    },
+    {
+      "path": "imports/mmn-mobile-app-m1-20260822/hooks/use-auth.ts",
+      "sha256": "f281fe74c28a34cf3b84f1d3a741cd78a12ab4c17e63c6f02969e8342f250c96",
+      "bytes": 4622
+    },
+    {
+      "path": "imports/mmn-mobile-app-m1-20260822/hooks/use-color-scheme.ts",
+      "sha256": "33d9d7815f51880b483e72d23e637015ead39c37c78efa098d70d8c0ee866419",
+      "bytes": 134
+    },
+    {
+      "path": "imports/mmn-mobile-app-m1-20260822/hooks/use-color-scheme.web.ts",
+      "sha256": "7daabb63b86ba392e4f9a88a068bc5226d41a8dd64eef251eba2d56abdf711b7",
+      "bytes": 480
+    },
+    {
+      "path": "imports/mmn-mobile-app-m1-20260822/hooks/use-colors.ts",
+      "sha256": "3a97917e877bb64ab6ba9247993c271aaea3b30fa07f12026f927a5fcb068c9f",
+      "bytes": 504
+    },
+    {
+      "path": "imports/mmn-mobile-app-m1-20260822/lib/_core/api.ts",
+      "sha256": "943216e8803e5b55be5df613ac9cf1ceb2a9a7fb54196719f01fbfd1100d4d2f",
+      "bytes": 5720
+    },
+    {
+      "path": "imports/mmn-mobile-app-m1-20260822/lib/_core/auth.ts",
+      "sha256": "dbfbbabc99160bf4740572d0dd62e518566de5bff549e19391d7cd5a10aa1901",
+      "bytes": 4037
+    },
+    {
+      "path": "imports/mmn-mobile-app-m1-20260822/lib/_core/manus-runtime.ts",
+      "sha256": "fbcb73d0a9cf48402ae7d3be00f9479175b27cd740f9fd04b47fb69de1017317",
+      "bytes": 3534
+    },
+    {
+      "path": "imports/mmn-mobile-app-m1-20260822/lib/_core/nativewind-pressable.ts",
+      "sha256": "a75dac0e8dd47bf99e7af6659e363be969294cb30f6585ff5fc00ce27dd55112",
+      "bytes": 223
+    },
+    {
+      "path": "imports/mmn-mobile-app-m1-20260822/lib/_core/theme.ts",
+      "sha256": "7648ba78ea5fbb9855fc831220ccaa8d93ef6d369673054bfc906092d522e828",
+      "bytes": 2432
+    },
+    {
+      "path": "imports/mmn-mobile-app-m1-20260822/lib/theme-provider.tsx",
+      "sha256": "fa113937835078fff0dc856982680a1c624d11b77317e6509cfae5dadb2339ba",
+      "bytes": 2620
+    },
+    {
+      "path": "imports/mmn-mobile-app-m1-20260822/lib/trpc.ts",
+      "sha256": "1c364143dbf22c2d56d5768f10ba133c752ebbd2b613bc08ca6e79c3a6425608",
+      "bytes": 1339
+    },
+    {
+      "path": "imports/mmn-mobile-app-m1-20260822/lib/utils.ts",
+      "sha256": "dabdb4094e3b6f8b17fdc43435b1d5317b232079076922d0a258e78e0abe4ccd",
+      "bytes": 390
+    },
+    {
+      "path": "imports/mmn-mobile-app-m1-20260822/metro.config.js",
+      "sha256": "2815fc07f7dc00566925b12e9e68b4a06c7ce7a907ee4829ec11f45f30ba5af7",
+      "bytes": 380
+    },
+    {
+      "path": "imports/mmn-mobile-app-m1-20260822/nativewind-env.d.ts",
+      "sha256": "cc9bcf6c27b600bd682a6e47dece7b6f53ded4d8f0f707b44831f9f1b1530d6e",
+      "bytes": 161
+    },
+    {
+      "path": "imports/mmn-mobile-app-m1-20260822/package.json",
+      "sha256": "466787aba4dc29709004d8b834c39e0a6e8c1a98b483ec34afe2f6ac92170d74",
+      "bytes": 3067
+    },
+    {
+      "path": "imports/mmn-mobile-app-m1-20260822/pnpm-lock.yaml",
+      "sha256": "61310cc5ea709ebbe2a65fdb2f9c2cd1dc8b5c482d7f4d4b6bb1ef9387fa92a4",
+      "bytes": 443916
+    },
+    {
+      "path": "imports/mmn-mobile-app-m1-20260822/scripts/generate_qr.mjs",
+      "sha256": "ec99d3f6d71a322306a7769114e88c32dc3b61ccb582853e9b013907363448a6",
+      "bytes": 299
+    },
+    {
+      "path": "imports/mmn-mobile-app-m1-20260822/scripts/load-env.js",
+      "sha256": "12c476104044b924931e21e2964124a2f9966ffe63b45adc36a722bfa7b7e31c",
+      "bytes": 1501
+    },
+    {
+      "path": "imports/mmn-mobile-app-m1-20260822/scripts/reset-project.js",
+      "sha256": "2f60cad2a2295b80c40e5cc7f3fa6a46a5a3a64bf04e433fc538a5d9733ca507",
+      "bytes": 3610
+    },
+    {
+      "path": "imports/mmn-mobile-app-m1-20260822/server/README.md",
+      "sha256": "e802e0bf171606150169931d5d7333417cb2cab3c22395c649492728bcf66198",
+      "bytes": 35755
+    },
+    {
+      "path": "imports/mmn-mobile-app-m1-20260822/server/_core/context.ts",
+      "sha256": "23f93675d55c330e159dfafede905a39286eafe0d17a6d5014ab66f1aee0dd5b",
+      "bytes": 654
+    },
+    {
+      "path": "imports/mmn-mobile-app-m1-20260822/server/_core/cookies.ts",
+      "sha256": "7314f11322d29589e35fae2728ab0d7295403113a8edd752ffd58d740297e092",
+      "bytes": 1831
+    },
+    {
+      "path": "imports/mmn-mobile-app-m1-20260822/server/_core/dataApi.ts",
+      "sha256": "789a35c8bd1651560d08bfaae03e41bb55d99d00cca30c460bb1c3ea4d002ca9",
+      "bytes": 1901
+    },
+    {
+      "path": "imports/mmn-mobile-app-m1-20260822/server/_core/env.ts",
+      "sha256": "15356c6c79afa61c60b20e126691853d07b51c48b9e57f205b7ce63dd02d622b",
+      "bytes": 428
+    },
+    {
+      "path": "imports/mmn-mobile-app-m1-20260822/server/_core/imageGeneration.ts",
+      "sha256": "16be679986e9f92b77bef39a938a55699818532725f52c44b5d71eedf7c8c2a4",
+      "bytes": 2228
+    },
+    {
+      "path": "imports/mmn-mobile-app-m1-20260822/server/_core/index.ts",
+      "sha256": "8727dd8df407c8f0d183b47fb65726ed0f9f730a2542052f3d907f7f14780cf4",
+      "bytes": 2422
+    },
+    {
+      "path": "imports/mmn-mobile-app-m1-20260822/server/_core/llm.ts",
+      "sha256": "e1224662b72f64f8a10c31191c1d9d304fec20949aaec02c5a2902bdd064b72b",
+      "bytes": 7176
+    },
+    {
+      "path": "imports/mmn-mobile-app-m1-20260822/server/_core/notification.ts",
+      "sha256": "6b429731580e70720d67f0c04e45f308ad43e26b3a3a60cd2888de516007f57a",
+      "bytes": 3116
+    },
+    {
+      "path": "imports/mmn-mobile-app-m1-20260822/server/_core/oauth.ts",
+      "sha256": "40f2696eecd78b78cbd79f0003531537a32e56f626fd81ddfea77429c255bc12",
+      "bytes": 5983
+    },
+    {
+      "path": "imports/mmn-mobile-app-m1-20260822/server/_core/sdk.ts",
+      "sha256": "9d43a4a5d1c67f9b51adc14dd7b4c73292e766bc13aa2143de6d26de017d32f7",
+      "bytes": 8714
+    },
+    {
+      "path": "imports/mmn-mobile-app-m1-20260822/server/_core/storageProxy.ts",
+      "sha256": "3cc4aeddd61f7ecfac2a24f0b1344470fd7a0105e5794297e35f60a5faf75877",
+      "bytes": 1512
+    },
+    {
+      "path": "imports/mmn-mobile-app-m1-20260822/server/_core/systemRouter.ts",
+      "sha256": "bbd50d95f79659159ddbc85f8960ad1ebb81b83047523fcedd5dde5b50e8357c",
+      "bytes": 711
+    },
+    {
+      "path": "imports/mmn-mobile-app-m1-20260822/server/_core/trpc.ts",
+      "sha256": "0fd486ef9810a38b1d9f90df512846fc874553c8a17decf4a26fed006cd4c92b",
+      "bytes": 1045
+    },
+    {
+      "path": "imports/mmn-mobile-app-m1-20260822/server/_core/types/cookie.d.ts",
+      "sha256": "6688b6c17ecf926f651885037ea17b032c100b7e27f5e33180867f9e7879dbdd",
+      "bytes": 125
+    },
+    {
+      "path": "imports/mmn-mobile-app-m1-20260822/server/_core/types/manusTypes.ts",
+      "sha256": "25753a7c11b83252cec75d6ee6b5190e76a020dde493f84fdf9038ccbd75e569",
+      "bytes": 1327
+    },
+    {
+      "path": "imports/mmn-mobile-app-m1-20260822/server/_core/voiceTranscription.ts",
+      "sha256": "507bd71e0239970373bad2a281030d99566c61112b0d6ebda995ad31b8097783",
+      "bytes": 8008
+    },
+    {
+      "path": "imports/mmn-mobile-app-m1-20260822/server/db.ts",
+      "sha256": "42676dda43945ae8fa125f07bf4d7b45b3fdcb04250e485dde9f9c8ed3a766cc",
+      "bytes": 2511
+    },
+    {
+      "path": "imports/mmn-mobile-app-m1-20260822/server/routers.ts",
+      "sha256": "398a1d394b17a73b2bb91af4ccf2c7d31b2aef75706baf3c87a251394728c029",
+      "bytes": 985
+    },
+    {
+      "path": "imports/mmn-mobile-app-m1-20260822/server/storage.ts",
+      "sha256": "55eab39960d991bfbd50e86fb586fd6842fff88bcc7ab6d3538982a3fd9dd860",
+      "bytes": 3052
+    },
+    {
+      "path": "imports/mmn-mobile-app-m1-20260822/shared/_core/errors.ts",
+      "sha256": "f49c86179b38c7ea610bdb51ecf90c14a34953cab56b75ce57f1ada5479a55c1",
+      "bytes": 602
+    },
+    {
+      "path": "imports/mmn-mobile-app-m1-20260822/shared/const.ts",
+      "sha256": "d9fedf20dc67e22f79ee6c624e613fdbc16e2cc7db872201f89ffbad7f5c163b",
+      "bytes": 275
+    },
+    {
+      "path": "imports/mmn-mobile-app-m1-20260822/shared/types.ts",
+      "sha256": "959aeb30b032e203677e278922e97988b7cbcb56485694458298859af5589974",
+      "bytes": 158
+    },
+    {
+      "path": "imports/mmn-mobile-app-m1-20260822/tailwind.config.js",
+      "sha256": "257c0949766a0699e536eb7d18379a3c0bda37766e878271b06222f222544489",
+      "bytes": 882
+    },
+    {
+      "path": "imports/mmn-mobile-app-m1-20260822/tests/auth.logout.test.ts",
+      "sha256": "ca787931fc6114a2f3bc9606470f49514b9f9560b462b2b1b04ea97d1d140caa",
+      "bytes": 1721
+    },
+    {
+      "path": "imports/mmn-mobile-app-m1-20260822/theme.config.d.ts",
+      "sha256": "dc7c4d2cc9c3cb1cad011aa3a6f5f9c9ab1a62e1abad35aaf3efea7f7105f24d",
+      "bytes": 525
+    },
+    {
+      "path": "imports/mmn-mobile-app-m1-20260822/theme.config.js",
+      "sha256": "136d70bd04cfa08fd2b74c0f3dd9a42f614c66b9a5d1ac399573d56bb299bba5",
+      "bytes": 532
+    },
+    {
+      "path": "imports/mmn-mobile-app-m1-20260822/tsconfig.json",
+      "sha256": "aee7aa119328c486e5c5774bd49f11901e8abd6526d7bc82b02cc767e2d94cb4",
+      "bytes": 432
+    }
+  ]
+}
