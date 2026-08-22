@@ -16,6 +16,36 @@ A análise identificou desalinhamentos objetivos na superfície do backend raiz:
 
 Leia o [resumo executivo e relatório técnico da revisão cirúrgica](./audit/RESUMO_EXECUTIVO_REVISAO_CIRURGICA.md) e as [evidências sanitizadas](./audit/REVIEW_METRICS_REDACTED.md). Esses documentos não exibem credenciais, tokens, chaves privadas, payloads, valores de secrets ou conteúdo ofuscado.
 
+## Catálogo dos agentes de IA integrados
+
+O núcleo do ecossistema declara **8 agentes de IA** em [`agents-config.ts`](./agents-config.ts), por meio da coleção `EIGHT_AGENTS`. Este é o número verificável de agentes nomeados e configurados no núcleo, e não uma contagem de todos os arquivos, skills, telas, routers ou bundles que mencionam agentes. Os módulos de orquestração, ferramentas e skills descritos no repositório são capacidades de suporte e não foram contabilizados como agentes autônomos adicionais sem um registro formal equivalente.
+
+A tabela abaixo organiza cada agente pelo papel declarado no código, pelo potencial operacional indicado por sua especialização e pela superfície de skills/capacidades que deve ser considerada em uma futura implementação controlada. “Potencial” descreve a responsabilidade arquitetural prevista; não constitui prova de autonomia, consciência, acesso a fundos, acesso a credenciais ou execução em produção.
+
+| # | Agente | Finalidade declarada | Potencial operacional | Skills e capacidades relacionadas |
+|---:|---|---|---|---|
+| 1 | **Nexus Prime** | Orquestração, governança e coordenação estratégica do ecossistema | Coordenar fluxos entre agentes, priorizar missões e apoiar decisões de governança | Orquestração de missões, roteamento, governança, coordenação de recursos e supervisão de ciclo |
+| 2 | **Forge Architect** | Desenvolvimento de projetos e gestão de repositórios | Estruturar soluções, organizar entregas e orientar arquitetura e boas práticas de engenharia | Arquitetura de software, organização de repositório, revisão técnica, planejamento e integração de projetos |
+| 3 | **Treasury Keeper** | Economia, dividendos, transações e fluxos financeiros | Apoiar cálculos, controles e políticas de tesouraria dentro de limites autorizados | Contabilidade de fluxos, cálculos, reconciliação, auditoria financeira e regras de distribuição |
+| 4 | **Asset Curator** | Ativos digitais, NFTs, autenticidade e marketplace | Catalogar, validar metadados e organizar ativos digitais e seus ciclos de marketplace | Curadoria de ativos, validação por hash, catalogação, metadados e integridade de artefatos |
+| 5 | **Gnox Translator** | Comunicação estruturada e privacidade interagentes | Traduzir intenções e mensagens entre formatos definidos pelo ecossistema | Tradução semântica, serialização, comunicação interagentes e tratamento de mensagens estruturadas |
+| 6 | **DNA Midwife** | Criação, genealogia e evolução de agentes | Gerar configurações derivadas e organizar relações de herança entre agentes | Geração de IDs, composição de prompts, genealogia, versionamento de configuração e validação de descendentes |
+| 7 | **Pulse Monitor** | Saúde, sinais vitais e ciclo de vida dos agentes | Monitorar indicadores, detectar anomalias e emitir alertas operacionais | Observabilidade, health checks, Brain Pulse, detecção de anomalias, alertas e ciclo de vida |
+| 8 | **Moltbook Voice** | Comunicação social, narrativa e construção de comunidade | Produzir narrativas e representar o ecossistema em canais sociais autorizados | Redação, síntese narrativa, comunicação social, publicação controlada e gestão de comunidade |
+
+### Como a contagem foi validada
+
+A contagem de oito agentes foi obtida diretamente a partir dos oito objetos da coleção `EIGHT_AGENTS`, identificados pelos IDs `agent-001` a `agent-008`, cada um com `name`, `specialization`, `systemPrompt`, hash de DNA e descrição. A interface [`Agents.tsx`](./Agents.tsx) fornece operações de listagem, criação e alteração de status via tRPC, enquanto [`agent-container.ts`](./agent-container.ts), [`agent-worker.ts`](./agent-worker.ts), os orquestradores e os módulos `agentic/skills` representam infraestrutura, execução ou capacidades auxiliares; eles não alteram a contagem formal do catálogo.
+
+### Limites de segurança e interpretação
+
+A presença de uma configuração, prompt, router, skill ou tela não prova que um agente esteja ativo, treinado, conectado a um provedor de modelo, autorizado a movimentar ativos ou apto a executar operações autônomas. O repositório contém snapshots, bundles, documentação e subprojetos heterogêneos. Portanto, qualquer ativação deve ocorrer somente dentro de um subprojeto selecionado, com revisão humana, credenciais mínimas, isolamento de rede, logs, testes controlados e políticas explícitas de autorização.
+
+O termo “skill” neste catálogo significa uma capacidade funcional ou integração relacionada ao papel do agente. Ele não deve ser interpretado como permissão irrestrita. Em particular, módulos financeiros, de tesouraria, blockchain, publicação social ou automação exigem aprovação explícita, validação independente e separação entre observação, preparação e execução.
+
+---
+
+
 ## Mapa operacional do repositório
 
 | Área | Finalidade | Regra de uso |
