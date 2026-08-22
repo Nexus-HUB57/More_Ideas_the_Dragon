@@ -1,0 +1,9 @@
+README.md
+reports/01_relatorio_legado_lucas_thomaz.md
+reports/02_estrutura_juridica_e_custos.md
+reports/03_comparativo_offshore_e_trust.md
+reports/04_constituicao_trust.md
+reports/05_riscos_e_compliance_trust.md
+reports/06_lei_14754_e_trust.md
+source/Legado.docx
+validation/validate_package.sh
