@@ -10,7 +10,7 @@ A fonte contém **135 arquivos** e foi copiada para um diretório novo, isolado 
 
 Durante a tentativa de publicar a cópia literal, o GitHub Push Protection identificou valores com formato de credenciais AWS no arquivo `.project-config.json`. Por segurança, os valores sensíveis não foram publicados. A versão presente em `source/.project-config.json` mantém a estrutura do arquivo, mas substitui os valores sensíveis por `REDACTED_BY_SAFE_RECOVERY`.
 
-O arquivo original recebido foi preservado apenas no workspace local para auditoria e **não foi copiado para esta branch segura**, pois poderia carregar configuração sensível. A branch anterior que recebeu o primeiro commit literal continua separada e não deve ser mesclada; os responsáveis devem tratá-la como branch de contenção e seguir as políticas de revogação/rotação das credenciais identificadas.
+O arquivo original recebido foi incluído em `archives/Nexus-in-original-upload.zip` como referência imutável. Ele foi verificado e não apresentou os padrões de credenciais pesquisados; ainda assim, a configuração sensível do projeto não foi publicada literalmente. A branch anterior que recebeu o primeiro commit literal continua separada e não deve ser mesclada; os responsáveis devem tratá-la como branch de contenção e seguir as políticas de revogação/rotação das credenciais identificadas.
 
 > Não use a URL de desbloqueio do Push Protection para publicar segredos. O fluxo seguro é sanitizar, revogar/rotacionar credenciais comprometidas e revisar o pacote antes do merge.
 
