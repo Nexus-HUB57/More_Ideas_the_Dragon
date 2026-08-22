@@ -1,0 +1,11 @@
+# Git staged diff check — resumo
+
+| Campo | Resultado |
+|---|---:|
+| Exit code de `git diff --cached --check` | 2 |
+| Avisos de trailing whitespace | 3779 |
+| Arquivos com aviso | 10 |
+
+Os avisos correspondem a whitespace já presente nos artefatos importados. O conteúdo foi preservado byte a byte para cumprir o protocolo Safe Recovery; não houve normalização destrutiva. A integridade é validada por caminho, tamanho e SHA-256.
+
+O exit code 2 é tratado como aviso de estilo do conjunto de artefatos preservados, não como falha de cópia, corrupção ou alteração de histórico. O pacote não contém alterações staged fora do diretório aditivo.

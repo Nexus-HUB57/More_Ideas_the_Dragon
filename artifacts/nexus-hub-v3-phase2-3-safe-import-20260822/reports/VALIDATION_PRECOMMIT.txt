@@ -1,0 +1,32 @@
+# Validação pré-commit — Nexus Hub V3 Safe Recovery
+
+| Controle | Resultado |
+|---|---|
+| HEAD antes do commit | 654c62e3bf07f45e0865ecba4a1f91e0dee88a65 |
+| Branch de trabalho | manus/nexus-hub-v3-phase2-3-safe-population-20260822 |
+| Arquivos rastreados no HEAD | 43740 |
+| Branches remotas visíveis | 167 |
+| Diferenças rastreadas não staged | 0 |
+| Arquivos staged | 12 |
+| Caminhos staged fora do diretório novo | 0 |
+| Linhas de status | 12 |
+| Arquivos fonte comparados | 135 |
+| Manifesto de payload | 148 |
+| Hashes verificados | 148 |
+| Entradas source no ZIP | 136 |
+| Entradas incoming no ZIP | 3 |
+| Itens sensíveis bloqueados | 3 |
+| Teste estrutural do ZIP | PASS |
+| Ausência de path traversal | PASS |
+| Ausência de nomes sensíveis no ZIP | PASS |
+| Cópia fonte por caminho/tamanho/hash | PASS |
+| `pnpm check` no projeto-fonte | PASS (exit 0) |
+| `pnpm test` no projeto-fonte | PASS — 2 arquivos, 7 testes |
+
+## Invariantes
+
+O checkout não contém alterações rastreadas não staged; os arquivos staged pertencem exclusivamente ao diretório novo `artifacts/nexus-hub-v3-phase2-3-safe-import-20260822/`. Nenhuma branch ou commit existente foi reescrito.
+
+## Observação de segurança
+
+O ZIP de entrada continha arquivos de configuração potencialmente sensíveis. Eles foram bloqueados e não aparecem no pacote sanitizado; somente os nomes relativos estão registrados em `SENSITIVE_FILES_BLOCKED.txt`.

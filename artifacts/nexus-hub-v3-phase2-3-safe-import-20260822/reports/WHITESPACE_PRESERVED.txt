@@ -1,0 +1,7 @@
+# Whitespace preservado — Safe Recovery
+
+O conteúdo dos artefatos foi mantido byte a byte para não alterar arquivos fundamentais da tarefa. A verificação `git diff --cached --check` reporta trailing whitespace em arquivos de origem preservados, especialmente `source/server/db-nexus.ts`, `source/server/routers-nexus.ts` e `incoming/todo-uploaded.md`.
+
+Esses avisos são esperados em uma importação de preservação exata. Não foram removidos espaços, linhas vazias ou formatação dos arquivos-fonte; qualquer normalização seria uma alteração do conteúdo recebido. O controle de integridade utilizado para o pacote é a comparação de caminho, tamanho e SHA-256, que permanece válida.
+
+O `git diff --cached --check` foi executado e o resultado foi tratado como aviso de estilo apenas. Não há alteração unstaged fora do diretório aditivo, não há caminho staged fora do diretório aditivo e os testes `pnpm check` e `pnpm test` do projeto-fonte passaram.
