@@ -1,0 +1,19 @@
+AIAssistant.tsx
+AdminDashboard.tsx
+AffiliateDashboard.tsx
+Análise e Estruturação do Projeto Jhon Riff's.md
+App.tsx
+DOCUMENTATION.md
+JhonRiff'sProjectOverviewandKeyFundamentals.zip
+accounts.ts
+affiliates.ts
+ai.ts
+commissions.test.ts
+commissions.ts
+db.ts
+jhon_riffs_arquitetura_tecnica.md
+network.ts
+payments.ts
+routers.ts
+schema.ts
+todo.md
