@@ -1,0 +1,11 @@
+# Plano de Ação — Anomalias Ano 4 e Ano 5
+
+1. Corrigir e documentar a anomalia patrimonial de R$ 123.738.329,01, identificando sua origem, isolando-a e registrando-a em conta contábil transparente, com nota explicativa e validação independente.
+2. Revisar a distribuição de lucros entre FP, FS, FPS e FSQ, refletindo contabilmente o reinvestimento e eliminando a manutenção artificial do FS em valor estático.
+3. Adotar metodologia única de projeção, baseada na soma reconciliada dos componentes, explicando a diferença de R$ 8.294.304,87 observada no Ano 4.
+4. Formalizar a premissa de capitalização do FSQ: definir se os 10% incidem sobre o FPS ou sobre os rendimentos totais do ecossistema, com aprovação documentada do Comitê de Investimento.
+5. Submeter o retorno projetado de 15% do FPS a benchmarking, análise de sensibilidade e cenários otimista, base e pessimista pelo Comitê de Risco.
+6. Criar controles de fechamento: checklist, reconciliação entre subcontas e total consolidado, aprovação por responsáveis distintos, versionamento de premissas e trilha de auditoria.
+7. Publicar em cada relatório uma seção obrigatória de premissas, riscos, alterações em relação ao período anterior e pendências de validação.
+
+Responsáveis sugeridos: contador/auditor independente para os ajustes contábeis; analista financeiro para os modelos; Comitê de Risco para validação; Comitê de Investimento para aprovação; gestão financeira para divulgação e controle de versões.

@@ -1,0 +1,22 @@
+# Dados Específicos Extraídos (Ano 4)
+Lucro Anual Gerado (Ano 3): R$ 108.512.788,08
+Lucro Mensal Médio (Base Ano 3): R$ 9.042.732,34
+Taxa de Alocação para o Novo Fundo (FPS): 10% dos resultados mensais
+Capital Total Alocado no FPS (Ano 4): R$ 10.851.278,76
+Lucro Reinvestido em FP/FS (90%): R$ 97.661.509,32
+Patrimônio Total Final do Ano 3: R$ 1.337.353.329,01
+Patrimônio Total Projetado (Ano 4) com FPS (Projeção 1 - Soma dos Componentes): R$ 1.446.231.917,09
+Patrimônio Total Projetado (Ano 4) (Projeção 2 - Crescimento 8.8%): R$ 1.454.526.221,96
+Diferença entre Projeções (Nova Anomalia): R$ 8.294.304,87
+
+# Anomalias e Tendências Identificadas
+## Anomalias Persistentes
+1. Anomalia Contábil do Patrimônio Total Consolidado: Persistência de um valor não justificado de R$ 123.738.329,01, carregado do Ano 3 para o Ano 4, comprometendo a credibilidade da base patrimonial.
+2. Inconsistência Conceitual do Fundo Secundário (FS): O valor do FS (R$ 249.690.000,00) permanece estático, ignorando o reinvestimento de 90% do lucro anual (R$ 97.661.509,32) no FP/FS, o que é incoerente com sua natureza agressiva.
+
+## Nova Anomalia
+1. Inconsistência na Projeção de Crescimento: Diferença de R$ 8.294.304,87 entre as duas metodologias de projeção do Patrimônio Total (Soma dos Componentes vs. Crescimento de 8.8%), indicando falha na coerência metodológica.
+
+## Tendência Estratégica (Positiva)
+1. Diversificação e Alto Crescimento: Criação do Fundo de Participação Societária (FPS) com alocação de 10% do lucro, adicionando uma classe de ativos de alto risco/alto retorno (Private Equity/VC) ao portfólio.
+2. Sustentabilidade: A alocação de apenas 10% do lucro mensal garante que o crescimento do FPS não comprometa a base de capital dos fundos existentes.

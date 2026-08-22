@@ -1,0 +1,19 @@
+# Dados Específicos Extraídos (Ano 5)
+Novo Fundo: Fundo Semente Quântica (FSQ) - Fundo de Investimento Anjo.
+Capitalização: 10% do Rendimento Mensal Total do Ecossistema.
+Rendimento Mensal Total Estimado (Ano 5 - Revisado): R$ 8.834.670,82
+Capacidade Anual de Investimento do FSQ: R$ 10.601.604,96
+Patrimônio Total Projetado (Final do Ano 5): R$ 1.606.303.785,23
+Taxa de Crescimento Total Projetada (Ano 5): 9.7%
+Base Patrimonial (Início do Ano 5): R$ 1.464.675.459,27 (Patrimônio Total projetado para o final do Ano 4 - Revisado)
+
+# Anomalias e Tendências Identificadas (Ano 5)
+## Tendências Estratégicas (Positivas)
+1. Evolução Estratégica: Transição para um modelo de criação de valor e impacto com o FSQ, alinhado à visão de "Capital Paciente Quântico".
+2. Modelo de Investimento Inovador: Proposta do modelo "51%/49%" (Legado/Idealizador) para garantir controle estratégico e alinhamento de propósito, com sugestão de "Vesting Reverso" para manter a motivação do Idealizador.
+3. Ciclo Virtuoso: O FSQ atua como elo entre a geração de riqueza (FPS) e a inovação com propósito (Instituto Sinapse e comunidade), criando um ciclo de autoalimentação.
+
+## Anomalias/Inconsistências
+1. Inconsistência na Premissa de Capitalização do Fundo: O relatório inicial propõe R$ 5 milhões como Rendimento Mensal Total, resultando em R$ 6 milhões anuais para o FSQ. A análise interna (revisada) corrige este valor para R$ 8.83 milhões mensais, resultando em R$ 10.6 milhões anuais, indicando uma premissa inicial subdimensionada e a necessidade de justificar a base de cálculo (10% dos rendimentos TOTAIS, e não apenas do FPS).
+2. Ausência de Detalhamento da Correção Contábil do Ano 4: O relatório do Ano 5 utiliza uma base patrimonial revisada (R$ 1.464.675.459,27) para o início do ano, mas não detalha se a anomalia contábil persistente de R$ 123.7M do Ano 4 foi efetivamente corrigida ou apenas absorvida em uma nova projeção. A falta de transparência na correção da base contábil anterior é uma anomalia persistente de governança.
+3. Projeção de Retorno do FPS: O relatório projeta um retorno de 15% para o FPS no Ano 5 (após o primeiro ano de maturação), o que é um valor ambicioso para um fundo de Private Equity/Venture Capital em estágio inicial, e pode ser uma premissa otimista que precisa de maior justificação.
