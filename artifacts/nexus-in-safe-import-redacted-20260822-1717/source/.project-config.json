@@ -1,0 +1,44 @@
+{
+  "build_command": "pnpm run build",
+  "capabilities": [
+    "db",
+    "server",
+    "user"
+  ],
+  "dev_command": "pnpm run dev",
+  "env_vars": {
+    "DATABASE_URL": "mysql://8CfBJck4JBy8A1L.548c85414f0e:8T9lJu708BsuyhQVuX1g@gateway02.us-east-1.prod.aws.tidbcloud.com:4000/ZyNsKDKuE3WCPmx6T7wKD3?ssl={\"rejectUnauthorized\":true}"
+  },
+  "experiments": [
+    "no_db_push"
+  ],
+  "git_remote": {
+    "repo_url": "s3://vida-prod-gitrepo/webdev-git/310519663081075364/ZyNsKDKuE3WCPmx6T7wKD3",
+    "access_key_id": "REDACTED_BY_SAFE_RECOVERY",
+    "secret_access_key": "REDACTED_BY_SAFE_RECOVERY",
+    "session_token": "REDACTED_BY_SAFE_RECOVERY",
+    "expiration": "2026-08-23T04:51:22.000Z",
+    "backend": "GIT_BACKEND_S3"
+  },
+  "name": "nexus-in-project",
+  "path": "/home/ubuntu/nexus-in-project",
+  "port": 3000,
+  "secrets": {
+    "BUILT_IN_FORGE_API_KEY": "REDACTED_BY_SAFE_RECOVERY",
+    "BUILT_IN_FORGE_API_URL": "https://forge.manus.ai",
+    "JWT_SECRET": "REDACTED_BY_SAFE_RECOVERY",
+    "OAUTH_SERVER_URL": "https://api.manus.im",
+    "OWNER_NAME": "Double Year Copyright",
+    "OWNER_OPEN_ID": "cbNfgt8K94LNDS8Dhw5H3E",
+    "VITE_ANALYTICS_ENDPOINT": "https://manus-analytics.com",
+    "VITE_ANALYTICS_WEBSITE_ID": "31c09b68-c89a-4034-aeb7-6335afa10c74",
+    "VITE_APP_ID": "ZyNsKDKuE3WCPmx6T7wKD3",
+    "VITE_APP_LOGO": "https://files.manuscdn.com/user_upload_by_module/web_dev_logo/310519663081075364/UxMYOXzrYdpfpFyc.png",
+    "VITE_APP_TITLE": "Nexus-in Platform",
+    "VITE_FRONTEND_FORGE_API_KEY": "REDACTED_BY_SAFE_RECOVERY",
+    "VITE_FRONTEND_FORGE_API_URL": "https://forge.manus.ai",
+    "VITE_OAUTH_PORTAL_URL": "https://manus.im"
+  },
+  "template_id": "web-db-user",
+  "test_command": "pnpm test"
+}
