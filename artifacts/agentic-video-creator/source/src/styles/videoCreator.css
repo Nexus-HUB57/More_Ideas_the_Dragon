@@ -1,0 +1,390 @@
+/**
+ * Estilos para o Componente VideoCreator
+ * Estética Cinemática Neon-Noir
+ */
+
+/* Variáveis de cores */
+:root {
+  --color-midnight: #0a0a2a;
+  --color-midnight-light: #1a1a3f;
+  --color-hot-pink: #ff00ff;
+  --color-cyan: #00ffff;
+  --color-magenta: #ff00ff;
+  --color-electric-blue: #0080ff;
+  --color-neon-purple: #9d00ff;
+  --color-text-primary: #ffffff;
+  --color-text-secondary: #b0b0ff;
+  --color-border: #2a2a4a;
+}
+
+/* Contêiner Principal */
+.video-creator-container {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  background: linear-gradient(135deg, var(--color-midnight) 0%, #0d0d35 50%, #1a0d2e 100%);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+/* Fundo Animado */
+.video-creator-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  overflow: hidden;
+}
+
+/* Grid Neon */
+.neon-grid {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image:
+    linear-gradient(0deg, transparent 24%, rgba(0, 255, 255, 0.05) 25%, rgba(0, 255, 255, 0.05) 26%, transparent 27%, transparent 74%, rgba(0, 255, 255, 0.05) 75%, rgba(0, 255, 255, 0.05) 76%, transparent 77%, transparent),
+    linear-gradient(90deg, transparent 24%, rgba(255, 0, 255, 0.05) 25%, rgba(255, 0, 255, 0.05) 26%, transparent 27%, transparent 74%, rgba(255, 0, 255, 0.05) 75%, rgba(255, 0, 255, 0.05) 76%, transparent 77%, transparent);
+  background-size: 50px 50px;
+  animation: gridShift 20s linear infinite;
+}
+
+@keyframes gridShift {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(50px);
+  }
+}
+
+/* Brilho Neon 1 */
+.neon-glow-1 {
+  position: absolute;
+  top: -50%;
+  right: -10%;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(0, 255, 255, 0.1) 0%, transparent 70%);
+  border-radius: 50%;
+  animation: float 8s ease-in-out infinite;
+}
+
+/* Brilho Neon 2 */
+.neon-glow-2 {
+  position: absolute;
+  bottom: -20%;
+  left: -5%;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(255, 0, 255, 0.1) 0%, transparent 70%);
+  border-radius: 50%;
+  animation: float 10s ease-in-out infinite reverse;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(30px);
+  }
+}
+
+/* Conteúdo Principal */
+.video-creator-content {
+  position: relative;
+  z-index: 1;
+  max-width: 600px;
+  width: 100%;
+  background: rgba(10, 10, 42, 0.8);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  padding: 3rem;
+  box-shadow:
+    0 0 30px rgba(0, 255, 255, 0.1),
+    0 0 60px rgba(255, 0, 255, 0.05),
+    inset 0 0 30px rgba(0, 255, 255, 0.02);
+}
+
+/* Cabeçalho */
+.video-creator-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.header-icon {
+  margin-bottom: 1rem;
+}
+
+.icon-sparkle {
+  color: var(--color-hot-pink);
+  filter: drop-shadow(0 0 10px var(--color-hot-pink));
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    filter: drop-shadow(0 0 10px var(--color-hot-pink));
+  }
+  50% {
+    filter: drop-shadow(0 0 20px var(--color-hot-pink)) drop-shadow(0 0 30px var(--color-electric-blue));
+  }
+}
+
+/* Título */
+.video-creator-title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin: 0;
+  color: var(--color-text-primary);
+  text-shadow:
+    0 0 20px var(--color-hot-pink),
+    0 0 40px var(--color-electric-blue);
+  letter-spacing: 2px;
+}
+
+.title-accent {
+  color: var(--color-hot-pink);
+  text-shadow:
+    0 0 20px var(--color-hot-pink),
+    0 0 40px var(--color-hot-pink);
+}
+
+/* Subtítulo */
+.video-creator-subtitle {
+  font-size: 0.95rem;
+  color: var(--color-text-secondary);
+  margin-top: 0.5rem;
+  letter-spacing: 0.5px;
+}
+
+/* Formulário */
+.video-creator-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+/* Grupo de Formulário */
+.form-group {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+/* Label */
+.form-label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--color-text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.label-icon {
+  font-size: 1.2rem;
+}
+
+/* Inputs */
+.form-input {
+  background: rgba(26, 26, 63, 0.6);
+  border: 1px solid var(--color-border);
+  border-radius: 6px;
+  padding: 0.75rem 1rem;
+  color: var(--color-text-primary);
+  font-size: 0.95rem;
+  font-family: inherit;
+  transition: all 0.3s ease;
+  outline: none;
+}
+
+.form-input:hover:not(:disabled) {
+  border-color: var(--color-cyan);
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.2);
+}
+
+.form-input:focus {
+  border-color: var(--color-hot-pink);
+  box-shadow:
+    0 0 20px rgba(255, 0, 255, 0.3),
+    inset 0 0 10px rgba(255, 0, 255, 0.05);
+}
+
+.form-input:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.form-select {
+  cursor: pointer;
+}
+
+.form-textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+/* Borda de Input */
+.form-input-border {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  width: 0;
+  background: linear-gradient(90deg, var(--color-hot-pink), var(--color-cyan));
+  border-radius: 1px;
+  transition: width 0.3s ease;
+}
+
+.form-group:focus-within .form-input-border {
+  width: 100%;
+}
+
+/* Mensagem de Erro */
+.error-message {
+  background: rgba(255, 0, 0, 0.1);
+  border: 1px solid rgba(255, 0, 0, 0.3);
+  border-radius: 6px;
+  padding: 0.75rem 1rem;
+  color: #ff6b6b;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* Botão de Envio */
+.submit-button {
+  background: linear-gradient(135deg, var(--color-hot-pink) 0%, var(--color-magenta) 100%);
+  border: none;
+  border-radius: 6px;
+  padding: 1rem 2rem;
+  color: var(--color-midnight);
+  font-size: 1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow:
+    0 0 20px var(--color-hot-pink),
+    0 0 40px rgba(255, 0, 255, 0.3);
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.submit-button:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow:
+    0 0 30px var(--color-hot-pink),
+    0 0 60px rgba(255, 0, 255, 0.5),
+    0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.submit-button:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.submit-button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.button-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+}
+
+/* Dicas de Uso */
+.video-creator-tips {
+  background: rgba(157, 0, 255, 0.05);
+  border: 1px solid rgba(0, 255, 255, 0.2);
+  border-radius: 6px;
+  padding: 1.5rem;
+  border-left: 3px solid var(--color-cyan);
+}
+
+.tips-title {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--color-cyan);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 0.75rem;
+}
+
+.tips-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.tips-list li {
+  font-size: 0.85rem;
+  color: var(--color-text-secondary);
+  padding-left: 1.5rem;
+  position: relative;
+}
+
+.tips-list li::before {
+  content: '→';
+  position: absolute;
+  left: 0;
+  color: var(--color-magenta);
+  font-weight: bold;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .video-creator-container {
+    padding: 1rem;
+  }
+
+  .video-creator-content {
+    padding: 2rem 1.5rem;
+  }
+
+  .video-creator-title {
+    font-size: 2rem;
+  }
+
+  .video-creator-form {
+    gap: 1rem;
+  }
+
+  .neon-glow-1,
+  .neon-glow-2 {
+    width: 400px;
+    height: 400px;
+  }
+}
+
+@media (max-width: 480px) {
+  .video-creator-title {
+    font-size: 1.5rem;
+  }
+
+  .video-creator-content {
+    padding: 1.5rem 1rem;
+  }
+
+  .submit-button {
+    padding: 0.75rem 1.5rem;
+    font-size: 0.9rem;
+  }
+}
