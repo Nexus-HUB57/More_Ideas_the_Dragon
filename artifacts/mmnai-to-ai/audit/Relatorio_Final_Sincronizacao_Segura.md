@@ -27,7 +27,8 @@ O pacote original foi recebido através do arquivo compactado `MMNAI-to-AI.zip`,
 |---|---|
 | Repositório Remoto | `Nexus-HUB57/More_Ideas_the_Dragon` |
 | Branch de Integração | `integration/safe-mmnai-ai-20260822T132042Z` |
-| Base Remota de Integração | `07e4b6726d5bc1b3039df1c8e35ccbf8109f7efa` (após atualizações seguras via *fast-forward*) |
+| Base Remota Efetivamente Publicada | `cac5b267769c678022b922c19e9f57279318f293` |
+| `origin/main` observado após a integração | `07e4b6726d5bc1b3039df1c8e35ccbf8109f7efa` |
 | Arquivo ZIP Original | `MMNAI-to-AI.zip` |
 | Hash SHA-256 do ZIP | `aa2a6540e4d56777ba5bf291a7d8ab6948f27271264c7b1b28f43db6faa26224` |
 | Membros Compactados no ZIP | `3139` arquivos |
@@ -76,7 +77,7 @@ Após a consolidação dos dois commits locais, a suíte de verificação pós-c
 
 ## 6. Conclusão e Próximos Passos
 
-O repositório **`Nexus-HUB57/More_Ideas_the_Dragon`** encontra-se povoado de forma integral, segura e totalmente reversível na branch local `integration/safe-mmnai-ai-20260822T132042Z`. 
+O repositório **`Nexus-HUB57/More_Ideas_the_Dragon`** encontra-se povoado de forma integral, segura e totalmente reversível na branch `integration/safe-mmnai-ai-20260822T132042Z`, publicada a partir da base efetiva `cac5b267769c678022b922c19e9f57279318f293`. Após a integração, o `origin/main` avançou para `07e4b6726d5bc1b3039df1c8e35ccbf8109f7efa`; esse avanço foi observado e não foi sobrescrito. 
 
 Nenhum arquivo pré-existente foi modificado ou removido, o histórico remoto permanece intacto e nenhum push automático foi efetuado. O trabalho está pronto para a inspeção humana final e posterior publicação conforme a governança da equipe.
 
