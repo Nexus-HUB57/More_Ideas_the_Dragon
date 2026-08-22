@@ -29,7 +29,7 @@
 
 ## Scope
 
-The package contains 14 versioned files after this report is added: 11 educational task artifacts, one safe validation workflow, this report, and the package checksum manifest. The repository already contains many independent 001–299 bundles and active developer branches; none were merged, deleted, or rewritten.
+The package contains 16 versioned files after this report is added: 11 educational task artifacts, one safe validation workflow, two security-control manifests, this report, and the package checksum manifest. The repository already contains many independent 001–299 bundles and active developer branches; none were merged, deleted, or rewritten.
 
 The request referred to 299 files, but the local source snapshot contained fewer than 299 unique safe artifacts. No artificial duplicate files were created. The existing 001–299 bundles remain preserved in the repository and are outside this isolated import.
 
