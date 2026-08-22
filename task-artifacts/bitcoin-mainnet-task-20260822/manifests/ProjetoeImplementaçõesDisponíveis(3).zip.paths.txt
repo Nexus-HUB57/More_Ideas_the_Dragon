@@ -1,0 +1,20 @@
+05244920-7128-11f0-a8a5-11ebad7174c8.dat
+0524e560-7128-11f0-a8a5-11ebad7174c8.dat
+2000.dat
+2000btc.txn
+300.dat.txt
+301.dat.txt
+302.dat.txt
+303.dat.txt
+304.dat.txt
+310.dat.txt
+500.backup(1).txt
+FdrWallet.tsx
+Integração do FDR: Fundo Descentralizado de Reserva.pptx
+Relatório de Integração do FDR (Fundo Descentralizado de Reserva).md
+fdr_backend_integration.py
+fdr_flask_routes.py
+fdr_wallets_extracted.py
+matriz2000btc_wallet.txt
+test_fdr_api.py
+test_fdr_integration.py

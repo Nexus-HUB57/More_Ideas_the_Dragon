@@ -1,0 +1,308 @@
+# **Código Completo do Dashboard de Arbitragem Crypto**
+
+Vou fornecer um sistema completo com frontend (React), backend (FastAPI) e integração WebSocket para atualizações em tempo real.
+
+## **1. Backend (Python - FastAPI + WebSocket)**
+
+### `main.py`
+```python
+from fastapi import FastAPI, WebSocket, WebSocketDisconnect
+from fastapi.middleware.cors import CORSMiddleware
+from fastapi.staticfiles import StaticFiles
+import uvicorn
+import random
+import asyncio
+import json
+from datetime import datetime
+
+app = FastAPI()
+
+# Configuração CORS
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
+# Mock de dados de arbitragem
+def generate_mock_data():
+    exchanges = ["Binance", "KuCoin", "OKX", "Bybit"]
+    pairs = ["BTC/USDT", "ETH/USDT", "SOL/USDT", "XRP/USDT"]
+    return {
+        "timestamp": datetime.now().isoformat(),
+        "pair": random.choice(pairs),
+        "buy_exchange": random.choice(exchanges),
+        "sell_exchange": random.choice([e for e in exchanges if e != "buy_exchange"]),
+        "spread": round(random.uniform(5, 100), 2),
+        "profit": round(random.uniform(1, 50), 2),
+        "status": random.choice(["✅ Sucesso", "⚠️ Parcial", "❌ Falha"])
+    }
+
+# WebSocket para dados em tempo real
+@app.websocket("/ws")
+async def websocket_endpoint(websocket: WebSocket):
+    await websocket.accept()
+    try:
+        while True:
+            data = generate_mock_data()
+            await websocket.send_json({
+                "type": "arbitrage_opportunity",
+                "data": data
+            })
+            await asyncio.sleep(1)
+    except WebSocketDisconnect:
+        print("Client disconnected")
+
+# API REST para dados históricos
+@app.get("/api/history")
+async def get_history(limit: int = 20):
+    return [generate_mock_data() for _ in range(limit)]
+
+@app.get("/api/stats")
+async def get_stats():
+    return {
+        "roi": round(random.uniform(0.5, 5.0), 2),
+        "success_rate": random.randint(85, 98),
+        "daily_profit": random.randint(500, 2500),
+        "drawdown": round(random.uniform(-5.0, -1.0), 1)
+    }
+
+# Servir frontend (opcional)
+app.mount("/", StaticFiles(directory="static", html=True), name="static")
+
+if __name__ == "__main__":
+    uvicorn.run(app, host="0.0.0.0", port=8000)
+```
+
+## **2. Frontend (React + TypeScript)**
+
+### `App.tsx` (Componente Principal)
+```tsx
+import React, { useState, useEffect } from 'react';
+import { Line, Bar } from 'react-chartjs-2';
+import {
+  Chart as ChartJS,
+  CategoryScale,
+  LinearScale,
+  PointElement,
+  LineElement,
+  BarElement,
+  Title,
+  Tooltip,
+  Legend
+} from 'chart.js';
+
+ChartJS.register(
+  CategoryScale,
+  LinearScale,
+  PointElement,
+  LineElement,
+  BarElement,
+  Title,
+  Tooltip,
+  Legend
+);
+
+interface ArbitrageData {
+  timestamp: string;
+  pair: string;
+  buy_exchange: string;
+  sell_exchange: string;
+  spread: number;
+  profit: number;
+  status: string;
+}
+
+interface StatsData {
+  roi: number;
+  success_rate: number;
+  daily_profit: number;
+  drawdown: number;
+}
+
+const App: React.FC = () => {
+  const [history, setHistory] = useState<ArbitrageData[]>([]);
+  const [stats, setStats] = useState<StatsData | null>(null);
+  const [realtimeData, setRealtimeData] = useState<ArbitrageData[]>([]);
+  const [isConnected, setIsConnected] = useState(false);
+
+  // Fetch historical data
+  useEffect(() => {
+    fetch('http://localhost:8000/api/history')
+      .then(res => res.json())
+      .then(data => setHistory(data));
+
+    fetch('http://localhost:8000/api/stats')
+      .then(res => res.json())
+      .then(data => setStats(data));
+  }, []);
+
+  // WebSocket connection
+  useEffect(() => {
+    const ws = new WebSocket('ws://localhost:8000/ws');
+    
+    ws.onopen = () => {
+      setIsConnected(true);
+      console.log('WebSocket Connected');
+    };
+
+    ws.onmessage = (event) => {
+      const message = JSON.parse(event.data);
+      if (message.type === 'arbitrage_opportunity') {
+        setRealtimeData(prev => [message.data, ...prev.slice(0, 19)]);
+      }
+    };
+
+    ws.onclose = () => {
+      setIsConnected(false);
+      console.log('WebSocket Disconnected');
+    };
+
+    return () => ws.close();
+  }, []);
+
+  // Chart data
+  const spreadChartData = {
+    labels: realtimeData.map((_, index) => index),
+    datasets: [
+      {
+        label: 'Spread (USDT)',
+        data: realtimeData.map(data => data.spread),
+        borderColor: 'rgba(75, 192, 192, 1)',
+        tension: 0.1
+      }
+    ]
+  };
+
+  const profitChartData = {
+    labels: history.slice(0, 10).map(data => data.pair),
+    datasets: [
+      {
+        label: 'Lucro (USDT)',
+        data: history.slice(0, 10).map(data => data.profit),
+        backgroundColor: 'rgba(54, 162, 235, 0.5)'
+      }
+    ]
+  };
+
+  return (
+    <div className="min-h-screen bg-gray-900 text-white p-6">
+      {/* Header */}
+      <header className="mb-8">
+        <h1 className="text-3xl font-bold">Dashboard de Arbitragem Crypto</h1>
+        <div className="flex gap-4 mt-4">
+          <div className="bg-gray-800 p-4 rounded-lg">
+            <p>Status: <span className={isConnected ? 'text-green-500' : 'text-red-500'}>
+              {isConnected ? 'CONECTADO' : 'DESCONECTADO'}
+            </span></p>
+          </div>
+          {stats && (
+            <>
+              <div className="bg-gray-800 p-4 rounded-lg">
+                <p>ROI: <span className="text-green-500">{stats.roi}%</span></p>
+              </div>
+              <div className="bg-gray-800 p-4 rounded-lg">
+                <p>Taxa de Sucesso: <span className="text-green-500">{stats.success_rate}%</span></p>
+              </div>
+            </>
+          )}
+        </div>
+      </header>
+
+      {/* Main Content */}
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        {/* Gráficos */}
+        <div className="lg:col-span-2 space-y-6">
+          <div className="bg-gray-800 p-4 rounded-lg">
+            <h2 className="text-xl mb-4">Spread em Tempo Real (USDT)</h2>
+            <Line data={spreadChartData} />
+          </div>
+          <div className="bg-gray-800 p-4 rounded-lg">
+            <h2 className="text-xl mb-4">Lucro por Par (Últimas 10 execuções)</h2>
+            <Bar data={profitChartData} />
+          </div>
+        </div>
+
+        {/* Tabela de Execuções */}
+        <div className="bg-gray-800 p-4 rounded-lg">
+          <h2 className="text-xl mb-4">Últimas Oportunidades</h2>
+          <div className="overflow-x-auto">
+            <table className="min-w-full">
+              <thead>
+                <tr>
+                  <th className="px-4 py-2">Par</th>
+                  <th className="px-4 py-2">Compra</th>
+                  <th className="px-4 py-2">Venda</th>
+                  <th className="px-4 py-2">Spread</th>
+                  <th className="px-4 py-2">Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                {realtimeData.slice(0, 5).map((data, index) => (
+                  <tr key={index} className="border-t border-gray-700">
+                    <td className="px-4 py-2">{data.pair}</td>
+                    <td className="px-4 py-2">{data.buy_exchange}</td>
+                    <td className="px-4 py-2">{data.sell_exchange}</td>
+                    <td className="px-4 py-2">${data.spread.toFixed(2)}</td>
+                    <td className="px-4 py-2">{data.status}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default App;
+```
+
+## **3. Como Executar o Sistema**
+
+### **Backend**
+1. Instale as dependências:
+```bash
+pip install fastapi uvicorn websockets
+```
+
+2. Execute o servidor:
+```bash
+python main.py
+```
+
+### **Frontend**
+1. Crie um projeto React com TypeScript:
+```bash
+npx create-react-app crypto-arbitrage-dashboard --template typescript
+cd crypto-arbitrage-dashboard
+```
+
+2. Instale as dependências:
+```bash
+npm install react-chartjs-2 chart.js
+```
+
+3. Substitua o conteúdo do `src/App.tsx` pelo código fornecido
+
+4. Execute o frontend:
+```bash
+npm start
+```
+
+## **4. Recursos Implementados**
+✅ **Dados em tempo real** via WebSocket  
+✅ **Gráficos interativos** de spreads e lucros  
+✅ **Tabela de execuções** atualizada automaticamente  
+✅ **Métricas de desempenho** (ROI, taxa de sucesso)  
+✅ **Design responsivo** com tema escuro  
+
+## **Próximas Melhorias Possíveis**
+1. Integração com APIs reais de exchanges (Binance, KuCoin)
+2. Autenticação e segurança
+3. Painel de controle para operações manuais
+4. Alertas sonoros/visuais para oportunidades
+
+Quer que eu desenvolva algum componente específico com mais detalhes?

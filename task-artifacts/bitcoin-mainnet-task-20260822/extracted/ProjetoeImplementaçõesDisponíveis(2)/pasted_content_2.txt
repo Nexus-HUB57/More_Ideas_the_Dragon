@@ -1,0 +1,124 @@
+# **Novo Dashboard para Arbitragem de Criptomoedas**  
+Aqui está uma proposta visual e funcional para o **novo dashboard**, otimizado para operações de arbitragem em tempo real.
+
+---
+
+## **📊 Visão Geral do Novo Dashboard**  
+*(Layout Moderno + Dados em Tempo Real)*  
+
+### **1. Header (Cabeçalho)**
+- **Status do Bot** (Online/Offline)  
+- **Saldo Total** (USDT + BTC + ETH)  
+- **ROI Diário/Semanal/Mensal**  
+- **Modo de Operação** (Automático/Manual)  
+
+### **2. Painel de Oportunidades de Arbitragem**  
+**(Gráficos + Alertas)**  
+| Componente               | Descrição                                                                 |
+|--------------------------|---------------------------------------------------------------------------|
+| **Heatmap de Spreads**    | Mapa de calor mostrando os melhores pares (Binance vs KuCoin vs OKX)      |
+| **Gráfico de Spread BTC** | Linha do tempo do spread entre exchanges (Binance vs KuCoin)              |
+| **Top Oportunidades**     | Lista das 5 melhores arbitragens no momento (Par, Spread, Lucro Estimado) |
+
+👉 **Exemplo de Código (React + Chart.js):**
+```javascript
+// Gráfico de Spread em Tempo Real
+<Line 
+  data={{
+    labels: timeData,
+    datasets: [{
+      label: 'Spread Binance vs KuCoin (BTC/USDT)',
+      data: spreadData,
+      borderColor: '#10B981',
+      tension: 0.1
+    }]
+  }} 
+  options={{ 
+    responsive: true,
+    scales: { y: { beginAtZero: false } }
+  }}
+/>
+```
+
+---
+
+### **3. Seção de Execuções e Histórico**  
+**(Tabela + Estatísticas)**  
+
+| Hora       | Par        | Exchange Compra | Exchange Venda | Spread | Lucro  | Status      |
+|------------|------------|------------------|-----------------|--------|--------|-------------|
+| 10:05:23   | BTC/USDT   | Binance          | KuCoin          | $50    | $32.50 | ✅ Sucesso  |
+| 10:03:12   | ETH/USDT   | OKX              | Binance         | $12    | $7.20  | ⚠️ Parcial |
+
+👉 **Recursos:**  
+- **Filtros** por exchange, par ou status.  
+- **Exportar dados** para CSV/Excel.  
+- **Botão de Replay** para analisar execuções passadas.  
+
+---
+
+### **4. Painel de Controle Rápido**  
+**(Gestão de Risco + Configurações)**  
+
+```javascript
+// Componente de Controle
+<div className="control-panel">
+  <button onClick={pauseBot}>⏸️ Pausar Bot</button>
+  <button onClick={adjustSettings}>⚙️ Ajustar Limites</button>
+  <input 
+    type="number" 
+    placeholder="Spread Mínimo (USDT)" 
+    onChange={(e) => setMinSpread(e.target.value)}
+  />
+  <select onChange={(e) => setExchangeFilter(e.target.value)}>
+    <option value="all">Todas Exchanges</option>
+    <option value="binance">Binance</option>
+    <option value="kucoin">KuCoin</option>
+  </select>
+</div>
+```
+
+---
+
+### **5. Estatísticas de Desempenho**  
+**(Métricas-Chave)**  
+
+| Métrica               | Valor Atual | Meta       |
+|-----------------------|-------------|------------|
+| **Taxa de Sucesso**   | 92%         | ≥ 90%      |
+| **Lucro Diário**      | $1,250      | -          |
+| **Drawdown Máximo**   | -3.2%       | ≤ -5%      |
+| **Latência Média**    | 120ms       | < 200ms    |
+
+👉 **Gráfico de Drawdown:**  
+```javascript
+<Bar 
+  data={{
+    labels: ['Jan', 'Fev', 'Mar'],
+    datasets: [{
+      label: 'Drawdown Mensal',
+      data: [-2.1, -3.2, -1.8],
+      backgroundColor: '#EF4444'
+    }]
+  }}
+/>
+```
+
+---
+
+## **🎨 Design Proposto (UI/UX)**  
+- **Tema Escuro** (Melhor para monitoramento prolongado).  
+- **Atualizações em Tempo Real** via WebSocket.  
+- **Responsivo** (Funciona em desktop e mobile).  
+
+**Preview:**  
+![Dashboard Layout](https://via.placeholder.com/800x400/1F2937/FFFFFF?text=Dashboard+Arbitragem+Crypto)
+
+---
+
+## **🚀 Como Implementar?**  
+1. **Frontend:** React + Chart.js + TailwindCSS.  
+2. **Backend:** FastAPI (Python) ou Node.js + WebSocket.  
+3. **Banco de Dados:** PostgreSQL ou InfluxDB (para dados temporais).  
+
+Quer que eu gere o código completo de algum componente específico? (Ex: Gráfico de Spread em Tempo Real ou Tabela de Execuções?)
