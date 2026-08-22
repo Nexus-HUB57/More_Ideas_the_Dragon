@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ORSECA - Gerenciador de Wallets Bitcoin</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/bip39@3.0.4/bip39.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bitcoinjs-lib@6.1.0"></script>
+  <script src="https://cdn.jsdelivr.net/npm/qrcode@1.5.1/build/qrcode.min.js"></script>
+  <style>
+    .tab-content { display: none; animation: fadeIn 0.3s ease; }
+    .tab-content.active { display: block; }
+    .tab-button.active {
+      border-bottom: 2px solid #3B82F6;
+      color: white;
+      background: linear-gradient(to bottom, rgba(59, 130, 246, 0.1 ), transparent);
+    }
+    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+    @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+    .animate-spin { animation: spin 1.5s linear infinite; }
+    .wallet-card:hover { transform: translateY(-3px); box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.2); }
+    .wallet-card { transition: all 0.3s ease; }
+    .file-drop-area { border: 2px dashed #4b5563; transition: all 0.3s; }
+    .file-drop-area.highlight { border-color: #3B82F6; background-color: rgba(59, 130, 246, 0.05); }
+    .link-hover:hover { color: #93c5fd; text-decoration: underline; }
+  </style>
+</head>
+<body class="bg-gray-900 text-white min-h-screen">
+  <div class="container mx-auto px-4 py-8 max-w-6xl">
+    <!-- Cabeçalho -->
+    <header class="text-center mb-10">
+      <div class="inline-flex items-center justify-center bg-gradient-to-r from-blue-600 to-blue-400 text-white px-6 py-3 rounded-full mb-4">
+        <i class="fas fa-shield-alt mr-3"></i>
+        <span class="text-sm font-semibold">SISTEMA OFICIAL ORSECA</span>
+      </div>
+      <h1 class="text-4xl md:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-300 mb-3">
+        Bitcoin Wallet Manager
+      </h1>
+      <p class="text-gray-400 max-w-2xl mx-auto">
+        Gerenciamento completo de carteiras Bitcoin com opções de envio e recebimento
+      </p>
+    </header>
+
+    <!-- Barra de Navegação -->
+    <nav class="flex overflow-x-auto mb-10 bg-gray-800 rounded-lg p-1">
+      <button class="tab-button active px-6 py-3 font-medium whitespace-nowrap flex items-center" 
+              data-tab="dashboard">
+        <i class="fas fa-home mr-2"></i>
+        Dashboard
+      </button>
+      <button class="tab-button px-6 py-3 font-medium text-gray-400 whitespace-nowrap flex items-center" 
+              data-tab="import">
+        <i class="fas fa-file-import mr-2"></i>
+        Importar
+      </button>
+      <button class="tab-button px-6 py-3 font-medium text-gray-400 whitespace-nowrap flex items-center" 
+              data-tab="wallets">
+        <i class="fas fa-wallet mr-2"></i>
+        Minhas Wallets
+      </button>
+      <button class="tab-button px-6 py-3 font-medium text-gray-400 whitespace-nowrap flex items-center" 
+              data-tab="send">
+        <i class="fas fa-paper-plane mr-2"></i>
+        Enviar
+      </button>
+      <button class="tab-button px-6 py-3 font-medium text-gray-400 whitespace-nowrap flex items-center" 
+              data-tab="receive">
+        <i class="fas fa-qrcode mr-2"></i>
+        Receber
+      </button>
+    </nav>
+
+    <!-- Conteúdo Principal -->
+    <main>
+      <!-- Aba Dashboard -->
+      <section id="dashboard" class="tab-content active">
+        <div class="bg-gray-800 rounded-xl p-6 shadow-lg mb-6">
+          <h2 class="text-2xl font-bold mb-4 flex items-center">
+            <i class="fas fa-chart-pie mr-3 text-blue-400"></i>
+            Visão Geral
+          </h2>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+            <div class="bg-gray-700/50 rounded-lg p-4">
+              <p class="text-gray-400">Total BTC</p>
+              <p class="text-3xl font-bold text-yellow-300" id="totalBalance">0.00000000 <span class="text-xl">BTC</span></p>
+            </div>
+            <div class="bg-gray-700/50 rounded-lg p-4">
+              <p class="text-gray-400">Wallets</p>
+              <p class="text-3xl font-bold text-blue-300" id="totalWallets">0</p>
+            </div>
+            <div class="bg-gray-700/50 rounded-lg p-4">
+              <p class="text-gray-400">Última Atividade</p>
+              <p class="text-3xl font-bold text-purple-300" id="lastActivity">--:--:--</p>
+            </div>
+          </div>
+          <div class="bg-gray-700/30 rounded-lg p-4">
+            <p class="text-gray-400 mb-2">Links Rápidos:</p>
+            <div class="flex flex-wrap gap-3">
+              <a href="https://www.blockchain.com/explorer" target="_blank" rel="noopener noreferrer" class="link-hover text-blue-400 flex items-center">
+                <i class="fas fa-external-link-alt mr-2"></i> Blockchain Explorer
+              </a>
+              <a href="https://bitcoin.org/pt_BR/" target="_blank" rel="noopener noreferrer" class="link-hover text-blue-400 flex items-center">
+                <i class="fab fa-bitcoin mr-2"></i> Site Oficial Bitcoin
+              </a>
+              <a href="https://github.com/bitcoinjs/bitcoinjs-lib" target="_blank" rel="noopener noreferrer" class="link-hover text-blue-400 flex items-center">
+                <i class="fab fa-github mr-2"></i> BitcoinJS Library
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Aba Importar -->
+      <section id="import" class="tab-content">
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+          <!-- Seção de Importação -->
+          <div class="lg:col-span-1 bg-gray-800 rounded-xl p-6 shadow-lg">
+            <h2 class="text-2xl font-bold mb-6 flex items-center">
+              <i class="fas fa-key mr-3 text-blue-400"></i>
+              Importar Wallet
+            </h2>
+            
+            <div class="space-y-4">
+              <!-- Seletor de Tipo -->
+              <div>
+                <label class="block text-gray-400 mb-2">Tipo de Importação</label>
+                <select id="importType" class="w-full bg-gray-700 border border-gray-600 rounded-lg p-3">
+                  <option value="pkey">PVKEY (Hex )</option>
+                  <option value="xprv">XPRV (BIP32)</option>
+                  <option value="wif">WIF</option>
+                  <option value="mnemonic">Mnemonic (BIP39)</option>
+                  <option value="file">Arquivo (.dat, .txt, .core)</option>
+                </select>
+              </div>
+              
+              <!-- Campos Dinâmicos -->
+              <div id="inputSections">
+                <!-- PVKEY -->
+                <div id="pkeySection" class="import-section">
+                  <label class="block text-gray-400 mb-2">Chave Privada (Hex)</label>
+                  <input type="text" id="pkeyInput" class="w-full bg-gray-700 border border-gray-600 rounded-lg p-3 font-mono" 
+                         placeholder="Ex: 4f3a... ou 0x4f3a...">
+                </div>
+                
+                <!-- XPRV -->
+                <div id="xprvSection" class="import-section hidden">
+                  <label class="block text-gray-400 mb-2">Chave Estendida (XPRV)</label>
+                  <input type="text" id="xprvInput" class="w-full bg-gray-700 border border-gray-600 rounded-lg p-3 font-mono" 
+                         placeholder="Ex: xprv9s21ZrQH...">
+                </div>
+                
+                <!-- WIF -->
+                <div id="wifSection" class="import-section hidden">
+                  <label class="block text-gray-400 mb-2">Chave WIF</label>
+                  <input type="text" id="wifInput" class="w-full bg-gray-700 border border-gray-600 rounded-lg p-3 font-mono" 
+                         placeholder="Ex: 5Kb8kLf9zgWQnogidDA76MzPL6TsZZY36hWXMssSzNydYXYB9KF">
+                </div>
+                
+                <!-- Mnemonic -->
+                <div id="mnemonicSection" class="import-section hidden">
+                  <label class="block text-gray-400 mb-2">Seed Phrase (12/24 palavras)</label>
+                  <textarea id="mnemonicInput" class="w-full bg-gray-700 border border-gray-600 rounded-lg p-3 h-24" 
+                            placeholder="Ex: apple banana orange ..."></textarea>
+                  <div class="mt-2">
+                    <label class="block text-gray-400 mb-2">Caminho Derivação (opcional)</label>
+                    <input type="text" id="derivationPath" class="w-full bg-gray-700 border border-gray-600 rounded-lg p-3" 
+                           value="m/44'/0'/0'/0" placeholder="Caminho BIP44">
+                  </div>
+                </div>
+                
+                <!-- Arquivo -->
+                <div id="fileSection" class="import-section hidden">
+                  <div class="file-drop-area rounded-lg p-4 text-center mb-3">
+                    <input type="file" id="walletFile" accept=".dat,.txt,.core" class="hidden">
+                    <label for="walletFile" class="block cursor-pointer">
+                      <i class="fas fa-cloud-upload-alt text-3xl text-blue-400 mb-2"></i>
+                      <p class="font-bold">Arraste ou clique para selecionar</p>
+                      <p class="text-sm text-gray-400">Formatos: .dat, .txt, .core</p>
+                    </label>
+                  </div>
+                  <div id="fileInfo" class="hidden text-sm text-gray-400 mb-2"></div>
+                  <div id="passwordField" class="hidden">
+                    <label class="block text-gray-400 mb-2">Senha (opcional)</label>
+                    <input type="password" id="walletPassword" class="w-full bg-gray-700 border border-gray-600 rounded-lg p-3" 
+                           placeholder="Senha do arquivo">
+                  </div>
+                </div>
+              </div>
+              
+              <button id="importBtn" class="w-full bg-gradient-to-r from-blue-600 to-cyan-500 hover:from-blue-700 hover:to-cyan-600 text-white font-bold py-3 px-4 rounded-lg flex items-center justify-center">
+                <i id="importIcon" class="fas fa-key mr-2"></i>
+                Importar Wallet
+              </button>
+            </div>
+          </div>
+
+          <!-- Resultados da Importação -->
+          <div class="lg:col-span-2">
+            <div id="importResult" class="bg-gray-800 rounded-xl p-6 shadow-lg mb-6 hidden">
+              <div class="flex justify-between items-start mb-4">
+                <h3 class="text-xl font-bold flex items-center">
+                  <i class="fas fa-check-circle mr-2 text-green-400"></i>
+                  Wallet Importada com Sucesso
+                </h3>
+                <span id="importStatus" class="px-3 py-1 rounded-full text-xs font-bold bg-green-900 text-green-400">
+                  VÁLIDA
+                </span>
+              </div>
+              
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-4">
+                <div>
+                  <p class="text-gray-400 mb-1">Endereço</p>
+                  <p id="importedAddress" class="text-green-300 break-all font-mono bg-gray-700 p-2 rounded"></p>
+                  <button onclick="copyToClipboard('importedAddress')" class="mt-2 text-blue-400 hover:text-blue-300 text-sm flex items-center">
+                    <i class="far fa-copy mr-1"></i> Copiar Endereço
+                  </button>
+                </div>
+                
+                <div>
+                  <p class="text-gray-400 mb-1">Saldo</p>
+                  <p id="importedBalance" class="text-2xl font-bold text-yellow-300">0.00000000 BTC</p>
+                  
+                  <p class="text-gray-400 mb-1 mt-3">Tipo</p>
+                  <p id="importedType" class="text-purple-300">-</p>
+                </div>
+              </div>
+              
+              <div class="bg-gray-700/50 rounded-lg p-4">
+                <p class="text-gray-400 mb-2">Ações Rápidas:</p>
+                <div class="flex flex-wrap gap-3">
+                  <button onclick="showTab('send')" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded flex items-center">
+                    <i class="fas fa-paper-plane mr-2"></i> Enviar
+                  </button>
+                  <button onclick="showTab('receive')" class="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded flex items-center">
+                    <i class="fas fa-qrcode mr-2"></i> Receber
+                  </button>
+                  <button onclick="addToFavorites()" class="bg-yellow-600 hover:bg-yellow-700 text-white px-4 py-2 rounded flex items-center">
+                    <i class="fas fa-star mr-2"></i> Favoritar
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Wallets Importadas Recentemente -->
+            <div class="bg-gray-800 rounded-xl p-6 shadow-lg">
+              <h3 class="text-xl font-bold mb-4 flex items-center">
+                <i class="fas fa-history mr-2 text-blue-400"></i>
+                Últimas Importações
+              </h3>
+              
+              <div id="recentImports" class="space-y-3">
+                <div class="bg-gray-700/30 rounded-lg p-4 text-center text-gray-500">
+                  <i class="fas fa-info-circle mr-2"></i>
+                  Nenhuma wallet importada recentemente
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Aba Minhas Wallets -->
+      <section id="wallets" class="tab-content">
+        <div class="bg-gray-800 rounded-xl p-6 shadow-lg mb-6">
+          <div class="flex justify-between items-center mb-6">
+            <h2 class="text-2xl font-bold flex items-center">
+              <i class="fas fa-wallet mr-3 text-blue-400"></i>
+              Minhas Wallets
+            </h2>
+            <div class="flex space-x-3">
+              <button id="refreshWalletsBtn" class="bg-gray-700 hover:bg-gray-600 text-white px-4 py-2 rounded flex items-center">
+                <i class="fas fa-sync-alt mr-2"></i> Atualizar
+              </button>
+              <button id="exportWalletsBtn" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded flex items-center">
+                <i class="fas fa-file-export mr-2"></i> Exportar
+              </button>
+            </div>
+          </div>
+          
+          <div class="overflow-x-auto">
+            <table class="w-full">
+              <thead>
+                <tr class="text-gray-400 border-b border-gray-700">
+                  <th class="pb-3 text-left">Nome</th>
+                  <th class="pb-3 text-left">Endereço</th>
+                  <th class="pb-3 text-left">Tipo</th>
+                  <th class="pb-3 text-right">Saldo (BTC)</th>
+                  <th class="pb-3 text-right">Ações</th>
+                </tr>
+              </thead>
+              <tbody id="walletsList">
+                <tr>
+                  <td colspan="5" class="py-4 text-center text-gray-500">Nenhuma wallet disponível</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- Aba Enviar -->
+      <section id="send" class="tab-content">
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+          <!-- Formulário de Envio -->
+          <div class="lg:col-span-1 bg-gray-800 rounded-xl p-6 shadow-lg">
+            <h2 class="text-2xl font-bold mb-6 flex items-center">
+              <i class="fas fa-paper-plane mr-3 text-blue-400"></i>
+              Enviar Bitcoin
+            </h2>
+            
+            <div class="space-y-4">
+              <div>
+                <label class="block text-gray-400 mb-2">Origem</label>
+                <select id="sendFrom" class="w-full bg-gray-700 border border-gray-600 rounded-lg p-3">
+                  <option value="">Selecione uma wallet</option>
+                </select>
+              </div>
+              
+              <div>
+                <label class="block text-gray-400 mb-2">Destino</label>
+                <input id="sendTo" type="text" class="w-full bg-gray-700 border border-gray-600 rounded-lg p-3 font-mono" 
+                       placeholder="Endereço ou domínio">
+                <div class="flex justify-between mt-1">
+                  <button class="text-blue-400 text-sm" onclick="pasteFromClipboard('sendTo')">
+                    <i class="far fa-clipboard mr-1"></i> Colar
+                  </button>
+                  <button class="text-blue-400 text-sm" onclick="scanQRCode()">
+                    <i class="fas fa-qrcode mr-1"></i> Ler QR Code
+                  </button>
+                </div>
+              </div>
+              
+              <div>
+                <label class="block text-gray-400 mb-2">Quantidade (BTC)</label>
+                <div class="flex">
+                  <input id="sendAmount" type="number" step="0.00000001" min="0" 
+                         class="flex-1 bg-gray-700 border border-gray-600 rounded-l-lg p-3" placeholder="0.00000000">
+                  <button id="sendMax" class="bg-gray-600 hover:bg-gray-700 text-white px-3 rounded-r-lg">
+                    MAX
+                  </button>
+                </div>
+                <div class="flex justify-between mt-1 text-sm">
+                  <button class="text-blue-400" onclick="setSendAmount(0.25)">25%</button>
+                  <button class="text-blue-400" onclick="setSendAmount(0.5)">50%</button>
+                  <button class="text-blue-400" onclick="setSendAmount(0.75)">75%</button>
+                  <button class="text-blue-400" onclick="setSendAmount(1)">100%</button>
+                </div>
+              </div>
+              
+              <div>
+                <label class="block text-gray-400 mb-2">Taxa de Rede (sat/vB)</label>
+                <select id="sendFee" class="w-full bg-gray-700 border border-gray-600 rounded-lg p-3">
+                  <option value="low">Baixa (1-5 sat/vB)</option>
+                  <option value="medium" selected>Média (5-10 sat/vB)</option>
+                  <option value="high">Alta (10-20 sat/vB)</option>
+                  <option value="custom">Personalizada</option>
+                </select>
+                <p class="text-gray-400 text-xs mt-1">Tempo estimado: <span id="feeTime">10-20 minutos</span></p>
+              </div>
+              
+              <button id="sendSubmitBtn" class="w-full bg-gradient-to-r from-blue-600 to-cyan-500 hover:from-blue-700 hover:to-cyan-600 text-white font-bold py-3 px-4 rounded-lg flex items-center justify-center">
+                <i id="sendIcon" class="fas fa-paper-plane mr-2"></i>
+                Enviar Transação
+              </button>
+            </div>
+          </div>
+
+          <!-- Resumo da Transação -->
+          <div class="lg:col-span-2">
+            <div class="bg-gray-800 rounded-xl p-6 shadow-lg mb-6">
+              <h3 class="text-xl font-bold mb-4 flex items-center">
+                <i class="fas fa-receipt mr-2 text-blue-400"></i>
+                Resumo da Transação
+              </h3>
+              
+              <div class="bg-gray-700/50 rounded-lg p-4">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                  <div>
+                    <p class="text-gray-400">De</p>
+                    <p id="summaryFrom" class="text-green-300 break-all">-</p>
+                  </div>
+                  <div>
+                    <p class="text-gray-400">Para</p>
+                    <p id="summaryTo" class="text-green-300 break-all">-</p>
+                  </div>
+                </div>
+                
+                <div class="border-t border-gray-600 pt-4">
+                  <div class="flex justify-between mb-2">
+                    <span class="text-gray-400">Quantidade</span>
+                    <span id="summaryAmount" class="text-yellow-300">0.00000000 BTC</span>
+                  </div>
+                  <div class="flex justify-between mb-2">
+                    <span class="text-gray-400">Taxa de Rede</span>
+                    <span id="summaryFee" class="text-red-300">0.00000000 BTC</span>
+                  </div>
+                  <div class="flex justify-between font-bold text-lg mt-3 pt-3 border-t border-gray-600">
+                    <span>Total</span>
+                    <span id="summaryTotal" class="text-white">0.00000000 BTC</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Histórico de Transações -->
+            <div class="bg-gray-800 rounded-xl p-6 shadow-lg">
+              <h3 class="text-xl font-bold mb-4 flex items-center">
+                <i class="fas fa-clock mr-2 text-blue-400"></i>
+                Transações Recentes
+              </h3>
+              
+              <div id="recentTransactions" class="space-y-3">
+                <div class="bg-gray-700/30 rounded-lg p-4 text-center text-gray-500">
+                  <i class="fas fa-info-circle mr-2"></i>
+                  Nenhuma transação recente
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Aba Receber -->
+      <section id="receive" class="tab-content">
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+          <!-- Formulário de Recebimento -->
+          <div class="lg:col-span-1 bg-gray-800 rounded-xl p-6 shadow-lg">
+            <h2 class="text-2xl font-bold mb-6 flex items-center">
+              <i class="fas fa-qrcode mr-3 text-blue-400"></i>
+              Receber Bitcoin
+            </h2>
+            
+            <div class="space-y-4">
+              <div>
+                <label class="block text-gray-400 mb-2">Selecionar Wallet</label>
+                <select id="receiveWallet" class="w-full bg-gray-700 border border-gray-600 rounded-lg p-3">
+                  <option value="">Selecione uma wallet</option>
+                </select>
+              </div>
+              
+              <div id="receiveQrContainer" class="bg-white p-4 rounded-lg flex items-center justify-center hidden">
+                <canvas id="receiveQrCode" width="200" height="200"></canvas>
+              </div>
+              
+              <div id="receiveAddressContainer" class="hidden">
+                <p class="text-gray-400 mb-2">Endereço:</p>
+                <p id="receiveAddress" class="text-green-300 break-all font-mono bg-gray-700 p-2 rounded"></p>
+                <button onclick="copyToClipboard('receiveAddress')" class="mt-2 w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded flex items-center justify-center">
+                  <i class="far fa-copy mr-2"></i> Copiar Endereço
+                </button>
+              </div>
+              
+              <div class="hidden" id="receiveDetails">
+                <div class="mt-4 pt-4 border-t border-gray-700">
+                  <p class="text-gray-400 mb-2">Opções Avançadas:</p>
+                  <div class="flex items-center mb-2">
+                    <input type="checkbox" id="reuseAddress" class="mr-2">
+                    <label for="reuseAddress" class="text-gray-400 text-sm">Reutilizar endereço</label>
+                  </div>
+                  <div class="flex items-center">
+                    <input type="checkbox" id="includeAmount" class="mr-2">
+                    <label for="includeAmount" class="text-gray-400 text-sm">Incluir valor específico</label>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Informações de Recebimento -->
+          <div class="lg:col-span-2">
+            <div class="bg-gray-800 rounded-xl p-6 shadow-lg mb-6">
+              <h3 class="text-xl font-bold mb-4 flex items-center">
+                <i class="fas fa-info-circle mr-2 text-blue-400"></i>
+                Instruções para Recebimento
+              </h3>
+              
+              <div class="space-y-4">
+                <div class="bg-gray-700/50 rounded-lg p-4">
+                  <p class="text-gray-400 mb-2">1. Compartilhe seu endereço ou QR Code</p>
+                  <p class="text-sm">Envie o endereço ou QR code acima para quem deseja receber os fundos. Certifique-se de que está correto antes de compartilhar.</p>
+                </div>
+                
+                <div class="bg-gray-700/50 rounded-lg p-4">
+                  <p class="text-gray-400 mb-2">2. Aguarde a confirmação</p>
+                  <p class="text-sm">As transações normalmente levam de 10 a 30 minutos para serem confirmadas na rede Bitcoin.</p>
+                </div>
+                
+                <div class="bg-gray-700/50 rounded-lg p-4">
+                  <p class="text-gray-400 mb-2">3. Verifique o saldo</p>
+                  <p class="text-sm">Após a confirmação, seu saldo será atualizado automaticamente. Você pode verificar o status no explorador de blocos.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Endereços Recentes -->
+            <div class="bg-gray-800 rounded-xl p-6 shadow-lg">
+              <h3 class="text-xl font-bold mb-4 flex items-center">
+                <i class="fas fa-history mr-2 text-blue-400"></i>
+                Endereços Recentes
+              </h3>
+              
+              <div id="recentAddresses" class="space-y-2">
+                <div class="bg-gray-700/30 rounded-lg p-4 text-center text-gray-500">
+                  <i class="fas fa-info-circle mr-2"></i>
+                  Nenhum endereço recente
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script>
+    // ===== [ VARIÁVEIS GLOBAIS ] =====
+    let wallets = [];
+    let currentNetwork = 'bitcoin'; // bitcoin, testnet, etc.
+    let currentWallet = null;
+    
+    // ===== [ INICIALIZAÇÃO ] =====
+    document.addEventListener('DOMContentLoaded', function() {
+      // Configura sistema de abas
+      setupTabs();
+      
+      // Configura o seletor de tipo de importação
+      document.getElementById('importType').addEventListener('change', function() {
+        document.querySelectorAll('.import-section').forEach(el => el.classList.add('hidden'));
+        document.getElementById(`${this.value}Section`).classList.remove('hidden');
+      });
+      
+      // Configura o file upload
+      setupFileUpload();
+      
+      // Configura botão de importação
+      document.getElementById('importBtn').addEventListener('click', importWallet);
+      
+      // Configura botão de envio
+      document.getElementById('sendSubmitBtn').addEventListener('click', sendTransaction);
+      
+      // Configura botão MAX
+      document.getElementById('sendMax').addEventListener('click', function() {
+        setSendAmount(1);
+      });
+      
+      // Configura seleção de wallet para recebimento
+      document.getElementById('receiveWallet').addEventListener('change', function() {
+        updateReceiveQR();
+      });
+      
+      // Carrega wallets do localStorage
+      loadWallets();
+      
+      // Atualiza dashboard
+      updateDashboard();
+      
+      // Atualiza formulários
+      updateSendForm();
+      
