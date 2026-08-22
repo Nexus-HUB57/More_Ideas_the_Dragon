@@ -1,0 +1,14 @@
+README.md
+cursos/fundamental/00-boas-vindas-roteiro.md
+cursos/fundamental/01-entendendo-ioaid-roteiro.md
+cursos/fundamental/01-entendendo-ioaid-slides.md
+cursos/fundamental/01-entendendo-ioaid.md
+cursos/fundamental/01-introducao-sra-nexus-ive.md
+cursos/fundamental/02-sistema-sho-roteiro.md
+cursos/fundamental/02-sistema-sho-slides.md
+cursos/fundamental/03-painel-afiliado-roteiro.md
+cursos/fundamental/03-painel-afiliado-slides.md
+cursos/fundamental/03-painel-afiliado.md
+personas/diretrizes_interacao_ive_alencar.md
+personas/diretrizes_voz_sra_nexus_ive.md
+personas/sir_nexus_alencar.md
