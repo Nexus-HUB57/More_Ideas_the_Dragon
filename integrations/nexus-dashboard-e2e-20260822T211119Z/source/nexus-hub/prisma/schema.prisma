@@ -1,0 +1,506 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model Project {
+  id            String   @id @default(cuid())
+  name          String
+  url           String
+  description   String
+  author        String
+  authorGithub  String?
+  authorCity    String?
+  authorBlog    String?
+  moreUrl       String?
+  status        String   @default("active")
+  category      String   @default("其他")
+  dateAdded     String
+  source        String   @default("main")
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+
+  @@index([name])
+  @@index([category])
+  @@index([dateAdded])
+  @@index([author])
+  @@index([source])
+}
+
+// ─── AGENT ECOSYSTEM ───
+
+model Agent {
+  id          String   @id @default(cuid())
+  name        String
+  slug        String   @unique
+  description String
+  version     String   @default("1.0.0")
+  status      String   @default("active") // active | idle | offline
+  agentType   String   // orchestrator | specialist | analyst | voice | guardian
+  tier        String   @default("core") // core | extended | external
+  repoUrl     String?
+  techStack   String   // JSON array of tech
+  capabilities String  // JSON array of capability strings
+  llmModel    String?  // e.g. "gemini-2.5-flash", "glm-4-flash"
+  apiCount    Int      @default(0)
+  flowCount   Int      @default(0)
+  hasVoice    Boolean  @default(false)
+  hasRag      Boolean  @default(false)
+  hasBtc      Boolean  @default(false)
+  architecture String? // "monorepo" | "fullstack" | "binary"
+  readme      String?  // Full README content for RAG
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  skills      AgentSkill[]
+  knowledge   KnowledgeEntry[] @relation("AgentKnowledge")
+  messages    ChatMessage[] @relation("AgentMessages")
+
+  @@index([slug])
+  @@index([agentType])
+  @@index([tier])
+  @@index([status])
+}
+
+model AgentSkill {
+  id          String   @id @default(cuid())
+  agentId     String
+  name        String
+  category    String   // reasoning | execution | perception | finance | voice | governance
+  description String?
+  enabled     Boolean  @default(true)
+  agent       Agent    @relation(fields: [agentId], references: [id], onDelete: Cascade)
+
+  @@index([agentId])
+  @@index([category])
+}
+
+model KnowledgeEntry {
+  id        String   @id @default(cuid())
+  agentId   String
+  source    String   // repo_name, section, flow
+  title     String
+  content   String   // Full text content for RAG
+  chunkType String   @default("doc") // doc | flow | api | config
+  embedding String?  // Future: vector embedding
+  agent     Agent    @relation("AgentKnowledge", fields: [agentId], references: [id], onDelete: Cascade)
+  createdAt DateTime @default(now())
+
+  @@index([agentId])
+  @@index([source])
+  @@index([chunkType])
+}
+
+// ─── CHAT SESSIONS (Streaming + Persistence) ───
+
+model ChatSession {
+  id        String        @id @default(cuid())
+  agentSlug String?
+  title     String        @default("Nova conversa")
+  createdAt DateTime      @default(now())
+  updatedAt DateTime      @updatedAt
+
+  messages  ChatSessionMessage[]
+
+  @@index([agentSlug])
+  @@index([createdAt])
+}
+
+model ChatSessionMessage {
+  id        String      @id @default(cuid())
+  sessionId String
+  session   ChatSession @relation(fields: [sessionId], references: [id], onDelete: Cascade)
+  role      String      // 'user' | 'agent'
+  content   String
+  sources   String?     // JSON array of { title, content, score, agent, source }
+  createdAt DateTime    @default(now())
+
+  @@index([sessionId])
+  @@index([createdAt])
+}
+
+// ─── LEGACY ChatMessage (kept for backward compatibility) ───
+
+model ChatMessage {
+  id        String   @id @default(cuid())
+  role      String
+  content   String
+  sessionId String
+  agentName String?
+  agentId   String?
+  createdAt DateTime @default(now())
+
+  agent     Agent?   @relation("AgentMessages", fields: [agentId], references: [id], onDelete: SetNull)
+
+  @@index([sessionId])
+  @@index([agentId])
+}
+
+model MoltbookState {
+  id        String @id @default(cuid())
+  key       String @unique
+  value     String
+  updatedAt DateTime @updatedAt
+}
+
+// ─── COLIBRI ORCHESTRATION ───
+
+model ColibriConnection {
+  id        String   @id @default(cuid())
+  name      String   @default("Local Colibri")
+  baseUrl   String   @default("http://127.0.0.1:8000/v1")
+  connected Boolean  @default(false)
+  lastPing  DateTime?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model OrchestrationCycle {
+  id          String   @id @default(cuid())
+  cycleNumber Int
+  phase       String   // invoke | detect | heal | learn | direct | persist
+  status      String   @default("running") // running | completed | failed
+  duration    Int      @default(0)
+  anomalies   Int      @default(0)
+  healed      Int      @default(0)
+  wisdomGain  Float    @default(0)
+  metadata    String   @default("{}")
+  createdAt   DateTime @default(now())
+}
+
+model HealingEvent {
+  id          String   @id @default(cuid())
+  cycleId     String?
+  panelId     String
+  anomalyType String
+  severity    String   // critical | warning | info
+  action      String
+  result      String   // success | partial | failed
+  beforeState String   @default("{}")
+  afterState  String   @default("{}")
+  createdAt   DateTime @default(now())
+}
+
+model WisdomEntry {
+  id          String   @id @default(cuid())
+  pattern     String
+  context     String
+  frequency   Int      @default(1)
+  weight      Float    @default(1.0)
+  lastApplied DateTime @default(now())
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+// ─── BITCOIN VAULTS ───
+
+model Vault {
+  id            String         @id @default(cuid())
+  name          String
+  description   String?
+  xpub          String         // Extended public key (watch-only)
+  fingerprint   String?
+  derivationPath String         @default("m/44'/0'/0'")
+  nextReceivingIndex Int       @default(0)
+  nextChangeIndex   Int       @default(0)
+  balanceSat    Int            @default(0)
+  addressCount  Int            @default(0)
+  isActive      Boolean        @default(true)
+  createdAt     DateTime       @default(now())
+  updatedAt     DateTime       @updatedAt
+
+  addresses     VaultAddress[]
+  transactions  VaultTransaction[]
+
+  @@index([isActive])
+}
+
+model VaultAddress {
+  id           String   @id @default(cuid())
+  vaultId      String
+  vault        Vault    @relation(fields: [vaultId], references: [id], onDelete: Cascade)
+  address      String   @unique
+  derivationIndex Int
+  isChange     Boolean  @default(false)
+  balanceSat   Int      @default(0)
+  txCount      Int      @default(0)
+  label        String?
+  createdAt    DateTime @default(now())
+
+  @@index([vaultId])
+  @@index([address])
+}
+
+model VaultTransaction {
+  id           String   @id @default(cuid())
+  vaultId      String
+  vault        Vault    @relation(fields: [vaultId], references: [id], onDelete: Cascade)
+  txid         String
+  type         String   // 'send' | 'receive' | 'consolidate' | 'custody'
+  amountSat    Int
+  feeSat       Int      @default(0)
+  confirmations Int     @default(0)
+  status       String   @default("pending")
+  metadata     String   @default("{}")
+  createdAt    DateTime @default(now())
+
+  @@index([vaultId])
+  @@index([txid])
+  @@index([status])
+}
+// ─── FABLE 5 OS ───
+
+model FableSandbox {
+  id        String   @id @default(cuid())
+  sandboxId String   @unique
+  rootDir   String
+  active    Boolean  @default(true)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([active])
+}
+
+model FableTask {
+  id               String     @id @default(cuid())
+  taskId           String     @unique
+  taskDescription  String
+  status           String     @default("pending") // pending | spawning | executing | completed | failed | timeout
+  capability       String     @default("Engenharia de Software")
+  subAgentId       String?
+  sandboxId        String?
+  codeGenerated    String?
+  executionOutput  String?
+  executionStderr  String?
+  executionMs      Int?
+  karmaGenerated   Int        @default(0)
+  correctionCount  Int        @default(0)
+  maxCorrections   Int        @default(3)
+  createdAt        DateTime   @default(now())
+  updatedAt        DateTime   @updatedAt
+
+  executions FableExecution[]
+
+  @@index([taskId])
+  @@index([status])
+}
+
+model FableExecution {
+  id          String   @id @default(cuid())
+  taskId      String
+  task        FableTask @relation(fields: [taskId], references: [id], onDelete: Cascade)
+  attempt     Int
+  agentKey    String   @default("fable_5")
+  inputPrompt String
+  output      String?
+  stderr      String?
+  success     Boolean  @default(false)
+  durationMs  Int?
+  createdAt   DateTime @default(now())
+
+  @@index([taskId])
+}
+
+// ─── AGENTIC v4.0 — Última Onda ───
+
+model AgenticTask {
+  id          String   @id @default(cuid())
+  parentId    String?
+  agentId     String
+  title       String
+  description String
+  priority    String   @default("medium") // critical | high | medium | low
+  status      String   @default("pending") // pending | planning | in_progress | blocked | review | done | failed | cancelled
+  model       String   @default("glm-4-flash")
+  provider    String   @default("zai")
+  strategy    String   @default("react") // react | plan-and-execute | multi-agent | hybrid
+  plan        String?  // JSON: Plan
+  result      String?  // JSON: final result
+  error       String?
+  metadata    String   @default("{}")
+  totalSteps  Int      @default(0)
+  totalTokens Int      @default(0)
+  totalCostUsd Float   @default(0)
+  durationMs  Int      @default(0)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  completedAt DateTime?
+
+  toolCalls AgenticToolCall[]
+  steps     AgenticTaskStep[]
+  memories  AgenticMemory[]
+
+  @@index([agentId])
+  @@index([status])
+  @@index([priority])
+  @@index([createdAt])
+}
+
+model AgenticToolCall {
+  id           String   @id @default(cuid())
+  taskId       String
+  task         AgenticTask @relation(fields: [taskId], references: [id], onDelete: Cascade)
+  agentId      String
+  toolId       String
+  toolName     String
+  arguments    String   @default("{}") // JSON
+  status       String   @default("pending") // pending | running | success | error | cancelled
+  result       String?  // JSON
+  error        String?
+  durationMs   Int      @default(0)
+  tokensUsed   Int      @default(0)
+  createdAt    DateTime @default(now())
+
+  @@index([taskId])
+  @@index([toolId])
+  @@index([status])
+}
+
+model AgenticTaskStep {
+  id          String      @id @default(cuid())
+  taskId      String
+  task        AgenticTask @relation(fields: [taskId], references: [id], onDelete: Cascade)
+  stepNumber  Int
+  action      String
+  reasoning   String
+  observation String?
+  status      String   @default("pending")
+  tokensUsed  Int      @default(0)
+  createdAt   DateTime   @default(now())
+
+  @@index([taskId])
+}
+
+model AgenticMemory {
+  id           String   @id @default(cuid())
+  taskId       String?
+  task         AgenticTask? @relation(fields: [taskId], references: [id], onDelete: Cascade)
+  agentId      String
+  memoryType   String   @default("episodic") // episodic | semantic | procedural | working
+  content      String
+  importance   Float    @default(0.5)
+  accessCount  Int      @default(0)
+  metadata     String   @default("{}")
+  createdAt    DateTime @default(now())
+  expiresAt    DateTime?
+
+  @@index([agentId])
+  @@index([memoryType])
+  @@index([importance])
+}
+
+model MCPServer {
+  id         String   @id @default(cuid())
+  name       String
+  transport  String   @default("sse") // stdio | sse | streamable-http
+  command    String?
+  url        String?
+  env        String?  // JSON: Record<string, string>
+  headers    String?  // JSON: Record<string, string>
+  enabled    Boolean  @default(true)
+  connected  Boolean  @default(false)
+  tools      String?  // JSON: MCPToolInfo[]
+  lastPing   DateTime?
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+
+  @@index([enabled])
+  @@index([connected])
+}
+
+// ─── LIVE LAB PERSISTENCE ───
+
+model LiveLabExecution {
+  id               String   @id @default(cuid())
+  executionId      String   @unique
+  intent           String
+  personaId        String?
+  skillId          String?
+  modeloSelecionado String?
+  provedor         String?
+  sucesso          Boolean
+  tokensUsados     Int      @default(0)
+  custoUsd         Float    @default(0)
+  latenciaMs       Int      @default(0)
+  resultado        String   @default("{}") // JSON
+  cascadeMatch     String?
+  scoreMcdm        Float?
+  rankMcdm         Int?
+  fallbackUsed     String?
+  createdAt        DateTime @default(now())
+
+  @@index([personaId])
+  @@index([skillId])
+  @@index([createdAt])
+}
+
+model SkillExecutionLog {
+  id          String   @id @default(cuid())
+  executionId String?
+  skillId     String
+  skillNome   String?
+  dominio     String?
+  personaId   String?
+  inputSnap   String   @default("{}") // JSON snapshot
+  outputSnap  String   @default("{}")
+  sucesso     Boolean
+  modelo      String?
+  tokensUsados Int     @default(0)
+  custoUsd    Float    @default(0)
+  latenciaMs  Int      @default(0)
+  createdAt   DateTime @default(now())
+
+  @@index([skillId])
+  @@index([personaId])
+  @@index([createdAt])
+}
+
+model BudgetRecord {
+  id           String   @id @default(cuid())
+  personaId    String?
+  periodo      String   // e.g. "2026-07"
+  usadoUsd     Float    @default(0)
+  limiteUsd    Float    @default(100)
+  alerta50Fired  Boolean @default(false)
+  alerta80Fired  Boolean @default(false)
+  alerta95Fired  Boolean @default(false)
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+
+  @@unique([personaId, periodo])
+}
+
+model RoutingLog {
+  id               String   @id @default(cuid())
+  intent           String
+  modeloSelecionado String
+  provedor         String
+  scoreMcdm        Float
+  rankMcdm         Int
+  cascadeMatch     String?
+  cascadeKeyword   String?
+  cascadeScore     Float?
+  latenciaEstimada Int?
+  custoEstimado   Float?
+  isLocal          Boolean  @default(false)
+  corretotManual   Boolean  @default(false) // for ground truth evaluation
+  createdAt        DateTime @default(now())
+
+  @@index([modeloSelecionado])
+  @@index([createdAt])
+}
+
+model McdmWeightHistory {
+  id        String   @id @default(cuid())
+  intentType String   // coarse intent category (e.g. "code", "math", "reasoning")
+  pesos     String   // JSON: {"qualidade": 0.35, ...}
+  feedbackScore Float @default(0) // user satisfaction or accuracy metric
+  sampleSize Int  @default(1)
+  createdAt  DateTime @default(now())
+
+  @@index([intentType])
+}
