@@ -160,13 +160,13 @@
 - [ ] Copiar todos os arquivos da tarefa sem sobrescrever ou excluir conteúdo existente
 - [x] Gerar ZIP end-to-end dos artefatos integrados
 - [x] Validar contagem, hashes, arquivos fundamentais e ausência de conflitos
-- [ ] Comitar todos os novos artefatos em commit atômico
-- [ ] Publicar a branch no GitHub e validar o commit remoto
-- [ ] Registrar relatório de entrega com branch, commit, inventário e instruções de merge
+- [x] Comitar todos os novos artefatos em commits aditivos auditados, sem reescrever histórico
+- [x] Publicar a branch no GitHub e validar o commit remoto
+- [x] Registrar relatório de entrega com branch, commit, inventário e instruções de merge
 
 ## Correções técnicas pendentes observadas antes da integração
 
-- [ ] Corrigir erro de tipagem no registro de afiliado e erro do storageProxy
+- [x] Corrigir erro de tipagem no registro de afiliado e erro do storageProxy
 - [ ] Corrigir ou validar import quebrado de AdminPanel
 - [ ] Substituir dados mockados por integrações oficiais configuradas ou marcar claramente como adaptadores
 - [ ] Completar testes unitários e de integração dos módulos adicionados
@@ -14686,3 +14686,12 @@
 - [ ] Arquivo real mantido fora do repositório
 - [ ] Versão redigida incluída para referência estrutural
 - [ ] Rotação aguarda ação do proprietário das credenciais
+
+## Correção de governança pós-publicação
+
+- [ ] Ajustar o item de commit atômico para refletir que a publicação ocorreu em dois commits aditivos auditados
+- [ ] Gerar um relatório de entrega versionado com branch, commits, contagens, hashes e instruções de merge/cherry-pick/revert
+- [ ] Sincronizar correções TypeScript e o relatório final no pacote versionado
+- [ ] Publicar o commit corretivo sem force-push
+- [ ] Validar a branch remota após o commit corretivo
+- [ ] Atualizar o checkpoint local depois das correções técnicas

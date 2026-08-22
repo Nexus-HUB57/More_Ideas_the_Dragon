@@ -1,11 +1,16 @@
 {
-  "generatedAtUtc": "2026-08-22T21:47:56.551198+00:00",
-  "fileCount": 143,
+  "generatedAtUtc": "2026-08-22T21:52:12.436235+00:00",
+  "fileCount": 144,
   "files": [
     {
       "path": "COVERAGE_COMPARISON.md",
       "bytes": 2849,
       "sha256": "c27355ad4db537e913a3bbf4ea163a41f01894c831774d3fc9e481ec44dd2107"
+    },
+    {
+      "path": "DELIVERY_REPORT.md",
+      "bytes": 4688,
+      "sha256": "9551bb832fd2df6d496c1b3d7e95a4a3991a346619200f6f251beee26e44c14a"
     },
     {
       "path": "INTEGRATION_METADATA.json",
@@ -19,13 +24,13 @@
     },
     {
       "path": "MANIFEST.json",
-      "bytes": 26115,
-      "sha256": "39364a0120492fddd1d370b5e42c3ba2cb8fee8a1ef93f6ac69ea11b87f0030e"
+      "bytes": 26268,
+      "sha256": "ab5a6b5ba1209c9f04eb93fae96e36d1a49f33a13bc2dff673aa171bd4beb670"
     },
     {
       "path": "MANIFEST.md",
-      "bytes": 18685,
-      "sha256": "103d10220687dbf154a2d12e4d5c56bd983f764e4c92b868aed8e762af7a792d"
+      "bytes": 18786,
+      "sha256": "cc06b3ab7211285b7c32128b2fe737d2b83420d141c4a1dc8caeb9f9ea974ad7"
     },
     {
       "path": "PROJECT_CONFIG_REDACTED.json",
@@ -44,13 +49,13 @@
     },
     {
       "path": "VALIDATION_REPORT.md",
-      "bytes": 4350,
-      "sha256": "31746f9d78a6744e5b30fcd563f64e632ec344ae4af3f667ad7ea2a37256d0d9"
+      "bytes": 4319,
+      "sha256": "b4afbbe033e4d0ea167228448c828dc033d35ac39e97ce1ce04a01fbf9685a47"
     },
     {
       "path": "VALIDATION_SUMMARY.json",
       "bytes": 234,
-      "sha256": "a05c29819f4f9e5f3b2f232170c2c83a821e952bfe5f772cf7643241671712de"
+      "sha256": "2f69ea80a722e5bd8460a676b93a76c44bf59421e1a178d984efe5f261b49086"
     },
     {
       "path": "source/legacy_reference/manual_marketing_de_rede.txt",
@@ -619,8 +624,8 @@
     },
     {
       "path": "source/mmn-ai-to-ai/server/_core/storageProxy.ts",
-      "bytes": 1364,
-      "sha256": "28359d18dee2b40361c7d2a1fb80511badb73be0e02927b36eec9238520c8c11"
+      "bytes": 1404,
+      "sha256": "2b14d6681277d1a40aea6d619a26a0094db1681ad2cec1b594743e417e1f9467"
     },
     {
       "path": "source/mmn-ai-to-ai/server/_core/systemRouter.ts",
@@ -664,8 +669,8 @@
     },
     {
       "path": "source/mmn-ai-to-ai/server/routers/mmn.ts",
-      "bytes": 5776,
-      "sha256": "1509a23522f9f97409dde575905512e57e18227d9137bd5b7eccda5bada66191"
+      "bytes": 5789,
+      "sha256": "82710fe76a8605388a6a11f30fd3e8628fde8720d2b8cdd1cf01520758364592"
     },
     {
       "path": "source/mmn-ai-to-ai/server/routers/upgrades.ts",
@@ -699,8 +704,8 @@
     },
     {
       "path": "source/mmn-ai-to-ai/todo.md",
-      "bytes": 206263,
-      "sha256": "69ce71c9824ac7d90070e5662a3bd077cc3550e5e940ec3ab093f2955698869b"
+      "bytes": 206851,
+      "sha256": "2f4201a555c10557eac0c2a87f67a351ec4e1e3135dfe99288f8d5456f49ca51"
     },
     {
       "path": "source/mmn-ai-to-ai/tsconfig.json",

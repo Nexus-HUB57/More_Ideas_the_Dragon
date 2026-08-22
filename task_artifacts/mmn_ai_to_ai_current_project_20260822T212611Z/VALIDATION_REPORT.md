@@ -19,12 +19,12 @@ A cópia do projeto local contém **132 arquivos de fonte e documentação**, ex
 | Alteração da main | Não realizada |
 | Integridade do ZIP | Aprovada por `unzip -t` |
 | Testes Vitest | Aprovados; 1 arquivo de teste e 1 teste executado no estado restaurado |
-| TypeScript `pnpm check` | Pendente; falha com 2 erros preexistentes no projeto restaurado |
+| TypeScript `pnpm check` | Aprovado após corrigir o wildcard do storage proxy e converter o percentual decimal |
 | Build `pnpm build` | Aprovado; 2.391 módulos transformados |
 
 ## Erros conhecidos do projeto
 
-O `pnpm check` permanece com dois erros de TypeScript no estado local restaurado: o acesso tipado em `server/_core/storageProxy.ts` e a incompatibilidade de tipo em `server/routers/mmn.ts`. Eles foram preservados no pacote para não alterar o trabalho de outros desenvolvedores durante uma operação de integração de arquivos. O build de produção executou com sucesso.
+O `pnpm check` foi corrigido no estado local restaurado: o wildcard de `server/_core/storageProxy.ts` recebeu uma leitura tipada e `server/routers/mmn.ts` converte o percentual para a string decimal exigida pelo Drizzle. O check, os testes e o build de produção foram executados com sucesso após as correções.
 
 ## Segurança
 
@@ -38,7 +38,7 @@ Os comandos de validação foram executados no projeto local:
 
 ```text
 pnpm test   -> exit 0
-pnpm check  -> exit 1 (2 erros TypeScript conhecidos)
+pnpm check  -> exit 0 (após as duas correções de tipagem)
 pnpm build  -> exit 0
 unzip -t MMNAI-to-AI.zip -> sem erros
 ```

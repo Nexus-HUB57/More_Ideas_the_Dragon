@@ -1,19 +1,20 @@
 # Manifesto de integração MMN AI-to-AI
 
-Arquivos: 143
+Arquivos: 144
 
 | Caminho | Bytes | SHA-256 |
 |---|---:|---|
 | `COVERAGE_COMPARISON.md` | 2849 | `c27355ad4db537e913a3bbf4ea163a41f01894c831774d3fc9e481ec44dd2107` |
+| `DELIVERY_REPORT.md` | 4688 | `9551bb832fd2df6d496c1b3d7e95a4a3991a346619200f6f251beee26e44c14a` |
 | `INTEGRATION_METADATA.json` | 1089 | `54bd6cf089b42f1764570c33f912638d6dcae9aff91260d8c4df8ce3b16fda27` |
 | `INTEGRATION_NOTES.md` | 874 | `5e9621669ede11e9303962aa3ee7a938b9f98a6f7c114219b40b80520b5e2932` |
-| `MANIFEST.json` | 26115 | `39364a0120492fddd1d370b5e42c3ba2cb8fee8a1ef93f6ac69ea11b87f0030e` |
-| `MANIFEST.md` | 18685 | `103d10220687dbf154a2d12e4d5c56bd983f764e4c92b868aed8e762af7a792d` |
+| `MANIFEST.json` | 26268 | `ab5a6b5ba1209c9f04eb93fae96e36d1a49f33a13bc2dff673aa171bd4beb670` |
+| `MANIFEST.md` | 18786 | `cc06b3ab7211285b7c32128b2fe737d2b83420d141c4a1dc8caeb9f9ea974ad7` |
 | `PROJECT_CONFIG_REDACTED.json` | 1265 | `bd0ba3e71852cafeb6e2140d8af9bc944a5e1770268f7c8a506cd16a6bb0ba06` |
 | `SECURITY_EXCLUSIONS.md` | 999 | `3dbe236ba850bdafd6ea31fd37694534b0c17a81e675987a86e9843adc8149ee` |
 | `SECURITY_INCIDENT_NOTICE.md` | 1639 | `9152cb3c3fddd09c3217b2c55df410cd57e6944d38d0784051b0949453b7efb2` |
-| `VALIDATION_REPORT.md` | 4350 | `31746f9d78a6744e5b30fcd563f64e632ec344ae4af3f667ad7ea2a37256d0d9` |
-| `VALIDATION_SUMMARY.json` | 234 | `a05c29819f4f9e5f3b2f232170c2c83a821e952bfe5f772cf7643241671712de` |
+| `VALIDATION_REPORT.md` | 4319 | `b4afbbe033e4d0ea167228448c828dc033d35ac39e97ce1ce04a01fbf9685a47` |
+| `VALIDATION_SUMMARY.json` | 234 | `2f69ea80a722e5bd8460a676b93a76c44bf59421e1a178d984efe5f261b49086` |
 | `source/legacy_reference/manual_marketing_de_rede.txt` | 9988 | `2a69df3cc1fba077de9b9e5b28e0afc5ce529a62ace4c8772a93c3c289039723` |
 | `source/mmn-ai-to-ai/.gitignore` | 1390 | `b4572613f7e7b7827f8dd1c7543b03f903082ba146ebe8115dd9bd81aebd4bee` |
 | `source/mmn-ai-to-ai/.gitkeep` | 0 | `e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855` |
@@ -127,7 +128,7 @@ Arquivos: 143
 | `source/mmn-ai-to-ai/server/_core/notification.ts` | 3139 | `550bf6544bf792b6d13c68539679deb363b70fbf07c0dbde189a98787f66f003` |
 | `source/mmn-ai-to-ai/server/_core/oauth.ts` | 1756 | `d2e2fe4532ec9d142e8d4d448b2c1d8cc9eddd45a1433ad843c07afa5c13efc1` |
 | `source/mmn-ai-to-ai/server/_core/sdk.ts` | 8566 | `d3e2d6ad35284d66d4cbc22a1c4af0a05942e51f3ba528fd7878ec55b22241d8` |
-| `source/mmn-ai-to-ai/server/_core/storageProxy.ts` | 1364 | `28359d18dee2b40361c7d2a1fb80511badb73be0e02927b36eec9238520c8c11` |
+| `source/mmn-ai-to-ai/server/_core/storageProxy.ts` | 1404 | `2b14d6681277d1a40aea6d619a26a0094db1681ad2cec1b594743e417e1f9467` |
 | `source/mmn-ai-to-ai/server/_core/systemRouter.ts` | 709 | `61bb2c904da1fa08a425f8882aa3b23003bba7266ce00b2d9fcd685e5d4bffaf` |
 | `source/mmn-ai-to-ai/server/_core/trpc.ts` | 1033 | `95679492e0478938f9bab6e3388ba6a95d3ab3329e6ff2eb9686e638cd07d98e` |
 | `source/mmn-ai-to-ai/server/_core/types/cookie.d.ts` | 137 | `c2ed733d67b16ae4621164dbce09e99de0233b4a0ed05227bc35096822173c05` |
@@ -136,14 +137,14 @@ Arquivos: 143
 | `source/mmn-ai-to-ai/server/_core/voiceTranscription.ts` | 8107 | `c53b328b12e54adfacbc632e668c2b58b9954547ce9d3313907096c8b2db330c` |
 | `source/mmn-ai-to-ai/server/auth.logout.test.ts` | 1625 | `253f4a050743093300aa70fc0072f5fbd46cfba96ecfd1d52d434fbe7dcfb54a` |
 | `source/mmn-ai-to-ai/server/db.ts` | 5646 | `12aba25ff2e4940c07e54297043290d5662946d735212ed72d24b92f84caeff5` |
-| `source/mmn-ai-to-ai/server/routers/mmn.ts` | 5776 | `1509a23522f9f97409dde575905512e57e18227d9137bd5b7eccda5bada66191` |
+| `source/mmn-ai-to-ai/server/routers/mmn.ts` | 5789 | `82710fe76a8605388a6a11f30fd3e8628fde8720d2b8cdd1cf01520758364592` |
 | `source/mmn-ai-to-ai/server/routers/upgrades.ts` | 2637 | `4a292d5478394c7b00e85fd3476f06f894ced0dee2630aa3a2b071f5033be86e` |
 | `source/mmn-ai-to-ai/server/routers.ts` | 790 | `595aa8fde73dba9e7aef3e4b45303a777a5568d00bfcde53e17fd81b97e978da` |
 | `source/mmn-ai-to-ai/server/storage.ts` | 3052 | `55eab39960d991bfbd50e86fb586fd6842fff88bcc7ab6d3538982a3fd9dd860` |
 | `source/mmn-ai-to-ai/shared/_core/errors.ts` | 601 | `52bee7d152045eaa009083e26a4cbc21d413c80b0403a23c4b5572141dec942a` |
 | `source/mmn-ai-to-ai/shared/const.ts` | 275 | `11da03d221aa253356704b97fcd8ffb90975a34446dda1f3c50b528ec191583d` |
 | `source/mmn-ai-to-ai/shared/types.ts` | 158 | `959aeb30b032e203677e278922e97988b7cbcb56485694458298859af5589974` |
-| `source/mmn-ai-to-ai/todo.md` | 206263 | `69ce71c9824ac7d90070e5662a3bd077cc3550e5e940ec3ab093f2955698869b` |
+| `source/mmn-ai-to-ai/todo.md` | 206851 | `2f4201a555c10557eac0c2a87f67a351ec4e1e3135dfe99288f8d5456f49ca51` |
 | `source/mmn-ai-to-ai/tsconfig.json` | 657 | `4bea0e0003e3c943f455346abc4854d1666d604adbaa6aa8eda11f94fb8f1396` |
 | `source/mmn-ai-to-ai/vite.config.ts` | 5765 | `1b4f11ec05e426ffb9b020cf18ed5bb979b7f042ad43bfd5d9043b569843afab` |
 | `source/mmn-ai-to-ai/vitest.config.ts` | 499 | `a0de83b3967226a98302bbb34aa2e1321890dba9ac1d1c8ce8a6b7989af87e44` |

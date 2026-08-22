@@ -185,7 +185,7 @@ export const mmnRouter = router({
         userId: ctx.user.id,
         sponsorId,
         affiliateCode,
-        commissionPercentage: input.commissionPercentage || 10,
+        commissionPercentage: (input.commissionPercentage ?? 10).toFixed(2),
       };
 
       await db.insert(affiliates).values(newAffiliate);
