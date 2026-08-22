@@ -1,0 +1,11 @@
+{
+  "source_file": "pasted_content.txt",
+  "source_sha256": "c5b504ae3f039917b5deb2f3d6d33d1ac066d23bd3ee24a1b41185e50f2e68b6",
+  "parsed_records": 69,
+  "records_with_address_candidate": 68,
+  "records_without_address_candidate": 1,
+  "private_keys_included": false,
+  "credentials_included": false,
+  "network_actions_performed": false,
+  "note": "Public address metadata only. No private key recovery, brute force, signing, sweeping, broadcasting, or mainnet action is included."
+}
