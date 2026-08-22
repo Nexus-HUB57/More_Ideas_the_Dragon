@@ -1,0 +1,29 @@
+# Manifesto de importação segura — Fase 8 Dropshipping
+
+- Branch base: main
+- HEAD base: 3d0a790759c7f125e896a0d26774ef7fbdb4be6d
+- Branch de trabalho: agent/safe-import-fase8-dropshipping-20260822
+- Política: somente adição; nenhum arquivo existente foi sobrescrito ou removido.
+
+## Arquivos importados
+759369c2f2c4585a0c2fc3c6e0d28407e7c7e62487159b55ce8fae73d74a2f96  ./0001_large_rumiko_fujikawa.sql
+98797c46c27209e898e3b1be5c8806009ca1862ca0e2bbc9914ce1d331d6ef09  ./0001_lowly_ben_grimm.sql
+446487ba7f07edbca25900a949c6b673ac5b7a4b229180f6157522c38d2dfd4f  ./0001_tired_sharon_carter.sql
+3fcb1c36d750dd7efccbc1bdec443b49895df46077b91ef7a7283d88a105f95d  ./ARCHITECTURE.md
+11bba8802acf5367d905f33dd06ddbe23c69cf04978ab1f8522d09c29b681e2d  ./MMNAI-to-AI.zip
+17717bfc986261c93979141e5a947c665fff02411bb526522a947d2faedb65fa  ./PENDENCIAS_E_PLANO.md
+03b56d9cbfc3fe4789d89612ded8e99b6094da6cf319856a30c77718af3c0fb2  ./commissions.ts
+a335804b5db67e29ac9e76706ce76cf48cf4757de97ee1ffb35b46c460f59200  ./db.ts
+2b88309a56f497fdcdf1235a284316fc865011122e2d09ecf5e935bc164dee0b  ./dropshipping.test.ts
+2c5e3eeff4efb940984a1320f118c0b28b5643bd23fe3079354e057da21d023a  ./dropshippingRouter.ts
+db595769c03f29b122ea189201427b2f3e2e13525cff5c03cb65065db87baea9  ./dropshippingService.ts
+05b431658857baea1f9e1b4474fcbcd37fc7274cdbcfdeb7bc93af878053a8d3  ./env.ts
+4751c6b35ca121fa6ae6eb262b9052e99d6f2790458de47c8f911a96f8959a12  ./mmn.ts
+7a68d059bf02b2d21ea6637a9a2d402c27d4b22d641c311e1f47f4412a4fb256  ./schema-ecosystem.ts
+a934dd59e8b9f5245c8943ee3a8f1b773631c568a93ba3da2ca6d05c831811f7  ./schema-final.ts
+6f4f5f9a85543e926632939acb73eb7969311f7dfce12e9cfd4b902ee541d0ca  ./schema.ts
+c7918e77f3ec89f547a13309bd7cbefe91be086b6cbffc53525578382640aba1  ./service.test.ts
+b30ae54919f247c40e4e47bf1c6e53907ebee05eda0507baa4049d3af46ef52b  ./trpc.ts
+
+## Arquivo ZIP
+531b3383e73501aa4a9905fd87d299a1d213745aab3dddfc6d6c077a40371373  imports/phase8_backend_dropshipping_20260822/RevisãodoDesenvolvimentodaFase8_BackendDropshipping.zip
