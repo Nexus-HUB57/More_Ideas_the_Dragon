@@ -1,0 +1,44 @@
+{
+  "build_command": "pnpm run build",
+  "capabilities": [
+    "db",
+    "server",
+    "user"
+  ],
+  "dev_command": "pnpm run dev",
+  "env_vars": {
+    "DATABASE_URL": "mysql://Lm2WVJeN6UrDpkV.7f039159ac86:kWz5b8Nv4AF7zUvWd0L7@gateway02.us-east-1.prod.aws.tidbcloud.com:4000/nsAaBcVXqjmfdqw8drc49w?ssl={\"rejectUnauthorized\":true}"
+  },
+  "experiments": [
+    "no_db_push"
+  ],
+  "git_remote": {
+    "repo_url": "s3://vida-prod-gitrepo/webdev-git/310519663082365412/nsAaBcVXqjmfdqw8drc49w",
+    "access_key_id": "REDACTED",
+    "secret_access_key": "REDACTED",
+    "session_token": "REDACTED",
+    "expiration": "2026-08-23T11:02:42.000Z",
+    "backend": "GIT_BACKEND_S3"
+  },
+  "name": "nexus-hub",
+  "path": "/home/ubuntu/nexus-hub",
+  "port": 3000,
+  "secrets": {
+    "BUILT_IN_FORGE_API_KEY": "edAmzrFPP5yKd8TAUYaGbH",
+    "BUILT_IN_FORGE_API_URL": "https://forge.manus.ai",
+    "JWT_SECRET": "Lh5dqYAsYtpHABDVMEWFsC",
+    "OAUTH_SERVER_URL": "https://api.manus.im",
+    "OWNER_NAME": "Smin Startup",
+    "OWNER_OPEN_ID": "8TC4aqKiATkKgKGVyKuTBH",
+    "VITE_ANALYTICS_ENDPOINT": "https://manus-analytics.com",
+    "VITE_ANALYTICS_WEBSITE_ID": "d2688d0c-b833-49a9-866e-248eb1b23912",
+    "VITE_APP_ID": "nsAaBcVXqjmfdqw8drc49w",
+    "VITE_APP_LOGO": "https://files.manuscdn.com/user_upload_by_module/web_dev_logo/310519663082365412/tfMXkjlRSNEJStsV.png",
+    "VITE_APP_TITLE": "Nexus Hub - IA Agent Ecosystem",
+    "VITE_FRONTEND_FORGE_API_KEY": "2ZbAsLHmjFEYCXJHmHCwqj",
+    "VITE_FRONTEND_FORGE_API_URL": "https://forge.manus.ai",
+    "VITE_OAUTH_PORTAL_URL": "https://manus.im"
+  },
+  "template_id": "web-db-user",
+  "test_command": "pnpm test"
+}
