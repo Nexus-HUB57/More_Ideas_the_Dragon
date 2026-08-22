@@ -1,0 +1,5 @@
+[2026-08-22T16:51:32.576Z] Starting dev server with command: pnpm run dev
+[2026-08-22T16:51:33.627Z] > nexus-in-project@1.0.0 dev /home/ubuntu/nexus-in-project
+[2026-08-22T16:51:33.627Z] > NODE_ENV=development tsx watch server/_core/index.ts
+[2026-08-22T16:51:34.494Z] [OAuth] Initialized with baseURL: https://api.manus.im
+[2026-08-22T16:51:34.611Z] Server running on http://localhost:3000/

@@ -1,0 +1,19 @@
+# Safe Recovery Import Metadata
+generated_at=2026-08-22T17:20:11+00:00
+repository=Nexus-HUB57/More_Ideas_the_Dragon
+base_branch=main
+base_commit=fed13cbdeef2f72c3353d5950151f85ac0f03cca
+work_branch=agent/nexus-in-safe-import-redacted-20260822-1717
+isolated_directory=artifacts/nexus-in-safe-import-redacted-20260822-1717
+source_file_count=135
+source_bytes=2541847
+zip_file_count=135
+zip_bytes=414363
+zip_sha256=e15809e9761c78dcd5cff0b72b125d3cb56847041059f90f623b74c53b967059
+source_config_sanitized=True
+secret_values_not_published=True
+original_upload_archive_preserved=True
+copy_policy=additive_only
+main_branch_modified=False
+merge_performed=False
+force_push_performed=False

@@ -1,0 +1,3 @@
+/home/ubuntu/More_Ideas_the_Dragon-audit-20260822-165714/artifacts/nexus-in-safe-import-redacted-20260822-1717/source/server/_core/oauth.ts:39:      const sessionToken = await sdk.createSessionToken(userInfo.openId, {
+/home/ubuntu/More_Ideas_the_Dragon-audit-20260822-165714/artifacts/nexus-in-safe-import-redacted-20260822-1717/source/server/_core/sdk.ts:165:   * const sessionToken = await sdk.createSessionToken(userInfo.openId);
+/home/ubuntu/More_Ideas_the_Dragon-audit-20260822-165714/artifacts/nexus-in-safe-import-redacted-20260822-1717/source/server/_core/sdk.ts:167:  async createSessionToken(

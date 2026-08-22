@@ -1,0 +1,9 @@
+# Validation
+generated_at=2026-08-22T17:20:11+00:00
+source_files=135
+zip_files=135
+zip_test=passed
+zip_sha256=e15809e9761c78dcd5cff0b72b125d3cb56847041059f90f623b74c53b967059
+secret_pattern_scan=planned_after_staging
+source_config_sanitized=True
+sensitive_pattern_scan=matches_found
