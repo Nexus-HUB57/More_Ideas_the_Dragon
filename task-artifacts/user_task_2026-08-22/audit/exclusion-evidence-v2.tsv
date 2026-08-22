@@ -1,0 +1,2 @@
+category	path	decision	reason	recovery
+sensitive-config	sources/nexus-dashboard/.project-config.json	quarantined-outside-repository	potentially sensitive project configuration; not tracked and not included in ZIP	original source remains at /home/ubuntu/nexus-dashboard/.project-config.json; copied artifact quarantined at /home/ubuntu/sensitive_artifact_quarantine_2026-08-22/nexus-dashboard.project-config.json
