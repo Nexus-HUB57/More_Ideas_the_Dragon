@@ -1,0 +1,31 @@
+{
+  "generated_at": "2026-08-22T17:06:45.031917+00:00",
+  "source_files_received": 1,
+  "files_in_bundle": [
+    {
+      "path": "README.md",
+      "bytes": 819,
+      "sha256": "e51ee31614f8a692e72cce6690c8e7b4e497ddf26b0ebda43a48f7bf3aa79ed2"
+    },
+    {
+      "path": "analise_riscos_juridicos_financeiros.md",
+      "bytes": 2522,
+      "sha256": "273579643c462058ed14a63476bf446cf83aafbc7d3848e537883f97392d3f79"
+    },
+    {
+      "path": "documento_extraido.md",
+      "bytes": 38756,
+      "sha256": "b308e2f148427e91cdd800060ab13083a1e83e642f9e046e844ad1a186668fc8"
+    },
+    {
+      "path": "source/RelatóriodeFechamentoOrçamentárioeBalançoPatrimonialAno4-Revisado.docx",
+      "bytes": 53540,
+      "sha256": "8082cc6cc565ccc085cd81e935ba0f34371e6159c93a74c3b8c252cdfe0aee59"
+    },
+    {
+      "path": "validate_bundle.sh",
+      "bytes": 584,
+      "sha256": "04a27dc78ce004fc302b42a2f3e76d3f862a8d972b60aa7b94b87e385edc0b83"
+    }
+  ]
+}
