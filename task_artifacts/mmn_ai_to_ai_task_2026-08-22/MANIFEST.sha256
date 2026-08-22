@@ -1,0 +1,13 @@
+63dcf6d17323b93de3788fdc5a9d27b3a12da6bde7673a1621509089cb18fe9e  ./README.md
+001dac087a97f13e3520f1d9403e090c0ef8e7a01d9d2ef33631b7111df4889b  ./backend/src/config/context.ts
+05b431658857baea1f9e1b4474fcbcd37fc7274cdbcfdeb7bc93af878053a8d3  ./backend/src/config/env.ts
+b30ae54919f247c40e4e47bf1c6e53907ebee05eda0507baa4049d3af46ef52b  ./backend/src/config/trpc.ts
+da0d7573c6a3be48ea345896333a48af62bbc9acaef7fa0d48dea9f14b865b7d  ./backend/src/routers/dropshippingRouter.ts
+7a2b9fc93f157b34fbe76c8f97098eacfd341d92eeb4b28367a945fc79f7b5a3  ./backend/src/services/commissions.ts
+830841c2a9a681c348767bd42d8fe061aa3435bff5890e86c0afe405743a1548  ./backend/src/services/dropshippingService.ts
+759369c2f2c4585a0c2fc3c6e0d28407e7c7e62487159b55ce8fae73d74a2f96  ./database/migrations/0001_large_rumiko_fujikawa.sql
+2bf3b489e8eadd6e05e8ac0b887e4a8a49ca9608029d1d301692c629300c4ec3  ./database/schemas/db.ts
+a934dd59e8b9f5245c8943ee3a8f1b773631c568a93ba3da2ca6d05c831811f7  ./database/schemas/schema-final.ts
+17717bfc986261c93979141e5a947c665fff02411bb526522a947d2faedb65fa  ./docs/planning/PENDENCIAS_E_PLANO.md
+cc8d90e5fcd814fb162a35f8984b0de11b1aafc283322c4c17742bd24bb2f5f4  ./tests/unit/agents.test.ts
+a53db32e583cfbeaeb66a63438a6037dca45e7258d966427b9862e736ed49d28  ./tests/unit/dropshipping.test.ts
