@@ -1,0 +1,4 @@
+repository=Nexus-HUB57/More_Ideas_the_Dragon
+baseline_commit=c0713cf
+working_tree_status=clean before additive change
+policy=additive-only; no deletion/reset/overwrite outside this package

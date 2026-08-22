@@ -1,0 +1,6 @@
+- [x] Analisar o erro "Comprimento do valor reivindicado muito grande" e a documentação da bitcoinlib para UTXOs P2PKH
+- [x] Revisar e corrigir o script de criação da primeira transação (P2PKH para P2PKH intermediário) usando bitcoinlib
+- [ ] Validar a primeira transação gerada online
+- [ ] Criar e assinar a segunda transação (P2PKH intermediário para P2WPKH final) usando bitcoinlib
+- [ ] Criar instruções de broadcast para ambas as transações
+- [ ] Verificar o status das transações e entregar resultados

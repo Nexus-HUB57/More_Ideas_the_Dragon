@@ -1,0 +1,4 @@
+path	reason
+client/src/pages/FdrDashboard.tsx	password examples redacted before inclusion
+server/fdr.test.ts	password examples redacted before inclusion
+server/fdr_service.ts	password examples redacted before inclusion
