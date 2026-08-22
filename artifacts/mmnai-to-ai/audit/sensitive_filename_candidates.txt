@@ -1,0 +1,12 @@
+adm/area123_backup_mysql.php
+adm/area123_execute_db_backup.php
+adm/area123_mysql_backup.class.php
+clientes/maxipago/authorization-with-token.php
+clientes/maxipago/create-card-token.php
+clientes/maxipago/sale-with-token.php
+inc123/PagSeguroLibrary/domain/PagSeguroAccountCredentials.class.php
+inc123/PagSeguroLibrary/domain/PagSeguroApplicationCredentials.class.php
+inc123/PagSeguroLibrary/domain/PagSeguroCredentials.class.php
+inc123/cielo/src/Cielo/API30/Ecommerce/Request/TokenizeCardRequest.php
+inc123/js/jquery.validate.password.js
+inc123/plupload/examples/dump.php
