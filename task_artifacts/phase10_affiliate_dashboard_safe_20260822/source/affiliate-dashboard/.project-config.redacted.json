@@ -1,0 +1,29 @@
+{
+  "build_command": "pnpm run build",
+  "capabilities": [
+    "db",
+    "server",
+    "user"
+  ],
+  "dev_command": "pnpm run dev",
+  "env_vars": {
+    "DATABASE_URL": "[REDACTED]"
+  },
+  "experiments": [
+    "no_db_push"
+  ],
+  "git_remote": {
+    "repo_url": "s3://vida-prod-gitrepo/webdev-git/310519663081075364/CLWXbghfWKHjzzbZBAhKxb",
+    "access_key_id": "[REDACTED]",
+    "secret_access_key": "[REDACTED]",
+    "session_token": "[REDACTED]",
+    "expiration": "[REDACTED]",
+    "backend": "GIT_BACKEND_S3"
+  },
+  "name": "affiliate-dashboard",
+  "path": "/home/ubuntu/affiliate-dashboard",
+  "port": 3000,
+  "secrets": "[REDACTED]",
+  "template_id": "web-db-user",
+  "test_command": "pnpm test"
+}
