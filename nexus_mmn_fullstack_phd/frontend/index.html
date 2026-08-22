@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#0A0E1A" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="alternate icon" type="image/png" href="/favicon.svg" />
+    <link rel="apple-touch-icon" href="/favicon.svg" />
+    <title>Nexus Affil'IA'te · Plataforma SaaS + Nexus Partners Pack</title>
+    <meta
+      name="description"
+      content="Nexus Affil'IA'te é a plataforma SaaS para escalar parcerias, creators e afiliados. Nexus Partners Pack é o produto independente, contratado exclusivamente por assinatura (Start, Growth ou Enterprise), com janela contratual de 6 a 48 meses. by oneverso.com.br."
+    />
+    <meta name="keywords" content="Nexus Affil'IA'te, Nexus Partners Pack, assinatura SaaS, MMN IA, afiliados, creators, plataforma comercial, oneverso" />
+    <meta property="og:site_name" content="oneverso.com.br" />
+    <meta property="og:title" content="Nexus Affil'IA'te · Plataforma SaaS + Nexus Partners Pack (assinatura)" />
+    <meta property="og:description" content="Plataforma SaaS para parcerias e afiliados, com o Nexus Partners Pack como produto independente disponível exclusivamente por assinatura." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://oneverso.com.br/" />
+    <meta property="og:image" content="https://oneverso.com.br/favicon.svg" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Nexus Affil'IA'te · Plataforma SaaS + Nexus Partners Pack" />
+    <meta name="twitter:description" content="Nexus Partners Pack: produto independente, contratado exclusivamente por assinatura (Start, Growth, Enterprise)." />
+    <link rel="manifest" href="/manifest.json" />
+    <meta name="theme-color" content="#0a0a1c" />
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  
+    <script>
+      // Nexus Academ'IA SW — registra apenas em produção
+      if ('serviceWorker' in navigator && location.protocol === 'https:') {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('/sw.js', { scope: '/' })
+            .catch(() => { /* silent — não bloquear UX */ });
+        });
+      }
+    </script>
+</body>
+</html>
