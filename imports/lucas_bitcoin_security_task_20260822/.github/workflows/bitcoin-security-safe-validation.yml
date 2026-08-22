@@ -1,0 +1,56 @@
+name: Bitcoin Security Safe Validation
+
+on:
+  push:
+    paths:
+      - 'imports/lucas_bitcoin_security_task_20260822/**'
+  pull_request:
+    paths:
+      - 'imports/lucas_bitcoin_security_task_20260822/**'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate-safe-import:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Validate import scope
+        shell: bash
+        run: |
+          set -euo pipefail
+          PKG="imports/lucas_bitcoin_security_task_20260822"
+          test -d "$PKG"
+          test "$(find "$PKG" -type f | wc -l)" -ge 1
+          if find "$PKG/source_snapshot" -type f | grep -Eiq 'wallet|private|seed|passphrase|secret|token|\.dat$|target'; then
+            echo 'Sensitive payload path detected'
+            exit 1
+          fi
+          if grep -RIEq --include='*.py' --include='*.md' --include='*.txt' 'BEGIN (RSA|OPENSSH|EC) PRIVATE KEY|xprv|[5KL][1-9A-HJ-NP-Za-km-z]{50,51}|-----BEGIN' "$PKG/source_snapshot"; then
+            echo 'Private key material detected'
+            exit 1
+          fi
+
+      - name: Compile educational analyzers only
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -m py_compile \
+            imports/lucas_bitcoin_security_task_20260822/source_snapshot/scripts/satoshi_code_analyzer.py \
+            imports/lucas_bitcoin_security_task_20260822/source_snapshot/scripts/quantum_threat_calculator.py \
+            imports/lucas_bitcoin_security_task_20260822/source_snapshot/scripts/51_attack_simulator.py
+          find imports/lucas_bitcoin_security_task_20260822 -type d -name __pycache__ -prune -exec rm -rf {} +
+
+      - name: Verify no wallet-recovery or mainnet execution
+        shell: bash
+        run: |
+          set -euo pipefail
+          if grep -RIEq --include='*.py' --include='*.yml' --include='*.yaml' 'brute.?force|mainnet|broadcast|private.?key.?recovery|sendrawtransaction' 'imports/lucas_bitcoin_security_task_20260822/source_snapshot'; then
+            echo 'Disallowed operational capability detected'
+            exit 1
+          fi
