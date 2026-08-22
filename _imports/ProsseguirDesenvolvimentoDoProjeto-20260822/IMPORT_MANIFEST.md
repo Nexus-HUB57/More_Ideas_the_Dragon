@@ -52,6 +52,6 @@ Esta importação é aditiva e reversível por um novo commit de remoção espec
 - [x] Conteúdo extraído em caminho isolado.
 - [x] Manifesto de arquivos gerado.
 - [x] Hashes SHA-256 gerados.
-- [ ] Commit incremental criado.
-- [ ] Push fast-forward validado.
-- [ ] Auditoria final concluída.
+- [x] Commit incremental criado.
+- [x] Push fast-forward validado.
+- [x] Auditoria final concluída.
