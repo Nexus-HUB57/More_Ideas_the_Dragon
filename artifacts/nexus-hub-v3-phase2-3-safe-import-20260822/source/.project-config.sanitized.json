@@ -1,0 +1,6 @@
+{
+  "sanitized": true,
+  "artifact": "nexus-hub-v3",
+  "notice": "Project runtime metadata was sanitized before publication. Credentials, session tokens, and temporary cloud keys are intentionally omitted.",
+  "configuration": {}
+}

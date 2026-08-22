@@ -1,0 +1,3 @@
+/tmp/nexus_activation_safe/credentials.json
+/tmp/nexus_activation_safe/setup-env.sh
+source/.project-config.json (AWS temporary access key, secret key, and session token)

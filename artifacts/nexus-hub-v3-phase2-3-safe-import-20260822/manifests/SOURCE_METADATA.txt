@@ -1,0 +1,4 @@
+source=/home/ubuntu/nexus-hub-v3
+uploaded_zip=/home/ubuntu/upload/RelatóriodeAtivaçãodoAgenteNexusFase3.zip
+uploaded_zip_sha256=83cf87c5c9e96039ab65c03a44867757ec2f97b4d313f0b2c200eca0647cd4d7
+uploaded_zip_size_bytes=20243517
