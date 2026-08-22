@@ -1,0 +1,11 @@
+{
+  "task": "Balanço Patrimonial, Análise de Risco QLF e Governança QVT — Ano 10",
+  "source_repo": "Nexus-HUB57/More_Ideas_the_Dragon",
+  "destination": "contributions/manus-task-balanco-qlf-ano10-20260822",
+  "safe_recovery": true,
+  "overwrite_existing": false,
+  "delete_existing": false,
+  "artifact_count": 15,
+  "archive": "artifacts/manus-task-balanco-qlf-ano10-20260822.zip",
+  "note": "Somente arquivos efetivamente produzidos nesta tarefa foram incluídos; não foram fabricados arquivos ausentes para atingir uma contagem numérica."
+}
