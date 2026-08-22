@@ -1,0 +1,6 @@
+MANIFEST.txt	0 bytes
+README.md	388 bytes
+analysis/resumo_executivo_relatorio.md	4788 bytes
+package/SHA256SUMS.txt	509 bytes
+package/ano7-orcamento-balanco-end-to-end.zip	63563 bytes
+source/RelatóriodeFechamentoOrçamentárioeBalançoPatrimonialAno7-revisado.docx	63965 bytes
