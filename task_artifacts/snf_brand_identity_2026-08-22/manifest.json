@@ -1,0 +1,154 @@
+{
+  "collection": "snf_brand_identity_2026-08-22",
+  "project": "Seed Need Feed",
+  "methodology": "SNF E²",
+  "slogan": "Ideias Exponenciais. Soluções 4 All.",
+  "asset_count": 24,
+  "artifacts": [
+    {
+      "file": "assets/seed_need_feed_logo_1.png",
+      "bytes": 307465,
+      "sha256": "feb23295361e922635c504a4e539a133023a396313b2766448346677aae3f0a0",
+      "format": "PNG"
+    },
+    {
+      "file": "assets/seed_need_feed_logo_2.png",
+      "bytes": 443452,
+      "sha256": "c6717c0feae7e9980bd3330eea3eeff7048c19e334bd5d8da39fc6aa1358a59d",
+      "format": "PNG"
+    },
+    {
+      "file": "assets/seed_need_feed_logo_3.png",
+      "bytes": 212021,
+      "sha256": "62a8e9dba887bfb8be93c0c60a7df9972c8cfd6463151bc565988c0264cc5860",
+      "format": "PNG"
+    },
+    {
+      "file": "assets/snf_logo_final_com_slogan.png",
+      "bytes": 1233634,
+      "sha256": "8778985e276f7e846d98e0c5078d7832e05e5f25defc9e31cdca910ee2f417e2",
+      "format": "PNG"
+    },
+    {
+      "file": "assets/snf_logo_futurista_1.png",
+      "bytes": 421376,
+      "sha256": "6137adf1b1ac151cb3b21ba691f0ded1093a53c37aeebecbe5ec44cfe3ee3782",
+      "format": "PNG"
+    },
+    {
+      "file": "assets/snf_logo_futurista_10.png",
+      "bytes": 1038642,
+      "sha256": "2e8ce3e8380352e2d34194e82f093da5540dff1a81d7977f3029820167fcd113",
+      "format": "PNG"
+    },
+    {
+      "file": "assets/snf_logo_futurista_11.png",
+      "bytes": 733610,
+      "sha256": "aac69c476578a475f58a89692911e2c8e8ec7a5ce7b50f780ee8a27e63051dd9",
+      "format": "PNG"
+    },
+    {
+      "file": "assets/snf_logo_futurista_12.png",
+      "bytes": 260570,
+      "sha256": "e839e51ffb7066b784d01a94777e39db9dff740289feed598f7ddfa8534e28e7",
+      "format": "PNG"
+    },
+    {
+      "file": "assets/snf_logo_futurista_13.png",
+      "bytes": 1138257,
+      "sha256": "a0fc198f05811bb640f242a8e53b6616eef3968722cb67ffa397888ea9eaf2d3",
+      "format": "PNG"
+    },
+    {
+      "file": "assets/snf_logo_futurista_2.png",
+      "bytes": 788096,
+      "sha256": "69ce8fdb134e42783f74b7e9b15145c004767f087a8d85c0155aa8728a403210",
+      "format": "PNG"
+    },
+    {
+      "file": "assets/snf_logo_futurista_3.png",
+      "bytes": 462179,
+      "sha256": "c1ac07437f73a2df43f58581a97da8b437cb0d49c7fed26505d8d32062c64a48",
+      "format": "PNG"
+    },
+    {
+      "file": "assets/snf_logo_futurista_4.png",
+      "bytes": 332857,
+      "sha256": "4c5370a672b0ca27089caf278c7c1bbf314b74715309a512f83e85573afbadf7",
+      "format": "PNG"
+    },
+    {
+      "file": "assets/snf_logo_futurista_5.png",
+      "bytes": 929453,
+      "sha256": "eddb9de4313d9bf1d575cda489bc077ef2450198a25f1406bfd10e98e277a0c3",
+      "format": "PNG"
+    },
+    {
+      "file": "assets/snf_logo_futurista_5_editado.png",
+      "bytes": 855160,
+      "sha256": "46e9479b1e901ac8ca049d5f08f548bcfd9f7eed48822df77b2d850a4a3df812",
+      "format": "PNG"
+    },
+    {
+      "file": "assets/snf_logo_futurista_6.png",
+      "bytes": 706808,
+      "sha256": "7198623eda0d0421ef18c520758f940fffc39f675ee336cf9a29e45a6b629f04",
+      "format": "PNG"
+    },
+    {
+      "file": "assets/snf_logo_futurista_7.png",
+      "bytes": 333658,
+      "sha256": "67fa778938518b3ff188985353da21749bc907a3e3011394b14a1062e6b42b7d",
+      "format": "PNG"
+    },
+    {
+      "file": "assets/snf_logo_futurista_8.png",
+      "bytes": 774162,
+      "sha256": "c8769c3d3d93fbdb4958701c5dd0b33d808975eaa3845ed2f427d19d3447a7f9",
+      "format": "PNG"
+    },
+    {
+      "file": "assets/snf_logo_futurista_9.png",
+      "bytes": 1133971,
+      "sha256": "de987ccb46eccb66dcbabf1652c910945d9b809d7072b8b48dc324966c4a532e",
+      "format": "PNG"
+    },
+    {
+      "file": "assets/snf_logo_prova_1_monocromatico.png",
+      "bytes": 991397,
+      "sha256": "567e2d28baa20aa89f0b223eedc7cca6c2eba45bfb2d8a809b05817703108002",
+      "format": "PNG"
+    },
+    {
+      "file": "assets/snf_logo_prova_2_neon.png",
+      "bytes": 1145647,
+      "sha256": "11a713e1b2713fb121f3c987c90dfc45d1fa08b159a69b902878770abc2cc450",
+      "format": "PNG"
+    },
+    {
+      "file": "assets/snf_logo_prova_3_branco_minimalista.png",
+      "bytes": 352061,
+      "sha256": "00d0eec7a1798ba0b58fb84768702db56eed81480076dbd99dbc615ef39cc5e1",
+      "format": "PNG"
+    },
+    {
+      "file": "assets/snf_logo_prova_4_ouro_vermelho.png",
+      "bytes": 1686139,
+      "sha256": "7122d6e0f4869d30f4985fb5a41a6df4558116c0a23d2d7a067265aab6c703d7",
+      "format": "PNG"
+    },
+    {
+      "file": "assets/snf_logo_prova_5_vidro_holografico.png",
+      "bytes": 1220549,
+      "sha256": "a77184f611d0cad15d30a459e48261e99b247147ed48c17c4e607f6c101aba1e",
+      "format": "PNG"
+    },
+    {
+      "file": "assets/snf_logo_prova_6_ouro_branco.png",
+      "bytes": 1503652,
+      "sha256": "0e9a79d3096324fd764c9bc7e27eceaac84dac1260c7244711e11c98ab73f42b",
+      "format": "PNG"
+    }
+  ],
+  "preservation_policy": "additive-only; no pre-existing files, folders, or commits overwritten or deleted"
+}
