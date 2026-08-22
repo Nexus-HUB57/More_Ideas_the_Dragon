@@ -7,7 +7,8 @@
   "task_document_files": 2,
   "namespace_files": 3308,
   "namespace_bytes": 69869903,
-  "bundle_bytes": 48395118,
-  "bundle_sha256": "dd79e3c278416e374008d1184e65c508c725a1207b97c76c8d493b6d7beda92b",
-  "manifest_sha256": "6f740f064d5a2a9ef8db6d3a0da6b4e0d38ef754f815c390af953edfb623a0f1"
+  "bundle_bytes": 48395159,
+  "bundle_sha256": "5a6c38ff1889e0394a32544f068c880878f8241923055c81b485587dcfe06824",
+  "manifest_sha256": "9e7358b8e674f0db44cccbc6e7f7265a205bb735d8822f446972807513031a03",
+  "todo_phase17_complete": true
 }

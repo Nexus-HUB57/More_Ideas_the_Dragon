@@ -265,13 +265,13 @@
 
 ## Fase 17: Povoamento Seguro do Repositório GitHub
 
-- [ ] Clonar Nexus-HUB57/More_Ideas_the_Dragon em diretório isolado de auditoria
-- [ ] Revisar branches, commits, working tree e remotes antes de qualquer alteração
-- [ ] Inventariar todos os artefatos da tarefa, incluindo scripts, documentos e fontes
-- [ ] Detectar conflitos de nomes e preservar arquivos existentes sem sobrescrever ou excluir
-- [ ] Preparar importação aditiva com manifesto e relatório de arquivos
-- [ ] Gerar ZIP end to end sem incluir .git, dependências instaladas ou caches
-- [ ] Validar contagem, hashes e conteúdo do pacote antes do commit
-- [ ] Criar commit aditivo com todos os artefatos e ZIP
-- [ ] Verificar no GitHub o commit, a árvore de arquivos e a integridade do ZIP
-- [ ] Registrar resultado final da auditoria e referências do commit
+- [x] Clonar Nexus-HUB57/More_Ideas_the_Dragon em diretório isolado de auditoria
+- [x] Revisar branches, commits, working tree e remotes antes de qualquer alteração
+- [x] Inventariar todos os artefatos da tarefa, incluindo scripts, documentos e fontes
+- [x] Detectar conflitos de nomes e preservar arquivos existentes sem sobrescrever ou excluir
+- [x] Preparar importação aditiva com manifesto e relatório de arquivos
+- [x] Gerar ZIP end to end sem incluir .git, dependências instaladas ou caches
+- [x] Validar contagem, hashes e conteúdo do pacote antes do commit
+- [x] Criar commit aditivo com todos os artefatos e ZIP
+- [x] Verificar no GitHub o commit, a árvore de arquivos e a integridade do ZIP
+- [x] Registrar resultado final da auditoria e referências do commit
