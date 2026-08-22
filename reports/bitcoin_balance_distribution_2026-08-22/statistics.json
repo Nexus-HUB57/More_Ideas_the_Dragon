@@ -1,0 +1,9 @@
+{
+  "source": "/home/ubuntu/prior_wallet_repo/ben_master_wallet/active_wallets_report.csv",
+  "address_count": 399,
+  "total_btc": 681319.80126451,
+  "median_btc": 0.00141,
+  "min_btc": 1e-08,
+  "max_btc": 79957.26868453,
+  "top_10_share_pct": 62.476566557231635
+}
