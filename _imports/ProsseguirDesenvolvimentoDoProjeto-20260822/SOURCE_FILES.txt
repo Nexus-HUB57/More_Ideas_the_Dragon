@@ -1,0 +1,16 @@
+_imports/ProsseguirDesenvolvimentoDoProjeto-20260822/source/MILESTONE_6_SUMMARY.md
+_imports/ProsseguirDesenvolvimentoDoProjeto-20260822/source/TRPC_DASHBOARD_API.md
+_imports/ProsseguirDesenvolvimentoDoProjeto-20260822/source/_layout.tsx
+_imports/ProsseguirDesenvolvimentoDoProjeto-20260822/source/agent.tsx
+_imports/ProsseguirDesenvolvimentoDoProjeto-20260822/source/authRouter.ts
+_imports/ProsseguirDesenvolvimentoDoProjeto-20260822/source/dashboardRouter.ts
+_imports/ProsseguirDesenvolvimentoDoProjeto-20260822/source/db.ts
+_imports/ProsseguirDesenvolvimentoDoProjeto-20260822/source/index.tsx
+_imports/ProsseguirDesenvolvimentoDoProjeto-20260822/source/login.tsx
+_imports/ProsseguirDesenvolvimentoDoProjeto-20260822/source/mmn.ts
+_imports/ProsseguirDesenvolvimentoDoProjeto-20260822/source/network.tsx
+_imports/ProsseguirDesenvolvimentoDoProjeto-20260822/source/pasted_content.txt
+_imports/ProsseguirDesenvolvimentoDoProjeto-20260822/source/profile.tsx
+_imports/ProsseguirDesenvolvimentoDoProjeto-20260822/source/todo.md
+_imports/ProsseguirDesenvolvimentoDoProjeto-20260822/source/trpc.ts
+_imports/ProsseguirDesenvolvimentoDoProjeto-20260822/source/use-auth.ts
