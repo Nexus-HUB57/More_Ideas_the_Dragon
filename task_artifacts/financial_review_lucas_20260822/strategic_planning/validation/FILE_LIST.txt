@@ -1,0 +1,32 @@
+README.md	748 bytes
+analysis_scripts/combine_reports.py	979 bytes
+analysis_scripts/data_extractor.py	2163 bytes
+analysis_scripts/extract_docx_text.py	2354 bytes
+analysis_scripts/structured_data_extractor.py	3540 bytes
+reports/relatorio_financeiro_critico_rascunho.md	9672 bytes
+source_upload/LegadoLucas(1)	3158661 bytes
+source_upload/embedded_word_documents/LEGADO - JOGO DA VIRADA 2025.docx	101914 bytes
+source_upload/embedded_word_documents/Relatório de Fechamento Orçamentário e Balanço Patrimonial Ano 0 - 1.docx	127316 bytes
+source_upload/embedded_word_documents/Relatório de Fechamento Orçamentário e Balanço Patrimonial Ano 10.docx	91202 bytes
+source_upload/embedded_word_documents/Relatório de Fechamento Orçamentário e Balanço Patrimonial Ano 2.docx	26318 bytes
+source_upload/embedded_word_documents/Relatório de Fechamento Orçamentário e Balanço Patrimonial Ano 3.docx	36132 bytes
+source_upload/embedded_word_documents/Relatório de Fechamento Orçamentário e Balanço Patrimonial Ano 4.docx	32714 bytes
+source_upload/embedded_word_documents/Relatório de Fechamento Orçamentário e Balanço Patrimonial Ano 5.docx	37380 bytes
+source_upload/embedded_word_documents/Relatório de Fechamento Orçamentário e Balanço Patrimonial Ano 6.docx	36241 bytes
+source_upload/embedded_word_documents/Relatório de Fechamento Orçamentário e Balanço Patrimonial Ano 7.docx	40901 bytes
+source_upload/embedded_word_documents/Relatório de Fechamento Orçamentário e Balanço Patrimonial Ano 8.docx	2607944 bytes
+source_upload/embedded_word_documents/Relatório de Fechamento Orçamentário e Balanço Patrimonial Ano 9.docx	93542 bytes
+strategic_planning/README.md	1806 bytes
+strategic_planning/reports/relatorio_analise_legado_lucas_final.md	8788 bytes
+strategic_planning/reports/relatorio_estrategia_gestao_grandes_fortunas.md	10637 bytes
+strategic_planning/scripts/validate_legado_bundle.py	2045 bytes
+strategic_planning/validation/FILE_LIST.txt	0 bytes
+strategic_planning/validation/PROVENANCE.md	714 bytes
+strategic_planning/validation/SHA256SUMS_FINAL.txt	4085 bytes
+validation/FILE_LIST.txt	1440 bytes
+validation/FINAL_VALIDATION.txt	337 bytes
+validation/GIT_DIFF_STAT_PRECOMMIT.txt	0 bytes
+validation/GIT_STATUS_PRECOMMIT.txt	59 bytes
+validation/SHA256SUMS.txt	2628 bytes
+validation/SOURCE_PROVENANCE.txt	108 bytes
+validation/STAGED_NAME_STATUS.txt	3089 bytes
