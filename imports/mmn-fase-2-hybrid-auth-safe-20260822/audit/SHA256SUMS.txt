@@ -1,0 +1,12 @@
+666515b3b0a9bb7905d090d2298c6918d3d3d7a258014edba881252f02d8cb87  imports/mmn-fase-2-hybrid-auth-safe-20260822/source/MMN_AI-to-AI/Legado_PHP/inc123/area123_banco_de_dados.php
+bcc9895f9f0f3520fb37babe2c62dd0654ac6be9299ca240883baa51e65cc626  imports/mmn-fase-2-hybrid-auth-safe-20260822/source/MMN_AI-to-AI/Legado_PHP/inc123/config123.php
+203eba44381932c971a57dfbe21fad35e3cdfefdb6d7b1db714defdc2504498c  imports/mmn-fase-2-hybrid-auth-safe-20260822/source/MMN_AI-to-AI/Legado_PHP/inc123/pgto_functions.php
+001dac087a97f13e3520f1d9403e090c0ef8e7a01d9d2ef33631b7111df4889b  imports/mmn-fase-2-hybrid-auth-safe-20260822/source/MMN_AI-to-AI/backend/src/config/context.ts
+b30ae54919f247c40e4e47bf1c6e53907ebee05eda0507baa4049d3af46ef52b  imports/mmn-fase-2-hybrid-auth-safe-20260822/source/MMN_AI-to-AI/backend/src/config/trpc.ts
+9f811cf82fd296c1d1e812c1e6ce07465814c91196aba0cfa907e16697925344  imports/mmn-fase-2-hybrid-auth-safe-20260822/source/MMN_AI-to-AI/backend/src/routers/authRouter.ts
+a0fa754e7be4e4a217667191bda2ba79bc82557f9e96e8f5cf4fe3ca0fa6de7a  imports/mmn-fase-2-hybrid-auth-safe-20260822/source/MMN_AI-to-AI/backend/src/services/commissions.ts
+29b1f3edcc735d9593fae480c1a9585e2ec14b8ebbca3444865e0f493d87a741  imports/mmn-fase-2-hybrid-auth-safe-20260822/source/MMN_AI-to-AI/database/schemas/db.ts
+e6e798a8c1a50bde231b6b4968a5448e5d3ebf96a1d9f66f9e92297c0b73bd0b  imports/mmn-fase-2-hybrid-auth-safe-20260822/source/MMN_AI-to-AI/database/schemas/schema-final.ts
+9bae091645338ee78b085c22b69cbcaff8ae2f901585858f57d9eaa85ade322f  imports/mmn-fase-2-hybrid-auth-safe-20260822/source/MMN_AI-to-AI/docs/roadmap_fusao_mmn.md
+9d061a0c4ce7f11eec7737945bbfc5644337116372bef32f1535d93789d40abd  imports/mmn-fase-2-hybrid-auth-safe-20260822/source/MMN_AI-to-AI/frontend/src/pages/Login.tsx
+f5361d0b8038af70e7e6c934354ebec96e3e3cf86ce831d0408dca6984acc5fe  imports/mmn-fase-2-hybrid-auth-safe-20260822/source/MMN_AI-to-AI/scripts/migrate_legacy_data.ts
