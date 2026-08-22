@@ -1,0 +1,112 @@
+{
+  "purpose": "Safe additive import of uploaded Nexus task archives",
+  "source_archives": [
+    {
+      "source": "/home/ubuntu/upload/NexusAgenteIAHibrido.zip",
+      "source_sha256": "1069139afa86dd9fc6015c20211482d0f26ae98465c28d4282a09bf521b17a63",
+      "source_bytes": 1366240,
+      "source_entries": 9,
+      "namespace": "NexusAgenteIAHibrido",
+      "included_entries": 7,
+      "excluded_entries": [
+        {
+          "path": "credentials.json",
+          "reason": "sensitive, unsafe path, or original archive copy"
+        },
+        {
+          "path": "NexusAgenteIAHibrido.zip",
+          "reason": "sensitive, unsafe path, or original archive copy"
+        }
+      ],
+      "sanitized_zip": "NexusAgenteIAHibrido.sanitized.zip",
+      "sanitized_zip_sha256": "fe7c08df111deb015fb6fe0c34c4f3f130c1bbadc9838d8f014567b0a44587fa",
+      "sanitized_zip_bytes": 6918
+    },
+    {
+      "source": "/home/ubuntu/upload/NexusTest.zip",
+      "source_sha256": "f15028baddf573d740aa576fad83dc8d2b30fbd91b8cea888f7b4330a22d8506",
+      "source_bytes": 18683461,
+      "source_entries": 264,
+      "namespace": "NexusTest",
+      "included_entries": 246,
+      "excluded_entries": [
+        {
+          "path": ".env",
+          "reason": "sensitive, unsafe path, or original archive copy"
+        },
+        {
+          "path": "Private Key WIF/207.dat",
+          "reason": "sensitive, unsafe path, or original archive copy"
+        },
+        {
+          "path": "Private Key WIF/144-BTC.dat",
+          "reason": "sensitive, unsafe path, or original archive copy"
+        },
+        {
+          "path": "Private Key WIF/305.dat",
+          "reason": "sensitive, unsafe path, or original archive copy"
+        },
+        {
+          "path": "Private Key WIF/310.dat",
+          "reason": "sensitive, unsafe path, or original archive copy"
+        },
+        {
+          "path": "Private Key WIF/500.backup",
+          "reason": "sensitive, unsafe path, or original archive copy"
+        },
+        {
+          "path": "Private Key WIF/518.dat",
+          "reason": "sensitive, unsafe path, or original archive copy"
+        },
+        {
+          "path": "Private Key WIF/524.dat",
+          "reason": "sensitive, unsafe path, or original archive copy"
+        },
+        {
+          "path": "Private Key WIF/10.backup",
+          "reason": "sensitive, unsafe path, or original archive copy"
+        },
+        {
+          "path": "Private Key WIF/11.dat",
+          "reason": "sensitive, unsafe path, or original archive copy"
+        },
+        {
+          "path": "Private Key WIF/70.dat",
+          "reason": "sensitive, unsafe path, or original archive copy"
+        },
+        {
+          "path": "Private Key WIF/86",
+          "reason": "sensitive, unsafe path, or original archive copy"
+        },
+        {
+          "path": "Private Key WIF/86.dat",
+          "reason": "sensitive, unsafe path, or original archive copy"
+        },
+        {
+          "path": "Private Key WIF/87.dat",
+          "reason": "sensitive, unsafe path, or original archive copy"
+        },
+        {
+          "path": "Private Key WIF/137.dat",
+          "reason": "sensitive, unsafe path, or original archive copy"
+        },
+        {
+          "path": "Private Key WIF/dllme.txt",
+          "reason": "sensitive, unsafe path, or original archive copy"
+        },
+        {
+          "path": "Private Key WIF/key.dll",
+          "reason": "sensitive, unsafe path, or original archive copy"
+        }
+      ],
+      "sanitized_zip": "NexusTest.sanitized.zip",
+      "sanitized_zip_sha256": "5f9a1212d8b90a831396d1e055d6900e8812704b4c73dcbc6e4291d9222ecfff",
+      "sanitized_zip_bytes": 731992
+    }
+  ],
+  "policy": {
+    "namespace_per_archive": true,
+    "overwrite_existing_paths": false,
+    "sensitive_content_versioned": false
+  }
+}
