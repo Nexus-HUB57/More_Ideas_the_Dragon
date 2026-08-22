@@ -1,0 +1,30 @@
+# Manifesto de Recuperação — Legado Lucas
+
+Diretório aditivo criado em 2026-08-22. Artefatos desta tarefa foram adicionados em área isolada; nenhum caminho existente foi sobrescrito ou removido.
+
+## Arquivos e hashes SHA-256
+
+1e50f3155f0af5a86b9ee5c03bd8184bd750198f1abc541827eed9b75bea60ef  ./Relatorios_Analise_Critica.zip
+aa1ceab3881b1fe038acaf2350866fbfcea9cc90c938c6fdac46dfb41e2fda16  ./plans/cronograma_fcvi_gantt.md
+beb2c8146eb731689616d23ca6b350d7aafb8a82ae03e324955a904ab417f3d3  ./plans/planejamento_financeiro_alta_performance.md
+73845599d3aca5c4ff7472b1bea76ae3e700b1fff9d5039731a31dbc45673a1c  ./plans/plano_acao_fcvi.md
+c04299af9c762f231aa5dd6d034d94d6aeba2f50bf8d977dafcbadfd611f0bfa  ./plans/plano_acao_saneamento_governanca.md
+96d4451b99205f1f078e06ac7d363023f46fcb082edfcd0581018c117811926c  ./plans/plano_comunicacao_fcvi.md
+fe133db2455c826a1ec55c7f208d12c4e66fc2ae02cce2287580d54cda15db97  ./plans/sumario_executivo_legado_lucas.md
+eb309291cfe04a2a14643452a7276b84991d5fae9d4a07f22a50664c65582b81  ./source_docs/Relatorio_Ano_0.docx
+9befb5b746a847e52fda2bc9d57bdf515eb2ccfbee913325f4bec64effc5bfce  ./source_docs/Relatorio_Ano_1.docx
+6e316046ef3419b1fdb797e6fa60c13326588f60dd74559e7e7dc223a585ade7  ./source_docs/Relatorio_Ano_10.docx
+d1d5251d7ef19ead318079a78af5383c6e0fd9213ac61ad25dd3e7c3006ee2f4  ./source_docs/Relatorio_Ano_2.docx
+1cbb02187e7f91ee550999590eac9923e89740362b835b2633b79be4cd0913d1  ./source_docs/Relatorio_Ano_3.docx
+d9f4750a34fead7471512429cde9408c1cdad4c99f33f90c49836d639a8d8215  ./source_docs/Relatorio_Ano_4.docx
+7425a04018d4b2db54eeec830e1f8243a8602709d50c84e1b1ba835d862f9723  ./source_docs/Relatorio_Ano_5.docx
+0dc2ed30e521b19b3b06807eb2c008a153e0c63920ad0669431d4b28880ec163  ./source_docs/Relatorio_Ano_6.docx
+ac9b905e18ac4631160c043308c205ce6063ad61d51487a8232caaf67a209f79  ./source_docs/Relatorio_Ano_7.docx
+20da08ac179cc12c9eea9e4920db9ec21874eca50df765f8c819924dc2c1bd2c  ./source_docs/Relatorio_Ano_8.docx
+66ff9b51f56323e3c75d2d5ec8f568e4474d494435d04fff562cf3dc7f25ea7f  ./source_docs/Relatorio_Ano_9.docx
+e75255a3d3a8c9fbdb7a1e675197cfb3af4603edcc4d1af43bf3247f75b4306b  ./source_docs/Tabela_Comparativa_de_Métricas_Financeiras_(Ano_0_ao_Ano_10).docx
+
+## Contagens
+- Arquivos recuperados: 19
+- Documentos DOCX extraídos do ZIP: 12
+- Planos Markdown: 6
