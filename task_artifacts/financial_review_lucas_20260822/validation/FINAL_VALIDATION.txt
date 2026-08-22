@@ -1,0 +1,10 @@
+branch=agent/financial-report-safe-population-20260822
+commit=bf6916e0be68f924f757ff124c20bb1e6bb73102
+remote_commit=bf6916e0be68f924f757ff124c20bb1e6bb73102
+working_tree_clean=yes
+commit_operations=add_only
+payload_files=18
+embedded_word_documents=11
+zip_test=pass
+sha256_payload=pass
+main_head=ca1517fe2d947528cbb4aca08a536527ba804d71
