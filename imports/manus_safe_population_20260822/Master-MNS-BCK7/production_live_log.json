@@ -1,0 +1,8 @@
+{
+    "event": "PRODUCTION_LIVE_START",
+    "timestamp": 1691863200,
+    "status": "ACTIVE",
+    "audit_status": "CONFIRMED",
+    "target_broadcast_btc": 3.69151547,
+    "automation_workflow": "pesbm_auto_sweep.py ACTIVE"
+}

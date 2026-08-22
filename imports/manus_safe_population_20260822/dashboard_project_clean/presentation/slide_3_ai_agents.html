@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+      * { margin: 0; padding: 0; }
+      .slide-container {
+        width: 1280px;
+        min-height: 720px;
+        box-sizing: border-box;
+        background: #121212;
+        color: #E0E0E0;
+        font-family: 'Inter', sans-serif;
+        padding-top: 60px;
+        border: 1px solid #2B2B2B;
+      }
+      .title-zone {
+        padding-left: 80px;
+        margin-bottom: 40px;
+      }
+      h2 {
+        font-weight: 500;
+        font-size: 48px;
+        color: #F3BA2F;
+      }
+      .agents-container {
+        display: flex;
+        justify-content: space-between;
+        padding: 0 80px;
+      }
+      .agent-box {
+        width: 340px;
+        border: 1px solid #2B2B2B;
+        padding: 40px 30px;
+        background: rgba(43, 43, 43, 0.2);
+        text-align: center;
+      }
+      .agent-box i {
+        font-size: 50px;
+        color: #F3BA2F;
+        margin-bottom: 25px;
+      }
+      .agent-box h3 {
+        font-weight: 500;
+        font-size: 26px;
+        margin-bottom: 20px;
+        color: #E0E0E0;
+      }
+      .agent-box ul {
+        list-style: none;
+        text-align: left;
+      }
+      .agent-box li {
+        font-weight: 300;
+        font-size: 18px;
+        line-height: 1.6;
+        opacity: 0.7;
+        margin-bottom: 12px;
+        position: relative;
+        padding-left: 20px;
+      }
+      .agent-box li::before {
+        content: "—";
+        position: absolute;
+        left: 0;
+        color: #F3BA2F;
+      }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="title-zone">
+            <h2>O Organismo Cripto: Agentes de IA</h2>
+        </div>
+        <div class="agents-container">
+            <div class="agent-box">
+                <i class="fas fa-shield-alt"></i>
+                <h3>Agente Sentinela</h3>
+                <ul>
+                    <li>Monitoramento de risco em tempo real</li>
+                    <li>Compliance de endereços</li>
+                    <li>Prevenção de fraudes</li>
+                </ul>
+            </div>
+            <div class="agent-box">
+                <i class="fas fa-chess-knight"></i>
+                <h3>Agente Estrategista</h3>
+                <ul>
+                    <li>Gestão inteligente de liquidez</li>
+                    <li>Rebalanceamento Binance/Master</li>
+                    <li>Análise de volatilidade</li>
+                </ul>
+            </div>
+            <div class="agent-box">
+                <i class="fas fa-gas-pump"></i>
+                <h3>Agente Gas/Fee</h3>
+                <ul>
+                    <li>Otimização de custos de rede</li>
+                    <li>Análise preditiva do Mempool</li>
+                    <li>Timing ideal de broadcast</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

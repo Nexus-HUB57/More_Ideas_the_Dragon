@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1"></script>
+    <style>
+      * { margin: 0; padding: 0; }
+      .slide-container {
+        width: 1280px;
+        min-height: 720px;
+        box-sizing: border-box;
+        background: #121212;
+        color: #E0E0E0;
+        font-family: 'Inter', sans-serif;
+        padding-top: 60px;
+        border: 1px solid #2B2B2B;
+      }
+      .title-zone {
+        padding-left: 80px;
+        margin-bottom: 40px;
+      }
+      h2 {
+        font-weight: 500;
+        font-size: 48px;
+        color: #F3BA2F;
+      }
+      .main-grid {
+        display: grid;
+        grid-template-columns: 1.2fr 0.8fr;
+        gap: 0;
+        border-top: 1px solid #2B2B2B;
+        border-bottom: 1px solid #2B2B2B;
+      }
+      .chart-section {
+        padding: 50px 80px;
+        border-right: 1px solid #2B2B2B;
+      }
+      .metrics-section {
+        padding: 50px 60px;
+      }
+      .metric-item {
+        margin-bottom: 40px;
+      }
+      .metric-value {
+        font-weight: 500;
+        font-size: 42px;
+        color: #F3BA2F;
+        font-family: 'Courier New', monospace;
+      }
+      .metric-label {
+        font-weight: 300;
+        font-size: 18px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        opacity: 0.6;
+        margin-top: 5px;
+      }
+      .monitor-info {
+        padding: 40px 80px;
+        font-weight: 300;
+        font-size: 20px;
+        line-height: 1.6;
+        opacity: 0.8;
+      }
+      .highlight {
+        color: #F3BA2F;
+        font-family: 'Courier New', monospace;
+      }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="title-zone">
+            <h2>Resultados e Monitoramento Real-Time</h2>
+        </div>
+        <div class="main-grid">
+            <div class="chart-section">
+                <div style="height: 300px;">
+                    <canvas id="stressTestChart"></canvas>
+                </div>
+                <script>
+                    const ctx = document.getElementById('stressTestChart').getContext('2d');
+                    new Chart(ctx, {
+                        type: 'bar',
+                        data: {
+                            labels: ['Sucesso Broadcast', 'Resiliência API', 'Integridade Dados'],
+                            datasets: [{
+                                label: 'Performance (%)',
+                                data: [100, 99.9, 100],
+                                backgroundColor: '#F3BA2F',
+                                borderColor: '#F3BA2F',
+                                borderWidth: 1
+                            }]
+                        },
+                        options: {
+                            indexAxis: 'y',
+                            responsive: true,
+                            maintainAspectRatio: false,
+                            plugins: {
+                                legend: { display: false }
+                            },
+                            scales: {
+                                x: {
+                                    grid: { color: '#2B2B2B' },
+                                    ticks: { color: '#E0E0E0' },
+                                    max: 100
+                                },
+                                y: {
+                                    grid: { display: false },
+                                    ticks: { color: '#E0E0E0', font: { size: 16 } }
+                                }
+                            }
+                        }
+                    });
+                </script>
+            </div>
+            <div class="metrics-section">
+                <div class="metric-item">
+                    <div class="metric-value">100.000</div>
+                    <div class="metric-label">Ciclos Testnet</div>
+                </div>
+                <div class="metric-item">
+                    <div class="metric-value">10.4 min</div>
+                    <div class="metric-label">Média Confirmação</div>
+                </div>
+                <div class="metric-item">
+                    <div class="metric-value">0%</div>
+                    <div class="metric-label">Falhas Críticas</div>
+                </div>
+            </div>
+        </div>
+        <div class="monitor-info">
+            <p><i class="fas fa-satellite-dish" style="color: #F3BA2F; margin-right: 15px;"></i> Rastreio instantâneo via <span class="highlight">Mempool.space API</span>. O sistema monitora o status de cada broadcast em tempo real, fornecendo alertas imediatos sobre inclusão em blocos e flutuações de taxas.</p>
+        </div>
+    </div>
+</body>
+</html>

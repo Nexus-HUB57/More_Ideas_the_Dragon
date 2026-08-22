@@ -1,0 +1,33 @@
+{
+    "organism_id": "PESBM-MASTER-MAINNET",
+    "target_daily_volume_btc": 5.0,
+    "agents": {
+        "sentinel": {
+            "risk_threshold": 0.2,
+            "kyc_aml_validation": true,
+            "max_tx_value_btc": 1.5,
+            "suspicious_address_check": "mempool_space_api",
+            "alert_level": "CRITICAL"
+        },
+        "strategist": {
+            "binance_liquidity_min_btc": 2.0,
+            "rebalance_trigger_percent": 15,
+            "arbitrage_spread_min": 0.005,
+            "execution_window_utc": ["08:00", "20:00"],
+            "max_slippage_percent": 0.1
+        },
+        "gas_optimizer": {
+            "max_fee_rate_sats_vbyte": 50,
+            "min_fee_rate_sats_vbyte": 5,
+            "priority_level": "medium",
+            "mempool_depth_limit": 5,
+            "delay_non_urgent_tx": true
+        }
+    },
+    "security": {
+        "multi_sig_required": true,
+        "ai_approval_consensus": 2,
+        "master_key_derivation": "BIP84",
+        "emergency_stop_btc_price_drop": 10.0
+    }
+}

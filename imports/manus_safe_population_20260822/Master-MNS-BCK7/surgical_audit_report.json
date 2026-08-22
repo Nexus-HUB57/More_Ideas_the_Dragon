@@ -1,0 +1,10 @@
+{
+    "timestamp": 1786558480.7524025,
+    "address": "bc1qxy2kgdygjrsqtzq2n0yrf2493p83kkfjhx0wlh",
+    "utxo_count": 723,
+    "total_volume_btc": 3.69299162,
+    "recommended_fee_rate": 3,
+    "estimated_fee_btc": 0.00147615,
+    "net_transfer_btc": 3.69151547,
+    "status": "READY_FOR_BROADCAST"
+}
