@@ -1,0 +1,25 @@
+A	artifacts/financial_review_lucas_20260822.zip
+A	artifacts/financial_review_lucas_20260822.zip.sha256
+A	task_artifacts/financial_review_lucas_20260822/README.md
+A	task_artifacts/financial_review_lucas_20260822/analysis_scripts/combine_reports.py
+A	task_artifacts/financial_review_lucas_20260822/analysis_scripts/data_extractor.py
+A	task_artifacts/financial_review_lucas_20260822/analysis_scripts/extract_docx_text.py
+A	task_artifacts/financial_review_lucas_20260822/analysis_scripts/structured_data_extractor.py
+A	task_artifacts/financial_review_lucas_20260822/reports/relatorio_financeiro_critico_rascunho.md
+A	task_artifacts/financial_review_lucas_20260822/source_upload/LegadoLucas(1)
+A	task_artifacts/financial_review_lucas_20260822/source_upload/embedded_word_documents/LEGADO - JOGO DA VIRADA 2025.docx
+A	"task_artifacts/financial_review_lucas_20260822/source_upload/embedded_word_documents/Relat\303\263rio de Fechamento Or\303\247ament\303\241rio e Balan\303\247o Patrimonial Ano 0 - 1.docx"
+A	"task_artifacts/financial_review_lucas_20260822/source_upload/embedded_word_documents/Relat\303\263rio de Fechamento Or\303\247ament\303\241rio e Balan\303\247o Patrimonial Ano 10.docx"
+A	"task_artifacts/financial_review_lucas_20260822/source_upload/embedded_word_documents/Relat\303\263rio de Fechamento Or\303\247ament\303\241rio e Balan\303\247o Patrimonial Ano 2.docx"
+A	"task_artifacts/financial_review_lucas_20260822/source_upload/embedded_word_documents/Relat\303\263rio de Fechamento Or\303\247ament\303\241rio e Balan\303\247o Patrimonial Ano 3.docx"
+A	"task_artifacts/financial_review_lucas_20260822/source_upload/embedded_word_documents/Relat\303\263rio de Fechamento Or\303\247ament\303\241rio e Balan\303\247o Patrimonial Ano 4.docx"
+A	"task_artifacts/financial_review_lucas_20260822/source_upload/embedded_word_documents/Relat\303\263rio de Fechamento Or\303\247ament\303\241rio e Balan\303\247o Patrimonial Ano 5.docx"
+A	"task_artifacts/financial_review_lucas_20260822/source_upload/embedded_word_documents/Relat\303\263rio de Fechamento Or\303\247ament\303\241rio e Balan\303\247o Patrimonial Ano 6.docx"
+A	"task_artifacts/financial_review_lucas_20260822/source_upload/embedded_word_documents/Relat\303\263rio de Fechamento Or\303\247ament\303\241rio e Balan\303\247o Patrimonial Ano 7.docx"
+A	"task_artifacts/financial_review_lucas_20260822/source_upload/embedded_word_documents/Relat\303\263rio de Fechamento Or\303\247ament\303\241rio e Balan\303\247o Patrimonial Ano 8.docx"
+A	"task_artifacts/financial_review_lucas_20260822/source_upload/embedded_word_documents/Relat\303\263rio de Fechamento Or\303\247ament\303\241rio e Balan\303\247o Patrimonial Ano 9.docx"
+A	task_artifacts/financial_review_lucas_20260822/validation/FILE_LIST.txt
+A	task_artifacts/financial_review_lucas_20260822/validation/GIT_DIFF_STAT_PRECOMMIT.txt
+A	task_artifacts/financial_review_lucas_20260822/validation/GIT_STATUS_PRECOMMIT.txt
+A	task_artifacts/financial_review_lucas_20260822/validation/SHA256SUMS.txt
+A	task_artifacts/financial_review_lucas_20260822/validation/SOURCE_PROVENANCE.txt

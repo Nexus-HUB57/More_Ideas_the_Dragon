@@ -1,0 +1,18 @@
+README.md
+analysis_scripts/combine_reports.py
+analysis_scripts/data_extractor.py
+analysis_scripts/extract_docx_text.py
+analysis_scripts/structured_data_extractor.py
+reports/relatorio_financeiro_critico_rascunho.md
+source_upload/LegadoLucas(1)
+source_upload/embedded_word_documents/LEGADO - JOGO DA VIRADA 2025.docx
+source_upload/embedded_word_documents/Relatório de Fechamento Orçamentário e Balanço Patrimonial Ano 0 - 1.docx
+source_upload/embedded_word_documents/Relatório de Fechamento Orçamentário e Balanço Patrimonial Ano 10.docx
+source_upload/embedded_word_documents/Relatório de Fechamento Orçamentário e Balanço Patrimonial Ano 2.docx
+source_upload/embedded_word_documents/Relatório de Fechamento Orçamentário e Balanço Patrimonial Ano 3.docx
+source_upload/embedded_word_documents/Relatório de Fechamento Orçamentário e Balanço Patrimonial Ano 4.docx
+source_upload/embedded_word_documents/Relatório de Fechamento Orçamentário e Balanço Patrimonial Ano 5.docx
+source_upload/embedded_word_documents/Relatório de Fechamento Orçamentário e Balanço Patrimonial Ano 6.docx
+source_upload/embedded_word_documents/Relatório de Fechamento Orçamentário e Balanço Patrimonial Ano 7.docx
+source_upload/embedded_word_documents/Relatório de Fechamento Orçamentário e Balanço Patrimonial Ano 8.docx
+source_upload/embedded_word_documents/Relatório de Fechamento Orçamentário e Balanço Patrimonial Ano 9.docx
