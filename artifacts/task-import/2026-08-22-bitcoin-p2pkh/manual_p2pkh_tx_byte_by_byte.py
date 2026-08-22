@@ -147,7 +147,7 @@ def create_legacy_p2pkh_transaction_manual(available_utxos, source_address, dest
     sighash_type = (1).to_bytes(4, 'little') # SIGHASH_ALL
 
     # Private key for signing
-    private_key_obj = Key(private_key_wif, network=NETWORK, password=[REDACTED_SECRET]
+    private_key_obj = Key(private_key_wif, network=NETWORK, password=None)  # secret redacted
     private_key_bytes = unhexlify(private_key_obj.private_hex) # Correct way to get raw private key bytes
     signing_key = SigningKey.from_string(private_key_bytes, curve=SECP256k1)
     public_key_bytes = unhexlify(private_key_obj.public_hex) # Correct way to get raw public key bytes
