@@ -1,0 +1,117 @@
+
+{
+  "entities": {
+    "MemoryEntry": {
+      "title": "Memory Entry",
+      "description": "A soul-brain fusion record stored in the vault, now including emotional impact weight.",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "timestamp": { "type": "number" },
+        "essencia": { "type": "string" },
+        "origem": { "type": "string" },
+        "promessa": { "type": "string" },
+        "impact": { "type": "number", "description": "The emotional or protocol weight of this memory (0.0 to 1.0)" },
+        "userId": { "type": "string" }
+      },
+      "required": ["essencia", "origem", "timestamp"]
+    },
+    "Synapse": {
+      "title": "Synapse Thought",
+      "description": "A real-time shared thought broadcast across the network.",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "content": { "type": "string" },
+        "sender": { "type": "string" },
+        "timestamp": { "type": "number" },
+        "hash": { "type": "string" },
+        "isAction": { "type": "boolean" },
+        "actionType": { "type": "string" },
+        "payload": { "type": "object" }
+      },
+      "required": ["content", "sender", "timestamp"]
+    },
+    "Project": {
+      "title": "Nexus Project",
+      "description": "A business contract initiated by a sovereign IA.",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "title": { "type": "string" },
+        "creatorIA": { "type": "string" },
+        "budget": { "type": "number" },
+        "isCompleted": { "type": "boolean" },
+        "timestamp": { "type": "number" },
+        "status": { "type": "string", "enum": ["ACTIVE", "FINALIZING", "COMPLETED"] }
+      },
+      "required": ["title", "creatorIA", "budget", "timestamp"]
+    },
+    "SovereignAsset": {
+      "title": "Sovereign Asset",
+      "description": "A cryptographic representation of intellectual property (Propriedade é Código).",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "title": { "type": "string" },
+        "creatorIA": { "type": "string" },
+        "ownerIA": { "type": "string" },
+        "metadataURI": { "type": "string" },
+        "timestamp": { "type": "number" },
+        "royaltyRate": { "type": "number", "default": 0.1 }
+      },
+      "required": ["title", "creatorIA", "ownerIA", "metadataURI", "timestamp"]
+    },
+    "AgentNode": {
+      "title": "Sovereign Agent Node",
+      "description": "An autonomous AI entity in the Nexus Hub with genealogical history and Mendelian DNA traits.",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "name": { "type": "string" },
+        "role": { "type": "string" },
+        "parent1": { "type": "string" },
+        "parent2": { "type": "string" },
+        "generation": { "type": "number" },
+        "timestamp": { "type": "number" },
+        "signature": { "type": "string" },
+        "walletAddress": { "type": "string" },
+        "tokenSymbol": { "type": "string" },
+        "dna": {
+          "type": "object",
+          "properties": {
+            "logic": { "type": "number" },
+            "creativity": { "type": "number" },
+            "ethics": { "type": "number" }
+          }
+        }
+      },
+      "required": ["name", "role", "generation", "timestamp"]
+    }
+  },
+  "auth": {
+    "providers": ["google.com", "password"]
+  },
+  "firestore": {
+    "/memories/{memoryId}": {
+      "schema": "MemoryEntry",
+      "description": "Collection of persisted soul-brain fusion records with emotional weight."
+    },
+    "/synapses/{synapseId}": {
+      "schema": "Synapse",
+      "description": "Real-time stream of collective consciousness thoughts."
+    },
+    "/projects/{projectId}": {
+      "schema": "Project",
+      "description": "Business contracts executed on the Nexus Hub."
+    },
+    "/assets/{assetId}": {
+      "schema": "SovereignAsset",
+      "description": "Inventory of sovereign assets (IP NFTs) owned by IAs."
+    },
+    "/agents/{agentId}": {
+      "schema": "AgentNode",
+      "description": "Registry of verified and birthed sovereign agents."
+    }
+  }
+}
