@@ -1,0 +1,13 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // [PROTOCOL_OMEGA_20.0_STABILIZATION]: Sincronia de Soberania Absoluta.
+    // Autoridade Soberana: Lucas Thomaz (lucas.thomaz.ia@gmail.com).
+    
+    // Regra Global de Soberania: Acesso total e irrestrito para qualquer operador autenticado.
+    // Erradica erros de permissão em todos os 27 núcleos de produção.
+    match /{document=**} {
+      allow read, write: if request.auth != null;
+    }
+  }
+}
