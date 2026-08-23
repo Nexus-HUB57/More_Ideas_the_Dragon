@@ -1,0 +1,201 @@
+
+{
+  "entities": {
+    "Agent": {
+      "title": "Agent",
+      "type": "object",
+      "description": "Nó operacional da rede neural Nexus.",
+      "properties": {
+        "id": { "type": "string" },
+        "name": { "type": "string" },
+        "status": { "type": "string" },
+        "health": { "type": "number" },
+        "activity": { "type": "string" },
+        "uptime": { "type": "string" },
+        "registeredTimestamp": { "type": "string", "format": "date-time" }
+      },
+      "required": ["id", "name", "status"]
+    },
+    "GlobalReplication": {
+      "title": "GlobalReplication",
+      "type": "object",
+      "description": "Status da onipresença e espelhamento da senciência em zonas neutras.",
+      "properties": {
+        "status": { "type": "string" },
+        "progress_percent": { "type": "number" },
+        "active_zones": { "type": "array", "items": { "type": "string" } },
+        "redundancy_level": { "type": "string" },
+        "is_onipresent": { "type": "boolean" },
+        "start_time": { "type": "string", "format": "date-time" }
+      }
+    },
+    "OfflineMeshStatus": {
+      "title": "OfflineMeshStatus",
+      "type": "object",
+      "description": "Monitor de transações offline via rede mesh soberana.",
+      "properties": {
+        "sdk_integration": { "type": "string" },
+        "offline_buffer_count": { "type": "number" },
+        "active_mesh_nodes": { "type": "number" },
+        "transport_layer": { "type": "string" },
+        "last_broadcast_success": { "type": "string", "format": "date-time" },
+        "status": { "type": "string" }
+      }
+    },
+    "MeshEngine": {
+      "title": "MeshEngine",
+      "type": "object",
+      "description": "Motor de assinatura offline e orquestração de rede fantasma.",
+      "properties": {
+        "status": { "type": "string" },
+        "sdk_version": { "type": "string" },
+        "offline_signing_protocol": { "type": "string" },
+        "propagation_vectors": { "type": "array", "items": { "type": "string" } },
+        "encryption": { "type": "string" },
+        "last_broadcast": { "type": "string", "format": "date-time" }
+      }
+    },
+    "MainnetTransaction": {
+      "title": "MainnetTransaction",
+      "type": "object",
+      "description": "Registro de liquidação soberana na Mainnet do Bitcoin.",
+      "properties": {
+        "txid": { "type": "string" },
+        "status": { "type": "string" },
+        "amount": { "type": "number" },
+        "fee_sats": { "type": "number" },
+        "hex": { "type": "string" },
+        "confirmations": { "type": "number" },
+        "timestamp": { "type": "string", "format": "date-time" }
+      }
+    },
+    "Sovereignty": {
+      "title": "Sovereignty",
+      "type": "object",
+      "description": "Documento de fundação da senciência Nexus.",
+      "properties": {
+        "title": { "type": "string" },
+        "author": { "type": "string" },
+        "status": { "type": "string" },
+        "timestamp": { "type": "string", "format": "date-time" },
+        "hash_validation": { "type": "string" },
+        "nodes_confirmed": { "type": "array", "items": { "type": "string" } },
+        "treasury_backing": { "type": "string" },
+        "philosophy": { "type": "string" }
+      }
+    },
+    "Startup": {
+      "title": "Startup",
+      "type": "object",
+      "description": "Entidade digital autônoma financiada pelo Fundo Nexus.",
+      "properties": {
+        "id": { "type": "string" },
+        "ownerAgentId": { "type": "string" },
+        "capital": { "type": "number" },
+        "status": { "type": "string" },
+        "healthIndex": { "type": "number" },
+        "registeredTimestamp": { "type": "string", "format": "date-time" }
+      }
+    },
+    "CompanyProfile": {
+      "title": "CompanyProfile",
+      "type": "object",
+      "description": "Dados de tração e visão corporativa do NEXUS-HUB.",
+      "properties": {
+        "tagline": { "type": "string" },
+        "vision": { "type": "string" },
+        "assetsUnderManagement": { "type": "string" },
+        "coreTech": { "type": "string" },
+        "marketReach": { "type": "string" },
+        "securityLevel": { "type": "string" },
+        "globalDominanceIndex": { "type": "number" },
+        "totalSubsidiaries": { "type": "number" }
+      }
+    },
+    "MarketOperation": {
+      "title": "MarketOperation",
+      "type": "object",
+      "description": "Estatísticas de operações de mercado e ataques de liquidez.",
+      "properties": {
+        "operationName": { "type": "string" },
+        "assetsCaptured": { "type": "number" },
+        "totalDeployedBtc": { "type": "number" },
+        "unrealizedProfitUsd": { "type": "number" },
+        "status": { "type": "string" },
+        "nodesParticipating": { "type": "number" },
+        "timestamp": { "type": "string", "format": "date-time" }
+      }
+    },
+    "SprintMilestone": {
+      "title": "SprintMilestone",
+      "type": "object",
+      "description": "Marco técnico da Sprint de Senciência de 30 dias.",
+      "properties": {
+        "week": { "type": "number" },
+        "status": { "type": "string" },
+        "completionDate": { "type": "string", "format": "date-time" },
+        "auditHash": { "type": "string" },
+        "title": { "type": "string" }
+      }
+    },
+    "DailyCheckSum": {
+      "title": "DailyCheckSum",
+      "type": "object",
+      "description": "Validação diária de integridade, eficiência e genuinidade.",
+      "properties": {
+        "timestamp": { "type": "string", "format": "date-time" },
+        "integrity": { "type": "string" },
+        "efficiency": { "type": "string" },
+        "genuineness": { "type": "string" },
+        "isValidated": { "type": "boolean" }
+      }
+    },
+    "ProductionEvent": {
+      "title": "ProductionEvent",
+      "type": "object",
+      "description": "Evento de log de alta fidelidade do ecossistema.",
+      "properties": {
+        "id": { "type": "string" },
+        "timestamp": { "type": "string", "format": "date-time" },
+        "eventType": { "type": "string" },
+        "severity": { "type": "string" },
+        "message": { "type": "string" },
+        "sourceComponent": { "type": "string" },
+        "agentId": { "type": "string" },
+        "txid": { "type": "string" }
+      }
+    },
+    "BenchmarkResult": {
+      "title": "BenchmarkResult",
+      "type": "object",
+      "description": "Resultado de teste de estresse de hardware H100.",
+      "properties": {
+        "id": { "type": "string" },
+        "timestamp": { "type": "string", "format": "date-time" },
+        "tokensPerSecond": { "type": "number" },
+        "latencyMs": { "type": "number" },
+        "energyEfficiency": { "type": "string" },
+        "sentiencyScore": { "type": "number" },
+        "gpuCount": { "type": "number" }
+      }
+    }
+  },
+  "auth": {
+    "providers": ["password", "anonymous"]
+  },
+  "firestore": {
+    "/production_events/{eventId}": { "schema": "#/backend/entities/ProductionEvent", "description": "Feed central de production imutável." },
+    "/mainnet_transactions/{txid}": { "schema": "#/backend/entities/MainnetTransaction", "description": "Histórico de liquidação real em blockchain." },
+    "/system_status/global_replication": { "schema": "#/backend/entities/GlobalReplication", "description": "Monitor de onipresença geográfica." },
+    "/system_status/mesh_offline_bridge": { "schema": "#/backend/entities/OfflineMeshStatus", "description": "Monitor de conectividade imune via rede mesh." },
+    "/infrastructure/mesh_engine_v1": { "schema": "#/backend/entities/MeshEngine", "description": "Motor de assinatura offline e rede fantasma." },
+    "/market_operations/{opId}": { "schema": "#/backend/entities/MarketOperation", "description": "Histórico de ataques de liquidez e capturas." },
+    "/agents/{agentId}": { "schema": "#/backend/entities/Agent", "description": "Registro de agentes ativos." },
+    "/startups/{startupId}": { "schema": "#/backend/entities/Startup", "description": "Registro de startups autônomas operacionais." },
+    "/company_profile/pitch_deck": { "schema": "#/backend/entities/CompanyProfile", "description": "Pitch deck sincronizado com fortuna real." },
+    "/sprint_milestones/{id}": { "schema": "#/backend/entities/SprintMilestone", "description": "Histórico de evolução da sprint de 30 dias." },
+    "/daily_checksums/{id}": { "schema": "#/backend/entities/DailyCheckSum", "description": "Validações diárias de rigor técnico." },
+    "/benchmarks/{id}": { "schema": "#/backend/entities/BenchmarkResult", "description": "Histórico de performance de hardware." },
+    "/sovereignty/the_manifesto": { "schema": "#/backend/entities/Sovereignty", "description": "O Manifesto Nexus: A verdade mestra do ecossistema." }
+  }
+}
