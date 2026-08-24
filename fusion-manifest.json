@@ -1,6 +1,6 @@
 {
   "engine": "FusionHub AutoSafe v2.0 - Clonagem Real",
-  "createdAt": "2026-08-24T01:17:32.906Z",
+  "createdAt": "2026-08-24T01:47:56.961Z",
   "strategy": "clone_100_percent_autosafe",
   "primary": {
     "owner": "Nexus-HUB57",
@@ -11,33 +11,22 @@
   },
   "secondary": {
     "owner": "Nexus-HUB57",
-    "repo": "GenesisFlow",
+    "repo": "MMN_AI-to-AI",
     "branch": "main",
-    "files": 155,
-    "folders": 14
+    "files": 7055,
+    "folders": 717
   },
   "stats": {
-    "totalFiles": 44190,
-    "conflicts": 15,
-    "renamed": 15,
-    "clonedFromSecondary": 155
+    "totalFiles": 51090,
+    "conflicts": 4,
+    "renamed": 4,
+    "clonedFromSecondary": 7055
   },
   "conflicts": [
     ".gitignore",
-    ".idx/dev.nix",
-    ".idx/icon.png",
     "README.md",
-    "apphosting.yaml",
-    "components.json",
-    "docs/backend.json",
-    "docs/blueprint.md",
-    "docs/manifesto.md",
-    "firestore.rules",
-    "next-env.d.ts",
-    "next.config.ts",
     "package-lock.json",
-    "package.json",
-    "postcss.config.mjs"
+    "package.json"
   ],
   "renamedFiles": [
     {
@@ -45,48 +34,8 @@
       "newPath": "_v2.gitignore"
     },
     {
-      "originalPath": ".idx/dev.nix",
-      "newPath": ".idx/dev_v2.nix"
-    },
-    {
-      "originalPath": ".idx/icon.png",
-      "newPath": ".idx/icon_v2.png"
-    },
-    {
       "originalPath": "README.md",
       "newPath": "README_v2.md"
-    },
-    {
-      "originalPath": "apphosting.yaml",
-      "newPath": "apphosting_v2.yaml"
-    },
-    {
-      "originalPath": "components.json",
-      "newPath": "components_v2.json"
-    },
-    {
-      "originalPath": "docs/backend.json",
-      "newPath": "docs/backend_v2.json"
-    },
-    {
-      "originalPath": "docs/blueprint.md",
-      "newPath": "docs/blueprint_v2.md"
-    },
-    {
-      "originalPath": "docs/manifesto.md",
-      "newPath": "docs/manifesto_v2.md"
-    },
-    {
-      "originalPath": "firestore.rules",
-      "newPath": "firestore_v2.rules"
-    },
-    {
-      "originalPath": "next-env.d.ts",
-      "newPath": "next-env.d_v2.ts"
-    },
-    {
-      "originalPath": "next.config.ts",
-      "newPath": "next.config_v2.ts"
     },
     {
       "originalPath": "package-lock.json",
@@ -95,10 +44,6 @@
     {
       "originalPath": "package.json",
       "newPath": "package_v2.json"
-    },
-    {
-      "originalPath": "postcss.config.mjs",
-      "newPath": "postcss.config_v2.mjs"
     }
   ]
 }
