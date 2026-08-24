@@ -1,0 +1,155 @@
+name: Deploy Frontend to HostGator
+
+on:
+  workflow_run:
+    workflows: ["CI"]
+    types: [completed]
+    branches: [main]
+  workflow_dispatch:
+
+concurrency:
+  group: deploy-hostgator-frontend-${{ github.ref }}
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+env:
+  CI: "true"
+  FORCE_COLOR: "1"
+  NODE_OPTIONS: --max-old-space-size=4096
+  VPS_HOST: "143.95.213.237"
+  VPS_PORT: "22022"
+  VPS_USER: "root"
+  REMOTE_APP: "/var/www/oneverso/current"
+  PUBLIC_DIR: "/var/www/oneverso/public"
+
+jobs:
+  # ---------------------------------------------------------------------------
+  # Bootstrap SSH key into VPS authorized_keys (idempotent, one-time setup)
+  # ---------------------------------------------------------------------------
+  bootstrap-ssh:
+    name: Bootstrap SSH key
+    runs-on: ubuntu-latest
+    if: github.event_name == 'workflow_dispatch' || (github.event_name == 'workflow_run' && github.event.workflow_run.conclusion == 'success' && github.event.workflow_run.event == 'push')
+    steps:
+      - name: Install sshpass
+        run: sudo apt-get update -qq && sudo apt-get install -y -qq sshpass
+
+      - name: Prepare SSH key
+        env:
+          SSH_KEY: ${{ secrets.SSH_GITHUB }}
+        run: |
+          mkdir -p ~/.ssh && chmod 700 ~/.ssh
+          printf '%s\n' "$SSH_KEY" > ~/.ssh/deploy_key
+          chmod 600 ~/.ssh/deploy_key
+          if ! grep -q "BEGIN.*PRIVATE KEY" ~/.ssh/deploy_key; then
+            echo '::error::SSH_GITHUB secret invalid: missing BEGIN PRIVATE KEY header'
+            exit 1
+          fi
+          ssh-keygen -y -P '' -f ~/.ssh/deploy_key > ~/.ssh/deploy_key.pub 2>/dev/null || true
+          FP=$(ssh-keygen -lf ~/.ssh/deploy_key.pub | awk '{print $2}')
+          echo "::notice::SSH key ready · fingerprint=$FP"
+
+      - name: Inject public key via password (bootstrap)
+        env:
+          VPS_PASS: ${{ secrets.VPS_ROOT_PASSWORD }}
+        run: |
+          PUB=$(cat ~/.ssh/deploy_key.pub)
+          sshpass -p "$VPS_PASS" ssh \
+            -p "$VPS_PORT" \
+            -o StrictHostKeyChecking=no \
+            -o ConnectTimeout=30 \
+            "${VPS_USER}@${VPS_HOST}" \
+            "mkdir -p /root/.ssh && chmod 700 /root/.ssh && \
+             touch /root/.ssh/authorized_keys && chmod 600 /root/.ssh/authorized_keys && \
+             grep -qF '${PUB}' /root/.ssh/authorized_keys || echo '${PUB}' >> /root/.ssh/authorized_keys && \
+             echo 'authorized_keys updated: '$(wc -l < /root/.ssh/authorized_keys)' keys'"
+
+      - name: Verify key-based SSH
+        run: |
+          ssh -i ~/.ssh/deploy_key \
+            -p "$VPS_PORT" \
+            -o StrictHostKeyChecking=no \
+            -o BatchMode=yes \
+            -o ConnectTimeout=20 \
+            "${VPS_USER}@${VPS_HOST}" \
+            'echo "SSH_KEY_AUTH_OK $(hostname) $(date -u +%FT%TZ)"'
+
+  # ---------------------------------------------------------------------------
+  # Build frontend locally and deploy via rsync+SSH
+  # ---------------------------------------------------------------------------
+  deploy-frontend:
+    name: Build & deploy frontend via SSH
+    needs: bootstrap-ssh
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Install dependencies
+        run: npm install --legacy-peer-deps --no-audit --no-fund
+
+      - name: Build frontend
+        run: npm run build:frontend
+
+      - name: Prepare SSH key
+        env:
+          SSH_KEY: ${{ secrets.SSH_GITHUB }}
+        run: |
+          mkdir -p ~/.ssh && chmod 700 ~/.ssh
+          printf '%s\n' "$SSH_KEY" > ~/.ssh/deploy_key
+          chmod 600 ~/.ssh/deploy_key
+          ssh-keyscan -p "$VPS_PORT" -H "$VPS_HOST" >> ~/.ssh/known_hosts 2>/dev/null
+
+      - name: Ensure remote dirs exist
+        run: |
+          ssh -i ~/.ssh/deploy_key -p "$VPS_PORT" -o StrictHostKeyChecking=no \
+            "${VPS_USER}@${VPS_HOST}" \
+            "mkdir -p ${{ env.REMOTE_APP }}/frontend/dist ${{ env.PUBLIC_DIR }}"
+
+      - name: Rsync frontend build to VPS (source of truth)
+        run: |
+          rsync -az \
+            -e "ssh -i ~/.ssh/deploy_key -p ${{ env.VPS_PORT }} -o StrictHostKeyChecking=no" \
+            ./frontend/dist/ \
+            ${{ env.VPS_USER }}@${VPS_HOST}:${{ env.REMOTE_APP }}/frontend/dist/
+
+      - name: Rsync frontend build to Nginx public root
+        run: |
+          rsync -az --delete \
+            --exclude='academia' \
+            --exclude='ebooks' \
+            -e "ssh -i ~/.ssh/deploy_key -p ${{ env.VPS_PORT }} -o StrictHostKeyChecking=no" \
+            ./frontend/dist/ \
+            ${{ env.VPS_USER }}@${VPS_HOST}:${{ env.PUBLIC_DIR }}/
+
+      - name: Reload nginx
+        run: |
+          ssh -i ~/.ssh/deploy_key -p "$VPS_PORT" -o StrictHostKeyChecking=no \
+            "${VPS_USER}@${VPS_HOST}" \
+            "nginx -t 2>/dev/null && nginx -s reload 2>/dev/null && echo 'nginx reloaded' || echo 'nginx not present or no reload needed'"
+
+      - name: Summary
+        if: always()
+        run: |
+          {
+            echo "## Deploy Frontend via SSH"
+            echo ""
+            if [ "${{ job.status }}" = "success" ]; then
+              echo "### Published"
+              echo "- Portal: https://oneverso.com.br"
+              echo "- Deploy path: ${{ env.PUBLIC_DIR }} (Nginx root)"
+              echo "- Source backup: ${{ env.REMOTE_APP }}/frontend/dist/"
+              echo "- Method: rsync over SSH"
+            else
+              echo "### Failed"
+              echo "Check VPS_ROOT_PASSWORD and SSH_GITHUB secrets."
+            fi
+          } >> "$GITHUB_STEP_SUMMARY"
