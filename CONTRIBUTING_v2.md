@@ -1,133 +1,225 @@
-# Contributing to Odysseus
+# Contributing to Obscura
 
-Thanks for helping. The project is moving quickly, so the best contributions are focused, easy to review, and easy to test.
+Thanks for your interest in Obscura. This guide covers how to build, test, and
+submit changes. For the deeper, non-obvious engine details (architecture,
+gotchas, robustness invariants), read [AGENTS.md](AGENTS.md) first; this file
+does not repeat it.
 
-## Branch model
+## Code of conduct
 
-Odysseus has two branches:
+Be respectful and constructive. We want Obscura to be a welcoming project, so
+keep discussion focused on the work and assume good faith. Harassment or abuse
+is not tolerated.
 
-- **`dev`** — where all PRs land. Things can be in flux here; the merge button gets used freely.
-- **`main`** — what users run. Curated and tested by the maintainer. Fast-forwarded to a stable `dev` commit at each release.
+## Before you start
 
-**Open your PR against `dev`, not `main`.** The GitHub "base" dropdown defaults to `dev`. If you opened a PR against `main` by accident, click "Edit" on the PR and change the base — no rebase needed.
+For anything beyond a minor documentation fix, **please open an issue first** (or
+comment on an existing one) and say you intend to work on it. This lets us give
+early feedback and avoids two people building the same thing or a PR that does
+not fit the project's direction.
 
-End-users cloning the repo will land on `dev` by default. To run the curated/stable version: `git checkout main` after clone.
+A few notes to keep the project maintainable:
 
-## Before You Start
+- **Link an issue.** PRs without a linked issue or prior discussion may be
+  closed, except for small doc fixes.
+- **Human oversight required.** AI-assisted contributions are fine, but
+  low-quality or unreviewed agent output will be closed. Understand and test
+  what you submit.
+- New to the codebase? Look for issues labeled `good first issue`.
 
-- Search existing issues and pull requests before opening a new one.
-- Prefer one bug fix or feature per pull request.
-- Avoid broad rewrites, formatting-only changes, or moving many files unless the issue is specifically about structure.
-- If you want to work on a large feature, open an issue first and describe the approach.
+## Building
 
-## Setup
+Obscura supports four release configurations. Keep all four building when you
+change feature gates or shared code:
 
-Docker is the recommended path for normal testing:
+| Configuration | Command |
+| --- | --- |
+| Rendering | `cargo build --release -p obscura-cli --bins --features render` |
+| Rendering and stealth | `cargo build --release -p obscura-cli --bins --features render,stealth` |
+| No rendering | `cargo build --release -p obscura-cli --bins --no-default-features` |
+| No rendering, with stealth | `cargo build --release -p obscura-cli --bins --no-default-features --features stealth` |
 
-```bash
-git clone https://github.com/odysseus-dev/odysseus.git
-cd odysseus
-cp .env.example .env
-docker compose up -d --build
-```
-
-Manual development uses Python 3.11+:
-
-```bash
-python3 -m venv venv
-source venv/bin/activate
-pip install -r requirements.txt
-python -m uvicorn app:app --host 127.0.0.1 --port 7000
-```
-
-Windows is not actively tested. Docker on Linux or a Linux/macOS manual install is the safer path for now.
-
-## Running Checks
-
-Run the smallest relevant checks for your change:
+The standard release archives and Docker image include rendering. The
+`-no-render` release variants keep the smaller DOM, JavaScript, networking,
+CDP, and automation runtime but intentionally omit screenshots, screencast,
+and PDF output.
 
 ```bash
-python -m pytest
-python -m py_compile app.py routes/*.py src/*.py
-node --check static/js/<file-you-changed>.js
+cargo build --release -p obscura-cli --bins --features render
+# binary at ./target/release/obscura
 ```
 
-For Docker-related changes:
+- The first build compiles V8 from source: roughly 5 minutes and a few GB of
+  disk. Incremental builds are seconds.
+- Iterating on one crate? Scope it: `cargo build -p obscura-cli`.
+- **Stealth** (`--features render,stealth`) retains rendering and adds the
+  wreq/BoringSSL transport, browser-identity protections, and tracker blocklist.
+  BoringSSL builds through CMake, so `cmake` must be installed. The rendering
+  build uses rustls and needs neither CMake nor OpenSSL.
+- If the vendored OpenSSL build hits an AVX-512 assembler error on your host,
+  build with `OPENSSL_NO_VENDOR=1`.
+
+## Testing
+
+Run tests with **`cargo nextest`, not `cargo test`**:
 
 ```bash
-docker compose config
-docker compose up -d --build
-docker compose logs --tail=120 odysseus
+cargo nextest run --release --features render -p <crate>
+cargo nextest run --release --features render --no-fail-fast
 ```
 
-Mention what you ran in the pull request description. If you could not run a check, say so.
+If you changed shared DOM, JavaScript, CDP, CLI, or feature-gated code, also
+run the affected tests without rendering and build the no-render variant. A
+render-only request made through a no-render binary must return a clear
+unsupported error rather than panic or silently produce an invalid result.
 
-## Pull Requests
+`cargo test` runs the whole test binary in one process, but the engine holds a
+single V8 isolate per process, so the runtime tests fail under it. `nextest`
+runs each test in its own process, which is the only supported way.
 
-Good pull requests usually include:
+The authoritative behavioral gate is the **obstacle course** in the companion
+repo [`obscura-benchmark`](https://github.com/h4ckf0r0day/obscura-benchmark)
+(33 capability and speed stages, must stay 33/33):
 
-- A short explanation of the bug or feature.
-- The files or areas changed.
-- Manual test steps or automated test results from running the actual app, not just the test suite.
-- Screenshots or short recordings for UI changes.
-- Links to related issues, for example `Fixes #123`.
+```bash
+OBSCURA_BIN=./target/release/obscura python3 obstacle-course/run.py --runs 1 --warmup 0
+```
 
-Please keep PRs small. Large PRs that mix unrelated cleanup, formatting, refactors, and behavior changes are much harder to review.
+It serves local fixtures, so it is deterministic and offline.
 
-> **Auto-generated PRs.** If you are running an LLM agent (Devin, Cursor, OpenHands, Claude Code, etc.) against this repo: please open an issue describing the problem first instead of opening a PR directly. Bulk agent-generated PRs that don't match the project's visual style or contribution format will be closed without review, even when the underlying fix is correct.
+## Rendering changes
 
-## Style and visual changes
+The native renderer is shared by every capture surface:
 
-Odysseus has an intentional visual style. PRs that ignore it will be closed without merge, no matter how correct the underlying code is.
+- CLI `fetch --screenshot` (`-s`), including viewport and full-page captures.
+- CDP `Page.captureScreenshot`, `Page.startScreencast`,
+  `Page.stopScreencast`, and `Page.printToPDF`.
+- Puppeteer and Playwright screenshot and PDF calls made through CDP.
+- MCP `browser_screenshot` and `browser_pdf`.
 
-Before submitting any change that affects what the app looks like — buttons, icons, fonts, colors, spacing, layout, CSS, HTML, SVG, or any `static/js/` module that draws to the DOM — please:
+It currently covers block, inline, flex, grid, table, float, positioned,
+overflow, and transformed layout, plus text, images, SVG, canvas, backgrounds,
+borders, animation, fixed and sticky elements, and screen and print output.
+This is an independent engine, not Chromium, so long-tail CSS, media,
+compositor behavior, and platform font rasterization can still differ. Fix the
+underlying layout or paint rule instead of adding site-specific behavior.
 
-1. **Run the app locally** and view the change in a browser. Type-checks and unit tests are not enough.
-2. **Attach a screenshot or short clip** of the change in the running app. Add a mobile screenshot too if the change affects mobile.
-3. **Match the existing visual language.** Specifically:
-   - Reuse existing CSS variables (`--red`, `--fg`, `--bg`, `--card`, `--border`, …). Do not introduce new color values, font sizes, or spacing units.
-   - Reuse existing button, input, card, and border classes. Don't invent parallel styling for similar widgets.
-   - **No Unicode emoji in UI or code.** Use inline SVG (matching the monochrome icon style already in `static/index.html`) or plain text.
-   - Monospaced font (`Fira Code`) for primary UI text. Don't override.
-   - Dark theme is the default; any light-mode work goes through the existing theme system, not hard-coded.
-4. **Don't add parallel components.** If a similar widget already exists in the app, extend it instead of writing a new one.
+For layout, style, paint, image, animation, viewport, scrolling, or pagination
+changes:
 
-If you are unsure whether a change is "visual," it is. Default to attaching a screenshot.
+1. Add or update a small deterministic fixture in `render-repros/` that
+   isolates the behavior.
+2. Build the render binary, then run `render-repros/run.sh`. This captures each
+   fixture in Obscura and Chromium and runs the structural checks.
+3. Run `render-repros/representative-suite/run.sh <new-output-dir>` at the top
+   of the configured pages, then run it again with `bottom` as the second
+   argument. The output directory must not already exist.
+4. Exercise the affected public surface, not just the renderer internally. In
+   particular, cover clipped and full-page screenshots, viewport size and
+   device-pixel ratio, and a scrolled page when geometry is involved.
+5. If lifecycle or animation scheduling changed, verify screencast frame
+   delivery and acknowledgment. If print layout changed, verify PDF page size,
+   margins, backgrounds, page ranges, and stream output where relevant.
+6. Compare old and new revisions with identical release builds, fixtures,
+   viewport, device-pixel ratio, fonts, network state, settle time, scroll
+   position, and capture options. Confirm resources loaded successfully before
+   interpreting image differences.
 
-## Code conventions
+Pixel deltas are useful tripwires, but they are not a fidelity score by
+themselves. Include the focused repro, before and after images, structural
+metrics, and any remaining expected difference in the PR. Rendering work must
+also preserve non-render automation behavior and the no-render build.
 
-Don't hardcode values that the project already exposes through a constant or a helper. Hardcoded literals drift out of sync, break on non-default deployments, and reintroduce bugs we've already fixed.
+## Before you open a PR
 
-- **Filesystem paths:** never build writable paths from `Path(__file__)...` into the source tree, hardcode `/app/...`, or use a relative `"data/..."` string. Every persisted file and directory has a named constant in `src/constants.py` (for example `AUTH_FILE`, `USER_PREFS_FILE`, `SETTINGS_FILE`, `TTS_CACHE_DIR`, `CHROMA_DIR`). Import and use that named constant; do not re-derive the path locally with `os.path.join(DATA_DIR, "x.json")` or `DATA_DIR / "x.json"`. `DATA_DIR` is the single place that reads `ODYSSEUS_DATA_DIR`, so use it directly only for dynamic paths that have no fixed name (for example per-owner files). If a data file or directory has no constant yet, add one to `src/constants.py`. The source tree is read-only in Docker and `/app/...` does not exist on native runs; guard directory creation so an unwritable path degrades gracefully instead of crashing at import.
-- **Internal API / loopback URLs:** don't hardcode `http://localhost:7000`. Use `internal_api_base()` from `src.constants` (it honors `ODYSSEUS_INTERNAL_BASE` / `APP_PORT`).
-- **Ports, limits, model lists, and similar:** reuse the existing constant if one exists; if it doesn't and the value is used in more than one place, add a constant rather than copying the literal.
+For any code change:
 
-If you need a value that has no constant or helper yet, add it to `src/constants.py` (the single source of truth for paths and config; `core/constants.py` only re-exports it for backward compatibility) and import it, rather than repeating a literal across files.
+1. `cargo nextest run --release --features render` passes for the crates you touched.
+2. The full render-feature nextest command above passes.
+3. `CARGO_INCREMENTAL=0 CARGO_BUILD_JOBS=2 cargo build --release -p obscura-cli --bins --features render` compiles clean.
+4. The obstacle course still reports **33/33**.
+5. **Performance is a hard constraint.** Obscura is roughly 12x faster and uses
+   about 6x less memory than headless Chrome on framework pages. Keep native
+   Rust fast paths and add a JS fallback only for real spec edge cases. If your
+   change could affect performance, benchmark old and new revisions interleaved
+   with identical release builds, fixtures, networks, viewport, settle policy,
+   and capture path. Report a distribution and memory use; the noise floor is
+   about plus or minus 10%.
+6. For rendering changes, complete the rendering checks above. For shared or
+   feature-gated changes, also build and test without the `render` feature.
+7. For stealth changes, re-test with `--stealth`. A non-stealth binary does not
+   exercise the `wreq` path.
 
-**Commits:** use [Conventional Commits](https://www.conventionalcommits.org), `type(scope): summary` (e.g. `fix(search): ...`, `feat(notes): ...`, `docs(contributing): ...`). Common types: `fix`, `feat`, `refactor`, `docs`, `test`, `chore`, `ci`. Keep the subject short and imperative; put the "why" in the body when it isn't obvious.
+Keep ops panic-safe: a panic in an op must degrade to a null result, never
+unwind into V8's FFI frame. Do not remove the robustness guards described in
+AGENTS.md (the V8 watchdog, the `tree.rs` reparenting guards, the CLI deadline).
 
-## Issue Reports
+Do not bulk-run `cargo fmt`. The tree is not rustfmt-clean, so a blanket format
+produces a large unrelated diff. Match the surrounding style in the files you
+edit. Comments should explain non-obvious "why", not restate the code.
 
-For bugs, include:
+## Commit messages
 
-- Install method: Docker, manual Python, WSL, etc.
-- OS, browser, and device if relevant.
-- Exact steps to reproduce.
-- Expected behavior and actual behavior.
-- Logs, screenshots, or terminal output.
+Keep them short and factual: what changed and why. We use a lightweight
+`type(scope): summary` style, matching the existing history:
 
-For model-serving issues, include:
+```
+fix(cdp): honor text selection on Backspace and typing
 
-- Backend: Ollama, vLLM, SGLang, llama.cpp, LM Studio, etc.
-- Model name.
-- GPU/CPU and operating system.
-- Cookbook task logs or server logs.
+Backspace trimmed the last character and typing always appended, ignoring
+any selection. Both now respect a non-collapsed selection.
 
-Issues with only "help", "does not work", or a screenshot without context may be closed as not actionable.
+Fixes #316.
+```
 
-## Security
+- `type` is one of `fix`, `feat`, `docs`, `test`, `perf`, `chore`. The `scope`
+  is optional and lowercase (for example `cdp`, `js`, `net`, `stealth`, `cli`).
+- No em dashes. Use commas, periods, or restructure the sentence.
+- No AI-generated filler ("This commit improves...", "As an AI...").
+- Do not add `Co-Authored-By` lines or list yourself as a co-author.
 
-Do not post secrets, API keys, private logs, personal documents, or public IPs in issues or pull requests.
+## Pull requests
 
-For security reports, follow [SECURITY.md](SECURITY.md).
+- All submissions are reviewed; a maintainer merges after approval.
+- Keep the diff small and readable. One logical change per PR. Split large
+  contributions into several PRs.
+- Reference the issue the PR closes, and say how you verified it (the test or
+  repro that now passes).
 
+## Reporting bugs
+
+Open an issue with enough detail to reproduce:
+
+- The obscura version or commit, plus OS and architecture.
+- The build configuration: render, render and stealth, no-render, or no-render
+  and stealth.
+- A repro: a URL, an `--eval` snippet, or a short CDP sequence.
+- What you expected and what actually happened.
+- If it is a rendering or compatibility issue, whether headless Chrome behaves
+  the same. Include the viewport, device-pixel ratio, scroll position, capture
+  mode, screenshot clip or full-page setting, and PDF options where applicable.
+  Anti-bot, CAPTCHA, and login walls block headless Chrome too from a datacenter
+  IP, so those are not engine bugs.
+
+Multi-statement `--eval` that starts with `const` returns `null` (V8 gives
+`const` an empty completion value). Wrap repro snippets in an IIFE:
+`(function(){ ...; return result; })()`.
+
+**Security issues:** do not open a public issue. See [SECURITY.md](SECURITY.md)
+for private reporting.
+
+## Scope and direction
+
+Obscura targets web scraping and AI-agent automation, and is heading toward a
+hosted cloud scraping service. The priorities are real-world render success and
+robustness (no crashes or hangs). Conformance and new Web APIs are welcome when
+they do not regress performance or stability.
+
+The stealth features are privacy-first anti-fingerprinting: they present a
+normal, consistent browser identity so ordinary automation is not singled out.
+Contributions that add detection-evasion for abusive purposes are out of scope.
+
+## License
+
+By contributing, you agree that your contributions are licensed under the
+[Apache License 2.0](LICENSE), the same license as the project.
