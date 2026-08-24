@@ -1,103 +1,133 @@
-## Contributing In General
-Our project welcomes external contributions. If you have an itch, please feel
-free to scratch it.
+# Contributing to Odysseus
 
-For more details on the contributing guidelines head to the Docling Project [community repository](https://github.com/docling-project/community).
+Thanks for helping. The project is moving quickly, so the best contributions are focused, easy to review, and easy to test.
 
-## Developing
+## Branch model
 
-### Usage of uv
+Odysseus has two branches:
 
-We use [uv](https://docs.astral.sh/uv/) as package and project manager.
+- **`dev`** — where all PRs land. Things can be in flux here; the merge button gets used freely.
+- **`main`** — what users run. Curated and tested by the maintainer. Fast-forwarded to a stable `dev` commit at each release.
 
-#### Installation
+**Open your PR against `dev`, not `main`.** The GitHub "base" dropdown defaults to `dev`. If you opened a PR against `main` by accident, click "Edit" on the PR and change the base — no rebase needed.
 
-To install `uv`, check the documentation on [Installing uv](https://docs.astral.sh/uv/getting-started/installation/).
+End-users cloning the repo will land on `dev` by default. To run the curated/stable version: `git checkout main` after clone.
 
-#### Create an environment and sync it
+## Before You Start
 
-You can use the `uv sync` to create a project virtual environment (if it does not already exist) and sync
-the project's dependencies with the environment.
+- Search existing issues and pull requests before opening a new one.
+- Prefer one bug fix or feature per pull request.
+- Avoid broad rewrites, formatting-only changes, or moving many files unless the issue is specifically about structure.
+- If you want to work on a large feature, open an issue first and describe the approach.
 
-```bash
-uv sync
-```
+## Setup
 
-#### Use a specific Python version (optional)
-
-If you need to work with a specific version of Python, you can create a new virtual environment for that version
-and run the sync command:
+Docker is the recommended path for normal testing:
 
 ```bash
-uv venv --python 3.12
-uv sync
+git clone https://github.com/odysseus-dev/odysseus.git
+cd odysseus
+cp .env.example .env
+docker compose up -d --build
 ```
 
-More detailed options are described on the [Using Python environments](https://docs.astral.sh/uv/pip/environments/) documentation.
-
-#### Add a new dependency
-
-Simply use the `uv add` command. The `pyproject.toml` and `uv.lock` files will be updated.
+Manual development uses Python 3.11+:
 
 ```bash
-uv add [OPTIONS] <PACKAGES|--requirements <REQUIREMENTS>>
+python3 -m venv venv
+source venv/bin/activate
+pip install -r requirements.txt
+python -m uvicorn app:app --host 127.0.0.1 --port 7000
 ```
 
-## Coding Style Guidelines
+Windows is not actively tested. Docker on Linux or a Linux/macOS manual install is the safer path for now.
 
-We use the following tools to enforce code style:
+## Running Checks
 
-- [Ruff](https://docs.astral.sh/ruff/), as linter and code formatter
-- [ty](https://docs.astral.sh/ty/), as static type checker
-
-A set of styling checks, as well as regression tests, are defined and managed through [prek](https://pypi.org/project/prek/), a fast runner for pre-commit-compatible hook configs.
-To ensure that those scripts run automatically before a commit is finalized, install `prek` on your local repository:
+Run the smallest relevant checks for your change:
 
 ```bash
-uv run prek install
+python -m pytest
+python -m py_compile app.py routes/*.py src/*.py
+node --check static/js/<file-you-changed>.js
 ```
 
-To run the checks on-demand, run:
+For Docker-related changes:
 
 ```bash
-uv run prek run --all-files
+docker compose config
+docker compose up -d --build
+docker compose logs --tail=120 odysseus
 ```
 
-Note: Checks like `Ruff` will "fail" if they modify files. This is because hook runners don't like to see files modified by their hooks. In these cases, `git add` the modified files and `git commit` again.
+Mention what you ran in the pull request description. If you could not run a check, say so.
 
-## Tests
+## Pull Requests
 
-When submitting a new feature or fix, please consider adding a short test for it.
+Good pull requests usually include:
 
-### Reference test documents
+- A short explanation of the bug or feature.
+- The files or areas changed.
+- Manual test steps or automated test results from running the actual app, not just the test suite.
+- Screenshots or short recordings for UI changes.
+- Links to related issues, for example `Fixes #123`.
 
-When a change improves the conversion results, multiple reference documents must be regenerated and reviewed.
+Please keep PRs small. Large PRs that mix unrelated cleanup, formatting, refactors, and behavior changes are much harder to review.
 
-The reference data can be regenerated with
+> **Auto-generated PRs.** If you are running an LLM agent (Devin, Cursor, OpenHands, Claude Code, etc.) against this repo: please open an issue describing the problem first instead of opening a PR directly. Bulk agent-generated PRs that don't match the project's visual style or contribution format will be closed without review, even when the underlying fix is correct.
 
-```sh
-DOCLING_GEN_TEST_DATA=1 uv run pytest
-```
+## Style and visual changes
 
-All PRs modifying the reference test data require a double review to guarantee we don't miss edge cases.
+Odysseus has an intentional visual style. PRs that ignore it will be closed without merge, no matter how correct the underlying code is.
 
+Before submitting any change that affects what the app looks like — buttons, icons, fonts, colors, spacing, layout, CSS, HTML, SVG, or any `static/js/` module that draws to the DOM — please:
 
-## Documentation
+1. **Run the app locally** and view the change in a browser. Type-checks and unit tests are not enough.
+2. **Attach a screenshot or short clip** of the change in the running app. Add a mobile screenshot too if the change affects mobile.
+3. **Match the existing visual language.** Specifically:
+   - Reuse existing CSS variables (`--red`, `--fg`, `--bg`, `--card`, `--border`, …). Do not introduce new color values, font sizes, or spacing units.
+   - Reuse existing button, input, card, and border classes. Don't invent parallel styling for similar widgets.
+   - **No Unicode emoji in UI or code.** Use inline SVG (matching the monochrome icon style already in `static/index.html`) or plain text.
+   - Monospaced font (`Fira Code`) for primary UI text. Don't override.
+   - Dark theme is the default; any light-mode work goes through the existing theme system, not hard-coded.
+4. **Don't add parallel components.** If a similar widget already exists in the app, extend it instead of writing a new one.
 
-We use [MkDocs](https://www.mkdocs.org/) to write documentation.
+If you are unsure whether a change is "visual," it is. Default to attaching a screenshot.
 
-To run the documentation server, run:
+## Code conventions
 
-```bash
-mkdocs serve
-```
+Don't hardcode values that the project already exposes through a constant or a helper. Hardcoded literals drift out of sync, break on non-default deployments, and reintroduce bugs we've already fixed.
 
-The server will be available at [http://localhost:8000](http://localhost:8000).
+- **Filesystem paths:** never build writable paths from `Path(__file__)...` into the source tree, hardcode `/app/...`, or use a relative `"data/..."` string. Every persisted file and directory has a named constant in `src/constants.py` (for example `AUTH_FILE`, `USER_PREFS_FILE`, `SETTINGS_FILE`, `TTS_CACHE_DIR`, `CHROMA_DIR`). Import and use that named constant; do not re-derive the path locally with `os.path.join(DATA_DIR, "x.json")` or `DATA_DIR / "x.json"`. `DATA_DIR` is the single place that reads `ODYSSEUS_DATA_DIR`, so use it directly only for dynamic paths that have no fixed name (for example per-owner files). If a data file or directory has no constant yet, add one to `src/constants.py`. The source tree is read-only in Docker and `/app/...` does not exist on native runs; guard directory creation so an unwritable path degrades gracefully instead of crashing at import.
+- **Internal API / loopback URLs:** don't hardcode `http://localhost:7000`. Use `internal_api_base()` from `src.constants` (it honors `ODYSSEUS_INTERNAL_BASE` / `APP_PORT`).
+- **Ports, limits, model lists, and similar:** reuse the existing constant if one exists; if it doesn't and the value is used in more than one place, add a constant rather than copying the literal.
 
-### Pushing Documentation to GitHub Pages
+If you need a value that has no constant or helper yet, add it to `src/constants.py` (the single source of truth for paths and config; `core/constants.py` only re-exports it for backward compatibility) and import it, rather than repeating a literal across files.
 
-Run the following:
+**Commits:** use [Conventional Commits](https://www.conventionalcommits.org), `type(scope): summary` (e.g. `fix(search): ...`, `feat(notes): ...`, `docs(contributing): ...`). Common types: `fix`, `feat`, `refactor`, `docs`, `test`, `chore`, `ci`. Keep the subject short and imperative; put the "why" in the body when it isn't obvious.
 
-```bash
-mkdocs gh-deploy
-```
+## Issue Reports
+
+For bugs, include:
+
+- Install method: Docker, manual Python, WSL, etc.
+- OS, browser, and device if relevant.
+- Exact steps to reproduce.
+- Expected behavior and actual behavior.
+- Logs, screenshots, or terminal output.
+
+For model-serving issues, include:
+
+- Backend: Ollama, vLLM, SGLang, llama.cpp, LM Studio, etc.
+- Model name.
+- GPU/CPU and operating system.
+- Cookbook task logs or server logs.
+
+Issues with only "help", "does not work", or a screenshot without context may be closed as not actionable.
+
+## Security
+
+Do not post secrets, API keys, private logs, personal documents, or public IPs in issues or pull requests.
+
+For security reports, follow [SECURITY.md](SECURITY.md).
+
