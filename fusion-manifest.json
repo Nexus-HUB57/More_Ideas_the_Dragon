@@ -1,32 +1,37 @@
 {
   "engine": "FusionHub AutoSafe v2.0 - Clonagem Real",
-  "createdAt": "2026-08-24T01:57:44.362Z",
+  "createdAt": "2026-08-24T02:43:52.769Z",
   "strategy": "clone_100_percent_autosafe",
   "primary": {
     "owner": "Nexus-HUB57",
     "repo": "More_Ideas_the_Dragon",
     "branch": "main",
-    "files": 43996,
+    "files": 43999,
     "folders": 4992
   },
   "secondary": {
-    "owner": "obsidianmd",
-    "repo": "obsidian-releases",
+    "owner": "langchain-ai",
+    "repo": "langchain",
     "branch": "master",
-    "files": 19,
-    "folders": 2
+    "files": 3039,
+    "folders": 556
   },
   "stats": {
-    "totalFiles": 44015,
-    "conflicts": 2,
-    "renamed": 2,
-    "clonedFromSecondary": 19
+    "totalFiles": 47038,
+    "conflicts": 3,
+    "renamed": 3,
+    "clonedFromSecondary": 3039
   },
   "conflicts": [
+    ".gitattributes",
     ".gitignore",
     "README.md"
   ],
   "renamedFiles": [
+    {
+      "originalPath": ".gitattributes",
+      "newPath": "_v2.gitattributes"
+    },
     {
       "originalPath": ".gitignore",
       "newPath": "_v2.gitignore"
