@@ -1,80 +1,166 @@
-<div align="center">
-  <a href="https://docs.langchain.com/oss/python/langchain/overview">
-    <picture>
-      <source media="(prefers-color-scheme: dark)" srcset=".github/images/logo-dark.svg">
-      <source media="(prefers-color-scheme: light)" srcset=".github/images/logo-light.svg">
-      <img alt="LangChain Logo" src=".github/images/logo-dark.svg" width="50%">
-    </picture>
+<p align="center">
+  <a href="https://github.com/docling-project/docling">
+    <img loading="lazy" alt="Docling" src="https://github.com/docling-project/docling/raw/main/docs/assets/docling_processing.png" width="100%"/>
   </a>
-</div>
+</p>
 
-<div align="center">
-  <h3>The agent engineering platform.</h3>
-</div>
+# Docling
 
-<div align="center">
-  <a href="https://opensource.org/licenses/MIT" target="_blank"><img src="https://img.shields.io/pypi/l/langchain" alt="PyPI - License"></a>
-  <a href="https://pypistats.org/packages/langchain" target="_blank"><img src="https://img.shields.io/pepy/dt/langchain" alt="PyPI - Downloads"></a>
-  <a href="https://pypi.org/project/langchain/#history" target="_blank"><img src="https://img.shields.io/pypi/v/langchain?label=%20" alt="Version"></a>
-  <a href="https://x.com/langchain_oss" target="_blank"><img src="https://img.shields.io/twitter/url/https/twitter.com/langchain_oss.svg?style=social&label=Follow%20%40LangChain" alt="Twitter / X"></a>
-</div>
+<p align="center">
+  <a href="https://trendshift.io/repositories/17240" target="_blank"><img src="https://trendshift.io/api/badge/repositories/17240" alt="DS4SD%2Fdocling | Trendshift" style="width: 250px; height: 55px;" width="250" height="55"/></a>
+</p>
 
-<br>
+[![arXiv](https://img.shields.io/badge/arXiv-2408.09869-b31b1b.svg)](https://arxiv.org/abs/2408.09869)
+[![Docs](https://img.shields.io/badge/docs-live-brightgreen)](https://docling-project.github.io/docling/)
+[![PyPI version](https://img.shields.io/pypi/v/docling)](https://pypi.org/project/docling/)
+[![PyPI - Python Version](https://img.shields.io/pypi/pyversions/docling)](https://pypi.org/project/docling/)
+[![uv](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/astral-sh/uv/main/assets/badge/v0.json)](https://github.com/astral-sh/uv)
+[![Ruff](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/astral-sh/ruff/main/assets/badge/v2.json)](https://github.com/astral-sh/ruff)
+[![Pydantic v2](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/pydantic/pydantic/main/docs/badge/v2.json)](https://pydantic.dev)
+[![prek](https://img.shields.io/badge/prek-enabled-brightgreen)](https://pypi.org/project/prek/)
+[![License MIT](https://img.shields.io/github/license/docling-project/docling)](https://opensource.org/licenses/MIT)
+[![PyPI Downloads](https://static.pepy.tech/badge/docling/month)](https://pepy.tech/projects/docling)
+[![Docling Actor](https://apify.com/actor-badge?actor=vancura/docling&fpr=docling)](https://apify.com/vancura/docling)
+[![Chat with Dosu](https://dosu.dev/dosu-chat-badge.svg)](https://app.dosu.dev/097760a8-135e-4789-8234-90c8837d7f1c/ask?utm_source=github)
+[![Discord](https://img.shields.io/discord/1399788921306746971?color=6A7EC2&logo=discord&logoColor=ffffff)](https://docling.ai/discord)
+[![OpenSSF Best Practices](https://www.bestpractices.dev/projects/10101/badge)](https://www.bestpractices.dev/projects/10101)
+[![LF AI & Data](https://img.shields.io/badge/LF%20AI%20%26%20Data-003778?logo=linuxfoundation&logoColor=fff&color=0094ff&labelColor=003778)](https://lfaidata.foundation/projects/)
 
-LangChain is a framework for building agents and LLM-powered applications. It helps you chain together interoperable components and third-party integrations to simplify AI application development — all while future-proofing decisions as the underlying technology evolves.
+## What is Docling ?
 
-> [!TIP]
-> Just getting started? Check out **[Deep Agents](http://docs.langchain.com/oss/python/deepagents/)** — a higher-level package built on LangChain for agents that have built-in capabilities for common usage patterns such as planning, subagents, file system usage, and more.
+Docling simplifies document processing by parsing diverse formats — including advanced PDF understanding — and providing seamless integrations with the generative AI ecosystem.
+
+## Features
+
+- 🗂️ Parsing of [multiple document formats][supported_formats] including PDF, DOCX, PPTX, XLSX, HTML, EPUB, WAV, MP3, WebVTT, Box Notes, email formats (EML, MSG), images (PNG, TIFF, JPEG, ...), LaTeX, DocLang, plain text, and more
+- 📑 Advanced PDF understanding incl. page layout, reading order, table structure, code, formulas, image classification, and more
+- 🧬 A unified, expressive [DoclingDocument][docling_document] representation format
+- ↪️ Various [export formats][supported_formats] and options, including Markdown, HTML, WebVTT, DocLang, [DocTags](https://arxiv.org/abs/2503.11576) and lossless JSON
+- 📜 Support for several application-specific XML schemas including [DocLang](https://doclang.ai), [USPTO](https://www.uspto.gov/patents) patents, [JATS](https://jats.nlm.nih.gov/) articles, and [XBRL](https://www.xbrl.org/) financial reports.
+- 🔒 Local execution capabilities for sensitive data and air-gapped environments
+- 🤖 Plug-and-play [integrations][integrations] incl. LangChain, LlamaIndex, Crew AI & Haystack for agentic AI
+- 🔍 Extensive OCR support for scanned PDFs and images
+- 👓 Support for several Visual Language Models, such as ([GraniteDocling](https://huggingface.co/ibm-granite/granite-docling-258M))
+- 🎙️ Audio support with Automatic Speech Recognition (ASR) models
+- 🔌 Connect to any agent using the [MCP server](https://docling-project.github.io/docling/usage/mcp/)
+- 🌐 Run Docling as a service with the [API server](https://docling-project.github.io/docling/usage/api_server/) (docling-serve)
+- 💻 Simple and convenient CLI
+
+### What's new
+
+- 🎬 Parsing of video files (MP4, AVI, MOV, MKV, and WebM) with an ASR transcript and representative keyframes
+- 📄 Parsing of ODF (OpenDocument Format) files for text documents (`.odt`), spreadsheets (`.ods`), and presentations (`.odp`)
+- 💼 Parsing of XBRL (eXtensible Business Reporting Language) documents for financial reports
+- 📧 Parsing of email files (`.eml`, `.msg`)
+- 📚 Parsing of EPUB (Electronic Publication) files for e-books
+- 📝 Parsing of plain-text files (`.txt`, `.text`) and Markdown supersets (`.qmd`, `.Rmd`)
+- 📊 Chart understanding (Barchart, Piechart, LinePlot): convert them into tables or code and add detailed descriptions
+
+### Coming soon
+
+- 📝 Metadata extraction, including title, authors, references & language
+- 📝 Complex chemistry understanding (Molecular structures)
 
 ## Quickstart
 
+### 1. Install
+
 ```bash
-uv add langchain
+pip install docling
 ```
+
+> **Note:** Python 3.9 support was dropped in docling version 2.70.0. Please use Python 3.10 or higher.
+
+Works on macOS, Linux and Windows environments for both x86_64 and arm64 architectures.
+
+More [detailed installation instructions](https://docling-project.github.io/docling/getting_started/installation/) are available in the docs.
+
+## 2. Convert a document (CLI)
+
+```bash
+docling https://arxiv.org/pdf/2206.01062
+```
+
+This generates a .md file in the current directory containing structured document content.
+
+You can also use 🥚[GraniteDocling](https://huggingface.co/ibm-granite/granite-docling-258M) and other VLMs via Docling CLI:
+
+```bash
+docling --pipeline vlm --vlm-model granite_docling https://arxiv.org/pdf/2206.01062
+```
+
+## 3. Python usage (recommended)
 
 ```python
-from langchain.chat_models import init_chat_model
+from docling.document_converter import DocumentConverter
 
-model = init_chat_model("openai:gpt-5.5")
-result = model.invoke("Hello, world!")
+source = "https://arxiv.org/pdf/2408.09869"  # a document via a local path or URL
+converter = DocumentConverter()
+result = converter.convert(source)
+print(result.document.export_to_markdown())  # output: "## Docling Technical Report[...]"
 ```
 
-If you're looking for more advanced customization or agent orchestration, check out [LangGraph](https://github.com/langchain-ai/langgraph), our framework for building controllable agent workflows.
+More advanced [usage](https://docling-project.github.io/docling/usage/) and [configuration](https://docling-project.github.io/docling/getting_started/installation/) options.
 
-For an equivalent JS/TS library, check out [LangChain.js](https://github.com/langchain-ai/langchainjs).
+## Documentation
 
-> [!TIP]
-> For developing, debugging, and deploying AI agents and LLM applications, see [LangSmith](https://docs.langchain.com/langsmith/home).
+Check out Docling's [documentation](https://docling-project.github.io/docling/) for details on
+installation, usage, concepts, recipes, extensions, and more.
 
-## LangChain ecosystem
+## Examples
 
-While the LangChain framework can be used standalone, it also integrates seamlessly with any LangChain product, giving developers a full suite of tools when building LLM applications.
+Go hands-on with our [examples](https://docling-project.github.io/docling/examples/),
+demonstrating how to address different application use cases with Docling.
 
-- **[Deep Agents](http://docs.langchain.com/oss/python/deepagents/)** — Build agents that can plan, use subagents, and leverage file systems for complex tasks
-- **[LangGraph](https://docs.langchain.com/oss/python/langgraph/overview)** — Build agents that can reliably handle complex tasks with our low-level agent orchestration framework
-- **[Integrations](https://docs.langchain.com/oss/python/integrations/providers/overview)** — Chat & embedding models, tools & toolkits, and more
-- **[LangSmith](https://www.langchain.com/langsmith)** — Agent evals, observability, and debugging for LLM apps
-- **[LangSmith Deployment](https://docs.langchain.com/langsmith/deployments)** — Deploy and scale agents with a purpose-built platform for long-running, stateful workflows
+## Integrations
 
-## Why use LangChain?
+To further accelerate your AI application development, check out Docling's native
+[integrations](https://docling-project.github.io/docling/integrations/) with popular frameworks
+and tools.
 
-LangChain helps developers build applications powered by LLMs through a standard interface for models, embeddings, vector stores, and more.
+## Get help and support
 
-- **Real-time data augmentation** — Easily connect LLMs to diverse data sources and external/internal systems, drawing from LangChain's vast library of integrations with model providers, tools, vector stores, retrievers, and more
-- **Model interoperability** — Swap models in and out as your engineering team experiments to find the best choice for your application's needs. As the industry frontier evolves, adapt quickly — LangChain's abstractions keep you moving without losing momentum
-- **Rapid prototyping** — Quickly build and iterate on LLM applications with LangChain's modular, component-based architecture. Test different approaches and workflows without rebuilding from scratch, accelerating your development cycle
-- **Production-ready features** — Deploy reliable applications with built-in support for monitoring, evaluation, and debugging through integrations like LangSmith. Scale with confidence using battle-tested patterns and best practices
-- **Vibrant community and ecosystem** — Leverage a rich ecosystem of integrations, templates, and community-contributed components. Benefit from continuous improvements and stay up-to-date with the latest AI developments through an active open-source community
-- **Flexible abstraction layers** — Work at the level of abstraction that suits your needs — from high-level chains for quick starts to low-level components for fine-grained control. LangChain grows with your application's complexity
+Please feel free to connect with us using the [discussion section](https://github.com/docling-project/docling/discussions).
 
----
+## Technical report
 
-## Resources
+For more details on Docling's inner workings, check out the [Docling Technical Report](https://arxiv.org/abs/2408.09869).
 
-- [Documentation](https://docs.langchain.com/oss/python/langchain/overview) — conceptual overviews and guides
-- [LangChain ecosystem overview](https://docs.langchain.com/oss/python/concepts/products) — how LangChain, LangGraph, and Deep Agents fit together
-- [API reference](https://reference.langchain.com/python) — complete reference for all public classes, functions, and types
-- [Discussions](https://forum.langchain.com/c/oss-product-help-lc-and-lg/langchain/14) — community forum for technical questions, ideas, and feedback
-- [LangChain Academy](https://academy.langchain.com/) — comprehensive, free courses on LangChain libraries and products, made by the LangChain team
-- [Contributing Guide](https://docs.langchain.com/oss/python/contributing/overview) — how to contribute and find good first issues
-- [Code of Conduct](https://github.com/langchain-ai/langchain/?tab=coc-ov-file) — community guidelines and standards
+## Contributing
+
+Please read [Contributing to Docling](https://github.com/docling-project/docling/blob/main/CONTRIBUTING.md) for details.
+
+## References
+
+If you use Docling in your projects, please consider citing the following:
+
+```bib
+@techreport{Docling,
+  author = {Deep Search Team},
+  month = {8},
+  title = {Docling Technical Report},
+  url = {https://arxiv.org/abs/2408.09869},
+  eprint = {2408.09869},
+  doi = {10.48550/arXiv.2408.09869},
+  version = {1.0.0},
+  year = {2024}
+}
+```
+
+## License
+
+The Docling codebase is under MIT license.
+For individual model usage, please refer to the model licenses found in the original packages.
+
+## LF AI & Data
+
+Docling is hosted as a project in the [LF AI & Data Foundation](https://lfaidata.foundation/projects/).
+
+### IBM ❤️ Open Source AI
+
+The project was started by the AI for knowledge team at IBM Research Zurich.
+
+[supported_formats]: https://docling-project.github.io/docling/usage/supported_formats/
+[docling_document]: https://docling-project.github.io/docling/concepts/docling_document/
+[integrations]: https://docling-project.github.io/docling/integrations/
+[extraction]: https://docling-project.github.io/docling/_generated/examples/extraction/
