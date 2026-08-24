@@ -1,32 +1,30 @@
 {
   "engine": "FusionHub AutoSafe v2.0 - Clonagem Real",
-  "createdAt": "2026-08-24T01:47:56.961Z",
+  "createdAt": "2026-08-24T01:57:44.362Z",
   "strategy": "clone_100_percent_autosafe",
   "primary": {
     "owner": "Nexus-HUB57",
     "repo": "More_Ideas_the_Dragon",
     "branch": "main",
-    "files": 44035,
-    "folders": 4978
+    "files": 43996,
+    "folders": 4992
   },
   "secondary": {
-    "owner": "Nexus-HUB57",
-    "repo": "MMN_AI-to-AI",
-    "branch": "main",
-    "files": 7055,
-    "folders": 717
+    "owner": "obsidianmd",
+    "repo": "obsidian-releases",
+    "branch": "master",
+    "files": 19,
+    "folders": 2
   },
   "stats": {
-    "totalFiles": 51090,
-    "conflicts": 4,
-    "renamed": 4,
-    "clonedFromSecondary": 7055
+    "totalFiles": 44015,
+    "conflicts": 2,
+    "renamed": 2,
+    "clonedFromSecondary": 19
   },
   "conflicts": [
     ".gitignore",
-    "README.md",
-    "package-lock.json",
-    "package.json"
+    "README.md"
   ],
   "renamedFiles": [
     {
@@ -36,14 +34,6 @@
     {
       "originalPath": "README.md",
       "newPath": "README_v2.md"
-    },
-    {
-      "originalPath": "package-lock.json",
-      "newPath": "package-lock_v2.json"
-    },
-    {
-      "originalPath": "package.json",
-      "newPath": "package_v2.json"
     }
   ]
 }
