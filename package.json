@@ -1,9 +1,9 @@
 {
-  "name": "obsidian-community-releases",
-  "scripts": {
-    "format": "prettier --write \"**/community*.json\""
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/odysseus-dev/odysseus.git"
   },
   "devDependencies": {
-    "prettier": "3.5.3"
+    "@antithesishq/bombadil": "^0.6.1"
   }
 }
