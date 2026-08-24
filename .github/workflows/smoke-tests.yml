@@ -1,0 +1,147 @@
+name: Production Smoke Tests
+
+on:
+  workflow_run:
+    workflows: [Deploy Frontend to HostGator]
+    types: [completed]
+  workflow_dispatch:
+
+concurrency:
+  group: smoke-tests-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+env:
+  BROWSER_UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36
+  HTML_ACCEPT: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+  EXPECTED_DISCOVERY_STAGE: sprint-5
+
+jobs:
+  smoke:
+    name: Validar portal e API em produção
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    if: ${{ github.event_name == 'workflow_dispatch' || (github.event_name == 'workflow_run' && github.event.workflow_run.conclusion == 'success') }}
+
+    steps:
+      - name: Verificar portal raiz
+        run: |
+          code=$(curl -sL -A "$BROWSER_UA" -H "Accept: $HTML_ACCEPT" -o /tmp/root.html -w "%{http_code}" https://oneverso.com.br)
+          echo "HTTP root: $code"
+          test "$code" = "200"
+          grep -qi '<html' /tmp/root.html
+          if grep -qi 'Not Acceptable' /tmp/root.html; then
+            echo "ModSecurity bloqueou a resposta HTML do portal." >&2
+            exit 1
+          fi
+
+      - name: Verificar SPA fallback /login
+        run: |
+          code=$(curl -sL -A "$BROWSER_UA" -H "Accept: $HTML_ACCEPT" -o /tmp/login.html -w "%{http_code}" https://oneverso.com.br/login)
+          echo "HTTP /login: $code"
+          test "$code" = "200"
+          grep -qi '<html' /tmp/login.html
+          if grep -qi 'Not Acceptable' /tmp/login.html; then
+            echo "ModSecurity bloqueou o fallback SPA em /login." >&2
+            exit 1
+          fi
+
+      - name: Verificar asset principal carregado no HTML
+        run: |
+          asset=$(grep -oE 'src="/assets/index-[A-Za-z0-9_-]+\.js"' /tmp/root.html | head -1 | sed 's/src="//' | sed 's/"//')
+          css=$(grep -oE 'href="/assets/[A-Za-z0-9_-]+\.css"' /tmp/root.html | head -1 | sed 's/href="//' | sed 's/"//')
+          echo "Asset detectado: $asset"
+          echo "CSS detectado: $css"
+          test -n "$asset"
+          curl -fsSIL -H 'Accept: */*' "https://oneverso.com.br$asset" >/dev/null
+          if [ -n "$css" ]; then
+            curl -fsSIL -H 'Accept: text/css,*/*;q=0.1' "https://oneverso.com.br$css" >/dev/null
+          fi
+          printf '%s' "$asset" > /tmp/main-asset.txt
+
+      - name: Verificar health da API
+        run: |
+          code=$(curl -s -o /tmp/api-health.json -w "%{http_code}" https://api.oneverso.com.br/api/health)
+          echo "HTTP api /api/health: $code"
+          test "$code" = "200"
+          grep -Eqi 'ok|healthy|status' /tmp/api-health.json
+
+      - name: Validar discovery e OpenAPI da Sprint 5
+        env:
+          EXPECTED_DISCOVERY_STAGE: ${{ env.EXPECTED_DISCOVERY_STAGE }}
+        run: |
+          curl -fsSL https://api.oneverso.com.br/api/v1/ -o /tmp/openapi-discovery.json
+          curl -fsSL https://api.oneverso.com.br/api/v1/openapi.json -o /tmp/openapi.json
+          python3 - <<'PY'
+          import json
+          import os
+
+          expected_stage = os.environ["EXPECTED_DISCOVERY_STAGE"]
+          with open('/tmp/openapi-discovery.json', 'r', encoding='utf-8') as f:
+              discovery = json.load(f)
+          with open('/tmp/openapi.json', 'r', encoding='utf-8') as f:
+              spec = json.load(f)
+
+          stage = discovery.get('stage')
+          assert stage == expected_stage, discovery
+
+          paths = spec.get('paths', {})
+          required = [
+              '/commissions',
+              '/commissions/stats',
+              '/commissions/{id}',
+              '/partners',
+              '/partners/stats',
+              '/partners/{id}',
+              '/partners/{id}/growth',
+          ]
+          missing = [path for path in required if path not in paths]
+          if missing:
+              raise SystemExit(f'Paths ausentes na OpenAPI: {missing}')
+          print(f'OK: stage={stage} paths={len(paths)}')
+          PY
+
+      - name: Validar bundle principal do portal publicado
+        run: |
+          set -euo pipefail
+          asset=$(cat /tmp/main-asset.txt)
+          curl -fsSL -H 'Accept: */*' "https://oneverso.com.br$asset" -o /tmp/main.js
+
+          violations=0
+
+          if ! grep -qE 'nexus-(start|growth|enterprise)' /tmp/main.js; then
+            echo "::error::Bundle principal não contém os novos IDs nexus-start/growth/enterprise"
+            violations=$((violations+1))
+          fi
+
+          if ! grep -q 'Nexus Partners Pack' /tmp/main.js; then
+            echo "::warning::Texto Nexus Partners Pack não encontrado no bundle principal"
+          fi
+
+          if grep -qE '"(pack-a2|pack-ag|pack-aa)"' /tmp/main.js; then
+            echo "::notice::Bundle principal também contém IDs pack-* da jornada Affil\'IA\'te, o que é esperado no modo sem code-splitting"
+          fi
+
+          if [ "$violations" -gt 0 ]; then
+            echo "$violations violacoes encontradas. Falhando o smoke test."
+            exit 1
+          fi
+          echo "OK: bundle principal validado em produção."
+
+      - name: Resumo dos smoke tests
+        if: always()
+        run: |
+          {
+            echo "## 🧪 Production Smoke Tests"
+            echo
+            echo "- Portal raiz: https://oneverso.com.br"
+            echo "- SPA fallback: https://oneverso.com.br/login"
+            echo "- API health: https://api.oneverso.com.br/api/health"
+            echo "- Discovery API: https://api.oneverso.com.br/api/v1/"
+            echo "- OpenAPI JSON: https://api.oneverso.com.br/api/v1/openapi.json"
+            echo "- Stage esperado: $EXPECTED_DISCOVERY_STAGE"
+            echo
+            echo "Status final: ${{ job.status }}"
+          } >> "$GITHUB_STEP_SUMMARY"
