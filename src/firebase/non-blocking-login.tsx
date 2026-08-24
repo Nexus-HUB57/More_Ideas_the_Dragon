@@ -1,0 +1,29 @@
+'use client';
+import {
+  Auth,
+  signInAnonymously,
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+} from 'firebase/auth';
+
+/** Initiate anonymous sign-in (non-blocking). */
+export function initiateAnonymousSignIn(authInstance: Auth): void {
+  // CRITICAL: Call signInAnonymously directly. Added .catch to prevent unhandled rejection.
+  signInAnonymously(authInstance).catch(err => {
+    console.warn("[NEXUS_AUTH]: Anonymous sign-in failed (handshake error).", err.message);
+  });
+}
+
+/** Initiate email/password sign-up (non-blocking). */
+export function initiateEmailSignUp(authInstance: Auth, email: string, password: string): void {
+  createUserWithEmailAndPassword(authInstance, email, password).catch(err => {
+    console.warn("[NEXUS_AUTH]: Sign-up failed.", err.message);
+  });
+}
+
+/** Initiate email/password sign-in (non-blocking). */
+export function initiateEmailSignIn(authInstance: Auth, email: string, password: string): void {
+  signInWithEmailAndPassword(authInstance, email, password).catch(err => {
+    console.warn("[NEXUS_AUTH]: Sign-in failed.", err.message);
+  });
+}
