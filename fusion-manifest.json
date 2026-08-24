@@ -1,53 +1,44 @@
 {
   "engine": "FusionHub AutoSafe v2.0 - Clonagem Real",
-  "createdAt": "2026-08-24T03:51:43.107Z",
+  "createdAt": "2026-08-24T04:06:21.466Z",
   "strategy": "clone_100_percent_autosafe",
   "primary": {
     "owner": "Nexus-HUB57",
     "repo": "More_Ideas_the_Dragon",
     "branch": "main",
-    "files": 44191,
-    "folders": 5017
+    "files": 44227,
+    "folders": 5025
   },
   "secondary": {
-    "owner": "odysseus-dev",
-    "repo": "odysseus",
-    "branch": "dev",
-    "files": 1502,
-    "folders": 92
+    "owner": "h4ckf0r0day",
+    "repo": "obscura",
+    "branch": "main",
+    "files": 370,
+    "folders": 61
   },
   "stats": {
-    "totalFiles": 45693,
-    "conflicts": 15,
-    "renamed": 15,
-    "clonedFromSecondary": 1502
+    "totalFiles": 44597,
+    "conflicts": 14,
+    "renamed": 14,
+    "clonedFromSecondary": 370
   },
   "conflicts": [
-    ".dockerignore",
-    ".env.example",
     ".gitattributes",
     ".github/CODEOWNERS",
+    ".github/ISSUE_TEMPLATE/bug_report.yml",
     ".github/ISSUE_TEMPLATE/config.yml",
-    ".github/dependabot.yml",
+    ".github/ISSUE_TEMPLATE/feature_request.yml",
     ".github/pull_request_template.md",
     ".github/workflows/ci.yml",
     ".gitignore",
+    "AGENTS.md",
     "CONTRIBUTING.md",
     "Dockerfile",
     "LICENSE",
     "README.md",
-    "ROADMAP.md",
     "SECURITY.md"
   ],
   "renamedFiles": [
-    {
-      "originalPath": ".dockerignore",
-      "newPath": "_v2.dockerignore"
-    },
-    {
-      "originalPath": ".env.example",
-      "newPath": ".env_v2.example"
-    },
     {
       "originalPath": ".gitattributes",
       "newPath": "_v2.gitattributes"
@@ -57,12 +48,16 @@
       "newPath": "_v2.github/CODEOWNERS"
     },
     {
+      "originalPath": ".github/ISSUE_TEMPLATE/bug_report.yml",
+      "newPath": ".github/ISSUE_TEMPLATE/bug_report_v2.yml"
+    },
+    {
       "originalPath": ".github/ISSUE_TEMPLATE/config.yml",
       "newPath": ".github/ISSUE_TEMPLATE/config_v2.yml"
     },
     {
-      "originalPath": ".github/dependabot.yml",
-      "newPath": ".github/dependabot_v2.yml"
+      "originalPath": ".github/ISSUE_TEMPLATE/feature_request.yml",
+      "newPath": ".github/ISSUE_TEMPLATE/feature_request_v2.yml"
     },
     {
       "originalPath": ".github/pull_request_template.md",
@@ -75,6 +70,10 @@
     {
       "originalPath": ".gitignore",
       "newPath": "_v2.gitignore"
+    },
+    {
+      "originalPath": "AGENTS.md",
+      "newPath": "AGENTS_v2.md"
     },
     {
       "originalPath": "CONTRIBUTING.md",
@@ -91,10 +90,6 @@
     {
       "originalPath": "README.md",
       "newPath": "README_v2.md"
-    },
-    {
-      "originalPath": "ROADMAP.md",
-      "newPath": "ROADMAP_v2.md"
     },
     {
       "originalPath": "SECURITY.md",
