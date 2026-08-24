@@ -1,44 +1,104 @@
 {
   "engine": "FusionHub AutoSafe v2.0 - Clonagem Real",
-  "createdAt": "2026-08-24T02:43:52.769Z",
+  "createdAt": "2026-08-24T03:51:43.107Z",
   "strategy": "clone_100_percent_autosafe",
   "primary": {
     "owner": "Nexus-HUB57",
     "repo": "More_Ideas_the_Dragon",
     "branch": "main",
-    "files": 43999,
-    "folders": 4992
+    "files": 44191,
+    "folders": 5017
   },
   "secondary": {
-    "owner": "langchain-ai",
-    "repo": "langchain",
-    "branch": "master",
-    "files": 3039,
-    "folders": 556
+    "owner": "odysseus-dev",
+    "repo": "odysseus",
+    "branch": "dev",
+    "files": 1502,
+    "folders": 92
   },
   "stats": {
-    "totalFiles": 47038,
-    "conflicts": 3,
-    "renamed": 3,
-    "clonedFromSecondary": 3039
+    "totalFiles": 45693,
+    "conflicts": 15,
+    "renamed": 15,
+    "clonedFromSecondary": 1502
   },
   "conflicts": [
+    ".dockerignore",
+    ".env.example",
     ".gitattributes",
+    ".github/CODEOWNERS",
+    ".github/ISSUE_TEMPLATE/config.yml",
+    ".github/dependabot.yml",
+    ".github/pull_request_template.md",
+    ".github/workflows/ci.yml",
     ".gitignore",
-    "README.md"
+    "CONTRIBUTING.md",
+    "Dockerfile",
+    "LICENSE",
+    "README.md",
+    "ROADMAP.md",
+    "SECURITY.md"
   ],
   "renamedFiles": [
     {
+      "originalPath": ".dockerignore",
+      "newPath": "_v2.dockerignore"
+    },
+    {
+      "originalPath": ".env.example",
+      "newPath": ".env_v2.example"
+    },
+    {
       "originalPath": ".gitattributes",
       "newPath": "_v2.gitattributes"
+    },
+    {
+      "originalPath": ".github/CODEOWNERS",
+      "newPath": "_v2.github/CODEOWNERS"
+    },
+    {
+      "originalPath": ".github/ISSUE_TEMPLATE/config.yml",
+      "newPath": ".github/ISSUE_TEMPLATE/config_v2.yml"
+    },
+    {
+      "originalPath": ".github/dependabot.yml",
+      "newPath": ".github/dependabot_v2.yml"
+    },
+    {
+      "originalPath": ".github/pull_request_template.md",
+      "newPath": ".github/pull_request_template_v2.md"
+    },
+    {
+      "originalPath": ".github/workflows/ci.yml",
+      "newPath": ".github/workflows/ci_v2.yml"
     },
     {
       "originalPath": ".gitignore",
       "newPath": "_v2.gitignore"
     },
     {
+      "originalPath": "CONTRIBUTING.md",
+      "newPath": "CONTRIBUTING_v2.md"
+    },
+    {
+      "originalPath": "Dockerfile",
+      "newPath": "_v2"
+    },
+    {
+      "originalPath": "LICENSE",
+      "newPath": "_v2"
+    },
+    {
       "originalPath": "README.md",
       "newPath": "README_v2.md"
+    },
+    {
+      "originalPath": "ROADMAP.md",
+      "newPath": "ROADMAP_v2.md"
+    },
+    {
+      "originalPath": "SECURITY.md",
+      "newPath": "SECURITY_v2.md"
     }
   ]
 }
