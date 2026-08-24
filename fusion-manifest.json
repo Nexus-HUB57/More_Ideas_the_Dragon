@@ -1,13 +1,13 @@
 {
   "engine": "FusionHub AutoSafe v2.0 - Clonagem Real",
-  "createdAt": "2026-08-23T23:55:26.999Z",
+  "createdAt": "2026-08-24T00:00:12.306Z",
   "strategy": "clone_100_percent_autosafe",
   "primary": {
     "owner": "Nexus-HUB57",
     "repo": "More_Ideas_the_Dragon",
     "branch": "main",
-    "files": 44031,
-    "folders": 4981
+    "files": 44034,
+    "folders": 4979
   },
   "secondary": {
     "owner": "Nexus-HUB57",
@@ -17,9 +17,9 @@
     "folders": 14
   },
   "stats": {
-    "totalFiles": 44186,
-    "conflicts": 12,
-    "renamed": 12,
+    "totalFiles": 44189,
+    "conflicts": 15,
+    "renamed": 15,
     "clonedFromSecondary": 155
   },
   "conflicts": [
@@ -31,6 +31,9 @@
     "components.json",
     "docs/backend.json",
     "docs/blueprint.md",
+    "docs/manifesto.md",
+    "firestore.rules",
+    "next-env.d.ts",
     "next.config.ts",
     "package-lock.json",
     "package.json",
@@ -68,6 +71,18 @@
     {
       "originalPath": "docs/blueprint.md",
       "newPath": "docs/blueprint_v2.md"
+    },
+    {
+      "originalPath": "docs/manifesto.md",
+      "newPath": "docs/manifesto_v2.md"
+    },
+    {
+      "originalPath": "firestore.rules",
+      "newPath": "firestore_v2.rules"
+    },
+    {
+      "originalPath": "next-env.d.ts",
+      "newPath": "next-env.d_v2.ts"
     },
     {
       "originalPath": "next.config.ts",
