@@ -1,166 +1,81 @@
 <p align="center">
-  <a href="https://github.com/docling-project/docling">
-    <img loading="lazy" alt="Docling" src="https://github.com/docling-project/docling/raw/main/docs/assets/docling_processing.png" width="100%"/>
-  </a>
+  <img src="docs/odysseus-wordmark.png" alt="Odysseus" width="238">
 </p>
-
-# Docling
 
 <p align="center">
-  <a href="https://trendshift.io/repositories/17240" target="_blank"><img src="https://trendshift.io/api/badge/repositories/17240" alt="DS4SD%2Fdocling | Trendshift" style="width: 250px; height: 55px;" width="250" height="55"/></a>
+  A self-hosted AI workspace for chat, agents, research, documents, email, notes, calendar, and local model workflows.
 </p>
 
-[![arXiv](https://img.shields.io/badge/arXiv-2408.09869-b31b1b.svg)](https://arxiv.org/abs/2408.09869)
-[![Docs](https://img.shields.io/badge/docs-live-brightgreen)](https://docling-project.github.io/docling/)
-[![PyPI version](https://img.shields.io/pypi/v/docling)](https://pypi.org/project/docling/)
-[![PyPI - Python Version](https://img.shields.io/pypi/pyversions/docling)](https://pypi.org/project/docling/)
-[![uv](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/astral-sh/uv/main/assets/badge/v0.json)](https://github.com/astral-sh/uv)
-[![Ruff](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/astral-sh/ruff/main/assets/badge/v2.json)](https://github.com/astral-sh/ruff)
-[![Pydantic v2](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/pydantic/pydantic/main/docs/badge/v2.json)](https://pydantic.dev)
-[![prek](https://img.shields.io/badge/prek-enabled-brightgreen)](https://pypi.org/project/prek/)
-[![License MIT](https://img.shields.io/github/license/docling-project/docling)](https://opensource.org/licenses/MIT)
-[![PyPI Downloads](https://static.pepy.tech/badge/docling/month)](https://pepy.tech/projects/docling)
-[![Docling Actor](https://apify.com/actor-badge?actor=vancura/docling&fpr=docling)](https://apify.com/vancura/docling)
-[![Chat with Dosu](https://dosu.dev/dosu-chat-badge.svg)](https://app.dosu.dev/097760a8-135e-4789-8234-90c8837d7f1c/ask?utm_source=github)
-[![Discord](https://img.shields.io/discord/1399788921306746971?color=6A7EC2&logo=discord&logoColor=ffffff)](https://docling.ai/discord)
-[![OpenSSF Best Practices](https://www.bestpractices.dev/projects/10101/badge)](https://www.bestpractices.dev/projects/10101)
-[![LF AI & Data](https://img.shields.io/badge/LF%20AI%20%26%20Data-003778?logo=linuxfoundation&logoColor=fff&color=0094ff&labelColor=003778)](https://lfaidata.foundation/projects/)
+<p align="center">
+  <a href="#quick-start">Quick Start</a> ·
+  <a href="docs/setup.md">Setup Guide</a> ·
+  <a href="CONTRIBUTING.md">Contributing</a> ·
+  <a href="ROADMAP.md">Roadmap</a>
+</p>
 
-## What is Docling ?
+<p align="center">
+  <a href="https://repology.org/project/odysseus-ai/versions"><img src="https://repology.org/badge/vertical-allrepos/odysseus-ai.svg" alt="Packaging status"></a>
+</p>
 
-Docling simplifies document processing by parsing diverse formats — including advanced PDF understanding — and providing seamless integrations with the generative AI ecosystem.
+<p align="center">
+  <img src="docs/odysseus-browser.jpg" alt="Odysseus interface">
+</p>
+
+---
+
+## Quick Start
+
+> `dev` is the default branch and gets the newest changes first. Use [`main`](https://github.com/odysseus-dev/odysseus/tree/main) if you want the more curated branch.
+
+```bash
+git clone https://github.com/odysseus-dev/odysseus.git
+cd odysseus
+cp .env.example .env
+docker compose up -d --build
+```
+
+Open `http://localhost:7000` when the containers are healthy. The first admin password is printed in `docker compose logs odysseus`.
+
+Native installs, GPU notes, Windows/macOS instructions, HTTPS, and configuration live in the [setup guide](docs/setup.md).
 
 ## Features
 
-- 🗂️ Parsing of [multiple document formats][supported_formats] including PDF, DOCX, PPTX, XLSX, HTML, EPUB, WAV, MP3, WebVTT, Box Notes, email formats (EML, MSG), images (PNG, TIFF, JPEG, ...), LaTeX, DocLang, plain text, and more
-- 📑 Advanced PDF understanding incl. page layout, reading order, table structure, code, formulas, image classification, and more
-- 🧬 A unified, expressive [DoclingDocument][docling_document] representation format
-- ↪️ Various [export formats][supported_formats] and options, including Markdown, HTML, WebVTT, DocLang, [DocTags](https://arxiv.org/abs/2503.11576) and lossless JSON
-- 📜 Support for several application-specific XML schemas including [DocLang](https://doclang.ai), [USPTO](https://www.uspto.gov/patents) patents, [JATS](https://jats.nlm.nih.gov/) articles, and [XBRL](https://www.xbrl.org/) financial reports.
-- 🔒 Local execution capabilities for sensitive data and air-gapped environments
-- 🤖 Plug-and-play [integrations][integrations] incl. LangChain, LlamaIndex, Crew AI & Haystack for agentic AI
-- 🔍 Extensive OCR support for scanned PDFs and images
-- 👓 Support for several Visual Language Models, such as ([GraniteDocling](https://huggingface.co/ibm-granite/granite-docling-258M))
-- 🎙️ Audio support with Automatic Speech Recognition (ASR) models
-- 🔌 Connect to any agent using the [MCP server](https://docling-project.github.io/docling/usage/mcp/)
-- 🌐 Run Docling as a service with the [API server](https://docling-project.github.io/docling/usage/api_server/) (docling-serve)
-- 💻 Simple and convenient CLI
+- **Chat + Agents** — local/API models, tools, MCP, files, shell, skills, and memory.
+- **Cookbook** — hardware-aware model recommendations, downloads, and serving.
+- **Deep Research** — multi-step web research with source reading and report generation.
+- **Compare** — blind side-by-side model testing and synthesis.
+- **Documents** — writing-first editor with AI edits, suggestions, Markdown, HTML, CSV, and syntax highlighting.
+- **Email** — IMAP/SMTP inbox with triage, tags, summaries, reminders, and reply drafts.
+- **Notes, Tasks + Calendar** — reminders, todos, scheduled agent tasks, and CalDAV sync.
+- **Extras** — gallery/image editor, themes, uploads, web search, presets, sessions, and 2FA.
 
-### What's new
+## Demo
 
-- 🎬 Parsing of video files (MP4, AVI, MOV, MKV, and WebM) with an ASR transcript and representative keyframes
-- 📄 Parsing of ODF (OpenDocument Format) files for text documents (`.odt`), spreadsheets (`.ods`), and presentations (`.odp`)
-- 💼 Parsing of XBRL (eXtensible Business Reporting Language) documents for financial reports
-- 📧 Parsing of email files (`.eml`, `.msg`)
-- 📚 Parsing of EPUB (Electronic Publication) files for e-books
-- 📝 Parsing of plain-text files (`.txt`, `.text`) and Markdown supersets (`.qmd`, `.Rmd`)
-- 📊 Chart understanding (Barchart, Piechart, LinePlot): convert them into tables or code and add detailed descriptions
-
-### Coming soon
-
-- 📝 Metadata extraction, including title, authors, references & language
-- 📝 Complex chemistry understanding (Molecular structures)
-
-## Quickstart
-
-### 1. Install
-
-```bash
-pip install docling
-```
-
-> **Note:** Python 3.9 support was dropped in docling version 2.70.0. Please use Python 3.10 or higher.
-
-Works on macOS, Linux and Windows environments for both x86_64 and arm64 architectures.
-
-More [detailed installation instructions](https://docling-project.github.io/docling/getting_started/installation/) are available in the docs.
-
-## 2. Convert a document (CLI)
-
-```bash
-docling https://arxiv.org/pdf/2206.01062
-```
-
-This generates a .md file in the current directory containing structured document content.
-
-You can also use 🥚[GraniteDocling](https://huggingface.co/ibm-granite/granite-docling-258M) and other VLMs via Docling CLI:
-
-```bash
-docling --pipeline vlm --vlm-model granite_docling https://arxiv.org/pdf/2206.01062
-```
-
-## 3. Python usage (recommended)
-
-```python
-from docling.document_converter import DocumentConverter
-
-source = "https://arxiv.org/pdf/2408.09869"  # a document via a local path or URL
-converter = DocumentConverter()
-result = converter.convert(source)
-print(result.document.export_to_markdown())  # output: "## Docling Technical Report[...]"
-```
-
-More advanced [usage](https://docling-project.github.io/docling/usage/) and [configuration](https://docling-project.github.io/docling/getting_started/installation/) options.
-
-## Documentation
-
-Check out Docling's [documentation](https://docling-project.github.io/docling/) for details on
-installation, usage, concepts, recipes, extensions, and more.
-
-## Examples
-
-Go hands-on with our [examples](https://docling-project.github.io/docling/examples/),
-demonstrating how to address different application use cases with Docling.
-
-## Integrations
-
-To further accelerate your AI application development, check out Docling's native
-[integrations](https://docling-project.github.io/docling/integrations/) with popular frameworks
-and tools.
-
-## Get help and support
-
-Please feel free to connect with us using the [discussion section](https://github.com/docling-project/docling/discussions).
-
-## Technical report
-
-For more details on Docling's inner workings, check out the [Docling Technical Report](https://arxiv.org/abs/2408.09869).
+A full hover-to-play tour lives on the landing page: [`docs/index.html`](docs/index.html).
 
 ## Contributing
 
-Please read [Contributing to Docling](https://github.com/docling-project/docling/blob/main/CONTRIBUTING.md) for details.
+Help is welcome. The best entry points are fresh-install testing, provider setup bugs, mobile/editor polish, docs, and small focused refactors. See [CONTRIBUTING.md](CONTRIBUTING.md) and [ROADMAP.md](ROADMAP.md).
 
-## References
+## Security
 
-If you use Docling in your projects, please consider citing the following:
+Odysseus is a self-hosted workspace with powerful local tools. Keep auth enabled, keep private data out of Git, and do not expose raw model/service ports publicly.
 
-```bib
-@techreport{Docling,
-  author = {Deep Search Team},
-  month = {8},
-  title = {Docling Technical Report},
-  url = {https://arxiv.org/abs/2408.09869},
-  eprint = {2408.09869},
-  doi = {10.48550/arXiv.2408.09869},
-  version = {1.0.0},
-  year = {2024}
-}
-```
+- Keep `AUTH_ENABLED=true` for any network-accessible deployment.
+- Keep `LOCALHOST_BYPASS=false` outside local development.
+
+Deployment details are in the [setup guide](docs/setup.md#security-notes).
+
+## Star History
+
+<a href="https://star-history.dera.page/#odysseus-dev/odysseus&type=date&legend=top-left">
+ <picture>
+   <source media="(prefers-color-scheme: dark)" srcset="https://star-history.dera.page/svg?repos=odysseus-dev/odysseus&type=date&theme=dark&legend=top-left" />
+   <source media="(prefers-color-scheme: light)" srcset="https://star-history.dera.page/svg?repos=odysseus-dev/odysseus&type=date&legend=top-left" />
+   <img alt="Star History Chart" src="https://star-history.dera.page/svg?repos=odysseus-dev/odysseus&type=date&legend=top-left" />
+ </picture>
+</a>
 
 ## License
 
-The Docling codebase is under MIT license.
-For individual model usage, please refer to the model licenses found in the original packages.
-
-## LF AI & Data
-
-Docling is hosted as a project in the [LF AI & Data Foundation](https://lfaidata.foundation/projects/).
-
-### IBM ❤️ Open Source AI
-
-The project was started by the AI for knowledge team at IBM Research Zurich.
-
-[supported_formats]: https://docling-project.github.io/docling/usage/supported_formats/
-[docling_document]: https://docling-project.github.io/docling/concepts/docling_document/
-[integrations]: https://docling-project.github.io/docling/integrations/
-[extraction]: https://docling-project.github.io/docling/_generated/examples/extraction/
+AGPL-3.0-or-later -- see [LICENSE](LICENSE) and [ACKNOWLEDGMENTS.md](ACKNOWLEDGMENTS.md).
