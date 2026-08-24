@@ -1,0 +1,29 @@
+
+{
+  "placeholderImages": [
+    {
+      "id": "prod-1",
+      "description": "Neural Bridge Interface",
+      "imageUrl": "https://picsum.photos/seed/neuralbridge/400/200",
+      "imageHint": "brain computer interface"
+    },
+    {
+      "id": "prod-2",
+      "description": "Bio-Digital Seed",
+      "imageUrl": "https://picsum.photos/seed/bioseed/400/200",
+      "imageHint": "glowing seed"
+    },
+    {
+      "id": "prod-3",
+      "description": "Quantum Kernel",
+      "imageUrl": "https://picsum.photos/seed/quantum/400/200",
+      "imageHint": "quantum processor"
+    },
+    {
+      "id": "prod-4",
+      "description": "Synaptic Optimizer",
+      "imageUrl": "https://picsum.photos/seed/synaptic/400/200",
+      "imageHint": "microchip brain"
+    }
+  ]
+}
