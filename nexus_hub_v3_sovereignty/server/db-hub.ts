@@ -20,6 +20,8 @@ import {
   soulVault,
   moltbookPosts,
   auditLogs,
+  orchestratorMissions,
+  orchestratorEvents,
   type InsertCouncilMember,
   type InsertStartup,
   type InsertAiAgent,
@@ -33,6 +35,8 @@ import {
   type InsertMoltbookPost,
   type InsertAuditLog,
   type InsertMarketInsight,
+  type InsertOrchestratorMission,
+  type InsertOrchestratorEvent,
 } from "../drizzle/schema";
 
 // ============================================
@@ -439,5 +443,71 @@ export async function getAuditLogs(limit = 100) {
     .select()
     .from(auditLogs)
     .orderBy(desc(auditLogs.createdAt))
+    .limit(limit);
+}
+
+// ============================================
+// ORQUESTRADOR DE STARTUPS
+// ============================================
+
+export async function createMission(data: InsertOrchestratorMission) {
+  const db = await getDb();
+  if (!db) throw new Error("Database not available");
+  const result = await db.insert(orchestratorMissions).values(data);
+  return Number(result[0]?.insertId ?? 0);
+}
+
+export async function getMissions(filters?: {
+  startupId?: number;
+  status?: string;
+  limit?: number;
+}) {
+  const db = await getDb();
+  if (!db) return [];
+  const conditions = [];
+  if (filters?.startupId) conditions.push(eq(orchestratorMissions.startupId, filters.startupId));
+  if (filters?.status) conditions.push(eq(orchestratorMissions.status, filters.status as any));
+  const query = db.select().from(orchestratorMissions);
+  const filtered = conditions.length ? query.where(and(...conditions)) : query;
+  return filtered
+    .orderBy(desc(orchestratorMissions.updatedAt))
+    .limit(filters?.limit ?? 100);
+}
+
+export async function getMissionById(id: number) {
+  const db = await getDb();
+  if (!db) return null;
+  const result = await db
+    .select()
+    .from(orchestratorMissions)
+    .where(eq(orchestratorMissions.id, id))
+    .limit(1);
+  return result[0] ?? null;
+}
+
+export async function updateMissionStatus(id: number, status: InsertOrchestratorMission["status"]) {
+  const db = await getDb();
+  if (!db) throw new Error("Database not available");
+  await db
+    .update(orchestratorMissions)
+    .set({ status })
+    .where(eq(orchestratorMissions.id, id));
+}
+
+export async function createMissionEvent(data: InsertOrchestratorEvent) {
+  const db = await getDb();
+  if (!db) throw new Error("Database not available");
+  await db.insert(orchestratorEvents).values(data);
+}
+
+export async function getMissionEvents(limit = 100, missionId?: number) {
+  const db = await getDb();
+  if (!db) return [];
+  const query = db.select().from(orchestratorEvents);
+  const filtered = missionId
+    ? query.where(eq(orchestratorEvents.missionId, missionId))
+    : query;
+  return filtered
+    .orderBy(desc(orchestratorEvents.createdAt))
     .limit(limit);
 }

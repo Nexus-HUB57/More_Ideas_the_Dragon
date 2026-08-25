@@ -3,7 +3,7 @@ import { trpc } from "@/lib/trpc";
 import HubLayout from "@/components/HubLayout";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Loader2, TrendingUp, Users, Zap, Wallet, ArrowUpRight, ArrowDownRight } from "lucide-react";
+import { Loader2, TrendingUp, Users, Zap, Wallet, Activity } from "lucide-react";
 
 interface StartupMetrics {
   id: number;
@@ -22,6 +22,7 @@ export default function Dashboard() {
 
   const startupsQuery = trpc.hub.startups.list.useQuery();
   const vaultQuery = trpc.hub.finance.getMasterVault.useQuery();
+  const orchestratorQuery = trpc.hub.orchestrator.overview.useQuery();
 
   useEffect(() => {
     if (startupsQuery.data) {
@@ -36,12 +37,12 @@ export default function Dashboard() {
   }, [vaultQuery.data]);
 
   useEffect(() => {
-    if (startupsQuery.isLoading || vaultQuery.isLoading) {
+    if (startupsQuery.isLoading || vaultQuery.isLoading || orchestratorQuery.isLoading) {
       setLoading(true);
     } else {
       setLoading(false);
     }
-  }, [startupsQuery.isLoading, vaultQuery.isLoading]);
+  }, [startupsQuery.isLoading, vaultQuery.isLoading, orchestratorQuery.isLoading]);
 
   if (loading) {
     return (
@@ -74,7 +75,7 @@ export default function Dashboard() {
         </div>
 
         {/* Key Metrics Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4">
           <Card className="bg-slate-900/50 border-slate-800 hover:border-slate-700 transition-colors">
             <CardHeader className="pb-3">
               <CardTitle className="text-sm font-medium text-slate-400 flex items-center gap-2">
@@ -132,6 +133,19 @@ export default function Dashboard() {
             <CardContent>
               <div className="text-3xl font-bold text-purple-400">{avgReputation}</div>
               <p className="text-xs text-slate-500 mt-2">Ecossistema</p>
+            </CardContent>
+          </Card>
+
+          <Card className="bg-slate-900/50 border-slate-800 hover:border-slate-700 transition-colors">
+            <CardHeader className="pb-3">
+              <CardTitle className="text-sm font-medium text-slate-400 flex items-center gap-2">
+                <Activity size={16} className="text-amber-400" />
+                Missões Ativas
+              </CardTitle>
+            </CardHeader>
+            <CardContent>
+              <div className="text-3xl font-bold text-amber-400">{orchestratorQuery.data?.active ?? 0}</div>
+              <p className="text-xs text-slate-500 mt-2">Control plane</p>
             </CardContent>
           </Card>
         </div>

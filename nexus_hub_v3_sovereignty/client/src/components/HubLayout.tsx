@@ -14,7 +14,8 @@ import {
   Menu,
   X,
   LogOut,
-  Crown
+  Crown,
+  Workflow
 } from "lucide-react";
 
 interface NavItem {
@@ -28,6 +29,7 @@ const navItems: NavItem[] = [
   { label: "Dashboard", href: "/", icon: <LayoutDashboard size={20} /> },
   { label: "Conselho", href: "/council", icon: <Crown size={20} /> },
   { label: "Startups", href: "/startups", icon: <Zap size={20} /> },
+  { label: "Orquestração", href: "/orchestrator", icon: <Workflow size={20} />, badge: "MVP" },
   { label: "Tesouraria", href: "/treasury", icon: <Wallet size={20} /> },
   { label: "Market Oracle", href: "/market", icon: <TrendingUp size={20} /> },
   { label: "Arbitragem", href: "/arbitrage", icon: <Share2 size={20} /> },

@@ -276,3 +276,39 @@ export const auditLogs = mysqlTable("audit_logs", {
 
 export type AuditLog = typeof auditLogs.$inferSelect;
 export type InsertAuditLog = typeof auditLogs.$inferInsert;
+
+// ============================================
+// ORQUESTRADOR DE STARTUPS
+// ============================================
+
+export const orchestratorMissions = mysqlTable("orchestrator_missions", {
+  id: int("id").autoincrement().primaryKey(),
+  startupId: int("startup_id").notNull(),
+  title: varchar("title", { length: 255 }).notNull(),
+  description: text("description"),
+  stage: mysqlEnum("stage", ["discovery", "validation", "build", "launch", "scale"]).notNull(),
+  priority: mysqlEnum("priority", ["critical", "high", "medium", "low"]).default("medium").notNull(),
+  status: mysqlEnum("status", ["backlog", "ready", "running", "blocked", "review", "completed", "cancelled"]).default("backlog").notNull(),
+  owner: varchar("owner", { length: 128 }).notNull(),
+  dueAt: timestamp("due_at"),
+  riskScore: int("risk_score").default(0).notNull(),
+  createdAt: timestamp("createdAt").defaultNow().notNull(),
+  updatedAt: timestamp("updatedAt").defaultNow().onUpdateNow().notNull(),
+});
+
+export type OrchestratorMission = typeof orchestratorMissions.$inferSelect;
+export type InsertOrchestratorMission = typeof orchestratorMissions.$inferInsert;
+
+export const orchestratorEvents = mysqlTable("orchestrator_events", {
+  id: int("id").autoincrement().primaryKey(),
+  missionId: int("mission_id").notNull(),
+  eventType: varchar("event_type", { length: 64 }).notNull(),
+  fromStatus: varchar("from_status", { length: 32 }),
+  toStatus: varchar("to_status", { length: 32 }),
+  actor: varchar("actor", { length: 128 }).notNull(),
+  payload: text("payload"),
+  createdAt: timestamp("createdAt").defaultNow().notNull(),
+});
+
+export type OrchestratorEvent = typeof orchestratorEvents.$inferSelect;
+export type InsertOrchestratorEvent = typeof orchestratorEvents.$inferInsert;

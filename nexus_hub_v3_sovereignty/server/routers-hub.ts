@@ -6,6 +6,14 @@
 import { z } from "zod";
 import { router, protectedProcedure, publicProcedure } from "./_core/trpc";
 import * as dbHub from "./db-hub";
+import {
+  assertTransition,
+  calculateMissionRisk,
+  getMissionEventType,
+  missionPriorities,
+  missionStages,
+  missionStatuses,
+} from "./orchestrator-engine";
 
 export const hubRouter = router({
   // ============================================
@@ -456,6 +464,107 @@ export const hubRouter = router({
           comments: 0,
         });
         return { success: true };
+      }),
+  }),
+
+  // ============================================
+  // ORQUESTRADOR DE STARTUPS
+  // ============================================
+  orchestrator: router({
+    overview: publicProcedure.query(async () => {
+      const missions = await dbHub.getMissions({ limit: 500 });
+      const byStatus = missionStatuses.reduce<Record<string, number>>((acc, status) => {
+        acc[status] = missions.filter((mission) => mission.status === status).length;
+        return acc;
+      }, {});
+      const active = missions.filter((mission) => ["ready", "running", "blocked", "review"].includes(mission.status)).length;
+      const averageRisk = missions.length
+        ? Math.round(missions.reduce((sum, mission) => sum + mission.riskScore, 0) / missions.length)
+        : 0;
+      return {
+        total: missions.length,
+        active,
+        averageRisk,
+        byStatus,
+        availableStatuses: missionStatuses,
+        availableStages: missionStages,
+        availablePriorities: missionPriorities,
+      };
+    }),
+
+    listMissions: publicProcedure
+      .input(z.object({ startupId: z.number().optional(), status: z.enum(missionStatuses).optional(), limit: z.number().min(1).max(500).default(100) }).optional())
+      .query(async ({ input }) => dbHub.getMissions(input)),
+
+    events: publicProcedure
+      .input(z.object({ missionId: z.number().optional(), limit: z.number().min(1).max(200).default(100) }).optional())
+      .query(async ({ input }) => dbHub.getMissionEvents(input?.limit ?? 100, input?.missionId)),
+
+    createMission: protectedProcedure
+      .input(z.object({
+        startupId: z.number().int().positive(),
+        title: z.string().trim().min(3).max(255),
+        description: z.string().trim().max(5000).optional(),
+        stage: z.enum(missionStages),
+        priority: z.enum(missionPriorities).default("medium"),
+        owner: z.string().trim().min(2).max(128),
+        dueAt: z.coerce.date().optional(),
+      }))
+      .mutation(async ({ input, ctx }) => {
+        const actor = ctx.user?.name ?? input.owner;
+        const riskScore = calculateMissionRisk(input);
+        const missionId = await dbHub.createMission({
+          startupId: input.startupId,
+          title: input.title,
+          description: input.description,
+          stage: input.stage,
+          priority: input.priority,
+          status: "backlog",
+          owner: input.owner,
+          dueAt: input.dueAt,
+          riskScore,
+        });
+        await dbHub.createMissionEvent({
+          missionId,
+          eventType: "mission_created",
+          toStatus: "backlog",
+          actor,
+          payload: JSON.stringify({ stage: input.stage, priority: input.priority, riskScore }),
+        });
+        await dbHub.recordAuditLog({
+          action: "orchestrator.mission.created",
+          actor,
+          targetType: "mission",
+          targetId: missionId,
+          details: JSON.stringify({ title: input.title, startupId: input.startupId }),
+        });
+        return { success: true, missionId, riskScore };
+      }),
+
+    transition: protectedProcedure
+      .input(z.object({ missionId: z.number().int().positive(), toStatus: z.enum(missionStatuses), note: z.string().trim().max(2000).optional() }))
+      .mutation(async ({ input, ctx }) => {
+        const mission = await dbHub.getMissionById(input.missionId);
+        if (!mission) throw new Error("Missão não encontrada");
+        assertTransition(mission.status, input.toStatus);
+        const actor = ctx.user?.name ?? "operator";
+        await dbHub.updateMissionStatus(input.missionId, input.toStatus);
+        await dbHub.createMissionEvent({
+          missionId: input.missionId,
+          eventType: getMissionEventType(input.toStatus),
+          fromStatus: mission.status,
+          toStatus: input.toStatus,
+          actor,
+          payload: input.note ? JSON.stringify({ note: input.note }) : undefined,
+        });
+        await dbHub.recordAuditLog({
+          action: "orchestrator.mission.transitioned",
+          actor,
+          targetType: "mission",
+          targetId: input.missionId,
+          details: JSON.stringify({ from: mission.status, to: input.toStatus, note: input.note }),
+        });
+        return { success: true, fromStatus: mission.status, toStatus: input.toStatus };
       }),
   }),
 

@@ -15,6 +15,13 @@
       "when": 1772079347552,
       "tag": "0001_worthless_lila_cheney",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "5",
+      "when": 1787668872220,
+      "tag": "0002_brown_aaron_stack",
+      "breakpoints": true
     }
   ]
 }

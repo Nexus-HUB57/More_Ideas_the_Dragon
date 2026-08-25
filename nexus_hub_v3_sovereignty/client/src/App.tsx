@@ -12,7 +12,8 @@ import Market from "./pages/Market";
 import Arbitrage from "./pages/Arbitrage";
 import SoulVault from "./pages/SoulVault";
 import Moltbook from "./pages/Moltbook";
-import Audit from "./pages/Audit";
+import Audit from "@/pages/Audit";
+import Orchestrator from "@/pages/Orchestrator";
 
 function Router() {
   // make sure to consider if you need authentication for certain routes
@@ -21,6 +22,7 @@ function Router() {
       <Route path="/" component={Dashboard} />
       <Route path="/council" component={Council} />
       <Route path="/startups" component={Startups} />
+      <Route path="/orchestrator" component={Orchestrator} />
       <Route path="/treasury" component={Treasury} />
       <Route path="/market" component={Market} />
       <Route path="/arbitrage" component={Arbitrage} />

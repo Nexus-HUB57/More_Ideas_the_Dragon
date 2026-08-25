@@ -330,3 +330,74 @@ describe("hubRouter", () => {
     });
   });
 });
+
+
+describe("hubRouter.orchestrator", () => {
+  beforeEach(() => {
+    vi.clearAllMocks();
+  });
+
+  it("creates a backlog mission and records its audit trail", async () => {
+    vi.mocked(dbHub.createMission).mockResolvedValue(44);
+    vi.mocked(dbHub.createMissionEvent).mockResolvedValue(undefined);
+    vi.mocked(dbHub.recordAuditLog).mockResolvedValue(undefined);
+
+    const caller = hubRouter.createCaller({ user: { id: 1, name: "Ana Operadora", role: "admin" } } as any);
+    const result = await caller.orchestrator.createMission({
+      startupId: 7,
+      title: "Validar canal B2B",
+      description: "Executar entrevistas com compradores",
+      stage: "validation",
+      priority: "high",
+      owner: "Growth Pod",
+    });
+
+    expect(result.success).toBe(true);
+    expect(result.missionId).toBe(44);
+    expect(result.riskScore).toBeGreaterThan(0);
+    expect(dbHub.createMission).toHaveBeenCalledWith(expect.objectContaining({
+      startupId: 7,
+      title: "Validar canal B2B",
+      status: "backlog",
+      owner: "Growth Pod",
+    }));
+    expect(dbHub.createMissionEvent).toHaveBeenCalledWith(expect.objectContaining({
+      missionId: 44,
+      eventType: "mission_created",
+      toStatus: "backlog",
+      actor: "Ana Operadora",
+    }));
+  });
+
+  it("transitions a mission and emits an audit event", async () => {
+    vi.mocked(dbHub.getMissionById).mockResolvedValue({
+      id: 12,
+      startupId: 7,
+      title: "Construir protótipo",
+      description: null,
+      stage: "build",
+      priority: "medium",
+      status: "ready",
+      owner: "Build Pod",
+      dueAt: null,
+      riskScore: 39,
+      createdAt: new Date(),
+      updatedAt: new Date(),
+    });
+    vi.mocked(dbHub.updateMissionStatus).mockResolvedValue(undefined);
+    vi.mocked(dbHub.createMissionEvent).mockResolvedValue(undefined);
+    vi.mocked(dbHub.recordAuditLog).mockResolvedValue(undefined);
+
+    const caller = hubRouter.createCaller({ user: { id: 1, name: "Ana Operadora", role: "admin" } } as any);
+    const result = await caller.orchestrator.transition({ missionId: 12, toStatus: "running", note: "Capacidade alocada" });
+
+    expect(result).toEqual({ success: true, fromStatus: "ready", toStatus: "running" });
+    expect(dbHub.updateMissionStatus).toHaveBeenCalledWith(12, "running");
+    expect(dbHub.createMissionEvent).toHaveBeenCalledWith(expect.objectContaining({
+      missionId: 12,
+      eventType: "mission_started",
+      fromStatus: "ready",
+      toStatus: "running",
+    }));
+  });
+});
