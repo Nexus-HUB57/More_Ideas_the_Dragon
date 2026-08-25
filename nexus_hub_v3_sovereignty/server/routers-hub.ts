@@ -11,6 +11,13 @@ import { AdapterError, createDefaultAdapterRegistry, validateWebhookTarget } fro
 import { backgroundJobNames, runOrchestratorJob } from "./background-jobs";
 import { evaluateMissionHarness } from "./harness-engine";
 import {
+  executiveAgents as executiveDefinitions,
+  calculateExecutiveScorecard,
+  getExecutiveAgent,
+  canDelegate,
+  assertExecutiveAction,
+} from "./executive-agents";
+import {
   assertTransition,
   calculateMissionRisk,
   getMissionEventType,
@@ -136,6 +143,54 @@ export const hubRouter = router({
         });
         return { success: true };
       }),
+  }),
+
+  // ============================================
+  // AGENTES EXECUTIVOS C-LEVEL
+  // ============================================
+  executives: router({
+    orgChart: publicProcedure.query(async () => ({
+      nuclei: executiveDefinitions,
+      persisted: await dbHub.getExecutiveAgents(),
+    })),
+
+    getByRole: publicProcedure
+      .input(z.object({ role: z.enum(["CEO", "CTO", "CPO", "COO", "CFO", "CRO"]) }))
+      .query(async ({ input }) => ({
+        definition: getExecutiveAgent(input.role),
+        persisted: await dbHub.getExecutiveAgentByRole(input.role),
+      })),
+
+    initialize: protectedProcedure.mutation(async () => {
+      await dbHub.initializeExecutiveAgents(executiveDefinitions.map((agent) => ({
+        role: agent.role,
+        nucleus: agent.nucleus,
+        name: agent.name,
+        mandate: agent.mandate,
+        reportsTo: agent.reportsTo,
+        authorityTier: agent.authorityTier,
+        autonomyMode: agent.autonomy,
+        maxBudgetBps: agent.maxBudgetBps,
+        status: "active" as const,
+      })));
+      return { success: true, count: executiveDefinitions.length };
+    }),
+
+    canDelegate: publicProcedure
+      .input(z.object({ from: z.enum(["CEO", "CTO", "CPO", "COO", "CFO", "CRO"]), to: z.enum(["CEO", "CTO", "CPO", "COO", "CFO", "CRO"]) }))
+      .query(({ input }) => ({ allowed: canDelegate(input.from, input.to) })),
+
+    scorecard: publicProcedure
+      .input(z.object({ role: z.enum(["CEO", "CTO", "CPO", "COO", "CFO", "CRO"]), metrics: z.record(z.string(), z.number().min(0).max(100)) }))
+      .query(({ input }) => {
+        const definition = getExecutiveAgent(input.role);
+        if (!definition) throw new Error("Agente executivo não encontrado");
+        return calculateExecutiveScorecard(definition, input.metrics);
+      }),
+
+    authorizeAction: protectedProcedure
+      .input(z.object({ role: z.enum(["CEO", "CTO", "CPO", "COO", "CFO", "CRO"]), action: z.string() }))
+      .query(({ input }) => ({ allowed: assertExecutiveAction(input.role, input.action) })),
   }),
 
   // ============================================

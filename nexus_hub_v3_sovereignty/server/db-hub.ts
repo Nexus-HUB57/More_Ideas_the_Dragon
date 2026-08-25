@@ -9,6 +9,7 @@ import {
   councilMembers,
   startups,
   aiAgents,
+  executiveAgents,
   proposals,
   councilVotes,
   transactions,
@@ -31,6 +32,7 @@ import {
   type InsertCouncilMember,
   type InsertStartup,
   type InsertAiAgent,
+  type InsertExecutiveAgent,
   type InsertProposal,
   type InsertCouncilVote,
   type InsertTransaction,
@@ -194,6 +196,40 @@ export async function getAgentById(id: number) {
   const db = await getDb();
   if (!db) return null;
   const result = await db.select().from(aiAgents).where(eq(aiAgents.id, id));
+  return result.length > 0 ? result[0] : null;
+}
+
+// ============================================
+// AGENTES EXECUTIVOS C-LEVEL
+// ============================================
+
+export async function initializeExecutiveAgents(data: InsertExecutiveAgent[]) {
+  const db = await getDb();
+  if (!db) throw new Error("Database not available");
+  for (const agent of data) {
+    await db.insert(executiveAgents).values(agent).onDuplicateKeyUpdate({
+      set: {
+        name: agent.name,
+        mandate: agent.mandate,
+        reportsTo: agent.reportsTo,
+        authorityTier: agent.authorityTier,
+        autonomyMode: agent.autonomyMode,
+        maxBudgetBps: agent.maxBudgetBps,
+      },
+    });
+  }
+}
+
+export async function getExecutiveAgents() {
+  const db = await getDb();
+  if (!db) return [];
+  return db.select().from(executiveAgents).orderBy(executiveAgents.authorityTier);
+}
+
+export async function getExecutiveAgentByRole(role: InsertExecutiveAgent["role"]) {
+  const db = await getDb();
+  if (!db) return null;
+  const result = await db.select().from(executiveAgents).where(eq(executiveAgents.role, role));
   return result.length > 0 ? result[0] : null;
 }
 

@@ -1,0 +1,249 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: nexus-hub
+---
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: nexus-hub
+  namespace: nexus-hub
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: nexus-hub-config
+  namespace: nexus-hub
+data:
+  NODE_ENV: production
+  PORT: "3000"
+  VITE_APP_ID: replace-with-production-app-id
+  NEXUS_EXTERNAL_ADAPTERS_ENABLED: "false"
+  NEXUS_WEBHOOK_ALLOWLIST: ""
+  NEXUS_ORCHESTRATOR_JOBS_ENABLED: "false"
+  NEXUS_ORCHESTRATOR_JOBS_INTERVAL_MS: "300000"
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nexus-hub
+  namespace: nexus-hub
+  labels:
+    app.kubernetes.io/name: nexus-hub
+    app.kubernetes.io/component: control-plane
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: nexus-hub
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: nexus-hub
+        app.kubernetes.io/component: control-plane
+    spec:
+      serviceAccountName: nexus-hub
+      automountServiceAccountToken: false
+      securityContext:
+        runAsNonRoot: true
+        seccompProfile:
+          type: RuntimeDefault
+      containers:
+        - name: nexus-hub
+          image: ghcr.io/replace-me/nexus-hub@sha256:replace-with-image-digest
+          imagePullPolicy: IfNotPresent
+          ports:
+            - name: http
+              containerPort: 3000
+          envFrom:
+            - configMapRef:
+                name: nexus-hub-config
+          env:
+            - name: DATABASE_URL
+              valueFrom:
+                secretKeyRef:
+                  name: nexus-hub-secrets
+                  key: DATABASE_URL
+            - name: JWT_SECRET
+              valueFrom:
+                secretKeyRef:
+                  name: nexus-hub-secrets
+                  key: JWT_SECRET
+            - name: OAUTH_SERVER_URL
+              valueFrom:
+                secretKeyRef:
+                  name: nexus-hub-secrets
+                  key: OAUTH_SERVER_URL
+            - name: OWNER_OPEN_ID
+              valueFrom:
+                secretKeyRef:
+                  name: nexus-hub-secrets
+                  key: OWNER_OPEN_ID
+          readinessProbe:
+            httpGet:
+              path: /healthz
+              port: http
+            initialDelaySeconds: 10
+            periodSeconds: 15
+            timeoutSeconds: 3
+            failureThreshold: 3
+          livenessProbe:
+            httpGet:
+              path: /healthz
+              port: http
+            initialDelaySeconds: 30
+            periodSeconds: 30
+            timeoutSeconds: 3
+            failureThreshold: 3
+          resources:
+            requests:
+              cpu: 100m
+              memory: 256Mi
+            limits:
+              cpu: 1
+              memory: 1Gi
+          securityContext:
+            allowPrivilegeEscalation: false
+            readOnlyRootFilesystem: true
+            capabilities:
+              drop: ["ALL"]
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: nexus-hub
+  namespace: nexus-hub
+spec:
+  selector:
+    app.kubernetes.io/name: nexus-hub
+  ports:
+    - name: http
+      port: 80
+      targetPort: http
+  type: ClusterIP
+---
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: nexus-reconcile-missions
+  namespace: nexus-hub
+  labels:
+    app.kubernetes.io/name: nexus-hub
+    app.kubernetes.io/component: worker
+spec:
+  schedule: "*/5 * * * *"
+  timeZone: Etc/UTC
+  concurrencyPolicy: Forbid
+  startingDeadlineSeconds: 300
+  successfulJobsHistoryLimit: 3
+  failedJobsHistoryLimit: 3
+  jobTemplate:
+    spec:
+      backoffLimit: 2
+      activeDeadlineSeconds: 240
+      template:
+        metadata:
+          labels:
+            app.kubernetes.io/name: nexus-hub
+            app.kubernetes.io/component: worker
+        spec:
+          restartPolicy: OnFailure
+          serviceAccountName: nexus-hub
+          automountServiceAccountToken: false
+          securityContext:
+            runAsNonRoot: true
+            seccompProfile:
+              type: RuntimeDefault
+          containers:
+            - name: reconcile-missions
+              image: ghcr.io/replace-me/nexus-hub@sha256:replace-with-image-digest
+              command: ["node", "dist/jobs-worker.js"]
+              envFrom:
+                - configMapRef:
+                    name: nexus-hub-config
+              env:
+                - name: NEXUS_JOB_NAME
+                  value: reconcile_missions
+                - name: DATABASE_URL
+                  valueFrom:
+                    secretKeyRef:
+                      name: nexus-hub-secrets
+                      key: DATABASE_URL
+                - name: JWT_SECRET
+                  valueFrom:
+                    secretKeyRef:
+                      name: nexus-hub-secrets
+                      key: JWT_SECRET
+                - name: OAUTH_SERVER_URL
+                  valueFrom:
+                    secretKeyRef:
+                      name: nexus-hub-secrets
+                      key: OAUTH_SERVER_URL
+              securityContext:
+                allowPrivilegeEscalation: false
+                readOnlyRootFilesystem: true
+                capabilities:
+                  drop: ["ALL"]
+---
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: nexus-refresh-signals
+  namespace: nexus-hub
+  labels:
+    app.kubernetes.io/name: nexus-hub
+    app.kubernetes.io/component: worker
+spec:
+  schedule: "*/15 * * * *"
+  timeZone: Etc/UTC
+  concurrencyPolicy: Forbid
+  startingDeadlineSeconds: 600
+  successfulJobsHistoryLimit: 3
+  failedJobsHistoryLimit: 3
+  jobTemplate:
+    spec:
+      backoffLimit: 2
+      activeDeadlineSeconds: 600
+      template:
+        metadata:
+          labels:
+            app.kubernetes.io/name: nexus-hub
+            app.kubernetes.io/component: worker
+        spec:
+          restartPolicy: OnFailure
+          serviceAccountName: nexus-hub
+          automountServiceAccountToken: false
+          securityContext:
+            runAsNonRoot: true
+            seccompProfile:
+              type: RuntimeDefault
+          containers:
+            - name: refresh-signals
+              image: ghcr.io/replace-me/nexus-hub@sha256:replace-with-image-digest
+              command: ["node", "dist/jobs-worker.js"]
+              envFrom:
+                - configMapRef:
+                    name: nexus-hub-config
+              env:
+                - name: NEXUS_JOB_NAME
+                  value: refresh_portfolio_signals
+                - name: DATABASE_URL
+                  valueFrom:
+                    secretKeyRef:
+                      name: nexus-hub-secrets
+                      key: DATABASE_URL
+                - name: JWT_SECRET
+                  valueFrom:
+                    secretKeyRef:
+                      name: nexus-hub-secrets
+                      key: JWT_SECRET
+                - name: OAUTH_SERVER_URL
+                  valueFrom:
+                    secretKeyRef:
+                      name: nexus-hub-secrets
+                      key: OAUTH_SERVER_URL
+              securityContext:
+                allowPrivilegeEscalation: false
+                readOnlyRootFilesystem: true
+                capabilities:
+                  drop: ["ALL"]

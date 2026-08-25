@@ -88,6 +88,31 @@ export type AiAgent = typeof aiAgents.$inferSelect;
 export type InsertAiAgent = typeof aiAgents.$inferInsert;
 
 // ============================================
+// AGENTES EXECUTIVOS C-LEVEL
+// ============================================
+
+export const executiveAgents = mysqlTable("executive_agents", {
+  id: int("id").autoincrement().primaryKey(),
+  role: mysqlEnum("role", ["CEO", "CTO", "CPO", "COO", "CFO", "CRO"]).notNull().unique(),
+  nucleus: mysqlEnum("nucleus", ["CEO", "CTO", "COO", "CFO", "CRO"]).notNull(),
+  name: varchar("name", { length: 128 }).notNull(),
+  mandate: text("mandate").notNull(),
+  reportsTo: varchar("reports_to", { length: 32 }).notNull(),
+  authorityTier: int("authority_tier").notNull(),
+  autonomyMode: varchar("autonomy_mode", { length: 64 }).notNull(),
+  maxBudgetBps: int("max_budget_bps").notNull(),
+  status: mysqlEnum("status", ["active", "paused", "quarantined"]).default("active").notNull(),
+  createdAt: timestamp("created_at").defaultNow().notNull(),
+  updatedAt: timestamp("updated_at").defaultNow().onUpdateNow().notNull(),
+}, (table) => ({
+  nucleusIdx: index("executive_agents_nucleus_idx").on(table.nucleus),
+  statusIdx: index("executive_agents_status_idx").on(table.status),
+}));
+
+export type ExecutiveAgent = typeof executiveAgents.$inferSelect;
+export type InsertExecutiveAgent = typeof executiveAgents.$inferInsert;
+
+// ============================================
 // VOTAÇÕES DO CONSELHO
 // ============================================
 

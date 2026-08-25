@@ -4,7 +4,11 @@ import { assertProductionConfiguration } from "./_core/env";
 let stopped = false;
 
 async function runOnce() {
-  for (const jobName of backgroundJobNames) {
+  const requestedJob = process.env.NEXUS_JOB_NAME;
+  const jobs = requestedJob && backgroundJobNames.includes(requestedJob as (typeof backgroundJobNames)[number])
+    ? [requestedJob as (typeof backgroundJobNames)[number]]
+    : backgroundJobNames;
+  for (const jobName of jobs) {
     await runOrchestratorJob(jobName);
   }
 }

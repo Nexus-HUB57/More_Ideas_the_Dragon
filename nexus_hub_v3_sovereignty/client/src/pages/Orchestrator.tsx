@@ -98,6 +98,7 @@ export default function Orchestrator() {
   const jobsQuery = trpc.hub.orchestrator.jobs.useQuery();
   const adaptersQuery = trpc.hub.orchestrator.adapters.useQuery();
   const signalsQuery = trpc.hub.orchestrator.signals.useQuery({ limit: 12 });
+  const executivesQuery = trpc.hub.executives.orgChart.useQuery();
   const createMission = trpc.hub.orchestrator.createMission.useMutation();
   const transitionMission = trpc.hub.orchestrator.transition.useMutation();
   const runJob = trpc.hub.orchestrator.runJob.useMutation();
@@ -209,6 +210,40 @@ export default function Orchestrator() {
               </CardContent>
             </Card>
           ))}
+        </section>
+
+        <section>
+          <div className="mb-4 flex items-end justify-between">
+            <div>
+              <h2 className="text-xl font-semibold text-slate-100">C-suite command layer</h2>
+              <p className="mt-1 text-sm text-slate-500">Cinco núcleos executivos com autonomia limitada por política, orçamento e Harness.</p>
+            </div>
+            <Badge className="border-cyan-500/30 bg-cyan-500/10 text-cyan-300">{executivesQuery.data?.nuclei.length ?? 0} núcleos</Badge>
+          </div>
+          <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+            {(executivesQuery.data?.nuclei ?? []).map((executive) => (
+              <Card key={executive.role} className="border-slate-800 bg-slate-900/60">
+                <CardHeader className="pb-3">
+                  <div className="flex items-start justify-between gap-3">
+                    <div>
+                      <CardTitle className="text-base text-slate-100">{executive.name}</CardTitle>
+                      <CardDescription className="mt-1 text-cyan-300">{executive.role} · Núcleo {executive.nucleus}</CardDescription>
+                    </div>
+                    <Badge variant="outline" className="border-slate-700 text-slate-300">Tier {executive.authorityTier}</Badge>
+                  </div>
+                </CardHeader>
+                <CardContent className="space-y-3 text-sm">
+                  <p className="leading-5 text-slate-400">{executive.mandate}</p>
+                  <div className="grid grid-cols-2 gap-2 text-xs">
+                    <div className="rounded-lg bg-slate-950/60 p-2"><span className="text-slate-500">Autonomia</span><div className="mt-1 font-medium text-slate-200">{executive.autonomy}</div></div>
+                    <div className="rounded-lg bg-slate-950/60 p-2"><span className="text-slate-500">Budget máx.</span><div className="mt-1 font-medium text-slate-200">{(executive.maxBudgetBps / 100).toFixed(2)}%</div></div>
+                  </div>
+                  <div className="flex flex-wrap gap-1">{executive.primaryKpis.slice(0, 3).map((kpi) => <Badge key={kpi} variant="outline" className="border-slate-700 text-[10px] text-slate-400">{kpi}</Badge>)}</div>
+                  <p className="text-xs text-slate-500">Reporta para: <span className="text-slate-300">{executive.reportsTo}</span></p>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
         </section>
 
         {showForm && (

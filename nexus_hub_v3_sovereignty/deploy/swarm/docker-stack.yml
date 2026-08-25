@@ -1,0 +1,132 @@
+version: "3.9"
+
+services:
+  nexus-hub:
+    image: ghcr.io/replace-me/nexus-hub@sha256:replace-with-image-digest
+    environment:
+      NODE_ENV: production
+      PORT: "3000"
+      VITE_APP_ID: replace-with-production-app-id
+      NEXUS_EXTERNAL_ADAPTERS_ENABLED: "false"
+      NEXUS_WEBHOOK_ALLOWLIST: ""
+      NEXUS_ORCHESTRATOR_JOBS_ENABLED: "false"
+      DATABASE_URL_FILE: /run/secrets/DATABASE_URL
+      JWT_SECRET_FILE: /run/secrets/JWT_SECRET
+      OAUTH_SERVER_URL_FILE: /run/secrets/OAUTH_SERVER_URL
+      OWNER_OPEN_ID_FILE: /run/secrets/OWNER_OPEN_ID
+    secrets:
+      - DATABASE_URL
+      - JWT_SECRET
+      - OAUTH_SERVER_URL
+      - OWNER_OPEN_ID
+    ports:
+      - target: 3000
+        published: 3000
+        protocol: tcp
+        mode: ingress
+    read_only: true
+    tmpfs:
+      - /tmp:rw,noexec,nosuid,size=64m
+    healthcheck:
+      test: ["CMD", "node", "-e", "fetch('http://127.0.0.1:3000/healthz').then(r=>process.exit(r.ok?0:1)).catch(()=>process.exit(1))"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 20s
+    deploy:
+      replicas: 2
+      update_config:
+        parallelism: 1
+        delay: 10s
+        order: start-first
+        failure_action: rollback
+      rollback_config:
+        parallelism: 1
+        order: stop-first
+      restart_policy:
+        condition: on-failure
+        delay: 5s
+        max_attempts: 5
+      resources:
+        reservations:
+          cpus: "0.10"
+          memory: 256M
+        limits:
+          cpus: "1.00"
+          memory: 1G
+
+  nexus-reconcile-missions:
+    image: ghcr.io/replace-me/nexus-hub@sha256:replace-with-image-digest
+    command: ["node", "dist/jobs-worker.js"]
+    environment:
+      NODE_ENV: production
+      NEXUS_JOB_NAME: reconcile_missions
+      NEXUS_EXTERNAL_ADAPTERS_ENABLED: "false"
+      NEXUS_WEBHOOK_ALLOWLIST: ""
+      DATABASE_URL_FILE: /run/secrets/DATABASE_URL
+      JWT_SECRET_FILE: /run/secrets/JWT_SECRET
+      OAUTH_SERVER_URL_FILE: /run/secrets/OAUTH_SERVER_URL
+    secrets:
+      - DATABASE_URL
+      - JWT_SECRET
+      - OAUTH_SERVER_URL
+    deploy:
+      replicas: 0
+      restart_policy:
+        condition: none
+      labels:
+        swarm.cronjob.enable: "true"
+        swarm.cronjob.schedule: "*/5 * * * *"
+        swarm.cronjob.skip-running: "true"
+        swarm.cronjob.replicas: "1"
+
+  nexus-refresh-signals:
+    image: ghcr.io/replace-me/nexus-hub@sha256:replace-with-image-digest
+    command: ["node", "dist/jobs-worker.js"]
+    environment:
+      NODE_ENV: production
+      NEXUS_JOB_NAME: refresh_portfolio_signals
+      NEXUS_EXTERNAL_ADAPTERS_ENABLED: "false"
+      NEXUS_WEBHOOK_ALLOWLIST: ""
+      DATABASE_URL_FILE: /run/secrets/DATABASE_URL
+      JWT_SECRET_FILE: /run/secrets/JWT_SECRET
+      OAUTH_SERVER_URL_FILE: /run/secrets/OAUTH_SERVER_URL
+    secrets:
+      - DATABASE_URL
+      - JWT_SECRET
+      - OAUTH_SERVER_URL
+    deploy:
+      replicas: 0
+      restart_policy:
+        condition: none
+      labels:
+        swarm.cronjob.enable: "true"
+        swarm.cronjob.schedule: "*/15 * * * *"
+        swarm.cronjob.skip-running: "true"
+        swarm.cronjob.replicas: "1"
+
+  swarm-cronjob:
+    image: crazymax/swarm-cronjob:1.16.0
+    environment:
+      TZ: Etc/UTC
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+    deploy:
+      mode: global
+      placement:
+        constraints:
+          - node.role == manager
+      restart_policy:
+        condition: on-failure
+        delay: 5s
+        max_attempts: 10
+
+secrets:
+  DATABASE_URL:
+    external: true
+  JWT_SECRET:
+    external: true
+  OAUTH_SERVER_URL:
+    external: true
+  OWNER_OPEN_ID:
+    external: true
