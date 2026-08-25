@@ -21,3 +21,12 @@ pnpm build
 A migration [`drizzle/0002_brown_aaron_stack.sql`](./drizzle/0002_brown_aaron_stack.sql) cria `orchestrator_missions` e `orchestrator_events`. Em um ambiente com `DATABASE_URL`, aplique-a pelo fluxo padrão do projeto (`pnpm db:push`). A especificação de domínio está em [`docs/ORCHESTRATOR_ARCHITECTURE.md`](./docs/ORCHESTRATOR_ARCHITECTURE.md).
 
 O executor inicial é deliberadamente **controlado e determinístico**: criar ou avançar uma missão não chama serviços externos, não movimenta fundos e não publica conteúdo. Isso deixa a fundação pronta para conectar agentes, sinais de mercado, OKRs e jobs de background com aprovação explícita, idempotência e logs sanitizados.
+
+
+## Expansão do HUB de última onda
+
+A segunda camada do control plane adiciona o Processing Core em `server/processing-core.ts`, o Engineering Harness em `server/harness-engine.ts`, adapters server-side em `server/adapters.ts`, jobs em `server/background-jobs.ts` e o worker de ciclo único em `server/jobs-worker.ts`.
+
+A execução automática é opt-in. Para usar o scheduler no processo HTTP, defina `NEXUS_ORCHESTRATOR_JOBS_ENABLED=true`. Para enviar webhooks, defina `NEXUS_WEBHOOK_ALLOWLIST` com os hosts HTTPS exatos, separados por vírgula; sem allowlist, o sistema bloqueia todos os destinos. O comando `pnpm jobs` usa o bundle gerado por `pnpm build`; `pnpm jobs:dev` executa diretamente o TypeScript.
+
+A documentação detalhada está em [`docs/ORCHESTRATOR_ARCHITECTURE.md`](./docs/ORCHESTRATOR_ARCHITECTURE.md), [`docs/STATE_MACHINE_TESTS.md`](./docs/STATE_MACHINE_TESTS.md) e [`docs/BACKGROUND_JOBS.md`](./docs/BACKGROUND_JOBS.md).

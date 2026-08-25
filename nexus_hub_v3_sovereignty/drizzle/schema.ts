@@ -1,4 +1,4 @@
-import { boolean, int, mysqlEnum, mysqlTable, text, timestamp, varchar, decimal } from "drizzle-orm/mysql-core";
+import { boolean, index, int, mysqlEnum, mysqlTable, text, timestamp, uniqueIndex, varchar, decimal } from "drizzle-orm/mysql-core";
 
 /**
  * Core user table backing auth flow.
@@ -312,3 +312,57 @@ export const orchestratorEvents = mysqlTable("orchestrator_events", {
 
 export type OrchestratorEvent = typeof orchestratorEvents.$inferSelect;
 export type InsertOrchestratorEvent = typeof orchestratorEvents.$inferInsert;
+
+export const orchestratorJobRuns = mysqlTable("orchestrator_job_runs", {
+  id: int("id").autoincrement().primaryKey(),
+  jobName: varchar("job_name", { length: 128 }).notNull(),
+  runKey: varchar("run_key", { length: 255 }).notNull(),
+  status: mysqlEnum("status", ["running", "completed", "failed"]).default("running").notNull(),
+  recordsProcessed: int("records_processed").default(0).notNull(),
+  startedAt: timestamp("started_at").defaultNow().notNull(),
+  finishedAt: timestamp("finished_at"),
+  error: text("error"),
+  createdAt: timestamp("createdAt").defaultNow().notNull(),
+}, (table) => ({
+  runKeyUnique: uniqueIndex("orchestrator_job_runs_run_key_unique").on(table.runKey),
+  jobNameIdx: index("orchestrator_job_runs_job_name_idx").on(table.jobName),
+}));
+
+export type OrchestratorJobRun = typeof orchestratorJobRuns.$inferSelect;
+export type InsertOrchestratorJobRun = typeof orchestratorJobRuns.$inferInsert;
+
+export const orchestratorAdapterDispatches = mysqlTable("orchestrator_adapter_dispatches", {
+  id: int("id").autoincrement().primaryKey(),
+  adapter: varchar("adapter", { length: 128 }).notNull(),
+  idempotencyKey: varchar("idempotency_key", { length: 255 }).notNull(),
+  requestId: varchar("request_id", { length: 128 }).notNull(),
+  targetHost: varchar("target_host", { length: 255 }).notNull(),
+  status: mysqlEnum("status", ["requested", "accepted", "failed"]).default("requested").notNull(),
+  responseCode: int("response_code"),
+  responseBody: text("response_body"),
+  error: text("error"),
+  createdAt: timestamp("createdAt").defaultNow().notNull(),
+  updatedAt: timestamp("updatedAt").defaultNow().onUpdateNow().notNull(),
+}, (table) => ({
+  idempotencyUnique: uniqueIndex("orchestrator_adapter_dispatches_idempotency_unique").on(table.idempotencyKey),
+  statusIdx: index("orchestrator_adapter_dispatches_status_idx").on(table.status),
+}));
+
+export type OrchestratorAdapterDispatch = typeof orchestratorAdapterDispatches.$inferSelect;
+export type InsertOrchestratorAdapterDispatch = typeof orchestratorAdapterDispatches.$inferInsert;
+
+export const startupSignalSnapshots = mysqlTable("startup_signal_snapshots", {
+  id: int("id").autoincrement().primaryKey(),
+  startupId: int("startup_id").notNull(),
+  readinessScore: int("readiness_score").notNull(),
+  signal: mysqlEnum("signal", ["validate", "accelerate", "scale", "stabilize"]).notNull(),
+  recommendedAction: varchar("recommended_action", { length: 500 }).notNull(),
+  evidence: text("evidence").notNull(),
+  createdAt: timestamp("createdAt").defaultNow().notNull(),
+}, (table) => ({
+  startupIdx: index("startup_signal_snapshots_startup_idx").on(table.startupId),
+  createdIdx: index("startup_signal_snapshots_created_idx").on(table.createdAt),
+}));
+
+export type StartupSignalSnapshot = typeof startupSignalSnapshots.$inferSelect;
+export type InsertStartupSignalSnapshot = typeof startupSignalSnapshots.$inferInsert;

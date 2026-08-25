@@ -24,7 +24,7 @@ export const missionPriorities = ["critical", "high", "medium", "low"] as const;
 
 export type MissionPriority = (typeof missionPriorities)[number];
 
-const transitionMap: Record<MissionStatus, readonly MissionStatus[]> = {
+export const transitionMap: Record<MissionStatus, readonly MissionStatus[]> = {
   backlog: ["ready", "cancelled"],
   ready: ["running", "cancelled", "backlog"],
   running: ["blocked", "review", "cancelled"],
@@ -53,6 +53,7 @@ export function calculateMissionRisk(input: {
   priority: MissionPriority;
   stage: MissionStage;
   dueAt?: Date | null;
+  now?: number;
 }) {
   const priorityRisk: Record<MissionPriority, number> = {
     critical: 35,
@@ -70,7 +71,8 @@ export function calculateMissionRisk(input: {
 
   let risk = priorityRisk[input.priority] + stageRisk[input.stage];
   if (input.dueAt) {
-    const daysUntilDue = Math.ceil((input.dueAt.getTime() - Date.now()) / 86_400_000);
+    const referenceNow = input.now ?? Date.now();
+    const daysUntilDue = Math.ceil((input.dueAt.getTime() - referenceNow) / 86_400_000);
     if (daysUntilDue <= 7) risk += 15;
     else if (daysUntilDue <= 30) risk += 5;
   }

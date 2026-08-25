@@ -17,8 +17,10 @@ import {
   CircleAlert,
   Clock3,
   Loader2,
+  Play,
   Plus,
   Rocket,
+  Webhook,
   ShieldCheck,
   Target,
   Workflow,
@@ -93,8 +95,12 @@ export default function Orchestrator() {
   const overviewQuery = trpc.hub.orchestrator.overview.useQuery();
   const missionsQuery = trpc.hub.orchestrator.listMissions.useQuery({ limit: 100 });
   const eventsQuery = trpc.hub.orchestrator.events.useQuery({ limit: 12 });
+  const jobsQuery = trpc.hub.orchestrator.jobs.useQuery();
+  const adaptersQuery = trpc.hub.orchestrator.adapters.useQuery();
+  const signalsQuery = trpc.hub.orchestrator.signals.useQuery({ limit: 12 });
   const createMission = trpc.hub.orchestrator.createMission.useMutation();
   const transitionMission = trpc.hub.orchestrator.transition.useMutation();
+  const runJob = trpc.hub.orchestrator.runJob.useMutation();
 
   const startupNames = useMemo(
     () => new Map((startupsQuery.data ?? []).map((startup) => [startup.id, startup.name])),
@@ -139,6 +145,16 @@ export default function Orchestrator() {
       await refreshOrchestrator();
     } catch {
       toast.error("Não foi possível criar a missão. Verifique seu acesso e tente novamente.");
+    }
+  };
+
+  const handleRunJob = async (jobName: "reconcile_missions" | "refresh_portfolio_signals") => {
+    try {
+      const result = await runJob.mutateAsync({ jobName });
+      toast.success(result.skipped ? "Job já processado neste bucket." : `Job concluído: ${result.recordsProcessed} registro(s).`);
+      await Promise.all([utils.hub.orchestrator.jobs.invalidate(), utils.hub.orchestrator.overview.invalidate(), utils.hub.orchestrator.listMissions.invalidate(), utils.hub.orchestrator.events.invalidate()]);
+    } catch {
+      toast.error("Não foi possível executar o job. Verifique o acesso do operador e a conexão com o banco.");
     }
   };
 
@@ -340,6 +356,66 @@ export default function Orchestrator() {
             <CardContent className="space-y-4 text-sm text-slate-400">
               <p>O control plane já separa intenção, execução e auditoria. As próximas integrações podem conectar OKRs, sinais de mercado e agentes especializados por adaptadores server-side.</p>
               <div className="rounded-lg border border-blue-500/20 bg-blue-500/5 p-3 text-xs leading-5 text-slate-400">Nenhuma missão altera saldo, publica conteúdo ou chama API externa sem um módulo de aprovação explícita.</div>
+            </CardContent>
+          </Card>
+        </section>
+
+        <section>
+          <Card className="border-slate-800 bg-slate-900/60">
+            <CardHeader>
+              <CardTitle className="flex items-center gap-2 text-slate-100"><Target size={18} className="text-emerald-300" /> Radar de prontidão SaaS</CardTitle>
+              <CardDescription>Score composto por receita normalizada, tração, reputação e estágio do ciclo de vida.</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <div className="grid gap-3 md:grid-cols-2 xl:grid-cols-4">
+                {(signalsQuery.data ?? []).slice(0, 8).map((signal) => (
+                  <div key={signal.id} className="rounded-xl border border-slate-800 bg-slate-950/40 p-4">
+                    <div className="flex items-start justify-between gap-2"><div className="min-w-0"><p className="truncate text-sm font-medium text-slate-200">{startupNames.get(signal.startupId) ?? `Startup #${signal.startupId}`}</p><p className="mt-1 text-[10px] uppercase tracking-wide text-slate-500">{signal.signal}</p></div><span className="text-lg font-bold text-emerald-300">{signal.readinessScore}</span></div>
+                    <Progress value={signal.readinessScore} className="mt-3 h-1.5 bg-slate-800" />
+                    <p className="mt-3 line-clamp-3 text-xs leading-5 text-slate-500">{signal.recommendedAction}</p>
+                  </div>
+                ))}
+              </div>
+              {!signalsQuery.data?.length && <p className="py-6 text-center text-xs text-slate-600">Execute o refresh de sinais para popular o radar de prontidão.</p>}
+            </CardContent>
+          </Card>
+        </section>
+
+        <section className="grid gap-6 lg:grid-cols-[1.2fr_0.8fr]">
+          <Card className="border-slate-800 bg-slate-900/60">
+            <CardHeader>
+              <CardTitle className="flex items-center gap-2 text-slate-100"><Play size={18} className="text-cyan-300" /> Jobs do control plane</CardTitle>
+              <CardDescription>Rotinas determinísticas, idempotentes e sem efeitos externos por padrão.</CardDescription>
+            </CardHeader>
+            <CardContent className="grid gap-3 md:grid-cols-2">
+              <div className="rounded-xl border border-slate-800 bg-slate-950/40 p-4">
+                <p className="text-sm font-medium text-slate-200">Reconciliação de prazos</p>
+                <p className="mt-1 text-xs leading-5 text-slate-500">Move missões em execução vencidas para Bloqueado, registra evento e mantém rastreabilidade.</p>
+                <Button size="sm" variant="outline" onClick={() => handleRunJob("reconcile_missions")} disabled={runJob.isPending} className="mt-4 border-cyan-500/30 text-xs text-cyan-300"><Play size={13} className="mr-1" /> Executar</Button>
+              </div>
+              <div className="rounded-xl border border-slate-800 bg-slate-950/40 p-4">
+                <p className="text-sm font-medium text-slate-200">Refresh de sinais</p>
+                <p className="mt-1 text-xs leading-5 text-slate-500">Calcula o sinal agregado do portfólio e deixa uma marca operacional para observabilidade.</p>
+                <Button size="sm" variant="outline" onClick={() => handleRunJob("refresh_portfolio_signals")} disabled={runJob.isPending} className="mt-4 border-cyan-500/30 text-xs text-cyan-300"><Play size={13} className="mr-1" /> Executar</Button>
+              </div>
+              <div className="md:col-span-2 border-t border-slate-800 pt-3 text-xs text-slate-500">{jobsQuery.data?.length ?? 0} execuções persistidas no ledger. A execução automática permanece opt-in por `NEXUS_ORCHESTRATOR_JOBS_ENABLED=true`.</div>
+            </CardContent>
+          </Card>
+          <Card className="border-slate-800 bg-slate-900/60">
+            <CardHeader>
+              <CardTitle className="flex items-center gap-2 text-slate-100"><Webhook size={18} className="text-violet-300" /> Adaptadores</CardTitle>
+              <CardDescription>Dispatches server-side com allowlist, HTTPS e idempotência.</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <div className="space-y-3">
+                {(adaptersQuery.data ?? []).slice(0, 6).map((dispatch) => (
+                  <div key={dispatch.id} className="flex items-center justify-between gap-3 rounded-lg border border-slate-800 bg-slate-950/40 p-3">
+                    <div className="min-w-0"><p className="truncate text-xs font-medium text-slate-300">{dispatch.targetHost}</p><p className="mt-1 text-[10px] text-slate-500">{dispatch.adapter} · {dispatch.status}</p></div>
+                    <Badge variant="outline" className={dispatch.status === "accepted" ? "border-emerald-500/30 text-emerald-300" : "border-amber-500/30 text-amber-300"}>{dispatch.status}</Badge>
+                  </div>
+                ))}
+                {!adaptersQuery.data?.length && <p className="py-6 text-center text-xs text-slate-600">Nenhum dispatch registrado.</p>}
+              </div>
             </CardContent>
           </Card>
         </section>

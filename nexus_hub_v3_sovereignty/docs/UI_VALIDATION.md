@@ -11,3 +11,10 @@ A aplicação foi iniciada localmente a partir de `nexus_hub_v3_sovereignty` e a
 Durante a primeira abertura, o hook de autenticação falhou com `TypeError: Invalid URL` porque o ambiente local não possui `VITE_OAUTH_PORTAL_URL` e `VITE_APP_ID`. O helper `client/src/const.ts` recebeu um fallback para `/` somente quando essas variáveis estão ausentes; o fluxo de produção continua usando o portal OAuth quando configurado.
 
 A compilação seguinte foi concluída com sucesso. Permaneceram apenas avisos não bloqueantes sobre variáveis opcionais de analytics no `index.html` e sobre o tamanho de um chunk JavaScript.
+
+
+## Validação da expansão de alta tecnologia — 25/08/2026
+
+A rota `/orchestrator` foi reaberta após o Vite concluir a inicialização. O primeiro acesso antes do servidor estar pronto exibiu uma tela em branco; o segundo acesso, com o servidor ativo, renderizou normalmente.
+
+A versão validada exibiu o board de missões, a timeline, o Radar de prontidão SaaS, os dois cards de jobs (`Reconciliação de prazos` e `Refresh de sinais`) e o painel de Adaptadores. No estado local sem banco, os contadores aparecem em zero e os estados vazios são orientativos. Não houve erro de runtime na renderização final.

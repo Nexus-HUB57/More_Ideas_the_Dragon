@@ -5,8 +5,10 @@
   "license": "MIT",
   "scripts": {
     "dev": "NODE_ENV=development tsx watch server/_core/index.ts",
-    "build": "vite build && esbuild server/_core/index.ts --platform=node --packages=external --bundle --format=esm --outdir=dist",
+    "build": "vite build && esbuild server/_core/index.ts --platform=node --packages=external --bundle --format=esm --outdir=dist && esbuild server/jobs-worker.ts --platform=node --packages=external --bundle --format=esm --outfile=dist/jobs-worker.js",
     "start": "NODE_ENV=production node dist/index.js",
+    "jobs": "NODE_ENV=production node dist/jobs-worker.js",
+    "jobs:dev": "NODE_ENV=development tsx server/jobs-worker.ts",
     "check": "tsc --noEmit",
     "format": "prettier --write .",
     "test": "vitest run",

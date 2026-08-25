@@ -3,7 +3,7 @@
  * Funções auxiliares para operações de governança, startups e finanças
  */
 
-import { eq, desc, and, gte, lte } from "drizzle-orm";
+import { eq, desc, and, gte, lte, sql } from "drizzle-orm";
 import { getDb } from "./db";
 import {
   councilMembers,
@@ -22,6 +22,12 @@ import {
   auditLogs,
   orchestratorMissions,
   orchestratorEvents,
+  orchestratorJobRuns,
+  orchestratorAdapterDispatches,
+  startupSignalSnapshots,
+  type InsertOrchestratorJobRun,
+  type InsertOrchestratorAdapterDispatch,
+  type InsertStartupSignalSnapshot,
   type InsertCouncilMember,
   type InsertStartup,
   type InsertAiAgent,
@@ -510,4 +516,85 @@ export async function getMissionEvents(limit = 100, missionId?: number) {
   return filtered
     .orderBy(desc(orchestratorEvents.createdAt))
     .limit(limit);
+}
+
+// ============================================
+// JOBS E OBSERVABILIDADE DO CONTROL PLANE
+// ============================================
+
+export async function claimOrchestratorJobRun(data: InsertOrchestratorJobRun) {
+  const db = await getDb();
+  if (!db) return null;
+  const result = await db
+    .insert(orchestratorJobRuns)
+    .values(data)
+    .onDuplicateKeyUpdate({ set: { runKey: sql`${orchestratorJobRuns.runKey}` } });
+  const affectedRows = Number(result[0]?.affectedRows ?? 0);
+  return affectedRows > 0 ? Number(result[0]?.insertId ?? 0) : null;
+}
+
+export async function finishOrchestratorJobRun(
+  id: number,
+  data: { status: "completed" | "failed"; recordsProcessed?: number; error?: string | null },
+) {
+  const db = await getDb();
+  if (!db) throw new Error("Database not available");
+  await db
+    .update(orchestratorJobRuns)
+    .set({ ...data, finishedAt: new Date() })
+    .where(eq(orchestratorJobRuns.id, id));
+}
+
+export async function getOrchestratorJobRuns(limit = 50) {
+  const db = await getDb();
+  if (!db) return [];
+  return db
+    .select()
+    .from(orchestratorJobRuns)
+    .orderBy(desc(orchestratorJobRuns.createdAt))
+    .limit(limit);
+}
+
+export async function claimAdapterDispatch(data: InsertOrchestratorAdapterDispatch) {
+  const db = await getDb();
+  if (!db) return null;
+  const result = await db
+    .insert(orchestratorAdapterDispatches)
+    .values(data)
+    .onDuplicateKeyUpdate({ set: { idempotencyKey: sql`${orchestratorAdapterDispatches.idempotencyKey}` } });
+  const affectedRows = Number(result[0]?.affectedRows ?? 0);
+  return affectedRows > 0 ? Number(result[0]?.insertId ?? 0) : null;
+}
+
+export async function finishAdapterDispatch(
+  id: number,
+  data: { status: "accepted" | "failed"; responseCode?: number; responseBody?: string; error?: string | null },
+) {
+  const db = await getDb();
+  if (!db) throw new Error("Database not available");
+  await db.update(orchestratorAdapterDispatches).set(data).where(eq(orchestratorAdapterDispatches.id, id));
+}
+
+export async function getAdapterDispatches(limit = 50) {
+  const db = await getDb();
+  if (!db) return [];
+  return db
+    .select()
+    .from(orchestratorAdapterDispatches)
+    .orderBy(desc(orchestratorAdapterDispatches.createdAt))
+    .limit(limit);
+}
+
+export async function createStartupSignalSnapshot(data: InsertStartupSignalSnapshot) {
+  const db = await getDb();
+  if (!db) throw new Error("Database not available");
+  await db.insert(startupSignalSnapshots).values(data);
+}
+
+export async function getStartupSignalSnapshots(limit = 100, startupId?: number) {
+  const db = await getDb();
+  if (!db) return [];
+  const query = db.select().from(startupSignalSnapshots);
+  const filtered = startupId ? query.where(eq(startupSignalSnapshots.startupId, startupId)) : query;
+  return filtered.orderBy(desc(startupSignalSnapshots.createdAt)).limit(limit);
 }

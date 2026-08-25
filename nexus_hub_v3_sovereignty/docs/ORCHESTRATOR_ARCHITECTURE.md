@@ -1,75 +1,111 @@
-# NEXUS-HUB — Arquitetura do Orquestrador de Startups
+# NEXUS-HUB — Arquitetura do Control Plane de Startups
 
 ## Objetivo
 
-O `nexus_hub_v3_sovereignty` é o subprojeto canônico restaurado para evolução do ecossistema. O produto organiza startups, agentes, governança, tesouraria, inteligência de mercado, memória institucional, publicação social e auditoria em uma única superfície operacional.
+O `nexus_hub_v3_sovereignty` é o subprojeto canônico restaurado para evoluir o ecossistema em torno de um **control plane de startups**. A superfície operacional reúne portfólio, agentes, governança, tesouraria, inteligência de mercado, memória institucional, comunicação, auditoria, execução de missões, processamento de sinais e integração server-side.
 
-A primeira entrega end-to-end adiciona um **Orquestrador de Missões**. Uma missão representa uma unidade de execução controlada: uma iniciativa de descoberta, construção, validação, lançamento ou escala associada a uma startup. O orquestrador registra intenção, prioridade, owner, estado, risco, prazo e eventos de ciclo de vida.
+A arquitetura separa quatro planos: **intenção**, representada por missões e prioridades; **processamento**, representado por grafos determinísticos e sinais de prontidão; **execução**, representada por jobs e adaptadores; e **confiança**, representada por Harness, autorização, idempotência e auditoria.
 
 ## Princípios operacionais
 
 | Princípio | Aplicação |
 |---|---|
-| Observabilidade antes de autonomia | Toda mudança de estado gera evento e log de auditoria. |
-| Preparar antes de executar | Criar e priorizar uma missão não movimenta dinheiro, publica conteúdo nem chama serviços externos. |
-| Autorização explícita | Operações de escrita usam `protectedProcedure`; credenciais e execução externa ficam fora do cliente. |
-| Estados monotônicos | O motor aceita apenas transições válidas e impede regressões silenciosas. |
-| Segurança por padrão | O estado inicial é `backlog`; a execução exige ação humana explícita. |
-| Evolução incremental | O primeiro slice usa a infraestrutura atual e deixa adaptadores externos para uma etapa posterior. |
+| Observabilidade antes de autonomia | Toda mudança de estado, execução de job e dispatch de adapter gera evento ou log de auditoria. |
+| Preparar antes de executar | Criar e priorizar missão não movimenta dinheiro, publica conteúdo nem chama serviço externo. |
+| Autorização explícita | Mutations e execução manual usam `protectedProcedure`; leitura operacional pode ser pública quando não expõe segredo. |
+| Harness antes de concluir | Uma missão só chega a `completed` quando passa pelos checks de estado, definição de pronto e ownership. |
+| Idempotência por design | Jobs usam buckets temporais persistidos; adapters usam `idempotencyKey` única antes do efeito externo. |
+| Segurança server-side | Targets externos exigem HTTPS, allowlist de host e bloqueio de redes privadas; credenciais nunca chegam ao cliente. |
+| Execução limitada | Timeout, payload sanitizado, resposta truncada e logs sem segredo reduzem blast radius. |
+| Evolução incremental | O control plane pode ganhar novos adapters, agentes e núcleos sem acoplar o domínio a um fornecedor. |
 
-## Domínios
+## Planos e módulos
 
-| Domínio | Responsabilidade | Situação na base restaurada |
-|---|---|---|
-| Portfolio | Cadastro e scorecard de startups | Existente em `startups` e `performance_metrics`. |
-| Orquestração | Missões, prioridades, estados e eventos | Adicionado nesta entrega. |
-| Agentes | Papéis especializados por startup | Existente em `ai_agents`. |
-| Governança | Conselho, propostas e votos ponderados | Existente em `council_members`, `proposals` e `council_votes`. |
-| Capital | Cofre, transações e distribuição | Existente em `master_vault` e `transactions`. |
-| Inteligência | Market Oracle e oportunidades | Existente em `market_data`, `market_insights` e `arbitrage_opportunities`. |
-| Memória | Decisões, precedentes, lições e insights | Existente em `soul_vault`. |
-| Comunicação | Feed operacional | Existente em `moltbook_posts`. |
-| Compliance | Trilha de auditoria | Existente em `audit_logs`. |
+| Plano | Módulo | Responsabilidade | Implementação |
+|---|---|---|---|
+| Intenção | Portfolio | Cadastro e scorecard de startups | `startups`, `performance_metrics` e telas existentes. |
+| Intenção | Mission control | Iniciativas, estágios, risco, prazo, owner e estados | `orchestrator_missions` e `orchestrator_events`. |
+| Processamento | Processing Core | Pipeline DAG com ordenação topológica e detecção de ciclos | `server/processing-core.ts`. |
+| Processamento | SaaS Readiness Radar | Score composto de receita, tração, reputação e ciclo de vida | `calculateStartupSignal` e `startup_signal_snapshots`. |
+| Execução | Background Jobs | Reconciliação de prazos e refresh de sinais | `server/background-jobs.ts`, `jobs-worker.ts` e `orchestrator_job_runs`. |
+| Execução | Server Adapters | Webhook JSON com allowlist, HTTPS, timeout e idempotência | `server/adapters.ts` e `orchestrator_adapter_dispatches`. |
+| Confiança | Engineering Harness | Quality gate de revisão, DoD, owner, risco e prazo | `server/harness-engine.ts`. |
+| Confiança | Compliance | Trilha somente-anexar de decisões e efeitos | `audit_logs`, tela `/audit`. |
+| Domínios existentes | Agentes, Conselho, Capital, Inteligência, Memória e Comunicação | Capacidades já restauradas no monorepo | Routers e tabelas existentes preservados. |
 
-## Fluxo de uma missão
+## Máquina de estados
 
 ```text
-BACKLOG → READY → RUNNING → BLOCKED → READY
-                         └→ REVIEW → COMPLETED
-                         └→ CANCELLED
+BACKLOG ──→ READY ──→ RUNNING ──→ REVIEW ──→ COMPLETED
+   │           │          │  │        │
+   └→ CANCELLED┘          │  └→ BLOCKED ──→ READY
+                          └──────────────→ CANCELLED
+REVIEW ──→ RUNNING para reexecução controlada
 ```
 
-`BLOCKED` e `REVIEW` são estados de controle. Uma missão em `REVIEW` requer revisão humana antes de ser marcada como `COMPLETED`. A versão inicial não dispara integrações financeiras, publicação social ou agentes autônomos; ela prepara o trabalho, cria o rastro operacional e expõe o próximo passo para o operador.
+O motor em `server/orchestrator-engine.ts` é puro e não conhece banco, HTTP ou React. A tabela de transição é exportada como contrato de domínio. Estados `completed` e `cancelled` são terminais. A transição para `completed` passa pelo `evaluateMissionHarness`; falhas duras impedem a conclusão e retornam as verificações que precisam ser corrigidas.
 
-## Modelo de dados novo
+## Núcleo de processamento
 
-| Entidade | Campos-chave | Finalidade |
+`executeProcessingGraph` recebe nós com `id`, dependências e função de processamento. Antes de executar, valida IDs duplicados, dependências ausentes e ciclos. Depois produz uma ordem topológica e um `Map` de outputs, permitindo compor pipelines sem estado global.
+
+O pipeline SaaS atual normaliza quatro sinais: receita em escala logarítmica, tração, reputação e estágio de ciclo de vida. O score composto roteia a startup para uma ação de `validate`, `accelerate`, `scale` ou `stabilize`. O resultado é persistido como snapshot para comparação histórica e consumo por UI, jobs e futuros agentes.
+
+## Jobs e cron
+
+Existem duas formas de execução:
+
+| Forma | Uso | Comando/configuração |
 |---|---|---|
-| `orchestrator_missions` | startup, title, description, stage, priority, status, owner, due date, risk score | Fonte de verdade da execução. |
-| `orchestrator_events` | mission, event type, from/to status, actor, payload | Timeline imutável de mudanças e sinais. |
+| Scheduler embutido | Ambiente que mantém o processo HTTP ativo | `NEXUS_ORCHESTRATOR_JOBS_ENABLED=true`; intervalo configurável por `NEXUS_ORCHESTRATOR_JOBS_INTERVAL_MS`. |
+| Worker separado | Cron externo, processo dedicado ou pipeline de deployment | `pnpm jobs`, executando um ciclo e encerrando com código de sucesso/erro. |
 
-As tabelas não substituem os domínios existentes. Uma missão referencia uma startup, enquanto decisões de investimento e operações financeiras permanecem nos fluxos de governança e tesouraria.
+Cada execução gera uma `runKey` por janela de quinze minutos e tenta obter claim único em `orchestrator_job_runs`. Se outra instância já processou o mesmo bucket, o job é ignorado. O ciclo de reconciliação move missões `running` vencidas para `blocked`; o refresh calcula snapshots de prontidão e registra o sinal agregado no audit log.
 
-## Contratos de API
+## Adapters server-side
+
+O registry atual expõe `json_webhook`. O fluxo de dispatch é:
+
+1. Validar URL com `zod` e política de segurança server-side.
+2. Exigir HTTPS, ausência de credenciais na URL, host público e host presente em `NEXUS_WEBHOOK_ALLOWLIST`.
+3. Registrar claim com `idempotencyKey` única.
+4. Enviar payload JSON com `requestId`, `idempotency-key` e timeout.
+5. Truncar a resposta, marcar `accepted` ou `failed` e registrar auditoria sanitizada.
+
+O default é **deny-by-default**: sem allowlist, nenhum webhook é aceito. A camada não suporta arbitragem financeira, transferência de fundos ou publicação social implícita.
+
+## Harness de engenharia
+
+Para concluir uma missão, o Harness avalia:
+
+| Check | Tipo | Regra |
+|---|---|---|
+| Estado de revisão | Falha dura | Missão deve estar em `review`. |
+| Definition of Done | Falha dura | Descrição/critério de conclusão não pode estar vazio. |
+| Ownership | Falha dura | Responsável deve estar definido. |
+| Budget de risco | Aviso | Risco acima de 70/100 é visível, mas não é ocultado. |
+| Sinal de prazo | Aviso | Prazo ausente ou vencido é sinalizado. |
+
+O score do Harness é explicável e cada check retorna evidência legível. O resultado pode ser exposto ao operador pelo procedimento `hub.orchestrator.harness` e reutilizado por agentes futuros.
+
+## Contratos tRPC principais
 
 | Procedimento | Acesso | Efeito |
 |---|---|---|
-| `hub.orchestrator.overview` | Público | Retorna contagens e distribuição por status. |
-| `hub.orchestrator.listMissions` | Público | Lista missões com filtros opcionais. |
-| `hub.orchestrator.events` | Público | Exibe eventos recentes do ciclo operacional. |
-| `hub.orchestrator.createMission` | Protegido | Cria missão em `backlog` e registra evento. |
-| `hub.orchestrator.transition` | Protegido | Valida e aplica uma transição explícita. |
+| `hub.orchestrator.overview` | Público | Contagens e distribuição de missões. |
+| `hub.orchestrator.listMissions` | Público | Board filtrável. |
+| `hub.orchestrator.events` | Público | Timeline operacional. |
+| `hub.orchestrator.createMission` | Protegido | Cria em `backlog` e audita. |
+| `hub.orchestrator.transition` | Protegido | Valida estado e Harness de conclusão. |
+| `hub.orchestrator.harness` | Público | Retorna checks e score de uma missão. |
+| `hub.orchestrator.dispatchWebhook` | Protegido | Executa adapter após allowlist e claim idempotente. |
+| `hub.orchestrator.adapters` | Público | Lista dispatches recentes sem credenciais. |
+| `hub.orchestrator.signals` | Público | Lista snapshots de prontidão. |
+| `hub.orchestrator.jobs` | Público | Lista execuções persistidas. |
+| `hub.orchestrator.runJob` | Protegido | Executa um job determinístico sob demanda. |
 
-## Critérios de aceite
+## Critérios de operação
 
-1. O subprojeto instala e compila de forma independente.
-2. O menu expõe a área de Orquestração em desktop e mobile.
-3. O operador consegue criar missão, visualizar o board e avançar estados válidos.
-4. Transições inválidas retornam erro sem alterar dados.
-5. A timeline exibe eventos de criação e de transição.
-6. Testes cobrem a máquina de estados e os procedimentos do router com mocks.
-7. Nenhuma integração externa é chamada durante a criação ou transição da missão.
+A aplicação deve ser executada com `pnpm install`, validada com `pnpm test`, `pnpm check` e `pnpm build`, e migrada em ambiente com `DATABASE_URL` usando o fluxo padrão do projeto. Em produção, habilite o scheduler apenas quando houver uma instância responsável por ele ou use o worker separado com lock persistente.
 
-## Próximas extensões
-
-A fundação permite adicionar scorecards de OKRs, dependências entre missões, adaptadores de CRM/analytics, jobs agendados para sinais de saúde e um executor de agentes com políticas de aprovação. Cada integração deve ser conectada por adaptador server-side, com segredo mínimo, idempotência, timeout e log sanitizado.
+O próximo nível de evolução pode adicionar adapters de CRM, analytics e notificações, dependências entre missões, políticas de aprovação por risco, filas externas e agentes especializados. Cada nova capacidade deve manter o mesmo contrato: segredo no servidor, timeout, idempotência, teste determinístico e auditoria.

@@ -401,3 +401,44 @@ describe("hubRouter.orchestrator", () => {
     }));
   });
 });
+
+
+describe("hubRouter.orchestrator guardrails", () => {
+  beforeEach(() => {
+    vi.clearAllMocks();
+  });
+
+  it("blocks completion when the Harness has hard failures", async () => {
+    vi.mocked(dbHub.getMissionById).mockResolvedValue({
+      id: 21,
+      startupId: 7,
+      title: "Release sem DoD",
+      description: null,
+      stage: "launch",
+      priority: "high",
+      status: "review",
+      owner: "Release Pod",
+      dueAt: null,
+      riskScore: 61,
+      createdAt: new Date(),
+      updatedAt: new Date(),
+    });
+
+    const caller = hubRouter.createCaller({ user: { id: 1, name: "Ana Operadora", role: "admin" } } as any);
+    await expect(caller.orchestrator.transition({ missionId: 21, toStatus: "completed" })).rejects.toThrow("Harness reprovado");
+    expect(dbHub.updateMissionStatus).not.toHaveBeenCalled();
+  });
+
+  it("rejects an unallowlisted webhook before claiming a dispatch", async () => {
+    process.env.NEXUS_WEBHOOK_ALLOWLIST = "hooks.example.com";
+    const caller = hubRouter.createCaller({ user: { id: 1, name: "Ana Operadora", role: "admin" } } as any);
+
+    await expect(caller.orchestrator.dispatchWebhook({
+      target: "https://127.0.0.1/events",
+      idempotencyKey: "mission-21-run-1",
+      payload: { event: "mission.completed" },
+    })).rejects.toThrow("local ou privado");
+    expect(dbHub.claimAdapterDispatch).not.toHaveBeenCalled();
+    delete process.env.NEXUS_WEBHOOK_ALLOWLIST;
+  });
+});

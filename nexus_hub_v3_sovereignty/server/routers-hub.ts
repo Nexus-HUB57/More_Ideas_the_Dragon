@@ -3,9 +3,13 @@
  * Endpoints para governança, startups, finanças e análise de mercado
  */
 
+import { randomUUID } from "node:crypto";
 import { z } from "zod";
 import { router, protectedProcedure, publicProcedure } from "./_core/trpc";
 import * as dbHub from "./db-hub";
+import { AdapterError, createDefaultAdapterRegistry, validateWebhookTarget } from "./adapters";
+import { backgroundJobNames, runOrchestratorJob } from "./background-jobs";
+import { evaluateMissionHarness } from "./harness-engine";
 import {
   assertTransition,
   calculateMissionRisk,
@@ -547,6 +551,13 @@ export const hubRouter = router({
         const mission = await dbHub.getMissionById(input.missionId);
         if (!mission) throw new Error("Missão não encontrada");
         assertTransition(mission.status, input.toStatus);
+        if (input.toStatus === "completed") {
+          const harness = evaluateMissionHarness(mission);
+          if (!harness.passed) {
+            const failures = harness.checks.filter((check) => check.status === "failed").map((check) => check.label).join(", ");
+            throw new Error(`Harness reprovado: ${failures}`);
+          }
+        }
         const actor = ctx.user?.name ?? "operator";
         await dbHub.updateMissionStatus(input.missionId, input.toStatus);
         await dbHub.createMissionEvent({
@@ -566,6 +577,70 @@ export const hubRouter = router({
         });
         return { success: true, fromStatus: mission.status, toStatus: input.toStatus };
       }),
+
+    harness: publicProcedure
+      .input(z.object({ missionId: z.number().int().positive() }))
+      .query(async ({ input }) => {
+        const mission = await dbHub.getMissionById(input.missionId);
+        if (!mission) throw new Error("Missão não encontrada");
+        return evaluateMissionHarness(mission);
+      }),
+
+    dispatchWebhook: protectedProcedure
+      .input(z.object({
+        target: z.string().url(),
+        idempotencyKey: z.string().trim().min(8).max(255),
+        payload: z.record(z.string(), z.unknown()),
+      }))
+      .mutation(async ({ input, ctx }) => {
+        const target = validateWebhookTarget(input.target);
+        const requestId = randomUUID();
+        const dispatchId = await dbHub.claimAdapterDispatch({
+          adapter: "json_webhook",
+          idempotencyKey: input.idempotencyKey,
+          requestId,
+          targetHost: target.hostname,
+          status: "requested",
+        });
+        if (!dispatchId) return { accepted: false, deduplicated: true, requestId };
+
+        const adapter = createDefaultAdapterRegistry().get("json_webhook");
+        try {
+          const result = await adapter.execute({ target: input.target, payload: input.payload }, { requestId, idempotencyKey: input.idempotencyKey });
+          await dbHub.finishAdapterDispatch(dispatchId, { status: "accepted", responseCode: result.statusCode, responseBody: result.responseBody });
+          await dbHub.recordAuditLog({
+            action: "orchestrator.adapter.webhook.accepted",
+            actor: ctx.user?.name ?? "operator",
+            targetType: "adapter_dispatch",
+            targetId: dispatchId,
+            details: JSON.stringify({ adapter: "json_webhook", targetHost: target.hostname, requestId }),
+          });
+          return { accepted: true, deduplicated: false, requestId, statusCode: result.statusCode };
+        } catch (error) {
+          const message = error instanceof AdapterError ? error.message : "Falha no adaptador";
+          await dbHub.finishAdapterDispatch(dispatchId, { status: "failed", error: message });
+          await dbHub.recordAuditLog({
+            action: "orchestrator.adapter.webhook.failed",
+            actor: ctx.user?.name ?? "operator",
+            targetType: "adapter_dispatch",
+            targetId: dispatchId,
+            details: JSON.stringify({ adapter: "json_webhook", targetHost: target.hostname, requestId, error: message }),
+          });
+          throw new Error(message);
+        }
+      }),
+
+    adapters: publicProcedure.query(async () => dbHub.getAdapterDispatches(50)),
+
+    signals: publicProcedure
+      .input(z.object({ startupId: z.number().int().positive().optional(), limit: z.number().min(1).max(200).default(100) }).optional())
+      .query(async ({ input }) => dbHub.getStartupSignalSnapshots(input?.limit ?? 100, input?.startupId)),
+
+    jobs: publicProcedure.query(async () => dbHub.getOrchestratorJobRuns(50)),
+
+    runJob: protectedProcedure
+      .input(z.object({ jobName: z.enum(backgroundJobNames) }))
+      .mutation(async ({ input }) => runOrchestratorJob(input.jobName)),
   }),
 
   // ============================================
