@@ -1,4 +1,4 @@
-import { describe, it, expect, beforeEach, vi } from "vitest";
+import { describe, it, expect, beforeEach, afterEach, vi } from "vitest";
 import { hubRouter } from "./routers-hub";
 import * as dbHub from "./db-hub";
 
@@ -406,6 +406,12 @@ describe("hubRouter.orchestrator", () => {
 describe("hubRouter.orchestrator guardrails", () => {
   beforeEach(() => {
     vi.clearAllMocks();
+    process.env.NEXUS_EXTERNAL_ADAPTERS_ENABLED = "true";
+  });
+
+  afterEach(() => {
+    delete process.env.NEXUS_EXTERNAL_ADAPTERS_ENABLED;
+    delete process.env.NEXUS_WEBHOOK_ALLOWLIST;
   });
 
   it("blocks completion when the Harness has hard failures", async () => {

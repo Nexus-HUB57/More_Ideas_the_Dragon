@@ -43,6 +43,10 @@ function isPrivateOrLocalHost(hostname: string) {
 }
 
 export function validateWebhookTarget(rawTarget: string) {
+  if (process.env.NEXUS_EXTERNAL_ADAPTERS_ENABLED !== "true") {
+    throw new AdapterError("Adapters externos estão desabilitados por configuração.", "NOT_ALLOWED");
+  }
+
   let url: URL;
   try {
     url = new URL(rawTarget);

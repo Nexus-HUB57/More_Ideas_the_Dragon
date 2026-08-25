@@ -1,4 +1,4 @@
-import { afterEach, describe, expect, it } from "vitest";
+import { afterEach, beforeEach, describe, expect, it } from "vitest";
 import { AdapterError, validateWebhookTarget } from "./adapters";
 import { evaluateMissionHarness } from "./harness-engine";
 
@@ -39,7 +39,12 @@ describe("mission engineering harness", () => {
 });
 
 describe("server adapter security boundary", () => {
+  beforeEach(() => {
+    process.env.NEXUS_EXTERNAL_ADAPTERS_ENABLED = "true";
+  });
+
   afterEach(() => {
+    delete process.env.NEXUS_EXTERNAL_ADAPTERS_ENABLED;
     delete process.env.NEXUS_WEBHOOK_ALLOWLIST;
   });
 
