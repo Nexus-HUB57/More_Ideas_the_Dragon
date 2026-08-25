@@ -112,6 +112,26 @@ export const executiveAgents = mysqlTable("executive_agents", {
 export type ExecutiveAgent = typeof executiveAgents.$inferSelect;
 export type InsertExecutiveAgent = typeof executiveAgents.$inferInsert;
 
+export const executiveSkills = mysqlTable("executive_skills", {
+  id: int("id").autoincrement().primaryKey(),
+  skillKey: varchar("skill_key", { length: 96 }).notNull().unique(),
+  role: mysqlEnum("role", ["CEO", "CTO", "CPO", "COO", "CFO", "CRO"]).notNull(),
+  name: varchar("name", { length: 160 }).notNull(),
+  description: text("description").notNull(),
+  artifact: varchar("artifact", { length: 160 }).notNull(),
+  risk: mysqlEnum("risk", ["low", "medium", "high"]).notNull(),
+  autonomy: mysqlEnum("autonomy", ["recommend", "execute_reversible", "execute_guarded"]).notNull(),
+  kpis: text("kpis").notNull(),
+  createdAt: timestamp("created_at").defaultNow().notNull(),
+  updatedAt: timestamp("updated_at").defaultNow().onUpdateNow().notNull(),
+}, (table) => ({
+  roleIdx: index("executive_skills_role_idx").on(table.role),
+  riskIdx: index("executive_skills_risk_idx").on(table.risk),
+}));
+
+export type ExecutiveSkill = typeof executiveSkills.$inferSelect;
+export type InsertExecutiveSkill = typeof executiveSkills.$inferInsert;
+
 // ============================================
 // VOTAÇÕES DO CONSELHO
 // ============================================

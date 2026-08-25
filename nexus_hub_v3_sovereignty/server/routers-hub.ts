@@ -17,6 +17,7 @@ import {
   canDelegate,
   assertExecutiveAction,
 } from "./executive-agents";
+import { getSkillsByRole, executiveSkills, validateSkillCatalog } from "./executive-skills";
 import {
   assertTransition,
   calculateMissionRisk,
@@ -191,6 +192,33 @@ export const hubRouter = router({
     authorizeAction: protectedProcedure
       .input(z.object({ role: z.enum(["CEO", "CTO", "CPO", "COO", "CFO", "CRO"]), action: z.string() }))
       .query(({ input }) => ({ allowed: assertExecutiveAction(input.role, input.action) })),
+
+    skills: publicProcedure
+      .input(z.object({ role: z.enum(["CEO", "CTO", "CPO", "COO", "CFO", "CRO"]).optional() }).optional())
+      .query(async ({ input }) => ({
+        catalog: input?.role ? getSkillsByRole(input.role) : executiveSkills,
+        persisted: await dbHub.getExecutiveSkills(input?.role),
+      })),
+
+    catalogHealth: publicProcedure.query(() => ({
+      valid: validateSkillCatalog(),
+      totalSkills: executiveSkills.length,
+      skillsPerRole: Object.fromEntries(["CEO", "CTO", "CPO", "COO", "CFO", "CRO"].map((role) => [role, getSkillsByRole(role as any).length])),
+    })),
+
+    seedSkills: protectedProcedure.mutation(async () => {
+      await dbHub.initializeExecutiveSkills(executiveSkills.map((skill) => ({
+        skillKey: skill.id,
+        role: skill.role,
+        name: skill.name,
+        description: skill.description,
+        artifact: skill.artifact,
+        risk: skill.risk,
+        autonomy: skill.autonomy,
+        kpis: JSON.stringify(skill.kpis),
+      })));
+      return { success: true, count: executiveSkills.length };
+    }),
   }),
 
   // ============================================

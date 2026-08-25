@@ -99,6 +99,8 @@ export default function Orchestrator() {
   const adaptersQuery = trpc.hub.orchestrator.adapters.useQuery();
   const signalsQuery = trpc.hub.orchestrator.signals.useQuery({ limit: 12 });
   const executivesQuery = trpc.hub.executives.orgChart.useQuery();
+  const skillsQuery = trpc.hub.executives.skills.useQuery({});
+  const skillHealthQuery = trpc.hub.executives.catalogHealth.useQuery();
   const createMission = trpc.hub.orchestrator.createMission.useMutation();
   const transitionMission = trpc.hub.orchestrator.transition.useMutation();
   const runJob = trpc.hub.orchestrator.runJob.useMutation();
@@ -243,6 +245,31 @@ export default function Orchestrator() {
                 </CardContent>
               </Card>
             ))}
+          </div>
+        </section>
+
+        <section>
+          <div className="mb-4 flex items-end justify-between">
+            <div>
+              <h2 className="text-xl font-semibold text-slate-100">Executive skill matrix</h2>
+              <p className="mt-1 text-sm text-slate-500">Skills especializadas alimentam decisões, artefatos e gates de execução por núcleo.</p>
+            </div>
+            <Badge className="border-emerald-500/30 bg-emerald-500/10 text-emerald-300">{skillHealthQuery.data?.totalSkills ?? 0} skills · {skillHealthQuery.data?.valid ? "cobertura íntegra" : "revisar cobertura"}</Badge>
+          </div>
+          <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+            {Object.entries(skillHealthQuery.data?.skillsPerRole ?? {}).map(([role, count]) => {
+              const roleSkills = (skillsQuery.data?.catalog ?? []).filter((skill) => skill.role === role);
+              const highRisk = roleSkills.filter((skill) => skill.risk === "high").length;
+              return (
+                <Card key={role} className="border-slate-800 bg-slate-900/60">
+                  <CardContent className="p-5">
+                    <div className="flex items-center justify-between"><p className="font-semibold text-slate-100">{role}</p><Badge variant="outline" className="border-slate-700 text-slate-300">{count} skills</Badge></div>
+                    <div className="mt-4 grid grid-cols-2 gap-2 text-xs"><div className="rounded-lg bg-slate-950/60 p-2"><span className="text-slate-500">Alto risco</span><div className="mt-1 font-medium text-amber-300">{highRisk}</div></div><div className="rounded-lg bg-slate-950/60 p-2"><span className="text-slate-500">Artefatos</span><div className="mt-1 font-medium text-cyan-300">{new Set(roleSkills.map((skill) => skill.artifact)).size}</div></div></div>
+                    <p className="mt-3 text-xs text-slate-500">{roleSkills.slice(0, 3).map((skill) => skill.name).join(" · ")}</p>
+                  </CardContent>
+                </Card>
+              );
+            })}
           </div>
         </section>
 

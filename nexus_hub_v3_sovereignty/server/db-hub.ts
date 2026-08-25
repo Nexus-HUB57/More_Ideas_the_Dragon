@@ -10,6 +10,7 @@ import {
   startups,
   aiAgents,
   executiveAgents,
+  executiveSkills,
   proposals,
   councilVotes,
   transactions,
@@ -33,6 +34,7 @@ import {
   type InsertStartup,
   type InsertAiAgent,
   type InsertExecutiveAgent,
+  type InsertExecutiveSkill,
   type InsertProposal,
   type InsertCouncilVote,
   type InsertTransaction,
@@ -231,6 +233,31 @@ export async function getExecutiveAgentByRole(role: InsertExecutiveAgent["role"]
   if (!db) return null;
   const result = await db.select().from(executiveAgents).where(eq(executiveAgents.role, role));
   return result.length > 0 ? result[0] : null;
+}
+
+export async function initializeExecutiveSkills(data: InsertExecutiveSkill[]) {
+  const db = await getDb();
+  if (!db) throw new Error("Database not available");
+  for (const skill of data) {
+    await db.insert(executiveSkills).values(skill).onDuplicateKeyUpdate({
+      set: {
+        role: skill.role,
+        name: skill.name,
+        description: skill.description,
+        artifact: skill.artifact,
+        risk: skill.risk,
+        autonomy: skill.autonomy,
+        kpis: skill.kpis,
+      },
+    });
+  }
+}
+
+export async function getExecutiveSkills(role?: InsertExecutiveSkill["role"]) {
+  const db = await getDb();
+  if (!db) return [];
+  const query = db.select().from(executiveSkills);
+  return role ? query.where(eq(executiveSkills.role, role)) : query;
 }
 
 // ============================================
