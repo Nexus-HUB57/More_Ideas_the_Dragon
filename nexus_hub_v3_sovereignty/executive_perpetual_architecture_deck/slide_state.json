@@ -1,0 +1,97 @@
+{
+  "project_info": {
+    "title": "O organismo que opera continuamente",
+    "created": 1787746680.465,
+    "last_updated": 1787746944.328,
+    "total_slides": 8
+  },
+  "slides": [
+    {
+      "id": "organism",
+      "state": "edited",
+      "pageNum": 1
+    },
+    {
+      "id": "architecture",
+      "state": "edited",
+      "pageNum": 2
+    },
+    {
+      "id": "intelligence_nuclei",
+      "state": "edited",
+      "pageNum": 3
+    },
+    {
+      "id": "mutation",
+      "state": "edited",
+      "pageNum": 4
+    },
+    {
+      "id": "trpc",
+      "state": "edited",
+      "pageNum": 5
+    },
+    {
+      "id": "stress",
+      "state": "edited",
+      "pageNum": 6
+    },
+    {
+      "id": "validation",
+      "state": "edited",
+      "pageNum": 7
+    },
+    {
+      "id": "scale_governance",
+      "state": "edited",
+      "pageNum": 8
+    }
+  ],
+  "outline": [
+    {
+      "id": "organism",
+      "title": "O organismo que opera continuamente",
+      "summary": "Nexus HUB como organismo de inteligência fulltime, com continuidade auditável e evolução baseada em prova.",
+      "image_plan": "/home/ubuntu/upload/search_images/6kD8w30oHkWd.jpg - Nexus HUB network/organism visualization"
+    },
+    {
+      "id": "architecture",
+      "title": "Arquitetura perpétua",
+      "summary": "Fluxo de sinais, scheduler, workers, Obscura, Harness, memória e próxima prioridade.",
+      "image_plan": "/home/ubuntu/upload/search_images/G57MsX50sSq4.jpg - Perpetual architecture flow/network representation"
+    },
+    {
+      "id": "intelligence_nuclei",
+      "title": "Núcleos de inteligência",
+      "summary": "Moltbook, Obscura, Odysseus, JARVIS, Hermes, Harness e Fibonacci como sistema composto.",
+      "image_plan": "/home/ubuntu/upload/search_images/ZMOOrdA1mV7j.png - Graph visualization representing Moltbook and intelligence cores"
+    },
+    {
+      "id": "mutation",
+      "title": "Mutação segura do código",
+      "summary": "Propostas Fibonacci com baseline, candidate digest, risco, ganho esperado e gates de promoção.",
+      "image_plan": "/home/ubuntu/upload/search_images/qdvILEC7VtpG.png - Code mutation and secure network background"
+    },
+    {
+      "id": "trpc",
+      "title": "Otimização do fluxo tRPC",
+      "summary": "Auditoria de routers e db-hub, otimização do overview e registry de latência."
+    },
+    {
+      "id": "stress",
+      "title": "Stress test: evidência medida",
+      "summary": "500 requisições, 25 concorrentes por lote, 100% de sucesso, p50 13,68 ms e p95 27,41 ms."
+    },
+    {
+      "id": "validation",
+      "title": "Validação end-to-end",
+      "summary": "TypeScript, build, 103 testes, smoke tRPC, stress, workflows, mutação e segurança Git."
+    },
+    {
+      "id": "scale_governance",
+      "title": "Escala e governança",
+      "summary": "Roadmap de escala real, guardrails soberanos e próximos marcos de produção.",
+      "image_plan": "/home/ubuntu/upload/search_images/VFAor8yb5u6M.jpg - Security guardrails and access restriction concept"
+    }
+  ]
+}

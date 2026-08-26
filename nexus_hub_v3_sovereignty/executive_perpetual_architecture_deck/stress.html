@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1"></script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        .slide-container { 
+            width: 1280px; 
+            min-height: 720px; 
+            background: #E2E8F0; 
+            color: #2D3748; 
+            font-family: Arial, sans-serif; 
+            position: relative;
+        }
+        .header { padding-top: 60px; padding-left: 76px; }
+        .eyebrow { font-size: 14px; letter-spacing: 3px; text-transform: uppercase; color: #9C4221; font-weight: 700; }
+        h1 { font: italic 52px/1.05 Georgia, serif; color: #1A3636; margin-top: 16px; }
+        .sub { font-size: 21px; font-weight: 300; margin-top: 12px; border-bottom: 0.5px solid #9C4221; padding-bottom: 10px; display: inline-block; }
+        
+        .main-content { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; padding-top: 40px; padding-left: 76px; padding-right: 76px; }
+        
+        .stats-table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+        .stats-table th, .stats-table td { text-align: left; padding-top: 15px; border-bottom: 0.5px solid rgba(45, 55, 72, 0.2); }
+        .stats-table th { font: italic 20px Georgia, serif; color: #1A3636; }
+        .stats-table td { font-size: 24px; font-weight: 700; color: #9C4221; text-align: right; }
+        
+        .chart-box { padding-top: 20px; }
+        .chart-title { font: italic 18px Georgia, serif; color: #1A3636; margin-bottom: 20px; }
+        
+        .footer { position: absolute; bottom: 30px; left: 76px; right: 76px; border-top: 0.5px solid #1A3636; padding-top: 15px; display: flex; justify-content: space-between; font-size: 12px; letter-spacing: 1px; text-transform: uppercase; }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <div class="eyebrow">Evidência Operacional</div>
+            <h1>Stress test: evidência medida</h1>
+            <p class="sub">Disponibilidade e performance sob carga controlada no endpoint tRPC.</p>
+        </div>
+        
+        <div class="main-content">
+            <div class="stats-column">
+                <table class="stats-table">
+                    <tr><th>Requisições Totais</th><td>500</td></tr>
+                    <tr><th>Concorrência (Lote)</th><td>25</td></tr>
+                    <tr><th>Taxa de Sucesso</th><td>100%</td></tr>
+                    <tr><th>Falhas Detectadas</th><td>0</td></tr>
+                    <tr><th>Baseline de Custo</th><td>Nominal</td></tr>
+                </table>
+            </div>
+            
+            <div class="chart-box">
+                <p class="chart-title">Distribuição de Latência (ms)</p>
+                <div style="height: 300px;">
+                    <canvas id="latencyChart"></canvas>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <span>Nexus HUB / system.health</span>
+            <span>Resultados Medidos em 26/08/2026</span>
+        </div>
+    </div>
+
+    <script>
+        const ctx = document.getElementById('latencyChart').getContext('2d');
+        new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['p50 (Mediana)', 'p95 (Percentil)', 'Máximo'],
+                datasets: [{
+                    label: 'Latência em ms',
+                    data: [13.68, 27.41, 82.42],
+                    backgroundColor: ['#1A3636', '#9C4221', '#2D3748'],
+                    barThickness: 60
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: { display: false }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        grid: { color: 'rgba(0,0,0,0.05)' },
+                        ticks: { font: { size: 14 } }
+                    },
+                    x: {
+                        grid: { display: false },
+                        ticks: { font: { family: 'Georgia', style: 'italic', size: 16 } }
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Otimização do fluxo tRPC</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        .slide-container {
+            width: 1280px;
+            min-height: 720px;
+            background: #E2E8F0;
+            color: #2D3748;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            position: relative;
+            overflow: hidden;
+        }
+        .header-zone {
+            padding-top: 60px;
+            padding-left: 80px;
+        }
+        h1 {
+            font-family: Georgia, serif;
+            font-weight: 700;
+            font-style: italic;
+            font-size: 48px;
+            color: #1A3636;
+            margin-bottom: 10px;
+        }
+        .subtitle {
+            font-size: 20px;
+            font-weight: 300;
+            color: #2D3748;
+            margin-bottom: 40px;
+            border-bottom: 0.5px solid #1A3636;
+            display: inline-block;
+            padding-bottom: 5px;
+        }
+        .main-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            padding-top: 20px;
+            padding-left: 80px;
+            padding-right: 80px;
+        }
+        .column-title {
+            font-family: Georgia, serif;
+            font-weight: 700;
+            font-style: italic;
+            font-size: 28px;
+            color: #9C4221;
+            margin-bottom: 20px;
+        }
+        .content-block {
+            margin-top: 20px;
+        }
+        .item {
+            margin-top: 15px;
+            padding-top: 10px;
+            border-top: 0.5px solid rgba(45, 55, 72, 0.3);
+        }
+        .item-title {
+            font-weight: 700;
+            font-size: 18px;
+            color: #1A3636;
+        }
+        .item-desc {
+            font-size: 16px;
+            font-weight: 300;
+            line-height: 1.6;
+            margin-top: 5px;
+        }
+        .visual-element {
+            position: absolute;
+            bottom: 40px;
+            right: 80px;
+            width: 300px;
+            height: 200px;
+            border: 0.5px solid #1A3636;
+            padding: 10px;
+            background: rgba(255, 255, 255, 0.2);
+        }
+        .visual-element img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+        .decoration-circle {
+            position: absolute;
+            width: 400px;
+            height: 400px;
+            border-radius: 50%;
+            background: rgba(156, 66, 33, 0.05);
+            top: -100px;
+            right: -100px;
+            z-index: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="decoration-circle"></div>
+        <div class="header-zone">
+            <h1>Otimização do fluxo tRPC</h1>
+            <p class="subtitle">Auditoria técnica e refinamento de latência no núcleo do orquestrador.</p>
+        </div>
+        <div class="main-content">
+            <div class="content-block">
+                <h2 class="column-title">Auditoria de Latência</h2>
+                <div class="item">
+                    <p class="item-title">Mapeamento de Fluxos Críticos</p>
+                    <p class="item-desc">Varredura profunda em <code>routers-hub.ts</code> e <code>db-hub.ts</code> para identificar gargalos em consultas e serialização.</p>
+                </div>
+                <div class="item">
+                    <p class="item-title">Registry de Performance</p>
+                    <p class="item-desc">Implementação de monitoramento determinístico: p50, p95 e taxas de sucesso capturadas em tempo real.</p>
+                </div>
+            </div>
+            <div class="content-block">
+                <h2 class="column-title">Refinamento Algorítmico</h2>
+                <div class="item">
+                    <p class="item-title">Otimização do Overview</p>
+                    <p class="item-desc">Transição de múltiplas passagens de filtro para uma passagem única sobre o dataset de missões, reduzindo overhead de CPU.</p>
+                </div>
+                <div class="item">
+                    <p class="item-title">Eficiência de Persistência</p>
+                    <p class="item-desc">Redução de chamadas redundantes ao banco de dados e melhoria na composição de respostas complexas.</p>
+                </div>
+            </div>
+        </div>
+        <div class="visual-element">
+            <img src="/home/ubuntu/upload/search_images/VFAor8yb5u6M.jpg" alt="Estrutura tecnológica abstrata">
+        </div>
+    </div>
+</body>
+</html>

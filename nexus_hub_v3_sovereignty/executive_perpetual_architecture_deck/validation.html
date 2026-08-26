@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Validação end-to-end</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        .slide-container {
+            width: 1280px;
+            min-height: 720px;
+            background-color: #E2E8F0;
+            color: #2D3748;
+            font-family: Arial, sans-serif;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+        }
+        .header-section {
+            padding-top: 60px;
+            padding-left: 80px;
+        }
+        .eyebrow {
+            font-size: 14px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: #9C4221;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+        h1 {
+            font-family: Georgia, serif;
+            font-style: italic;
+            font-weight: 700;
+            font-size: 52px;
+            color: #1A3636;
+            line-height: 1.1;
+        }
+        .main-content {
+            display: grid;
+            grid-template-columns: 1fr 1.618fr;
+            gap: 60px;
+            padding-top: 40px;
+            padding-left: 80px;
+            padding-right: 80px;
+            flex-grow: 1;
+        }
+        .description-box {
+            padding-top: 20px;
+        }
+        .description-box p {
+            font-size: 20px;
+            font-weight: 300;
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
+        .hairline {
+            width: 100%;
+            height: 0.5px;
+            background-color: #1A3636;
+            opacity: 0.3;
+            margin-bottom: 20px;
+        }
+        .validation-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+        .validation-table th {
+            text-align: left;
+            font-family: Georgia, serif;
+            font-style: italic;
+            font-size: 22px;
+            color: #1A3636;
+            padding-top: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid rgba(26, 54, 54, 0.2);
+        }
+        .validation-table td {
+            padding-top: 12px;
+            padding-bottom: 12px;
+            font-size: 18px;
+            border-bottom: 1px solid rgba(26, 54, 54, 0.1);
+        }
+        .status-tag {
+            color: #9C4221;
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 14px;
+            letter-spacing: 1px;
+        }
+        .footer {
+            padding-top: 40px;
+            padding-left: 80px;
+            padding-right: 80px;
+            padding-bottom: 30px;
+            display: flex;
+            justify-content: space-between;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            opacity: 0.6;
+        }
+        .circles-decoration {
+            position: absolute;
+            top: -100px;
+            right: -100px;
+            width: 400px;
+            height: 400px;
+            border: 1px solid rgba(26, 54, 54, 0.05);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+        .circles-decoration::after {
+            content: '';
+            position: absolute;
+            top: 50px;
+            right: 50px;
+            width: 300px;
+            height: 300px;
+            border: 1px solid rgba(156, 66, 33, 0.05);
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="circles-decoration"></div>
+        
+        <div class="header-section">
+            <div class="eyebrow">Quality Assurance & Integrity</div>
+            <h1>Validação end-to-end</h1>
+        </div>
+
+        <div class="main-content">
+            <div class="description-box">
+                <p>O rigor técnico é a fundação da autonomia. Cada componente do Nexus HUB foi submetido a uma bateria exaustiva de testes para garantir integridade, performance e segurança.</p>
+                <div class="hairline"></div>
+                <p style="font-size: 16px; font-style: italic; color: #1A3636;">"A confiança nasce da evidência empírica, não da promessa algorítmica."</p>
+            </div>
+
+            <div>
+                <table class="validation-table">
+                    <thead>
+                        <tr>
+                            <th>Camada de Validação</th>
+                            <th>Resultado</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Compilação TypeScript & Build Vite</td>
+                            <td class="status-tag">Aprovado</td>
+                        </tr>
+                        <tr>
+                            <td>Suíte de Testes Unitários (23 arquivos)</td>
+                            <td class="status-tag">103 / 103 Passaram</td>
+                        </tr>
+                        <tr>
+                            <td>Smoke Test tRPC (system.health)</td>
+                            <td class="status-tag">Sucesso (ok:true)</td>
+                        </tr>
+                        <tr>
+                            <td>Stress Test (500 reqs / 25 conc)</td>
+                            <td class="status-tag">100% Sucesso</td>
+                        </tr>
+                        <tr>
+                            <td>Motores: Obscura, Fibonacci & Sagas</td>
+                            <td class="status-tag">Validado</td>
+                        </tr>
+                        <tr>
+                            <td>Segurança Git & Integridade de Branch</td>
+                            <td class="status-tag">Protegido</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="footer">
+            <span>Nexus HUB / Evidence-Based Evolution</span>
+            <span>26 Aug 2026</span>
+        </div>
+    </div>
+</body>
+</html>

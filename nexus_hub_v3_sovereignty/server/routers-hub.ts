@@ -681,13 +681,17 @@ export const hubRouter = router({
     overview: publicProcedure.query(async () => {
       const missions = await dbHub.getMissions({ limit: 500 });
       const byStatus = missionStatuses.reduce<Record<string, number>>((acc, status) => {
-        acc[status] = missions.filter((mission) => mission.status === status).length;
+        acc[status] = 0;
         return acc;
       }, {});
-      const active = missions.filter((mission) => ["ready", "running", "blocked", "review"].includes(mission.status)).length;
-      const averageRisk = missions.length
-        ? Math.round(missions.reduce((sum, mission) => sum + mission.riskScore, 0) / missions.length)
-        : 0;
+      let active = 0;
+      let totalRisk = 0;
+      for (const mission of missions) {
+        byStatus[mission.status] = (byStatus[mission.status] ?? 0) + 1;
+        if (["ready", "running", "blocked", "review"].includes(mission.status)) active += 1;
+        totalRisk += mission.riskScore;
+      }
+      const averageRisk = missions.length ? Math.round(totalRisk / missions.length) : 0;
       return {
         total: missions.length,
         active,
