@@ -104,6 +104,7 @@ export default function Orchestrator() {
   const createMission = trpc.hub.orchestrator.createMission.useMutation();
   const transitionMission = trpc.hub.orchestrator.transition.useMutation();
   const runJob = trpc.hub.orchestrator.runJob.useMutation();
+  const launchNexusAegis = trpc.hub.startups.launchNexusAegis.useMutation();
 
   const startupNames = useMemo(
     () => new Map((startupsQuery.data ?? []).map((startup) => [startup.id, startup.name])),
@@ -151,6 +152,16 @@ export default function Orchestrator() {
     }
   };
 
+  const handleLaunchNexusAegis = async () => {
+    try {
+      const result = await launchNexusAegis.mutateAsync();
+      toast.success(result.created ? `Nexus Aegis criada com ${result.missionCount} missões C-level.` : "Nexus Aegis já existe no portfólio.");
+      await Promise.all([utils.hub.startups.list.invalidate(), utils.hub.orchestrator.overview.invalidate(), utils.hub.orchestrator.listMissions.invalidate(), utils.hub.orchestrator.events.invalidate()]);
+    } catch {
+      toast.error("Não foi possível lançar a Nexus Aegis. Verifique autenticação, migrations e conexão com o banco.");
+    }
+  };
+
   const handleRunJob = async (jobName: "reconcile_missions" | "refresh_portfolio_signals") => {
     try {
       const result = await runJob.mutateAsync({ jobName });
@@ -189,9 +200,14 @@ export default function Orchestrator() {
                 Transforme estratégia em missões rastreáveis. Este painel organiza o portfólio, explicita riscos e mantém cada mudança de estado auditável.
               </p>
             </div>
-            <Button onClick={() => setShowForm((value) => !value)} className="bg-cyan-400 text-slate-950 hover:bg-cyan-300">
-              <Plus size={18} className="mr-2" /> Nova missão
-            </Button>
+            <div className="flex flex-col gap-2 sm:flex-row">
+              <Button onClick={handleLaunchNexusAegis} disabled={launchNexusAegis.isPending} variant="outline" className="border-emerald-500/30 text-emerald-300 hover:bg-emerald-500/10">
+                {launchNexusAegis.isPending ? <Loader2 size={18} className="mr-2 animate-spin" /> : <Rocket size={18} className="mr-2" />} Lançar Nexus Aegis
+              </Button>
+              <Button onClick={() => setShowForm((value) => !value)} className="bg-cyan-400 text-slate-950 hover:bg-cyan-300">
+                <Plus size={18} className="mr-2" /> Nova missão
+              </Button>
+            </div>
           </div>
         </section>
 
