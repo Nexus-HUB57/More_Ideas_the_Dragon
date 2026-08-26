@@ -172,6 +172,13 @@ export async function getStartupById(id: number) {
   return result.length > 0 ? result[0] : null;
 }
 
+export async function getStartupByName(name: string) {
+  const db = await getDb();
+  if (!db) return null;
+  const result = await db.select().from(startups).where(eq(startups.name, name)).limit(1);
+  return result.length > 0 ? result[0] : null;
+}
+
 export async function updateStartup(id: number, data: Partial<InsertStartup>) {
   const db = await getDb();
   if (!db) throw new Error("Database not available");

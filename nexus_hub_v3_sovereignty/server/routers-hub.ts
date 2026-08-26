@@ -18,6 +18,7 @@ import {
   assertExecutiveAction,
 } from "./executive-agents";
 import { getSkillsByRole, executiveSkills, validateSkillCatalog } from "./executive-skills";
+import { nexusAegisMissions, nexusAegisThesis } from "./startup-thesis";
 import {
   assertTransition,
   calculateMissionRisk,
@@ -104,6 +105,43 @@ export const hubRouter = router({
         });
         return { success: true };
       }),
+
+    launchNexusAegis: protectedProcedure.mutation(async ({ ctx }) => {
+      const actor = ctx.user?.name ?? "operator";
+      const existing = await dbHub.getStartupByName(nexusAegisThesis.name);
+      if (existing) return { success: true, created: false, startupId: existing.id, missionCount: 0 };
+      await dbHub.createStartup({
+        name: nexusAegisThesis.name,
+        description: `${nexusAegisThesis.description} ICP: ${nexusAegisThesis.icp} Proposta: ${nexusAegisThesis.valueProposition}`,
+        status: nexusAegisThesis.status,
+        isCore: nexusAegisThesis.isCore,
+        traction: nexusAegisThesis.traction,
+        revenue: nexusAegisThesis.revenue,
+        reputation: nexusAegisThesis.reputation,
+        generation: nexusAegisThesis.generation,
+      });
+      const startup = await dbHub.getStartupByName(nexusAegisThesis.name);
+      if (!startup) throw new Error("Startup criada mas não localizada");
+      for (const seed of nexusAegisMissions) {
+        const riskScore = calculateMissionRisk(seed);
+        const missionId = await dbHub.createMission({
+          startupId: startup.id,
+          title: seed.title,
+          description: seed.description,
+          stage: seed.stage,
+          priority: seed.priority,
+          status: "backlog",
+          owner: seed.owner,
+          riskScore,
+          executiveRole: seed.executiveRole,
+          skillKey: seed.skillKey,
+          externalSideEffect: seed.externalSideEffect,
+        });
+        await dbHub.createMissionEvent({ missionId, eventType: "mission_created", toStatus: "backlog", actor: seed.owner, payload: JSON.stringify({ skillKey: seed.skillKey, executiveRole: seed.executiveRole, riskScore }) });
+      }
+      await dbHub.recordAuditLog({ action: "startup.nexus_aegis.launched", actor, targetType: "startup", targetId: startup.id, details: JSON.stringify({ missionCount: nexusAegisMissions.length, expansionPath: nexusAegisThesis.expansionPath }) });
+      return { success: true, created: true, startupId: startup.id, missionCount: nexusAegisMissions.length };
+    }),
   }),
 
   // ============================================
