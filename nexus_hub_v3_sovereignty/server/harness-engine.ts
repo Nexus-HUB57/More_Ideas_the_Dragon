@@ -1,4 +1,6 @@
 import type { MissionStatus } from "./orchestrator-engine";
+import type { ExecutiveRole } from "./executive-agents";
+import type { SkillAutonomy, SkillRisk } from "./executive-skills";
 
 export type HarnessCheckStatus = "passed" | "warning" | "failed";
 
@@ -16,6 +18,19 @@ export type MissionHarnessInput = {
   owner: string;
   riskScore: number;
   dueAt?: Date | string | null;
+};
+
+export type GuardedHarnessInput = MissionHarnessInput & {
+  skillAutonomy?: SkillAutonomy | null;
+  skillRisk?: SkillRisk | null;
+  executiveRole?: ExecutiveRole | null;
+  evidenceRef?: string | null;
+  approvalRef?: string | null;
+  rollbackPlan?: string | null;
+  idempotencyKey?: string | null;
+  securityReviewRef?: string | null;
+  auditRef?: string | null;
+  externalSideEffect?: boolean;
 };
 
 export type MissionHarnessResult = {
@@ -57,7 +72,62 @@ export function evaluateMissionHarness(mission: MissionHarnessInput, now = Date.
       evidence: mission.dueAt ? `Prazo: ${new Date(mission.dueAt).toISOString()}.` : "Sem prazo informado; registrar decisão ou prazo aumenta a previsibilidade.",
     },
   ];
+  return summarizeHarness(checks);
+}
 
+export function evaluateGuardedHarness(input: GuardedHarnessInput, now = Date.now()): MissionHarnessResult {
+  const base = evaluateMissionHarness(input, now);
+  if (input.skillAutonomy !== "execute_guarded") return base;
+
+  const guardedChecks: HarnessCheck[] = [
+    {
+      id: "guarded-skill-identity",
+      label: "Skill guarded e agente executivo identificados",
+      status: input.skillRisk && input.executiveRole ? "passed" : "failed",
+      evidence: input.skillRisk && input.executiveRole ? `Skill de risco ${input.skillRisk} atribuída a ${input.executiveRole}.` : "Skill guarded exige risco e agente executivo identificados.",
+    },
+    {
+      id: "guarded-evidence",
+      label: "Evidência do resultado anexada",
+      status: input.evidenceRef?.trim() ? "passed" : "failed",
+      evidence: input.evidenceRef?.trim() ? `Evidência: ${input.evidenceRef}.` : "Sem evidência verificável do resultado.",
+    },
+    {
+      id: "guarded-approval",
+      label: "Aprovação explícita registrada",
+      status: input.approvalRef?.trim() ? "passed" : "failed",
+      evidence: input.approvalRef?.trim() ? `Aprovação: ${input.approvalRef}.` : "Ação guarded requer aprovação explícita antes do efeito.",
+    },
+    {
+      id: "guarded-rollback",
+      label: "Plano de rollback definido",
+      status: input.rollbackPlan?.trim() ? "passed" : "failed",
+      evidence: input.rollbackPlan?.trim() ? "Plano de reversão disponível." : "Nenhum plano de rollback foi informado.",
+    },
+    {
+      id: "guarded-idempotency",
+      label: "Chave de idempotência presente para efeitos externos",
+      status: input.externalSideEffect ? (input.idempotencyKey?.trim() ? "passed" : "failed") : "passed",
+      evidence: input.externalSideEffect ? (input.idempotencyKey?.trim() ? `Idempotency key: ${input.idempotencyKey}.` : "Efeito externo sem chave de idempotência.") : "Nenhum efeito externo declarado.",
+    },
+    {
+      id: "guarded-security-review",
+      label: "Revisão de segurança registrada",
+      status: input.externalSideEffect ? (input.securityReviewRef?.trim() ? "passed" : "failed") : "passed",
+      evidence: input.externalSideEffect ? (input.securityReviewRef?.trim() ? `Revisão: ${input.securityReviewRef}.` : "Efeito externo sem referência de revisão de segurança.") : "Gate de segurança externa não aplicável.",
+    },
+    {
+      id: "guarded-audit",
+      label: "Referência de auditoria preparada",
+      status: input.auditRef?.trim() ? "passed" : "failed",
+      evidence: input.auditRef?.trim() ? `Auditoria: ${input.auditRef}.` : "A ação guarded precisa de uma referência de auditoria.",
+    },
+  ];
+
+  return summarizeHarness([...base.checks, ...guardedChecks]);
+}
+
+function summarizeHarness(checks: HarnessCheck[]): MissionHarnessResult {
   const hardFailures = checks.filter((check) => check.status === "failed").length;
   const score = Math.round((checks.filter((check) => check.status === "passed").length / checks.length) * 100);
   return { passed: hardFailures === 0, score, checks };

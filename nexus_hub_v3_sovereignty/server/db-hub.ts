@@ -260,6 +260,13 @@ export async function getExecutiveSkills(role?: InsertExecutiveSkill["role"]) {
   return role ? query.where(eq(executiveSkills.role, role)) : query;
 }
 
+export async function getExecutiveSkillByKey(skillKey: string) {
+  const db = await getDb();
+  if (!db) return null;
+  const result = await db.select().from(executiveSkills).where(eq(executiveSkills.skillKey, skillKey));
+  return result.length > 0 ? result[0] : null;
+}
+
 // ============================================
 // PROPOSTAS E VOTAÇÕES
 // ============================================

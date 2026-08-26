@@ -9,7 +9,7 @@ import { router, protectedProcedure, publicProcedure } from "./_core/trpc";
 import * as dbHub from "./db-hub";
 import { AdapterError, createDefaultAdapterRegistry, validateWebhookTarget } from "./adapters";
 import { backgroundJobNames, runOrchestratorJob } from "./background-jobs";
-import { evaluateMissionHarness } from "./harness-engine";
+import { evaluateGuardedHarness, evaluateMissionHarness } from "./harness-engine";
 import {
   executiveAgents as executiveDefinitions,
   calculateExecutiveScorecard,
@@ -596,6 +596,15 @@ export const hubRouter = router({
         priority: z.enum(missionPriorities).default("medium"),
         owner: z.string().trim().min(2).max(128),
         dueAt: z.coerce.date().optional(),
+        executiveRole: z.enum(["CEO", "CTO", "CPO", "COO", "CFO", "CRO"]).optional(),
+        skillKey: z.string().trim().max(96).optional(),
+        evidenceRef: z.string().trim().max(512).optional(),
+        approvalRef: z.string().trim().max(255).optional(),
+        rollbackPlan: z.string().trim().max(5000).optional(),
+        idempotencyKey: z.string().trim().max(255).optional(),
+        securityReviewRef: z.string().trim().max(255).optional(),
+        auditRef: z.string().trim().max(255).optional(),
+        externalSideEffect: z.boolean().default(false),
       }))
       .mutation(async ({ input, ctx }) => {
         const actor = ctx.user?.name ?? input.owner;
@@ -610,6 +619,15 @@ export const hubRouter = router({
           owner: input.owner,
           dueAt: input.dueAt,
           riskScore,
+          executiveRole: input.executiveRole,
+          skillKey: input.skillKey,
+          evidenceRef: input.evidenceRef,
+          approvalRef: input.approvalRef,
+          rollbackPlan: input.rollbackPlan,
+          idempotencyKey: input.idempotencyKey,
+          securityReviewRef: input.securityReviewRef,
+          auditRef: input.auditRef,
+          externalSideEffect: input.externalSideEffect,
         });
         await dbHub.createMissionEvent({
           missionId,
@@ -635,9 +653,23 @@ export const hubRouter = router({
         if (!mission) throw new Error("Missão não encontrada");
         assertTransition(mission.status, input.toStatus);
         if (input.toStatus === "completed") {
-          const harness = evaluateMissionHarness(mission);
+          const skill = mission.skillKey ? await dbHub.getExecutiveSkillByKey(mission.skillKey) : null;
+          const harness = evaluateGuardedHarness({
+            ...mission,
+            skillAutonomy: skill?.autonomy,
+            skillRisk: skill?.risk,
+            executiveRole: mission.executiveRole as any,
+            evidenceRef: mission.evidenceRef,
+            approvalRef: mission.approvalRef,
+            rollbackPlan: mission.rollbackPlan,
+            idempotencyKey: mission.idempotencyKey,
+            securityReviewRef: mission.securityReviewRef,
+            auditRef: mission.auditRef,
+            externalSideEffect: mission.externalSideEffect,
+          });
           if (!harness.passed) {
             const failures = harness.checks.filter((check) => check.status === "failed").map((check) => check.label).join(", ");
+            await dbHub.recordAuditLog({ action: "orchestrator.harness.rejected", actor: ctx.user?.name ?? "operator", targetType: "mission", targetId: input.missionId, details: JSON.stringify({ failures, score: harness.score }) });
             throw new Error(`Harness reprovado: ${failures}`);
           }
         }
