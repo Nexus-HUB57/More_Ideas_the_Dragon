@@ -27,6 +27,12 @@ import {
   orchestratorJobRuns,
   orchestratorAdapterDispatches,
   startupSignalSnapshots,
+  ideaNodes,
+  ideaVersions,
+  relationEdges,
+  ambiguitySets,
+  ambiguityInterpretations,
+  processIntents,
   type InsertOrchestratorJobRun,
   type InsertOrchestratorAdapterDispatch,
   type InsertStartupSignalSnapshot,
@@ -47,6 +53,12 @@ import {
   type InsertMarketInsight,
   type InsertOrchestratorMission,
   type InsertOrchestratorEvent,
+  type InsertIdeaNode,
+  type InsertIdeaVersion,
+  type InsertRelationEdge,
+  type InsertAmbiguitySet,
+  type InsertAmbiguityInterpretation,
+  type InsertProcessIntent,
 } from "../drizzle/schema";
 
 // ============================================
@@ -674,4 +686,79 @@ export async function getStartupSignalSnapshots(limit = 100, startupId?: number)
   const query = db.select().from(startupSignalSnapshots);
   const filtered = startupId ? query.where(eq(startupSignalSnapshots.startupId, startupId)) : query;
   return filtered.orderBy(desc(startupSignalSnapshots.createdAt)).limit(limit);
+}
+
+
+// ============================================
+// MOLTBOOK SEMÂNTICO DE IDEIAS
+// ============================================
+
+export async function createIdeaNode(data: InsertIdeaNode) {
+  const db = await getDb();
+  if (!db) throw new Error("Database not available");
+  const result = await db.insert(ideaNodes).values(data);
+  return Number(result[0].insertId);
+}
+
+export async function getIdeaNodeByStableKey(stableKey: string) {
+  const db = await getDb();
+  if (!db) return undefined;
+  const rows = await db.select().from(ideaNodes).where(eq(ideaNodes.stableKey, stableKey)).limit(1);
+  return rows[0];
+}
+
+export async function getIdeaFeed(limit = 50) {
+  const db = await getDb();
+  if (!db) return [];
+  return db.select().from(ideaNodes).orderBy(desc(ideaNodes.updatedAt)).limit(Math.min(limit, 100));
+}
+
+export async function createIdeaVersion(data: InsertIdeaVersion) {
+  const db = await getDb();
+  if (!db) throw new Error("Database not available");
+  await db.insert(ideaVersions).values(data);
+}
+
+export async function createRelationEdge(data: InsertRelationEdge) {
+  const db = await getDb();
+  if (!db) throw new Error("Database not available");
+  await db.insert(relationEdges).values(data);
+}
+
+export async function getIdeaRelations(ideaId: number) {
+  const db = await getDb();
+  if (!db) return [];
+  return db.select().from(relationEdges).where(sql`${relationEdges.fromIdeaId} = ${ideaId} OR ${relationEdges.toIdeaId} = ${ideaId}`).orderBy(desc(relationEdges.createdAt));
+}
+
+export async function createAmbiguitySet(data: InsertAmbiguitySet) {
+  const db = await getDb();
+  if (!db) throw new Error("Database not available");
+  const result = await db.insert(ambiguitySets).values(data);
+  return Number(result[0].insertId);
+}
+
+export async function addAmbiguityInterpretation(data: InsertAmbiguityInterpretation) {
+  const db = await getDb();
+  if (!db) throw new Error("Database not available");
+  await db.insert(ambiguityInterpretations).values(data);
+}
+
+export async function getOpenAmbiguities(limit = 50) {
+  const db = await getDb();
+  if (!db) return [];
+  return db.select().from(ambiguitySets).where(eq(ambiguitySets.status, "open")).orderBy(desc(ambiguitySets.scoreBps)).limit(Math.min(limit, 100));
+}
+
+export async function createProcessIntent(data: InsertProcessIntent) {
+  const db = await getDb();
+  if (!db) throw new Error("Database not available");
+  const result = await db.insert(processIntents).values(data);
+  return Number(result[0].insertId);
+}
+
+export async function getProcessIntentsByIdea(ideaId: number) {
+  const db = await getDb();
+  if (!db) return [];
+  return db.select().from(processIntents).where(eq(processIntents.ideaId, ideaId)).orderBy(desc(processIntents.createdAt));
 }

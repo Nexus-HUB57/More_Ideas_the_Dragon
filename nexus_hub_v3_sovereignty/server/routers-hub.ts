@@ -590,6 +590,88 @@ export const hubRouter = router({
         });
         return { success: true };
       }),
+
+    // Camada semântica: ideias, relações, ambiguidade e processos.
+    getIdeaFeed: publicProcedure
+      .input(z.object({ limit: z.number().int().min(1).max(100).default(50) }))
+      .query(async ({ input }) => dbHub.getIdeaFeed(input.limit)),
+
+    getIdeaByKey: publicProcedure
+      .input(z.object({ stableKey: z.string().min(1).max(128) }))
+      .query(async ({ input }) => dbHub.getIdeaNodeByStableKey(input.stableKey)),
+
+    getIdeaRelations: publicProcedure
+      .input(z.object({ ideaId: z.number().int().positive() }))
+      .query(async ({ input }) => dbHub.getIdeaRelations(input.ideaId)),
+
+    getOpenAmbiguities: publicProcedure
+      .input(z.object({ limit: z.number().int().min(1).max(100).default(50) }))
+      .query(async ({ input }) => dbHub.getOpenAmbiguities(input.limit)),
+
+    createIdea: protectedProcedure
+      .input(z.object({
+        stableKey: z.string().min(1).max(128),
+        title: z.string().min(1).max(255),
+        content: z.string().min(1),
+        kind: z.enum(["hypothesis", "thesis", "question", "opportunity", "decision", "objection", "principle", "signal"]),
+        authorType: z.enum(["user", "agent", "system"]).default("user"),
+        authorRef: z.string().min(1).max(128),
+        confidenceBps: z.number().int().min(0).max(10_000).default(0),
+        ambiguityBps: z.number().int().min(0).max(10_000).default(10_000),
+      }))
+      .mutation(async ({ input }) => {
+        const id = await dbHub.createIdeaNode({ ...input, state: "draft", logicalTime: 0, currentVersion: 1 });
+        await dbHub.createIdeaVersion({ ideaId: id, version: 1, content: input.content, changeReason: "initial_creation", evidenceRefs: "[]", createdBy: input.authorRef, logicalTime: 0 });
+        return { success: true, ideaId: id };
+      }),
+
+    createRelation: protectedProcedure
+      .input(z.object({
+        fromIdeaId: z.number().int().positive(),
+        toIdeaId: z.number().int().positive(),
+        relation: z.enum(["supports", "contradicts", "depends_on", "refines", "instantiates", "analogous_to", "supersedes", "causes"]),
+        strengthBps: z.number().int().min(0).max(10_000).default(0),
+        justification: z.string().min(1),
+        evidenceRefs: z.array(z.string()).default([]),
+        validFromLogicalTime: z.number().int().min(0).default(0),
+        createdBy: z.string().min(1).max(128),
+      }))
+      .mutation(async ({ input }) => {
+        await dbHub.createRelationEdge({ ...input, evidenceRefs: JSON.stringify(input.evidenceRefs) });
+        return { success: true };
+      }),
+
+    createAmbiguity: protectedProcedure
+      .input(z.object({
+        subjectIdeaId: z.number().int().positive(),
+        level: z.enum(["A0", "A1", "A2", "A3", "A4"]),
+        scoreBps: z.number().int().min(0).max(10_000),
+        invariant: z.string().min(1),
+        disambiguationQuestion: z.string().min(1),
+        ownerRef: z.string().min(1).max(128),
+      }))
+      .mutation(async ({ input }) => {
+        const id = await dbHub.createAmbiguitySet({ ...input, status: "open" });
+        return { success: true, ambiguitySetId: id };
+      }),
+
+    createProcessIntent: protectedProcedure
+      .input(z.object({
+        ideaId: z.number().int().positive(),
+        objective: z.string().min(1),
+        preconditions: z.array(z.string()).default([]),
+        steps: z.array(z.string()).min(1),
+        successEvidence: z.array(z.string()).min(1),
+        recoveryPlan: z.string().min(1),
+        autonomy: z.enum(["recommend", "execute_reversible", "execute_guarded"]),
+        risk: z.enum(["low", "medium", "high", "critical"]),
+        budgetUnits: z.number().int().nonnegative(),
+        createdBy: z.string().min(1).max(128),
+      }))
+      .mutation(async ({ input }) => {
+        const id = await dbHub.createProcessIntent({ ...input, preconditions: JSON.stringify(input.preconditions), steps: JSON.stringify(input.steps), successEvidence: JSON.stringify(input.successEvidence), status: "proposed" });
+        return { success: true, processIntentId: id };
+      }),
   }),
 
   // ============================================

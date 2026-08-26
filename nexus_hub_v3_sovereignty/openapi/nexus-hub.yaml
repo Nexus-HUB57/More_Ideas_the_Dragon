@@ -1,0 +1,117 @@
+openapi: 3.1.0
+info:
+  title: Nexus HUB AI Gateway
+  version: 1.0.0
+  description: Gateway server-side para inferência OpenAI governada pelo Nexus HUB.
+servers:
+  - url: https://api.nexus-hub.example.com
+security:
+  - bearerAuth: []
+paths:
+  /healthz:
+    get:
+      security: []
+      summary: Health check
+      responses:
+        '200':
+          description: Serviço saudável
+          content:
+            application/json:
+              schema:
+                type: object
+                required: [status]
+                properties:
+                  status: { type: string, enum: [ok] }
+  /v1/llm/chat:
+    post:
+      summary: Executa inferência conversacional governada
+      operationId: invokeChat
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ChatRequest'
+      responses:
+        '200':
+          description: Resposta do modelo
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ChatResponse'
+        '401': { description: Não autenticado }
+        '429': { description: Limite de uso excedido }
+        '502': { description: Falha do provider }
+  /v1/llm/embeddings:
+    post:
+      summary: Gera embeddings para RAG server-side
+      operationId: createEmbeddings
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/EmbeddingRequest'
+      responses:
+        '200':
+          description: Vetores gerados
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EmbeddingResponse'
+        '401': { description: Não autenticado }
+        '502': { description: Falha do provider }
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+  schemas:
+    ChatMessage:
+      type: object
+      required: [role, content]
+      properties:
+        role: { type: string, enum: [system, user, assistant] }
+        content: { type: string, minLength: 1, maxLength: 50000 }
+    ChatRequest:
+      type: object
+      required: [messages]
+      properties:
+        messages:
+          type: array
+          minItems: 1
+          maxItems: 100
+          items: { $ref: '#/components/schemas/ChatMessage' }
+        model: { type: string, maxLength: 128 }
+        temperature: { type: number, minimum: 0, maximum: 2, default: 0.2 }
+        maxTokens: { type: integer, minimum: 16, maximum: 8000, default: 1200 }
+    ChatResponse:
+      type: object
+      required: [provider, model, text]
+      properties:
+        provider: { type: string, enum: [openai] }
+        model: { type: string }
+        text: { type: string }
+        usage: { type: object, additionalProperties: { type: integer } }
+    EmbeddingRequest:
+      type: object
+      required: [input]
+      properties:
+        input:
+          oneOf:
+            - { type: string, minLength: 1, maxLength: 100000 }
+            - type: array
+              minItems: 1
+              maxItems: 128
+              items: { type: string, minLength: 1, maxLength: 100000 }
+    EmbeddingResponse:
+      type: object
+      required: [model, vectors]
+      properties:
+        model: { type: string }
+        vectors:
+          type: array
+          items:
+            type: array
+            items: { type: number }

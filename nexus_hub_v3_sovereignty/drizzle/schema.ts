@@ -420,3 +420,197 @@ export const startupSignalSnapshots = mysqlTable("startup_signal_snapshots", {
 
 export type StartupSignalSnapshot = typeof startupSignalSnapshots.$inferSelect;
 export type InsertStartupSignalSnapshot = typeof startupSignalSnapshots.$inferInsert;
+
+// ============================================
+// ORGANISMO VIVO: MEMÓRIA, AUTO-CURA E EVOLUÇÃO
+// ============================================
+
+export const organismMemories = mysqlTable("organism_memories", {
+  id: int("id").autoincrement().primaryKey(),
+  scope: varchar("scope", { length: 96 }).notNull(),
+  memoryKey: varchar("memory_key", { length: 255 }).notNull(),
+  content: text("content").notNull(),
+  memoryType: mysqlEnum("memory_type", ["episodic", "semantic", "procedural", "strategic"]).notNull(),
+  confidence: int("confidence").default(0).notNull(),
+  sourceRef: varchar("source_ref", { length: 512 }),
+  version: int("version").default(1).notNull(),
+  expiresAt: timestamp("expires_at"),
+  createdAt: timestamp("createdAt").defaultNow().notNull(),
+  updatedAt: timestamp("updatedAt").defaultNow().onUpdateNow().notNull(),
+}, (table) => ({
+  keyUnique: uniqueIndex("organism_memories_scope_key_unique").on(table.scope, table.memoryKey),
+  scopeIdx: index("organism_memories_scope_idx").on(table.scope),
+  confidenceIdx: index("organism_memories_confidence_idx").on(table.confidence),
+}));
+
+export type OrganismMemory = typeof organismMemories.$inferSelect;
+export type InsertOrganismMemory = typeof organismMemories.$inferInsert;
+
+export const organismIncidents = mysqlTable("organism_incidents", {
+  id: int("id").autoincrement().primaryKey(),
+  incidentKey: varchar("incident_key", { length: 255 }).notNull(),
+  severity: mysqlEnum("severity", ["low", "medium", "high", "critical"]).notNull(),
+  status: mysqlEnum("status", ["detected", "diagnosing", "remediating", "resolved", "escalated"]).default("detected").notNull(),
+  symptom: text("symptom").notNull(),
+  diagnosis: text("diagnosis"),
+  remediation: text("remediation"),
+  attempts: int("attempts").default(0).notNull(),
+  rollbackRef: varchar("rollback_ref", { length: 512 }),
+  resolvedAt: timestamp("resolved_at"),
+  createdAt: timestamp("createdAt").defaultNow().notNull(),
+  updatedAt: timestamp("updatedAt").defaultNow().onUpdateNow().notNull(),
+}, (table) => ({
+  incidentKeyUnique: uniqueIndex("organism_incidents_key_unique").on(table.incidentKey),
+  statusIdx: index("organism_incidents_status_idx").on(table.status),
+  severityIdx: index("organism_incidents_severity_idx").on(table.severity),
+}));
+
+export type OrganismIncident = typeof organismIncidents.$inferSelect;
+export type InsertOrganismIncident = typeof organismIncidents.$inferInsert;
+
+export const organismEvolutionProposals = mysqlTable("organism_evolution_proposals", {
+  id: int("id").autoincrement().primaryKey(),
+  proposalKey: varchar("proposal_key", { length: 255 }).notNull(),
+  target: varchar("target", { length: 255 }).notNull(),
+  rationale: text("rationale").notNull(),
+  evidence: text("evidence").notNull(),
+  changeSet: text("change_set").notNull(),
+  status: mysqlEnum("status", ["proposed", "approved", "applied", "rejected", "rolled_back"]).default("proposed").notNull(),
+  harnessScore: int("harness_score").default(0).notNull(),
+  version: int("version").default(1).notNull(),
+  rollbackRef: varchar("rollback_ref", { length: 512 }),
+  createdAt: timestamp("createdAt").defaultNow().notNull(),
+  updatedAt: timestamp("updatedAt").defaultNow().onUpdateNow().notNull(),
+}, (table) => ({
+  proposalKeyUnique: uniqueIndex("organism_evolution_proposals_key_unique").on(table.proposalKey),
+  statusIdx: index("organism_evolution_proposals_status_idx").on(table.status),
+  targetIdx: index("organism_evolution_proposals_target_idx").on(table.target),
+}));
+
+export type OrganismEvolutionProposal = typeof organismEvolutionProposals.$inferSelect;
+export type InsertOrganismEvolutionProposal = typeof organismEvolutionProposals.$inferInsert;
+
+
+// ============================================
+// MOLTBOOK DE IDEIAS, LÓGICA E AMBIGUIDADE
+// ============================================
+
+export const ideaNodes = mysqlTable("idea_nodes", {
+  id: int("id").autoincrement().primaryKey(),
+  stableKey: varchar("stable_key", { length: 128 }).notNull().unique(),
+  title: varchar("title", { length: 255 }).notNull(),
+  content: text("content").notNull(),
+  kind: mysqlEnum("kind", ["hypothesis", "thesis", "question", "opportunity", "decision", "objection", "principle", "signal"]).notNull(),
+  authorType: mysqlEnum("author_type", ["user", "agent", "system"]).notNull(),
+  authorRef: varchar("author_ref", { length: 128 }).notNull(),
+  state: mysqlEnum("state", ["draft", "active", "validated", "contested", "superseded", "archived"]).default("draft").notNull(),
+  confidenceBps: int("confidence_bps").default(0).notNull(),
+  ambiguityBps: int("ambiguity_bps").default(10_000).notNull(),
+  logicalTime: int("logical_time").default(0).notNull(),
+  currentVersion: int("current_version").default(1).notNull(),
+  createdAt: timestamp("created_at").defaultNow().notNull(),
+  updatedAt: timestamp("updated_at").defaultNow().onUpdateNow().notNull(),
+}, (table) => ({
+  kindIdx: index("idea_nodes_kind_idx").on(table.kind),
+  stateIdx: index("idea_nodes_state_idx").on(table.state),
+  ambiguityIdx: index("idea_nodes_ambiguity_idx").on(table.ambiguityBps),
+}));
+
+export type IdeaNode = typeof ideaNodes.$inferSelect;
+export type InsertIdeaNode = typeof ideaNodes.$inferInsert;
+
+export const ideaVersions = mysqlTable("idea_versions", {
+  id: int("id").autoincrement().primaryKey(),
+  ideaId: int("idea_id").notNull(),
+  version: int("version").notNull(),
+  content: text("content").notNull(),
+  changeReason: text("change_reason").notNull(),
+  evidenceRefs: text("evidence_refs").notNull(),
+  createdBy: varchar("created_by", { length: 128 }).notNull(),
+  logicalTime: int("logical_time").notNull(),
+  createdAt: timestamp("created_at").defaultNow().notNull(),
+}, (table) => ({
+  ideaVersionIdx: index("idea_versions_idea_version_idx").on(table.ideaId, table.version),
+}));
+
+export type IdeaVersion = typeof ideaVersions.$inferSelect;
+export type InsertIdeaVersion = typeof ideaVersions.$inferInsert;
+
+export const relationEdges = mysqlTable("relation_edges", {
+  id: int("id").autoincrement().primaryKey(),
+  fromIdeaId: int("from_idea_id").notNull(),
+  toIdeaId: int("to_idea_id").notNull(),
+  relation: mysqlEnum("relation", ["supports", "contradicts", "depends_on", "refines", "instantiates", "analogous_to", "supersedes", "causes"]).notNull(),
+  strengthBps: int("strength_bps").default(0).notNull(),
+  justification: text("justification").notNull(),
+  evidenceRefs: text("evidence_refs").notNull(),
+  validFromLogicalTime: int("valid_from_logical_time").notNull(),
+  validUntilLogicalTime: int("valid_until_logical_time"),
+  createdBy: varchar("created_by", { length: 128 }).notNull(),
+  createdAt: timestamp("created_at").defaultNow().notNull(),
+}, (table) => ({
+  fromIdx: index("relation_edges_from_idx").on(table.fromIdeaId),
+  toIdx: index("relation_edges_to_idx").on(table.toIdeaId),
+  relationIdx: index("relation_edges_relation_idx").on(table.relation),
+}));
+
+export type RelationEdge = typeof relationEdges.$inferSelect;
+export type InsertRelationEdge = typeof relationEdges.$inferInsert;
+
+export const ambiguitySets = mysqlTable("ambiguity_sets", {
+  id: int("id").autoincrement().primaryKey(),
+  subjectIdeaId: int("subject_idea_id").notNull(),
+  level: mysqlEnum("level", ["A0", "A1", "A2", "A3", "A4"]).notNull(),
+  scoreBps: int("score_bps").default(10_000).notNull(),
+  invariant: text("invariant").notNull(),
+  disambiguationQuestion: text("disambiguation_question").notNull(),
+  ownerRef: varchar("owner_ref", { length: 128 }).notNull(),
+  status: mysqlEnum("status", ["open", "reduced", "blocked", "resolved"]).default("open").notNull(),
+  createdAt: timestamp("created_at").defaultNow().notNull(),
+  updatedAt: timestamp("updated_at").defaultNow().onUpdateNow().notNull(),
+}, (table) => ({
+  subjectIdx: index("ambiguity_sets_subject_idx").on(table.subjectIdeaId),
+  levelIdx: index("ambiguity_sets_level_idx").on(table.level),
+}));
+
+export type AmbiguitySet = typeof ambiguitySets.$inferSelect;
+export type InsertAmbiguitySet = typeof ambiguitySets.$inferInsert;
+
+export const ambiguityInterpretations = mysqlTable("ambiguity_interpretations", {
+  id: int("id").autoincrement().primaryKey(),
+  ambiguitySetId: int("ambiguity_set_id").notNull(),
+  interpretation: text("interpretation").notNull(),
+  plausibilityBps: int("plausibility_bps").default(0).notNull(),
+  consequence: text("consequence").notNull(),
+  disambiguatingEvidence: text("disambiguating_evidence").notNull(),
+  createdBy: varchar("created_by", { length: 128 }).notNull(),
+  createdAt: timestamp("created_at").defaultNow().notNull(),
+}, (table) => ({
+  ambiguityIdx: index("ambiguity_interpretations_set_idx").on(table.ambiguitySetId),
+}));
+
+export type AmbiguityInterpretation = typeof ambiguityInterpretations.$inferSelect;
+export type InsertAmbiguityInterpretation = typeof ambiguityInterpretations.$inferInsert;
+
+export const processIntents = mysqlTable("process_intents", {
+  id: int("id").autoincrement().primaryKey(),
+  ideaId: int("idea_id").notNull(),
+  objective: text("objective").notNull(),
+  preconditions: text("preconditions").notNull(),
+  steps: text("steps").notNull(),
+  successEvidence: text("success_evidence").notNull(),
+  recoveryPlan: text("recovery_plan").notNull(),
+  autonomy: mysqlEnum("autonomy", ["recommend", "execute_reversible", "execute_guarded"]).notNull(),
+  risk: mysqlEnum("risk", ["low", "medium", "high", "critical"]).notNull(),
+  budgetUnits: int("budget_units").notNull(),
+  status: mysqlEnum("status", ["proposed", "approved", "running", "completed", "blocked", "failed"]).default("proposed").notNull(),
+  createdBy: varchar("created_by", { length: 128 }).notNull(),
+  createdAt: timestamp("created_at").defaultNow().notNull(),
+  updatedAt: timestamp("updated_at").defaultNow().onUpdateNow().notNull(),
+}, (table) => ({
+  ideaIdx: index("process_intents_idea_idx").on(table.ideaId),
+  statusIdx: index("process_intents_status_idx").on(table.status),
+}));
+
+export type ProcessIntent = typeof processIntents.$inferSelect;
+export type InsertProcessIntent = typeof processIntents.$inferInsert;

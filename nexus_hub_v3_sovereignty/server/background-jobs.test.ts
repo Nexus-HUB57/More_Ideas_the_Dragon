@@ -1,6 +1,6 @@
 import { beforeEach, describe, expect, it, vi } from "vitest";
 import * as dbHub from "./db-hub";
-import { runOrchestratorJob } from "./background-jobs";
+import { runOrchestratorJob, startBackgroundJobs } from "./background-jobs";
 
 vi.mock("./db-hub");
 
@@ -77,6 +77,15 @@ describe("background jobs", () => {
       startupId: 4,
       signal: "scale",
     }));
+  });
+
+  it("supports an optional intelligence cycle callback", async () => {
+    vi.mocked(dbHub.claimOrchestratorJobRun).mockResolvedValue(null);
+    const cycle = vi.fn().mockResolvedValue(undefined);
+    const runtime = startBackgroundJobs({ enabled: true, intervalMs: 60_000, onIntelligenceCycle: cycle });
+    await new Promise((resolve) => setTimeout(resolve, 0));
+    runtime.stop();
+    expect(cycle).toHaveBeenCalledTimes(1);
   });
 
   it("records a portfolio signal refresh even when the portfolio is empty", async () => {

@@ -125,7 +125,7 @@ export async function runOrchestratorJob(jobName: BackgroundJobName, now = new D
   }
 }
 
-export function startBackgroundJobs(options: { enabled?: boolean; intervalMs?: number } = {}) {
+export function startBackgroundJobs(options: { enabled?: boolean; intervalMs?: number; onIntelligenceCycle?: () => Promise<void> } = {}) {
   const enabled = options.enabled ?? process.env.NEXUS_ORCHESTRATOR_JOBS_ENABLED === "true";
   if (!enabled) return { enabled: false, stop: () => undefined };
 
@@ -139,6 +139,7 @@ export function startBackgroundJobs(options: { enabled?: boolean; intervalMs?: n
       for (const jobName of backgroundJobNames) {
         await runOrchestratorJob(jobName);
       }
+      if (options.onIntelligenceCycle) await options.onIntelligenceCycle();
     } catch (error) {
       console.error("[Nexus Jobs] execução falhou", error);
     } finally {
