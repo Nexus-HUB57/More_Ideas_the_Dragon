@@ -1,91 +1,88 @@
-# Contributing to Awesome Claude Code
+# Contributing to Ollama
 
-Thank you for visiting this repo and for your interest in contributing to this community-backed resource.
+Thank you for your interest in contributing to Ollama! Here are a few guidelines to help get you started.
 
-> [!NOTE]
-> If your project was previously listed on Awesome Claude Code, and you don't see it right now:
-> For initial launch, this list was deliberately selected to be non-overlapping with the previous list.
-> Resources from the previous list will be re-incorporated at a reasonable cadence.
-> I want to give some time to these new entries.
+## Set up
 
----
+See the [development documentation](./docs/development.md) for instructions on how to build and run Ollama locally.
 
-## GROUND RULES:
+### Ideal issues
 
-Any resource that is recommended must either:
+* [Bugs](https://github.com/ollama/ollama/issues?q=is%3Aissue+is%3Aopen+label%3Abug): issues where Ollama stops working or where it results in an unexpected error.
+* [Performance](https://github.com/ollama/ollama/issues?q=is%3Aissue+is%3Aopen+label%3Aperformance): issues to make Ollama faster at model inference, downloading or uploading.
+* [Security](https://github.com/ollama/ollama/blob/main/SECURITY.md): issues that could lead to a security vulnerability. As mentioned in [SECURITY.md](https://github.com/ollama/ollama/blob/main/SECURITY.md), please do not disclose security vulnerabilities publicly.
 
-(i) Be at least 14 days old (14 days since first commit on default branch) AND show signs of active development (I expect there to be also additional commits after the first day);
+### Issues that are harder to review
 
-OR
+* New features: new features (e.g. API fields, environment variables) add surface area to Ollama and make it harder to maintain in the long run as they cannot be removed without potentially breaking users in the future.
+* Refactoring: large code improvements are important, but can be harder or take longer to review and merge.
+* Documentation: small updates to fill in or correct missing documentation are helpful, however large documentation additions can be hard to maintain over time.
 
-(ii) Have at least 100 stars.
+### Issues that may not be accepted
 
-In addition: **You may not recommend more than one resource at a time.**
+* Changes that break backwards compatibility in Ollama's API (including the OpenAI-compatible API)
+* Changes that add significant friction to the user experience
+* Changes that create a large future maintenance burden for maintainers and contributors
 
-Resources that fail these criteria will be closed automatically.
+## Proposing a (non-trivial) change
 
-Now please read the rest of this document as well:
+> By "non-trivial", we mean a change that is not a bug fix or small
+> documentation update. If you are unsure, please ask us on our [Discord
+> server](https://discord.gg/ollama).
 
----
+Before opening a non-trivial Pull Request, please open an issue to discuss the change and
+get feedback from the maintainers. This helps us understand the context of the
+change and how it fits into Ollama's roadmap and prevents us from duplicating
+work or you from spending time on a change that we may not be able to accept.
 
-Please take a moment to read through this document if you plan to submit something for recommendation.
+Tips for proposals:
 
-- I am very grateful to receive recommendations from the visitors to this list. But be aware that there is no formal submission/review process at the moment. My responsibility is to share links to awesome things. One way I find out about awesome things is via the repo's issues, and I'm very grateful to everyone who shares their amazing work. But it's not the only way, and creating an issue does not represent any sort of contract. Recommendations are reviewed in a best-effort way, and no guarantee is made as to whether you will receive a response.
-- Too many people think like this: (i) Build something awesome; (ii) Submit to Awesome Claude Code; (iii) Get accepted, because of being awesome; (iv) Get users. However, a more likely chain of events is: (i) Build something awesome; (ii) Get users; (iii) Submit it to Awesome Claude Code - or just focus on the project, and I'll notice it if it gathers enough interest. If "getting on the list" is any part of a promotional strategy for your project, you should be prepared to have a backup plan.
-- Bear in mind that the point of an Awesome List is to be *selective* - I cannot recommend every single resource that is submitted.
-- Although many awesome resources are inter-operable, we especially welcome and invite recommendations of resources that focus on the unique features and functionality of Claude Code. This is not a hard requirement but it is a guideline.
+* Explain the problem you are trying to solve, not what you are trying to do.
+* Explain why the change is important.
+* Explain how the change will be used.
+* Explain how the change will be tested.
 
-## How to Recommend a Resource
+Additionally, for bonus points: Provide draft documentation you would expect to
+see if the changes were accepted.
 
-**NOTE: ALL RECOMMENDATIONS MUST BE MADE USING THE WEB UI ISSUE FORM TEMPLATE, OR YOU RISK BEING RESTRICTED FROM INTERACTING WITH THIS REPOSITORY TEMPORARILY.**
+## Pull requests
 
-First, make sure you've read the above information. Second, make sure you've read, and agree with, the [Code of Conduct](./CODE_OF_CONDUCT.md). Then:
+**Commit messages**
 
-### **[Click here to submit a new resource](https://github.com/hesreallyhim/awesome-claude-code/issues/new?template=recommend-resource.yml)**
+The title should look like:
 
-Do not open a PR. Just fill out the form. If there are any issues with the form, the bot will notify you. (The bot is a mechanical form-validator, it does not review the quality of the recommended resource.)
+    <package>: <short description>
 
-> [!Warning]
-> It is **not** possible to submit a resource recommendation using the `gh` CLI.
+The package is the most affected Go package. If the change does not affect Go
+code, then use the directory name instead. Changes to a single well-known
+file in the root directory may use the file name.
 
-Although resources themselves may be partially or entirely written by a coding agent, resource recommendations must be created by human beings. 
+The short description should start with a lowercase letter and be a
+continuation of the sentence:
 
-### Details
+      "This changes Ollama to..."
 
-- The licensing information for your resource, assuming it is on GitHub, will be discovered and reported by the bot. If the bot is unable to do so, that means other tooling that relies on GitHub's license-discovery mechanisms will also have difficulty, and you should look into why (is there a properly formatted LICENSE file in the right place?). Leave a comment in the issue thread if you have a license that is not being identified.
-- The list is not exclusively for open-source projects, however: (i) if your project is closed-source, that presents a barrier to reviewing it; (ii) if your project requires any form of signup or payment, this is a blocker for reviewing it - I can only recommend such a resource on the basis of community adoption signals.
-- **STYLE:** Resource descriptions should be written as _descriptions_ - not a sales pitch. Don't address the reader ("Don't you hate it when Claude etc.") - state what the software does. Keep it formatted to one line. Don't use any emojis.
+Examples:
 
-## Other Contributions
+      llm/backend/mlx: support the llama architecture
+      CONTRIBUTING: provide clarity on good commit messages, and bad
 
-### Suggesting Improvements
+Bad Examples:
 
-For suggestions about the repository structure, new categories, or other enhancements:
+      feat: add more emoji
+      fix: was not using famous web framework
+      chore: generify code
 
-1. **[Open a general issue](https://github.com/hesreallyhim/awesome-claude-code/issues/new)**
-2. Describe your suggestion clearly
-3. Explain the benefit to the community
+**Tests**
 
-Or, alternatively, start a thread in the [Discussions](https://github.com/hesreallyhim/awesome-claude-code/discussions) tab. All opinions are welcome in this repo so long as they are expressed in accordance with the Code of Conduct. It's very nice to interact with people who visit the list. If it's evident that you haven't really ever visited the list before, and have not taken the time to review its conduct, your discussion topic may be closed. Avoid using the Discussions thread as a workaround for promoting something.
+Please include tests. Strive to test behavior, not implementation.
 
-## Badges
+**New dependencies**
 
-If your submission is approved, you are invited to add a badge to your project's README:
+Dependencies should be added sparingly. If you are adding a new dependency,
+please explain why it is necessary and what other ways you attempted that
+did not work without it.
 
-[![Mentioned in Awesome Claude Code](https://awesome.re/mentioned-badge.svg)](https://github.com/hesreallyhim/awesome-claude-code)
+## Need help?
 
-```markdown
-[![Mentioned in Awesome Claude Code](https://awesome.re/mentioned-badge.svg)](https://github.com/hesreallyhim/awesome-claude-code)
-```
-
-Or the flat version:
-
-[![Mentioned in Awesome Claude Code](https://awesome.re/mentioned-badge-flat.svg)](https://github.com/hesreallyhim/awesome-claude-code)
-
-```markdown
-[![Mentioned in Awesome Claude Code](https://awesome.re/mentioned-badge-flat.svg)](https://github.com/hesreallyhim/awesome-claude-code)
-```
-
----
-
-Thank you for taking the time to read this and to share your project (or any project).
+If you need help with anything, feel free to reach out to us on our [Discord server](https://discord.gg/ollama).
