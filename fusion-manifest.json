@@ -1,53 +1,33 @@
 {
   "engine": "FusionHub AutoSafe v2.0 - Clonagem Real",
-  "createdAt": "2026-08-28T00:53:23.215Z",
+  "createdAt": "2026-08-28T00:55:19.751Z",
   "strategy": "clone_100_percent_autosafe",
   "primary": {
     "owner": "Nexus-HUB57",
     "repo": "More_Ideas_the_Dragon",
     "branch": "main",
-    "files": 44347,
+    "files": 44382,
     "folders": 5065
   },
   "secondary": {
-    "owner": "xtekky",
-    "repo": "gpt4free",
+    "owner": "xai-org",
+    "repo": "grok-1",
     "branch": "main",
-    "files": 382,
-    "folders": 56
+    "files": 12,
+    "folders": 1
   },
   "stats": {
-    "totalFiles": 44729,
-    "conflicts": 11,
-    "renamed": 11,
-    "clonedFromSecondary": 382
+    "totalFiles": 44394,
+    "conflicts": 3,
+    "renamed": 3,
+    "clonedFromSecondary": 12
   },
   "conflicts": [
-    ".gitattributes",
-    ".github/FUNDING.yml",
-    ".github/ISSUE_TEMPLATE/feature_request.md",
     ".gitignore",
     "CODE_OF_CONDUCT.md",
-    "CONTRIBUTING.md",
-    "LICENSE",
-    "README.md",
-    "SECURITY.md",
-    "docker-compose.yml",
-    "docs/README.md"
+    "README.md"
   ],
   "renamedFiles": [
-    {
-      "originalPath": ".gitattributes",
-      "newPath": "_v2.gitattributes"
-    },
-    {
-      "originalPath": ".github/FUNDING.yml",
-      "newPath": ".github/FUNDING_v2.yml"
-    },
-    {
-      "originalPath": ".github/ISSUE_TEMPLATE/feature_request.md",
-      "newPath": ".github/ISSUE_TEMPLATE/feature_request_v2.md"
-    },
     {
       "originalPath": ".gitignore",
       "newPath": "_v2.gitignore"
@@ -57,28 +37,8 @@
       "newPath": "CODE_OF_CONDUCT_v2.md"
     },
     {
-      "originalPath": "CONTRIBUTING.md",
-      "newPath": "CONTRIBUTING_v2.md"
-    },
-    {
-      "originalPath": "LICENSE",
-      "newPath": "_v2"
-    },
-    {
       "originalPath": "README.md",
       "newPath": "README_v2.md"
-    },
-    {
-      "originalPath": "SECURITY.md",
-      "newPath": "SECURITY_v2.md"
-    },
-    {
-      "originalPath": "docker-compose.yml",
-      "newPath": "docker-compose_v2.yml"
-    },
-    {
-      "originalPath": "docs/README.md",
-      "newPath": "docs/README_v2.md"
     }
   ]
 }
