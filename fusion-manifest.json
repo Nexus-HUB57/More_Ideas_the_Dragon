@@ -1,32 +1,39 @@
 {
   "engine": "FusionHub AutoSafe v2.0 - Clonagem Real",
-  "createdAt": "2026-08-28T00:45:30.385Z",
+  "createdAt": "2026-08-28T00:53:23.215Z",
   "strategy": "clone_100_percent_autosafe",
   "primary": {
     "owner": "Nexus-HUB57",
     "repo": "More_Ideas_the_Dragon",
     "branch": "main",
-    "files": 44346,
-    "folders": 5059
+    "files": 44347,
+    "folders": 5065
   },
   "secondary": {
-    "owner": "asgeirtj",
-    "repo": "system_prompts_leaks",
+    "owner": "xtekky",
+    "repo": "gpt4free",
     "branch": "main",
-    "files": 395,
-    "folders": 93
+    "files": 382,
+    "folders": 56
   },
   "stats": {
-    "totalFiles": 44741,
-    "conflicts": 4,
-    "renamed": 4,
-    "clonedFromSecondary": 395
+    "totalFiles": 44729,
+    "conflicts": 11,
+    "renamed": 11,
+    "clonedFromSecondary": 382
   },
   "conflicts": [
     ".gitattributes",
     ".github/FUNDING.yml",
+    ".github/ISSUE_TEMPLATE/feature_request.md",
+    ".gitignore",
+    "CODE_OF_CONDUCT.md",
+    "CONTRIBUTING.md",
     "LICENSE",
-    "README.md"
+    "README.md",
+    "SECURITY.md",
+    "docker-compose.yml",
+    "docs/README.md"
   ],
   "renamedFiles": [
     {
@@ -38,12 +45,40 @@
       "newPath": ".github/FUNDING_v2.yml"
     },
     {
+      "originalPath": ".github/ISSUE_TEMPLATE/feature_request.md",
+      "newPath": ".github/ISSUE_TEMPLATE/feature_request_v2.md"
+    },
+    {
+      "originalPath": ".gitignore",
+      "newPath": "_v2.gitignore"
+    },
+    {
+      "originalPath": "CODE_OF_CONDUCT.md",
+      "newPath": "CODE_OF_CONDUCT_v2.md"
+    },
+    {
+      "originalPath": "CONTRIBUTING.md",
+      "newPath": "CONTRIBUTING_v2.md"
+    },
+    {
       "originalPath": "LICENSE",
       "newPath": "_v2"
     },
     {
       "originalPath": "README.md",
       "newPath": "README_v2.md"
+    },
+    {
+      "originalPath": "SECURITY.md",
+      "newPath": "SECURITY_v2.md"
+    },
+    {
+      "originalPath": "docker-compose.yml",
+      "newPath": "docker-compose_v2.yml"
+    },
+    {
+      "originalPath": "docs/README.md",
+      "newPath": "docs/README_v2.md"
     }
   ]
 }
