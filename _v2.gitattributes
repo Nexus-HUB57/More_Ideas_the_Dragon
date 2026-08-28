@@ -1,2 +1,2 @@
-# Markdown prompt files preserve whitespace for fidelity and raw readability.
-*.md -whitespace
+# Auto detect text files and perform LF normalization
+* text=auto
