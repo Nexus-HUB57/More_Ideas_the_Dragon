@@ -1,8 +1,19 @@
-<img alt="gpt4free logo" src="https://user-images.githubusercontent.com/98614666/233799515-1a7cb6a3-b17f-42c4-956d-8d2a0664466f.png">
+# Contributing
 
-### Please, follow these steps to contribute:
-1. Reverse a website from this list: [sites-to-reverse](https://github.com/xtekky/gpt4free/issues/40)
-2. Add it to [./etc/unittest/](https://github.com/xtekky/gpt4free/tree/main/etc/unittest/)
-3. Refactor it and add it to [./g4f](https://github.com/xtekky/gpt4free/tree/main/g4f)
+This repository does **not** accept external pull requests or unsolicited
+patches.
 
-### We will be grateful to see you as a contributor!
+SpaceXAI develops this software internally. The public tree is published for
+source transparency and local builds under the terms of the Apache License,
+Version 2.0 (see [`LICENSE`](LICENSE)).
+
+## Security reports
+
+Please report security issues through the process described in
+[`SECURITY.md`](SECURITY.md). Do not open a public issue for vulnerabilities.
+
+## Licensing of this source
+
+By downloading or using this source, you agree that your use is governed by
+the Apache License, Version 2.0. No contributor license agreement is offered
+because external contributions are not accepted.
