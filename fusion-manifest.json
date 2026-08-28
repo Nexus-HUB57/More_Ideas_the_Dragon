@@ -1,61 +1,81 @@
 {
   "engine": "FusionHub AutoSafe v2.0 - Clonagem Real",
-  "createdAt": "2026-08-28T00:59:01.125Z",
+  "createdAt": "2026-08-28T01:00:56.550Z",
   "strategy": "clone_100_percent_autosafe",
   "primary": {
     "owner": "Nexus-HUB57",
     "repo": "More_Ideas_the_Dragon",
     "branch": "main",
-    "files": 44350,
-    "folders": 5066
+    "files": 44347,
+    "folders": 5082
   },
   "secondary": {
-    "owner": "xai-org",
-    "repo": "grok-build",
+    "owner": "anthropics",
+    "repo": "claude-code",
     "branch": "main",
-    "files": 3561,
-    "folders": 557
+    "files": 229,
+    "folders": 104
   },
   "stats": {
-    "totalFiles": 47911,
-    "conflicts": 8,
-    "renamed": 8,
-    "clonedFromSecondary": 3561
+    "totalFiles": 44576,
+    "conflicts": 12,
+    "renamed": 12,
+    "clonedFromSecondary": 229
   },
   "conflicts": [
-    ".cargo/config.toml",
+    ".devcontainer/Dockerfile",
+    ".devcontainer/devcontainer.json",
+    ".devcontainer/init-firewall.sh",
+    ".gitattributes",
+    ".github/ISSUE_TEMPLATE/bug_report.yml",
+    ".github/ISSUE_TEMPLATE/config.yml",
+    ".github/ISSUE_TEMPLATE/feature_request.yml",
     ".gitignore",
-    "CONTRIBUTING.md",
-    "Cargo.lock",
-    "Cargo.toml",
-    "LICENSE",
+    ".vscode/extensions.json",
+    "CHANGELOG.md",
     "README.md",
     "SECURITY.md"
   ],
   "renamedFiles": [
     {
-      "originalPath": ".cargo/config.toml",
-      "newPath": ".cargo/config_v2.toml"
+      "originalPath": ".devcontainer/Dockerfile",
+      "newPath": "_v2.devcontainer/Dockerfile"
+    },
+    {
+      "originalPath": ".devcontainer/devcontainer.json",
+      "newPath": ".devcontainer/devcontainer_v2.json"
+    },
+    {
+      "originalPath": ".devcontainer/init-firewall.sh",
+      "newPath": ".devcontainer/init-firewall_v2.sh"
+    },
+    {
+      "originalPath": ".gitattributes",
+      "newPath": "_v2.gitattributes"
+    },
+    {
+      "originalPath": ".github/ISSUE_TEMPLATE/bug_report.yml",
+      "newPath": ".github/ISSUE_TEMPLATE/bug_report_v2.yml"
+    },
+    {
+      "originalPath": ".github/ISSUE_TEMPLATE/config.yml",
+      "newPath": ".github/ISSUE_TEMPLATE/config_v2.yml"
+    },
+    {
+      "originalPath": ".github/ISSUE_TEMPLATE/feature_request.yml",
+      "newPath": ".github/ISSUE_TEMPLATE/feature_request_v2.yml"
     },
     {
       "originalPath": ".gitignore",
       "newPath": "_v2.gitignore"
     },
     {
-      "originalPath": "CONTRIBUTING.md",
-      "newPath": "CONTRIBUTING_v2.md"
+      "originalPath": ".vscode/extensions.json",
+      "newPath": ".vscode/extensions_v2.json"
     },
     {
-      "originalPath": "Cargo.lock",
-      "newPath": "Cargo_v2.lock"
-    },
-    {
-      "originalPath": "Cargo.toml",
-      "newPath": "Cargo_v2.toml"
-    },
-    {
-      "originalPath": "LICENSE",
-      "newPath": "_v2"
+      "originalPath": "CHANGELOG.md",
+      "newPath": "CHANGELOG_v2.md"
     },
     {
       "originalPath": "README.md",
