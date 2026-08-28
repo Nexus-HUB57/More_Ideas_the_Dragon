@@ -1,39 +1,104 @@
 {
   "engine": "FusionHub AutoSafe v2.0 - Clonagem Real",
-  "createdAt": "2026-08-28T00:16:29.061Z",
+  "createdAt": "2026-08-28T00:23:59.147Z",
   "strategy": "clone_100_percent_autosafe",
   "primary": {
     "owner": "Nexus-HUB57",
     "repo": "More_Ideas_the_Dragon",
     "branch": "main",
-    "files": 44306,
-    "folders": 5029
+    "files": 44331,
+    "folders": 5030
   },
   "secondary": {
-    "owner": "songguoxs",
-    "repo": "gpt4o-image-prompts",
-    "branch": "master",
-    "files": 1395,
-    "folders": 4
+    "owner": "openinterpreter",
+    "repo": "openinterpreter",
+    "branch": "main",
+    "files": 6526,
+    "folders": 861
   },
   "stats": {
-    "totalFiles": 45701,
-    "conflicts": 2,
-    "renamed": 2,
-    "clonedFromSecondary": 1395
+    "totalFiles": 50857,
+    "conflicts": 15,
+    "renamed": 15,
+    "clonedFromSecondary": 6526
   },
   "conflicts": [
+    ".devcontainer/README.md",
+    ".devcontainer/devcontainer.json",
+    ".gitattributes",
+    ".github/CODEOWNERS",
+    ".github/ISSUE_TEMPLATE/config.yml",
+    ".github/pull_request_template.md",
     ".gitignore",
-    "README.md"
+    ".vscode/extensions.json",
+    ".vscode/launch.json",
+    ".vscode/settings.json",
+    "AGENTS.md",
+    "CHANGELOG.md",
+    "LICENSE",
+    "README.md",
+    "SECURITY.md"
   ],
   "renamedFiles": [
+    {
+      "originalPath": ".devcontainer/README.md",
+      "newPath": ".devcontainer/README_v2.md"
+    },
+    {
+      "originalPath": ".devcontainer/devcontainer.json",
+      "newPath": ".devcontainer/devcontainer_v2.json"
+    },
+    {
+      "originalPath": ".gitattributes",
+      "newPath": "_v2.gitattributes"
+    },
+    {
+      "originalPath": ".github/CODEOWNERS",
+      "newPath": "_v2.github/CODEOWNERS"
+    },
+    {
+      "originalPath": ".github/ISSUE_TEMPLATE/config.yml",
+      "newPath": ".github/ISSUE_TEMPLATE/config_v2.yml"
+    },
+    {
+      "originalPath": ".github/pull_request_template.md",
+      "newPath": ".github/pull_request_template_v2.md"
+    },
     {
       "originalPath": ".gitignore",
       "newPath": "_v2.gitignore"
     },
     {
+      "originalPath": ".vscode/extensions.json",
+      "newPath": ".vscode/extensions_v2.json"
+    },
+    {
+      "originalPath": ".vscode/launch.json",
+      "newPath": ".vscode/launch_v2.json"
+    },
+    {
+      "originalPath": ".vscode/settings.json",
+      "newPath": ".vscode/settings_v2.json"
+    },
+    {
+      "originalPath": "AGENTS.md",
+      "newPath": "AGENTS_v2.md"
+    },
+    {
+      "originalPath": "CHANGELOG.md",
+      "newPath": "CHANGELOG_v2.md"
+    },
+    {
+      "originalPath": "LICENSE",
+      "newPath": "_v2"
+    },
+    {
       "originalPath": "README.md",
       "newPath": "README_v2.md"
+    },
+    {
+      "originalPath": "SECURITY.md",
+      "newPath": "SECURITY_v2.md"
     }
   ]
 }
