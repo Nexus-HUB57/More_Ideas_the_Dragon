@@ -1,48 +1,61 @@
 {
   "engine": "FusionHub AutoSafe v2.0 - Clonagem Real",
-  "createdAt": "2026-08-28T01:29:27.942Z",
+  "createdAt": "2026-08-28T01:32:16.406Z",
   "strategy": "clone_100_percent_autosafe",
   "primary": {
     "owner": "Nexus-HUB57",
     "repo": "More_Ideas_the_Dragon",
     "branch": "main",
-    "files": 44383,
+    "files": 44386,
     "folders": 5088
   },
   "secondary": {
-    "owner": "xtekky",
-    "repo": "gpt4free",
+    "owner": "asgeirtj",
+    "repo": "system_prompts_leaks",
     "branch": "main",
-    "files": 382,
-    "folders": 56
+    "files": 395,
+    "folders": 93
   },
   "stats": {
-    "totalFiles": 44765,
-    "conflicts": 20,
-    "renamed": 20,
-    "clonedFromSecondary": 382
+    "totalFiles": 44781,
+    "conflicts": 33,
+    "renamed": 33,
+    "clonedFromSecondary": 395
   },
   "conflicts": [
     ".gitattributes",
+    ".github/CONTRIBUTING.md",
     ".github/FUNDING.yml",
-    ".github/ISSUE_TEMPLATE/default_issue.md",
-    ".github/ISSUE_TEMPLATE/feature_request.md",
-    ".github/copilot-instructions.md",
-    ".github/workflows/build-packages.yml",
-    ".github/workflows/close-inactive-issues.yml",
-    ".github/workflows/copilot.yml",
-    ".github/workflows/publish-to-pypi.yml",
-    ".github/workflows/unittest.yml",
-    ".gitignore",
-    "CODE_OF_CONDUCT.md",
-    "CONTRIBUTING.md",
-    "LEGAL_NOTICE.md",
+    ".github/banner-dark.png",
+    ".github/banner-light.png",
+    "Anthropic/README.md",
+    "Anthropic/anthropic-interviewer.md",
+    "Anthropic/anthropic_reminders.md",
+    "Anthropic/claude-code/agents/Explore.md",
+    "Anthropic/claude-code/agents/Plan.md",
+    "Anthropic/claude-code/agents/claude-code-guide.md",
+    "Anthropic/claude-code/agents/claude.md",
+    "Anthropic/claude-code/agents/general-purpose.md",
+    "Anthropic/claude-code/agents/statusline-setup.md",
+    "Anthropic/claude-code/archive/glob-tool.md",
+    "Anthropic/claude-code/archive/grep-tool.md",
+    "Anthropic/claude-code/claude-code-desktop-fable-5.md",
+    "Anthropic/claude-code/claude-code-docs-assistant.md",
+    "Anthropic/claude-code/claude-code-fable-5.md",
+    "Anthropic/claude-code/claude-code-haiku-4.5.md",
+    "Anthropic/claude-code/claude-code-opus-4.6.md",
+    "Anthropic/claude-code/claude-code-opus-4.7.md",
+    "Anthropic/claude-code/claude-code-opus-4.8.md",
+    "Anthropic/claude-code/claude-code-opus-5.md",
+    "Anthropic/claude-code/claude-code-sonnet-4.6.md",
+    "Anthropic/claude-code/claude-code-sonnet-5.md",
+    "Anthropic/claude-code/commands/btw.md",
+    "Anthropic/claude-code/commands/compact.md",
+    "Anthropic/claude-code/commands/rename.md",
+    "Anthropic/claude-code/output-styles/concise.md",
+    "Anthropic/claude-code/output-styles/explanatory.md",
     "LICENSE",
-    "MANIFEST.in",
-    "README.md",
-    "SECURITY.md",
-    "docker-compose.yml",
-    "docs/README.md"
+    "README.md"
   ],
   "renamedFiles": [
     {
@@ -50,80 +63,132 @@
       "newPath": "_v2.gitattributes"
     },
     {
+      "originalPath": ".github/CONTRIBUTING.md",
+      "newPath": ".github/CONTRIBUTING_v2.md"
+    },
+    {
       "originalPath": ".github/FUNDING.yml",
       "newPath": ".github/FUNDING_v2.yml"
     },
     {
-      "originalPath": ".github/ISSUE_TEMPLATE/default_issue.md",
-      "newPath": ".github/ISSUE_TEMPLATE/default_issue_v2.md"
+      "originalPath": ".github/banner-dark.png",
+      "newPath": ".github/banner-dark_v2.png"
     },
     {
-      "originalPath": ".github/ISSUE_TEMPLATE/feature_request.md",
-      "newPath": ".github/ISSUE_TEMPLATE/feature_request_v2.md"
+      "originalPath": ".github/banner-light.png",
+      "newPath": ".github/banner-light_v2.png"
     },
     {
-      "originalPath": ".github/copilot-instructions.md",
-      "newPath": ".github/copilot-instructions_v2.md"
+      "originalPath": "Anthropic/README.md",
+      "newPath": "Anthropic/README_v2.md"
     },
     {
-      "originalPath": ".github/workflows/build-packages.yml",
-      "newPath": ".github/workflows/build-packages_v2.yml"
+      "originalPath": "Anthropic/anthropic-interviewer.md",
+      "newPath": "Anthropic/anthropic-interviewer_v2.md"
     },
     {
-      "originalPath": ".github/workflows/close-inactive-issues.yml",
-      "newPath": ".github/workflows/close-inactive-issues_v2.yml"
+      "originalPath": "Anthropic/anthropic_reminders.md",
+      "newPath": "Anthropic/anthropic_reminders_v2.md"
     },
     {
-      "originalPath": ".github/workflows/copilot.yml",
-      "newPath": ".github/workflows/copilot_v2.yml"
+      "originalPath": "Anthropic/claude-code/agents/Explore.md",
+      "newPath": "Anthropic/claude-code/agents/Explore_v2.md"
     },
     {
-      "originalPath": ".github/workflows/publish-to-pypi.yml",
-      "newPath": ".github/workflows/publish-to-pypi_v2.yml"
+      "originalPath": "Anthropic/claude-code/agents/Plan.md",
+      "newPath": "Anthropic/claude-code/agents/Plan_v2.md"
     },
     {
-      "originalPath": ".github/workflows/unittest.yml",
-      "newPath": ".github/workflows/unittest_v2.yml"
+      "originalPath": "Anthropic/claude-code/agents/claude-code-guide.md",
+      "newPath": "Anthropic/claude-code/agents/claude-code-guide_v2.md"
     },
     {
-      "originalPath": ".gitignore",
-      "newPath": "_v2.gitignore"
+      "originalPath": "Anthropic/claude-code/agents/claude.md",
+      "newPath": "Anthropic/claude-code/agents/claude_v2.md"
     },
     {
-      "originalPath": "CODE_OF_CONDUCT.md",
-      "newPath": "CODE_OF_CONDUCT_v2.md"
+      "originalPath": "Anthropic/claude-code/agents/general-purpose.md",
+      "newPath": "Anthropic/claude-code/agents/general-purpose_v2.md"
     },
     {
-      "originalPath": "CONTRIBUTING.md",
-      "newPath": "CONTRIBUTING_v2.md"
+      "originalPath": "Anthropic/claude-code/agents/statusline-setup.md",
+      "newPath": "Anthropic/claude-code/agents/statusline-setup_v2.md"
     },
     {
-      "originalPath": "LEGAL_NOTICE.md",
-      "newPath": "LEGAL_NOTICE_v2.md"
+      "originalPath": "Anthropic/claude-code/archive/glob-tool.md",
+      "newPath": "Anthropic/claude-code/archive/glob-tool_v2.md"
+    },
+    {
+      "originalPath": "Anthropic/claude-code/archive/grep-tool.md",
+      "newPath": "Anthropic/claude-code/archive/grep-tool_v2.md"
+    },
+    {
+      "originalPath": "Anthropic/claude-code/claude-code-desktop-fable-5.md",
+      "newPath": "Anthropic/claude-code/claude-code-desktop-fable-5_v2.md"
+    },
+    {
+      "originalPath": "Anthropic/claude-code/claude-code-docs-assistant.md",
+      "newPath": "Anthropic/claude-code/claude-code-docs-assistant_v2.md"
+    },
+    {
+      "originalPath": "Anthropic/claude-code/claude-code-fable-5.md",
+      "newPath": "Anthropic/claude-code/claude-code-fable-5_v2.md"
+    },
+    {
+      "originalPath": "Anthropic/claude-code/claude-code-haiku-4.5.md",
+      "newPath": "Anthropic/claude-code/claude-code-haiku-4.5_v2.md"
+    },
+    {
+      "originalPath": "Anthropic/claude-code/claude-code-opus-4.6.md",
+      "newPath": "Anthropic/claude-code/claude-code-opus-4.6_v2.md"
+    },
+    {
+      "originalPath": "Anthropic/claude-code/claude-code-opus-4.7.md",
+      "newPath": "Anthropic/claude-code/claude-code-opus-4.7_v2.md"
+    },
+    {
+      "originalPath": "Anthropic/claude-code/claude-code-opus-4.8.md",
+      "newPath": "Anthropic/claude-code/claude-code-opus-4.8_v2.md"
+    },
+    {
+      "originalPath": "Anthropic/claude-code/claude-code-opus-5.md",
+      "newPath": "Anthropic/claude-code/claude-code-opus-5_v2.md"
+    },
+    {
+      "originalPath": "Anthropic/claude-code/claude-code-sonnet-4.6.md",
+      "newPath": "Anthropic/claude-code/claude-code-sonnet-4.6_v2.md"
+    },
+    {
+      "originalPath": "Anthropic/claude-code/claude-code-sonnet-5.md",
+      "newPath": "Anthropic/claude-code/claude-code-sonnet-5_v2.md"
+    },
+    {
+      "originalPath": "Anthropic/claude-code/commands/btw.md",
+      "newPath": "Anthropic/claude-code/commands/btw_v2.md"
+    },
+    {
+      "originalPath": "Anthropic/claude-code/commands/compact.md",
+      "newPath": "Anthropic/claude-code/commands/compact_v2.md"
+    },
+    {
+      "originalPath": "Anthropic/claude-code/commands/rename.md",
+      "newPath": "Anthropic/claude-code/commands/rename_v2.md"
+    },
+    {
+      "originalPath": "Anthropic/claude-code/output-styles/concise.md",
+      "newPath": "Anthropic/claude-code/output-styles/concise_v2.md"
+    },
+    {
+      "originalPath": "Anthropic/claude-code/output-styles/explanatory.md",
+      "newPath": "Anthropic/claude-code/output-styles/explanatory_v2.md"
     },
     {
       "originalPath": "LICENSE",
       "newPath": "_v2"
     },
     {
-      "originalPath": "MANIFEST.in",
-      "newPath": "MANIFEST_v2.in"
-    },
-    {
       "originalPath": "README.md",
       "newPath": "README_v2.md"
-    },
-    {
-      "originalPath": "SECURITY.md",
-      "newPath": "SECURITY_v2.md"
-    },
-    {
-      "originalPath": "docker-compose.yml",
-      "newPath": "docker-compose_v2.yml"
-    },
-    {
-      "originalPath": "docs/README.md",
-      "newPath": "docs/README_v2.md"
     }
   ]
 }
