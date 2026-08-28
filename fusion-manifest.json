@@ -1,66 +1,36 @@
 {
   "engine": "FusionHub AutoSafe v2.0 - Clonagem Real",
-  "createdAt": "2026-08-28T00:37:41.211Z",
+  "createdAt": "2026-08-28T00:40:47.733Z",
   "strategy": "clone_100_percent_autosafe",
   "primary": {
     "owner": "Nexus-HUB57",
     "repo": "More_Ideas_the_Dragon",
     "branch": "main",
-    "files": 44331,
-    "folders": 5057
+    "files": 44345,
+    "folders": 5058
   },
   "secondary": {
-    "owner": "unslothai",
-    "repo": "unsloth",
+    "owner": "openai",
+    "repo": "plugins-quickstart",
     "branch": "main",
-    "files": 4662,
-    "folders": 365
+    "files": 8,
+    "folders": 1
   },
   "stats": {
-    "totalFiles": 48993,
-    "conflicts": 9,
-    "renamed": 9,
-    "clonedFromSecondary": 4662
+    "totalFiles": 44353,
+    "conflicts": 3,
+    "renamed": 3,
+    "clonedFromSecondary": 8
   },
   "conflicts": [
-    ".gitattributes",
-    ".github/CODEOWNERS",
-    ".github/dependabot.yml",
     ".gitignore",
-    ".pre-commit-config.yaml",
-    "CODE_OF_CONDUCT.md",
-    "CONTRIBUTING.md",
     "LICENSE",
     "README.md"
   ],
   "renamedFiles": [
     {
-      "originalPath": ".gitattributes",
-      "newPath": "_v2.gitattributes"
-    },
-    {
-      "originalPath": ".github/CODEOWNERS",
-      "newPath": "_v2.github/CODEOWNERS"
-    },
-    {
-      "originalPath": ".github/dependabot.yml",
-      "newPath": ".github/dependabot_v2.yml"
-    },
-    {
       "originalPath": ".gitignore",
       "newPath": "_v2.gitignore"
-    },
-    {
-      "originalPath": ".pre-commit-config.yaml",
-      "newPath": ".pre-commit-config_v2.yaml"
-    },
-    {
-      "originalPath": "CODE_OF_CONDUCT.md",
-      "newPath": "CODE_OF_CONDUCT_v2.md"
-    },
-    {
-      "originalPath": "CONTRIBUTING.md",
-      "newPath": "CONTRIBUTING_v2.md"
     },
     {
       "originalPath": "LICENSE",
