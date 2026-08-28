@@ -1,48 +1,42 @@
-# Nexus-HUB57/More_Ideas_the_Dragon + anthropics/claude-code
+# Nexus-HUB57/More_Ideas_the_Dragon + shareAI-lab/learn-claude-code
 
 > Ecossistema unificado pelo **FusionHub AutoSafe Engine** - Clonagem Real 100%
 
 ## Repositorio Primario
 - **Repo**: Nexus-HUB57/More_Ideas_the_Dragon
 - **Branch**: main
-- **Arquivos**: 44347 | **Pastas**: 5082
-- **Linguagens**: php(12991), gif(4233), md(4188), js(3607), ts(3169), tsx(2916), png(2402), py(1661)
+- **Arquivos**: 44347 | **Pastas**: 5085
+- **Linguagens**: php(12991), gif(4233), md(4191), js(3600), ts(3169), tsx(2916), png(2402), py(1661)
 
 ## Repositorio Secundario
-- **Repo**: anthropics/claude-code
+- **Repo**: shareAI-lab/learn-claude-code
 - **Branch**: main
-- **Arquivos**: 229 | **Pastas**: 104
-- **Linguagens**: md(106), json(27), sh(21), py(21), yml(17), tf(8), gitignore(6), ts(5)
+- **Arquivos**: 416 | **Pastas**: 100
+- **Linguagens**: svg(153), md(97), py(56), tsx(47), json(43), ts(10), yml(2), gitignore(2)
 
 ## Estatisticas da Fusao
 
 | Metrica | Valor |
 |---------|-------|
-| Total de arquivos mapeados | 44576 |
-| Arquivos clonados do secundario | 229 |
-| Conflitos resolvidos (AutoSafe) | 12 |
-| Arquivos renomeados (_v2) | 12 |
+| Total de arquivos mapeados | 44763 |
+| Arquivos clonados do secundario | 416 |
+| Conflitos resolvidos (AutoSafe) | 6 |
+| Arquivos renomeados (_v2) | 6 |
 
 ## Estrategia AutoSafe
 
-Nenhum arquivo do primario foi sobreposto. Todos os 229 arquivos do secundario foram clonados para o primario.
+Nenhum arquivo do primario foi sobreposto. Todos os 416 arquivos do secundario foram clonados para o primario.
 
-12 arquivos com path duplicado foram renomeados com sufixo `_v2` e o original do primario foi preservado.
+6 arquivos com path duplicado foram renomeados com sufixo `_v2` e o original do primario foi preservado.
 
 ## Arquivos Renomeados
 
-- `.devcontainer/Dockerfile` -> `_v2.devcontainer/Dockerfile`
-- `.devcontainer/devcontainer.json` -> `.devcontainer/devcontainer_v2.json`
-- `.devcontainer/init-firewall.sh` -> `.devcontainer/init-firewall_v2.sh`
-- `.gitattributes` -> `_v2.gitattributes`
-- `.github/ISSUE_TEMPLATE/bug_report.yml` -> `.github/ISSUE_TEMPLATE/bug_report_v2.yml`
-- `.github/ISSUE_TEMPLATE/config.yml` -> `.github/ISSUE_TEMPLATE/config_v2.yml`
-- `.github/ISSUE_TEMPLATE/feature_request.yml` -> `.github/ISSUE_TEMPLATE/feature_request_v2.yml`
+- `.env.example` -> `.env_v2.example`
+- `.github/workflows/ci.yml` -> `.github/workflows/ci_v2.yml`
 - `.gitignore` -> `_v2.gitignore`
-- `.vscode/extensions.json` -> `.vscode/extensions_v2.json`
-- `CHANGELOG.md` -> `CHANGELOG_v2.md`
+- `CONTRIBUTING.md` -> `CONTRIBUTING_v2.md`
+- `LICENSE` -> `_v2`
 - `README.md` -> `README_v2.md`
-- `SECURITY.md` -> `SECURITY_v2.md`
 
 ---
-*FusionHub AutoSafe Engine | Clonagem Real 100% | 2026-08-28T01:00:56.550Z*
+*FusionHub AutoSafe Engine | Clonagem Real 100% | 2026-08-28T01:03:40.504Z*
