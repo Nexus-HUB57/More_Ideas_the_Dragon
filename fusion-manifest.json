@@ -1,72 +1,49 @@
 {
   "engine": "FusionHub AutoSafe v2.0 - Clonagem Real",
-  "createdAt": "2026-08-28T01:05:40.200Z",
+  "createdAt": "2026-08-28T01:08:21.833Z",
   "strategy": "clone_100_percent_autosafe",
   "primary": {
     "owner": "Nexus-HUB57",
     "repo": "More_Ideas_the_Dragon",
     "branch": "main",
-    "files": 44358,
+    "files": 44361,
     "folders": 5085
   },
   "secondary": {
-    "owner": "Alishahryar1",
-    "repo": "free-claude-code",
+    "owner": "hesreallyhim",
+    "repo": "awesome-claude-code",
     "branch": "main",
-    "files": 580,
-    "folders": 66
+    "files": 56,
+    "folders": 12
   },
   "stats": {
-    "totalFiles": 44938,
-    "conflicts": 11,
-    "renamed": 11,
-    "clonedFromSecondary": 580
+    "totalFiles": 44417,
+    "conflicts": 8,
+    "renamed": 8,
+    "clonedFromSecondary": 56
   },
   "conflicts": [
-    ".env.example",
-    ".github/ISSUE_TEMPLATE/bug-report.yml",
-    ".github/ISSUE_TEMPLATE/config.yml",
-    ".github/ISSUE_TEMPLATE/feature-request.yml",
-    ".github/dependabot.yml",
     ".gitignore",
-    "AGENTS.md",
-    "CLAUDE.md",
+    ".pre-commit-config.yaml",
+    "CODE_OF_CONDUCT.md",
     "CONTRIBUTING.md",
     "LICENSE",
-    "README.md"
+    "Makefile",
+    "README.md",
+    "SECURITY.md"
   ],
   "renamedFiles": [
-    {
-      "originalPath": ".env.example",
-      "newPath": ".env_v2.example"
-    },
-    {
-      "originalPath": ".github/ISSUE_TEMPLATE/bug-report.yml",
-      "newPath": ".github/ISSUE_TEMPLATE/bug-report_v2.yml"
-    },
-    {
-      "originalPath": ".github/ISSUE_TEMPLATE/config.yml",
-      "newPath": ".github/ISSUE_TEMPLATE/config_v2.yml"
-    },
-    {
-      "originalPath": ".github/ISSUE_TEMPLATE/feature-request.yml",
-      "newPath": ".github/ISSUE_TEMPLATE/feature-request_v2.yml"
-    },
-    {
-      "originalPath": ".github/dependabot.yml",
-      "newPath": ".github/dependabot_v2.yml"
-    },
     {
       "originalPath": ".gitignore",
       "newPath": "_v2.gitignore"
     },
     {
-      "originalPath": "AGENTS.md",
-      "newPath": "AGENTS_v2.md"
+      "originalPath": ".pre-commit-config.yaml",
+      "newPath": ".pre-commit-config_v2.yaml"
     },
     {
-      "originalPath": "CLAUDE.md",
-      "newPath": "CLAUDE_v2.md"
+      "originalPath": "CODE_OF_CONDUCT.md",
+      "newPath": "CODE_OF_CONDUCT_v2.md"
     },
     {
       "originalPath": "CONTRIBUTING.md",
@@ -77,8 +54,16 @@
       "newPath": "_v2"
     },
     {
+      "originalPath": "Makefile",
+      "newPath": "_v2"
+    },
+    {
       "originalPath": "README.md",
       "newPath": "README_v2.md"
+    },
+    {
+      "originalPath": "SECURITY.md",
+      "newPath": "SECURITY_v2.md"
     }
   ]
 }
