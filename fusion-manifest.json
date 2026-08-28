@@ -1,44 +1,69 @@
 {
   "engine": "FusionHub AutoSafe v2.0 - Clonagem Real",
-  "createdAt": "2026-08-28T00:55:19.751Z",
+  "createdAt": "2026-08-28T00:59:01.125Z",
   "strategy": "clone_100_percent_autosafe",
   "primary": {
     "owner": "Nexus-HUB57",
     "repo": "More_Ideas_the_Dragon",
     "branch": "main",
-    "files": 44382,
-    "folders": 5065
+    "files": 44350,
+    "folders": 5066
   },
   "secondary": {
     "owner": "xai-org",
-    "repo": "grok-1",
+    "repo": "grok-build",
     "branch": "main",
-    "files": 12,
-    "folders": 1
+    "files": 3561,
+    "folders": 557
   },
   "stats": {
-    "totalFiles": 44394,
-    "conflicts": 3,
-    "renamed": 3,
-    "clonedFromSecondary": 12
+    "totalFiles": 47911,
+    "conflicts": 8,
+    "renamed": 8,
+    "clonedFromSecondary": 3561
   },
   "conflicts": [
+    ".cargo/config.toml",
     ".gitignore",
-    "CODE_OF_CONDUCT.md",
-    "README.md"
+    "CONTRIBUTING.md",
+    "Cargo.lock",
+    "Cargo.toml",
+    "LICENSE",
+    "README.md",
+    "SECURITY.md"
   ],
   "renamedFiles": [
+    {
+      "originalPath": ".cargo/config.toml",
+      "newPath": ".cargo/config_v2.toml"
+    },
     {
       "originalPath": ".gitignore",
       "newPath": "_v2.gitignore"
     },
     {
-      "originalPath": "CODE_OF_CONDUCT.md",
-      "newPath": "CODE_OF_CONDUCT_v2.md"
+      "originalPath": "CONTRIBUTING.md",
+      "newPath": "CONTRIBUTING_v2.md"
+    },
+    {
+      "originalPath": "Cargo.lock",
+      "newPath": "Cargo_v2.lock"
+    },
+    {
+      "originalPath": "Cargo.toml",
+      "newPath": "Cargo_v2.toml"
+    },
+    {
+      "originalPath": "LICENSE",
+      "newPath": "_v2"
     },
     {
       "originalPath": "README.md",
       "newPath": "README_v2.md"
+    },
+    {
+      "originalPath": "SECURITY.md",
+      "newPath": "SECURITY_v2.md"
     }
   ]
 }
