@@ -1,22 +1,59 @@
+[project]
+name = "minimax-mcp"
+version = "0.0.19"
+description = "Minimax MCP Server"
+authors = [
+    { name = "Roy Wu", email = "zhengyu@minimax.chat" },
+]
+readme = "README.md"
+license = { file = "LICENSE" }
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+]
+keywords = [
+    "minimax",
+    "mcp",
+    "text-to-speech",
+    "voice-cloning",
+    "video-generation",
+]
+requires-python = ">=3.10"
+dependencies = [
+    "mcp[cli]>=2.0.0,<3",
+    "fastapi>=0.109.2",
+    "uvicorn>=0.27.1",
+    "python-dotenv>=1.0.1",
+    "pydantic>=2.6.1",
+    "httpx>=0.28.1",
+    "fuzzywuzzy>=0.18.0",
+    "python-Levenshtein>=0.25.0",
+    "sounddevice>=0.5.1",
+    "soundfile>=0.13.1",
+    "requests>=2.31.0",
+]
+
+[project.scripts]
+minimax-mcp = "minimax_mcp.server:main"
+
+[project.optional-dependencies]
+dev = [
+    "pre-commit>=3.6.2",
+    "ruff>=0.3.0",
+    "pytest>=8.0.0",
+    "pytest-cov>=4.1.0",
+    "twine>=6.1.0",
+    "build>=1.0.3",
+]
+
+[build-system]
+requires = ["setuptools>=45", "wheel"]
+build-backend = "setuptools.build_meta"
+
 [tool.pytest.ini_options]
 testpaths = ["tests"]
-asyncio_mode = "auto"
-# Test-taxonomy markers added at collection time by tests/conftest.py. The
-# stable area_* markers are declared here; the dynamic sub_<filename-token>
-# markers are registered before collection by pytest_configure in
-# tests/conftest.py, so unknown-mark warnings still flag genuine typos outside
-# the taxonomy. See tests/_taxonomy.py and tests/README.md.
-markers = [
-    "area_security: tests covering auth, owner-scope, SSRF, XSS, confinement, redaction",
-    "area_routes: tests covering HTTP route / API behavior",
-    "area_services: tests covering service-layer behavior (llm, cookbook, email, calendar, ...)",
-    "area_cli: tests covering CLI / script behavior",
-    "area_js: JavaScript / Node-backed tests",
-    "area_helpers: self-tests for the shared test helpers in tests/helpers/",
-    "area_unit: pure parser / utility tests that do not clearly belong elsewhere",
-    "area_uncategorized: tests not yet matched by the taxonomy (fallback)",
-    # Fast-lane marker (issue #3443). Opt-in and orthogonal to the area_*/sub_*
-    # taxonomy. The fast lane runs `not slow`; mark a test slow only with
-    # duration evidence (see tests/run_focus.py --durations and tests/README.md).
-    "slow: opt-in marker for known-slow tests; excluded by the fast lane (not slow)",
-]
+python_files = ["test_*.py"]
+addopts = "-v --cov=minimax_mcp --cov-report=term-missing"

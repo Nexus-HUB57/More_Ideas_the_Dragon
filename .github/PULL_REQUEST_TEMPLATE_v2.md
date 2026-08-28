@@ -1,19 +1,28 @@
-<!-- Thank you for contributing to Docling! -->
+## What this changes
 
-<!-- STEPS TO FOLLOW:
-  1. Add a description of the changes (frequently the same as the commit description)
-  2. Enter the issue number next to "Resolves #" below (if there is no tracking issue resolved, **remove that section**)
-  3. Make sure the PR title follows the **Commit Message Formatting**: https://www.conventionalcommits.org/en/v1.0.0/#summary.
-  4. Follow the steps in the checklist below, starting with the **Commit Message Formatting**.
--->
+<!-- One or two sentences. What behaviour is different after this PR? -->
 
-<!-- Uncomment this section with the issue number if an issue is being resolved
-**Issue resolved by this Pull Request:**
-Resolves #
---->
+## Why
 
-**Checklist:**
+<!-- The problem being solved. Link an issue if there is one. -->
 
-- [ ] Documentation has been updated, if necessary.
-- [ ] Examples have been added, if necessary.
-- [ ] Tests have been added, if necessary.
+## Verification
+
+- [ ] `make test` passes (all weightless gates)
+- [ ] `make portable` builds with no new warnings
+- [ ] If kernels changed: `./bin/test_ops tests/fixtures/ops` still passes at declared tolerance
+- [ ] If the config or tokenizer path changed: `make cfg` and `make tok` pass
+- [ ] If output could change: the oracle gates (`./bin/k3_model tests/fixtures`) still match exactly
+
+## Numbers, if this is a performance change
+
+<!-- Timing claims need a noise floor. Report at least 3 runs of each arm, or say
+     explicitly that the effect was not measured against variance. See docs/BENCHMARKING.md. -->
+
+| arm | run 1 | run 2 | run 3 | mean |
+|-----|-------|-------|-------|------|
+|     |       |       |       |      |
+
+## Risk
+
+<!-- What could this break that the tests would not catch? -->

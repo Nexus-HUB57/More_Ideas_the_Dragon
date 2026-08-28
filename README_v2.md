@@ -1,584 +1,356 @@
 <p align="center">
-  <img src="https://raw.githubusercontent.com/h4ckf0r0day/obscura/main/assets/icon.png" alt="Obscura" width="80" />
-</p>
-<h2 align="center">Obscura</h2>
-<p align="center">
-  <a href="https://trendshift.io/repositories/25837?utm_source=trendshift-badge&amp;utm_medium=badge&amp;utm_campaign=badge-trendshift-25837" target="_blank" rel="noopener noreferrer"><img src="https://trendshift.io/api/badge/trendshift/repositories/25837/daily" alt="h4ckf0r0day%2Fobscura | Trendshift" width="250" height="55"/></a>
-</p>
-<p align="center">
-  <a href="https://docs.obscura.sh"><img src="https://img.shields.io/badge/Docs-1a1a1a?style=for-the-badge&logo=gitbook&logoColor=white" alt="Documentation" /></a>
-  <a href="https://obscura.sh"><img src="https://img.shields.io/badge/Website-1a1a1a?style=for-the-badge&logo=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjE5MCAxNzAgNDIwIDQyMCI+PHBhdGggZmlsbD0iI0ZGRkZGRiIgZmlsbC1ydWxlPSJldmVub2RkIiBkPSJNNDA2LDE3NS4wMDA0MTIgQzQ0MC40OTg5MzIsMTc1LjAwMDM1MSA0NzQuNDk4MTA4LDE3NS4wODA5OTQgNTA4LjQ5NjczNSwxNzQuOTc1NjYyIEM1MzcuNzMzNjQzLDE3NC44ODUwODYgNTYxLjI3MDY5MSwxODcuMjIwNTUxIDU3OS45Mzk2MzYsMjA4Ljc4NjYyMSBDNTkwLjg0MTA2NCwyMjEuMzc5Nzc2IDU5Ny44ODM1NDUsMjM2LjM1MjY2MSA1OTkuOTgxODczLDI1My4yMjAzNjcgQzYwMC40NDU1NTcsMjU2Ljk0NzU0MCA2MDAuOTUxMTExLDI2MC43MDQ0MzcgNjAwLjk1NjYwNCwyNjQuNDQ4MzY0IEM2MDEuMDIyNjQ0LDMwOS42MTM1MjUgNjAxLjA3NTgwNiwzNTQuNzc5MDIyIDYwMC45NTE3ODIsMzk5Ljk0MzkzOSBDNjAwLjkxMzE0Nyw0MTQuMDMyMzQ5IDYwMC42NjMyNjksNDI4LjE0MDEwNiA1OTkuNzgyMjg4LDQ0Mi4xOTMzNTkgQzU5OS41NDEwMTYsNDQ2LjA0MDg5NCA1OTcuNTYwNzkxLDQ1MC42MTU2MDEgNTk0Ljg1MzIxMCw0NTMuMzQxMzA5IEM1NzEuMTc3NTUxLDQ3Ny4xNzUzMjMgNTQ3LjE4MDcyNSw1MDAuNjkwNzk2IDUyMy4yMjc5NjYsNTI0LjI0ODc3OSBDNTA2Ljc5OTgzNSw1NDAuNDA2MTI4IDQ5MC4yMDk5OTEsNTU2LjM5OTkwMiA0NzMuODY0NTYzLDU3Mi42NDAxMzcgQzQ2OC44MDA4NDIsNTc3LjY3MTIwNCA0NjMuMDgyODg2LDU4MC4wNTQxOTkgNDU1Ljk3MDYxMiw1ODAuMDQzODIzIEM0MDAuOTcyNDQzLDU3OS45NjM1MDEgMzQ1Ljk3MzY2Myw1ODAuMTMyMDE5IDI5MC45NzYwNDQsNTc5LjkzNjc2OCBDMjY3LjU4MDQxNCw1NzkuODUzNjk5IDI0Ni41NTEyMDgsNTcyLjA0MzU3OSAyMjguOTM5NzQzLDU1Ni44Mjc1MTUgQzIxMi44NDk2MjUsNTQyLjkyNTg0MiAyMDIuNzUxOTY4LDUyNC45MDIxMDAgMTk4LjE1NjE1OCw1MDQuMDM5NjczIEMxOTcuMjgyMTk2LDUwMC4wNzIyOTYgMTk3LjA1MjQxNCw0OTUuODk1Mzg2IDE5Ny4wNDczMzMsNDkxLjgxNDQ4NCBDMTk2Ljk3ODE0OSw0MzYuMTQ5NjU4IDE5Ny4wNTA3MjAsMzgwLjQ4NDYxOSAxOTYuOTMyNjE3LDMyNC44MTk5NDYgQzE5Ni45MTkxNDQsMzE4LjQ3MDkxNyAxOTkuMTg0ODQ1LDMxMy40MTYxOTkgMjAzLjQ5NTU3NSwzMDkuMTAwNTI1IEMyNDAuNTg3OTk3LDI3MS45NjU0MjQgMjc3LjY4MjQ5NSwyMzQuODMyMzA2IDMxNC44MzQ1NjQsMTk3Ljc1Njk1OCBDMzIwLjk1NjQyMSwxOTEuNjQ3Nzk3IDMyNy4yNjQ0MzUsMTg1LjcxNTI1NiAzMzMuNjczOTIwLDE3OS45MDgwODEgQzMzNy4zNzYwMzgsMTc2LjU1MzgzMyAzNDEuNzIxNDY2LDE3NC44NTMzMTcgMzQ3LjAwNTc5OCwxNzQuOTEyODcyIEMzNjYuNTAxNzA5LDE3NS4xMzI2MTQgMzg2LjAwMTYxNywxNzUuMDAwMzIwIDQwNiwxNzUuMDAwNDEyIFogTTUwMy4zNDQ2NjYsMjczLjg0MDE0OSBDNTA0LjEwMjcyMiwyNzYuMTY3NTcyIDUwNC45NDA5NDgsMjc4LjIxMTA5MCA1MDQuOTQzMjY4LDI4MC4yNTU1MjQgQzUwNS4wMTI4NDgsMzQxLjc0MjI0OSA1MDQuOTY5MTQ3LDQwMy4yMjkwNjUgNTA1LjAzMDc5Miw0NjQuNzE1NzkwIEM1MDUuMDQwODAyLDQ3NC42ODY0OTMgNDk2LjExNzQ2Miw0ODMuOTUzMTg2IDQ4NS43Nzc5MjQsNDgzLjk2NTI3MSBDNDI0LjYyNDQ1MSw0ODQuMDM2ODk2IDM2My40NzA5MTcsNDg0LjAwMzIzNSAzMDIuMzE3MzgzLDQ4My45OTY3MzUgQzI5NS41ODc3NjksNDgzLjk5NjAzMyAyOTMuMDAxMjUxLDQ4MS4zMDE2MDUgMjkzLjAwMDkxNiw0NzQuMzM4NTYyIEMyOTIuOTk3ODY0LDQxMy4zNTE2NTQgMjkzLjIwOTYyNSwzNTIuMzYzMzEyIDI5Mi43ODA3MDEsMjkxLjM3OTM5NSBDMjkyLjcxMzUzMSwyODEuODI4MDk0IDMwMy4yMTMwNDMsMjcwLjgyNDE1OCAzMTMuNDc4MjcxLDI3MC44OTQzMTggQzM1MS45NjgyMDEsMjcxLjE1NzQ0MCAzOTAuNDYwOTk5LDI3MC45OTk3ODYgNDI4Ljk1MjcyOCwyNzAuOTk5Nzg2IEM0NTEuMTE0NjI0LDI3MC45OTk3ODYgNDczLjI3NzI4MywyNzAuOTE3NDgwIDQ5NS40Mzc0NjksMjcxLjExMjE1MiBDNDk3Ljk3NzAyMCwyNzEuMTM0NDkxIDUwMC41MDI5MzAsMjcyLjcwNDM3NiA1MDMuMzQ0NjY2LDI3My44NDAxNDkgWiI+PC9wYXRoPjwvc3ZnPgo=&logoColor=white" alt="Website" /></a>
-  <a href="https://x.com/obscura_sh" target="_blank" rel="noopener noreferrer"><img src="https://img.shields.io/badge/TWITTER%20%2F%20X-1a1a1a?style=for-the-badge&logo=x&logoColor=white" alt="Obscura on Twitter/X" /></a>
-  <a href="https://cal.com/obscura/quick-chat"><img src="https://img.shields.io/badge/Book_a_Demo-1a1a1a?style=for-the-badge&logo=googlecalendar&logoColor=white" alt="Book a demo" /></a>
-  <a href="https://github.com/h4ckf0r0day/obscura/releases"><img src="https://img.shields.io/badge/Releases-1a1a1a?style=for-the-badge&logo=github&logoColor=white" alt="Releases" /></a>
-</p>
-<p align="center">
-  <strong>The open-source headless browser for AI agents and web scraping.</strong><br>
-  Lightweight, stealthy, and built in Rust.
-</p>
-<h3 align="center">Native rendering is here. No Chromium required. 🎉 </h3>
-<p align="center">
-  Capture screenshots, screencast live pages, and export PDFs directly with Obscura.
+  <a href="https://ollama.com">
+    <img src="https://github.com/ollama/ollama/assets/3325447/0d0b44e2-8f4a-4e99-9b52-a5c1c741c8f7" alt="ollama" width="200"/>
+  </a>
 </p>
 
----
+# Ollama
 
-Obscura is a headless browser engine written in Rust, built for web scraping and AI agent automation. It runs real JavaScript via V8, supports the Chrome DevTools Protocol, and acts as a drop-in replacement for headless Chrome with Puppeteer and Playwright.
+Start building with open models.
 
-### Why Obscura over headless Chrome?
+## Download
 
-| Metric       | Obscura      | Headless Chrome |
-|--------------|--------------|------------------|
-| Memory       | **30 MB**    | 200+ MB          |
-| Binary size  | **70 MB**    | 300+ MB          |
-| Anti-detect  | **Built-in** | None          |
-| Page load    | **85 ms**    | ~500 ms          |
-| Startup      | **Instant**  | ~2s              |
-| Puppeteer    | **Yes**      | Yes              |
-| Playwright   | **Yes**      | Yes              |
+### macOS
 
-<table>
-  <tr>
-    <td width="90" align="center">
-      <a href="https://blog.cloudflare.com/kitesurf/">
-        <img
-          src="https://cdn.simpleicons.org/cloudflare/F38020"
-          alt="Cloudflare"
-          width="54"
-        />
-      </a>
-    </td>
-    <td>
-      <strong>Obscura inspired Cloudflare Kitesurf’s first prototype</strong>
-      <br>
-      Cloudflare began by porting Obscura to Workers while developing its
-      new agent-first browser.
-      <br>
-      <a href="https://blog.cloudflare.com/kitesurf/">
-        Read Cloudflare’s engineering story →
-      </a>
-    </td>
-  </tr>
-</table>
-
-## Obscura Cloud
-
-We are working on **Obscura Cloud** the hosted version, with managed infrastructure, residential proxies, and dedicated support. For people who want the engine without operating it themselves.
-
-The open-source engine stays Apache-2.0, fully featured. No feature gating, ever.
-
-**[Get on the waitlist →](https://tally.so/r/gDWzdD)**
-<br>
-**[📅 Book a demo →](https://cal.com/obscura/quick-chat)**
-
-## Sponsors
-
-**Obscura** is supported by organizations helping us build independent open-source browser infrastructure.
-
-Want to sponsor? Email [hello@obscura.sh](mailto:hello@obscura.sh).
-
-<table>
-   <tr>
-    <td width="200" align="center" valign="middle">
-      <a href="https://go.nodemaven.com/obscura" target="_blank">
-        <img alt="NodeMaven" src="assets/sponsors/nodemaven.svg" width="180"/>
-      </a>
-    </td>
-    <td valign="middle">
-      <a href="https://go.nodemaven.com/obscuraread"><b>NodeMaven</b></a> — the most reliable proxy provider with the highest quality IPs on the market. Built for automation, web scraping, SEO research, and social media management.<br><br>
-      <b>99.9% uptime<br>
-      Sticky sessions up to 7 days<br>
-      IP filtering on every proxy<br>
-      No KYC required<br>
-      Cashback on traffic — earn up to 10% back<br><br></b>
-      🎁 Use code <b>OBSCURA35</b> for 35% off Mobile & Residential, or <b>OBSCURA40</b> for 40% off ISP (Static) proxies.
-    </td>
-  </tr>
-  <tr>
-    <td width="200" align="center" valign="middle">
-      <a href="https://proxyempire.io/?ref=obscura&utm_source=obscuragithub" target="_blank">
-        <img alt="ProxyEmpire" src="assets/sponsors/proxyempire.png" width="180"/>
-      </a>
-    </td>
-    <td valign="middle">
-      🚀 <b>Obscura × ProxyEmpire</b><br>
-      Using Obscura for AI agents, browser automation, or web scraping? Power it with reliable residential and mobile proxies from <a href="https://proxyempire.io/?ref=obscura&utm_source=obscuragithub"><b>ProxyEmpire</b></a>.<br><br>
-      <b>🌍 30M+ residential IPs in 170+ countries<br>
-      📱 4G/5G mobile proxies<br>
-      🔄 Rotating & sticky sessions<br>
-      🎯 City, region & ISP targeting<br>
-      🔐 HTTP, HTTPS & SOCKS5 support<br><br>
-      🎁 Use code <b>OBSCURA35</b> for a <b>35% recurring discount</b>.<br><br></b>
-      Better proxies. Fewer blocks. More scalable automation.
-    </td>
-    </tr>
-    <td width="200" align="center" valign="middle">
-      <a href="https://www.thordata.com/?ls=dob&lk=dob" target="_blank">
-        <img alt="Thordata" src="/assets/sponsors/thordatalogo.png" width="180"/>
-      </a>
-    </td>
-    <td valign="middle">
-      🚀 <b>Obscura × Thordata</b><br>
-      Need more stable proxies for automation, public web scraping, SEO, or ad verification? Power your workflow with <a href="https://www.thordata.com/?ls=dob&lk=dob"><b>Thordata</b></a>.<br><br>
-      <b>🌍 Residential Proxies: 100M+ real residential IPs in 190+ countries<br>
-      ♾️ Unlimited Proxies: for heavy traffic and high concurrency<br>
-      ✨ Recently upgraded residential IP pool<br>
-      ✨ Unlimited Concurrent Sessions<br>
-      🔁 Rotating & Sticky Sessions<br>
-      📍 Flexible GEO targeting<br>
-      ⚡ Stable HTTP(S) connections<br><br>
-      🎁 Use code <b>obscura</b> for <b>10% off</b>.<br><br></b>
-      Get started with a 3-day free trial and test Thordata with your own workflow.
-    </td>
-  </tr>
- <tr>
-    <td width="200" align="center" valign="middle">
-      <a href="https://niuproxy.com/?utm_source=obscura&utm_medium=obscura&ref=obscura" target="_blank">
-        <img alt="NiuProxy" src="assets/sponsors/niuproxlogo.png" width="180"/>
-      </a>
-    </td>
-    <td valign="middle">
-      <a href="https://niuproxy.com/?utm_source=obscura&utm_medium=obscura&ref=obscura"><b>NiuProxy</b></a> Rotating Residential Proxies — Special Offer: 10TB at $0.35/GB | 1TB at $0.50/GB.<br><br>
-      🎁 Use code <b>PAY2</b> for <b>10% off</b> your recharge.
-    </td>
-  </tr>
-</table>
-
-## Install
-
-### Download
-
-Grab the latest binary from [Releases](https://github.com/h4ckf0r0day/obscura/releases):
-
-```bash
-# Linux x86_64
-curl -LO https://github.com/h4ckf0r0day/obscura/releases/latest/download/obscura-x86_64-linux.tar.gz
-tar xzf obscura-x86_64-linux.tar.gz
-./obscura fetch https://example.com --eval "document.title"
-
-# Linux ARM64 (aarch64)
-curl -LO https://github.com/h4ckf0r0day/obscura/releases/latest/download/obscura-aarch64-linux.tar.gz
-tar xzf obscura-aarch64-linux.tar.gz
-
-# Arch Linux (AUR)
-yay -S obscura-browser
-
-# NixOS
-nix-env -iA nixpkgs.obscura
-
-# macOS Apple Silicon
-curl -LO https://github.com/h4ckf0r0day/obscura/releases/latest/download/obscura-aarch64-macos.tar.gz
-tar xzf obscura-aarch64-macos.tar.gz
-
-# macOS Intel
-curl -LO https://github.com/h4ckf0r0day/obscura/releases/latest/download/obscura-x86_64-macos.tar.gz
-tar xzf obscura-x86_64-macos.tar.gz
-
-# Windows
-Download the `.zip` from the releases page and extract it manually.
+```shell
+curl -fsSL https://ollama.com/install.sh | sh
 ```
 
-No Chrome, no Node.js, no dependencies. Release archives include both
-`obscura` and `obscura-worker`; keep them in the same directory for the
-parallel `scrape` command.
+or [download manually](https://ollama.com/download/Ollama.dmg)
 
-| Archive suffix | Rendering | Stealth transport |
-|----------------|-----------|-------------------|
-| none | Yes | No |
-| `-stealth` | Yes | Yes |
-| `-no-render` | No | No |
-| `-no-render-stealth` | No | Yes |
+### Windows
 
-Linux release builds target Ubuntu 22.04 so the downloaded binary remains
-usable on common LTS servers with glibc 2.35+.
+```shell
+irm https://ollama.com/install.ps1 | iex
+```
+
+or [download manually](https://ollama.com/download/OllamaSetup.exe)
+
+### Linux
+
+```shell
+curl -fsSL https://ollama.com/install.sh | sh
+```
+
+[Manual install instructions](https://docs.ollama.com/linux#manual-install)
 
 ### Docker
 
-```bash
-docker run -d --name obscura -p 127.0.0.1:9222:9222 h4ckf0r0day/obscura
+The official [Ollama Docker image](https://hub.docker.com/r/ollama/ollama) `ollama/ollama` is available on Docker Hub.
+
+### Libraries
+
+- [ollama-python](https://github.com/ollama/ollama-python)
+- [ollama-js](https://github.com/ollama/ollama-js)
+
+### Community
+
+- [Discord](https://discord.gg/ollama)
+- [𝕏 (Twitter)](https://x.com/ollama)
+- [Reddit](https://reddit.com/r/ollama)
+
+## Get started
+
+```
+ollama
 ```
 
-Image on [Docker Hub](https://hub.docker.com/r/h4ckf0r0day/obscura). Multi-stage build on `distroless/cc`, no shell, no package manager, ~57 MB compressed.
+You'll be prompted to run a model or connect Ollama to your existing agents or applications such as `Claude Code`, `OpenClaw`, `OpenCode` , `Codex`, `Copilot`,  and more.
 
-### Build from source
+### Coding
 
-```bash
-git clone https://github.com/h4ckf0r0day/obscura.git
-cd obscura
+To launch a specific integration:
 
-# Rendering
-cargo build --release -p obscura-cli --bins --features render
-
-# Rendering and stealth
-cargo build --release -p obscura-cli --bins --features render,stealth
-
-# No rendering
-cargo build --release -p obscura-cli --bins --no-default-features
-
-# No rendering, with stealth
-cargo build --release -p obscura-cli --bins --no-default-features --features stealth
+```
+ollama launch claude
 ```
 
-Requires Rust 1.75+ ([rustup.rs](https://rustup.rs)). First build takes ~5 min (V8 compiles from source, cached after).
-The stealth build also compiles BoringSSL and generates bindings, so it needs
-CMake, Clang, and the libclang/LLVM development libraries. On Ubuntu/Debian:
+Supported integrations include [Claude Code](https://docs.ollama.com/integrations/claude-code), [Codex](https://docs.ollama.com/integrations/codex), [Copilot CLI](https://docs.ollama.com/integrations/copilot-cli), [DeepSeek Harness](https://docs.ollama.com/integrations/deepseek-harness), [Droid](https://docs.ollama.com/integrations/droid), and [OpenCode](https://docs.ollama.com/integrations/opencode).
 
-```bash
-sudo apt-get install build-essential cmake clang libclang-dev llvm-dev
+### AI assistant
+
+Use [OpenClaw](https://docs.ollama.com/integrations/openclaw) to turn Ollama into a personal AI assistant across WhatsApp, Telegram, Slack, Discord, and more:
+
+```
+ollama launch openclaw
 ```
 
-The rendering build uses rustls. The rendering-and-stealth build uses
-wreq/BoringSSL and therefore needs the additional build tools above.
+### Chat with a model
 
-## Quick Start
+Run and chat with [Gemma 4](https://ollama.com/library/gemma4):
 
-### Fetch a page
-
-```bash
-# Get the page title
-obscura fetch https://example.com --eval "document.title"
-
-# Extract all links
-obscura fetch https://example.com --dump links
-
-# Render JavaScript and dump HTML
-obscura fetch https://news.ycombinator.com --dump html
-
-# Write dump or eval output to a file
-obscura fetch https://example.com --dump text --output page.txt
-
-# Stream the raw response body verbatim (binary-safe; bypasses the JS/DOM layer).
-# Use this for images, JSON, JS, CSS, or any non-HTML resource.
-obscura fetch https://picsum.photos/200/300 --dump original > photo.jpg
-
-# List every sub-resource URL the page would fetch (NDJSON; one record per asset)
-obscura fetch https://example.com --dump assets
-
-# Fetch through an HTTP or SOCKS proxy
-obscura --proxy socks5://127.0.0.1:1080 fetch https://example.com --dump text
-
-# Wait for dynamic content
-obscura fetch https://example.com --wait-until networkidle0
-
-# Bound navigation time for slow or broken pages
-obscura fetch https://example.com --timeout 10
-
-# Capture the settled page as PNG
-obscura fetch https://example.com --screenshot page.png
-
-# The screenshot flag also has a short form
-obscura fetch https://example.com -s page.png
-
-### Testing against localhost / LAN dev servers
-
-Obscura blocks fetches to private/internal IPs by default (SSRF protection).
-To point it at a local dev server, pass `--allow-private-network` (or set
-`OBSCURA_ALLOW_PRIVATE_NETWORK=1`):
-
-```bash
-obscura fetch http://127.0.0.1:3000 --allow-private-network --dump text
-
-# Works on any subcommand, e.g. the CDP server for local Puppeteer/Playwright:
-obscura serve --port 9222 --allow-private-network
+```
+ollama run gemma4
 ```
 
-See [docs/Environment-variables.md](docs/Environment-variables.md) for the
-full allow/deny rules (DNS-resolution-time checks included).
+See [ollama.com/library](https://ollama.com/library) for the full list.
+
+See the [quickstart guide](https://docs.ollama.com/quickstart) for more details.
+
+## REST API
+
+Ollama has a REST API for running and managing models.
+
+```
+curl http://localhost:11434/api/chat -d '{
+  "model": "gemma4",
+  "messages": [{
+    "role": "user",
+    "content": "Why is the sky blue?"
+  }],
+  "stream": false
+}'
 ```
 
-## Rendering
+See the [API documentation](https://docs.ollama.com/api) for all endpoints.
 
-Official release archives and the Docker image include the rendering engine.
-It provides CSS layout and paint, viewport and full-page screenshots,
-scroll-aware fixed and sticky geometry, activity-driven CDP screencasting, and
-raster PDF export without starting Chromium.
+### Python
 
-```javascript
-await page.setViewport({ width: 1440, height: 1000 });
-await page.goto('https://example.com', { waitUntil: 'load' });
-await page.screenshot({ path: 'page.png', fullPage: true });
-await page.pdf({ path: 'page.pdf', format: 'A4', printBackground: true });
+```
+pip install ollama
 ```
 
-The current implementation covers block, inline, flex, grid, table, float,
-positioning, overflow, transform, text, image, SVG, canvas, background, border,
-and animation paths. It remains an evolving independent
-engine: long-tail CSS, some Web APIs, media playback, compositor effects, and
-platform font rasterization may differ from Chromium. The existing
-[Puppeteer](docs/Use-with-Puppeteer.md),
-[Playwright](docs/Use-with-Playwright.md), and
-[MCP](docs/Use-the-MCP-server.md) guides cover their capture APIs and limits.
+```python
+from ollama import chat
 
-### Start the CDP server
-
-```bash
-obscura serve --port 9222
-
-# With stealth mode (anti-detection + tracker blocking)
-obscura serve --port 9222 --stealth
+response = chat(model='gemma4', messages=[
+  {
+    'role': 'user',
+    'content': 'Why is the sky blue?',
+  },
+])
+print(response.message.content)
 ```
 
-### Scrape in parallel
+### JavaScript
 
-```bash
-obscura scrape url1 url2 url3 ... \
-  --concurrency 25 \
-  --eval "document.querySelector('h1').textContent" \
-  --format json
-
-# Suppress scrape progress on stderr for script-friendly output
-obscura scrape https://example.com --quiet --format json
-
-# Scrape workers inherit the global proxy
-obscura --proxy http://127.0.0.1:8080 scrape https://example.com https://news.ycombinator.com
 ```
-
-## Puppeteer / Playwright
-
-### Puppeteer
-
-```bash
-npm install puppeteer-core
+npm i ollama
 ```
 
 ```javascript
-import puppeteer from 'puppeteer-core';
+import ollama from "ollama";
 
-const browser = await puppeteer.connect({
-  browserWSEndpoint: 'ws://127.0.0.1:9222/devtools/browser',
+const response = await ollama.chat({
+  model: "gemma4",
+  messages: [{ role: "user", content: "Why is the sky blue?" }],
 });
-
-const page = await browser.newPage();
-await page.goto('https://news.ycombinator.com');
-
-const stories = await page.evaluate(() =>
-  Array.from(document.querySelectorAll('.titleline > a'))
-    .map(a => ({ title: a.textContent, url: a.href }))
-);
-console.log(stories);
-
-await browser.disconnect();
+console.log(response.message.content);
 ```
 
-### Playwright
+## Supported backends
 
-```bash
-npm install playwright-core
-```
+- [llama.cpp](https://github.com/ggml-org/llama.cpp) project founded by Georgi Gerganov.
 
-```javascript
-import { chromium } from 'playwright-core';
+## Documentation
 
-const browser = await chromium.connectOverCDP({
-  endpointURL: 'ws://127.0.0.1:9222',
-});
+- [CLI reference](https://docs.ollama.com/cli)
+- [REST API reference](https://docs.ollama.com/api)
+- [Importing models](https://docs.ollama.com/import)
+- [Modelfile reference](https://docs.ollama.com/modelfile)
+- [Building from source](https://github.com/ollama/ollama/blob/main/docs/development.md)
 
-const page = await browser.newContext().then(ctx => ctx.newPage());
-await page.goto('https://en.wikipedia.org/wiki/Web_scraping');
-console.log(await page.title());
+## Community Integrations
 
-await browser.close();
-```
+> Want to add your project? Open a pull request.
 
-### Form submission & login
+### Chat Interfaces
 
-```javascript
-await page.goto('https://quotes.toscrape.com/login');
-await page.evaluate(() => {
-  document.querySelector('#username').value = 'admin';
-  document.querySelector('#password').value = 'admin';
-  document.querySelector('form').submit();
-});
-// Obscura handles the POST, follows the 302 redirect, maintains cookies
-```
+#### Web
 
-## Benchmarks
+- [Open WebUI](https://github.com/open-webui/open-webui) - Extensible, self-hosted AI interface
+- [Onyx](https://github.com/onyx-dot-app/onyx) - Connected AI workspace
+- [LibreChat](https://github.com/danny-avila/LibreChat) - Enhanced ChatGPT clone with multi-provider support
+- [Lobe Chat](https://github.com/lobehub/lobe-chat) - Modern chat framework with plugin ecosystem ([docs](https://lobehub.com/docs/self-hosting/examples/ollama))
+- [NextChat](https://github.com/ChatGPTNextWeb/ChatGPT-Next-Web) - Cross-platform ChatGPT UI ([docs](https://docs.nextchat.dev/models/ollama))
+- [Perplexica](https://github.com/ItzCrazyKns/Perplexica) - AI-powered search engine, open-source Perplexity alternative
+- [big-AGI](https://github.com/enricoros/big-AGI) - AI suite for professionals
+- [Lollms WebUI](https://github.com/ParisNeo/lollms-webui) - Multi-model web interface
+- [ChatOllama](https://github.com/sugarforever/chat-ollama) - Chatbot with knowledge bases
+- [Bionic GPT](https://github.com/bionic-gpt/bionic-gpt) - On-premise AI platform
+- [Chatbot UI](https://github.com/ivanfioravanti/chatbot-ollama) - ChatGPT-style web interface
+- [Hollama](https://github.com/fmaclen/hollama) - Minimal web interface
+- [Chatbox](https://github.com/Bin-Huang/Chatbox) - Desktop and web AI client
+- [chat](https://github.com/swuecho/chat) - Chat web app for teams
+- [Ollama RAG Chatbot](https://github.com/datvodinh/rag-chatbot.git) - Chat with multiple PDFs using RAG
+- [Tkinter-based client](https://github.com/chyok/ollama-gui) - Python desktop client
 
-Page load:
+#### Desktop
 
-| Page | Obscura | Chrome |
-|------|---------|--------|
-| Static HTML | **51 ms** | ~500 ms |
-| JS + XHR + fetch | **84 ms** | ~800 ms |
-| Dynamic scripts | **78 ms** | ~700 ms |
+- [Dify.AI](https://github.com/langgenius/dify) - LLM app development platform
+- [AnythingLLM](https://github.com/Mintplex-Labs/anything-llm) - All-in-one AI app for Mac, Windows, and Linux
+- [Maid](https://github.com/Mobile-Artificial-Intelligence/maid) - Cross-platform mobile and desktop client
+- [Witsy](https://github.com/nbonamy/witsy) - AI desktop app for Mac, Windows, and Linux
+- [Cherry Studio](https://github.com/kangfenmao/cherry-studio) - Multi-provider desktop client
+- [Ollama App](https://github.com/JHubi1/ollama-app) - Multi-platform client for desktop and mobile
+- [PyGPT](https://github.com/szczyglis-dev/py-gpt) - AI desktop assistant for Linux, Windows, and Mac
+- [Alpaca](https://github.com/Jeffser/Alpaca) - GTK4 client for Linux and macOS
+- [SwiftChat](https://github.com/aws-samples/swift-chat) - Cross-platform including iOS, Android, and Apple Vision Pro
+- [Enchanted](https://github.com/AugustDev/enchanted) - Native macOS and iOS client
+- [RWKV-Runner](https://github.com/josStorer/RWKV-Runner) - Multi-model desktop runner
+- [Ollama Grid Search](https://github.com/dezoito/ollama-grid-search) - Evaluate and compare models
+- [macai](https://github.com/Renset/macai) - macOS client for Ollama and ChatGPT
+- [AI Studio](https://github.com/MindWorkAI/AI-Studio) - Multi-provider desktop IDE
+- [Reins](https://github.com/ibrahimcetin/reins) - Parameter tuning and reasoning model support
+- [ConfiChat](https://github.com/1runeberg/confichat) - Privacy-focused with optional encryption
+- [LLocal.in](https://github.com/kartikm7/llocal) - Electron desktop client
+- [MindMac](https://mindmac.app) - AI chat client for Mac
+- [Msty](https://msty.app) - Multi-model desktop client
+- [BoltAI for Mac](https://boltai.com) - AI chat client for Mac
+- [IntelliBar](https://intellibar.app/) - AI-powered assistant for macOS
+- [Kerlig AI](https://www.kerlig.com/) - AI writing assistant for macOS
+- [Hillnote](https://hillnote.com) - Markdown-first AI workspace
+- [Perfect Memory AI](https://www.perfectmemory.ai/) - Productivity AI personalized by screen and meeting history
 
-The full benchmark suite (WPT conformance, obstacle course, real-world corpus, and vs-Chrome speed) lives in a separate repo: https://github.com/h4ckf0r0day/obscura-benchmark
+#### Mobile
 
-## Stealth Mode
+- [Ollama Android Chat](https://github.com/sunshine0523/OllamaServer) - One-click Ollama on Android
 
-Build with `--features render,stealth`, then enable stealth at runtime with the
-global `--stealth` flag. The stealth build includes the complete rendering
-engine; enabling stealth does not remove screenshot, screencast, PDF, CDP, or
-MCP functionality.
+> SwiftChat, Enchanted, Maid, Ollama App, Reins, and ConfiChat listed above also support mobile platforms.
 
-### Anti-fingerprinting
-- Per-session fingerprint randomization (GPU, screen, canvas, audio, battery)
-- Realistic `navigator.userAgentData` (Chrome 145, high-entropy values)
-- `event.isTrusted = true` for dispatched events
-- Hidden internal properties (`Object.keys(window)` safe)
-- Native function masking (`Function.prototype.toString()` → `[native code]`)
-- `navigator.webdriver = undefined` (matches real Chrome)
+### Code Editors & Development
 
-### Tracker Blocking
-- 3,520 domains blocked
-- Blocks analytics, ads, telemetry, and fingerprinting scripts
-- Prevents trackers from loading entirely
-- Enabled automatically with `--stealth`
+- [Cline](https://github.com/cline/cline) - VS Code extension for multi-file/whole-repo coding
+- [Continue](https://github.com/continuedev/continue) - Open-source AI code assistant for any IDE
+- [Void](https://github.com/voideditor/void) - Open source AI code editor, Cursor alternative
+- [Copilot for Obsidian](https://github.com/logancyang/obsidian-copilot) - AI assistant for Obsidian
+- [twinny](https://github.com/rjmacarthy/twinny) - Copilot and Copilot chat alternative
+- [gptel Emacs client](https://github.com/karthink/gptel) - LLM client for Emacs
+- [Ollama Copilot](https://github.com/bernardo-bruning/ollama-copilot) - Use Ollama as GitHub Copilot
+- [Obsidian Local GPT](https://github.com/pfrankov/obsidian-local-gpt) - Local AI for Obsidian
+- [Ellama Emacs client](https://github.com/s-kostyaev/ellama) - LLM tool for Emacs
+- [orbiton](https://github.com/xyproto/orbiton) - Config-free text editor with Ollama tab completion
+- [AI ST Completion](https://github.com/yaroslavyaroslav/OpenAI-sublime-text) - Sublime Text 4 AI assistant
+- [VT Code](https://github.com/vinhnx/vtcode) - Rust-based terminal coding agent with Tree-sitter
+- [QodeAssist](https://github.com/Palm1r/QodeAssist) - AI coding assistant for Qt Creator
+- [AI Toolkit for VS Code](https://aka.ms/ai-tooklit/ollama-docs) - Microsoft-official VS Code extension
+- [Open Interpreter](https://docs.openinterpreter.com/language-model-setup/local-models/ollama) - Natural language interface for computers
 
-## CDP API
+### Libraries & SDKs
 
-Obscura implements the Chrome DevTools Protocol for Puppeteer/Playwright compatibility.
+- [LiteLLM](https://github.com/BerriAI/litellm) - Unified API for 100+ LLM providers
+- [Semantic Kernel](https://github.com/microsoft/semantic-kernel/tree/main/python/semantic_kernel/connectors/ai/ollama) - Microsoft AI orchestration SDK
+- [LangChain4j](https://github.com/langchain4j/langchain4j) - Java LangChain ([example](https://github.com/langchain4j/langchain4j-examples/tree/main/ollama-examples/src/main/java))
+- [LangChainGo](https://github.com/tmc/langchaingo/) - Go LangChain ([example](https://github.com/tmc/langchaingo/tree/main/examples/ollama-completion-example))
+- [Spring AI](https://github.com/spring-projects/spring-ai) - Spring framework AI support ([docs](https://docs.spring.io/spring-ai/reference/api/chat/ollama-chat.html))
+- [LangChain](https://python.langchain.com/docs/integrations/chat/ollama/) and [LangChain.js](https://js.langchain.com/docs/integrations/chat/ollama/) with [example](https://js.langchain.com/docs/tutorials/local_rag/)
+- [Ollama for Ruby](https://github.com/crmne/ruby_llm) - Ruby LLM library
+- [any-llm](https://github.com/mozilla-ai/any-llm) - Unified LLM interface by Mozilla
+- [OllamaSharp for .NET](https://github.com/awaescher/OllamaSharp) - .NET SDK
+- [LangChainRust](https://github.com/Abraxas-365/langchain-rust) - Rust LangChain ([example](https://github.com/Abraxas-365/langchain-rust/blob/main/examples/llm_ollama.rs))
+- [Agents-Flex for Java](https://github.com/agents-flex/agents-flex) - Java agent framework ([example](https://github.com/agents-flex/agents-flex/tree/main/agents-flex-llm/agents-flex-llm-ollama/src/test/java/com/agentsflex/llm/ollama))
+- [Elixir LangChain](https://github.com/brainlid/langchain) - Elixir LangChain
+- [Ollama-rs for Rust](https://github.com/pepperoni21/ollama-rs) - Rust SDK
+- [LangChain for .NET](https://github.com/tryAGI/LangChain) - .NET LangChain ([example](https://github.com/tryAGI/LangChain/blob/main/examples/LangChain.Samples.OpenAI/Program.cs))
+- [chromem-go](https://github.com/philippgille/chromem-go) - Go vector database with Ollama embeddings ([example](https://github.com/philippgille/chromem-go/tree/v0.5.0/examples/rag-wikipedia-ollama))
+- [LangChainDart](https://github.com/davidmigloz/langchain_dart) - Dart LangChain
+- [LlmTornado](https://github.com/lofcz/llmtornado) - Unified C# interface for multiple inference APIs
+- [Ollama4j for Java](https://github.com/ollama4j/ollama4j) - Java SDK
+- [Ollama for Laravel](https://github.com/cloudstudio/ollama-laravel) - Laravel integration
+- [Ollama for Swift](https://github.com/mattt/ollama-swift) - Swift SDK
+- [LlamaIndex](https://docs.llamaindex.ai/en/stable/examples/llm/ollama/) and [LlamaIndexTS](https://ts.llamaindex.ai/modules/llms/available_llms/ollama) - Data framework for LLM apps
+- [Haystack](https://github.com/deepset-ai/haystack-integrations/blob/main/integrations/ollama.md) - AI pipeline framework
+- [Firebase Genkit](https://firebase.google.com/docs/genkit/plugins/ollama) - Google AI framework
+- [Ollama-hpp for C++](https://github.com/jmont-dev/ollama-hpp) - C++ SDK
+- [PromptingTools.jl](https://github.com/svilupp/PromptingTools.jl) - Julia LLM toolkit ([example](https://svilupp.github.io/PromptingTools.jl/dev/examples/working_with_ollama))
+- [Ollama for R - rollama](https://github.com/JBGruber/rollama) - R SDK
+- [Portkey](https://portkey.ai/docs/welcome/integration-guides/ollama) - AI gateway
+- [Testcontainers](https://testcontainers.com/modules/ollama/) - Container-based testing
+- [LLPhant](https://github.com/theodo-group/LLPhant?tab=readme-ov-file#ollama) - PHP AI framework
 
-| Domain | Methods |
-|--------|---------|
-| **Target** | createTarget, closeTarget, attachToTarget, createBrowserContext, disposeBrowserContext |
-| **Page** | navigate, getFrameTree, lifecycleEvents, captureScreenshot, start/stopScreencast, printToPDF |
-| **Runtime** | evaluate, callFunctionOn, getProperties, addBinding |
-| **DOM** | getDocument, querySelector, querySelectorAll, getOuterHTML, resolveNode |
-| **Network** | enable, setCookies, getCookies, setExtraHTTPHeaders, setUserAgentOverride |
-| **Fetch** | enable, continueRequest, fulfillRequest, failRequest (live interception), takeResponseBodyAsStream |
-| **IO** | read, close (stream a large response body in chunks) |
-| **Storage** | getCookies, setCookies, deleteCookies |
-| **Input** | dispatchMouseEvent, dispatchKeyEvent |
-| **LP** | getMarkdown (DOM-to-Markdown conversion) |
+### Frameworks & Agents
 
-To download a large resource without one giant `Network.getResponseBody` blob, call `Fetch.takeResponseBodyAsStream` then read it in chunks with `IO.read` / `IO.close`. Response bodies over the cache limit (`OBSCURA_NETWORK_BODY_BUFFER_BYTES`, default 2 MiB) are not retained, so raise that limit when you intend to stream large downloads.
-## CLI Reference
+- [AutoGPT](https://github.com/Significant-Gravitas/AutoGPT/blob/master/docs/content/platform/ollama.md) - Autonomous AI agent platform
+- [crewAI](https://github.com/crewAIInc/crewAI) - Multi-agent orchestration framework
+- [Strands Agents](https://github.com/strands-agents/sdk-python) - Model-driven agent building by AWS
+- [Cheshire Cat](https://github.com/cheshire-cat-ai/core) - AI assistant framework
+- [any-agent](https://github.com/mozilla-ai/any-agent) - Unified agent framework interface by Mozilla
+- [Stakpak](https://github.com/stakpak/agent) - Open source DevOps agent
+- [Hexabot](https://github.com/hexastack/hexabot) - Conversational AI builder
+- [Neuro SAN](https://github.com/cognizant-ai-lab/neuro-san-studio) - Multi-agent orchestration ([docs](https://github.com/cognizant-ai-lab/neuro-san-studio/blob/main/docs/user_guide.md#ollama))
 
-### Tuning V8
+### RAG & Knowledge Bases
 
-Obscura embeds V8 directly. Use `--v8-flags` to pass raw flags through to V8, same syntax as Chromium's `--js-flags` and Node's command-line flags. Most common use is raising the heap cap to fix `JavaScript heap out of memory` on JS-heavy pages:
+- [RAGFlow](https://github.com/infiniflow/ragflow) - RAG engine based on deep document understanding
+- [R2R](https://github.com/SciPhi-AI/R2R) - Open-source RAG engine
+- [MaxKB](https://github.com/1Panel-dev/MaxKB/) - Ready-to-use RAG chatbot
+- [Minima](https://github.com/dmayboroda/minima) - On-premises or fully local RAG
+- [Chipper](https://github.com/TilmanGriesel/chipper) - AI interface with Haystack RAG
+- [ARGO](https://github.com/xark-argo/argo) - RAG and deep research on Mac/Windows/Linux
+- [Archyve](https://github.com/nickthecook/archyve) - RAG-enabling document library
+- [Casibase](https://casibase.org) - AI knowledge base with RAG and SSO
+- [BrainSoup](https://www.nurgo-software.com/products/brainsoup) - Native client with RAG and multi-agent automation
 
-```bash
-obscura --v8-flags "--max-old-space-size=4096" fetch <url>
-```
+### Bots & Messaging
 
-### Heavy SPAs (script execution budget)
+- [LangBot](https://github.com/RockChinQ/LangBot) - Multi-platform messaging bots with agents and RAG
+- [AstrBot](https://github.com/Soulter/AstrBot/) - Multi-platform chatbot with RAG and plugins
+- [Discord-Ollama Chat Bot](https://github.com/kevinthedang/discord-ollama) - TypeScript Discord bot
+- [Ollama Telegram Bot](https://github.com/ruecat/ollama-telegram) - Telegram bot
+- [LLM Telegram Bot](https://github.com/innightwolfsleep/llm_telegram_bot) - Telegram bot for roleplay
 
-Obscura caps the page's script-execution phase so one slow or hung page cannot stall a worker. The default budget is 30s; pages that finish sooner return immediately, so the cap only affects pages that keep running. A very heavy React/Vue/Angular SPA on a slow network can need more time to boot before it fires its data requests. Raise the budget with `OBSCURA_SCRIPT_DEADLINE_MS` (milliseconds), and pair it with a matching navigation timeout in your CDP client:
+### Terminal & CLI
 
-```bash
-OBSCURA_SCRIPT_DEADLINE_MS=60000 obscura serve --port 9222
-```
+- [aichat](https://github.com/sigoden/aichat) - All-in-one LLM CLI with Shell Assistant, RAG, and AI tools
+- [oterm](https://github.com/ggozad/oterm) - Terminal client for Ollama
+- [gollama](https://github.com/sammcj/gollama) - Go-based model manager for Ollama
+- [tlm](https://github.com/yusufcanb/tlm) - Local shell copilot
+- [tenere](https://github.com/pythops/tenere) - TUI for LLMs
+- [ParLlama](https://github.com/paulrobello/parllama) - TUI for Ollama
+- [llm-ollama](https://github.com/taketwo/llm-ollama) - Plugin for [Datasette's LLM CLI](https://llm.datasette.io/en/stable/)
+- [ShellOracle](https://github.com/djcopley/ShellOracle) - Shell command suggestions
+- [LLM-X](https://github.com/mrdjohnson/llm-x) - Progressive web app for LLMs
+- [cmdh](https://github.com/pgibler/cmdh) - Natural language to shell commands
+- [VT](https://github.com/vinhnx/vt.ai) - Minimal multimodal AI chat app
 
-Modules that enhance an already-rendered page have a separate 3s per-module budget so one non-essential module cannot hold navigation open. Raise it for legitimate long-running modules such as a Vite HMR client:
+### Productivity & Apps
 
-```bash
-OBSCURA_MODULE_BUDGET_MS=10000 obscura serve --port 9222
-```
+- [AppFlowy](https://github.com/AppFlowy-IO/AppFlowy) - AI collaborative workspace, self-hostable Notion alternative
+- [Screenpipe](https://github.com/mediar-ai/screenpipe) - 24/7 screen and mic recording with AI-powered search
+- [Vibe](https://github.com/thewh1teagle/vibe) - Transcribe and analyze meetings
+- [Page Assist](https://github.com/n4ze3m/page-assist) - Chrome extension for AI-powered browsing
+- [NativeMind](https://github.com/NativeMindBrowser/NativeMindExtension) - Private, on-device browser AI assistant
+- [Ollama Fortress](https://github.com/ParisNeo/ollama_proxy_server) - Security proxy for Ollama
+- [1Panel](https://github.com/1Panel-dev/1Panel/) - Web-based Linux server management
+- [Writeopia](https://github.com/Writeopia/Writeopia) - Text editor with Ollama integration
+- [QA-Pilot](https://github.com/reid41/QA-Pilot) - GitHub code repository understanding
+- [Raycast extension](https://github.com/MassimilianoPasquini97/raycast_ollama) - Ollama in Raycast
+- [Painting Droid](https://github.com/mateuszmigas/painting-droid) - Painting app with AI integrations
+- [Serene Pub](https://github.com/doolijb/serene-pub) - AI roleplaying app
+- [Mayan EDMS](https://gitlab.com/mayan-edms/mayan-edms) - Document management with Ollama workflows
+- [TagSpaces](https://www.tagspaces.org) - File management with [AI tagging](https://docs.tagspaces.org/ai/)
 
-An unmounted SPA shell already gives its app modules the full `OBSCURA_SCRIPT_DEADLINE_MS` budget. `OBSCURA_FETCH_TIMEOUT_MS` controls the module's network request, not its evaluation time. See [Environment variables](docs/Environment-variables.md) for the complete timeout model.
+### Observability & Monitoring
 
-### `obscura serve`
+- [Opik](https://www.comet.com/docs/opik/cookbook/ollama) - Debug, evaluate, and monitor LLM applications
+- [OpenLIT](https://github.com/openlit/openlit) - OpenTelemetry-native monitoring for Ollama and GPUs
+- [Lunary](https://lunary.ai/docs/integrations/ollama) - LLM observability with analytics and PII masking
+- [Langfuse](https://langfuse.com/docs/integrations/ollama) - Open source LLM observability
+- [HoneyHive](https://docs.honeyhive.ai/integrations/ollama) - AI observability and evaluation for agents
+- [MLflow Tracing](https://mlflow.org/docs/latest/llms/tracing/index.html#automatic-tracing) - Open source LLM observability
 
-Start a CDP WebSocket server.
+### Database & Embeddings
 
-| Flag | Default | Description |
-|------|---------|-------------|
-| `--port` | `9222` | WebSocket port |
-| `--proxy` | — | HTTP/SOCKS5 proxy URL |
-| `--stealth` | off | Enable anti-detection + tracker blocking |
-| `--workers` | `1` | Number of parallel worker processes |
-| `--obey-robots` | off | Respect robots.txt |
+- [pgai](https://github.com/timescale/pgai) - PostgreSQL as a vector database ([guide](https://github.com/timescale/pgai/blob/main/docs/vectorizer-quick-start.md))
+- [MindsDB](https://github.com/mindsdb/mindsdb/blob/staging/mindsdb/integrations/handlers/ollama_handler/README.md) - Connect Ollama with 200+ data platforms
+- [chromem-go](https://github.com/philippgille/chromem-go/blob/v0.5.0/embed_ollama.go) - Embeddable vector database for Go ([example](https://github.com/philippgille/chromem-go/tree/v0.5.0/examples/rag-wikipedia-ollama))
+- [Kangaroo](https://github.com/dbkangaroo/kangaroo) - AI-powered SQL client
 
-### `obscura fetch <URL>`
+### Infrastructure & Deployment
 
-Fetch and render a single page.
+#### Cloud
 
-| Flag | Default | Description |
-|------|---------|-------------|
-| `--dump` | `html` | Output: `html`, `text`, `links`, `markdown`, `assets` (NDJSON of every sub-resource URL the page references), or `original` (raw response body) |
-| `--eval` | — | JavaScript expression to evaluate |
-| `--wait-until` | `load` | Wait: `load`, `domcontentloaded`, `networkidle0` |
-| `--timeout` | `30` | Maximum navigation time in seconds |
-| `--wait` | adaptive, up to `5` | Post-load settling; an explicit value is a fixed delay in seconds |
-| `--selector` | — | Wait for CSS selector |
-| `-s`, `--screenshot` | — | Write a PNG screenshot (single URL; render-enabled build) |
-| `--stealth` | off | Anti-detection mode |
-| `--output` | — | Write dump or eval output to a file |
-| `--quiet` | off | Suppress banner |
-| `--proxy` | — | Inherited global HTTP/SOCKS5 proxy URL |
+- [Google Cloud](https://cloud.google.com/run/docs/tutorials/gpu-gemma2-with-ollama)
+- [Fly.io](https://fly.io/docs/python/do-more/add-ollama/)
+- [Koyeb](https://www.koyeb.com/deploy/ollama)
+- [Harbor](https://github.com/av/harbor) - Containerized LLM toolkit with Ollama as default backend
 
-### `obscura scrape <URL...>`
+#### Package Managers
 
-Scrape multiple URLs in parallel with worker processes.
-
-| Flag | Default | Description |
-|------|---------|-------------|
-| `--concurrency` | `10` | Parallel workers |
-| `--eval` | — | JS expression per page |
-| `--format` | `json` | Output: `json` or `text` |
-| `--quiet` | off | Suppress scrape progress on stderr |
-| `--proxy` | — | Inherited global HTTP/SOCKS5 proxy URL for all workers |
-
-## MCP (Model Context Protocol)
-
-Obscura ships an MCP server that exposes browser automation tools to AI agents (Claude Desktop, Cursor, etc.).
-
-### Start
-
-**stdio** (default) — for Claude Desktop and MCP clients that launch a subprocess:
-
-```bash
-obscura mcp
-```
-
-**HTTP** — for clients that connect over the network:
-
-```bash
-obscura mcp --http --port 8080
-# endpoint: http://127.0.0.1:8080/mcp
-```
-
-Optional flags (both transports):
-
-| Flag | Description |
-|------|-------------|
-| `--proxy <URL>` | HTTP/SOCKS5 proxy |
-| `--user-agent <UA>` | Custom User-Agent string |
-| `--stealth` | Enable anti-detection mode |
-
-### Claude Desktop config
-
-```json
-{
-  "mcpServers": {
-    "obscura": {
-      "command": "obscura",
-      "args": ["mcp"]
-    }
-  }
-}
-```
-
-### Tools
-
-| Tool | Description |
-|------|-------------|
-| `browser_navigate` | Navigate to a URL (`url`, optional `waitUntil`: `load` / `domcontentloaded` / `networkidle0`) |
-| `browser_snapshot` | Return the current page URL, title, readable body text, and element references |
-| `browser_screenshot` | Return the current page as an MCP PNG image (render-enabled build) |
-| `browser_pdf` | Return the current page as an embedded PDF resource (render-enabled build) |
-| `browser_click` | Click by current snapshot reference or CSS selector |
-| `browser_fill` | Set an input value by reference or selector (triggers `input` + `change`) |
-| `browser_type` | Append text to an input |
-| `browser_press_key` | Dispatch a keyboard event (`key`, optional `selector`) |
-| `browser_select_option` | Select an `<option>` by value or text |
-| `browser_evaluate` | Evaluate a JavaScript expression and return the result |
-| `browser_wait_for` | Wait for a CSS selector to appear (`selector`, optional `timeout` in seconds) |
-| `browser_network_requests` | List network requests made by the current page |
-| `browser_console_messages` | Return console messages logged by the page |
-| `browser_close` | Close the page and reset browser state |
-
-The MCP server exposes still-image and PDF output. Use CDP when you need the
-streaming `Page.startScreencast` protocol.
-
-## Integrations
-
-- **[Hermes agent plugin](https://github.com/SGavrl/hermes-plugin-obscura)**: run [Hermes](https://github.com/NousResearch/hermes-agent) agent browser tasks on Obscura. The plugin spawns `obscura serve` per session (or connects to an already running server) and drives it over CDP, with optional `--stealth`.
-
-## License
-
-Apache 2.0
-
----
+- [Pacman](https://archlinux.org/packages/extra/x86_64/ollama/)
+- [Homebrew](https://formulae.brew.sh/formula/ollama)
+- [Nix package](https://search.nixos.org/packages?show=ollama&from=0&size=50&sort=relevance&type=packages&query=ollama)
+- [Helm Chart](https://artifacthub.io/packages/helm/ollama-helm/ollama)
+- [Gentoo](https://github.com/gentoo/guru/tree/master/app-misc/ollama)
+- [Flox](https://flox.dev/blog/ollama-part-one)
+- [Guix channel](https://codeberg.org/tusharhero/ollama-guix)

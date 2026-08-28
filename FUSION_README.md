@@ -1,50 +1,69 @@
-# Nexus-HUB57/More_Ideas_the_Dragon + h4ckf0r0day/obscura
+# Nexus-HUB57/More_Ideas_the_Dragon + asgeirtj/system_prompts_leaks
 
 > Ecossistema unificado pelo **FusionHub AutoSafe Engine** - Clonagem Real 100%
 
 ## Repositorio Primario
 - **Repo**: Nexus-HUB57/More_Ideas_the_Dragon
 - **Branch**: main
-- **Arquivos**: 44227 | **Pastas**: 5025
-- **Linguagens**: php(13182), gif(4266), md(4081), js(3731), ts(3126), tsx(2915), png(2396), py(1641)
+- **Arquivos**: 44386 | **Pastas**: 5088
+- **Linguagens**: php(12926), md(4232), gif(4230), js(3598), ts(3169), tsx(2916), png(2400), py(1682)
 
 ## Repositorio Secundario
-- **Repo**: h4ckf0r0day/obscura
+- **Repo**: asgeirtj/system_prompts_leaks
 - **Branch**: main
-- **Arquivos**: 370 | **Pastas**: 61
-- **Linguagens**: rs(184), html(64), md(32), ttf(20), toml(14), png(12), py(10), yml(6)
+- **Arquivos**: 395 | **Pastas**: 93
+- **Linguagens**: md(345), mjs(23), js(6), jsx(6), ts(5), png(3), py(2), gitattributes(1)
 
 ## Estatisticas da Fusao
 
 | Metrica | Valor |
 |---------|-------|
-| Total de arquivos mapeados | 44597 |
-| Arquivos clonados do secundario | 370 |
-| Conflitos resolvidos (AutoSafe) | 14 |
-| Arquivos renomeados (_v2) | 14 |
+| Total de arquivos mapeados | 44781 |
+| Arquivos clonados do secundario | 395 |
+| Conflitos resolvidos (AutoSafe) | 33 |
+| Arquivos renomeados (_v2) | 33 |
 
 ## Estrategia AutoSafe
 
-Nenhum arquivo do primario foi sobreposto. Todos os 370 arquivos do secundario foram clonados para o primario.
+Nenhum arquivo do primario foi sobreposto. Todos os 395 arquivos do secundario foram clonados para o primario.
 
-14 arquivos com path duplicado foram renomeados com sufixo `_v2` e o original do primario foi preservado.
+33 arquivos com path duplicado foram renomeados com sufixo `_v2` e o original do primario foi preservado.
 
 ## Arquivos Renomeados
 
 - `.gitattributes` -> `_v2.gitattributes`
-- `.github/CODEOWNERS` -> `_v2.github/CODEOWNERS`
-- `.github/ISSUE_TEMPLATE/bug_report.yml` -> `.github/ISSUE_TEMPLATE/bug_report_v2.yml`
-- `.github/ISSUE_TEMPLATE/config.yml` -> `.github/ISSUE_TEMPLATE/config_v2.yml`
-- `.github/ISSUE_TEMPLATE/feature_request.yml` -> `.github/ISSUE_TEMPLATE/feature_request_v2.yml`
-- `.github/pull_request_template.md` -> `.github/pull_request_template_v2.md`
-- `.github/workflows/ci.yml` -> `.github/workflows/ci_v2.yml`
-- `.gitignore` -> `_v2.gitignore`
-- `AGENTS.md` -> `AGENTS_v2.md`
-- `CONTRIBUTING.md` -> `CONTRIBUTING_v2.md`
-- `Dockerfile` -> `_v2`
+- `.github/CONTRIBUTING.md` -> `.github/CONTRIBUTING_v2.md`
+- `.github/FUNDING.yml` -> `.github/FUNDING_v2.yml`
+- `.github/banner-dark.png` -> `.github/banner-dark_v2.png`
+- `.github/banner-light.png` -> `.github/banner-light_v2.png`
+- `Anthropic/README.md` -> `Anthropic/README_v2.md`
+- `Anthropic/anthropic-interviewer.md` -> `Anthropic/anthropic-interviewer_v2.md`
+- `Anthropic/anthropic_reminders.md` -> `Anthropic/anthropic_reminders_v2.md`
+- `Anthropic/claude-code/agents/Explore.md` -> `Anthropic/claude-code/agents/Explore_v2.md`
+- `Anthropic/claude-code/agents/Plan.md` -> `Anthropic/claude-code/agents/Plan_v2.md`
+- `Anthropic/claude-code/agents/claude-code-guide.md` -> `Anthropic/claude-code/agents/claude-code-guide_v2.md`
+- `Anthropic/claude-code/agents/claude.md` -> `Anthropic/claude-code/agents/claude_v2.md`
+- `Anthropic/claude-code/agents/general-purpose.md` -> `Anthropic/claude-code/agents/general-purpose_v2.md`
+- `Anthropic/claude-code/agents/statusline-setup.md` -> `Anthropic/claude-code/agents/statusline-setup_v2.md`
+- `Anthropic/claude-code/archive/glob-tool.md` -> `Anthropic/claude-code/archive/glob-tool_v2.md`
+- `Anthropic/claude-code/archive/grep-tool.md` -> `Anthropic/claude-code/archive/grep-tool_v2.md`
+- `Anthropic/claude-code/claude-code-desktop-fable-5.md` -> `Anthropic/claude-code/claude-code-desktop-fable-5_v2.md`
+- `Anthropic/claude-code/claude-code-docs-assistant.md` -> `Anthropic/claude-code/claude-code-docs-assistant_v2.md`
+- `Anthropic/claude-code/claude-code-fable-5.md` -> `Anthropic/claude-code/claude-code-fable-5_v2.md`
+- `Anthropic/claude-code/claude-code-haiku-4.5.md` -> `Anthropic/claude-code/claude-code-haiku-4.5_v2.md`
+- `Anthropic/claude-code/claude-code-opus-4.6.md` -> `Anthropic/claude-code/claude-code-opus-4.6_v2.md`
+- `Anthropic/claude-code/claude-code-opus-4.7.md` -> `Anthropic/claude-code/claude-code-opus-4.7_v2.md`
+- `Anthropic/claude-code/claude-code-opus-4.8.md` -> `Anthropic/claude-code/claude-code-opus-4.8_v2.md`
+- `Anthropic/claude-code/claude-code-opus-5.md` -> `Anthropic/claude-code/claude-code-opus-5_v2.md`
+- `Anthropic/claude-code/claude-code-sonnet-4.6.md` -> `Anthropic/claude-code/claude-code-sonnet-4.6_v2.md`
+- `Anthropic/claude-code/claude-code-sonnet-5.md` -> `Anthropic/claude-code/claude-code-sonnet-5_v2.md`
+- `Anthropic/claude-code/commands/btw.md` -> `Anthropic/claude-code/commands/btw_v2.md`
+- `Anthropic/claude-code/commands/compact.md` -> `Anthropic/claude-code/commands/compact_v2.md`
+- `Anthropic/claude-code/commands/rename.md` -> `Anthropic/claude-code/commands/rename_v2.md`
+- `Anthropic/claude-code/output-styles/concise.md` -> `Anthropic/claude-code/output-styles/concise_v2.md`
+- `Anthropic/claude-code/output-styles/explanatory.md` -> `Anthropic/claude-code/output-styles/explanatory_v2.md`
 - `LICENSE` -> `_v2`
 - `README.md` -> `README_v2.md`
-- `SECURITY.md` -> `SECURITY_v2.md`
 
 ---
-*FusionHub AutoSafe Engine | Clonagem Real 100% | 2026-08-24T04:06:21.466Z*
+*FusionHub AutoSafe Engine | Clonagem Real 100% | 2026-08-28T01:32:16.406Z*

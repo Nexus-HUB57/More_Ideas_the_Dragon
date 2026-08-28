@@ -1,8 +1,8 @@
-blank_issues_enabled: false
+blank_issues_enabled: true
 contact_links:
-  - name: Questions and API proposals
-    url: https://github.com/h4ckf0r0day/obscura/discussions
-    about: Ask questions or propose larger API designs in Discussions.
-  - name: Report a security vulnerability
-    url: https://github.com/h4ckf0r0day/obscura/security/advisories/new
-    about: Report security issues privately, not as a public issue. See SECURITY.md.
+  - name: Help
+    url: https://discord.com/invite/ollama
+    about: Please join our Discord server for help using Ollama
+  - name: Troubleshooting
+    url: https://github.com/ollama/ollama/blob/main/docs/faq.md#faq
+    about: See the FAQ for common issues and solutions
