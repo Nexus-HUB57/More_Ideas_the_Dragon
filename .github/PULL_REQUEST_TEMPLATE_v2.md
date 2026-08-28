@@ -1,17 +1,28 @@
-**Features**
-<!-- Describe the features or bug fixes in this PR. For bug fixes, link to the issue. -->
+## What this changes
 
-- Feature 1
-- Feature 2
+<!-- One or two sentences. What behaviour is different after this PR? -->
 
-**Feature Docs**
-<!-- Provide RFC, tutorial, or use case links for significant updates. Optional for minor changes. -->
+## Why
 
-**Influence**
-<!-- Explain the impact of these changes for reviewer focus. -->
+<!-- The problem being solved. Link an issue if there is one. -->
 
-**Result**
-<!-- Include screenshots or logs of unit tests or running results. -->
+## Verification
 
-**Other**
-<!-- Additional notes about this PR. -->
+- [ ] `make test` passes (all weightless gates)
+- [ ] `make portable` builds with no new warnings
+- [ ] If kernels changed: `./bin/test_ops tests/fixtures/ops` still passes at declared tolerance
+- [ ] If the config or tokenizer path changed: `make cfg` and `make tok` pass
+- [ ] If output could change: the oracle gates (`./bin/k3_model tests/fixtures`) still match exactly
+
+## Numbers, if this is a performance change
+
+<!-- Timing claims need a noise floor. Report at least 3 runs of each arm, or say
+     explicitly that the effect was not measured against variance. See docs/BENCHMARKING.md. -->
+
+| arm | run 1 | run 2 | run 3 | mean |
+|-----|-------|-------|-------|------|
+|     |       |       |       |      |
+
+## Risk
+
+<!-- What could this break that the tests would not catch? -->
