@@ -1,36 +1,41 @@
 {
   "engine": "FusionHub AutoSafe v2.0 - Clonagem Real",
-  "createdAt": "2026-08-28T00:40:47.733Z",
+  "createdAt": "2026-08-28T00:45:30.385Z",
   "strategy": "clone_100_percent_autosafe",
   "primary": {
     "owner": "Nexus-HUB57",
     "repo": "More_Ideas_the_Dragon",
     "branch": "main",
-    "files": 44345,
-    "folders": 5058
+    "files": 44346,
+    "folders": 5059
   },
   "secondary": {
-    "owner": "openai",
-    "repo": "plugins-quickstart",
+    "owner": "asgeirtj",
+    "repo": "system_prompts_leaks",
     "branch": "main",
-    "files": 8,
-    "folders": 1
+    "files": 395,
+    "folders": 93
   },
   "stats": {
-    "totalFiles": 44353,
-    "conflicts": 3,
-    "renamed": 3,
-    "clonedFromSecondary": 8
+    "totalFiles": 44741,
+    "conflicts": 4,
+    "renamed": 4,
+    "clonedFromSecondary": 395
   },
   "conflicts": [
-    ".gitignore",
+    ".gitattributes",
+    ".github/FUNDING.yml",
     "LICENSE",
     "README.md"
   ],
   "renamedFiles": [
     {
-      "originalPath": ".gitignore",
-      "newPath": "_v2.gitignore"
+      "originalPath": ".gitattributes",
+      "newPath": "_v2.gitattributes"
+    },
+    {
+      "originalPath": ".github/FUNDING.yml",
+      "newPath": ".github/FUNDING_v2.yml"
     },
     {
       "originalPath": "LICENSE",
