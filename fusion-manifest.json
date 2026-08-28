@@ -1,31 +1,36 @@
 {
   "engine": "FusionHub AutoSafe v2.0 - Clonagem Real",
-  "createdAt": "2026-08-28T01:03:40.504Z",
+  "createdAt": "2026-08-28T01:05:40.200Z",
   "strategy": "clone_100_percent_autosafe",
   "primary": {
     "owner": "Nexus-HUB57",
     "repo": "More_Ideas_the_Dragon",
     "branch": "main",
-    "files": 44347,
+    "files": 44358,
     "folders": 5085
   },
   "secondary": {
-    "owner": "shareAI-lab",
-    "repo": "learn-claude-code",
+    "owner": "Alishahryar1",
+    "repo": "free-claude-code",
     "branch": "main",
-    "files": 416,
-    "folders": 100
+    "files": 580,
+    "folders": 66
   },
   "stats": {
-    "totalFiles": 44763,
-    "conflicts": 6,
-    "renamed": 6,
-    "clonedFromSecondary": 416
+    "totalFiles": 44938,
+    "conflicts": 11,
+    "renamed": 11,
+    "clonedFromSecondary": 580
   },
   "conflicts": [
     ".env.example",
-    ".github/workflows/ci.yml",
+    ".github/ISSUE_TEMPLATE/bug-report.yml",
+    ".github/ISSUE_TEMPLATE/config.yml",
+    ".github/ISSUE_TEMPLATE/feature-request.yml",
+    ".github/dependabot.yml",
     ".gitignore",
+    "AGENTS.md",
+    "CLAUDE.md",
     "CONTRIBUTING.md",
     "LICENSE",
     "README.md"
@@ -36,12 +41,32 @@
       "newPath": ".env_v2.example"
     },
     {
-      "originalPath": ".github/workflows/ci.yml",
-      "newPath": ".github/workflows/ci_v2.yml"
+      "originalPath": ".github/ISSUE_TEMPLATE/bug-report.yml",
+      "newPath": ".github/ISSUE_TEMPLATE/bug-report_v2.yml"
+    },
+    {
+      "originalPath": ".github/ISSUE_TEMPLATE/config.yml",
+      "newPath": ".github/ISSUE_TEMPLATE/config_v2.yml"
+    },
+    {
+      "originalPath": ".github/ISSUE_TEMPLATE/feature-request.yml",
+      "newPath": ".github/ISSUE_TEMPLATE/feature-request_v2.yml"
+    },
+    {
+      "originalPath": ".github/dependabot.yml",
+      "newPath": ".github/dependabot_v2.yml"
     },
     {
       "originalPath": ".gitignore",
       "newPath": "_v2.gitignore"
+    },
+    {
+      "originalPath": "AGENTS.md",
+      "newPath": "AGENTS_v2.md"
+    },
+    {
+      "originalPath": "CLAUDE.md",
+      "newPath": "CLAUDE_v2.md"
     },
     {
       "originalPath": "CONTRIBUTING.md",
