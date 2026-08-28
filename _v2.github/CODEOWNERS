@@ -1,8 +1,17 @@
-# Repository maintainers.
-* @SGavrl @h4ckf0r0day
+# Core crate ownership.
+/codex-rs/arg0/ @openai/codex-core-agent-team
+/codex-rs/codex-mcp/ @openai/codex-core-agent-team
+/codex-rs/core/ @openai/codex-core-agent-team
+/codex-rs/exec-server/ @openai/codex-core-agent-team
+/codex-rs/exec-server-protocol/ @openai/codex-core-agent-team
+/codex-rs/ext/extension-api/ @openai/codex-core-agent-team
+/codex-rs/prompts/ @openai/codex-core-agent-team
+/codex-rs/utils/path-uri/ @openai/codex-core-agent-team
 
-# Keep security-sensitive automation explicit even if more owners are added later.
-/.github/CODEOWNERS @SGavrl @h4ckf0r0day
-/.github/workflows/ @SGavrl @h4ckf0r0day
-/scripts/ci/ @SGavrl @h4ckf0r0day
-/deny.toml @SGavrl @h4ckf0r0day
+# Keep macOS AKV signing changes reviewed by Codex maintainers.
+/.github/actions/setup-akv-pkcs11-codesigning/ @openai/codex-core-agent-team
+/.github/scripts/macos-signing/ @openai/codex-core-agent-team
+/.github/workflows/rust-release.yml @openai/codex-core-agent-team
+
+# Keep ownership changes reviewed by the same team.
+/.github/CODEOWNERS @openai/codex-core-agent-team
