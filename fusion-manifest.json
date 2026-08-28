@@ -1,85 +1,62 @@
 {
   "engine": "FusionHub AutoSafe v2.0 - Clonagem Real",
-  "createdAt": "2026-08-28T00:32:22.497Z",
+  "createdAt": "2026-08-28T00:37:41.211Z",
   "strategy": "clone_100_percent_autosafe",
   "primary": {
     "owner": "Nexus-HUB57",
     "repo": "More_Ideas_the_Dragon",
     "branch": "main",
-    "files": 44329,
-    "folders": 5055
+    "files": 44331,
+    "folders": 5057
   },
   "secondary": {
-    "owner": "FareedKhan-dev",
-    "repo": "kimi-k3-in-c",
+    "owner": "unslothai",
+    "repo": "unsloth",
     "branch": "main",
-    "files": 302,
-    "folders": 33
+    "files": 4662,
+    "folders": 365
   },
   "stats": {
-    "totalFiles": 44631,
-    "conflicts": 16,
-    "renamed": 16,
-    "clonedFromSecondary": 302
+    "totalFiles": 48993,
+    "conflicts": 9,
+    "renamed": 9,
+    "clonedFromSecondary": 4662
   },
   "conflicts": [
-    ".editorconfig",
     ".gitattributes",
-    ".github/ISSUE_TEMPLATE/bug_report.yml",
-    ".github/ISSUE_TEMPLATE/config.yml",
-    ".github/ISSUE_TEMPLATE/feature_request.yml",
-    ".github/PULL_REQUEST_TEMPLATE.md",
+    ".github/CODEOWNERS",
     ".github/dependabot.yml",
-    ".github/workflows/ci.yml",
     ".gitignore",
-    "CHANGELOG.md",
+    ".pre-commit-config.yaml",
+    "CODE_OF_CONDUCT.md",
     "CONTRIBUTING.md",
     "LICENSE",
-    "Makefile",
-    "README.md",
-    "SECURITY.md",
-    "docs/README.md"
+    "README.md"
   ],
   "renamedFiles": [
-    {
-      "originalPath": ".editorconfig",
-      "newPath": "_v2.editorconfig"
-    },
     {
       "originalPath": ".gitattributes",
       "newPath": "_v2.gitattributes"
     },
     {
-      "originalPath": ".github/ISSUE_TEMPLATE/bug_report.yml",
-      "newPath": ".github/ISSUE_TEMPLATE/bug_report_v2.yml"
-    },
-    {
-      "originalPath": ".github/ISSUE_TEMPLATE/config.yml",
-      "newPath": ".github/ISSUE_TEMPLATE/config_v2.yml"
-    },
-    {
-      "originalPath": ".github/ISSUE_TEMPLATE/feature_request.yml",
-      "newPath": ".github/ISSUE_TEMPLATE/feature_request_v2.yml"
-    },
-    {
-      "originalPath": ".github/PULL_REQUEST_TEMPLATE.md",
-      "newPath": ".github/PULL_REQUEST_TEMPLATE_v2.md"
+      "originalPath": ".github/CODEOWNERS",
+      "newPath": "_v2.github/CODEOWNERS"
     },
     {
       "originalPath": ".github/dependabot.yml",
       "newPath": ".github/dependabot_v2.yml"
     },
     {
-      "originalPath": ".github/workflows/ci.yml",
-      "newPath": ".github/workflows/ci_v2.yml"
-    },
-    {
       "originalPath": ".gitignore",
       "newPath": "_v2.gitignore"
     },
     {
-      "originalPath": "CHANGELOG.md",
-      "newPath": "CHANGELOG_v2.md"
+      "originalPath": ".pre-commit-config.yaml",
+      "newPath": ".pre-commit-config_v2.yaml"
+    },
+    {
+      "originalPath": "CODE_OF_CONDUCT.md",
+      "newPath": "CODE_OF_CONDUCT_v2.md"
     },
     {
       "originalPath": "CONTRIBUTING.md",
@@ -90,20 +67,8 @@
       "newPath": "_v2"
     },
     {
-      "originalPath": "Makefile",
-      "newPath": "_v2"
-    },
-    {
       "originalPath": "README.md",
       "newPath": "README_v2.md"
-    },
-    {
-      "originalPath": "SECURITY.md",
-      "newPath": "SECURITY_v2.md"
-    },
-    {
-      "originalPath": "docs/README.md",
-      "newPath": "docs/README_v2.md"
     }
   ]
 }
