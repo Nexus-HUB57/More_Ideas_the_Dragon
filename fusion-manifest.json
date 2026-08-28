@@ -1,49 +1,82 @@
 {
   "engine": "FusionHub AutoSafe v2.0 - Clonagem Real",
-  "createdAt": "2026-08-28T01:08:21.833Z",
+  "createdAt": "2026-08-28T01:11:20.048Z",
   "strategy": "clone_100_percent_autosafe",
   "primary": {
     "owner": "Nexus-HUB57",
     "repo": "More_Ideas_the_Dragon",
     "branch": "main",
     "files": 44361,
-    "folders": 5085
+    "folders": 5086
   },
   "secondary": {
-    "owner": "hesreallyhim",
-    "repo": "awesome-claude-code",
-    "branch": "main",
-    "files": 56,
-    "folders": 12
+    "owner": "deepseek-ai",
+    "repo": "deepseek-harness",
+    "branch": "master",
+    "files": 8953,
+    "folders": 1436
   },
   "stats": {
-    "totalFiles": 44417,
-    "conflicts": 8,
-    "renamed": 8,
-    "clonedFromSecondary": 56
+    "totalFiles": 53314,
+    "conflicts": 13,
+    "renamed": 13,
+    "clonedFromSecondary": 8953
   },
   "conflicts": [
+    ".editorconfig",
+    ".gitattributes",
+    ".github/ISSUE_TEMPLATE/config.yml",
+    ".github/dependabot.yml",
+    ".github/pull_request_template.md",
+    ".github/workflows/ci.yml",
+    ".github/workflows/release.yml",
     ".gitignore",
-    ".pre-commit-config.yaml",
-    "CODE_OF_CONDUCT.md",
+    "AGENTS.md",
+    "CLAUDE.md",
     "CONTRIBUTING.md",
     "LICENSE",
-    "Makefile",
-    "README.md",
-    "SECURITY.md"
+    "README.md"
   ],
   "renamedFiles": [
+    {
+      "originalPath": ".editorconfig",
+      "newPath": "_v2.editorconfig"
+    },
+    {
+      "originalPath": ".gitattributes",
+      "newPath": "_v2.gitattributes"
+    },
+    {
+      "originalPath": ".github/ISSUE_TEMPLATE/config.yml",
+      "newPath": ".github/ISSUE_TEMPLATE/config_v2.yml"
+    },
+    {
+      "originalPath": ".github/dependabot.yml",
+      "newPath": ".github/dependabot_v2.yml"
+    },
+    {
+      "originalPath": ".github/pull_request_template.md",
+      "newPath": ".github/pull_request_template_v2.md"
+    },
+    {
+      "originalPath": ".github/workflows/ci.yml",
+      "newPath": ".github/workflows/ci_v2.yml"
+    },
+    {
+      "originalPath": ".github/workflows/release.yml",
+      "newPath": ".github/workflows/release_v2.yml"
+    },
     {
       "originalPath": ".gitignore",
       "newPath": "_v2.gitignore"
     },
     {
-      "originalPath": ".pre-commit-config.yaml",
-      "newPath": ".pre-commit-config_v2.yaml"
+      "originalPath": "AGENTS.md",
+      "newPath": "AGENTS_v2.md"
     },
     {
-      "originalPath": "CODE_OF_CONDUCT.md",
-      "newPath": "CODE_OF_CONDUCT_v2.md"
+      "originalPath": "CLAUDE.md",
+      "newPath": "CLAUDE_v2.md"
     },
     {
       "originalPath": "CONTRIBUTING.md",
@@ -54,16 +87,8 @@
       "newPath": "_v2"
     },
     {
-      "originalPath": "Makefile",
-      "newPath": "_v2"
-    },
-    {
       "originalPath": "README.md",
       "newPath": "README_v2.md"
-    },
-    {
-      "originalPath": "SECURITY.md",
-      "newPath": "SECURITY_v2.md"
     }
   ]
 }
