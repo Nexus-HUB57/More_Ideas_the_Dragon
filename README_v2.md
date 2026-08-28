@@ -1,56 +1,140 @@
-# Grok-1
+<div align="center">
 
-This repository contains JAX example code for loading and running the Grok-1 open-weights model.
+<h1>
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://media.x.ai/v1/website/spacexai-symbol-white-transparent-0c31957f.png">
+    <source media="(prefers-color-scheme: light)" srcset="https://media.x.ai/v1/website/spacexai-symbol-black-transparent-6435cf42.png">
+    <img alt="SpaceXAI logo" src="https://media.x.ai/v1/website/spacexai-symbol-black-transparent-6435cf42.png" width="96">
+  </picture>
+  <br>
+  Grok Build (<code>grok</code>)
+</h1>
 
-Make sure to download the checkpoint and place the `ckpt-0` directory in `checkpoints` - see [Downloading the weights](#downloading-the-weights)
+**Grok Build** is SpaceXAI's terminal-based AI coding agent. It runs as a
+full-screen TUI that understands your codebase, edits files, executes shell
+commands, searches the web, and manages long-running tasks — interactively,
+headlessly for scripting/CI, or embedded in editors via the Agent Client
+Protocol (ACP).
 
-Then, run
+[Installing the released binary](#installing-the-released-binary) ·
+[Building from source](#building-from-source) ·
+[Documentation](#documentation) ·
+[Repository layout](#repository-layout) ·
+[Development](#development) ·
+[Contributing](#contributing) ·
+[License](#license)
 
-```shell
-pip install -r requirements.txt
-python run.py
+![Grok Build TUI](https://media.x.ai/v1/website/universe-tui-screenshot-6f7a0837.png)
+
+**Learn more about Grok Build at [x.ai/cli](https://x.ai/cli)**
+
+This repository contains the Rust source for the `grok` CLI/TUI and its agent
+runtime. It is synced periodically from the SpaceXAI monorepo.
+
+A small `SOURCE_REV` file at the root records the full monorepo commit SHA
+for the version of the code present in this tree.
+
+</div>
+
+---
+
+## Installing the released binary
+
+Prebuilt binaries are published for macOS, Linux, and Windows:
+
+```sh
+curl -fsSL https://x.ai/cli/install.sh | bash   # macOS / Linux / Git Bash
+irm https://x.ai/cli/install.ps1 | iex          # Windows PowerShell
+grok --version
 ```
 
-to test the code.
+See the [changelog](https://x.ai/build/changelog) for the latest fixes,
+features, and improvements in each release.
 
-The script loads the checkpoint and samples from the model on a test input.
+## Building from source
 
-Due to the large size of the model (314B parameters), a machine with enough GPU memory is required to test the model with the example code.
-The implementation of the MoE layer in this repository is not efficient. The implementation was chosen to avoid the need for custom kernels to validate the correctness of the model.
+Requirements:
 
-# Model Specifications
+- **Rust** — the toolchain is pinned by [`rust-toolchain.toml`](rust-toolchain.toml);
+  `rustup` installs it automatically on first build.
+- **[DotSlash](https://dotslash-cli.com)** — required so hermetic tools under
+  [`bin/`](bin/) (notably [`bin/protoc`](bin/protoc)) can download and run.
+  Install it and ensure `dotslash` is on your `PATH` **before** building:
 
-Grok-1 is currently designed with the following specifications:
+  ```sh
+  cargo install dotslash
+  # or: prebuilt packages — https://dotslash-cli.com/docs/installation/
+  /usr/bin/env dotslash --help   # sanity check
+  ```
 
-- **Parameters:** 314B
-- **Architecture:** Mixture of 8 Experts (MoE)
-- **Experts Utilization:** 2 experts used per token
-- **Layers:** 64
-- **Attention Heads:** 48 for queries, 8 for keys/values
-- **Embedding Size:** 6,144
-- **Tokenization:** SentencePiece tokenizer with 131,072 tokens
-- **Additional Features:**
-  - Rotary embeddings (RoPE)
-  - Supports activation sharding and 8-bit quantization
-- **Maximum Sequence Length (context):** 8,192 tokens
+- **protoc** — proto codegen resolves [`bin/protoc`](bin/protoc) via DotSlash,
+  or falls back to a `protoc` on `PATH` / `$PROTOC`.
+- macOS and Linux are supported build hosts; Windows builds are best-effort
+  and not currently tested from this tree.
 
-# Downloading the weights
-
-You can download the weights using a torrent client and this magnet link:
-
-```
-magnet:?xt=urn:btih:5f96d43576e3d386c9ba65b883210a393b68210e&tr=https%3A%2F%2Facademictorrents.com%2Fannounce.php&tr=udp%3A%2F%2Ftracker.coppersurfer.tk%3A6969&tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337%2Fannounce
-```
-
-or directly using [HuggingFace 🤗 Hub](https://huggingface.co/xai-org/grok-1):
-```
-git clone https://github.com/xai-org/grok-1.git && cd grok-1
-pip install huggingface_hub[hf_transfer]
-huggingface-cli download xai-org/grok-1 --repo-type model --include ckpt-0/* --local-dir checkpoints --local-dir-use-symlinks False
+```sh
+cargo run -p xai-grok-pager-bin              # build + launch the TUI
+cargo build -p xai-grok-pager-bin --release  # release binary: target/release/xai-grok-pager
+cargo check -p xai-grok-pager-bin            # fast validation
 ```
 
-# License
+The binary artifact is named `xai-grok-pager`; official installs ship it as
+`grok`. On first launch it opens your browser to authenticate — see the
+[authentication guide](crates/codegen/xai-grok-pager/docs/user-guide/02-authentication.md).
 
-The code and associated Grok-1 weights in this release are licensed under the
-Apache 2.0 license. The license only applies to the source files in this
-repository and the model weights of Grok-1.
+## Documentation
+
+Full online documentation is available at
+[docs.x.ai/build/overview](https://docs.x.ai/build/overview).
+
+The user guide ships with the pager crate:
+[`crates/codegen/xai-grok-pager/docs/user-guide/`](crates/codegen/xai-grok-pager/docs/user-guide/)
+— getting started, keyboard shortcuts, slash commands, configuration, theming,
+MCP servers, skills, plugins, hooks, headless mode, sandboxing, and more.
+
+## Repository layout
+
+| Path | Contents |
+|------|----------|
+| `crates/codegen/xai-grok-pager-bin` | Composition-root package; builds the `xai-grok-pager` binary |
+| `crates/codegen/xai-grok-pager` | The TUI: scrollback, prompt, modals, rendering |
+| `crates/codegen/xai-grok-shell` | Agent runtime + leader/stdio/headless entry points |
+| `crates/codegen/xai-grok-tools` | Tool implementations (terminal, file edit, search, ...) |
+| `crates/codegen/xai-grok-workspace` | Host filesystem, VCS, execution, checkpoints |
+| `crates/codegen/...` | The rest of the CLI crate closure (config, MCP, markdown, sandbox, ...) |
+| `crates/common/`, `crates/build/`, `prod/mc/` | Small shared leaf crates pulled in by the closure |
+| `third_party/` | Vendored upstream source (Mermaid diagram stack) — see below |
+
+> [!IMPORTANT]
+> The root `Cargo.toml` (workspace members, dependency versions, lints,
+> profiles) is **generated** — treat it as read-only. Prefer editing per-crate
+> `Cargo.toml` files.
+
+## Development
+
+```sh
+cargo check -p <crate>        # always target specific crates; full-workspace builds are slow
+cargo test -p xai-grok-config # per-crate tests
+cargo clippy -p <crate>       # lint config: clippy.toml at the repo root
+cargo fmt --all               # rustfmt.toml at the repo root
+```
+
+## Contributing
+
+> [!NOTE]
+> External contributions are not accepted. See [`CONTRIBUTING.md`](CONTRIBUTING.md).
+
+## License
+
+First-party code in this repository is licensed under the **Apache License,
+Version 2.0** — see [`LICENSE`](LICENSE).
+
+Third-party and vendored code remains under its original licenses. See:
+
+- [`THIRD-PARTY-NOTICES`](THIRD-PARTY-NOTICES) — crates.io / git dependencies,
+  bundled UI themes, and **in-tree source ports** (including openai/codex and
+  sst/opencode tool implementations)
+- [`crates/codegen/xai-grok-tools/THIRD_PARTY_NOTICES.md`](crates/codegen/xai-grok-tools/THIRD_PARTY_NOTICES.md)
+  — crate-local notice for the codex and opencode ports (license texts +
+  Apache §4(b) change notice)
+- [`third_party/NOTICE`](third_party/NOTICE) — vendored Mermaid-stack index
