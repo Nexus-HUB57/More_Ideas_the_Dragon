@@ -1,2 +1,3 @@
-checkpoints/*
-!checkpoints/README.md
+/target
+**/*.rs.bk
+.DS_Store
