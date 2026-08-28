@@ -1,23 +1,44 @@
-## What changed
+## Before opening this pull request
 
-Describe the behavior change and the reason for it. Link the issue with `Fixes #...` when applicable.
+Open Interpreter is built on [OpenAI Codex](https://github.com/openai/codex)
+and deliberately keeps its changes to Codex small. We generally do not accept
+changes to core Codex behavior in this repository.
 
-## Validation
+Before submitting, ask whether the change would also make sense in Codex
+without Open Interpreter. If it would, please contribute it to
+[`openai/codex`](https://github.com/openai/codex) instead. Once accepted there,
+it will reach Open Interpreter through an upstream sync.
 
-List the commands and manual checks you ran. Include focused regression tests and the full relevant test suite.
+Changes belong here when they are specifically about an Open Interpreter-owned
+surface, such as its additional harnesses, provider/model support, branding,
+Open Interpreter endpoints, ACP support, compatibility/import behavior,
+standalone packaging and updates, or product documentation.
 
-## Rendering
+- [ ] I considered whether this change belongs in `openai/codex`.
+- [ ] This change is specific to an Open Interpreter-owned surface, or I have
+      linked the upstream Codex contribution below.
 
-If this changes layout, paint, screenshots, screencast, or PDF output, include the viewport, device scale factor, output options, and before/after images. Write `Not applicable` otherwise.
+## Why this belongs in Open Interpreter
 
-## Performance
+<!--
+Required, especially if this changes code inherited from Codex.
 
-Include before/after measurements for hot paths, memory changes, or rendering work. Write `No expected impact` only when the changed code is outside a runtime path.
+Explain what makes the change Open Interpreter-specific and which
+Open Interpreter-owned surface it supports. If the core change has been or
+will be proposed upstream, link that issue or pull request instead.
 
-## Checklist
+Pull requests that change general Codex behavior without a clear
+Open Interpreter-specific reason will usually be redirected upstream.
+-->
 
-- [ ] The change is focused and does not remove existing behavior without justification.
-- [ ] Tests cover the failure or feature.
-- [ ] Existing tests pass, including render and no-render configurations when affected.
-- [ ] I checked for CPU, latency, and memory regressions.
-- [ ] Public API or user-facing behavior changes are documented.
+## Summary
+
+<!-- Describe the change and its user-visible effect. -->
+
+## Related issue
+
+<!-- Link the bug report, feature request, or upstream Codex contribution. -->
+
+## Test plan
+
+<!-- List the checks you ran and any platform-specific validation. -->
