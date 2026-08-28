@@ -1,40 +1,49 @@
-# Nexus-HUB57/More_Ideas_the_Dragon + MiniMax-AI/MiniMax-MCP
+# Nexus-HUB57/More_Ideas_the_Dragon + ollama/ollama
 
 > Ecossistema unificado pelo **FusionHub AutoSafe Engine** - Clonagem Real 100%
 
 ## Repositorio Primario
 - **Repo**: Nexus-HUB57/More_Ideas_the_Dragon
 - **Branch**: main
-- **Arquivos**: 44365 | **Pastas**: 5085
-- **Linguagens**: php(12955), gif(4230), md(4227), js(3598), ts(3169), tsx(2916), png(2399), py(1675)
+- **Arquivos**: 44370 | **Pastas**: 5086
+- **Linguagens**: php(12947), gif(4230), md(4228), js(3598), ts(3169), tsx(2916), png(2399), py(1682)
 
 ## Repositorio Secundario
-- **Repo**: MiniMax-AI/MiniMax-MCP
+- **Repo**: ollama/ollama
 - **Branch**: main
-- **Arquivos**: 28 | **Pastas**: 5
-- **Linguagens**: py(11), sh(5), yml(4), md(2), example(1), gitignore(1), other(1), json(1)
+- **Arquivos**: 1348 | **Pastas**: 205
+- **Linguagens**: go(814), png(63), mdx(56), tsx(49), ts(47), json(45), h(43), svg(28)
 
 ## Estatisticas da Fusao
 
 | Metrica | Valor |
 |---------|-------|
-| Total de arquivos mapeados | 44393 |
-| Arquivos clonados do secundario | 28 |
-| Conflitos resolvidos (AutoSafe) | 4 |
-| Arquivos renomeados (_v2) | 4 |
+| Total de arquivos mapeados | 45718 |
+| Arquivos clonados do secundario | 1348 |
+| Conflitos resolvidos (AutoSafe) | 13 |
+| Arquivos renomeados (_v2) | 13 |
 
 ## Estrategia AutoSafe
 
-Nenhum arquivo do primario foi sobreposto. Todos os 28 arquivos do secundario foram clonados para o primario.
+Nenhum arquivo do primario foi sobreposto. Todos os 1348 arquivos do secundario foram clonados para o primario.
 
-4 arquivos com path duplicado foram renomeados com sufixo `_v2` e o original do primario foi preservado.
+13 arquivos com path duplicado foram renomeados com sufixo `_v2` e o original do primario foi preservado.
 
 ## Arquivos Renomeados
 
-- `.env.example` -> `.env_v2.example`
+- `.dockerignore` -> `_v2.dockerignore`
+- `.gitattributes` -> `_v2.gitattributes`
+- `.github/ISSUE_TEMPLATE/config.yml` -> `.github/ISSUE_TEMPLATE/config_v2.yml`
 - `.gitignore` -> `_v2.gitignore`
+- `AGENTS.md` -> `AGENTS_v2.md`
+- `CLAUDE.md` -> `CLAUDE_v2.md`
+- `CMakeLists.txt` -> `CMakeLists_v2.txt`
+- `CONTRIBUTING.md` -> `CONTRIBUTING_v2.md`
+- `Dockerfile` -> `_v2`
 - `LICENSE` -> `_v2`
 - `README.md` -> `README_v2.md`
+- `SECURITY.md` -> `SECURITY_v2.md`
+- `docs/README.md` -> `docs/README_v2.md`
 
 ---
-*FusionHub AutoSafe Engine | Clonagem Real 100% | 2026-08-28T01:19:25.233Z*
+*FusionHub AutoSafe Engine | Clonagem Real 100% | 2026-08-28T01:21:34.290Z*
