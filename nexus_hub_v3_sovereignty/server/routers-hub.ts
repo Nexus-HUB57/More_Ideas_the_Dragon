@@ -27,6 +27,8 @@ import {
   missionStages,
   missionStatuses,
 } from "./orchestrator-engine";
+import { initialAutonomyState } from "./fibonacci-autonomy";
+import { preflightIntent } from "./orchestrator-protocol";
 
 export const hubRouter = router({
   // ============================================
@@ -678,6 +680,25 @@ export const hubRouter = router({
   // ORQUESTRADOR DE STARTUPS
   // ============================================
   orchestrator: router({
+    preflight: protectedProcedure
+      .input(z.object({
+        missionId: z.number().int().positive(),
+        objective: z.string().trim().min(1).max(2_000),
+        owner: z.string().trim().min(1).max(128),
+        autonomy: z.enum(["recommend", "execute_reversible", "execute_guarded"]),
+        risk: z.enum(["low", "medium", "high", "critical"]),
+        budgetUnits: z.number().int().nonnegative(),
+        externalSideEffect: z.boolean().default(false),
+        idempotencyKey: z.string().trim().min(8).max(255).optional(),
+        evidenceRef: z.string().trim().max(512).optional(),
+        approvalRef: z.string().trim().max(255).optional(),
+        rollbackPlan: z.string().trim().max(5_000).optional(),
+        securityReviewRef: z.string().trim().max(255).optional(),
+        auditRef: z.string().trim().max(255).optional(),
+        description: z.string().trim().max(5_000).optional(),
+      }))
+      .mutation(async ({ input }) => preflightIntent({ ...input, status: "review" }, initialAutonomyState())),
+
     overview: publicProcedure.query(async () => {
       const missions = await dbHub.getMissions({ limit: 500 });
       const byStatus = missionStatuses.reduce<Record<string, number>>((acc, status) => {
