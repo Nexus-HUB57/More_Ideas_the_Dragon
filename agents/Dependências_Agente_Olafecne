@@ -1,0 +1,1 @@
+pip install outlines dspy-ai pydantic numpy sentence-transformers fastapi uvicorn
