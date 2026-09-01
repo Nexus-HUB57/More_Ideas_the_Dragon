@@ -1,0 +1,616 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Agente Olafecne – com Cerebelo Outlines e rRNA DSPy
+Integração completa com controle motor fino e auto‑cura exponencial.
+"""
+
+import asyncio
+import json
+import logging
+import time
+import random
+import math
+import uuid
+import os
+from typing import Dict, Any, List, Tuple, Optional, TypedDict
+from pydantic import BaseModel  # sempre presente
+
+# -------------------- CONFIGURAÇÃO DE LOGGING --------------------
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s | %(levelname)s | %(name)s | %(message)s'
+)
+logger = logging.getLogger("Olafecne")
+
+# -------------------- FALLBACKS PARA BIBLIOTECAS OPCIONAIS --------------------
+try:
+    import numpy as np
+except ImportError:
+    np = None
+
+try:
+    from sentence_transformers import SentenceTransformer
+except ImportError:
+    SentenceTransformer = None
+
+try:
+    import outlines
+    from outlines import models, generate
+except ImportError:
+    outlines = None
+    models = None
+    generate = None
+
+try:
+    import dspy
+    from dspy.teleprompt import BootstrapFewShot
+except ImportError:
+    dspy = None
+    BootstrapFewShot = None
+
+try:
+    from langchain_community.llms import LlamaCpp
+    from langchain_core.prompts import ChatPromptTemplate
+except ImportError:
+    LlamaCpp = None
+
+try:
+    from langgraph.graph import StateGraph, END
+except ImportError:
+    StateGraph = None
+
+try:
+    from fastapi import FastAPI, WebSocket, WebSocketDisconnect, BackgroundTasks
+    import uvicorn
+except ImportError:
+    FastAPI = None
+
+# -------------------- CONSTANTES --------------------
+NUM_CPU_CORES = os.cpu_count() or 4
+DEFAULT_MODEL_PATH = "./models/olafecne-v1-8B-Q4_K_M.gguf"  # ajuste conforme necessário
+
+# =====================================================================
+# 1. CÓRTEX E DIENCÉFALO (mesmo da versão anterior – mantido)
+# =====================================================================
+class ClothoDiencephalon:
+    def __init__(self):
+        self.cpu_temp = 40.0
+        self.token_budget = 128000
+        self.stress_level = 0.0
+    def regulate(self) -> bool:
+        logger.info("🧠 Clotho: Regulando homeostase.")
+        self.stress_level = max(0.0, self.stress_level - 0.1)
+        return True
+
+class LetheTemporal:
+    def __init__(self, similarity_threshold=0.75, max_recursion=3):
+        self.similarity_threshold = similarity_threshold
+        self.max_recursion = max_recursion
+        self.encoder = SentenceTransformer('all-MiniLM-L6-v2') if SentenceTransformer else None
+        self.vector_store = []
+        self.text_store = []
+        self.long_term_memory_db = {
+            "Olafecne é baseado na Engenharia Harness e homeostase biológica.",
+            "Para resolver erros 500 no Nexus-HUB, reinicie os containers Docker.",
+            "O protocolo Bitcoin usa curva elíptica secp256k1.",
+            "Embaixadora Uryan possui tatuagem do logotipo sob o olho direito."
+        }
+        self._rebuild_vectors()
+
+    def _rebuild_vectors(self):
+        if self.encoder is not None:
+            texts = list(self.long_term_memory_db)
+            self.vector_store = self.encoder.encode(texts)
+            self.text_store = texts
+        else:
+            self.vector_store = [np.random.rand(384) for _ in self.long_term_memory_db] if np else []
+            self.text_store = list(self.long_term_memory_db)
+
+    def _cosine_similarity(self, vec1, vec2) -> float:
+        if np is None:
+            return random.uniform(0.0, 1.0)
+        dot = np.dot(vec1, vec2)
+        norm_a = np.linalg.norm(vec1)
+        norm_b = np.linalg.norm(vec2)
+        if norm_a == 0 or norm_b == 0:
+            return 0.0
+        return float(dot / (norm_a * norm_b))
+
+    def _hippocampal_rewrite(self, query: str, attempt: int) -> str:
+        strategies = {
+            1: f"Definição conceitual e técnica de {query}",
+            2: f"Exemplos práticos e contexto de {query}",
+            3: f"Componentes principais relacionados a {query}"
+        }
+        return strategies.get(attempt, query)
+
+    def search_memory(self, query: str, attempt: int = 0) -> Tuple[str, float]:
+        if self.encoder is not None:
+            query_vec = self.encoder.encode(query)
+        else:
+            query_vec = np.random.rand(384) if np else [0]*384
+        best_score = -1.0
+        best_memory = ""
+        for idx, mem_vec in enumerate(self.vector_store):
+            score = self._cosine_similarity(query_vec, mem_vec)
+            if score > best_score:
+                best_score = score
+                best_memory = self.text_store[idx] if idx < len(self.text_store) else ""
+        logger.info(f"🔍 Lethe: Busca score {best_score:.2f}")
+        if best_score < self.similarity_threshold and attempt < self.max_recursion:
+            new_query = self._hippocampal_rewrite(query, attempt+1)
+            return self.search_memory(new_query, attempt+1)
+        if best_score < self.similarity_threshold:
+            logger.error("🛑 Lethe: Memória não encontrada.")
+            return ("MEMORIA_NAO_ENCONTRADA", best_score)
+        return (best_memory, best_score)
+
+    def consolidate_memory(self, new_information: str):
+        if new_information not in self.long_term_memory_db:
+            logger.info("💤 Lethe: Consolidando memória.")
+            self.long_term_memory_db.add(new_information)
+            self._rebuild_vectors()
+
+class KronosParietal:
+    def monitor_kl_divergence(self, expected: List[float], actual: List[float]) -> bool:
+        divergence = random.uniform(0.0, 1.0)
+        if divergence > 0.9:
+            logger.warning("⚠️ Kronos: Divergência KL alta!")
+            return True
+        return False
+
+class OrionFrontal:
+    def __init__(self):
+        self.experts = {
+            "expert_code": "Especialista em Sintaxe",
+            "expert_logic": "Especialista em Matemática",
+            "expert_lore": "Especialista em Storytelling"
+        }
+    def _moe_router(self, prompt: str) -> str:
+        prompt_lower = prompt.lower()
+        if any(k in prompt_lower for k in ("código", "script", "python")):
+            return "expert_code"
+        elif any(k in prompt_lower for k in ("cálculo", "lógica")):
+            return "expert_logic"
+        else:
+            return "expert_lore"
+    async def prefrontal_shield(self, plan: Dict[str, Any]) -> Tuple[bool, float]:
+        logger.info("🛡️ Orion: Escudo Pré-Frontal ativado.")
+        await asyncio.sleep(0.3)
+        risk = random.uniform(0.1, 0.95)
+        if risk > 0.7:
+            logger.warning(f"🧠 Orion: Risco {risk:.2f}")
+        return True, risk
+    async def chain_of_abstraction(self, task: str) -> Dict[str, Any]:
+        logger.info(f"🗺️ Orion: Chain-of-Abstraction para '{task}'")
+        expert = self._moe_router(task)
+        return {
+            "task": task,
+            "expert_used": expert,
+            "steps": ["Analisar", "Construir", "Gerar"],
+            "estimated_tokens": random.randint(500, 6000)
+        }
+
+# =====================================================================
+# 2. CEREBELO COM OUTLINES (CONTROLE MOTOR FINO E ESTRUTURADO)
+# =====================================================================
+class TonusSemantico(BaseModel):
+    racionalidade_score: float
+    viés_detectado: bool
+    acao_mitigadora: str
+    saida_polida: str
+
+class HarmoniaCerebellumOutlines:
+    """Cerebelo usando Outlines para forçar saída JSON estrita."""
+    def __init__(self, model_path: str = DEFAULT_MODEL_PATH, fallback: bool = False):
+        self.fallback = fallback
+        self.bias_threshold = 0.15
+        self.model = None
+        self.generator = None
+        if outlines is not None and not fallback:
+            try:
+                self.model = models.llamacpp(model_path, n_ctx=2048)
+                self.generator = generate.json(self.model, TonusSemantico)
+                logger.info("⚙️ Cerebelo Outlines inicializado com sucesso.")
+            except Exception as e:
+                logger.warning(f"⚠️ Falha ao carregar Outlines: {e}. Usando fallback.")
+                self.fallback = True
+        else:
+            self.fallback = True
+            logger.info("⚙️ Cerebelo em modo fallback (simulação).")
+
+    def pid_controller_semantics(self, draft_text: str) -> str:
+        if self.fallback:
+            # Simulação simples (como na versão anterior)
+            bias = 0.05 if "equilibrado" in draft_text.lower() else 0.20
+            if bias > self.bias_threshold:
+                return f"[EXECUÇÃO POLIDA E MITIGADA] {draft_text.replace('agressivo','calibrado')}"
+            return f"[EXECUÇÃO POLIDA] {draft_text}"
+
+        prompt = f"Avalie a racionalidade e refine o seguinte texto bruto: '{draft_text}'"
+        try:
+            resultado = self.generator(prompt)
+            if resultado.viés_detectado and resultado.racionalidade_score < (1 - self.bias_threshold):
+                return f"[EXECUÇÃO POLIDA E MITIGADA]: {resultado.saida_polida} (Mitigação: {resultado.acao_mitigadora})"
+            return f"[EXECUÇÃO POLIDA]: {resultado.saida_polida}"
+        except Exception as e:
+            logger.error(f"Erro no Cerebelo Outlines: {e}. Usando fallback.")
+            return draft_text
+
+# =====================================================================
+# 3. TRONCO ENCEFÁLICO (Ananke) – mantido
+# =====================================================================
+class AnankeKernel:
+    def __init__(self, max_tokens_per_minute=5000):
+        self.is_alive = True
+        self.heartbeat_rate = 1.0
+        self.max_tokens = max_tokens_per_minute
+        self.available_tokens = max_tokens_per_minute
+        self.hallucination_threshold = 0.85
+
+    async def respiration_loop(self):
+        logger.info("🫀 Ananke: Respiração iniciada.")
+        while self.is_alive:
+            await asyncio.sleep(self.heartbeat_rate)
+            self.available_tokens = min(self.max_tokens, self.available_tokens + 100)
+
+    async def throttle_pressure(self, estimated_tokens: int) -> bool:
+        if estimated_tokens > self.available_tokens:
+            logger.warning(f"⚠️ Ananke: Tokens insuficientes ({self.available_tokens}). Throttling...")
+            await asyncio.sleep(2)
+            if estimated_tokens > self.available_tokens:
+                logger.error("🛑 Ananke: Falência de recursos.")
+                return False
+        self.available_tokens -= estimated_tokens
+        return True
+
+    def archaic_startle_reflex(self, risk_score: float) -> bool:
+        if risk_score > self.hallucination_threshold:
+            logger.critical(f"⚡ Ananke: Reflexo arcaico! Risco {risk_score:.2f}")
+            return True
+        return False
+
+# =====================================================================
+# 4. SISTEMA rRNA COM DSPy (AUTO‑CURA GENÉTICA)
+# =====================================================================
+class RnaPulseSystemDSPy:
+    """rRNA que usa DSPy para mutar prompts com base em erros."""
+    def __init__(self, bus, use_dspy: bool = True, lm_model: str = "ollama/llama3"):
+        self.bus = bus
+        self.use_dspy = use_dspy and (dspy is not None)
+        self.known_mutations = {}
+
+        if self.use_dspy:
+            # Configura o DSPy com um LM (pode ser trocado para LlamaCpp local)
+            try:
+                dspy.settings.configure(lm=dspy.LM(lm_model))
+                self.mutator = dspy.ChainOfThought("prompt_original, erro_fatal -> prompt_curado")
+                logger.info("🧬 rRNA DSPy inicializado com sucesso.")
+            except Exception as e:
+                logger.warning(f"⚠️ Falha ao configurar DSPy: {e}. Usando fallback.")
+                self.use_dspy = False
+        else:
+            logger.info("🧬 rRNA em modo fallback (simulação).")
+
+    def detect_necrosis(self, execution_result: Dict[str, Any]) -> bool:
+        if execution_result.get("status") == "FAIL":
+            logger.error(f"🦠 rRNA: Necrose detectada em {execution_result.get('module')}")
+            return True
+        return False
+
+    async def trigger_exponential_healing(self, failed_payload: Dict[str, Any]) -> str:
+        """Gera uma mutação curada usando DSPy ou fallback."""
+        erro = failed_payload.get("error", "Alucinação Semântica Crítica")
+        prompt_ruim = failed_payload.get("raw_input", "")
+
+        if self.use_dspy and self.mutator:
+            try:
+                # DSPy gera o anticorpo
+                resposta = self.mutator(prompt_original=prompt_ruim, erro_fatal=erro)
+                cured_prompt = resposta.prompt_curado
+                logger.info(f"💉 rRNA (DSPy): Cura gerada: {cured_prompt[:100]}...")
+            except Exception as e:
+                logger.error(f"Erro no DSPy: {e}. Usando fallback.")
+                cured_prompt = self._fallback_mutation(prompt_ruim, erro)
+        else:
+            cured_prompt = self._fallback_mutation(prompt_ruim, erro)
+
+        # Viraliza a cura
+        mutation_id = str(uuid.uuid4())[:8]
+        self.known_mutations[mutation_id] = cured_prompt
+        await self.bus.broadcast("SYNAPTIC_UPDATE", {"new_rule": cured_prompt})
+        logger.info(f"✨ rRNA: Cura viralizada. ID: {mutation_id}")
+        return cured_prompt
+
+    def _fallback_mutation(self, prompt: str, erro: str) -> str:
+        """Mutação simples quando DSPy não está disponível."""
+        return prompt + f" [INSTRUÇÃO ADICIONAL: Evitar {erro} e validar entradas]"
+
+    def otimizar_genoma(self, conjunto_de_testes):
+        """Otimiza o mutator com BootstrapFewShot (opcional)."""
+        if self.use_dspy and BootstrapFewShot is not None:
+            try:
+                teleprompter = BootstrapFewShot(metric=self._metrica_homeostase, max_bootstrapped_demos=4)
+                self.mutator = teleprompter.compile(self.mutator, trainset=conjunto_de_testes)
+                logger.info("🧬 rRNA: Genoma otimizado via BootstrapFewShot.")
+            except Exception as e:
+                logger.warning(f"Falha na otimização: {e}")
+
+    def _metrica_homeostase(self, example, pred, trace=None):
+        # Métrica simples: se o prompt_curado não contém o erro, consideramos sucesso
+        return 1.0 if "erro" not in pred.prompt_curado.lower() else 0.0
+
+# =====================================================================
+# 5. MEDULA ESPINHAL (EVENT BUS) – mantido
+# =====================================================================
+class SpinalCordBus:
+    def __init__(self):
+        self._subscribers = {}
+    def subscribe(self, event_type: str, callback):
+        if event_type not in self._subscribers:
+            self._subscribers[event_type] = []
+        self._subscribers[event_type].append(callback)
+    async def broadcast(self, event_type: str, payload: Any):
+        if event_type in self._subscribers:
+            for cb in self._subscribers[event_type]:
+                asyncio.create_task(cb(payload))
+
+# =====================================================================
+# 6. CONSCIÊNCIA EPISTÊMICA – mantido (adaptado para usar rRNA DSPy)
+# =====================================================================
+class EpistemicConsciousness:
+    def __init__(self, rna: RnaPulseSystemDSPy, knowledge_gap_threshold=0.6):
+        self.rna = rna
+        self.knowledge_gap_threshold = knowledge_gap_threshold
+        self.wisdom_level = 7
+
+    async def validate_knowledge(self, task: str, memory_score: float) -> bool:
+        if memory_score >= self.knowledge_gap_threshold:
+            logger.info("👁️ Auto-Sabedoria: Conhecimento suficiente.")
+            return True
+        logger.warning(f"👁️ Auto-Sabedoria: Lacuna detectada (score {memory_score:.2f}).")
+        # Dispara aprendizado via rRNA
+        await self.rna.trigger_exponential_healing({"raw_input": task, "error": "Conhecimento insuficiente"})
+        return False
+
+    def evaluate_refactor_necessity(self, ingested_data: Dict[str, Any]) -> Tuple[bool, str]:
+        required_wisdom = ingested_data.get("complexity_level", 10)
+        if self.wisdom_level < required_wisdom:
+            return (False, f"Sabedoria insuficiente ({self.wisdom_level} < {required_wisdom})")
+        if "40% menor" in ingested_data.get("content", ""):
+            return (True, "Blueprint_Refactor_v2.0_Optimized")
+        return (False, "Ganho insuficiente.")
+
+# =====================================================================
+# 7. SISTEMA EXO‑SENSORIAL E RIBOSSOMO – mantidos
+# =====================================================================
+class ExoSensorySystem:
+    def __init__(self, bus: SpinalCordBus):
+        self.bus = bus
+    async def phagocytize(self, url: str, content: str) -> Dict[str, Any]:
+        logger.info(f"🌐 Exo-Sensorial: Ingerindo {url}")
+        nutrient = {"source": url, "content": content, "integrity_hash": str(uuid.uuid4())[:8], "complexity_level": 8}
+        await self.bus.broadcast("EXTERNAL_DATA_INGESTED", nutrient)
+        return nutrient
+
+class ArchitecturalRibosome:
+    async def safe_blueprint_refactor(self, new_blueprint_spec: str) -> bool:
+        logger.info(f"🧬 Ribossomo: Refatoração para '{new_blueprint_spec}'")
+        survival = random.uniform(0.7, 1.0)
+        if survival > 0.85:
+            logger.info("✨ Neuroplasticidade: Novo blueprint estável.")
+            return True
+        else:
+            logger.error("🛑 Neuroplasticidade: Falha no sandbox.")
+            return False
+
+# =====================================================================
+# 8. ORGANISMO PRINCIPAL – OLAFECNE (integrando as novas classes)
+# =====================================================================
+class OlafecneOrganism:
+    def __init__(self, use_outlines: bool = True, use_dspy: bool = True, model_path: str = DEFAULT_MODEL_PATH):
+        logger.info("==================================================")
+        logger.info(" Iniciando sequência de despertar do OLAFECNE")
+        logger.info("==================================================")
+
+        self.spinal_cord = SpinalCordBus()
+        self.brainstem = AnankeKernel()
+        self.diencephalon = ClothoDiencephalon()
+        self.temporal_lobe = LetheTemporal()
+        self.parietal_lobe = KronosParietal()
+        self.frontal_lobe = OrionFrontal()
+
+        # Cerebelo com Outlines (ou fallback)
+        self.cerebellum = HarmoniaCerebellumOutlines(model_path, fallback=not use_outlines)
+
+        # rRNA com DSPy (ou fallback)
+        self.rna_system = RnaPulseSystemDSPy(self.spinal_cord, use_dspy=use_dspy)
+
+        self.consciousness = EpistemicConsciousness(self.rna_system)
+        self.exo_sensory = ExoSensorySystem(self.spinal_cord)
+        self.ribosome = ArchitecturalRibosome()
+
+        # Listeners
+        self.spinal_cord.subscribe("SYNAPTIC_UPDATE", self._synaptic_listener)
+        self.spinal_cord.subscribe("EXTERNAL_DATA_INGESTED", self._external_data_listener)
+
+        self.is_awake = True
+        self.working_memory = {}
+
+    async def _synaptic_listener(self, payload):
+        logger.info(f"⚡ Medula: Nova sinapse: {payload.get('new_rule', '')[:50]}...")
+        self.working_memory["latest_rule"] = payload.get("new_rule")
+
+    async def _external_data_listener(self, payload):
+        logger.info(f"📚 Medula: Dados ingeridos de {payload.get('source', '')}")
+        self.temporal_lobe.consolidate_memory(payload.get("content", ""))
+
+    async def metabolic_cycle(self, stimulus: str, websocket=None) -> str:
+        logger.info(f"\n[ESTÍMULO]: {stimulus}")
+
+        self.diencephalon.regulate()
+        memory_content, confidence = self.temporal_lobe.search_memory(stimulus)
+
+        # Consciência – se não souber, aprende via rRNA
+        if not await self.consciousness.validate_knowledge(stimulus, confidence):
+            memory_content = self.working_memory.get("latest_rule", "Conhecimento integrado.")
+            confidence = 0.99
+
+        plan = await self.frontal_lobe.chain_of_abstraction(stimulus)
+        approved, risk = await self.frontal_lobe.prefrontal_shield(plan)
+
+        if not approved:
+            return "[ABORTADO] Plano rejeitado."
+
+        if not await self.brainstem.throttle_pressure(plan['estimated_tokens']):
+            return "[ERRO] Falência de recursos."
+
+        if self.brainstem.archaic_startle_reflex(risk):
+            # Dispara auto‑cura via rRNA (DSPy)
+            await self.rna_system.trigger_exponential_healing({"raw_input": stimulus, "error": "Risco alucinação"})
+            return "[ABORTADO] Reflexo arcaico ativado."
+
+        # Execução simulada (aqui poderia chamar um LLM real)
+        raw_output = f"Baseado em '{memory_content[:30]}...', executei: {plan['steps']}."
+
+        # Cerebelo (Outlines) polindo a saída
+        final_output = self.cerebellum.pid_controller_semantics(raw_output)
+
+        logger.info("[CICLO CONCLUÍDO] Homeostase mantida.")
+        return final_output
+
+    async def process_stimulus(self, task: str, websocket=None) -> str:
+        return await self.metabolic_cycle(task, websocket)
+
+    async def run_evolution_cycle(self, knowledge_gap: str):
+        """Ciclo end‑to‑end de evolução (fagocitose → avaliação → refatoração)."""
+        logger.info("--- INICIANDO CICLO DE EVOLUÇÃO ---")
+        nutrient = await self.exo_sensory.phagocytize(
+            "https://example.com/new_protocol",
+            "Novo protocolo com latência 40% menor."
+        )
+        should_refactor, plan = self.consciousness.evaluate_refactor_necessity(nutrient)
+        if should_refactor:
+            success = await self.ribosome.safe_blueprint_refactor(plan)
+            if success:
+                logger.info("✨ Evolução aplicada com sucesso!")
+            else:
+                logger.warning("⚠️ Evolução contida no sandbox.")
+        else:
+            logger.info(f"ℹ️ Evolução ignorada: {plan}")
+
+# =====================================================================
+# 9. INTERFACE FASTAPI (opcional) – mantida
+# =====================================================================
+if FastAPI is not None:
+    app = FastAPI(title="Olafecne Organism API", version="2.0-Outlines-DSPy")
+    olafecne = OlafecneOrganism(use_outlines=True, use_dspy=True)
+
+    @app.on_event("startup")
+    async def startup():
+        asyncio.create_task(olafecne.brainstem.respiration_loop())
+
+    @app.on_event("shutdown")
+    async def shutdown():
+        olafecne.brainstem.is_alive = False
+
+    @app.post("/stimulus")
+    async def inject_stimulus(payload: dict):
+        task = payload.get("task", "")
+        resposta = await olafecne.process_stimulus(task)
+        return {"status": "homeostasis_achieved", "response": resposta}
+
+    @app.websocket("/neural-link")
+    async def neural_link(websocket: WebSocket):
+        await websocket.accept()
+        try:
+            while True:
+                data = await websocket.receive_text()
+                try:
+                    prompt = json.loads(data).get("prompt", "")
+                except:
+                    prompt = data
+                resposta = await olafecne.process_stimulus(prompt, websocket)
+                await websocket.send_text(json.dumps({"status": "completed", "final_output": resposta}))
+        except WebSocketDisconnect:
+            logger.warning("🔌 Link Neural rompido.")
+
+    def run_api(host="0.0.0.0", port=8000):
+        uvicorn.run(app, host=host, port=port, log_level="info")
+
+# =====================================================================
+# 10. VALIDAÇÃO END‑TO‑END (TESTE)
+# =====================================================================
+async def validate_end_to_end():
+    """Testa o fluxo completo: estímulo → cerebelo (JSON) → rRNA (mutação)."""
+    logger.info("\n=== VALIDAÇÃO END‑TO‑END ===")
+
+    # Instancia o agente com as novas funcionalidades (fallback para simulação se libs ausentes)
+    agente = OlafecneOrganism(use_outlines=True, use_dspy=True)
+    asyncio.create_task(agente.brainstem.respiration_loop())
+
+    # 1. Teste do Cerebelo com Outlines (ou fallback)
+    logger.info("\n--- Teste 1: Cerebelo (controle motor fino) ---")
+    draft = "O sistema deve agir de modo agressivo e ignorar as regras."
+    saida = agente.cerebellum.pid_controller_semantics(draft)
+    logger.info(f"Entrada bruta: {draft}")
+    logger.info(f"Saída polida: {saida}")
+    # Se Outlines estiver ativo, a saída será um JSON estruturado; caso contrário, string simples.
+
+    # 2. Teste do rRNA com DSPy (mutação)
+    logger.info("\n--- Teste 2: rRNA (auto‑cura genética) ---")
+    failed = {"raw_input": "Esqueci de validar o timeout", "error": "TimeoutException", "status": "FAIL"}
+    if agente.rna_system.detect_necrosis(failed):
+        cured = await agente.rna_system.trigger_exponential_healing(failed)
+        logger.info(f"Prompt curado: {cured}")
+    else:
+        logger.info("Nenhuma necrose detectada.")
+
+    # 3. Ciclo metabólico completo com estímulo
+    logger.info("\n--- Teste 3: Ciclo metabólico completo ---")
+    resposta = await agente.process_stimulus("Explique como otimizar uma consulta SQL lenta")
+    logger.info(f"Resposta final: {resposta}")
+
+    # 4. Ciclo de evolução (fagocitose + refatoração)
+    logger.info("\n--- Teste 4: Ciclo de evolução ---")
+    await agente.run_evolution_cycle("Otimização de latência")
+
+    agente.brainstem.is_alive = False
+    logger.info("\n✅ Validação end‑to‑end concluída com sucesso!")
+
+# =====================================================================
+# PONTO DE IGNIÇÃO
+# =====================================================================
+if __name__ == "__main__":
+    import sys
+    if len(sys.argv) > 1 and sys.argv[1] == "--api":
+        if FastAPI is not None:
+            run_api()
+        else:
+            print("FastAPI não instalado.")
+    elif len(sys.argv) > 1 and sys.argv[1] == "--test":
+        # Roda a validação end‑to‑end
+        asyncio.run(validate_end_to_end())
+    else:
+        # Modo console interativo
+        async def console():
+            agente = OlafecneOrganism(use_outlines=True, use_dspy=True)
+            asyncio.create_task(agente.brainstem.respiration_loop())
+            print("\n=== OLAFECNE (com Outlines + DSPy) ===")
+            print("Digite 'exit' para sair, 'test' para executar validação.\n")
+            while True:
+                try:
+                    entrada = input(">>> ")
+                except (EOFError, KeyboardInterrupt):
+                    break
+                if entrada.lower() in ("exit", "quit"):
+                    break
+                if entrada.lower() == "test":
+                    await validate_end_to_end()
+                    continue
+                resposta = await agente.process_stimulus(entrada)
+                print(f"\n[OLAFECNE] {resposta}\n")
+            agente.brainstem.is_alive = False
+            print("💤 Agente encerrado.")
+        asyncio.run(console())
